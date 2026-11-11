@@ -1,0 +1,9 @@
+# The paths that the public repository se-uhd/agenttorrent-pipeline leaves out, one per line, a
+# directory with its trailing slash: the files of internal work and INTERNAL.md, which describes
+# them. dev/export-public.py reads this list.
+IDEAS.md
+INTERNAL.md
+RESEARCH_IDEAS.md
+STATUS.md
+TODO.md
+_plans/

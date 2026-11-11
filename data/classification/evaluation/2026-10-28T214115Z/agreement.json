@@ -1,0 +1,33 @@
+{
+  "reference_model": "gpt-6-luna",
+  "second_model": "gpt-6.1-sol",
+  "parameters": "827a98facb7b303d22a3147047a13f4f9e05bb2b300154a4759394664c91df0c",
+  "second_model_parameters": "827a98facb7b303d22a3147047a13f4f9e05bb2b300154a4759394664c91df0c",
+  "second_model_endpoint_and_settings": null,
+  "compared": 1040,
+  "agreed": 1016,
+  "agreement": 0.9769230769230769,
+  "agreement_interval": [
+    0.9660594857287204,
+    0.9843657514036566
+  ],
+  "kappa": 0.8636005945615107,
+  "confusion": {
+    "true": {
+      "true": 931,
+      "false": 17,
+      "unclear": 0
+    },
+    "false": {
+      "true": 7,
+      "false": 85,
+      "unclear": 0
+    },
+    "unclear": {
+      "true": 0,
+      "false": 0,
+      "unclear": 0
+    }
+  },
+  "readme_changed_between_labels": []
+}

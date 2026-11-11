@@ -1,0 +1,3 @@
+role,model,requested_tier,service_tier,requests,input_tokens,cached_tokens,cache_write_tokens,output_tokens,reasoning_tokens
+classifying_model,deepseek/deepseek-v4.1-flash,morph/fp8,morph/fp8,52,1328123,980992,0,113052,63418
+summary_model,deepseek/deepseek-v4.1-flash,morph/fp8,morph/fp8,13,22496,12288,0,7629,0

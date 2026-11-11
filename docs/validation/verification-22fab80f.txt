@@ -1,0 +1,16 @@
+VERIFICATION at 22fab80f
+PASS exit=0    1.6s  the sampling runner suite (1 modules): Ran 14 tests in 1.459s |  | OK
+PASS exit=0    0.6s  the sampling script suites (3 modules): Ran 93 tests in 0.277s |  | OK
+PASS exit=0  233.6s  collection suites (43 modules): Ran 3240 tests in 233.183s |  | OK (skipped=12)
+PASS exit=0   14.5s  classification suite (11 modules): Ran 360 tests in 14.138s |  | OK
+PASS exit=0    1.4s  MCP experiment suite (2 modules): Ran 120 tests in 0.994s |  | OK
+PASS exit=0   31.1s  analysis suite (22 modules): Ran 334 tests in 30.098s |  | OK
+PASS exit=0    0.4s  pipeline runner suite (1 modules): Ran 13 tests in 0.342s |  | OK
+PASS exit=0   10.9s  container suite (1 modules): Ran 124 tests in 10.807s |  | OK
+PASS exit=0    0.6s  website suite (1 modules): Ran 17 tests in 0.512s |  | OK
+PASS exit=0  116.0s  check_reproduction.py: INFO check_reproduction: ok    2_classification/diagnostics/repo_tree_heuristics.py: 6 file(s), reproduction alone | INFO check_reproduction: ok    2_classification/diagnostics/repo_tree_size_distribution.py: 1 file(s), reproduction alone | INFO check_reproduction: 23 script(s) ran twice, 0 skipped,
+PASS exit=0    0.3s  regressions check: INFO regressions: No change against baseline.json (14 files, 60614 rows)
+PASS exit=0    0.3s  snapshot output sections: INFO snapshot: Checking output CSV sections only; collected input files are outside this check. | INFO snapshot: Every derivable section already matches the data.
+PASS exit=0    0.2s  unmatched paths: INFO unmatched_configuration_paths: Unclassified path globs in the repositories the validation dropped for matching no mechanism, 3 repositories or more: | INFO unmatched_configuration_paths:   none | INFO unmatched_configuration_paths: The repositories the validation dropped: 0 unmatched in 3 repos
+PASS exit=0    0.4s  consistency: INFO consistency: The 11 mechanism CSVs name 8,360 repositories, repos.csv 8,360 | INFO consistency: Every repository matches between the mechanism CSVs and repos.csv | INFO consistency: Wrote 3_data-collection/output/consistency-report.csv
+git status after check: clean

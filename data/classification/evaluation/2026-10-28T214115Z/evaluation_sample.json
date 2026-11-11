@@ -1,0 +1,31 @@
+{
+  "evaluation_id": "2026-10-28T214115Z",
+  "retrieval_id": "2026-10-23T074035Z",
+  "run_id": "2026-10-23T093036Z",
+  "reference_model": "gpt-6-luna",
+  "parameters": "827a98facb7b303d22a3147047a13f4f9e05bb2b300154a4759394664c91df0c",
+  "labeled": 44842,
+  "excluded": [
+    {
+      "path": "calibration_sample.csv",
+      "sha256": "839ce010544348055b41632b0a46729830eb47576beb945cd963643e4ab10b7f",
+      "repositories": 2282
+    },
+    {
+      "path": "evaluation_sample.csv",
+      "sha256": "2839dad5fd39fe89049b609c03b08a1e1b3e50f375ec3cc588ce7f212068f8eb",
+      "repositories": 1041
+    },
+    {
+      "path": "evaluation_sample.csv",
+      "sha256": "80b98d5f3202e6c7d9b46eddb0a135a346c8ad45ac6171fccce5d89cba609ca4",
+      "repositories": 1041
+    }
+  ],
+  "left_out": 4168,
+  "population": 40674,
+  "size": 1040,
+  "margin": 0.03,
+  "confidence": 0.95,
+  "seed": 1975762386
+}

@@ -1,0 +1,50 @@
+license,repositories,previous_repositories,osi_approved,decision,reviewed,examples
+MIT License,86914,,TRUE,kept,software,Bodigrim/mod;Rajaniraiyn/svelte-sound;qianbinbin/killads;LtiLibrary/LtiAdvantagePlatform;bigprof-software/online-rental-property-manager
+Apache License 2.0,38535,,TRUE,kept,software,hongquan-prog/ESP32-DAPLink;apache/felix-dev;genlm/genlm-control;YunaBraska/streamline;sfeir-open-source/sfeir-school-angular
+Other,24571,,FALSE,not_osi_approved,excluded,BrandonXLF/wikipedia-user-scripts;laudspeaker/laudspeaker;CleverRaven/Cataclysm-DDA;rabbitmq/rabbitmq-auth-backend-amqp;kiyo-masui/bitshuffle
+GNU General Public License v3.0,19874,,TRUE,kept,software,lidofinance/ethereum-staking-widget;RichieHakim/ROICaT;charlesquick/AOG-Bogballe-Bridge;BornToBeRoot/NETworkManager;3meraldK/earthmc-dynmap
+"BSD 3-Clause ""New"" or ""Revised"" License",7540,,TRUE,kept,software,pyiron/pylammpsmpi;ctu-mrs/mrs_cheatsheet;gokrazy/tools;jrywu/DIME;Electa-Git/PowerModelsACDC.jl
+GNU Affero General Public License v3.0,6088,,TRUE,kept,software,OpenNMS-Plugins/alec;gOOvER/pelican-ptero-images;RexanWONG/text-behind-image;paranext/paranext-core;OrchidTechnologies/orchid
+GNU General Public License v2.0,5202,,TRUE,kept,software,michaelst/spendable;Automattic/lab-assistant;vcb-s/OKEGui;vianamp/MitoGraph;derekfountain/zx-spectrum-pico-interface-one
+Mozilla Public License 2.0,2414,,TRUE,kept,software,Cap-go/capacitor-jw-player;brave/brave-core-crx-packager;dequelabs/axe-core-gems;lacework/terraform-provider-lacework;siderolabs/go-smbios
+GNU Lesser General Public License v3.0,2173,,TRUE,kept,software,ANSSI-FR/MLA;canonical/craft-parts;martin-eden/lua_code_formatter;linuxmint/xapp;sparna-git/skos-testing-tool
+"BSD 2-Clause ""Simplified"" License",1880,,TRUE,kept,software,nextgenusfs/gfftk;flightaware/piaware-web;pycontribs/jira;gsi-cyberjapan/3dpc-3dtiles;42paris/minilibx-linux
+GNU Lesser General Public License v2.1,1199,,TRUE,kept,software,pygobject/pgi;lxqt/lxqt-session;storaged-project/blivet;JeffyCN/libv4l-rkmpp;keinhaar/gwtswing
+Creative Commons Zero v1.0 Universal,1023,,FALSE,not_osi_approved,excluded,ineshbose/simple-icons-latex;DOI-USGS/sbtools;lidofinance/lido-improvement-proposals;anubhavsrivastava/awesome-ui-component-library;ehsanghaffar/awesome-clubhouse
+ISC License,1016,,TRUE,kept,software,DNSCrypt/dnscrypt-proxy;mmomtchev/ol-mbtiles;AsyrafHussin/npm-malaysia-postcodes;kajidog/mcp-tts-voicevox;tcort/markdown-link-check
+The Unlicense,933,,TRUE,kept,software,nbd-wtf/nostr-tools;yt-dlp/protobug;Velorexe/Unity-Android-Bluetooth-Low-Energy;dckc/awesome-ocap;nom-tam-fits/nom-tam-fits
+Creative Commons Attribution 4.0 International,552,,FALSE,not_osi_approved,excluded,NBISweden/workshop-scRNAseq;riscv-non-isa/riscv-ap-tee;kubewarden/docs;iSEngLab/AwesomeLLM4UT;MicrosoftDocs/aspire-docs-samples
+MIT No Attribution,371,,TRUE,kept,software,aws-samples/aws-cdk-eks-fluxv2-example;aws-samples/aws-pod-eip-controller;aws-samples/aws-lambda-nextjs;aws-samples/amazon-memorydb-for-redis-samples;aws-samples/fsi-genai-bootcamp
+Eclipse Public License 2.0,354,,TRUE,kept,software,BentoBoxWorld/Level;eclipse-xtext/xtext;openhab/org.openhab.binding.zwave;wala/WALA;eclipse-che/che-plugin-registry
+Creative Commons Attribution Share Alike 4.0 International,316,,FALSE,not_osi_approved,excluded,makeabledk/laravel-cloud-images;CSSE6400/software-architecture;vulturno/vulturno;InnerSourceCommons/InnerSourceLearningPath;cbourke/ComputerScienceII
+zlib License,244,,TRUE,kept,software,Bigfoot71/r3d;Ratstail91/sineQL;dougbinks/enkiTSExamples;kcat/alure;gonengazit/Celia
+European Union Public License 1.2,235,,TRUE,kept,software,zone-eu/zonemta-wildduck;tsandrini/tensorfiles;jdemetra/jdemetra-core;Labs64/GuideChimp;open-eid/SiGa
+Boost Software License 1.0,216,,TRUE,kept,software,PlatinumSrc/PlatinumSrc;nonstd-lite/string-view-lite;boostorg/property_map;cursey/safetyhook;oliora/ppconsul
+Eclipse Public License 1.0,201,,TRUE,kept,software,jepsen-io/maelstrom;turtlequeue/setup-babashka;techascent/tech.ml.dataset;babashka/nrepl-client;typedclojure/typedclojure
+Do What The F*ck You Want To Public License,168,,FALSE,not_osi_approved,excluded,NotAdam/Lumina;stricaud/faup;KevCui/animepahe-dl;trim21/webpack-userscript-template;piersolenski/wtf.nvim
+BSD Zero Clause License,156,,TRUE,kept,software,museun/mock_instant;USACE-RMC/Numerics;jvoisin/fortify-headers;latextemplates/scientific-thesis-template;philburk/pforth
+Open Software License 3.0,113,,TRUE,kept,software,yireo/Yireo_DisableCsp;magento/inventory;aleron75/mage2hints;MultiSafepay/php-sdk;FabricCompatibilityLayers/Fabricated-Legacy-Forge
+,87,,FALSE,not_osi_approved,,wildfly/jboss-ejb-client;KDE/wacomtablet;gritzko/beagle;MrCl0wnLab/SimpleReconSubdomain;sun-protocol/sunhat
+SIL Open Font License 1.1,83,,TRUE,excluded,excluded,coz-m/MPLUS_FONTS;RandomMaerks/Overused-Grotesk;marcologous/hanken-grotesk;naver/d2-coding-font;solmatas/BitterPro
+Universal Permissive License v1.0,77,,TRUE,kept,software,oracle/graaljs;oracle-samples/drgn-tools;lukewilliamboswell/roc-platform-template-go;teramoby/speedle-plus;oracle-quickstart/oci-o11y-solutions
+BSD 3-Clause Clear License,75,,FALSE,not_osi_approved,excluded,evertramos/server-automation;MoseleyBioinformaticsLab/mwtab;Dairy-Foundation/Sloth;edgeimpulse/edge-impulse-linux-cli;Keysight/Pinata
+LaTeX Project Public License v1.3c,74,,TRUE,kept,software,latex3/latex3;HKFoggyU/hkust-thesis;klb2/review-response-template;iydon/sustechthesis;T-F-S/tcolorbox
+Artistic License 2.0,68,,TRUE,kept,software,rkerberos/rkerberos;silnrsi/font-ttf;mojolicious/mojo-pg;PlayPro/CoreProtect;rakudo/docker
+Microsoft Public License,39,,TRUE,kept,software,buchizo/ClaudiaIDE;ffilardi/AxaptaAPI;MvvmCross/MvvmCross;jcurl/RJCP.DLL.SerialPortStream;NewFuture/my-stickers
+Academic Free License v3.0,34,,TRUE,kept,software,Nosto/nosto-prestashop;ps2homebrew/Open-PS2-Loader;ci-richard-mcelhinney/nhaystack;PrestaShopCorp/ps_checkout;ps2max32/neutrino
+PostgreSQL License,31,,TRUE,kept,software,npgsql/efcore.pg;RhodiumToad/ip4r;OPMDG/check_pgactivity;CrunchyData/pg_incremental;cppgres/cppgres
+"Mulan Permissive Software License, Version 2",29,,TRUE,kept,software,OpenXiangShan/Deterload;ZJU-OmniAI/Embodied-Omni;openeuler-mirror/openeuler-docker-images;openHiTLS/openHiTLS;opengauss-mirror/openGauss-server
+Blue Oak Model License 1.0.0,15,,TRUE,kept,software,isaacs/node-lru-cache;daegalus/wine-builder;wimpysworld/nix-config;memospot/memos-builds;urschrei/polylabel-rs
+"BSD 4-Clause ""Original"" or ""Old"" License",14,,FALSE,not_osi_approved,excluded,slugdev/stltostp;adeeteya/Classipod;tonioni/pfs3aio;bigcommerce/paper;agvxov/csope
+European Union Public License 1.1,11,,TRUE,kept,software,slovensko-digital/harvester.ecosystem;UniprJRC/FSDA;open-eid/SiVa;ROBelgium/MSNoise;ec-europa/europa-component-library
+Educational Community License v2.0,10,,TRUE,kept,software,music-encoding/music-encoding.github.io;opencast/opencast;opencast/opencast-docker;polimediaupv/paella-core;ACMmodel/ACM-MOSFET-models
+CERN Open Hardware Licence Version 2 - Permissive,9,,TRUE,excluded,excluded,hlord2000/nordic-lib-kicad;Nicolai-Electronics/tanmatsu-mechanical;ddtdanilo/Personal-Altium-Library;tuna-f1sh/minnow;hairymnstr/Flopagon
+CERN Open Hardware Licence Version 2 - Strongly Reciprocal,9,,TRUE,excluded,excluded,apfaudio/tiliqua;elipsitz/gamebub;IObundle/iob-cache;hacker-fab/gitbook;IObundle/iob-eth
+Open Data Commons Open Database License v1.0,8,,FALSE,not_osi_approved,excluded,captn3m0/stackshare-dataset;trainline-eu/stations;digital4better/data;davwheat/uk-railway-stations;dr5hn/countries-states-cities-database
+CeCILL Free Software License Agreement v2.1,7,,TRUE,kept,software,ProgrammeVitam/sedatools;Shamrock-code/Shamrock;Reseau-Canope/peertube-mass-uploader;ProgrammeVitam/vitam;ANSSI-FR/bmc-tools
+GNU Free Documentation License v1.3,6,,FALSE,not_osi_approved,excluded,CTeX-org/lshort-zh-cn;multitheftauto/wiki.multitheftauto.com;Exyss/university-notes;licyk/SDNote;xiph/flac
+Microsoft Reciprocal License,4,,TRUE,kept,software,RedGreenBlue09/WFAv7_Installer;hilalhakla/Json2CSharpCodeGenerator;oAGoulart/wrappem;stewienj/DynamicDataDisplayReloaded
+University of Illinois/NCSA Open Source License,4,,TRUE,kept,software,AutoVerse-ai/Verse-library;DFDLSchemas/mil-std-2045;bashtage/linearmodels;compnerd/ds2
+BSD-2-Clause Plus Patent License,2,,TRUE,kept,software,platomav/MCExtractor;platomav/MEAnalyzer
+CERN Open Hardware Licence Version 2 - Weakly Reciprocal,1,,TRUE,excluded,excluded,OpenResearchInstitute/pluto_msk
+Vim License,1,,FALSE,not_osi_approved,,ShayHill/article_install_vim_in_windows

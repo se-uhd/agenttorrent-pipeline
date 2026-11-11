@@ -1,0 +1,17 @@
+VERIFICATION at 953988cf
+PASS exit=0    7.6s  the sampling runner suite (1 modules): Ran 22 tests in 7.456s |  | OK
+PASS exit=0    6.8s  the sampling script suites (5 modules): Ran 264 tests in 6.711s |  | OK
+PASS exit=0  571.5s  collection suites (53 modules): Ran 4404 tests in 571.088s |  | OK (skipped=15)
+PASS exit=0   32.2s  classification suite (9 modules): Ran 398 tests in 31.085s |  | OK
+PASS exit=0   57.1s  analysis suite (25 modules): Ran 412 tests in 56.007s |  | OK
+PASS exit=0    1.8s  pipeline runner suite (1 modules): Ran 30 tests in 1.585s |  | OK
+PASS exit=0   28.5s  container suite (1 modules): Ran 232 tests in 28.348s |  | OK
+PASS exit=0    0.7s  website suite (1 modules): Ran 20 tests in 0.631s |  | OK
+PASS exit=0  117.5s  check_reproduction.py: INFO reproduction_check: ok    2_classification/diagnostics/repo_tree_heuristics.py: 6 file(s), reproduction alone | INFO reproduction_check: ok    2_classification/diagnostics/repo_tree_size_distribution.py: 1 file(s), reproduction alone | INFO reproduction_check: 26 script(s) ran twice, 0 skipped,
+PASS exit=0    0.4s  regressions check: INFO regressions: No change against baseline.json (16 files, 70,944 rows)
+PASS exit=0    0.4s  snapshot output sections: INFO collection_summary: --outputs-only: skipping the sections derived from the collected tree. | INFO collection_summary: Every derivable section matches its inputs.
+PASS exit=0    2.5s  unmatched paths: INFO unmatched_paths_report: Unclassified path globs of the repositories dropped for no detected mechanism, 3 repositories or more: | INFO unmatched_paths_report:   None | INFO unmatched_paths_report: Repositories that the cleanup dropped: 0 unmatched in 3 repositories or more, 0 unmatched in total.
+PASS exit=0    0.4s  output cross check: INFO output_cross_check: Repositories: 8,365 in the 11 mechanism CSVs, 8,365 in repos.csv | INFO output_cross_check: Every repository matches between the mechanism CSVs and repos.csv | INFO output_cross_check: Wrote data/collection/output/consistency-
+PASS exit=0    0.1s  licenses: INFO repository_filtering: Every license of ghs_licenses.csv is reviewed
+PASS exit=0    7.1s  figures: INFO figures: 1,340 statistics, 1,340 of them stated in 99 documents, and 0 differences
+git status after check: clean

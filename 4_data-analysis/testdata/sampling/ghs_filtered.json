@@ -1,0 +1,265 @@
+{
+ "_metadata": {
+  "input_source": {
+   "downloaded_at": "2026-03-16T18:07:01.920742Z"
+  }
+ },
+ "items": [
+  {
+   "name": "47ng/nuqs",
+   "mainLanguage": "TypeScript",
+   "createdAt": "2020-05-11T03:52:32",
+   "contributors": 68,
+   "commits": 1237,
+   "size": 38886
+  },
+  {
+   "name": "Automattic/harper",
+   "mainLanguage": "Rust",
+   "createdAt": "2023-10-22T02:58:35",
+   "contributors": 83,
+   "commits": 3989,
+   "size": 36552
+  },
+  {
+   "name": "CodebuffAI/codebuff",
+   "mainLanguage": "TypeScript",
+   "createdAt": "2024-07-09T09:21:56",
+   "contributors": 25,
+   "commits": 6141,
+   "size": 144515
+  },
+  {
+   "name": "LMCache/LMCache",
+   "mainLanguage": "Python",
+   "createdAt": "2024-05-28T09:06:04",
+   "contributors": 160,
+   "commits": 1295,
+   "size": 29207
+  },
+  {
+   "name": "afnanenayet/diffsitter",
+   "mainLanguage": "Rust",
+   "createdAt": "2020-06-28T04:45:22",
+   "contributors": 14,
+   "commits": 777,
+   "size": 2244
+  },
+  {
+   "name": "altinn/app-frontend-react",
+   "mainLanguage": "TypeScript",
+   "createdAt": "2022-01-31T10:55:57",
+   "contributors": 71,
+   "commits": 2543,
+   "size": 53156
+  },
+  {
+   "name": "benbjohnson/litestream",
+   "mainLanguage": "Go",
+   "createdAt": "2020-10-06T07:16:01",
+   "contributors": 24,
+   "commits": 604,
+   "size": 3102
+  },
+  {
+   "name": "clickhouse/clickhouse",
+   "mainLanguage": "C++",
+   "createdAt": "2016-06-02T08:28:18",
+   "contributors": 302,
+   "commits": 207301,
+   "size": 3533105
+  },
+  {
+   "name": "daya0576/beaverhabits",
+   "mainLanguage": "Python",
+   "createdAt": "2024-03-11T02:54:02",
+   "contributors": 11,
+   "commits": 554,
+   "size": 4154
+  },
+  {
+   "name": "dotnet/sdk",
+   "mainLanguage": "C#",
+   "createdAt": "2016-07-22T09:26:02",
+   "contributors": 307,
+   "commits": 111605,
+   "size": 380588
+  },
+  {
+   "name": "eclipse-che/che-dashboard",
+   "mainLanguage": "TypeScript",
+   "createdAt": "2020-02-13T09:07:53",
+   "contributors": 66,
+   "commits": 2525,
+   "size": 29223
+  },
+  {
+   "name": "fedify-dev/fedify",
+   "mainLanguage": "TypeScript",
+   "createdAt": "2024-03-02T09:03:34",
+   "contributors": 45,
+   "commits": 3748,
+   "size": 23511
+  },
+  {
+   "name": "firebase/firebase-tools",
+   "mainLanguage": "TypeScript",
+   "createdAt": "2013-12-23T06:53:04",
+   "contributors": 339,
+   "commits": 6252,
+   "size": 75944
+  },
+  {
+   "name": "googleworkspace/apps-script-oauth2",
+   "mainLanguage": "JavaScript",
+   "createdAt": "2014-08-11T09:32:06",
+   "contributors": 43,
+   "commits": 408,
+   "size": 2242
+  },
+  {
+   "name": "hyperiongray/massweb",
+   "mainLanguage": "Python",
+   "createdAt": "2015-03-17T08:58:39",
+   "contributors": 5,
+   "commits": 517,
+   "size": 24471
+  },
+  {
+   "name": "jyhsu2000/bannermaker",
+   "mainLanguage": "Java",
+   "createdAt": "2015-02-25T10:42:15",
+   "contributors": 4,
+   "commits": 567,
+   "size": 929
+  },
+  {
+   "name": "likec4/likec4",
+   "mainLanguage": "TypeScript",
+   "createdAt": "2023-03-24T09:30:34",
+   "contributors": 34,
+   "commits": 5517,
+   "size": 208233
+  },
+  {
+   "name": "loro-dev/loro",
+   "mainLanguage": "Rust",
+   "createdAt": "2022-07-12T04:48:23",
+   "contributors": 25,
+   "commits": 2042,
+   "size": 13246
+  },
+  {
+   "name": "modernuo/modernuo",
+   "mainLanguage": "C#",
+   "createdAt": "2018-08-18T11:23:22",
+   "contributors": 60,
+   "commits": 3015,
+   "size": 41992
+  },
+  {
+   "name": "module-federation/core",
+   "mainLanguage": "JavaScript",
+   "createdAt": "2020-10-24T09:39:43",
+   "contributors": 186,
+   "commits": 3644,
+   "size": 397512
+  },
+  {
+   "name": "petretiandrea/home-assistant-tapo-p100",
+   "mainLanguage": "Python",
+   "createdAt": "2020-12-23T02:28:58",
+   "contributors": 47,
+   "commits": 557,
+   "size": 952
+  },
+  {
+   "name": "posva/pinia-colada",
+   "mainLanguage": "TypeScript",
+   "createdAt": "2023-12-20T08:37:26",
+   "contributors": 34,
+   "commits": 1406,
+   "size": 5195
+  },
+  {
+   "name": "quantumlib/qsim",
+   "mainLanguage": "C++",
+   "createdAt": "2020-01-27T05:19:36",
+   "contributors": 40,
+   "commits": 2022,
+   "size": 7004
+  },
+  {
+   "name": "rsyslog/rsyslog",
+   "mainLanguage": "C",
+   "createdAt": "2013-06-03T03:57:55",
+   "contributors": 316,
+   "commits": 19888,
+   "size": 88309
+  },
+  {
+   "name": "saleor/saleor-dashboard",
+   "mainLanguage": "TypeScript",
+   "createdAt": "2019-06-19T11:43:33",
+   "contributors": 99,
+   "commits": 4976,
+   "size": 203314
+  },
+  {
+   "name": "sanity-io/next-sanity",
+   "mainLanguage": "TypeScript",
+   "createdAt": "2020-10-22T02:46:51",
+   "contributors": 45,
+   "commits": 3327,
+   "size": 28884
+  },
+  {
+   "name": "sanity-io/pkg-utils",
+   "mainLanguage": "TypeScript",
+   "createdAt": "2022-08-25T08:10:06",
+   "contributors": 16,
+   "commits": 2954,
+   "size": 13349
+  },
+  {
+   "name": "streamlit/streamlit",
+   "mainLanguage": "Python",
+   "createdAt": "2019-08-24T12:14:52",
+   "contributors": 300,
+   "commits": 9322,
+   "size": 917488
+  },
+  {
+   "name": "syscoin/pali-wallet",
+   "mainLanguage": "TypeScript",
+   "createdAt": "2021-03-22T12:45:11",
+   "contributors": 17,
+   "commits": 4858,
+   "size": 199670
+  },
+  {
+   "name": "tsparticles/tsparticles",
+   "mainLanguage": "TypeScript",
+   "createdAt": "2020-02-05T06:00:01",
+   "contributors": 78,
+   "commits": 14466,
+   "size": 387498
+  },
+  {
+   "name": "xtermjs/xterm.js",
+   "mainLanguage": "TypeScript",
+   "createdAt": "2014-03-24T04:04:04",
+   "contributors": 311,
+   "commits": 10849,
+   "size": 33388
+  },
+  {
+   "name": "yamadashy/repomix",
+   "mainLanguage": "TypeScript",
+   "createdAt": "2024-07-13T07:11:32",
+   "contributors": 66,
+   "commits": 3087,
+   "size": 16903
+  }
+ ]
+}

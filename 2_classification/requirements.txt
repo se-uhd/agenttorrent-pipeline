@@ -1,0 +1,7 @@
+lingua-language-detector==2.2.0
+html2text==2025.4.15
+openai==3.13.0
+requests==2.34.2
+mcp==2.2.0
+pydantic==2.13.5
+urllib3==2.5.0

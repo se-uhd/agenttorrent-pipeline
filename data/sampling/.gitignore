@@ -1,0 +1,16 @@
+run_logs/
+# What a run writes beside the cache: the retrieval that it reads, its report, and the reports
+# of the comparison with the versions that they replaced under .previous names. The cache of
+# retrievals under ghs_retrievals/ is tracked. The responses that a stopped GitHub query left,
+# a stream in progress and a file being written are not.
+ghs_retrieval.json
+ghs_retrieval_report.json
+ghs_changes.csv
+ghs_collection_changes.csv
+ghs_changes.json
+ghs_changes.previous.csv
+ghs_collection_changes.previous.csv
+ghs_changes.previous.json
+ghs_retrievals/*.partial.jsonl
+ghs_retrievals/*.part
+ghs_retrievals/*.tmp

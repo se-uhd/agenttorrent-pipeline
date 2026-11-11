@@ -1,0 +1,4 @@
+role,model,service_tier,billed_as,tokens,usd_per_million,usd,price_url,price_read,note
+classifying_model,z-ai/glm-5.3-flash,morph/fp8,uncached_input,346820,0.042,0.01456644,https://openrouter.ai/api/v1/models/z-ai/glm-5.3-flash/endpoints,2026-10-30,
+classifying_model,z-ai/glm-5.3-flash,morph/fp8,cached_input,107584,0.018,0.001936512,https://openrouter.ai/api/v1/models/z-ai/glm-5.3-flash/endpoints,2026-10-30,
+classifying_model,z-ai/glm-5.3-flash,morph/fp8,output,17955,0.3,0.0053865,https://openrouter.ai/api/v1/models/z-ai/glm-5.3-flash/endpoints,2026-10-30,

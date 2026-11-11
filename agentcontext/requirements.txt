@@ -1,0 +1,6 @@
+pandas==3.0.5
+numpy==2.5.3
+matplotlib==3.11.1
+seaborn==0.13.2
+lingua-language-detector==2.2.0
+pyyaml==6.0.3

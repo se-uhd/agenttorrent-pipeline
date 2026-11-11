@@ -1,0 +1,9 @@
+role,model,service_tier,billed_as,tokens,usd_per_million,usd,price_url,price_read,note
+classifying_model,gpt-6-luna,default,uncached_input,204,0.1,0.0000204,https://developers.openai.com/api/docs/pricing,2026-10-30,
+classifying_model,gpt-6-luna,default,cached_input,1015120,0.01,0.0101512,https://developers.openai.com/api/docs/pricing,2026-10-30,
+classifying_model,gpt-6-luna,default,cache_write,697588,0.125,0.0871985,https://developers.openai.com/api/docs/pricing,2026-10-30,
+classifying_model,gpt-6-luna,default,output,67494,0.5,0.033747,https://developers.openai.com/api/docs/pricing,2026-10-30,
+summary_model,gpt-6-luna,default,uncached_input,12322,0.1,0.0012322,https://developers.openai.com/api/docs/pricing,2026-10-30,
+summary_model,gpt-6-luna,default,cached_input,18794,0.01,0.00018794,https://developers.openai.com/api/docs/pricing,2026-10-30,
+summary_model,gpt-6-luna,default,cache_write,38944,0.125,0.004868,https://developers.openai.com/api/docs/pricing,2026-10-30,
+summary_model,gpt-6-luna,default,output,4691,0.5,0.0023455,https://developers.openai.com/api/docs/pricing,2026-10-30,

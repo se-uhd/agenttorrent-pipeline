@@ -1,0 +1,44 @@
+identity,label,commits,repositories,reading
+,human,27,1,a person's own anthropic.com address
+,human,12,1,a person's own anthropic.com address
+,human,9,1,a person's own anthropic.com address
+,human,5,1,a person's own anthropic.com address
+,human,4,1,a person's own anthropic.com address
+,human,3,1,a person's own anthropic.com address
+,human,2,1,a person's own anthropic.com address
+,human,2,2,a person's own anthropic.com address
+,human,2,1,a person's own anthropic.com address
+,human,2,1,a person's own address with a +copilot alias
+,human,1,1,a person's own anthropic.com address
+,human,1,1,a person's own anthropic.com address
+,human,1,1,a person's own anthropic.com address
+,human,1,1,a person's own anthropic.com address
+,human,1,1,a person's own anthropic.com address
+,human,1,1,a person's address at a company domain that contains copilot
+,human,1,1,a person's own anthropic.com address
+,human,1,1,a person's own address with a +copilot alias
+OneUptime Copilot <copilot@oneuptime.com>,other_automation,12,1,"OneUptime Copilot, OneUptime's own AI product that rewrites code comments; a different tool from GitHub Copilot"
+(a person's login) <copilot@oneuptime.com>,other_automation,12,1,"OneUptime Copilot, OneUptime's own AI product that rewrites code comments; a different tool from GitHub Copilot"
+erigon-copilot[bot] <265817861+erigon-copilot[bot]@users.noreply.github.com>,other_automation,9,1,"erigontech's own GitHub App, whose merged pull requests carry the SharovBot prefix and credit Claude, not GitHub Copilot; only the word copilot in its name matched"
+Copilot <Copilot@users.noreply.github.com>,other_automation,4,2,"the name Copilot at an address that is no GitHub account, on workflow commits: a lint fix and a regenerated CITATION.cff"
+GitHub Copilot <test@example.com>,other_automation,1,1,"a placeholder identity named GitHub Copilot on a commit that credits Claude, not Copilot"
+liam-claude-code-action-bot[bot] <219808715+liam-claude-code-action-bot[bot]@users.noreply.github.com>,tool_identity,10,1,liam-hq's own GitHub App that runs the Claude Code action; its commits are the action's
+GitHub Copilot <GitHub Copilot>,tool_identity,7,1,the GitHub Copilot identity of merged Azure DevOps pull requests that carry the COPILOT_AI_GENERATED marker
+GitHub Copilot <copilot@github.com>,tool_identity,5,3,"a git identity named GitHub Copilot at copilot@github.com, which is no GitHub account; its unsigned commits read as Copilot CLI or agent-mode sessions"
+GitHub Copilot CLI <copilot@github.com>,tool_identity,1,1,"a git identity named GitHub Copilot at copilot@github.com, which is no GitHub account; its unsigned commits read as Copilot CLI or agent-mode sessions"
+,undecidable,7,1,"a git identity at an anthropic.com address that is no person's and no GitHub account; its commits do not say which tool, if any, wrote them"
+copilot-swe-agent[bot] <198982749+Copilot@users.noreply.github.com>,vendor_account,14697,515,the vendor's own account
+Copilot <198982749+Copilot@users.noreply.github.com>,vendor_account,2177,375,the vendor's own account
+Claude <noreply@anthropic.com>,vendor_account,1855,141,the vendor's own account
+claude[bot] <209825114+claude[bot]@users.noreply.github.com>,vendor_account,534,22,the vendor's own account
+claude[bot] <41898282+claude[bot]@users.noreply.github.com>,vendor_account,281,24,the vendor's own account
+copilot-swe-agent <198982749+copilot-swe-agent@users.noreply.github.com>,vendor_account,77,3,the vendor's own account
+Claude <claude@anthropic.com>,vendor_account,22,3,the vendor's own account
+Claude Code <noreply@anthropic.com>,vendor_account,11,3,the vendor's own account
+cursor[bot] <206951365+cursor[bot]@users.noreply.github.com>,vendor_account,5,3,the vendor's own account
+Claude Code <claude@anthropic.com>,vendor_account,4,2,the vendor's own account
+copilot-swe-agent[bot] <198982749+copilot@users.noreply.github.com>,vendor_account,3,3,the vendor's own account
+Copilot <175728472+Copilot@users.noreply.github.com>,vendor_account,2,1,the vendor's own account
+Claude (claude) <claude@anthropic.com>,vendor_account,1,1,the vendor's own account
+Claude (claude) <noreply@anthropic.com>,vendor_account,1,1,the vendor's own account
+claude <noreply@anthropic.com>,vendor_account,1,1,the vendor's own account

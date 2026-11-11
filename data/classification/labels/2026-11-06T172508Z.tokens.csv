@@ -1,0 +1,4 @@
+role,model,requested_tier,service_tier,requests,input_tokens,cached_tokens,cache_write_tokens,output_tokens,reasoning_tokens
+classifying_model,z-ai/glm-5.3,gmicloud/fp8,gmicloud/fp8,1,16825,0,0,1970,846
+classifying_model,z-ai/glm-5.3,morph/fp8,morph/fp8,1164,26609397,13489664,0,2641448,1459219
+summary_model,deepseek/deepseek-v4.1-flash,morph/fp8,morph/fp8,128,517108,4096,0,91909,0

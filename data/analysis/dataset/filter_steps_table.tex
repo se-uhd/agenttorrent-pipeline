@@ -1,0 +1,30 @@
+\begin{table}[H]
+\centering
+\begin{tabular}{lrr}
+\toprule
+\textbf{Filtering Step} & $\Delta$ \textbf{Removed} & \textbf{Remaining} \\
+\midrule
+\textit{Initial Dataset} & -- & $209{,}702$ \\
+\midrule
+(1) Gone from GitHub / $120$ Created After Window & $330$ & $209{,}372$ \\
+\midrule
+(2) Duplicate Repos & $2{,}360$ & $207{,}012$ \\
+\midrule
+(3) Archived / Disabled / Locked / Forked & $4{,}026$ & $202{,}986$ \\
+%\hphantom{(1)\ }Missing Data & $0$ & $202{,}986$ \\
+\midrule
+(4) Non-OSI / Excluded Licenses & $26{,}923$ & $176{,}063$ \\
+\midrule
+(5) Non-Top-10 Languages & $33{,}518$ & $142{,}545$ \\
+\midrule
+(6) Educational / Resource Repos & $1{,}667$ & $140{,}878$ \\
+\midrule
+(7) Commits $<358$ $\lor$ Watchers $<5$ & $94{,}375$ & $46{,}503$ \\
+\midrule
+\midrule
+\textbf{Metadata-Filtered Dataset} & -- & $\mathbf{46{,}503}$ \\
+\bottomrule
+\end{tabular}
+\caption{Metadata filtering steps applied to the baseline GHS dataset, with removed and remaining repositories per step.}
+\label{tab:filtering-table}
+\end{table}

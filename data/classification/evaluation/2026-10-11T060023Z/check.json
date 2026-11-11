@@ -1,0 +1,28 @@
+{
+  "evaluation_id": "2026-10-11T060023Z",
+  "previous_parameters": "1558e4fc6fe60bee515a55b7620e347c95017440cda72e9b2fc3761fa917bb01",
+  "sampling_frame_retrieval": "2026-10-12T104432Z",
+  "not_in_sampling_frame": [
+    "jmorton06/Lumos",
+    "OCA/product-configurator"
+  ],
+  "models": {
+    "gpt-6-luna": {
+      "parameters": "98e1112709a6f1f373ae720edf23543bc55a0446f689242a06c04b47f5f712ab",
+      "disagreement": {
+        "repositories": 43,
+        "expected": 43,
+        "as_expected": 43,
+        "changes": {}
+      },
+      "agreement": {
+        "repositories": 198,
+        "expected": 198,
+        "as_expected": 197,
+        "changes": {
+          "false to true": 1
+        }
+      }
+    }
+  }
+}

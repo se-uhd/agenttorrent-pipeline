@@ -1,0 +1,42 @@
+{
+  "reference_model": "deepseek/deepseek-v4.1-flash",
+  "second_model": "z-ai/glm-5.3",
+  "parameters": "015dadfbc4a8ce64524b684feb2ed908f33389611256c97ef052c98a75a5eac5",
+  "second_model_parameters": "442c4bd79c522a14401fb2c668cb123e99aa5f0f50f7c7d5cb83485040aba7a6",
+  "second_model_endpoint_and_settings": {
+    "model": "z-ai/glm-5.3",
+    "hugging_face_id": "zai-org/GLM-5.3",
+    "quantization": "fp8",
+    "reasoning_effort": "high",
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "seed": 7,
+    "max_output_tokens": 262144
+  },
+  "compared": 1039,
+  "agreed": 1018,
+  "agreement": 0.9797882579403272,
+  "agreement_interval": [
+    0.969466315757474,
+    0.9866688394086492
+  ],
+  "kappa": 0.8656746740214484,
+  "confusion": {
+    "true": {
+      "true": 944,
+      "false": 3,
+      "unclear": 0
+    },
+    "false": {
+      "true": 16,
+      "false": 74,
+      "unclear": 0
+    },
+    "unclear": {
+      "true": 1,
+      "false": 1,
+      "unclear": 0
+    }
+  },
+  "readme_changed_between_labels": []
+}

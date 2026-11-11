@@ -1,0 +1,30 @@
+# The base image of the production image (deploy/Dockerfile), the release of Python that mise.toml
+# pins, named by the digest of its index of platforms, which holds the image for x86-64 and for
+# arm64.
+FROM python:3.14.10-slim@sha256:930e1abba7c4e8f96ed93e8012c35d174d7732752731bbd5e8e757d7ec6f3966
+
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends poppler-utils ca-certificates curl zip unzip \
+      nodejs \
+ && rm -rf /var/lib/apt/lists/*
+# The git, the rsync and the 7-Zip that mise.toml pins, those of the production image and of
+# every development machine. install_tools.sh fails the build when the interpreter of the base
+# image is not the release of Python that mise.toml pins.
+COPY mise.toml deploy/install_tools.sh /tmp/tools/
+RUN sh /tmp/tools/install_tools.sh /tmp/tools && rm -rf /tmp/tools
+
+
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 MPLBACKEND=Agg
+# The Python distributions of every stage and of development, from locks/development.txt, the
+# dependency lock that a development machine installs into its .venv, with the hashes of every
+# file. As in the production image, setuptools comes first from locks/build.txt and builds venn
+# without build isolation, and pip installs into the interpreter of the base image. In the
+# container, a virtual environment with the system's site packages adds the editable package of
+# the mounted checkout (docs/development.md).
+COPY locks/build.txt locks/development.txt /locks/
+RUN pip install --no-cache-dir --require-hashes -r /locks/build.txt \
+ && pip install --no-cache-dir --require-hashes --no-build-isolation -r /locks/development.txt
+
+# Mount a disposable checkout at /workspace and run as the host's unprivileged UID.
+WORKDIR /workspace
+CMD ["bash"]

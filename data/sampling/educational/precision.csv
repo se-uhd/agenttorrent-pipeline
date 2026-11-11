@@ -1,0 +1,431 @@
+set,size,n,edu,precision,lo,hi,edu_strict,precision_strict,lo_strict,hi_strict,kinds
+pat:cur:education,295,40,5,0.125,0.055,0.261,4,0.1,0.04,0.231,sw:34 lst:1 exm:1 doc:1 crs:1 tut:1 exr:1
+pat:cur:cheatsheet,34,34,24,0.706,0.538,0.832,24,0.706,0.538,0.832,chs:19 sw:10 nts:2 int:1 tut:1 lst:1
+pat:cur:tutorial,239,40,35,0.875,0.739,0.945,33,0.825,0.68,0.913,tut:32 sw:5 exm:2 exr:1
+pat:cur:interview,59,40,32,0.8,0.652,0.895,32,0.8,0.652,0.895,int:16 exr:12 sw:8 nts:2 lst:2
+pat:cur:course,189,40,16,0.4,0.263,0.554,16,0.4,0.263,0.554,sw:24 crs:13 lst:2 tut:1
+pat:cur:example,790,40,35,0.875,0.739,0.945,3,0.075,0.026,0.199,exm:32 tpl:3 sw:2 tut:1 bok:1 lst:1
+pat:cur:curriculum,13,13,3,0.231,0.082,0.503,3,0.231,0.082,0.503,sw:9 crs:2 tpl:1 tut:1
+pat:cur:beginner,90,40,23,0.575,0.422,0.715,16,0.4,0.263,0.554,sw:16 exm:7 exr:6 tut:5 tpl:1 nts:1 crs:1 rmp:1 lst:1 bok:1
+pat:cur:lesson,9,9,3,0.333,0.121,0.646,3,0.333,0.121,0.646,sw:6 lst:1 tut:1 crs:1
+pat:cur:bootcamp,8,8,8,1.0,0.676,1.0,8,1.0,0.676,1.0,crs:6 lst:2
+pat:cur:workshop,83,40,25,0.625,0.47,0.758,24,0.6,0.446,0.737,sw:15 crs:13 tut:10 exm:1 bok:1
+pat:cur:learn-to-code,19,19,8,0.421,0.231,0.637,8,0.421,0.231,0.637,sw:11 exr:5 tut:2 crs:1
+pat:cur:study,67,40,11,0.275,0.161,0.428,11,0.275,0.161,0.428,sw:27 nts:4 tut:3 oth:2 crs:1 int:1 exr:1 rmp:1
+pat:cur:learning-,191,40,7,0.175,0.087,0.32,7,0.175,0.087,0.32,sw:33 exr:3 tut:2 bok:1 nts:1
+pat:cur:newcomers,2,2,1,0.5,0.095,0.905,1,0.5,0.095,0.905,tut:1 sw:1
+pat:cur:awesome,239,40,26,0.65,0.495,0.779,24,0.6,0.446,0.737,lst:22 sw:11 exm:2 oth:2 exr:1 tpl:1 nts:1
+pat:cur:list,48,40,15,0.375,0.242,0.53,15,0.375,0.242,0.53,sw:19 lst:15 oth:6
+V1:cur:education/topic,282,40,5,0.125,0.055,0.261,4,0.1,0.04,0.231,sw:35 lst:1 exm:1 crs:1 tut:1 exr:1
+V1:cur:cheatsheet/topic,28,28,19,0.679,0.493,0.821,19,0.679,0.493,0.821,chs:14 sw:9 nts:2 int:1 tut:1 lst:1
+V1:cur:tutorial/topic,169,40,31,0.775,0.625,0.877,27,0.675,0.52,0.799,tut:25 sw:9 exm:4 exr:1 crs:1
+V1:cur:interview/topic,50,40,34,0.85,0.709,0.929,34,0.85,0.709,0.929,int:18 exr:12 sw:6 nts:2 lst:2
+V1:cur:course/topic,104,40,18,0.45,0.307,0.602,18,0.45,0.307,0.602,sw:22 crs:12 lst:3 tut:2 nts:1
+V1:cur:example/topic,262,40,25,0.625,0.47,0.758,4,0.1,0.04,0.231,exm:21 sw:9 tpl:5 tut:3 lst:1 doc:1
+V1:cur:curriculum/topic,10,10,3,0.3,0.108,0.603,3,0.3,0.108,0.603,sw:6 crs:2 tpl:1 tut:1
+V1:cur:beginner/topic,79,40,20,0.5,0.352,0.648,13,0.325,0.201,0.48,sw:19 exm:7 exr:5 tut:5 tpl:1 crs:1 rmp:1 lst:1
+V1:cur:lesson/topic,6,6,2,0.333,0.097,0.7,2,0.333,0.097,0.7,sw:4 lst:1 tut:1
+V1:cur:bootcamp/topic,6,6,6,1.0,0.61,1.0,6,1.0,0.61,1.0,crs:4 lst:2
+V1:cur:workshop/topic,31,31,14,0.452,0.292,0.622,13,0.419,0.264,0.592,sw:17 crs:10 tut:2 exm:1 exr:1
+V1:cur:learn-to-code/topic,19,19,8,0.421,0.231,0.637,8,0.421,0.231,0.637,sw:11 exr:5 tut:2 crs:1
+V1:cur:study/topic,54,40,8,0.2,0.105,0.348,8,0.2,0.105,0.348,sw:30 nts:3 tut:3 oth:2 crs:1 exr:1
+V1:cur:learning-/topic,191,40,7,0.175,0.087,0.32,7,0.175,0.087,0.32,sw:33 exr:3 tut:2 bok:1 nts:1
+V1:cur:newcomers/topic,2,2,1,0.5,0.095,0.905,1,0.5,0.095,0.905,tut:1 sw:1
+V1:cur:awesome/topic,126,40,29,0.725,0.572,0.839,29,0.725,0.572,0.839,lst:28 sw:10 exr:1 oth:1
+V1:cur:list/topic,48,40,15,0.375,0.242,0.53,15,0.375,0.242,0.53,sw:19 lst:15 oth:6
+V1:cur:education/repo,5,5,2,0.4,0.118,0.769,1,0.2,0.036,0.624,sw:3 exm:1 lst:1
+V1:cur:cheatsheet/repo,17,17,16,0.941,0.73,0.99,16,0.941,0.73,0.99,chs:14 sw:1 int:1 lst:1
+V1:cur:tutorial/repo,105,40,39,0.975,0.871,0.996,38,0.95,0.835,0.986,tut:38 exm:1 sw:1
+V1:cur:interview/repo,19,19,17,0.895,0.686,0.971,17,0.895,0.686,0.971,int:16 sw:2 bok:1
+V1:cur:course/repo,106,40,13,0.325,0.201,0.48,13,0.325,0.201,0.48,sw:25 crs:13 doc:1 tpl:1
+V1:cur:example/repo,593,40,40,1.0,0.912,1.0,1,0.025,0.004,0.129,exm:39 bok:1
+V1:cur:curriculum/repo,2,2,0,0.0,0.0,0.658,0,0.0,0.0,0.658,sw:2
+V1:cur:beginner/repo,16,16,16,1.0,0.806,1.0,15,0.938,0.717,0.989,exr:4 crs:4 tut:3 bok:3 nts:1 exm:1
+V1:cur:lesson/repo,3,3,1,0.333,0.061,0.792,1,0.333,0.061,0.792,sw:2 crs:1
+V1:cur:bootcamp/repo,4,4,4,1.0,0.51,1.0,4,1.0,0.51,1.0,crs:3 lst:1
+V1:cur:workshop/repo,47,40,32,0.8,0.652,0.895,32,0.8,0.652,0.895,crs:19 tut:12 sw:8 bok:1
+V1:cur:study/repo,12,12,7,0.583,0.32,0.807,7,0.583,0.32,0.807,sw:5 exr:2 crs:1 int:1 rmp:1 nts:1 bok:1
+V1:cur:awesome/repo,167,40,32,0.8,0.652,0.895,29,0.725,0.572,0.839,lst:26 sw:6 exm:3 exr:2 tpl:1 oth:1 nts:1
+diff:V1-V0:gone,84,40,14,0.35,0.221,0.505,2,0.05,0.014,0.165,sw:23 exm:12 crs:2 doc:1 oth:1 tpl:1
+V2:cur:education/topic,281,40,5,0.125,0.055,0.261,4,0.1,0.04,0.231,sw:35 lst:1 exm:1 crs:1 tut:1 exr:1
+V2:cur:cheatsheet/topic,28,28,19,0.679,0.493,0.821,19,0.679,0.493,0.821,chs:14 sw:9 nts:2 int:1 tut:1 lst:1
+V2:cur:tutorial/topic,169,40,31,0.775,0.625,0.877,27,0.675,0.52,0.799,tut:25 sw:9 exm:4 exr:1 crs:1
+V2:cur:interview/topic,50,40,34,0.85,0.709,0.929,34,0.85,0.709,0.929,int:18 exr:12 sw:6 nts:2 lst:2
+V2:cur:course/topic,70,40,24,0.6,0.446,0.737,24,0.6,0.446,0.737,crs:16 sw:15 lst:3 tut:2 nts:1 tpl:1 bok:1 hw:1
+V2:cur:example/topic,262,40,25,0.625,0.47,0.758,4,0.1,0.04,0.231,exm:21 sw:9 tpl:5 tut:3 lst:1 doc:1
+V2:cur:curriculum/topic,10,10,3,0.3,0.108,0.603,3,0.3,0.108,0.603,sw:6 crs:2 tpl:1 tut:1
+V2:cur:beginner/topic,79,40,20,0.5,0.352,0.648,13,0.325,0.201,0.48,sw:19 exm:7 exr:5 tut:5 tpl:1 crs:1 rmp:1 lst:1
+V2:cur:lesson/topic,5,5,2,0.4,0.118,0.769,2,0.4,0.118,0.769,sw:3 lst:1 tut:1
+V2:cur:bootcamp/topic,6,6,6,1.0,0.61,1.0,6,1.0,0.61,1.0,crs:4 lst:2
+V2:cur:workshop/topic,30,30,14,0.467,0.302,0.639,13,0.433,0.274,0.608,sw:16 crs:10 tut:2 exm:1 exr:1
+V2:cur:learn-to-code/topic,19,19,8,0.421,0.231,0.637,8,0.421,0.231,0.637,sw:11 exr:5 tut:2 crs:1
+V2:cur:study/topic,54,40,8,0.2,0.105,0.348,8,0.2,0.105,0.348,sw:30 nts:3 tut:3 oth:2 crs:1 exr:1
+V2:cur:learning-/topic,69,40,13,0.325,0.201,0.48,12,0.3,0.181,0.454,sw:27 tut:6 exr:4 nts:1 bok:1 exm:1
+V2:cur:newcomers/topic,2,2,1,0.5,0.095,0.905,1,0.5,0.095,0.905,tut:1 sw:1
+V2:cur:awesome/topic,124,40,30,0.75,0.598,0.858,30,0.75,0.598,0.858,lst:29 sw:9 exr:1 oth:1
+V2:cur:list/topic,48,40,15,0.375,0.242,0.53,15,0.375,0.242,0.53,sw:19 lst:15 oth:6
+V2:cur:education/repo,5,5,2,0.4,0.118,0.769,1,0.2,0.036,0.624,sw:3 exm:1 lst:1
+V2:cur:cheatsheet/repo,17,17,16,0.941,0.73,0.99,16,0.941,0.73,0.99,chs:14 sw:1 int:1 lst:1
+V2:cur:tutorial/repo,105,40,39,0.975,0.871,0.996,38,0.95,0.835,0.986,tut:38 exm:1 sw:1
+V2:cur:interview/repo,19,19,17,0.895,0.686,0.971,17,0.895,0.686,0.971,int:16 sw:2 bok:1
+V2:cur:course/repo,56,40,25,0.625,0.47,0.758,24,0.6,0.446,0.737,crs:24 sw:14 tpl:1 exm:1
+V2:cur:example/repo,560,40,40,1.0,0.912,1.0,1,0.025,0.004,0.129,exm:39 bok:1
+V2:cur:curriculum/repo,2,2,0,0.0,0.0,0.658,0,0.0,0.0,0.658,sw:2
+V2:cur:beginner/repo,16,16,16,1.0,0.806,1.0,15,0.938,0.717,0.989,exr:4 crs:4 tut:3 bok:3 nts:1 exm:1
+V2:cur:lesson/repo,3,3,1,0.333,0.061,0.792,1,0.333,0.061,0.792,sw:2 crs:1
+V2:cur:bootcamp/repo,4,4,4,1.0,0.51,1.0,4,1.0,0.51,1.0,crs:3 lst:1
+V2:cur:workshop/repo,43,40,33,0.825,0.68,0.913,33,0.825,0.68,0.913,crs:20 tut:12 sw:7 bok:1
+V2:cur:study/repo,12,12,7,0.583,0.32,0.807,7,0.583,0.32,0.807,sw:5 exr:2 crs:1 int:1 rmp:1 nts:1 bok:1
+V2:cur:awesome/repo,151,40,35,0.875,0.739,0.945,32,0.8,0.652,0.895,lst:29 exm:3 sw:3 exr:2 tpl:1 oth:1 nts:1
+diff:V2-V0:gone,301,40,9,0.225,0.123,0.375,3,0.075,0.026,0.199,sw:30 exm:6 crs:3 doc:1
+V3:v3:tutorial/topic,169,40,31,0.775,0.625,0.877,27,0.675,0.52,0.799,tut:25 sw:9 exm:4 exr:1 crs:1
+V3:v3:interview/topic,49,40,35,0.875,0.739,0.945,35,0.875,0.739,0.945,int:18 exr:12 sw:5 nts:3 lst:2
+V3:v3:course/topic,46,40,31,0.775,0.625,0.877,31,0.775,0.625,0.877,crs:27 sw:9 lst:2 tut:1 bok:1
+V3:v3:example/topic,162,40,33,0.825,0.68,0.913,3,0.075,0.026,0.199,exm:30 sw:5 tut:3 tpl:2
+V3:v3:beginner/topic,30,30,23,0.767,0.591,0.882,19,0.633,0.455,0.781,exr:7 tut:6 sw:6 exm:4 crs:3 hw:2 tpl:1 lst:1
+V3:v3:bootcamp/topic,6,6,6,1.0,0.61,1.0,6,1.0,0.61,1.0,crs:4 lst:2
+V3:v3:awesome/topic,99,40,35,0.875,0.739,0.945,35,0.875,0.739,0.945,lst:34 sw:5 exr:1
+V3:v3:exercism/topic,13,13,13,1.0,0.772,1.0,13,1.0,0.772,1.0,exr:13
+V3:v3:tutorial/repo,105,40,39,0.975,0.871,0.996,38,0.95,0.835,0.986,tut:38 exm:1 sw:1
+V3:v3:cheatsheet/repo,17,17,16,0.941,0.73,0.99,16,0.941,0.73,0.99,chs:14 sw:1 int:1 lst:1
+V3:v3:interview/repo,19,19,17,0.895,0.686,0.971,17,0.895,0.686,0.971,int:16 sw:2 bok:1
+V3:v3:course/repo,34,34,31,0.912,0.77,0.97,31,0.912,0.77,0.97,crs:31 sw:3
+V3:v3:example/repo,560,40,40,1.0,0.912,1.0,1,0.025,0.004,0.129,exm:39 bok:1
+V3:v3:sample/repo,499,40,36,0.9,0.769,0.96,2,0.05,0.014,0.165,exm:34 tpl:3 crs:2 sw:1
+V3:v3:beginner/repo,16,16,16,1.0,0.806,1.0,15,0.938,0.717,0.989,exr:4 crs:4 tut:3 bok:3 nts:1 exm:1
+V3:v3:bootcamp/repo,4,4,4,1.0,0.51,1.0,4,1.0,0.51,1.0,crs:3 lst:1
+V3:v3:workshop/repo,43,40,33,0.825,0.68,0.913,33,0.825,0.68,0.913,crs:20 tut:12 sw:7 bok:1
+V3:v3:study/repo,7,7,6,0.857,0.487,0.974,6,0.857,0.487,0.974,exr:2 crs:1 int:1 sw:1 rmp:1 nts:1
+V3:v3:awesome/repo,151,40,35,0.875,0.739,0.945,32,0.8,0.652,0.895,lst:29 exm:3 sw:3 exr:2 tpl:1 oth:1 nts:1
+V3:v3:learn/repo,24,24,21,0.875,0.69,0.957,20,0.833,0.641,0.933,tut:10 bok:4 crs:3 sw:3 nts:2 exm:1 rmp:1
+V3:v3:exercise/repo,22,22,20,0.909,0.722,0.975,20,0.909,0.722,0.975,exr:15 tut:3 sw:1 tpl:1 bok:1 crs:1
+V3:v3:handbook/repo,13,13,9,0.692,0.424,0.873,8,0.615,0.355,0.823,int:3 doc:3 exr:2 bok:2 sw:1 exm:1 tut:1
+V3:v3:cookbook/repo,37,37,34,0.919,0.787,0.972,16,0.432,0.287,0.591,exm:18 bok:10 tut:4 nts:2 sw:2 tpl:1
+V3:v3:intro/repo,22,22,19,0.864,0.667,0.953,17,0.773,0.566,0.899,crs:8 tut:6 bok:3 exm:2 sw:2 tpl:1
+V3:v3:roadmap/repo,4,4,4,1.0,0.51,1.0,4,1.0,0.51,1.0,rmp:4
+diff:V3-V0:new,593,40,35,0.875,0.739,0.945,7,0.175,0.087,0.32,exm:28 tpl:3 exr:3 sw:2 nts:1 bok:1 crs:1 rmp:1
+diff:V3-V0:gone,898,40,9,0.225,0.123,0.375,5,0.125,0.055,0.261,sw:29 exm:4 tpl:2 nts:1 tut:1 chs:1 lst:1 crs:1
+V3S:v3:tutorial/topic,169,40,31,0.775,0.625,0.877,27,0.675,0.52,0.799,tut:25 sw:9 exm:4 exr:1 crs:1
+V3S:v3:interview/topic,49,40,35,0.875,0.739,0.945,35,0.875,0.739,0.945,int:18 exr:12 sw:5 nts:3 lst:2
+V3S:v3:course/topic,46,40,31,0.775,0.625,0.877,31,0.775,0.625,0.877,crs:27 sw:9 lst:2 tut:1 bok:1
+V3S:v3:beginner/topic,30,30,23,0.767,0.591,0.882,19,0.633,0.455,0.781,exr:7 tut:6 sw:6 exm:4 crs:3 hw:2 tpl:1 lst:1
+V3S:v3:bootcamp/topic,6,6,6,1.0,0.61,1.0,6,1.0,0.61,1.0,crs:4 lst:2
+V3S:v3:awesome/topic,99,40,35,0.875,0.739,0.945,35,0.875,0.739,0.945,lst:34 sw:5 exr:1
+V3S:v3:exercism/topic,13,13,13,1.0,0.772,1.0,13,1.0,0.772,1.0,exr:13
+V3S:v3:tutorial/repo,105,40,39,0.975,0.871,0.996,38,0.95,0.835,0.986,tut:38 exm:1 sw:1
+V3S:v3:cheatsheet/repo,17,17,16,0.941,0.73,0.99,16,0.941,0.73,0.99,chs:14 sw:1 int:1 lst:1
+V3S:v3:interview/repo,19,19,17,0.895,0.686,0.971,17,0.895,0.686,0.971,int:16 sw:2 bok:1
+V3S:v3:course/repo,34,34,31,0.912,0.77,0.97,31,0.912,0.77,0.97,crs:31 sw:3
+V3S:v3:beginner/repo,16,16,16,1.0,0.806,1.0,15,0.938,0.717,0.989,exr:4 crs:4 tut:3 bok:3 nts:1 exm:1
+V3S:v3:bootcamp/repo,4,4,4,1.0,0.51,1.0,4,1.0,0.51,1.0,crs:3 lst:1
+V3S:v3:workshop/repo,43,40,33,0.825,0.68,0.913,33,0.825,0.68,0.913,crs:20 tut:12 sw:7 bok:1
+V3S:v3:study/repo,7,7,6,0.857,0.487,0.974,6,0.857,0.487,0.974,exr:2 crs:1 int:1 sw:1 rmp:1 nts:1
+V3S:v3:awesome/repo,151,40,35,0.875,0.739,0.945,32,0.8,0.652,0.895,lst:29 exm:3 sw:3 exr:2 tpl:1 oth:1 nts:1
+V3S:v3:learn/repo,24,24,21,0.875,0.69,0.957,20,0.833,0.641,0.933,tut:10 bok:4 crs:3 sw:3 nts:2 exm:1 rmp:1
+V3S:v3:exercise/repo,22,22,20,0.909,0.722,0.975,20,0.909,0.722,0.975,exr:15 tut:3 sw:1 tpl:1 bok:1 crs:1
+V3S:v3:handbook/repo,13,13,9,0.692,0.424,0.873,8,0.615,0.355,0.823,int:3 doc:3 exr:2 bok:2 sw:1 exm:1 tut:1
+V3S:v3:intro/repo,22,22,19,0.864,0.667,0.953,17,0.773,0.566,0.899,crs:8 tut:6 bok:3 exm:2 sw:2 tpl:1
+V3S:v3:roadmap/repo,4,4,4,1.0,0.51,1.0,4,1.0,0.51,1.0,rmp:4
+diff:V3S-V0:new,75,40,35,0.875,0.739,0.945,33,0.825,0.68,0.913,exr:15 tut:6 bok:5 rmp:3 crs:3 sw:2 tpl:2 exm:2 nts:1 doc:1
+diff:V3S-V0:gone,1520,40,22,0.55,0.398,0.693,3,0.075,0.026,0.199,exm:19 sw:17 nts:1 tut:1 tpl:1 chs:1
+V4:v4:tutorial/topic,35,35,22,0.629,0.463,0.768,16,0.457,0.305,0.618,tut:12 sw:10 exm:6 crs:2 tpl:2 exr:1 lst:1 doc:1
+V4:v4:interview/topic,35,35,33,0.943,0.814,0.984,33,0.943,0.814,0.984,int:20 exr:9 nts:2 sw:2 lst:1 tut:1
+V4:v4:course/topic,20,20,18,0.9,0.699,0.972,18,0.9,0.699,0.972,crs:17 sw:2 bok:1
+V4:v4:bootcamp/topic,6,6,6,1.0,0.61,1.0,6,1.0,0.61,1.0,crs:4 lst:2
+V4:v4:exercism/topic,13,13,13,1.0,0.772,1.0,13,1.0,0.772,1.0,exr:13
+V4:v4:tutorial/repo,105,40,39,0.975,0.871,0.996,38,0.95,0.835,0.986,tut:38 exm:1 sw:1
+V4:v4:cheatsheet/repo,17,17,16,0.941,0.73,0.99,16,0.941,0.73,0.99,chs:14 sw:1 int:1 lst:1
+V4:v4:interview/repo,19,19,17,0.895,0.686,0.971,17,0.895,0.686,0.971,int:16 sw:2 bok:1
+V4:v4:course/repo,34,34,31,0.912,0.77,0.97,31,0.912,0.77,0.97,crs:31 sw:3
+V4:v4:example/repo,560,40,40,1.0,0.912,1.0,1,0.025,0.004,0.129,exm:39 bok:1
+V4:v4:sample/repo,499,40,36,0.9,0.769,0.96,2,0.05,0.014,0.165,exm:34 tpl:3 crs:2 sw:1
+V4:v4:beginner/repo,16,16,16,1.0,0.806,1.0,15,0.938,0.717,0.989,exr:4 crs:4 tut:3 bok:3 nts:1 exm:1
+V4:v4:bootcamp/repo,4,4,4,1.0,0.51,1.0,4,1.0,0.51,1.0,crs:3 lst:1
+V4:v4:workshop/repo,43,40,33,0.825,0.68,0.913,33,0.825,0.68,0.913,crs:20 tut:12 sw:7 bok:1
+V4:v4:study/repo,7,7,6,0.857,0.487,0.974,6,0.857,0.487,0.974,exr:2 crs:1 int:1 sw:1 rmp:1 nts:1
+V4:v4:awesome/repo,151,40,35,0.875,0.739,0.945,32,0.8,0.652,0.895,lst:29 exm:3 sw:3 exr:2 tpl:1 oth:1 nts:1
+V4:v4:learn/repo,24,24,21,0.875,0.69,0.957,20,0.833,0.641,0.933,tut:10 bok:4 crs:3 sw:3 nts:2 exm:1 rmp:1
+V4:v4:exercise/repo,22,22,20,0.909,0.722,0.975,20,0.909,0.722,0.975,exr:15 tut:3 sw:1 tpl:1 bok:1 crs:1
+V4:v4:cookbook/repo,37,37,34,0.919,0.787,0.972,16,0.432,0.287,0.591,exm:18 bok:10 tut:4 nts:2 sw:2 tpl:1
+V4:v4:intro/repo,22,22,19,0.864,0.667,0.953,17,0.773,0.566,0.899,crs:8 tut:6 bok:3 exm:2 sw:2 tpl:1
+V4:v4:roadmap/repo,4,4,4,1.0,0.51,1.0,4,1.0,0.51,1.0,rmp:4
+V4:v4:lecture/repo,10,10,8,0.8,0.49,0.943,8,0.8,0.49,0.943,crs:7 sw:2 hw:1
+V4:v4:101/repo,5,5,5,1.0,0.566,1.0,5,1.0,0.566,1.0,crs:3 tut:2
+V4:v4:mslearn/repo,5,5,5,1.0,0.566,1.0,5,1.0,0.566,1.0,crs:5
+diff:V4-V0:new,600,40,35,0.875,0.739,0.945,8,0.2,0.105,0.348,exm:27 tpl:3 exr:3 sw:2 crs:2 nts:1 bok:1 rmp:1
+diff:V4-V0:gone,1133,40,14,0.35,0.221,0.505,6,0.15,0.071,0.291,sw:24 exm:8 lst:2 tpl:2 nts:1 tut:1 chs:1 exr:1
+V4S:v4:tutorial/topic,35,35,22,0.629,0.463,0.768,16,0.457,0.305,0.618,tut:12 sw:10 exm:6 crs:2 tpl:2 exr:1 lst:1 doc:1
+V4S:v4:interview/topic,35,35,33,0.943,0.814,0.984,33,0.943,0.814,0.984,int:20 exr:9 nts:2 sw:2 lst:1 tut:1
+V4S:v4:course/topic,20,20,18,0.9,0.699,0.972,18,0.9,0.699,0.972,crs:17 sw:2 bok:1
+V4S:v4:bootcamp/topic,6,6,6,1.0,0.61,1.0,6,1.0,0.61,1.0,crs:4 lst:2
+V4S:v4:exercism/topic,13,13,13,1.0,0.772,1.0,13,1.0,0.772,1.0,exr:13
+V4S:v4:tutorial/repo,105,40,39,0.975,0.871,0.996,38,0.95,0.835,0.986,tut:38 exm:1 sw:1
+V4S:v4:cheatsheet/repo,17,17,16,0.941,0.73,0.99,16,0.941,0.73,0.99,chs:14 sw:1 int:1 lst:1
+V4S:v4:interview/repo,19,19,17,0.895,0.686,0.971,17,0.895,0.686,0.971,int:16 sw:2 bok:1
+V4S:v4:course/repo,34,34,31,0.912,0.77,0.97,31,0.912,0.77,0.97,crs:31 sw:3
+V4S:v4:beginner/repo,16,16,16,1.0,0.806,1.0,15,0.938,0.717,0.989,exr:4 crs:4 tut:3 bok:3 nts:1 exm:1
+V4S:v4:bootcamp/repo,4,4,4,1.0,0.51,1.0,4,1.0,0.51,1.0,crs:3 lst:1
+V4S:v4:workshop/repo,43,40,33,0.825,0.68,0.913,33,0.825,0.68,0.913,crs:20 tut:12 sw:7 bok:1
+V4S:v4:study/repo,7,7,6,0.857,0.487,0.974,6,0.857,0.487,0.974,exr:2 crs:1 int:1 sw:1 rmp:1 nts:1
+V4S:v4:awesome/repo,151,40,35,0.875,0.739,0.945,32,0.8,0.652,0.895,lst:29 exm:3 sw:3 exr:2 tpl:1 oth:1 nts:1
+V4S:v4:learn/repo,24,24,21,0.875,0.69,0.957,20,0.833,0.641,0.933,tut:10 bok:4 crs:3 sw:3 nts:2 exm:1 rmp:1
+V4S:v4:exercise/repo,22,22,20,0.909,0.722,0.975,20,0.909,0.722,0.975,exr:15 tut:3 sw:1 tpl:1 bok:1 crs:1
+V4S:v4:intro/repo,22,22,19,0.864,0.667,0.953,17,0.773,0.566,0.899,crs:8 tut:6 bok:3 exm:2 sw:2 tpl:1
+V4S:v4:roadmap/repo,4,4,4,1.0,0.51,1.0,4,1.0,0.51,1.0,rmp:4
+V4S:v4:lecture/repo,10,10,8,0.8,0.49,0.943,8,0.8,0.49,0.943,crs:7 sw:2 hw:1
+V4S:v4:101/repo,5,5,5,1.0,0.566,1.0,5,1.0,0.566,1.0,crs:3 tut:2
+V4S:v4:mslearn/repo,5,5,5,1.0,0.566,1.0,5,1.0,0.566,1.0,crs:5
+diff:V4S-V0:new,82,40,37,0.925,0.801,0.974,36,0.9,0.769,0.96,exr:14 crs:9 tut:6 bok:4 rmp:2 tpl:2 sw:1 nts:1 exm:1
+diff:V4S-V0:gone,1704,40,22,0.55,0.398,0.693,4,0.1,0.04,0.231,exm:18 sw:17 nts:1 lst:1 tut:1 tpl:1 chs:1
+V5:v4:interview/topic,35,35,33,0.943,0.814,0.984,33,0.943,0.814,0.984,int:20 exr:9 nts:2 sw:2 lst:1 tut:1
+V5:v4:course/topic,20,20,18,0.9,0.699,0.972,18,0.9,0.699,0.972,crs:17 sw:2 bok:1
+V5:v4:bootcamp/topic,6,6,6,1.0,0.61,1.0,6,1.0,0.61,1.0,crs:4 lst:2
+V5:v4:exercism/topic,13,13,13,1.0,0.772,1.0,13,1.0,0.772,1.0,exr:13
+V5:v4:tutorial/repo,105,40,39,0.975,0.871,0.996,38,0.95,0.835,0.986,tut:38 exm:1 sw:1
+V5:v4:cheatsheet/repo,17,17,16,0.941,0.73,0.99,16,0.941,0.73,0.99,chs:14 sw:1 int:1 lst:1
+V5:v4:interview/repo,19,19,17,0.895,0.686,0.971,17,0.895,0.686,0.971,int:16 sw:2 bok:1
+V5:v4:course/repo,34,34,31,0.912,0.77,0.97,31,0.912,0.77,0.97,crs:31 sw:3
+V5:v4:example/repo,560,40,40,1.0,0.912,1.0,1,0.025,0.004,0.129,exm:39 bok:1
+V5:v4:sample/repo,499,40,36,0.9,0.769,0.96,2,0.05,0.014,0.165,exm:34 tpl:3 crs:2 sw:1
+V5:v4:beginner/repo,16,16,16,1.0,0.806,1.0,15,0.938,0.717,0.989,exr:4 crs:4 tut:3 bok:3 nts:1 exm:1
+V5:v4:bootcamp/repo,4,4,4,1.0,0.51,1.0,4,1.0,0.51,1.0,crs:3 lst:1
+V5:v4:workshop/repo,43,40,33,0.825,0.68,0.913,33,0.825,0.68,0.913,crs:20 tut:12 sw:7 bok:1
+V5:v4:study/repo,7,7,6,0.857,0.487,0.974,6,0.857,0.487,0.974,exr:2 crs:1 int:1 sw:1 rmp:1 nts:1
+V5:v4:awesome/repo,151,40,35,0.875,0.739,0.945,32,0.8,0.652,0.895,lst:29 exm:3 sw:3 exr:2 tpl:1 oth:1 nts:1
+V5:v4:learn/repo,24,24,21,0.875,0.69,0.957,20,0.833,0.641,0.933,tut:10 bok:4 crs:3 sw:3 nts:2 exm:1 rmp:1
+V5:v4:exercise/repo,22,22,20,0.909,0.722,0.975,20,0.909,0.722,0.975,exr:15 tut:3 sw:1 tpl:1 bok:1 crs:1
+V5:v4:cookbook/repo,37,37,34,0.919,0.787,0.972,16,0.432,0.287,0.591,exm:18 bok:10 tut:4 nts:2 sw:2 tpl:1
+V5:v4:intro/repo,22,22,19,0.864,0.667,0.953,17,0.773,0.566,0.899,crs:8 tut:6 bok:3 exm:2 sw:2 tpl:1
+V5:v4:roadmap/repo,4,4,4,1.0,0.51,1.0,4,1.0,0.51,1.0,rmp:4
+V5:v4:lecture/repo,10,10,8,0.8,0.49,0.943,8,0.8,0.49,0.943,crs:7 sw:2 hw:1
+V5:v4:101/repo,5,5,5,1.0,0.566,1.0,5,1.0,0.566,1.0,crs:3 tut:2
+V5:v4:mslearn/repo,5,5,5,1.0,0.566,1.0,5,1.0,0.566,1.0,crs:5
+diff:V5-V0:new,600,40,35,0.875,0.739,0.945,8,0.2,0.105,0.348,exm:27 tpl:3 exr:3 sw:2 crs:2 nts:1 bok:1 rmp:1
+diff:V5-V0:gone,1160,40,15,0.375,0.242,0.53,7,0.175,0.087,0.32,sw:23 exm:8 lst:2 tut:2 tpl:2 nts:1 chs:1 exr:1
+V5S:v4:interview/topic,35,35,33,0.943,0.814,0.984,33,0.943,0.814,0.984,int:20 exr:9 nts:2 sw:2 lst:1 tut:1
+V5S:v4:course/topic,20,20,18,0.9,0.699,0.972,18,0.9,0.699,0.972,crs:17 sw:2 bok:1
+V5S:v4:bootcamp/topic,6,6,6,1.0,0.61,1.0,6,1.0,0.61,1.0,crs:4 lst:2
+V5S:v4:exercism/topic,13,13,13,1.0,0.772,1.0,13,1.0,0.772,1.0,exr:13
+V5S:v4:tutorial/repo,105,40,39,0.975,0.871,0.996,38,0.95,0.835,0.986,tut:38 exm:1 sw:1
+V5S:v4:cheatsheet/repo,17,17,16,0.941,0.73,0.99,16,0.941,0.73,0.99,chs:14 sw:1 int:1 lst:1
+V5S:v4:interview/repo,19,19,17,0.895,0.686,0.971,17,0.895,0.686,0.971,int:16 sw:2 bok:1
+V5S:v4:course/repo,34,34,31,0.912,0.77,0.97,31,0.912,0.77,0.97,crs:31 sw:3
+V5S:v4:beginner/repo,16,16,16,1.0,0.806,1.0,15,0.938,0.717,0.989,exr:4 crs:4 tut:3 bok:3 nts:1 exm:1
+V5S:v4:bootcamp/repo,4,4,4,1.0,0.51,1.0,4,1.0,0.51,1.0,crs:3 lst:1
+V5S:v4:workshop/repo,43,40,33,0.825,0.68,0.913,33,0.825,0.68,0.913,crs:20 tut:12 sw:7 bok:1
+V5S:v4:study/repo,7,7,6,0.857,0.487,0.974,6,0.857,0.487,0.974,exr:2 crs:1 int:1 sw:1 rmp:1 nts:1
+V5S:v4:awesome/repo,151,40,35,0.875,0.739,0.945,32,0.8,0.652,0.895,lst:29 exm:3 sw:3 exr:2 tpl:1 oth:1 nts:1
+V5S:v4:learn/repo,24,24,21,0.875,0.69,0.957,20,0.833,0.641,0.933,tut:10 bok:4 crs:3 sw:3 nts:2 exm:1 rmp:1
+V5S:v4:exercise/repo,22,22,20,0.909,0.722,0.975,20,0.909,0.722,0.975,exr:15 tut:3 sw:1 tpl:1 bok:1 crs:1
+V5S:v4:intro/repo,22,22,19,0.864,0.667,0.953,17,0.773,0.566,0.899,crs:8 tut:6 bok:3 exm:2 sw:2 tpl:1
+V5S:v4:roadmap/repo,4,4,4,1.0,0.51,1.0,4,1.0,0.51,1.0,rmp:4
+V5S:v4:lecture/repo,10,10,8,0.8,0.49,0.943,8,0.8,0.49,0.943,crs:7 sw:2 hw:1
+V5S:v4:101/repo,5,5,5,1.0,0.566,1.0,5,1.0,0.566,1.0,crs:3 tut:2
+V5S:v4:mslearn/repo,5,5,5,1.0,0.566,1.0,5,1.0,0.566,1.0,crs:5
+diff:V5S-V0:new,82,40,37,0.925,0.801,0.974,36,0.9,0.769,0.96,exr:14 crs:9 tut:6 bok:4 rmp:2 tpl:2 sw:1 nts:1 exm:1
+diff:V5S-V0:gone,1732,40,22,0.55,0.398,0.693,4,0.1,0.04,0.231,exm:18 sw:17 nts:1 lst:1 tut:1 tpl:1 chs:1
+diff:V3-V2:new,595,40,35,0.875,0.739,0.945,7,0.175,0.087,0.32,exm:28 tpl:3 exr:3 sw:2 nts:1 bok:1 crs:1 rmp:1
+diff:V3-V2:gone,599,40,7,0.175,0.087,0.32,4,0.1,0.04,0.231,sw:31 exm:3 tpl:2 nts:1 tut:1 chs:1 lst:1
+diff:V3S-V3:gone,1140,40,39,0.975,0.871,0.996,2,0.05,0.014,0.165,exm:37 nts:1 tpl:1 bok:1
+diff:V4-V3:new,19,19,17,0.895,0.686,0.971,17,0.895,0.686,0.971,crs:14 sw:2 tut:2 hw:1
+diff:V4-V3:gone,247,40,27,0.675,0.52,0.799,19,0.475,0.329,0.625,sw:10 exm:8 tut:8 lst:5 exr:4 tpl:3 crs:2
+diff:V4S-V4:gone,1089,40,39,0.975,0.871,0.996,2,0.05,0.014,0.165,exm:37 nts:1 tpl:1 bok:1
+add:t:learning-lang,2,2,1,0.5,0.095,0.905,1,0.5,0.095,0.905,sw:1 crs:1
+add:t:learning-whole,56,40,9,0.225,0.123,0.375,9,0.225,0.123,0.375,sw:30 tut:3 exr:3 crs:2 doc:1 bok:1
+add:t:learn-whole,22,22,7,0.318,0.164,0.527,6,0.273,0.132,0.482,sw:15 exr:3 hw:3 exm:1
+add:t:awesome-seg,45,40,6,0.15,0.071,0.291,4,0.1,0.04,0.231,sw:30 oth:3 lst:3 exm:2 tpl:1 hw:1
+add:t:awesome-whole,31,31,3,0.097,0.033,0.249,3,0.097,0.033,0.249,sw:25 oth:3 lst:3
+add:t:lists-curated,11,11,2,0.182,0.051,0.477,2,0.182,0.051,0.477,sw:8 lst:2 oth:1
+add:t:resources,21,21,5,0.238,0.106,0.451,5,0.238,0.106,0.451,sw:15 lst:5 oth:1
+add:t:roadmap,10,10,5,0.5,0.237,0.763,5,0.5,0.237,0.763,sw:5 rmp:4 exr:1
+add:t:leetcode,36,36,17,0.472,0.32,0.63,17,0.472,0.32,0.63,sw:18 exr:16 oth:1 nts:1
+add:t:exercism,19,19,13,0.684,0.46,0.846,13,0.684,0.46,0.846,exr:13 sw:6
+add:t:competitive,45,40,11,0.275,0.161,0.428,11,0.275,0.161,0.428,sw:29 exr:11
+add:t:advent,6,6,3,0.5,0.188,0.812,3,0.5,0.188,0.812,sw:3 exr:3
+add:t:algorithms,334,40,10,0.25,0.142,0.402,10,0.25,0.142,0.402,sw:29 exr:9 oth:1 hw:1
+add:t:book,92,40,5,0.125,0.055,0.261,5,0.125,0.055,0.261,sw:31 bok:4 doc:2 oth:2 lst:1
+add:t:teaching,32,32,2,0.062,0.017,0.201,2,0.062,0.017,0.201,sw:30 hw:1 crs:1
+add:t:university,44,40,0,0.0,0.0,0.088,0,0.0,0.0,0.088,sw:40
+add:t:samples,194,40,28,0.7,0.546,0.819,2,0.05,0.014,0.165,exm:26 sw:11 tut:1 tpl:1 crs:1
+add:t:notes,89,40,1,0.025,0.004,0.129,1,0.025,0.004,0.129,sw:39 exr:1
+add:t:snippets,51,40,3,0.075,0.026,0.199,1,0.025,0.004,0.129,sw:36 exm:2 tut:1 tpl:1
+add:t:guide,49,40,8,0.2,0.105,0.348,7,0.175,0.087,0.32,sw:25 tut:6 doc:5 bok:1 exm:1 tpl:1 oth:1
+add:t:playground,46,40,2,0.05,0.014,0.165,0,0.0,0.0,0.088,sw:38 exm:2
+add:t:exercises,37,37,16,0.432,0.287,0.591,16,0.432,0.287,0.591,sw:20 exr:12 tut:2 crs:2 oth:1
+add:t:100days,1,1,1,1.0,0.207,1.0,1,1.0,0.207,1.0,exr:1
+add:r:learn-seg,73,40,17,0.425,0.285,0.578,13,0.325,0.201,0.48,sw:22 tut:6 exm:4 bok:3 nts:1 lst:1 exr:1 crs:1 doc:1
+add:r:learn-start,18,18,17,0.944,0.742,0.99,16,0.889,0.672,0.969,tut:8 bok:4 nts:2 exm:1 crs:1 sw:1 rmp:1
+add:r:samples-seg,432,40,37,0.925,0.801,0.974,2,0.05,0.014,0.165,exm:35 tpl:2 crs:2 sw:1
+add:r:demos-seg,53,40,37,0.925,0.801,0.974,2,0.05,0.014,0.165,exm:35 tpl:1 oth:1 sw:1 tut:1 crs:1
+add:r:leetcode,18,18,8,0.444,0.246,0.663,8,0.444,0.246,0.663,sw:9 exr:8 oth:1
+add:r:exercises-seg,20,20,17,0.85,0.64,0.948,17,0.85,0.64,0.948,exr:13 sw:2 tut:2 tpl:1 bok:1 crs:1
+add:r:roadmap-seg,9,9,5,0.556,0.267,0.811,5,0.556,0.267,0.811,rmp:4 sw:3 doc:1 exr:1
+add:r:handbook-seg,43,40,33,0.825,0.68,0.913,17,0.425,0.285,0.578,exm:16 bok:11 tut:4 sw:3 doc:3 nts:2 tpl:1
+add:r:notes-seg,66,40,9,0.225,0.123,0.375,8,0.2,0.105,0.348,sw:29 nts:8 oth:2 exm:1
+add:r:snippets-seg,38,38,16,0.421,0.279,0.578,2,0.053,0.015,0.173,sw:22 exm:14 exr:1 tut:1
+add:r:solutions-seg,20,20,12,0.6,0.387,0.781,6,0.3,0.145,0.519,sw:8 exm:6 exr:4 hw:1 bok:1
+add:r:lecture-seg,10,10,7,0.7,0.397,0.892,6,0.6,0.313,0.832,crs:4 sw:3 hw:2 exm:1
+add:r:udemy,11,11,8,0.727,0.434,0.903,8,0.727,0.434,0.903,crs:8 sw:3
+add:r:101,12,12,8,0.667,0.391,0.862,8,0.667,0.391,0.862,crs:5 sw:4 tut:3
+add:r:advent,9,9,6,0.667,0.354,0.879,6,0.667,0.354,0.879,exr:6 sw:3
+add:r:labs-seg,104,40,18,0.45,0.307,0.602,15,0.375,0.242,0.53,sw:21 crs:7 tut:5 exm:3 hw:2 oth:1 bok:1
+add:r:book-seg,36,36,12,0.333,0.202,0.497,12,0.333,0.202,0.497,sw:18 bok:10 doc:4 tut:2 oth:2
+add:r:guide-seg,60,40,21,0.525,0.375,0.671,18,0.45,0.307,0.602,tut:14 sw:11 doc:8 exm:3 bok:3 crs:1
+add:r:intro-seg,12,12,10,0.833,0.552,0.953,9,0.75,0.468,0.911,crs:4 tut:3 bok:2 tpl:1 exm:1 sw:1
+add:r:algorithms-seg,14,14,7,0.5,0.268,0.732,7,0.5,0.268,0.732,sw:7 exr:6 nts:1
+add:r:playground-seg,82,40,10,0.25,0.142,0.402,0,0.0,0.0,0.088,sw:29 exm:10 tpl:1
+add:r:list-seg,127,40,2,0.05,0.014,0.165,2,0.05,0.014,0.165,sw:23 oth:15 lst:2
+add:r:resources-seg,44,40,6,0.15,0.071,0.291,4,0.1,0.04,0.231,sw:32 lst:4 exm:2 oth:2
+add:r:101-suffix,5,5,5,1.0,0.566,1.0,5,1.0,0.566,1.0,crs:3 tut:2
+add:r:lecture-only,6,6,5,0.833,0.436,0.97,5,0.833,0.436,0.97,crs:4 sw:1 hw:1
+add:r:dsa,9,9,6,0.667,0.354,0.879,6,0.667,0.354,0.879,exr:4 sw:3 bok:1 crs:1
+add:r:mslearn,5,5,5,1.0,0.566,1.0,5,1.0,0.566,1.0,crs:5
+add:t:dsa,23,23,11,0.478,0.292,0.67,11,0.478,0.292,0.67,sw:11 exr:7 crs:3 oth:1 int:1
+add:t:leetcode-solutions,12,12,8,0.667,0.391,0.862,8,0.667,0.391,0.862,exr:8 sw:4
+add:d:curated-list,61,40,12,0.3,0.181,0.454,10,0.25,0.142,0.402,sw:27 lst:9 exm:2 exr:1 oth:1
+add:d:interview,1,1,1,1.0,0.207,1.0,1,1.0,0.207,1.0,exr:1
+add:d:cheatsheet,5,5,2,0.4,0.118,0.769,2,0.4,0.118,0.769,chs:2 sw:2 doc:1
+add:d:tutorial,64,40,29,0.725,0.572,0.839,24,0.6,0.446,0.737,tut:22 sw:10 exm:5 crs:2 doc:1
+add:d:course,96,40,18,0.45,0.307,0.602,18,0.45,0.307,0.602,sw:22 crs:17 bok:1
+add:d:learning-resources,46,40,7,0.175,0.087,0.32,6,0.15,0.071,0.291,sw:32 nts:3 crs:2 exm:1 oth:1 lst:1
+add:d:examples,190,40,33,0.825,0.68,0.913,2,0.05,0.014,0.165,exm:31 sw:7 bok:1 crs:1
+add:d:book,49,40,15,0.375,0.242,0.53,14,0.35,0.221,0.505,sw:25 bok:13 crs:1 exm:1
+add:d:exercises,106,40,28,0.7,0.546,0.819,28,0.7,0.546,0.819,exr:20 sw:10 crs:4 tut:2 hw:1 tpl:1 oth:1 nts:1
+uniq:v3:awesome,185,40,33,0.825,0.68,0.913,31,0.775,0.625,0.877,lst:28 sw:5 exr:2 exm:2 tpl:1 oth:1 nts:1
+uniq:v3:beginner,32,32,25,0.781,0.612,0.89,21,0.656,0.483,0.796,exr:9 sw:6 exm:4 tut:3 crs:3 hw:2 bok:2 tpl:1 nts:1 lst:1
+uniq:v3:bootcamp,7,7,7,1.0,0.646,1.0,7,1.0,0.646,1.0,crs:5 lst:2
+uniq:v3:cheatsheet,14,14,13,0.929,0.685,0.987,13,0.929,0.685,0.987,chs:13 sw:1
+uniq:v3:cookbook,34,34,31,0.912,0.77,0.97,15,0.441,0.289,0.605,exm:16 bok:10 tut:3 nts:2 sw:2 tpl:1
+uniq:v3:course,63,40,32,0.8,0.652,0.895,32,0.8,0.652,0.895,crs:30 sw:8 lst:2
+uniq:v3:example,610,40,37,0.925,0.801,0.974,2,0.05,0.014,0.165,exm:35 tpl:2 bok:1 tut:1 sw:1
+uniq:v3:exercise,21,21,19,0.905,0.711,0.973,19,0.905,0.711,0.973,exr:15 tut:2 sw:1 tpl:1 bok:1 crs:1
+uniq:v3:exercism,13,13,13,1.0,0.772,1.0,13,1.0,0.772,1.0,exr:13
+uniq:v3:handbook,9,9,5,0.556,0.267,0.811,4,0.444,0.189,0.733,doc:3 bok:2 sw:1 exm:1 tut:1 exr:1
+uniq:v3:interview,46,40,33,0.825,0.68,0.913,33,0.825,0.68,0.913,int:17 exr:10 sw:7 nts:3 lst:1 bok:1 tut:1
+uniq:v3:intro,12,12,10,0.833,0.552,0.953,9,0.75,0.468,0.911,crs:4 tut:3 bok:2 tpl:1 exm:1 sw:1
+uniq:v3:learn,20,20,18,0.9,0.699,0.972,17,0.85,0.64,0.948,tut:9 bok:4 nts:2 sw:2 exm:1 crs:1 rmp:1
+uniq:v3:roadmap,4,4,4,1.0,0.51,1.0,4,1.0,0.51,1.0,rmp:4
+uniq:v3:sample,489,40,36,0.9,0.769,0.96,2,0.05,0.014,0.165,exm:34 tpl:3 crs:2 sw:1
+uniq:v3:study,6,6,5,0.833,0.436,0.97,5,0.833,0.436,0.97,exr:2 crs:1 sw:1 rmp:1 nts:1
+uniq:v3:tutorial,197,40,34,0.85,0.709,0.929,33,0.825,0.68,0.913,tut:32 sw:6 exm:1 exr:1
+uniq:v3:workshop,41,40,33,0.825,0.68,0.913,33,0.825,0.68,0.913,crs:21 tut:11 sw:7 bok:1
+uniqf:v3:awesome/repo,90,40,30,0.75,0.598,0.858,27,0.675,0.52,0.799,lst:24 sw:7 exm:3 oth:2 exr:2 tpl:1 nts:1
+uniqf:v3:awesome/topic,40,40,25,0.625,0.47,0.758,24,0.6,0.446,0.737,lst:23 sw:15 exm:1 tut:1
+uniqf:v3:beginner/repo,11,11,11,1.0,0.741,1.0,10,0.909,0.623,0.984,exr:3 tut:2 crs:2 bok:2 nts:1 exm:1
+uniqf:v3:beginner/topic,20,20,13,0.65,0.433,0.819,10,0.5,0.299,0.701,sw:6 exr:5 exm:3 hw:2 tut:1 tpl:1 crs:1 lst:1
+uniqf:v3:bootcamp/repo,2,2,2,1.0,0.342,1.0,2,1.0,0.342,1.0,crs:2
+uniqf:v3:bootcamp/topic,4,4,4,1.0,0.51,1.0,4,1.0,0.51,1.0,crs:3 lst:1
+uniqf:v3:cheatsheet/repo,14,14,13,0.929,0.685,0.987,13,0.929,0.685,0.987,chs:13 sw:1
+uniqf:v3:cookbook/repo,34,34,31,0.912,0.77,0.97,15,0.441,0.289,0.605,exm:16 bok:10 tut:3 nts:2 sw:2 tpl:1
+uniqf:v3:course/repo,26,26,24,0.923,0.759,0.979,24,0.923,0.759,0.979,crs:24 sw:2
+uniqf:v3:course/topic,34,34,26,0.765,0.6,0.876,26,0.765,0.6,0.876,crs:24 sw:8 lst:2
+uniqf:v3:example/repo,470,40,40,1.0,0.912,1.0,1,0.025,0.004,0.129,exm:39 bok:1
+uniqf:v3:example/topic,62,40,19,0.475,0.329,0.625,1,0.025,0.004,0.129,exm:18 sw:14 tpl:5 doc:2 tut:1
+uniqf:v3:exercise/repo,21,21,19,0.905,0.711,0.973,19,0.905,0.711,0.973,exr:15 tut:2 sw:1 tpl:1 bok:1 crs:1
+uniqf:v3:exercism/topic,13,13,13,1.0,0.772,1.0,13,1.0,0.772,1.0,exr:13
+uniqf:v3:handbook/repo,9,9,5,0.556,0.267,0.811,4,0.444,0.189,0.733,doc:3 bok:2 sw:1 exm:1 tut:1 exr:1
+uniqf:v3:interview/repo,7,7,5,0.714,0.359,0.918,5,0.714,0.359,0.918,int:4 sw:2 bok:1
+uniqf:v3:interview/topic,29,29,23,0.793,0.616,0.902,23,0.793,0.616,0.902,exr:11 int:7 sw:6 nts:3 lst:1 tut:1
+uniqf:v3:intro/repo,12,12,10,0.833,0.552,0.953,9,0.75,0.468,0.911,crs:4 tut:3 bok:2 tpl:1 exm:1 sw:1
+uniqf:v3:learn/repo,20,20,18,0.9,0.699,0.972,17,0.85,0.64,0.948,tut:9 bok:4 nts:2 sw:2 exm:1 crs:1 rmp:1
+uniqf:v3:roadmap/repo,4,4,4,1.0,0.51,1.0,4,1.0,0.51,1.0,rmp:4
+uniqf:v3:sample/repo,489,40,36,0.9,0.769,0.96,2,0.05,0.014,0.165,exm:34 tpl:3 crs:2 sw:1
+uniqf:v3:study/repo,6,6,5,0.833,0.436,0.97,5,0.833,0.436,0.97,exr:2 crs:1 sw:1 rmp:1 nts:1
+uniqf:v3:tutorial/repo,67,40,39,0.975,0.871,0.996,39,0.975,0.871,0.996,tut:39 sw:1
+uniqf:v3:tutorial/topic,100,40,25,0.625,0.47,0.758,21,0.525,0.375,0.671,tut:18 sw:12 exm:4 exr:1 crs:1 doc:1 tpl:1 lst:1 oth:1
+uniqf:v3:workshop/repo,41,40,33,0.825,0.68,0.913,33,0.825,0.68,0.913,crs:21 tut:11 sw:7 bok:1
+uniqf:V4:v4:101/repo,5,5,5,1.0,0.566,1.0,5,1.0,0.566,1.0,crs:3 tut:2
+uniqf:V4:v4:awesome/repo,146,40,35,0.875,0.739,0.945,32,0.8,0.652,0.895,lst:29 exm:3 sw:3 exr:2 tpl:1 oth:1 nts:1
+uniqf:V4:v4:beginner/repo,15,15,15,1.0,0.796,1.0,14,0.933,0.702,0.988,exr:4 tut:3 bok:3 crs:3 nts:1 exm:1
+uniqf:V4:v4:bootcamp/repo,2,2,2,1.0,0.342,1.0,2,1.0,0.342,1.0,crs:2
+uniqf:V4:v4:bootcamp/topic,4,4,4,1.0,0.51,1.0,4,1.0,0.51,1.0,crs:3 lst:1
+uniqf:V4:v4:cheatsheet/repo,14,14,13,0.929,0.685,0.987,13,0.929,0.685,0.987,chs:13 sw:1
+uniqf:V4:v4:cookbook/repo,37,37,34,0.919,0.787,0.972,16,0.432,0.287,0.591,exm:18 bok:10 tut:4 nts:2 sw:2 tpl:1
+uniqf:V4:v4:course/repo,29,29,27,0.931,0.78,0.981,27,0.931,0.78,0.981,crs:27 sw:2
+uniqf:V4:v4:course/topic,13,13,12,0.923,0.667,0.986,12,0.923,0.667,0.986,crs:12 sw:1
+uniqf:V4:v4:example/repo,554,40,40,1.0,0.912,1.0,1,0.025,0.004,0.129,exm:39 bok:1
+uniqf:V4:v4:exercise/repo,22,22,20,0.909,0.722,0.975,20,0.909,0.722,0.975,exr:15 tut:3 sw:1 tpl:1 bok:1 crs:1
+uniqf:V4:v4:exercism/topic,13,13,13,1.0,0.772,1.0,13,1.0,0.772,1.0,exr:13
+uniqf:V4:v4:interview/repo,7,7,5,0.714,0.359,0.918,5,0.714,0.359,0.918,int:4 sw:2 bok:1
+uniqf:V4:v4:interview/topic,20,20,18,0.9,0.699,0.972,18,0.9,0.699,0.972,exr:9 int:6 nts:2 sw:2 tut:1
+uniqf:V4:v4:intro/repo,13,13,11,0.846,0.578,0.957,10,0.769,0.497,0.918,crs:4 tut:4 bok:2 tpl:1 exm:1 sw:1
+uniqf:V4:v4:learn/repo,21,21,18,0.857,0.654,0.95,17,0.81,0.6,0.923,tut:9 bok:4 sw:3 nts:2 exm:1 crs:1 rmp:1
+uniqf:V4:v4:lecture/repo,10,10,8,0.8,0.49,0.943,8,0.8,0.49,0.943,crs:7 sw:2 hw:1
+uniqf:V4:v4:mslearn/repo,5,5,5,1.0,0.566,1.0,5,1.0,0.566,1.0,crs:5
+uniqf:V4:v4:roadmap/repo,4,4,4,1.0,0.51,1.0,4,1.0,0.51,1.0,rmp:4
+uniqf:V4:v4:sample/repo,498,40,36,0.9,0.769,0.96,2,0.05,0.014,0.165,exm:34 tpl:3 crs:2 sw:1
+uniqf:V4:v4:study/repo,7,7,6,0.857,0.487,0.974,6,0.857,0.487,0.974,exr:2 crs:1 int:1 sw:1 rmp:1 nts:1
+uniqf:V4:v4:tutorial/repo,101,40,39,0.975,0.871,0.996,39,0.975,0.871,0.996,tut:39 sw:1
+uniqf:V4:v4:tutorial/topic,27,27,14,0.519,0.34,0.693,10,0.37,0.215,0.558,sw:10 tut:9 exm:4 tpl:2 exr:1 doc:1
+uniqf:V4:v4:workshop/repo,43,40,33,0.825,0.68,0.913,33,0.825,0.68,0.913,crs:20 tut:12 sw:7 bok:1
+all:V4,1649,100,92,0.92,0.85,0.959,34,0.34,0.255,0.437,exm:58 lst:8 tut:8 crs:6 sw:5 exr:5 int:3 tpl:3 bok:2 nts:1 rmp:1
+uniqf:V4S:v4:101/repo,5,5,5,1.0,0.566,1.0,5,1.0,0.566,1.0,crs:3 tut:2
+uniqf:V4S:v4:awesome/repo,146,40,35,0.875,0.739,0.945,32,0.8,0.652,0.895,lst:29 exm:3 sw:3 exr:2 tpl:1 oth:1 nts:1
+uniqf:V4S:v4:beginner/repo,15,15,15,1.0,0.796,1.0,14,0.933,0.702,0.988,exr:4 tut:3 bok:3 crs:3 nts:1 exm:1
+uniqf:V4S:v4:bootcamp/repo,2,2,2,1.0,0.342,1.0,2,1.0,0.342,1.0,crs:2
+uniqf:V4S:v4:bootcamp/topic,4,4,4,1.0,0.51,1.0,4,1.0,0.51,1.0,crs:3 lst:1
+uniqf:V4S:v4:cheatsheet/repo,14,14,13,0.929,0.685,0.987,13,0.929,0.685,0.987,chs:13 sw:1
+uniqf:V4S:v4:course/repo,29,29,27,0.931,0.78,0.981,27,0.931,0.78,0.981,crs:27 sw:2
+uniqf:V4S:v4:course/topic,13,13,12,0.923,0.667,0.986,12,0.923,0.667,0.986,crs:12 sw:1
+uniqf:V4S:v4:exercise/repo,22,22,20,0.909,0.722,0.975,20,0.909,0.722,0.975,exr:15 tut:3 sw:1 tpl:1 bok:1 crs:1
+uniqf:V4S:v4:exercism/topic,13,13,13,1.0,0.772,1.0,13,1.0,0.772,1.0,exr:13
+uniqf:V4S:v4:interview/repo,7,7,5,0.714,0.359,0.918,5,0.714,0.359,0.918,int:4 sw:2 bok:1
+uniqf:V4S:v4:interview/topic,20,20,18,0.9,0.699,0.972,18,0.9,0.699,0.972,exr:9 int:6 nts:2 sw:2 tut:1
+uniqf:V4S:v4:intro/repo,17,17,14,0.824,0.59,0.938,12,0.706,0.469,0.867,tut:6 crs:4 bok:2 exm:2 sw:2 tpl:1
+uniqf:V4S:v4:learn/repo,21,21,18,0.857,0.654,0.95,17,0.81,0.6,0.923,tut:9 bok:4 sw:3 nts:2 exm:1 crs:1 rmp:1
+uniqf:V4S:v4:lecture/repo,10,10,8,0.8,0.49,0.943,8,0.8,0.49,0.943,crs:7 sw:2 hw:1
+uniqf:V4S:v4:mslearn/repo,5,5,5,1.0,0.566,1.0,5,1.0,0.566,1.0,crs:5
+uniqf:V4S:v4:roadmap/repo,4,4,4,1.0,0.51,1.0,4,1.0,0.51,1.0,rmp:4
+uniqf:V4S:v4:study/repo,7,7,6,0.857,0.487,0.974,6,0.857,0.487,0.974,exr:2 crs:1 int:1 sw:1 rmp:1 nts:1
+uniqf:V4S:v4:tutorial/repo,102,40,39,0.975,0.871,0.996,39,0.975,0.871,0.996,tut:39 sw:1
+uniqf:V4S:v4:tutorial/topic,28,28,15,0.536,0.358,0.705,10,0.357,0.207,0.542,sw:10 tut:9 exm:5 tpl:2 exr:1 doc:1
+uniqf:V4S:v4:workshop/repo,43,40,33,0.825,0.68,0.913,33,0.825,0.68,0.913,crs:20 tut:12 sw:7 bok:1
+all:V4S,560,100,88,0.88,0.802,0.93,83,0.83,0.745,0.891,tut:31 lst:18 crs:11 exr:10 sw:8 int:7 exm:5 nts:4 tpl:3 bok:1 rmp:1 oth:1
+uniqf:V5:v4:101/repo,5,5,5,1.0,0.566,1.0,5,1.0,0.566,1.0,crs:3 tut:2
+uniqf:V5:v4:awesome/repo,147,40,35,0.875,0.739,0.945,32,0.8,0.652,0.895,lst:29 exm:3 sw:3 exr:2 tpl:1 oth:1 nts:1
+uniqf:V5:v4:beginner/repo,15,15,15,1.0,0.796,1.0,14,0.933,0.702,0.988,exr:4 tut:3 bok:3 crs:3 nts:1 exm:1
+uniqf:V5:v4:bootcamp/repo,2,2,2,1.0,0.342,1.0,2,1.0,0.342,1.0,crs:2
+uniqf:V5:v4:bootcamp/topic,4,4,4,1.0,0.51,1.0,4,1.0,0.51,1.0,crs:3 lst:1
+uniqf:V5:v4:cheatsheet/repo,14,14,13,0.929,0.685,0.987,13,0.929,0.685,0.987,chs:13 sw:1
+uniqf:V5:v4:cookbook/repo,37,37,34,0.919,0.787,0.972,16,0.432,0.287,0.591,exm:18 bok:10 tut:4 nts:2 sw:2 tpl:1
+uniqf:V5:v4:course/repo,29,29,27,0.931,0.78,0.981,27,0.931,0.78,0.981,crs:27 sw:2
+uniqf:V5:v4:course/topic,13,13,12,0.923,0.667,0.986,12,0.923,0.667,0.986,crs:12 sw:1
+uniqf:V5:v4:example/repo,555,40,40,1.0,0.912,1.0,1,0.025,0.004,0.129,exm:39 bok:1
+uniqf:V5:v4:exercise/repo,22,22,20,0.909,0.722,0.975,20,0.909,0.722,0.975,exr:15 tut:3 sw:1 tpl:1 bok:1 crs:1
+uniqf:V5:v4:exercism/topic,13,13,13,1.0,0.772,1.0,13,1.0,0.772,1.0,exr:13
+uniqf:V5:v4:interview/repo,7,7,5,0.714,0.359,0.918,5,0.714,0.359,0.918,int:4 sw:2 bok:1
+uniqf:V5:v4:interview/topic,20,20,18,0.9,0.699,0.972,18,0.9,0.699,0.972,exr:9 int:6 nts:2 sw:2 tut:1
+uniqf:V5:v4:intro/repo,13,13,11,0.846,0.578,0.957,10,0.769,0.497,0.918,crs:4 tut:4 bok:2 tpl:1 exm:1 sw:1
+uniqf:V5:v4:learn/repo,22,22,19,0.864,0.667,0.953,18,0.818,0.615,0.927,tut:10 bok:4 sw:3 nts:2 exm:1 crs:1 rmp:1
+uniqf:V5:v4:lecture/repo,10,10,8,0.8,0.49,0.943,8,0.8,0.49,0.943,crs:7 sw:2 hw:1
+uniqf:V5:v4:mslearn/repo,5,5,5,1.0,0.566,1.0,5,1.0,0.566,1.0,crs:5
+uniqf:V5:v4:roadmap/repo,4,4,4,1.0,0.51,1.0,4,1.0,0.51,1.0,rmp:4
+uniqf:V5:v4:sample/repo,498,40,36,0.9,0.769,0.96,2,0.05,0.014,0.165,exm:34 tpl:3 crs:2 sw:1
+uniqf:V5:v4:study/repo,7,7,6,0.857,0.487,0.974,6,0.857,0.487,0.974,exr:2 crs:1 int:1 sw:1 rmp:1 nts:1
+uniqf:V5:v4:tutorial/repo,103,40,39,0.975,0.871,0.996,39,0.975,0.871,0.996,tut:39 sw:1
+uniqf:V5:v4:workshop/repo,43,40,33,0.825,0.68,0.913,33,0.825,0.68,0.913,crs:20 tut:12 sw:7 bok:1
+all:V5,1622,100,92,0.92,0.85,0.959,33,0.33,0.246,0.427,exm:59 lst:8 tut:7 crs:6 sw:5 exr:5 int:3 tpl:3 bok:2 nts:1 rmp:1
+uniqf:V5S:v4:101/repo,5,5,5,1.0,0.566,1.0,5,1.0,0.566,1.0,crs:3 tut:2
+uniqf:V5S:v4:awesome/repo,147,40,35,0.875,0.739,0.945,32,0.8,0.652,0.895,lst:29 exm:3 sw:3 exr:2 tpl:1 oth:1 nts:1
+uniqf:V5S:v4:beginner/repo,15,15,15,1.0,0.796,1.0,14,0.933,0.702,0.988,exr:4 tut:3 bok:3 crs:3 nts:1 exm:1
+uniqf:V5S:v4:bootcamp/repo,2,2,2,1.0,0.342,1.0,2,1.0,0.342,1.0,crs:2
+uniqf:V5S:v4:bootcamp/topic,4,4,4,1.0,0.51,1.0,4,1.0,0.51,1.0,crs:3 lst:1
+uniqf:V5S:v4:cheatsheet/repo,14,14,13,0.929,0.685,0.987,13,0.929,0.685,0.987,chs:13 sw:1
+uniqf:V5S:v4:course/repo,29,29,27,0.931,0.78,0.981,27,0.931,0.78,0.981,crs:27 sw:2
+uniqf:V5S:v4:course/topic,13,13,12,0.923,0.667,0.986,12,0.923,0.667,0.986,crs:12 sw:1
+uniqf:V5S:v4:exercise/repo,22,22,20,0.909,0.722,0.975,20,0.909,0.722,0.975,exr:15 tut:3 sw:1 tpl:1 bok:1 crs:1
+uniqf:V5S:v4:exercism/topic,13,13,13,1.0,0.772,1.0,13,1.0,0.772,1.0,exr:13
+uniqf:V5S:v4:interview/repo,7,7,5,0.714,0.359,0.918,5,0.714,0.359,0.918,int:4 sw:2 bok:1
+uniqf:V5S:v4:interview/topic,20,20,18,0.9,0.699,0.972,18,0.9,0.699,0.972,exr:9 int:6 nts:2 sw:2 tut:1
+uniqf:V5S:v4:intro/repo,17,17,14,0.824,0.59,0.938,12,0.706,0.469,0.867,tut:6 crs:4 bok:2 exm:2 sw:2 tpl:1
+uniqf:V5S:v4:learn/repo,22,22,19,0.864,0.667,0.953,18,0.818,0.615,0.927,tut:10 bok:4 sw:3 nts:2 exm:1 crs:1 rmp:1
+uniqf:V5S:v4:lecture/repo,10,10,8,0.8,0.49,0.943,8,0.8,0.49,0.943,crs:7 sw:2 hw:1
+uniqf:V5S:v4:mslearn/repo,5,5,5,1.0,0.566,1.0,5,1.0,0.566,1.0,crs:5
+uniqf:V5S:v4:roadmap/repo,4,4,4,1.0,0.51,1.0,4,1.0,0.51,1.0,rmp:4
+uniqf:V5S:v4:study/repo,7,7,6,0.857,0.487,0.974,6,0.857,0.487,0.974,exr:2 crs:1 int:1 sw:1 rmp:1 nts:1
+uniqf:V5S:v4:tutorial/repo,105,40,39,0.975,0.871,0.996,38,0.95,0.835,0.986,tut:38 exm:1 sw:1
+uniqf:V5S:v4:workshop/repo,43,40,33,0.825,0.68,0.913,33,0.825,0.68,0.913,crs:20 tut:12 sw:7 bok:1
+all:V5S,532,100,89,0.89,0.814,0.937,85,0.85,0.767,0.907,tut:29 lst:21 crs:12 exr:9 int:8 sw:7 exm:4 nts:4 tpl:3 bok:1 rmp:1 oth:1
+all:V0,2182,100,62,0.62,0.522,0.709,30,0.3,0.219,0.396,sw:35 exm:32 lst:9 tut:8 exr:4 crs:3 int:3 tpl:3 nts:1 chs:1 bok:1
+all:V3,1877,100,88,0.88,0.802,0.93,32,0.32,0.237,0.417,exm:56 lst:8 sw:8 tut:8 exr:7 tpl:4 crs:3 int:3 bok:2 nts:1
+rand:kept:V3,138079,200,4,0.02,0.008,0.05,1,0.005,0.001,0.028,sw:195 exm:3 nts:1 oth:1

@@ -1,0 +1,4 @@
+role,model,service_tier,billed_as,tokens,usd_per_million,usd,price_url,price_read,note
+classifying_model,deepseek/deepseek-v4.1-flash-1017,morph/fp8,uncached_input,337405,,,,,"model_prices.csv has no price for deepseek/deepseek-v4.1-flash-1017 on morph/fp8, and the total leaves the tokens out."
+classifying_model,deepseek/deepseek-v4.1-flash-1017,morph/fp8,cached_input,153088,,,,,"model_prices.csv has no price for deepseek/deepseek-v4.1-flash-1017 on morph/fp8, and the total leaves the tokens out."
+classifying_model,deepseek/deepseek-v4.1-flash-1017,morph/fp8,output,30489,,,,,"model_prices.csv has no price for deepseek/deepseek-v4.1-flash-1017 on morph/fp8, and the total leaves the tokens out."

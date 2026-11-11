@@ -1,0 +1,12 @@
+{
+  "evaluation_id": "2026-10-28T214115Z",
+  "parameters": "827a98facb7b303d22a3147047a13f4f9e05bb2b300154a4759394664c91df0c",
+  "reference_model": "gpt-6-luna",
+  "second_model": "gpt-6.1-sol",
+  "disagreements": 24,
+  "agreed": 1016,
+  "agreements": 200,
+  "seed": 2714123967,
+  "forks": "",
+  "reviewed_agreements": ""
+}

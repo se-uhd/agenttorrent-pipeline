@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=80"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentcontext"
+version = "2.0.0"
+description = "The collection stage of the agentcontext dataset pipeline, as one package"
+requires-python = ">=3.14"
+
+# No dependencies here: every package is pinned in the steps' requirements.txt files and locked
+# under locks/, and test_tech_stack checks both. The project file exists so that the package is
+# importable from anywhere after its editable install, in .venv, in CI and in the image. The
+# editable install builds with the setuptools of locks/build.txt (--no-build-isolation).
+
+[tool.setuptools.packages.find]
+include = ["agentcontext*"]

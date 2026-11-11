@@ -1,0 +1,206 @@
+{
+  "workflow_url": "https://github.com/se-uhd/ai-config-pipeline/actions/runs/41366302992",
+  "workflow_run": 41366302992,
+  "ci_run_url": "https://github.com/se-uhd/ai-config-pipeline/actions/runs/41366283755",
+  "source_commit": "80b321b911ee503685e6a46f1e2b5799f7c9f575",
+  "source_branch": "main",
+  "platform": "linux/amd64",
+  "built_at": "2026-11-02T00:17:36Z",
+  "python": "3.14",
+  "data_root_revision": 2,
+  "image_tarball_sha256": "0b50f14565d910cd4f67d10f9cf1582e6fb7c33bc23d64e067df14b6219342c2",
+  "nas_bundle_sha256": "39dae1ab92fcf768a657ce85847a744f69d9a5446e135aa455cc9157049bce8e",
+  "image_id": "sha256:2c6be16cb179878623b4b5bb3dc7a654ffed933db42b33a0658bc0699e88d1fe",
+  "checks": {
+    "build_info_matches_source_commit": true,
+    "image_checksum_matches_build_info": true,
+    "architecture_matches_nas": true,
+    "bundle_files_equal_source_commit": true,
+    "bundle_has_no_credentials_or_data": true,
+    "image_load_preserves_tag": true,
+    "intended_stages_listed": true,
+    "ci_on_source_commit_passed": true,
+    "full_local_verification_passed": true,
+    "subsample_run_failed_steps_none": true,
+    "release_and_analysis_over_the_last_handover_passed": true
+  },
+  "full_verification": {
+    "report": "verification-80b321b9.txt",
+    "report_sha256": "bb52014f09d59b49a86ec14efb5001a5e9ab24c5193830cf347fd9df91e1cfac",
+    "tests": 6365,
+    "skipped": 15,
+    "reproduced_scripts": 21
+  },
+  "subsample_run": {
+    "source_commit": "80b321b911ee503685e6a46f1e2b5799f7c9f575",
+    "run_list": "subsample-run-list-80b321b9.csv",
+    "repositories": 110,
+    "without_a_mirror": 1,
+    "mirrors_at_the_collected_head": true,
+    "compared_with": "the tracked outputs of the same repositories (data/collection/output at the source commit), scan times left out",
+    "csvs_identical": [
+      "commands.csv",
+      "excluded.csv",
+      "hooks.csv",
+      "identity-labels.csv",
+      "identity-pilot.csv",
+      "identity-readings.csv",
+      "imports.csv",
+      "lsp.csv",
+      "mcp.csv",
+      "other.csv",
+      "planning-documents.csv",
+      "plugins.csv",
+      "repo-sizes.csv",
+      "repos.csv",
+      "rules.csv",
+      "settings.csv"
+    ],
+    "csvs_differing": {
+      "ai_commits-repos.csv": {
+        "run_rows": 110,
+        "tracked_rows": 110,
+        "only_in_the_run": 3,
+        "only_tracked": 3,
+        "repositories": {
+          "theoephraim/node-google-spreadsheet": {
+            "run": 1,
+            "tracked": 1,
+            "reason": "the history fetch that the subsample run makes fail on purpose"
+          },
+          "upstash/context7": {
+            "run": 1,
+            "tracked": 1,
+            "reason": "files fetched into the working copy after the collection; docs/dataset.md names the repository among those with missing commits, and the run collected the files and read the full history"
+          },
+          "wonderwhy-er/DesktopCommanderMCP": {
+            "run": 1,
+            "tracked": 1,
+            "reason": "files fetched into the working copy after the collection; docs/dataset.md names the repository among those with missing commits, and the run collected the files and read the full history"
+          }
+        }
+      },
+      "all_ai_commits-unmatched.csv": {
+        "run_rows": 3556,
+        "tracked_rows": 151916,
+        "only_in_the_run": 2450,
+        "only_tracked": 150810,
+        "repositories": {
+          "?": {
+            "run": 2450,
+            "tracked": 150810,
+            "reason": "a report over the whole collection without a repository column, which the subsample run writes over its own repositories"
+          }
+        }
+      },
+      "all_ai_commits.csv": {
+        "run_rows": 35784,
+        "tracked_rows": 35458,
+        "only_in_the_run": 333,
+        "only_tracked": 7,
+        "repositories": {
+          "theoephraim/node-google-spreadsheet": {
+            "tracked": 7,
+            "reason": "the history fetch that the subsample run makes fail on purpose"
+          },
+          "upstash/context7": {
+            "run": 25,
+            "reason": "files fetched into the working copy after the collection; docs/dataset.md names the repository among those with missing commits, and the run collected the files and read the full history"
+          },
+          "wonderwhy-er/DesktopCommanderMCP": {
+            "run": 308,
+            "reason": "files fetched into the working copy after the collection; docs/dataset.md names the repository among those with missing commits, and the run collected the files and read the full history"
+          }
+        }
+      },
+      "consistency-report.csv": {
+        "run_rows": 14,
+        "tracked_rows": 14,
+        "only_in_the_run": 14,
+        "only_tracked": 14,
+        "repositories": {
+          "?": {
+            "run": 14,
+            "tracked": 14,
+            "reason": "a report over the whole collection without a repository column, which the subsample run writes over its own repositories"
+          }
+        }
+      },
+      "context-files.csv": {
+        "run_rows": 590,
+        "tracked_rows": 590,
+        "only_in_the_run": 2,
+        "only_tracked": 2,
+        "repositories": {
+          "elsa-workflows/elsa-core": {
+            "run": 1,
+            "tracked": 1,
+            "reason": "a path with a commit older than its recorded creation commit, which a new clone dates from that commit (code_versions path_added_again; docs/dataset.md)"
+          },
+          "rivet-dev/rivet": {
+            "run": 1,
+            "tracked": 1,
+            "reason": "a path with a commit older than its recorded creation commit, which a new clone dates from that commit (code_versions path_added_again; docs/dataset.md)"
+          }
+        }
+      },
+      "other_ai_commits.csv": {
+        "run_rows": 2310,
+        "tracked_rows": 2305,
+        "only_in_the_run": 5,
+        "only_tracked": 0,
+        "repositories": {
+          "upstash/context7": {
+            "run": 1,
+            "reason": "files fetched into the working copy after the collection; docs/dataset.md names the repository among those with missing commits, and the run collected the files and read the full history"
+          },
+          "wonderwhy-er/DesktopCommanderMCP": {
+            "run": 4,
+            "reason": "files fetched into the working copy after the collection; docs/dataset.md names the repository among those with missing commits, and the run collected the files and read the full history"
+          }
+        }
+      },
+      "skills.csv": {
+        "run_rows": 1923,
+        "tracked_rows": 1923,
+        "only_in_the_run": 2,
+        "only_tracked": 2,
+        "repositories": {
+          "ecomfe/tempad-dev": {
+            "run": 1,
+            "tracked": 1,
+            "reason": "a path with a commit older than its recorded creation commit, which a new clone dates from that commit (code_versions path_added_again; docs/dataset.md)"
+          },
+          "stripe/ai": {
+            "run": 1,
+            "tracked": 1,
+            "reason": "a path with a commit older than its recorded creation commit, which a new clone dates from that commit (code_versions path_added_again; docs/dataset.md)"
+          }
+        }
+      },
+      "subagents.csv": {
+        "run_rows": 388,
+        "tracked_rows": 388,
+        "only_in_the_run": 1,
+        "only_tracked": 1,
+        "repositories": {
+          "elsa-workflows/elsa-core": {
+            "run": 1,
+            "tracked": 1,
+            "reason": "a path with a commit older than its recorded creation commit, which a new clone dates from that commit (code_versions path_added_again; docs/dataset.md)"
+          }
+        }
+      }
+    },
+    "csvs_only_in_the_run": [
+      "all_ai_commits-mentions.csv",
+      "all_ai_commits-validated.csv",
+      "deletions.csv",
+      "other_ai_commits-validated.csv",
+      "unmatched-commits.csv",
+      "unmatched-paths.csv"
+    ],
+    "failed_steps": []
+  },
+  "stage_list": "INFO entrypoint: Running the image agentcontext-pipeline (commit 80b321b911ee503685e6a46f1e2b5799f7c9f575, built 2026-11-02T00:17:36Z, python 3.14). Its data root revision is 2.\nINFO runner: The stage sampling runs these steps in order.\nINFO runner:   ghs_download runs /usr/local/bin/python3 1_sampling/1_download_ghs.py (data directory sampling)\nINFO runner:   github_query runs /usr/local/bin/python3 1_sampling/2_query_github.py (data directory sampling)\nINFO runner:   retrieval_comparison runs /usr/local/bin/python3 1_sampling/3_compare_retrievals.py (data directory sampling)\nINFO runner:   repository_filtering runs /usr/local/bin/python3 1_sampling/4_filter_ghs.py (data directory sampling)\nINFO runner: The stage classification runs these steps in order.\nINFO runner:   repository_labeling runs /usr/local/bin/python3 2_classification/1_classify_repos.py (data directory classification)\nINFO runner:   engineered_project_selection runs python3 -m agentcontext.steps.engineered_project_selection\nINFO runner: The stage collection runs these steps in order.\nINFO runner:   repository_cloning runs /usr/local/bin/python3 -m agentcontext.steps.repository_cloning --clone-dir /app/data/collection/_scratch\nINFO runner:   commit_reclassification runs /usr/local/bin/python3 -m agentcontext.steps.commit_reclassification\nINFO runner:   collected_file_cleanup runs python3 -m agentcontext.steps.collected_file_cleanup\nINFO runner:   detection runs /usr/local/bin/python3 -m agentcontext.steps.detection\nINFO runner:   file_history runs /usr/local/bin/python3 -m agentcontext.steps.file_history --clone-dir /app/data/collection/_scratch\nINFO runner:   import_detection runs python3 -m agentcontext.steps.import_detection\nINFO runner:   output_cross_check runs python3 -m agentcontext.steps.output_cross_check\nINFO runner:   unmatched_paths_report runs python3 -m agentcontext.checks.unmatched paths --min-repos 2 --out output/unmatched-paths.csv\nINFO runner:   deleted_files_report runs python3 -m agentcontext.checks.deletions --report-only --out output/deletions.csv\nINFO runner:   collection_summary runs python3 -m agentcontext.checks.snapshot write\nINFO runner:   commit_attribution_validation runs python3 -m agentcontext.checks.commits -i output/all_ai_commits.csv --other-input output/other_ai_commits.csv\nINFO runner:   unmatched_commits_report runs python3 -m agentcontext.checks.unmatched commits --unmatched-csv output/all_ai_commits-unmatched.csv --out output/unmatched-commits.csv\nINFO runner: The stage publication runs these steps in order.\nINFO runner:   collected_files_archive runs python3 -m agentcontext.steps.collected_files_archive\nINFO runner:   release runs python3 -m agentcontext.steps.release\nINFO runner: The stage analysis runs these steps in order.\nINFO runner:   rq2_config_cooccurrence runs /usr/local/bin/python3 4_data-analysis/rq2/config_cooccurrence.py (data directory analysis)\nINFO runner:   rq2_config_mechanism_upset runs /usr/local/bin/python3 4_data-analysis/rq2/config_mechanism_upset.py (data directory analysis)\nINFO runner:   rq2_config_tool_heatmap runs /usr/local/bin/python3 4_data-analysis/rq2/config_tool_heatmap.py (data directory analysis)\nINFO runner:   rq2_content_quality runs /usr/local/bin/python3 4_data-analysis/rq2/content_quality.py (data directory analysis)\nINFO runner:   rq2_language_ranking_all runs /usr/local/bin/python3 4_data-analysis/rq2/language_ranking_all.py (data directory analysis)\nINFO runner:   rq2_language_tool_association runs /usr/local/bin/python3 4_data-analysis/rq2/language_tool_association.py (data directory analysis)\nINFO runner:   rq2_repo_metadata_comparison runs /usr/local/bin/python3 4_data-analysis/rq2/repo_metadata_comparison.py (data directory analysis)\nINFO runner:   rq2_tool_cooccurrence runs /usr/local/bin/python3 4_data-analysis/rq2/tool_cooccurrence.py (data directory analysis)\nINFO runner:   rq2_tool_count_distribution runs /usr/local/bin/python3 4_data-analysis/rq2/tool_count_distribution.py (data directory analysis)\nINFO runner:   rq2_upset_plot runs /usr/local/bin/python3 4_data-analysis/rq2/upset_plot.py (data directory analysis)\nINFO runner:   rq2_venn_diagram runs /usr/local/bin/python3 4_data-analysis/rq2/venn_diagram.py (data directory analysis)\nINFO runner:   rq3_adoption_timeline runs /usr/local/bin/python3 4_data-analysis/rq3/adoption_timeline.py (data directory analysis)\nINFO runner:   rq3_cooccurrence_analysis runs /usr/local/bin/python3 4_data-analysis/rq3/cooccurrence_analysis.py (data directory analysis)\nINFO runner:   rq3_count_distribution runs /usr/local/bin/python3 4_data-analysis/rq3/count_distribution.py (data directory analysis)\nINFO runner:   dataset_artifact_distribution runs /usr/local/bin/python3 4_data-analysis/dataset/artifact_distribution.py (data directory analysis)\nINFO runner:   dataset_tool_adoption runs /usr/local/bin/python3 4_data-analysis/dataset/tool_adoption.py (data directory analysis)\nINFO runner:   dataset_monthly_ai_commit_volume runs /usr/local/bin/python3 4_data-analysis/dataset/monthly_ai_commit_volume.py (data directory analysis)\nINFO runner:   dataset_commit_message_first_words runs /usr/local/bin/python3 4_data-analysis/dataset/commit_message_first_words.py (data directory analysis)\nINFO runner:   dataset_filter_steps_table runs /usr/local/bin/python3 4_data-analysis/dataset/filter_steps_table.py (data directory analysis)\nINFO runner:   dataset_planning_documents runs /usr/local/bin/python3 4_data-analysis/dataset/planning_documents.py (data directory analysis)\nINFO runner:   dataset_imports runs /usr/local/bin/python3 4_data-analysis/dataset/imports.py (data directory analysis)\nINFO runner:   reproduction_check runs /usr/local/bin/python3 4_data-analysis/check_reproduction.py --skip-missing --reproduce-only (data directory analysis)\n"
+}

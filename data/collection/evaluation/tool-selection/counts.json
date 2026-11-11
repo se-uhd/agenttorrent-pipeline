@@ -1,0 +1,339 @@
+{
+  "signatures": "signatures.csv",
+  "signatures_sha256": "920c0382e3286b9f5319daffd61e3f7dd2a24a6d432b4fd23d7093dd14bfc7b2",
+  "file_lists": 36461,
+  "repositories": {
+    "Claude Code": 4589,
+    "GitHub Copilot": 1929,
+    "Cursor": 629,
+    "Gemini": 414,
+    "OpenAI Codex": 194,
+    "OpenCode": 115,
+    "Windsurf (Devin Desktop)": 45,
+    "Junie": 29,
+    "Cline": 69,
+    "Pi": 26,
+    "Kiro": 31,
+    "JetBrains AI Assistant": 14,
+    "Aider": 13,
+    "IBM Bob": 14,
+    "Roo Code": 7,
+    "Qwen Code": 8,
+    "Warp": 8,
+    "Kilo Code": 7,
+    "Continue": 6,
+    "Augment": 4,
+    "OpenHands": 4,
+    "Amazon Q Developer": 3,
+    "CodeBuddy": 3,
+    "Goose": 3,
+    "Zed": 3,
+    "Amp": 0,
+    "Crush": 0,
+    "Factory Droid": 0,
+    "iFlow CLI": 1,
+    "Qoder": 0,
+    "Lingma": 0,
+    "Mistral Vibe": 1,
+    "Tabnine": 0,
+    "Replit Agent": 1,
+    "Firebase Studio": 0,
+    "Ona": 3,
+    "CodeRabbit": 447,
+    "Greptile": 29,
+    "Sourcery": 26,
+    "Qodo": 13,
+    "Bito": 13,
+    "Trae": 4,
+    "Command Code": 4
+  },
+  "owners": {
+    "Claude Code": 3386,
+    "GitHub Copilot": 1375,
+    "Cursor": 509,
+    "Gemini": 308,
+    "OpenAI Codex": 182,
+    "OpenCode": 107,
+    "Windsurf (Devin Desktop)": 41,
+    "Junie": 28,
+    "Cline": 24,
+    "Pi": 22,
+    "Kiro": 20,
+    "JetBrains AI Assistant": 14,
+    "Aider": 13,
+    "IBM Bob": 8,
+    "Roo Code": 6,
+    "Qwen Code": 8,
+    "Warp": 8,
+    "Kilo Code": 7,
+    "Continue": 6,
+    "Augment": 4,
+    "OpenHands": 4,
+    "Amazon Q Developer": 2,
+    "CodeBuddy": 3,
+    "Goose": 3,
+    "Zed": 3,
+    "Amp": 0,
+    "Crush": 0,
+    "Factory Droid": 0,
+    "iFlow CLI": 1,
+    "Qoder": 0,
+    "Lingma": 0,
+    "Mistral Vibe": 1,
+    "Tabnine": 0,
+    "Replit Agent": 1,
+    "Firebase Studio": 0,
+    "Ona": 3,
+    "CodeRabbit": 308,
+    "Greptile": 21,
+    "Sourcery": 20,
+    "Qodo": 12,
+    "Bito": 1,
+    "Trae": 3,
+    "Command Code": 4
+  },
+  "cuts": {
+    "order": [
+      "Claude Code",
+      "GitHub Copilot",
+      "Cursor",
+      "Gemini",
+      "OpenAI Codex",
+      "OpenCode",
+      "Windsurf (Devin Desktop)",
+      "Junie",
+      "Cline",
+      "Pi",
+      "Kiro",
+      "JetBrains AI Assistant",
+      "Aider",
+      "IBM Bob",
+      "Qwen Code",
+      "Warp",
+      "Kilo Code",
+      "Continue",
+      "Roo Code",
+      "Augment",
+      "Command Code",
+      "OpenHands",
+      "CodeBuddy",
+      "Goose",
+      "Ona",
+      "Trae",
+      "Zed",
+      "Amazon Q Developer",
+      "Mistral Vibe",
+      "Replit Agent",
+      "iFlow CLI"
+    ],
+    "steps": [
+      {
+        "above": "Claude Code",
+        "below": "GitHub Copilot",
+        "ratio": 2.46
+      },
+      {
+        "above": "GitHub Copilot",
+        "below": "Cursor",
+        "ratio": 2.7
+      },
+      {
+        "above": "Cursor",
+        "below": "Gemini",
+        "ratio": 1.65
+      },
+      {
+        "above": "Gemini",
+        "below": "OpenAI Codex",
+        "ratio": 1.69
+      },
+      {
+        "above": "OpenAI Codex",
+        "below": "OpenCode",
+        "ratio": 1.7
+      },
+      {
+        "above": "OpenCode",
+        "below": "Windsurf (Devin Desktop)",
+        "ratio": 2.61
+      },
+      {
+        "above": "Windsurf (Devin Desktop)",
+        "below": "Junie",
+        "ratio": 1.46
+      },
+      {
+        "above": "Junie",
+        "below": "Cline",
+        "ratio": 1.17
+      },
+      {
+        "above": "Cline",
+        "below": "Pi",
+        "ratio": 1.09
+      },
+      {
+        "above": "Pi",
+        "below": "Kiro",
+        "ratio": 1.1
+      },
+      {
+        "above": "Kiro",
+        "below": "JetBrains AI Assistant",
+        "ratio": 1.43
+      },
+      {
+        "above": "JetBrains AI Assistant",
+        "below": "Aider",
+        "ratio": 1.08
+      },
+      {
+        "above": "Aider",
+        "below": "IBM Bob",
+        "ratio": 1.62
+      },
+      {
+        "above": "IBM Bob",
+        "below": "Qwen Code",
+        "ratio": 1.0
+      },
+      {
+        "above": "Qwen Code",
+        "below": "Warp",
+        "ratio": 1.0
+      },
+      {
+        "above": "Warp",
+        "below": "Kilo Code",
+        "ratio": 1.14
+      },
+      {
+        "above": "Kilo Code",
+        "below": "Continue",
+        "ratio": 1.17
+      },
+      {
+        "above": "Continue",
+        "below": "Roo Code",
+        "ratio": 1.0
+      },
+      {
+        "above": "Roo Code",
+        "below": "Augment",
+        "ratio": 1.5
+      },
+      {
+        "above": "Augment",
+        "below": "Command Code",
+        "ratio": 1.0
+      },
+      {
+        "above": "Command Code",
+        "below": "OpenHands",
+        "ratio": 1.0
+      },
+      {
+        "above": "OpenHands",
+        "below": "CodeBuddy",
+        "ratio": 1.33
+      },
+      {
+        "above": "CodeBuddy",
+        "below": "Goose",
+        "ratio": 1.0
+      },
+      {
+        "above": "Goose",
+        "below": "Ona",
+        "ratio": 1.0
+      },
+      {
+        "above": "Ona",
+        "below": "Trae",
+        "ratio": 1.0
+      },
+      {
+        "above": "Trae",
+        "below": "Zed",
+        "ratio": 1.0
+      },
+      {
+        "above": "Zed",
+        "below": "Amazon Q Developer",
+        "ratio": 1.5
+      },
+      {
+        "above": "Amazon Q Developer",
+        "below": "Mistral Vibe",
+        "ratio": 2.0
+      },
+      {
+        "above": "Mistral Vibe",
+        "below": "Replit Agent",
+        "ratio": 1.0
+      },
+      {
+        "above": "Replit Agent",
+        "below": "iFlow CLI",
+        "ratio": 1.0
+      }
+    ],
+    "largest_step_below_the_survey": {
+      "above": "OpenCode",
+      "below": "Windsurf (Devin Desktop)",
+      "ratio": 2.61
+    },
+    "added": [
+      "OpenCode"
+    ],
+    "head_tail_breaks": [
+      {
+        "mean": 196.9,
+        "tools": 31,
+        "head": [
+          "Claude Code",
+          "GitHub Copilot",
+          "Cursor",
+          "Gemini"
+        ]
+      },
+      {
+        "mean": 1394.5,
+        "tools": 4,
+        "head": [
+          "Claude Code"
+        ]
+      }
+    ],
+    "head_tail_breaks_outside_the_survey": [
+      {
+        "mean": 13.2,
+        "tools": 26,
+        "head": [
+          "OpenCode",
+          "Windsurf (Devin Desktop)",
+          "Junie",
+          "Cline",
+          "Pi",
+          "Kiro",
+          "JetBrains AI Assistant"
+        ]
+      },
+      {
+        "mean": 36.6,
+        "tools": 7,
+        "head": [
+          "OpenCode",
+          "Windsurf (Devin Desktop)"
+        ]
+      },
+      {
+        "mean": 74.0,
+        "tools": 2,
+        "head": [
+          "OpenCode"
+        ]
+      }
+    ]
+  }
+}

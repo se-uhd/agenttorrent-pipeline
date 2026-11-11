@@ -1,0 +1,39 @@
+{
+  "evaluation": "2026-10-30T222453Z",
+  "repositories": 381,
+  "labeled_by_all": 381,
+  "label_counts": {
+    "luna": {
+      "true": 343,
+      "false": 38
+    },
+    "sol": {
+      "true": 339,
+      "false": 41,
+      "unclear": 1
+    },
+    "deepseek": {
+      "true": 346,
+      "false": 35
+    }
+  },
+  "pairs": {
+    "luna+sol": {
+      "agreement": 0.9738,
+      "kappa": 0.8606,
+      "inclusion_agreement": 0.9738
+    },
+    "luna+deepseek": {
+      "agreement": 0.9764,
+      "kappa": 0.8637,
+      "inclusion_agreement": 0.9764
+    },
+    "sol+deepseek": {
+      "agreement": 0.9659,
+      "kappa": 0.8126,
+      "inclusion_agreement": 0.9659
+    }
+  },
+  "all_three_agree": 365,
+  "disagreements": 16
+}

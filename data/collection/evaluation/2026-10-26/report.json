@@ -1,0 +1,971 @@
+{
+  "path_precision": {
+    "overall": {
+      "estimate": 0.9961,
+      "low": 0.941,
+      "high": 1.0,
+      "items": 763
+    },
+    "per_mechanism": {
+      "commands": {
+        "estimate": 0.9964,
+        "low": 0.8957,
+        "high": 1.0
+      },
+      "context_file": {
+        "estimate": 1.0,
+        "low": 0.8869,
+        "high": 1.0
+      },
+      "hooks": {
+        "estimate": 1.0,
+        "low": 0.8598,
+        "high": 1.0
+      },
+      "lsp": {
+        "estimate": 1.0,
+        "low": 0.8943,
+        "high": 1.0
+      },
+      "mcp": {
+        "estimate": 0.9648,
+        "low": 0.8743,
+        "high": 1.0
+      },
+      "other": {
+        "estimate": 1.0,
+        "low": 0.9085,
+        "high": 1.0
+      },
+      "plugins": {
+        "estimate": 0.9917,
+        "low": 0.8769,
+        "high": 1.0
+      },
+      "rules": {
+        "estimate": 1.0,
+        "low": 0.8727,
+        "high": 1.0
+      },
+      "settings": {
+        "estimate": 1.0,
+        "low": 0.8806,
+        "high": 1.0
+      },
+      "skills": {
+        "estimate": 0.9971,
+        "low": 0.8828,
+        "high": 1.0
+      },
+      "subagents": {
+        "estimate": 0.9316,
+        "low": 0.8188,
+        "high": 1.0
+      }
+    },
+    "per_cell": {
+      "any/context_file": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "any/mcp": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "any/other": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "any/plugins": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "any/skills": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude/context_file": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude/hooks": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude/other": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude/plugins": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude/rules": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude/settings": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude/skills": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude/subagents": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude|codex/hooks": {
+        "successes": 2,
+        "n": 2,
+        "estimate": 1.0,
+        "low": 0.3424,
+        "high": 1.0
+      },
+      "claude|codex/skills": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude|codex|copilot/mcp": {
+        "successes": 4,
+        "n": 4,
+        "estimate": 1.0,
+        "low": 0.5101,
+        "high": 1.0
+      },
+      "claude|codex|copilot/other": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "claude|codex|copilot/skills": {
+        "successes": 7,
+        "n": 7,
+        "estimate": 1.0,
+        "low": 0.6457,
+        "high": 1.0
+      },
+      "claude|codex|copilot|cursor/other": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "claude|codex|copilot|cursor/skills": {
+        "successes": 3,
+        "n": 3,
+        "estimate": 1.0,
+        "low": 0.4385,
+        "high": 1.0
+      },
+      "claude|codex|cursor/skills": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude|codex|cursor|opencode/other": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "claude|codex|cursor|opencode/skills": {
+        "successes": 8,
+        "n": 8,
+        "estimate": 1.0,
+        "low": 0.6756,
+        "high": 1.0
+      },
+      "claude|codex|opencode/other": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "claude|codex|opencode/skills": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude|copilot/mcp": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude|copilot/skills": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude|copilot|cursor/mcp": {
+        "successes": 2,
+        "n": 2,
+        "estimate": 1.0,
+        "low": 0.3424,
+        "high": 1.0
+      },
+      "claude|copilot|cursor/subagents": {
+        "successes": 9,
+        "n": 9,
+        "estimate": 1.0,
+        "low": 0.7009,
+        "high": 1.0
+      },
+      "claude|cursor/mcp": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "claude|cursor/other": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude|cursor/skills": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude|cursor/subagents": {
+        "successes": 5,
+        "n": 5,
+        "estimate": 1.0,
+        "low": 0.5655,
+        "high": 1.0
+      },
+      "claude|cursor|opencode/skills": {
+        "successes": 7,
+        "n": 7,
+        "estimate": 1.0,
+        "low": 0.6457,
+        "high": 1.0
+      },
+      "claude|gemini/other": {
+        "successes": 2,
+        "n": 2,
+        "estimate": 1.0,
+        "low": 0.3424,
+        "high": 1.0
+      },
+      "claude|gemini/skills": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude|gemini/subagents": {
+        "successes": 2,
+        "n": 2,
+        "estimate": 1.0,
+        "low": 0.3424,
+        "high": 1.0
+      },
+      "claude|gemini|codex/skills": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude|gemini|copilot|opencode/subagents": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "claude|gemini|cursor/skills": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "claude|opencode/skills": {
+        "successes": 9,
+        "n": 9,
+        "estimate": 1.0,
+        "low": 0.7009,
+        "high": 1.0
+      },
+      "codex/hooks": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "codex/mcp": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "codex/other": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "codex/plugins": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "codex/rules": {
+        "successes": 7,
+        "n": 7,
+        "estimate": 1.0,
+        "low": 0.6457,
+        "high": 1.0
+      },
+      "codex/settings": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "codex/skills": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "codex/subagents": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "codex|copilot/mcp": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "codex|copilot/skills": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "codex|opencode/skills": {
+        "successes": 2,
+        "n": 2,
+        "estimate": 1.0,
+        "low": 0.3424,
+        "high": 1.0
+      },
+      "copilot/commands": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "copilot/context_file": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "copilot/hooks": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "copilot/lsp": {
+        "successes": 7,
+        "n": 7,
+        "estimate": 1.0,
+        "low": 0.6457,
+        "high": 1.0
+      },
+      "copilot/mcp": {
+        "successes": 9,
+        "n": 10,
+        "estimate": 0.9,
+        "low": 0.5958,
+        "high": 0.9821
+      },
+      "copilot/other": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "copilot/plugins": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "copilot/rules": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "copilot/settings": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "copilot/skills": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "copilot/subagents": {
+        "successes": 9,
+        "n": 10,
+        "estimate": 0.9,
+        "low": 0.5958,
+        "high": 0.9821
+      },
+      "cursor/commands": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "cursor/context_file": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "cursor/hooks": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "cursor/mcp": {
+        "successes": 9,
+        "n": 10,
+        "estimate": 0.9,
+        "low": 0.5958,
+        "high": 0.9821
+      },
+      "cursor/other": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "cursor/plugins": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "cursor/rules": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "cursor/settings": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "cursor/skills": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "cursor/subagents": {
+        "successes": 7,
+        "n": 10,
+        "estimate": 0.7,
+        "low": 0.3968,
+        "high": 0.8922
+      },
+      "gemini/commands": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "gemini/context_file": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "gemini/hooks": {
+        "successes": 3,
+        "n": 3,
+        "estimate": 1.0,
+        "low": 0.4385,
+        "high": 1.0
+      },
+      "gemini/mcp": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "gemini/other": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "gemini/plugins": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "gemini/rules": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "gemini/settings": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "gemini/skills": {
+        "successes": 8,
+        "n": 10,
+        "estimate": 0.8,
+        "low": 0.4902,
+        "high": 0.9433
+      },
+      "gemini/subagents": {
+        "successes": 4,
+        "n": 10,
+        "estimate": 0.4,
+        "low": 0.1682,
+        "high": 0.6873
+      },
+      "gemini|copilot/skills": {
+        "successes": 6,
+        "n": 6,
+        "estimate": 1.0,
+        "low": 0.6097,
+        "high": 1.0
+      },
+      "gemini|cursor/commands": {
+        "successes": 0,
+        "n": 5,
+        "estimate": 0.0,
+        "low": 0.0,
+        "high": 0.4345
+      },
+      "opencode/commands": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "opencode/context_file": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "opencode/lsp": {
+        "successes": 4,
+        "n": 4,
+        "estimate": 1.0,
+        "low": 0.5101,
+        "high": 1.0
+      },
+      "opencode/mcp": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "opencode/other": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "opencode/plugins": {
+        "successes": 8,
+        "n": 10,
+        "estimate": 0.8,
+        "low": 0.4902,
+        "high": 0.9433
+      },
+      "opencode/settings": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "opencode/skills": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "opencode/subagents": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      }
+    },
+    "agreement": {
+      "items": 153,
+      "agreement": 0.9869,
+      "kappa": 0.4934
+    },
+    "to_review": 0
+  },
+  "path_recall": {
+    "configured_repositories_with_missed_configuration": {
+      "successes": 2,
+      "n": 100,
+      "estimate": 0.02,
+      "low": 0.0055,
+      "high": 0.07
+    },
+    "unconfigured_repositories_with_missed_configuration": {
+      "successes": 0,
+      "n": 200,
+      "estimate": 0.0,
+      "low": 0.0,
+      "high": 0.0188
+    },
+    "unconfigured_repositories_in_collection": 29926,
+    "missed_repositories_estimate": {
+      "estimate": 0,
+      "low": 0,
+      "high": 563
+    },
+    "configuration_paths_found_in_configured_repositories": {
+      "successes": 628,
+      "n": 631,
+      "estimate": 0.9952,
+      "low": 0.9861,
+      "high": 0.9984
+    },
+    "paths_not_in_the_candidates": [],
+    "agreement": {
+      "items": 25,
+      "agreement": 1.0,
+      "kappa": 1.0
+    },
+    "to_review": 0
+  },
+  "commit_precision": {
+    "tools": {
+      "estimate": 1.0,
+      "low": 0.967,
+      "high": 1.0,
+      "items": 360
+    },
+    "per_stratum": {
+      "other_tools": {
+        "successes": 60,
+        "n": 60,
+        "estimate": 1.0,
+        "low": 0.9398,
+        "high": 1.0
+      },
+      "tool:Claude": {
+        "successes": 60,
+        "n": 60,
+        "estimate": 1.0,
+        "low": 0.9398,
+        "high": 1.0
+      },
+      "tool:Codex": {
+        "successes": 60,
+        "n": 60,
+        "estimate": 1.0,
+        "low": 0.9398,
+        "high": 1.0
+      },
+      "tool:Copilot": {
+        "successes": 60,
+        "n": 60,
+        "estimate": 1.0,
+        "low": 0.9398,
+        "high": 1.0
+      },
+      "tool:Cursor": {
+        "successes": 60,
+        "n": 60,
+        "estimate": 1.0,
+        "low": 0.9398,
+        "high": 1.0
+      },
+      "tool:Gemini": {
+        "successes": 60,
+        "n": 60,
+        "estimate": 1.0,
+        "low": 0.9398,
+        "high": 1.0
+      },
+      "tool:OpenCode": {
+        "successes": 60,
+        "n": 60,
+        "estimate": 1.0,
+        "low": 0.9398,
+        "high": 1.0
+      }
+    },
+    "attributions_correct": {
+      "successes": 472,
+      "n": 483,
+      "estimate": 0.9772,
+      "low": 0.9597,
+      "high": 0.9872
+    },
+    "heuristics_seen_once": {
+      "claude-author-01": "correct",
+      "claude-author-05": "correct",
+      "claude-author-06": "correct",
+      "claude-full-body-01": "correct",
+      "claude-full-body-03": "correct",
+      "claude-full-body-04": "correct",
+      "claude-full-body-06": "correct",
+      "claude-full-body-07": "correct",
+      "claude-full-body-08": "correct",
+      "claude-full-body-12": "correct",
+      "claude-full-body-13": "correct",
+      "claude-full-body-14": "correct",
+      "claude-full-body-15": "correct",
+      "claude-full-body-16": "correct",
+      "claude-full-body-17": "correct",
+      "claude-trailer-03": "correct",
+      "claude-trailer-04": "correct",
+      "claude-trailer-07": "correct",
+      "claude-trailer-08": "correct",
+      "claude-trailer-10": "correct",
+      "codex-author-01": "correct",
+      "codex-author-02": "correct",
+      "codex-author-03": "correct",
+      "codex-author-05": "correct",
+      "codex-author-06": "correct",
+      "codex-author-07": "correct",
+      "codex-full-body-01": "correct",
+      "codex-full-body-03": "correct",
+      "codex-full-body-04": "correct",
+      "codex-full-body-05": "correct",
+      "codex-full-body-06": "correct",
+      "codex-full-body-08": "correct",
+      "codex-trailer-03": "correct",
+      "codex-trailer-05": "correct",
+      "codex-trailer-07": "correct",
+      "codex-trailer-09": "correct",
+      "copilot-full-body-02": "correct",
+      "copilot-full-body-04": "correct",
+      "copilot-full-body-05": "correct",
+      "copilot-full-body-06": "correct",
+      "copilot-full-body-07": "correct",
+      "copilot-full-body-08": "correct",
+      "copilot-full-body-09": "correct",
+      "copilot-full-body-10": "correct",
+      "copilot-trailer-03": "correct",
+      "copilot-trailer-06": "correct",
+      "copilot-trailer-08": "correct",
+      "copilot-trailer-09": "correct",
+      "copilot-trailer-11": "correct",
+      "copilot-trailer-12": "correct",
+      "cursor-full-body-01": "correct",
+      "cursor-full-body-04": "correct",
+      "cursor-full-body-06": "correct",
+      "cursor-full-body-07": "correct",
+      "cursor-full-body-08": "correct",
+      "cursor-trailer-09": "correct",
+      "gemini-full-body-03": "correct",
+      "gemini-full-body-05": "correct",
+      "gemini-trailer-04": "correct",
+      "opencode-full-body-01": "correct",
+      "opencode-full-body-03": "correct",
+      "opencode-trailer-04": "correct",
+      "opencode-trailer-05": "correct"
+    },
+    "agreement": {
+      "items": 97,
+      "agreement": 1.0,
+      "kappa": 1.0
+    },
+    "to_review": 0
+  },
+  "commit_recall": {
+    "commits": 1000,
+    "credited": 26,
+    "recall": {
+      "successes": 26,
+      "n": 26,
+      "estimate": 1.0,
+      "low": 0.8713,
+      "high": 1.0
+    },
+    "per_tool": {
+      "Claude": {
+        "successes": 17,
+        "n": 17,
+        "estimate": 1.0,
+        "low": 0.8157,
+        "high": 1.0
+      },
+      "Codex": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "Copilot": {
+        "successes": 5,
+        "n": 5,
+        "estimate": 1.0,
+        "low": 0.5655,
+        "high": 1.0
+      },
+      "Cursor": {
+        "successes": 3,
+        "n": 3,
+        "estimate": 1.0,
+        "low": 0.4385,
+        "high": 1.0
+      }
+    },
+    "detected_without_credit": 0,
+    "agreement": {
+      "items": 200,
+      "agreement": 1.0,
+      "kappa": 1.0
+    },
+    "to_review": 0
+  },
+  "mentions": {
+    "phrasings": 200,
+    "attributions_no_heuristic_reads": {
+      "successes": 14,
+      "n": 200,
+      "estimate": 0.07,
+      "low": 0.0422,
+      "high": 0.1141
+    },
+    "commits_of_those": 551,
+    "agreement": {
+      "items": 40,
+      "agreement": 0.975,
+      "kappa": 0.7872
+    },
+    "to_review": 0
+  }
+}

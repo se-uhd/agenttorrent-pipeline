@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Label review</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+<style>
+  :root {
+    --bg: #fafaf9; --panel: #ffffff; --text: #1c1917; --muted: #57534e; --line: #e7e5e4;
+    --accent: #2563eb; --true: #15803d; --false: #b91c1c; --unclear: #a16207; --code: #f5f5f4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1917; --panel: #262321; --text: #f5f5f4; --muted: #a8a29e; --line: #3f3a36;
+      --accent: #60a5fa; --true: #4ade80; --false: #f87171; --unclear: #facc15; --code: #2e2a27;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  header { display: flex; gap: 16px; align-items: center; padding: 10px 16px;
+           border-bottom: 1px solid var(--line); background: var(--panel); position: sticky;
+           top: 0; z-index: 2; }
+  header h1 { font-size: 16px; margin: 0; }
+  header .progress { color: var(--muted); }
+  header label { margin-left: auto; color: var(--muted); }
+  .layout { display: grid; grid-template-columns: 280px 1fr; min-height: calc(100vh - 47px); }
+  nav { border-right: 1px solid var(--line); overflow-y: auto; max-height: calc(100vh - 47px);
+        position: sticky; top: 47px; }
+  nav button { display: block; width: 100%; text-align: left; padding: 8px 12px; border: 0;
+               border-bottom: 1px solid var(--line); background: none; color: var(--text);
+               cursor: pointer; font: inherit; }
+  nav button.current { background: var(--code); }
+  nav .name { display: block; font-weight: 600; overflow-wrap: anywhere; }
+  nav .labels { font-size: 13px; color: var(--muted); }
+  main { padding: 16px 20px 80px; min-width: 0; }
+  .repo { display: flex; flex-wrap: wrap; gap: 12px; align-items: baseline; }
+  .repo h2 { margin: 0; font-size: 22px; overflow-wrap: anywhere; }
+  .repo a { color: var(--accent); }
+  .decision { position: sticky; top: 47px; z-index: 1; background: var(--bg); padding: 12px 0;
+              border-bottom: 1px solid var(--line); margin-bottom: 16px; display: flex;
+              flex-wrap: wrap; gap: 8px; align-items: center; }
+  .decision button { font: inherit; padding: 6px 14px; border-radius: 6px; cursor: pointer;
+                     border: 1px solid var(--line); background: var(--panel); color: var(--text); }
+  .decision button.chosen { color: #fff; border-color: transparent; }
+  .decision button[data-label="true"].chosen { background: var(--true); }
+  .decision button[data-label="false"].chosen { background: var(--false); }
+  .decision button[data-label="unclear"].chosen { background: var(--unclear); color: #1c1917; }
+  .decision textarea { flex: 1 1 320px; min-height: 38px; font: inherit; padding: 6px 8px;
+                       border: 1px solid var(--line); border-radius: 6px; background: var(--panel);
+                       color: var(--text); }
+  .decision .status { color: var(--muted); font-size: 13px; min-width: 90px; }
+  .criteria { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: -8px 0 16px; }
+  .criteria button { font: inherit; font-size: 13px; padding: 2px 10px; border-radius: 12px;
+                     cursor: pointer; border: 1px solid var(--line); background: var(--panel);
+                     color: var(--text); }
+  .criteria button.chosen { background: var(--false); border-color: transparent; color: #fff; }
+  .checklist { margin: 6px 0 0; padding-left: 18px; font-size: 13px; }
+  .checklist .applies { color: var(--false); font-weight: 600; }
+  .hint.fork-false { color: var(--false); font-weight: 600; }
+  .checklist .unclear { color: var(--unclear); font-weight: 600; }
+  .models { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .model { background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
+           padding: 12px 14px; min-width: 0; }
+  .model h3 { margin: 0 0 6px; font-size: 15px; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 13px;
+           font-weight: 600; color: #fff; }
+  .badge.true { background: var(--true); } .badge.false { background: var(--false); }
+  .badge.unclear { background: var(--unclear); color: #1c1917; }
+  .hint { color: var(--muted); font-size: 13px; }
+  details { margin-top: 8px; border-top: 1px solid var(--line); padding-top: 6px; }
+  summary { cursor: pointer; }
+  pre { background: var(--code); padding: 8px; border-radius: 6px; overflow: auto;
+        max-height: 420px; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 13px; }
+  .readme { background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
+            padding: 12px 18px; margin-top: 16px; overflow-wrap: anywhere; }
+  .readme img { max-width: 100%; }
+  .readme pre { max-height: none; }
+  .readme-head { display: flex; gap: 12px; align-items: baseline; margin-top: 20px; }
+  .readme-head h3 { margin: 0; }
+  .note { color: var(--false); }
+  kbd { border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; font-size: 12px; }
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; }
+    nav { position: static; max-height: 220px; border-right: 0;
+          border-bottom: 1px solid var(--line); }
+    .models { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Label review</h1>
+  <span class="progress" id="progress"></span>
+  <label><input type="checkbox" id="open-only"> only undecided</label>
+</header>
+<div class="layout">
+  <nav id="list"></nav>
+  <main id="main"><p class="hint">Loading the disagreements...</p></main>
+</div>
+<script>
+const LABELS = ['true', 'false', 'unclear'];
+let models = [], items = [], criteria = [], current = 0;
+
+function el(tag, attributes = {}, ...children) {
+  const node = document.createElement(tag);
+  for (const [key, value] of Object.entries(attributes)) {
+    if (key === 'class') node.className = value;
+    else if (key.startsWith('on')) node.addEventListener(key.slice(2), value);
+    else node.setAttribute(key, value);
+  }
+  for (const child of children) {
+    if (child == null) continue;
+    node.append(child instanceof Node ? child : document.createTextNode(String(child)));
+  }
+  return node;
+}
+
+function badge(label) { return el('span', {class: `badge ${label}`}, label || 'none'); }
+
+function visible() {
+  const openOnly = document.getElementById('open-only').checked;
+  return items.map((item, index) => [item, index])
+              .filter(([item]) => !openOnly || !item.human_label);
+}
+
+function renderList() {
+  const list = document.getElementById('list');
+  list.replaceChildren(...visible().map(([item, index]) => el('button', {
+      class: index === current ? 'current' : '', onclick: () => show(index)},
+    el('span', {class: 'name'}, item.repo_name),
+    el('span', {class: 'labels'},
+       `${item.reference.label} / ${item.second.label}`,
+       item.human_label ? `, decided ${item.human_label}` : ''))));
+  const decided = items.filter(item => item.human_label).length;
+  document.getElementById('progress').textContent = `${decided} of ${items.length} decided`;
+}
+
+function toolCalls(side) {
+  if (!side.tools.length) return el('p', {class: 'hint'}, 'No tool call.');
+  return el('div', {}, ...side.tools.map(call => el('details', {},
+    el('summary', {}, `round ${call.round}: ${call.tool}`,
+       call.is_error ? ' (error)' : '',
+       call.arguments && Object.keys(call.arguments).length
+         ? ` ${JSON.stringify(call.arguments)}` : ''),
+    el('pre', {}, call.output))));
+}
+
+function checklist(side) {
+  const entries = Object.entries(side.exclusions || {});
+  if (!entries.length) return null;
+  // Older decisions record the fields as booleans, newer ones as true, false or unclear.
+  const answerOf = value => value === true ? 'true' : value === false ? 'false' : String(value);
+  const rank = {true: 0, unclear: 1, false: 2};
+  entries.sort(([, a], [, b]) => rank[answerOf(a.applies)] - rank[answerOf(b.applies)]);
+  return el('details', {},
+    el('summary', {}, 'Checklist'),
+    el('ul', {class: 'checklist'}, ...entries.map(([name, answer]) => {
+      // A criterion with an exception contains the fields that decided it.
+      const fields = Object.entries(answer)
+        .filter(([key]) => !['applies', 'evidence'].includes(key))
+        .map(([key, value]) => `${key}: ${answerOf(value)}`);
+      const applies = answerOf(answer.applies);
+      return el('li', {},
+        el('span', {class: applies === 'false' ? '' : applies === 'true' ? 'applies' : 'unclear'},
+          `${name}: ${applies === 'true' ? 'applies' : applies === 'unclear' ? 'unclear' : 'no'}`),
+        fields.length ? ` (${fields.join(', ')})` : '', ` ${answer.evidence}`);
+    })));
+}
+
+// The fork heuristic decides after the model's response, so a label that the heuristic made false
+// can contradict the model's justification, which states that no exclusion applies.
+function forkVerdict(fork) {
+  if (!fork) return null;
+  const upstream = fork.upstream_repository || fork.upstream;
+  const verdict = fork.independent ? 'a project of its own'
+    : `not a project of its own (${(fork.reasons || []).join(', ') || 'it tracks its upstream'})`;
+  return el('p', {class: fork.independent ? 'hint' : 'hint fork-false'},
+    `Fork of ${upstream}: ${verdict}. The fork heuristic decides this from GitHub's data after ` +
+    `the model's response, so the justification does not mention it.`);
+}
+
+// Whether a repository described as a mirror merged pull requests since the start of the sampling
+// window, which the classification checks through GitHub's API after the model's response.
+function mirrorVerdict(merges) {
+  if (!merges) return null;
+  return el('p', {class: merges.merged_since_window_start ? 'hint' : 'hint fork-false'},
+    `Described as a mirror: ${merges.merged_since_window_start ? 'pull requests merged' : 'no pull request merged'}` +
+    ` since ${merges.window_start}${merges.latest_merge ? `, the latest on ${merges.latest_merge.slice(0, 10)}` : ''}.` +
+    ` The classification checks this through GitHub's API after the model's response.`);
+}
+
+function modelPanel(side) {
+  const extra = [];
+  const fork = forkVerdict(side.fork);
+  if (fork) extra.push(fork);
+  const mirror = mirrorVerdict(side.mirror_merges);
+  if (mirror) extra.push(mirror);
+  if (side.unclear_criteria && side.unclear_criteria.length)
+    extra.push(el('p', {class: 'hint'}, `Criteria left unclear: ${side.unclear_criteria.join(', ')}`));
+  if (side.applied_criteria && side.applied_criteria.length)
+    extra.push(el('p', {class: 'hint'}, `Criteria that apply: ${side.applied_criteria.join(', ')}.`,
+      side.model_label && side.model_label !== side.label
+        ? ` The model judged the evidence of software engineering practices ${side.model_label},` +
+          ` but a criterion that applies makes the label ${side.label}.`
+        : ''));
+  if (side.purpose) extra.push(el('p', {class: 'hint'}, `Purpose: ${side.purpose}`));
+  if (side.purpose_quote) extra.push(el('p', {class: 'hint'}, `Quoted: "${side.purpose_quote}"`,
+    side.purpose_source ? ` from the purpose sentence of ${side.purpose_source}` : ''));
+  const words = side.readme_words_by_language;
+  if (words && words.length) extra.push(el('p', {class: 'hint'},
+    `Words of the README by language: ${words.map(entry => `${entry.language} ${entry.words}`).join(', ')}` +
+    (side.readme_mainly_english ? `, mainly English: ${side.readme_mainly_english}` : '')));
+  if (side.description) extra.push(el('p', {class: 'hint'}, `Description: ${side.description}`));
+  if (side.limits_reached && side.limits_reached.length)
+    extra.push(el('p', {class: 'hint'}, `Limits reached: ${side.limits_reached.join(', ')}`));
+  const use = side.maintenance_and_use;
+  if (use) extra.push(el('p', {class: 'hint'},
+    `Maintained: ${use.maintained}, used by others: ${use.used_by_others}. ${use.evidence}`));
+  const list = checklist(side);
+  if (list) extra.push(list);
+  if (side.fork) extra.push(el('details', {}, el('summary', {}, 'Fork heuristic'),
+    el('pre', {}, JSON.stringify(side.fork, null, 1))));
+  return el('section', {class: 'model'},
+    el('h3', {}, side.model, ' ', badge(side.label)),
+    el('p', {}, side.justification),
+    ...extra,
+    el('div', {class: 'hint'}, `${side.tools.length} tool call(s)`),
+    toolCalls(side));
+}
+
+function rewriteLinks(container, item) {
+  const dir = item.readme_path.includes('/')
+    ? item.readme_path.slice(0, item.readme_path.lastIndexOf('/') + 1) : '';
+  const raw = `https://raw.githubusercontent.com/${item.repo_name}/${item.revision}/${dir}`;
+  const blob = `https://github.com/${item.repo_name}/blob/${item.revision}/${dir}`;
+  const relative = value => value && !/^([a-z]+:|#|\/\/)/i.test(value);
+  container.querySelectorAll('img[src]').forEach(img => {
+    const src = img.getAttribute('src');
+    if (relative(src)) img.src = raw + src.replace(/^\.\//, '');
+  });
+  container.querySelectorAll('a[href]').forEach(a => {
+    const href = a.getAttribute('href');
+    if (relative(href)) a.href = blob + href.replace(/^\.\//, '');
+    a.target = '_blank'; a.rel = 'noopener';
+  });
+}
+
+async function loadReadme(item, container, raw) {
+  container.replaceChildren(el('p', {class: 'hint'}, 'Reading the README from GitHub...'));
+  const answer = await (await fetch(`/api/readme?id=${item.id}`)).json();
+  const parts = [];
+  if (answer.note) parts.push(el('p', {class: 'note'}, answer.note));
+  if (raw || !/\.(md|markdown)$/i.test(item.readme_path)) {
+    parts.push(el('pre', {}, answer.text));
+    container.replaceChildren(...parts);
+  } else {
+    const body = el('div');
+    body.innerHTML = DOMPurify.sanitize(marked.parse(answer.text || ''));
+    rewriteLinks(body, item);
+    container.replaceChildren(...parts, body);
+  }
+}
+
+async function decide(label, chosen) {
+  // A decision belongs to the repository shown when it is made. The server's response can arrive
+  // after another repository is shown, so the response updates the decided repository, and only
+  // that repository's page shows that it was saved. A criterion goes only with false, and
+  // false without criteria keeps the criteria chosen before.
+  const index = current;
+  const item = items[index];
+  const excluding = label === 'false' ? (chosen || item.human_criteria || []) : [];
+  const note = document.getElementById('note');
+  const status = document.getElementById('status');
+  status.textContent = 'Saving...';
+  const response = await fetch('/api/decision', {
+    method: 'POST', headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({id: item.id, human_label: label, human_note: note.value,
+                          human_criteria: excluding})});
+  const answer = await response.json();
+  if (index === current && !response.ok) { status.textContent = answer.error; return; }
+  if (!response.ok) return;
+  items[index] = answer;
+  if (index === current) {
+    status.textContent = label ? `Saved: ${label}` : 'Saved';
+    document.querySelectorAll('.decision button[data-label]').forEach(button =>
+      button.classList.toggle('chosen', button.dataset.label === answer.human_label));
+    document.querySelectorAll('.criteria button[data-criterion]').forEach(button =>
+      button.classList.toggle('chosen', answer.human_criteria.includes(button.dataset.criterion)));
+  }
+  renderList();
+}
+
+function toggleCriterion(name) {
+  // Choosing a criterion sets the label false and keeps the criteria chosen so far.
+  const chosen = new Set(items[current].human_criteria || []);
+  if (chosen.has(name)) chosen.delete(name); else chosen.add(name);
+  decide('false', criteria.filter(c => chosen.has(c)));
+}
+
+function show(index) {
+  current = index;
+  const item = items[index];
+  const main = document.getElementById('main');
+  const revision = item.revision || 'HEAD';
+  const readme = el('div', {class: 'readme'});
+  const rawToggle = el('input', {type: 'checkbox', onchange: e => loadReadme(item, readme, e.target.checked)});
+  main.replaceChildren(
+    el('div', {class: 'repo'},
+      el('h2', {}, item.repo_name),
+      el('a', {href: item.github_url, target: '_blank', rel: 'noopener'}, 'GitHub'),
+      el('a', {href: `https://github.com/${item.repo_name}/tree/${revision}`, target: '_blank', rel: 'noopener'}, 'files at the revision'),
+      el('a', {href: `https://github.com/${item.repo_name}/blob/${revision}/${item.readme_path}`, target: '_blank', rel: 'noopener'}, 'README at the revision'),
+      el('span', {class: 'hint'}, `revision ${revision.slice(0, 12)}`)),
+    el('div', {class: 'decision'},
+      ...LABELS.map((label, n) => el('button', {
+        'data-label': label, class: item.human_label === label ? 'chosen' : '',
+        title: `key ${n + 1}`, onclick: () => decide(label)}, `${label} (${n + 1})`)),
+      el('button', {onclick: () => decide(''), title: 'clear the decision'}, 'clear'),
+      el('textarea', {id: 'note', placeholder: 'Note (saved with the label, when you leave the field, or with Ctrl+Enter)',
+                       onkeydown: e => {
+                         if (e.key === 'Enter' && (e.ctrlKey || e.metaKey))
+                           decide(items[current].human_label);
+                       },
+                       onblur: e => {
+                         if (e.target.value.trim() !== (items[current].human_note || ''))
+                           decide(items[current].human_label);
+                       }}),
+      el('span', {class: 'status', id: 'status'}, item.human_label ? `Saved: ${item.human_label}` : 'Open'),
+      el('button', {onclick: () => step(-1), title: 'key k'}, 'previous'),
+      el('button', {onclick: () => step(1), title: 'key j'}, 'next')),
+    el('div', {class: 'criteria'}, el('span', {class: 'hint'}, 'Criteria that apply:'),
+      ...criteria.map(name => el('button', {
+        'data-criterion': name,
+        class: (item.human_criteria || []).includes(name) ? 'chosen' : '',
+        title: 'sets the label false', onclick: () => toggleCriterion(name)}, name))),
+    el('div', {class: 'models'}, modelPanel(item.reference), modelPanel(item.second)),
+    el('div', {class: 'readme-head'}, el('h3', {}, item.readme_path),
+       el('label', {class: 'hint'}, rawToggle, ' raw text')),
+    readme,
+    el('p', {class: 'hint'}, 'Keys: ', el('kbd', {}, '1'), ' true, ', el('kbd', {}, '2'), ' false, ',
+       el('kbd', {}, '3'), ' unclear, ', el('kbd', {}, 'j'), ' next, ', el('kbd', {}, 'k'),
+       ' previous, ', el('kbd', {}, 'n'), ' note.'));
+  document.getElementById('note').value = item.human_note || '';
+  renderList();
+  window.scrollTo(0, 0);
+  loadReadme(item, readme, false);
+}
+
+function step(direction) {
+  const order = visible().map(([, index]) => index);
+  if (!order.length) return;
+  const position = order.indexOf(current);
+  const next = position === -1 ? order[0]
+    : order[Math.min(order.length - 1, Math.max(0, position + direction))];
+  show(next);
+}
+
+document.addEventListener('keydown', event => {
+  if (event.target.tagName === 'TEXTAREA' || event.target.tagName === 'INPUT') {
+    if (event.key === 'Escape') event.target.blur();
+    return;
+  }
+  if (['1', '2', '3'].includes(event.key)) decide(LABELS[Number(event.key) - 1]);
+  else if (event.key === 'j') step(1);
+  else if (event.key === 'k') step(-1);
+  else if (event.key === 'n') { event.preventDefault(); document.getElementById('note').focus(); }
+});
+document.getElementById('open-only').addEventListener('change', renderList);
+
+fetch('/api/items').then(response => response.json()).then(data => {
+  models = data.models;
+  criteria = data.criteria;
+  items = data.items;
+  const firstOpen = items.findIndex(item => !item.human_label);
+  show(firstOpen === -1 ? 0 : firstOpen);
+});
+</script>
+</body>
+</html>

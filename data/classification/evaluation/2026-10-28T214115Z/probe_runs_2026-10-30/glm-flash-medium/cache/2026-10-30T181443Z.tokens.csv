@@ -1,0 +1,2 @@
+role,model,requested_tier,service_tier,requests,input_tokens,cached_tokens,cache_write_tokens,output_tokens,reasoning_tokens
+classifying_model,z-ai/glm-5.3-flash,morph/fp8,morph/fp8,12,454404,107584,0,17955,4081

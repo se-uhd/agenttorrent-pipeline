@@ -1,0 +1,1780 @@
+{
+  "path_precision": {
+    "overall": {
+      "estimate": 0.9987,
+      "low": 0.9436,
+      "high": 1.0,
+      "items": 806
+    },
+    "per_mechanism": {
+      "commands": {
+        "estimate": 0.9806,
+        "low": 0.8795,
+        "high": 1.0
+      },
+      "context_file": {
+        "estimate": 1.0,
+        "low": 0.8865,
+        "high": 1.0
+      },
+      "hooks": {
+        "estimate": 1.0,
+        "low": 0.8598,
+        "high": 1.0
+      },
+      "lsp": {
+        "estimate": 1.0,
+        "low": 0.8442,
+        "high": 1.0
+      },
+      "mcp": {
+        "estimate": 1.0,
+        "low": 0.923,
+        "high": 1.0
+      },
+      "other": {
+        "estimate": 1.0,
+        "low": 0.9155,
+        "high": 1.0
+      },
+      "plugins": {
+        "estimate": 0.9777,
+        "low": 0.8652,
+        "high": 1.0
+      },
+      "rules": {
+        "estimate": 1.0,
+        "low": 0.8731,
+        "high": 1.0
+      },
+      "settings": {
+        "estimate": 0.9925,
+        "low": 0.8735,
+        "high": 1.0
+      },
+      "skills": {
+        "estimate": 0.9999,
+        "low": 0.8856,
+        "high": 1.0
+      },
+      "subagents": {
+        "estimate": 0.9906,
+        "low": 0.8843,
+        "high": 1.0
+      }
+    },
+    "per_cell": {
+      "any/context_file": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "any/mcp": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "any/other": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "any/plugins": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "any/skills": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude/context_file": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude/hooks": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude/lsp": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "claude/mcp": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude/other": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude/plugins": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude/rules": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude/settings": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude/skills": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude/subagents": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude|codex/other": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "claude|codex/plugins": {
+        "successes": 2,
+        "n": 2,
+        "estimate": 1.0,
+        "low": 0.3424,
+        "high": 1.0
+      },
+      "claude|codex/skills": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude|codex|copilot/mcp": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude|codex|copilot/other": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "claude|codex|copilot/skills": {
+        "successes": 7,
+        "n": 7,
+        "estimate": 1.0,
+        "low": 0.6457,
+        "high": 1.0
+      },
+      "claude|codex|copilot|cursor/mcp": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "claude|codex|copilot|cursor/other": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "claude|codex|copilot|cursor/skills": {
+        "successes": 3,
+        "n": 3,
+        "estimate": 1.0,
+        "low": 0.4385,
+        "high": 1.0
+      },
+      "claude|codex|cursor/skills": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude|codex|cursor|opencode/other": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "claude|codex|cursor|opencode/skills": {
+        "successes": 8,
+        "n": 8,
+        "estimate": 1.0,
+        "low": 0.6756,
+        "high": 1.0
+      },
+      "claude|codex|opencode/other": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "claude|codex|opencode/skills": {
+        "successes": 9,
+        "n": 10,
+        "estimate": 0.9,
+        "low": 0.5958,
+        "high": 0.9821
+      },
+      "claude|copilot/mcp": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude|copilot/other": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "claude|copilot/plugins": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "claude|copilot/skills": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude|copilot|cursor/mcp": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "claude|copilot|cursor/skills": {
+        "successes": 3,
+        "n": 3,
+        "estimate": 1.0,
+        "low": 0.4385,
+        "high": 1.0
+      },
+      "claude|copilot|cursor/subagents": {
+        "successes": 9,
+        "n": 9,
+        "estimate": 1.0,
+        "low": 0.7009,
+        "high": 1.0
+      },
+      "claude|cursor/mcp": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "claude|cursor/other": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude|cursor/skills": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude|cursor/subagents": {
+        "successes": 6,
+        "n": 6,
+        "estimate": 1.0,
+        "low": 0.6097,
+        "high": 1.0
+      },
+      "claude|cursor|opencode/skills": {
+        "successes": 7,
+        "n": 7,
+        "estimate": 1.0,
+        "low": 0.6457,
+        "high": 1.0
+      },
+      "claude|gemini/other": {
+        "successes": 3,
+        "n": 3,
+        "estimate": 1.0,
+        "low": 0.4385,
+        "high": 1.0
+      },
+      "claude|gemini/skills": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude|gemini/subagents": {
+        "successes": 6,
+        "n": 6,
+        "estimate": 1.0,
+        "low": 0.6097,
+        "high": 1.0
+      },
+      "claude|gemini|codex/skills": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude|gemini|codex|cursor/hooks": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "claude|gemini|codex|cursor/skills": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "claude|gemini|copilot|opencode/subagents": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "claude|gemini|cursor/skills": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "claude|opencode/other": {
+        "successes": 6,
+        "n": 6,
+        "estimate": 1.0,
+        "low": 0.6097,
+        "high": 1.0
+      },
+      "claude|opencode/skills": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "codex/hooks": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "codex/mcp": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "codex/other": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "codex/plugins": {
+        "successes": 9,
+        "n": 10,
+        "estimate": 0.9,
+        "low": 0.5958,
+        "high": 0.9821
+      },
+      "codex/rules": {
+        "successes": 5,
+        "n": 5,
+        "estimate": 1.0,
+        "low": 0.5655,
+        "high": 1.0
+      },
+      "codex/settings": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "codex/skills": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "codex/subagents": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "codex|copilot/mcp": {
+        "successes": 4,
+        "n": 4,
+        "estimate": 1.0,
+        "low": 0.5101,
+        "high": 1.0
+      },
+      "codex|copilot/skills": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "codex|cursor/mcp": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "codex|cursor|opencode/skills": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "codex|opencode/skills": {
+        "successes": 2,
+        "n": 2,
+        "estimate": 1.0,
+        "low": 0.3424,
+        "high": 1.0
+      },
+      "copilot/commands": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "copilot/context_file": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "copilot/hooks": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "copilot/lsp": {
+        "successes": 5,
+        "n": 5,
+        "estimate": 1.0,
+        "low": 0.5655,
+        "high": 1.0
+      },
+      "copilot/mcp": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "copilot/other": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "copilot/plugins": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "copilot/rules": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "copilot/settings": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "copilot/skills": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "copilot/subagents": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "cursor/commands": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "cursor/context_file": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "cursor/hooks": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "cursor/mcp": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "cursor/other": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "cursor/plugins": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "cursor/rules": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "cursor/settings": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "cursor/skills": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "cursor/subagents": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "cursor|opencode/skills": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "gemini/commands": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "gemini/context_file": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "gemini/hooks": {
+        "successes": 3,
+        "n": 3,
+        "estimate": 1.0,
+        "low": 0.4385,
+        "high": 1.0
+      },
+      "gemini/mcp": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "gemini/other": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "gemini/plugins": {
+        "successes": 9,
+        "n": 10,
+        "estimate": 0.9,
+        "low": 0.5958,
+        "high": 0.9821
+      },
+      "gemini/rules": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "gemini/settings": {
+        "successes": 9,
+        "n": 10,
+        "estimate": 0.9,
+        "low": 0.5958,
+        "high": 0.9821
+      },
+      "gemini/skills": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "gemini/subagents": {
+        "successes": 9,
+        "n": 10,
+        "estimate": 0.9,
+        "low": 0.5958,
+        "high": 0.9821
+      },
+      "gemini|copilot/skills": {
+        "successes": 6,
+        "n": 6,
+        "estimate": 1.0,
+        "low": 0.6097,
+        "high": 1.0
+      },
+      "opencode/commands": {
+        "successes": 9,
+        "n": 10,
+        "estimate": 0.9,
+        "low": 0.5958,
+        "high": 0.9821
+      },
+      "opencode/context_file": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "opencode/lsp": {
+        "successes": 3,
+        "n": 3,
+        "estimate": 1.0,
+        "low": 0.4385,
+        "high": 1.0
+      },
+      "opencode/mcp": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "opencode/other": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "opencode/plugins": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "opencode/settings": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "opencode/skills": {
+        "successes": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7225,
+        "high": 1.0
+      },
+      "opencode/subagents": {
+        "successes": 9,
+        "n": 10,
+        "estimate": 0.9,
+        "low": 0.5958,
+        "high": 0.9821
+      }
+    },
+    "agreement": {
+      "items": 162,
+      "agreement": 0.9877,
+      "kappa": -0.0031
+    },
+    "to_review": 0
+  },
+  "path_recall": {
+    "configured_repositories_with_missed_configuration": {
+      "successes": 2,
+      "n": 100,
+      "estimate": 0.02,
+      "low": 0.0055,
+      "high": 0.07
+    },
+    "unconfigured_repositories_with_missed_configuration": {
+      "successes": 1,
+      "n": 200,
+      "estimate": 0.005,
+      "low": 0.0009,
+      "high": 0.0278
+    },
+    "unconfigured_repositories_in_collection": 29955,
+    "missed_repositories_estimate": {
+      "estimate": 150,
+      "low": 27,
+      "high": 833
+    },
+    "configuration_paths_found_in_configured_repositories": {
+      "successes": 383,
+      "n": 386,
+      "estimate": 0.9922,
+      "low": 0.9774,
+      "high": 0.9974
+    },
+    "paths_not_in_the_candidates": [],
+    "agreement": {
+      "items": 27,
+      "agreement": 1.0,
+      "kappa": 1.0
+    },
+    "to_review": 0
+  },
+  "commit_precision": {
+    "tools": {
+      "estimate": 0.9996,
+      "low": 0.9656,
+      "high": 1.0,
+      "items": 360
+    },
+    "per_stratum": {
+      "other_tools": {
+        "successes": 59,
+        "n": 60,
+        "estimate": 0.9833,
+        "low": 0.9114,
+        "high": 0.9971
+      },
+      "tool:Claude": {
+        "successes": 60,
+        "n": 60,
+        "estimate": 1.0,
+        "low": 0.9398,
+        "high": 1.0
+      },
+      "tool:Codex": {
+        "successes": 59,
+        "n": 60,
+        "estimate": 0.9833,
+        "low": 0.9114,
+        "high": 0.9971
+      },
+      "tool:Copilot": {
+        "successes": 60,
+        "n": 60,
+        "estimate": 1.0,
+        "low": 0.9398,
+        "high": 1.0
+      },
+      "tool:Cursor": {
+        "successes": 60,
+        "n": 60,
+        "estimate": 1.0,
+        "low": 0.9398,
+        "high": 1.0
+      },
+      "tool:Gemini": {
+        "successes": 59,
+        "n": 60,
+        "estimate": 0.9833,
+        "low": 0.9114,
+        "high": 0.9971
+      },
+      "tool:OpenCode": {
+        "successes": 60,
+        "n": 60,
+        "estimate": 1.0,
+        "low": 0.9398,
+        "high": 1.0
+      }
+    },
+    "attributions_correct": {
+      "successes": 571,
+      "n": 574,
+      "estimate": 0.9948,
+      "low": 0.9847,
+      "high": 0.9982
+    },
+    "heuristics_seen_once": {
+      "claude-author-01": "correct",
+      "claude-author-02": "correct",
+      "claude-author-05": "correct",
+      "claude-author-06": "correct",
+      "claude-author-07": "correct",
+      "claude-author-11": "correct",
+      "claude-author-15": "correct",
+      "claude-full-body-01": "correct",
+      "claude-full-body-03": "correct",
+      "claude-full-body-04": "correct",
+      "claude-full-body-06": "correct",
+      "claude-full-body-07": "correct",
+      "claude-full-body-08": "correct",
+      "claude-full-body-12": "correct",
+      "claude-full-body-13": "correct",
+      "claude-full-body-14": "correct",
+      "claude-full-body-15": "correct",
+      "claude-full-body-16": "correct",
+      "claude-full-body-17": "correct",
+      "claude-full-body-19": "correct",
+      "claude-full-body-20": "correct",
+      "claude-full-body-25": "correct",
+      "claude-full-body-26": "correct",
+      "claude-full-body-27": "correct",
+      "claude-full-body-28": "correct",
+      "claude-full-body-29": "correct",
+      "claude-full-body-30": "correct",
+      "claude-full-body-32": "correct",
+      "claude-full-body-34": "correct",
+      "claude-full-body-35": "correct",
+      "claude-full-body-39": "correct",
+      "claude-full-body-40": "correct",
+      "claude-full-body-42": "correct",
+      "claude-full-body-43": "correct",
+      "claude-full-body-45": "correct",
+      "claude-full-body-46": "correct",
+      "claude-full-body-47": "correct",
+      "claude-full-body-48": "correct",
+      "claude-full-body-49": "correct",
+      "claude-full-body-50": "correct",
+      "claude-full-body-51": "correct",
+      "claude-full-body-52": "correct",
+      "claude-full-body-53": "correct",
+      "claude-full-body-54": "correct",
+      "claude-full-body-55": "correct",
+      "claude-trailer-04": "correct",
+      "claude-trailer-12": "correct",
+      "claude-trailer-14": "correct",
+      "claude-trailer-15": "correct",
+      "claude-trailer-22": "correct",
+      "claude-trailer-29": "correct",
+      "codex-author-02": "correct",
+      "codex-author-05": "correct",
+      "codex-author-06": "correct",
+      "codex-author-07": "correct",
+      "codex-full-body-01": "correct",
+      "codex-full-body-02": "correct",
+      "codex-full-body-03": "correct",
+      "codex-full-body-04": "correct",
+      "codex-full-body-05": "correct",
+      "codex-full-body-06": "correct",
+      "codex-full-body-08": "correct",
+      "codex-full-body-11": "correct",
+      "codex-full-body-12": "correct",
+      "codex-full-body-14": "correct",
+      "codex-full-body-18": "correct",
+      "codex-full-body-19": "correct",
+      "codex-full-body-20": "correct",
+      "codex-full-body-21": "correct",
+      "codex-full-body-22": "correct",
+      "codex-full-body-24": "correct",
+      "codex-full-body-28": "correct",
+      "codex-full-body-37": "correct",
+      "codex-full-body-39": "correct",
+      "codex-full-body-41": "correct",
+      "codex-full-body-42": "correct",
+      "codex-full-body-43": "correct",
+      "codex-trailer-05": "correct",
+      "codex-trailer-07": "wrong_tool",
+      "codex-trailer-09": "correct",
+      "codex-trailer-12": "correct",
+      "codex-trailer-13": "correct",
+      "codex-trailer-18": "correct",
+      "codex-trailer-22": "correct",
+      "codex-trailer-27": "correct",
+      "copilot-full-body-02": "correct",
+      "copilot-full-body-05": "correct",
+      "copilot-full-body-07": "correct",
+      "copilot-full-body-08": "correct",
+      "copilot-full-body-09": "correct",
+      "copilot-full-body-10": "correct",
+      "copilot-full-body-13": "correct",
+      "copilot-full-body-14": "correct",
+      "copilot-full-body-16": "correct",
+      "copilot-full-body-19": "correct",
+      "copilot-full-body-21": "correct",
+      "copilot-full-body-22": "correct",
+      "copilot-full-body-25": "correct",
+      "copilot-full-body-26": "correct",
+      "copilot-full-body-28": "not_contribution",
+      "copilot-full-body-29": "correct",
+      "copilot-full-body-30": "correct",
+      "copilot-full-body-32": "correct",
+      "copilot-full-body-34": "correct",
+      "copilot-full-body-36": "correct",
+      "copilot-full-body-37": "correct",
+      "copilot-full-body-38": "correct",
+      "copilot-full-body-39": "correct",
+      "copilot-full-body-40": "correct",
+      "copilot-full-body-41": "correct",
+      "copilot-trailer-01": "correct",
+      "copilot-trailer-03": "correct",
+      "copilot-trailer-06": "correct",
+      "copilot-trailer-09": "correct",
+      "copilot-trailer-11": "correct",
+      "cursor-full-body-04": "correct",
+      "cursor-full-body-06": "correct",
+      "cursor-full-body-07": "correct",
+      "cursor-full-body-13": "correct",
+      "cursor-full-body-14": "correct",
+      "cursor-full-body-15": "correct",
+      "cursor-full-body-18": "correct",
+      "cursor-full-body-20": "correct",
+      "cursor-full-body-22": "correct",
+      "cursor-full-body-23": "correct",
+      "cursor-full-body-24": "correct",
+      "cursor-full-body-26": "correct",
+      "cursor-full-body-28": "correct",
+      "cursor-full-body-30": "correct",
+      "cursor-full-body-31": "correct",
+      "cursor-full-body-32": "correct",
+      "cursor-full-body-33": "correct",
+      "cursor-full-body-34": "correct",
+      "cursor-full-body-35": "correct",
+      "cursor-trailer-03": "correct",
+      "cursor-trailer-05": "correct",
+      "cursor-trailer-10": "correct",
+      "gemini-full-body-03": "correct",
+      "gemini-full-body-16": "correct",
+      "gemini-full-body-25": "correct",
+      "gemini-full-body-28": "correct",
+      "gemini-full-body-30": "correct",
+      "gemini-trailer-04": "correct",
+      "opencode-author-01": "correct",
+      "opencode-author-02": "correct",
+      "opencode-full-body-05": "correct",
+      "opencode-full-body-09": "correct",
+      "opencode-full-body-19": "correct",
+      "opencode-full-body-22": "correct",
+      "opencode-full-body-23": "correct",
+      "opencode-full-body-30": "correct",
+      "opencode-trailer-05": "correct",
+      "opencode-trailer-06": "correct",
+      "opencode-trailer-07": "correct"
+    },
+    "agreement": {
+      "items": 115,
+      "agreement": 0.9913,
+      "kappa": 0.0
+    },
+    "to_review": 0
+  },
+  "commit_recall": {
+    "commits": 1000,
+    "credited": 19,
+    "recall": {
+      "successes": 18,
+      "n": 19,
+      "estimate": 0.9474,
+      "low": 0.7536,
+      "high": 0.9906
+    },
+    "per_tool": {
+      "Claude": {
+        "successes": 13,
+        "n": 14,
+        "estimate": 0.9286,
+        "low": 0.6853,
+        "high": 0.9873
+      },
+      "Codex": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "Copilot": {
+        "successes": 2,
+        "n": 2,
+        "estimate": 1.0,
+        "low": 0.3424,
+        "high": 1.0
+      },
+      "Cursor": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      },
+      "OpenCode": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0
+      }
+    },
+    "detected_without_credit": 0,
+    "agreement": {
+      "items": 200,
+      "agreement": 1.0,
+      "kappa": 1.0
+    },
+    "to_review": 0
+  },
+  "mentions": {
+    "phrasings": 200,
+    "attributions_no_heuristic_reads": {
+      "successes": 6,
+      "n": 200,
+      "estimate": 0.03,
+      "low": 0.0138,
+      "high": 0.0639
+    },
+    "commits_of_those": 50,
+    "agreement": {
+      "items": 40,
+      "agreement": 1.0,
+      "kappa": 1.0
+    },
+    "to_review": 0
+  },
+  "import_precision": {
+    "overall": {
+      "estimate": 0.9998,
+      "low": 0.9053,
+      "high": 1.0,
+      "items": 157,
+      "rows": 10659
+    },
+    "without_strata_from_evidence": {
+      "estimate": 0.9998,
+      "low": 0.9053,
+      "high": 1.0,
+      "items": 154,
+      "rows": 10656
+    },
+    "per_stratum": {
+      "claude-import-01/found": {
+        "successes": 7,
+        "n": 7,
+        "estimate": 1.0,
+        "low": 0.6457,
+        "high": 1.0,
+        "rows": 2679,
+        "from_evidence": false
+      },
+      "claude-import-01/missing": {
+        "successes": 7,
+        "n": 7,
+        "estimate": 1.0,
+        "low": 0.6457,
+        "high": 1.0,
+        "rows": 1367,
+        "from_evidence": false
+      },
+      "claude-import-01/not_read": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0,
+        "rows": 4,
+        "from_evidence": false
+      },
+      "claude-import-01/outside": {
+        "successes": 7,
+        "n": 7,
+        "estimate": 1.0,
+        "low": 0.6457,
+        "high": 1.0,
+        "rows": 15,
+        "from_evidence": false
+      },
+      "claude-import-01/pruned": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0,
+        "rows": 1,
+        "from_evidence": false
+      },
+      "claude-import-02/found": {
+        "successes": 2,
+        "n": 2,
+        "estimate": 1.0,
+        "low": 0.3424,
+        "high": 1.0,
+        "rows": 2,
+        "from_evidence": false
+      },
+      "claude-import-02/missing": {
+        "successes": 1,
+        "n": 2,
+        "estimate": 0.5,
+        "low": 0.0945,
+        "high": 0.9055,
+        "rows": 2,
+        "from_evidence": false
+      },
+      "claude-import-03/found": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0,
+        "rows": 1,
+        "from_evidence": false
+      },
+      "claude-import-04/found": {
+        "successes": 2,
+        "n": 2,
+        "estimate": 1.0,
+        "low": 0.3424,
+        "high": 1.0,
+        "rows": 3,
+        "from_evidence": false
+      },
+      "claude-import-04/missing": {
+        "successes": 7,
+        "n": 7,
+        "estimate": 1.0,
+        "low": 0.6457,
+        "high": 1.0,
+        "rows": 82,
+        "from_evidence": false
+      },
+      "claude-import-05/found": {
+        "successes": 7,
+        "n": 7,
+        "estimate": 1.0,
+        "low": 0.6457,
+        "high": 1.0,
+        "rows": 186,
+        "from_evidence": false
+      },
+      "claude-import-05/missing": {
+        "successes": 7,
+        "n": 7,
+        "estimate": 1.0,
+        "low": 0.6457,
+        "high": 1.0,
+        "rows": 645,
+        "from_evidence": false
+      },
+      "claude-import-05/outside": {
+        "successes": 7,
+        "n": 7,
+        "estimate": 1.0,
+        "low": 0.6457,
+        "high": 1.0,
+        "rows": 8,
+        "from_evidence": false
+      },
+      "claude-import-06/missing": {
+        "successes": 1,
+        "n": 2,
+        "estimate": 0.5,
+        "low": 0.0945,
+        "high": 0.9055,
+        "rows": 2,
+        "from_evidence": false
+      },
+      "copilot-import-01/found": {
+        "successes": 5,
+        "n": 5,
+        "estimate": 1.0,
+        "low": 0.5655,
+        "high": 1.0,
+        "rows": 5,
+        "from_evidence": false
+      },
+      "copilot-import-01/missing": {
+        "successes": 7,
+        "n": 7,
+        "estimate": 1.0,
+        "low": 0.6457,
+        "high": 1.0,
+        "rows": 100,
+        "from_evidence": false
+      },
+      "copilot-import-02/found": {
+        "successes": 7,
+        "n": 7,
+        "estimate": 1.0,
+        "low": 0.6457,
+        "high": 1.0,
+        "rows": 356,
+        "from_evidence": false
+      },
+      "copilot-import-02/missing": {
+        "successes": 7,
+        "n": 7,
+        "estimate": 1.0,
+        "low": 0.6457,
+        "high": 1.0,
+        "rows": 1188,
+        "from_evidence": false
+      },
+      "copilot-import-02/outside": {
+        "successes": 7,
+        "n": 7,
+        "estimate": 1.0,
+        "low": 0.6457,
+        "high": 1.0,
+        "rows": 17,
+        "from_evidence": false
+      },
+      "copilot-import-02/over_limit": {
+        "successes": 7,
+        "n": 7,
+        "estimate": 1.0,
+        "low": 0.6457,
+        "high": 1.0,
+        "rows": 12,
+        "from_evidence": false
+      },
+      "copilot-import-02/pruned": {
+        "successes": 2,
+        "n": 2,
+        "estimate": 1.0,
+        "low": 0.3424,
+        "high": 1.0,
+        "rows": 2,
+        "from_evidence": true
+      },
+      "copilot-import-03/found": {
+        "successes": 7,
+        "n": 7,
+        "estimate": 1.0,
+        "low": 0.6457,
+        "high": 1.0,
+        "rows": 2702,
+        "from_evidence": false
+      },
+      "copilot-import-03/missing": {
+        "successes": 7,
+        "n": 7,
+        "estimate": 1.0,
+        "low": 0.6457,
+        "high": 1.0,
+        "rows": 1110,
+        "from_evidence": false
+      },
+      "copilot-import-03/outside": {
+        "successes": 7,
+        "n": 7,
+        "estimate": 1.0,
+        "low": 0.6457,
+        "high": 1.0,
+        "rows": 18,
+        "from_evidence": false
+      },
+      "copilot-import-03/pruned": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0,
+        "rows": 1,
+        "from_evidence": false
+      },
+      "copilot-import-04/missing": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0,
+        "rows": 1,
+        "from_evidence": false
+      },
+      "copilot-import-05/found": {
+        "successes": 2,
+        "n": 2,
+        "estimate": 1.0,
+        "low": 0.3424,
+        "high": 1.0,
+        "rows": 2,
+        "from_evidence": false
+      },
+      "copilot-import-05/missing": {
+        "successes": 2,
+        "n": 2,
+        "estimate": 1.0,
+        "low": 0.3424,
+        "high": 1.0,
+        "rows": 2,
+        "from_evidence": false
+      },
+      "copilot-import-06/missing": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0,
+        "rows": 1,
+        "from_evidence": true
+      },
+      "cursor-import-01/found": {
+        "successes": 7,
+        "n": 7,
+        "estimate": 1.0,
+        "low": 0.6457,
+        "high": 1.0,
+        "rows": 9,
+        "from_evidence": false
+      },
+      "cursor-import-01/missing": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0,
+        "rows": 2,
+        "from_evidence": false
+      },
+      "gemini-import-01/found": {
+        "successes": 7,
+        "n": 7,
+        "estimate": 1.0,
+        "low": 0.6457,
+        "high": 1.0,
+        "rows": 100,
+        "from_evidence": false
+      },
+      "gemini-import-01/missing": {
+        "successes": 7,
+        "n": 7,
+        "estimate": 1.0,
+        "low": 0.6457,
+        "high": 1.0,
+        "rows": 29,
+        "from_evidence": false
+      },
+      "gemini-import-02/found": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0,
+        "rows": 1,
+        "from_evidence": false
+      },
+      "gemini-import-02/missing": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0,
+        "rows": 1,
+        "from_evidence": false
+      },
+      "gemini-import-05/found": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0,
+        "rows": 1,
+        "from_evidence": false
+      },
+      "gemini-import-05/missing": {
+        "successes": 2,
+        "n": 2,
+        "estimate": 1.0,
+        "low": 0.3424,
+        "high": 1.0,
+        "rows": 2,
+        "from_evidence": false
+      }
+    },
+    "labels": {
+      "correct": 155,
+      "not_loaded": 1,
+      "wrong_target": 1
+    },
+    "strata_from_evidence": {
+      "copilot-import-02/pruned": 2,
+      "copilot-import-06/missing": 1
+    },
+    "agreement": {
+      "items": 32,
+      "agreement": 1.0,
+      "kappa": 1.0
+    },
+    "to_review": 0
+  },
+  "planning_precision": {
+    "overall": {
+      "estimate": 0.9984,
+      "low": 0.9328,
+      "high": 1.0,
+      "items": 366,
+      "rows": 27593
+    },
+    "without_strata_from_evidence": {
+      "estimate": 0.9985,
+      "low": 0.9253,
+      "high": 1.0,
+      "items": 160,
+      "rows": 24496
+    },
+    "per_stratum": {
+      "ai-dev-tasks": {
+        "successes": 2,
+        "n": 2,
+        "estimate": 1.0,
+        "low": 0.3424,
+        "high": 1.0,
+        "rows": 8,
+        "from_evidence": false
+      },
+      "awesome-copilot": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0,
+        "rows": 1,
+        "from_evidence": true
+      },
+      "backlog-md": {
+        "successes": 20,
+        "n": 20,
+        "estimate": 1.0,
+        "low": 0.8389,
+        "high": 1.0,
+        "rows": 2265,
+        "from_evidence": true
+      },
+      "beans": {
+        "successes": 20,
+        "n": 20,
+        "estimate": 1.0,
+        "low": 0.8389,
+        "high": 1.0,
+        "rows": 117,
+        "from_evidence": true
+      },
+      "bmad-method": {
+        "successes": 20,
+        "n": 20,
+        "estimate": 1.0,
+        "low": 0.8389,
+        "high": 1.0,
+        "rows": 143,
+        "from_evidence": true
+      },
+      "cc-sdd": {
+        "successes": 20,
+        "n": 20,
+        "estimate": 1.0,
+        "low": 0.8389,
+        "high": 1.0,
+        "rows": 233,
+        "from_evidence": true
+      },
+      "claude": {
+        "successes": 17,
+        "n": 20,
+        "estimate": 0.85,
+        "low": 0.6396,
+        "high": 0.9476,
+        "rows": 83,
+        "from_evidence": false
+      },
+      "compound-engineering": {
+        "successes": 20,
+        "n": 20,
+        "estimate": 1.0,
+        "low": 0.8389,
+        "high": 1.0,
+        "rows": 107,
+        "from_evidence": false
+      },
+      "conductor": {
+        "successes": 0,
+        "n": 18,
+        "estimate": 0.0,
+        "low": 0.0,
+        "high": 0.1759,
+        "rows": 24,
+        "from_evidence": false
+      },
+      "copilot": {
+        "successes": 20,
+        "n": 20,
+        "estimate": 1.0,
+        "low": 0.8389,
+        "high": 1.0,
+        "rows": 25,
+        "from_evidence": true
+      },
+      "cursor": {
+        "successes": 7,
+        "n": 7,
+        "estimate": 1.0,
+        "low": 0.6457,
+        "high": 1.0,
+        "rows": 236,
+        "from_evidence": false
+      },
+      "get-shit-done": {
+        "successes": 20,
+        "n": 20,
+        "estimate": 1.0,
+        "low": 0.8389,
+        "high": 1.0,
+        "rows": 1626,
+        "from_evidence": false
+      },
+      "humanlayer": {
+        "successes": 20,
+        "n": 20,
+        "estimate": 1.0,
+        "low": 0.8389,
+        "high": 1.0,
+        "rows": 25,
+        "from_evidence": true
+      },
+      "hve-core": {
+        "successes": 0,
+        "n": 2,
+        "estimate": 0.0,
+        "low": 0.0,
+        "high": 0.6576,
+        "rows": 2,
+        "from_evidence": true
+      },
+      "matt-pocock-skills": {
+        "successes": 20,
+        "n": 20,
+        "estimate": 1.0,
+        "low": 0.8389,
+        "high": 1.0,
+        "rows": 78,
+        "from_evidence": true
+      },
+      "opencode": {
+        "successes": 20,
+        "n": 20,
+        "estimate": 1.0,
+        "low": 0.8389,
+        "high": 1.0,
+        "rows": 84,
+        "from_evidence": true
+      },
+      "openspec": {
+        "successes": 20,
+        "n": 20,
+        "estimate": 1.0,
+        "low": 0.8389,
+        "high": 1.0,
+        "rows": 15307,
+        "from_evidence": false
+      },
+      "pilot-shell": {
+        "successes": 2,
+        "n": 2,
+        "estimate": 1.0,
+        "low": 0.3424,
+        "high": 1.0,
+        "rows": 2,
+        "from_evidence": true
+      },
+      "planning-with-files": {
+        "successes": 19,
+        "n": 20,
+        "estimate": 0.95,
+        "low": 0.7639,
+        "high": 0.9911,
+        "rows": 101,
+        "from_evidence": true
+      },
+      "prp": {
+        "successes": 13,
+        "n": 13,
+        "estimate": 1.0,
+        "low": 0.7719,
+        "high": 1.0,
+        "rows": 24,
+        "from_evidence": false
+      },
+      "spec-driven-workflow": {
+        "successes": 20,
+        "n": 20,
+        "estimate": 1.0,
+        "low": 0.8389,
+        "high": 1.0,
+        "rows": 20,
+        "from_evidence": true
+      },
+      "spec-kit": {
+        "successes": 20,
+        "n": 20,
+        "estimate": 1.0,
+        "low": 0.8389,
+        "high": 1.0,
+        "rows": 2868,
+        "from_evidence": false
+      },
+      "superpowers": {
+        "successes": 20,
+        "n": 20,
+        "estimate": 1.0,
+        "low": 0.8389,
+        "high": 1.0,
+        "rows": 4213,
+        "from_evidence": false
+      },
+      "task-master": {
+        "successes": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.2065,
+        "high": 1.0,
+        "rows": 1,
+        "from_evidence": true
+      }
+    },
+    "labels": {
+      "correct": 342,
+      "not_planning_document": 3,
+      "wrong_framework": 21
+    },
+    "strata_from_evidence": {
+      "awesome-copilot": 1,
+      "backlog-md": 2265,
+      "beans": 117,
+      "bmad-method": 143,
+      "cc-sdd": 233,
+      "copilot": 25,
+      "humanlayer": 25,
+      "hve-core": 2,
+      "matt-pocock-skills": 78,
+      "opencode": 84,
+      "pilot-shell": 2,
+      "planning-with-files": 101,
+      "spec-driven-workflow": 20,
+      "task-master": 1
+    },
+    "agreement": {
+      "items": 74,
+      "agreement": 0.9459,
+      "kappa": 0.5807
+    },
+    "to_review": 0
+  }
+}

@@ -1,0 +1,5 @@
+tool,imports,found,missing,outside,not_read,over_limit,pruned,not_copied,importing_files,repositories
+copilot,5517,3065,2402,35,0,12,3,0,3451,1862
+claude,5000,2872,2100,23,4,0,1,0,3619,2051
+gemini,134,102,32,0,0,0,0,0,94,70
+cursor,11,9,2,0,0,0,0,0,4,3

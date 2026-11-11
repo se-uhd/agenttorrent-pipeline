@@ -1,0 +1,100 @@
+{
+  "seed": 20261013,
+  "excluded_repositories": 1345,
+  "sizes": {
+    "path_precision_per_cell": 10,
+    "recall_unconfigured": 200,
+    "recall_configured": 100,
+    "candidates_per_repository": 200,
+    "commit_precision_per_tool": 60,
+    "commit_recall_commits": 1000,
+    "mentions": 200,
+    "second_pass_share": 0.2
+  },
+  "inputs": {
+    "ai_commits-repos.csv": "ca3ccc7c4b73a9412bbe06029e14667a907777e4c15de6e63fbf7ce950d8db3a",
+    "all_ai_commits.csv": "1a318ebc7cbd4ca8b2a3836ab1fc951cf3d5ad9962bf62bd5766777379b37182",
+    "other_ai_commits.csv": "f23bf08ce34c5cc5a9fca5f8cbc8de9da68ab763634a760d8b7b7be87ce03d37",
+    "settings.csv": "0cc45fbea9a25bfc4acf18caf560cdd381eafb06d34ad96578689fa466b41209",
+    "context-files.csv": "486a4a5e1db9594faabcf633dd9cd008416cf7b67a73a97992c1adfe7446c046",
+    "skills.csv": "08695d2f363149de39602cefc4c05f841c64eadaef1eee4cf8a0cebe8ebbeb9c",
+    "subagents.csv": "daf862ff931f952dafb30691df0fb53e035873afdc486c2411b1c33a233ef2a8",
+    "commands.csv": "e9764cf8c442749e0b7c685139924111929da1223ab54ab37b1c2977b33962c1",
+    "hooks.csv": "58a34050fda9ba69385263f57af83d4473230915abd9ac2219dfa446bc053a82",
+    "rules.csv": "58ca8bef6515fe0b4e612e121e635e468cd1fc6f821e5596af2bced2d6847c86",
+    "mcp.csv": "742a6e4d3101d849373e9d413dae59022c565209f6431a98be81a0fc4b967e0f",
+    "plugins.csv": "c8418a546b9554bd35a83b810b84e3cc874be7abcde8b0faf05136e553219c24",
+    "lsp.csv": "403460a73c186ca764d2daefc82dc4d8567fcb5a2da01ed3df9886716a51c62b",
+    "other.csv": "6f4aa9651743095e27812d107116023b6f0b0ae60880603cee4cc456ad71a23b",
+    "all_ai_commits-mentions.csv": "98f8fdde639e9bc04df6340e072e2bab0c25a198864d2700e931a7f96faacfd8",
+    "finished_repositories.jsonl": "9fccc1e400fc792aa0eacc4e56c0b9eee3dcfc1d0fa240f2e84d08d937b68181"
+  },
+  "trees": {
+    "file_lists": "b4418e6945dd15ab47833ac2d5eef516bf6e3c84722977a862664e1a0bb25d8a",
+    "commit_logs": "544dbbf584ed95731f2706bb39b11e2092db93306ef4eb5c350015b4ffc72041"
+  },
+  "heuristics": {
+    "ai_commit_patterns.csv": "0e85f2fff6b4ded69a56a703a66f9a6c5e1040e0719117fab981d97b440b2293",
+    "config_path_patterns.csv": "b089514784b7d0b01eef8eb66bb0e220debc6494de4d9f57819099487c2fa856",
+    "import_patterns.csv": "c41d860de54378fc5aa0894442aebfd068e8d6d50d7ffdef33f2aee122e41a36",
+    "local_state_paths.csv": "bde408d9de3dc05168ecbc5fb6551f01ae5a73ba339fc0521219a80725b330d3",
+    "not_ai_commits.csv": "e133899b18fa138343d1f328052a2cd9e01ce3ea5a9e009f3bb305990c474037",
+    "not_configuration.csv": "a45e0c77bec131d88b84e0137fb999aa025f4abf0204be2854376a4671fbadb6",
+    "not_imports.csv": "fa96177ab39104ca835296b500f6bda8f1ba9c6fd7705914f953a0452fbcb6a3",
+    "not_planning_documents.csv": "5bfa9306a66b16801723867d417f7b071678a1f20a334974a1b987f09bcd7f02",
+    "other_ai_commit_patterns.csv": "bc4551edb1af25507141ef94ee3c331edbf5480847a89b65101d191c9c9b97de",
+    "planning_document_patterns.csv": "f31b71c35dd1c08e6c7eee1d1d381e3b3faf587db96adb01efe1295ed227801a"
+  },
+  "later_draws": [
+    {
+      "samples": [
+        "import_precision",
+        "planning_precision"
+      ],
+      "excluded_repositories": 1357,
+      "sizes": {
+        "import_precision_per_cell": 7,
+        "planning_precision_per_cell": 20,
+        "second_pass_share": 0.2
+      },
+      "inputs": {
+        "data/collection/output/imports.csv": "2c81ad80f2396eff78a0eabcbca80eae70e42fbdcf5e7b22b6e56fd388a850b5",
+        "data/collection/output/planning-documents.csv": "a4ade22a7b1848b2036aee3cd27a7d512cef7b946c0d22be8ed77c43f48495fc"
+      },
+      "heuristics": {
+        "ai_commit_patterns.csv": "f7a753705bed318dda8e760f2d5e432f32e87d4d19290c8465def0a217f87723",
+        "config_path_patterns.csv": "a362db9f0c4f473fe983fc39f0f13aca4358d565254cc557858a01be1ae569e7",
+        "import_patterns.csv": "c41d860de54378fc5aa0894442aebfd068e8d6d50d7ffdef33f2aee122e41a36",
+        "local_state_paths.csv": "bde408d9de3dc05168ecbc5fb6551f01ae5a73ba339fc0521219a80725b330d3",
+        "not_ai_commits.csv": "e133899b18fa138343d1f328052a2cd9e01ce3ea5a9e009f3bb305990c474037",
+        "not_configuration.csv": "eead1ece7a7ec521a54f7a0e3d28d5008e0d07b32bea3ce4ae2d757fa30bedd8",
+        "not_imports.csv": "fa96177ab39104ca835296b500f6bda8f1ba9c6fd7705914f953a0452fbcb6a3",
+        "not_planning_documents.csv": "5bfa9306a66b16801723867d417f7b071678a1f20a334974a1b987f09bcd7f02",
+        "other_ai_commit_patterns.csv": "fc879f3fea29cdcbb0510c5991bc72acaa5a1d512db02b1cccc38b4ca9d809a9",
+        "planning_document_patterns.csv": "f31b71c35dd1c08e6c7eee1d1d381e3b3faf587db96adb01efe1295ed227801a"
+      },
+      "strata_from_evidence": {
+        "import_precision": {
+          "copilot-import-02/pruned": 2,
+          "copilot-import-06/missing": 1
+        },
+        "planning_precision": {
+          "awesome-copilot": 1,
+          "backlog-md": 2265,
+          "beans": 117,
+          "bmad-method": 143,
+          "cc-sdd": 233,
+          "copilot": 25,
+          "humanlayer": 25,
+          "hve-core": 2,
+          "matt-pocock-skills": 78,
+          "opencode": 84,
+          "pilot-shell": 2,
+          "planning-with-files": 101,
+          "spec-driven-workflow": 20,
+          "task-master": 1
+        }
+      }
+    }
+  ]
+}

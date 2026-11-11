@@ -1,0 +1,34 @@
+item,label,tool,attribution_correct,paths,note
+pp-0018,correct,,,,"VS Code reads the root .mcp.json and infers the type of a server with a url alone (sanitizeServer), so the file configures a server, although Claude Code skips it"
+pp-0166,correct,,,,Cursor's page asks for a name that matches the folder but does not say that it drops the skill
+pp-0418,not_configuration,,,,"{""servers"": {}} configures no server; an MCP file counts only with a server that a tool loads (decided 2026-10-29)"
+pp-0436,correct,,,,Copilot CLI reads a legacy manifest at plugin.json wherever the plugin is installed from
+pp-0440,correct,,,,Copilot CLI reads a legacy manifest at plugin.json wherever the plugin is installed from
+pp-0445,correct,,,,"the default rules/ of a legacy Copilot CLI plugin, as docs/heuristics.md describes the CLI's code"
+pp-0475,not_configuration,,,,"the link leads into a private submodule that no clone contains, as for not_configuration.csv rows 40 and 41"
+pp-0479,correct,,,,"Cursor's loader stats a linked command file and reads its target, as pp-0427 of the evaluation of 2026-10-05"
+pp-0481,correct,,,,"Cursor's loader stats a linked command file and reads its target, as pp-0427 of the evaluation of 2026-10-05"
+pp-0488,correct,,,,"a .cursorrules outside .cursor in a folder that can be opened as the project, which Cursor reads ""in the root of your project"", as detection reads the directory that a tool works in"
+pp-0570,not_configuration,,,,"a Markdown file without YAML front matter, which Cursor's loader of subagents skips: the parser Hs of Cursor CLI 2026.09.28-64d2043 returns null without a pair of --- lines and the loader continues (index.js, read 2026-11-05), and Cursor's staff states for the IDE that a file is detected with ""YAML frontmatter or a pair of `---` separators"". Optional fields do not make the front matter optional"
+pp-0571,not_configuration,,,,"a Markdown file without YAML front matter, which Cursor's loader of subagents skips: the parser Hs of Cursor CLI 2026.09.28-64d2043 returns null without a pair of --- lines and the loader continues (index.js, read 2026-11-05), and Cursor's staff states for the IDE that a file is detected with ""YAML frontmatter or a pair of `---` separators"". Optional fields do not make the front matter optional"
+pp-0573,not_configuration,,,,"a Markdown file without YAML front matter, which Cursor's loader of subagents skips: the parser Hs of Cursor CLI 2026.09.28-64d2043 returns null without a pair of --- lines and the loader continues (index.js, read 2026-11-05), and Cursor's staff states for the IDE that a file is detected with ""YAML frontmatter or a pair of `---` separators"". Optional fields do not make the front matter optional"
+pp-0585,correct,,,,"Antigravity read the workflow until it retired the format on 2026-10-19, and the file is configuration written for it (decided 2026-10-29)"
+pp-0658,not_configuration,,,,"a SKILL.md without front matter, which Antigravity requires"
+pp-0667,not_configuration,,,,Gemini CLI refuses an agent with a tool name that isValidToolName rejects
+pr-0203,missed,,,.github/copilot-instructions.md;.github/hooks/public-identity-guard.json;.github/skills/acn-go-context-lifecycle/SKILL.md;.github/skills/acn-go-control-plane-contracts/SKILL.md;.github/skills/acn-go-design-boundaries/SKILL.md;.github/skills/acn-go-errors-logging/SKILL.md;.github/skills/acn-go-http-api-contracts/SKILL.md;.github/skills/acn-go-interfaces-dependencies/SKILL.md;.github/skills/acn-go-platform-abstraction/SKILL.md;.github/skills/acn-go-types-parsing/SKILL.md;.github/skills/acn-go-version-bump/SKILL.md;.github/workflows/copilot-setup-steps.yml;.mcp.json;CLAUDE.md;agents.md;cns/agents.md,"a tool reads the undetected path, and detection misses it by a decided limit, which the estimate counts as a miss: a nested context file in another case"
+pr-0243,none,,,.agents/skills/shadcn-vue/SKILL.md;AGENTS.md;CLAUDE.md,"a linked skill folder is reported at its target, as pr-0273 of the evaluation of 2026-10-05"
+pr-0276,missed,,,.agents/skills/material-ui-review/SKILL.md;.agents/skills/mui-release/SKILL.md;.claude/skills/material-ui-review/SKILL.md;.github/workflows/claude-flake-fix.yml;.github/workflows/claude-review.yml;AGENTS.md;CLAUDE.md;skills/material-ui-nextjs/AGENTS.md;skills/material-ui-styling/AGENTS.md;skills/material-ui-tailwind/AGENTS.md;skills/material-ui-theming/AGENTS.md,"a tool reads the undetected path, and detection misses it by a decided limit, which the estimate counts as a miss: a workflow whose job calls a reusable workflow of another repository that runs claude-code-action"
+cp-0079,correct,,no,,"noreply@openai.com is the address of the codex account, so a line that names Codex there is standard (decided 2026-10-29)"
+cp-0140,correct,,no,,"the sentence names Copilot CLI and is no line that it writes, so convention is missing"
+cp-0167,correct,,yes,,the Copilot CLI app's identity made the commit
+cp-0326,correct,,no,,"OpenCode writes noreply@opencode.ai and no other opencode.ai address, so opencode@opencode.ai is convention"
+cp-0386,correct,,no,,"noreply@openai.com is the address of the codex account, so a line that names Codex there is standard (decided 2026-10-29)"
+cp-0468,correct,,no,,"CodeRabbit made the change itself, so its line is standard, as for the other apps that review and make changes"
+cp-0473,correct,,yes,,"no TRAE page or code states the line, so it stays convention"
+mn-0064,attribution,,,,"the developer marks the commits that Copilot made; one commit, no heuristic"
+mn-0114,not_attribution,,,,"credits the repository's own agent, as mn-0122 of the evaluation of 2026-10-05"
+mn-0122,not_attribution,,,,"feedback from Claude that a person applied, as mn-0037 of the evaluation of 2026-10-05"
+mn-0136,not_attribution,,,,"Datagrok's own fix worker named after the model, as the repository's own agent of mn-0114"
+mn-0166,not_attribution,,,,"Spice AI's own agent account named after the model, as the repository's own agent of mn-0114"
+mn-0190,not_attribution,,,,"no Codex page names the [codex] prefix, as mn-0067 of the evaluation of 2026-10-05"
+pr-0282,none,,,.claude/settings.json;.cursor/commands/fix-github-issue.md;.cursor/commands/improvement_pass.md;.cursor/commands/rebase.md;.cursor/worktrees.json;AGENTS.md;CLAUDE.md;evtx-wasm/.cursor/rules/evtx-state-architecture.mdc;evtx-wasm/.cursor/rules/wasm-bindings.mdc,an ignore file belongs to no mechanism and is not a configuration path of path recall

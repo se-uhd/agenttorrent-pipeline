@@ -1,0 +1,56 @@
+{
+ "workflow_url": "https://github.com/se-uhd/ai-config-pipeline/actions/runs/39856182261",
+ "workflow_run": 39856182261,
+ "ci_run_url": "https://github.com/se-uhd/ai-config-pipeline/actions/runs/39856184127",
+ "source_commit": "e99d5614241389d463c8aa11c2fb78ccd327fdbe",
+ "platform": "linux/amd64",
+ "built_at": "2026-10-22T21:19:14Z",
+ "python": "3.14",
+ "image_tarball_sha256": "591d9cb778c3fc9459d803bfc7f91c44818b86c130778ce18b0ecf9100e81280",
+ "nas_bundle_sha256": "f3df119f7b64c2b1cc86412b96e964af3ba8d7473597ef0d5b5b28b30d385597",
+ "image_id": "sha256:53950932bdfae418deb929cf753d877aeb5b12041f7d8f89075e9eb94d5e1410",
+ "checks": {
+  "build_info_matches_source_commit": true,
+  "image_checksum_matches_build_info": true,
+  "architecture_matches_nas": true,
+  "bundle_files_equal_source_commit": true,
+  "bundle_has_no_credentials_or_data": true,
+  "image_load_preserves_tag": true,
+  "intended_stages_listed": true,
+  "ci_on_source_commit_passed": true,
+  "full_local_verification_passed": true,
+  "subsample_run_failed_steps_none": true
+ },
+ "full_verification": {
+  "report": "verification-e99d5614.txt",
+  "report_sha256": "22fc7a1e19e5f00630ea76922eabfbfdd0051b4b89b82dfde80a9ed46f4dbeab",
+  "tests": 5782,
+  "skipped": 15,
+  "reproduced_scripts": 26
+ },
+ "subsample_run": {
+  "source_commit": "e99d5614241389d463c8aa11c2fb78ccd327fdbe",
+  "run_list": "subsample-run-list.csv",
+  "repositories": 103,
+  "without_a_mirror": 1,
+  "reference_before": "07885829",
+  "reference_run_list": "subsample-run-list.csv",
+  "differences": 6,
+  "entered": 0,
+  "left": 0,
+  "failed_steps": [],
+  "earlier_run": {
+   "source_commit": "a69405126967881b0c0391c37dfab12df7ad71f7",
+   "run_list": "subsample-run-list.csv",
+   "repositories": 103,
+   "without_a_mirror": 1,
+   "reference_before": "07885829",
+   "reference_run_list": "subsample-run-list.csv",
+   "differences": 0,
+   "entered": 0,
+   "left": 0,
+   "failed_steps": []
+  }
+ },
+ "stage_list": "INFO entrypoint: agentcontext-pipeline image: commit e99d5614241389d463c8aa11c2fb78ccd327fdbe, built 2026-10-22T21:19:14Z, python 3.14, data root revision 1\nINFO runner: sampling:\nINFO runner:   ghs_download: [sampling] /usr/local/bin/python3 1_sampling/1_download_ghs.py\nINFO runner:   github_query: [sampling] /usr/local/bin/python3 1_sampling/2_query_github.py\nINFO runner:   retrieval_comparison: [sampling] /usr/local/bin/python3 1_sampling/3_compare_retrievals.py\nINFO runner:   repository_filtering: [sampling] /usr/local/bin/python3 1_sampling/4_filter_ghs.py\nINFO runner: classification:\nINFO runner:   repository_labeling: [classification] /usr/local/bin/python3 2_classification/1_classify_repos.py\nINFO runner:   engineered_project_selection: python3 -m agentcontext.steps.engineered_project_selection\nINFO runner: collection:\nINFO runner:   repository_cloning: /usr/local/bin/python3 -m agentcontext.steps.repository_cloning --clone-dir /app/data/collection/_scratch\nINFO runner:   commit_reclassification: /usr/local/bin/python3 -m agentcontext.steps.commit_reclassification\nINFO runner:   collected_file_cleanup: python3 -m agentcontext.steps.collected_file_cleanup\nINFO runner:   detection: /usr/local/bin/python3 -m agentcontext.steps.detection\nINFO runner:   file_history: /usr/local/bin/python3 -m agentcontext.steps.file_history --clone-dir /app/data/collection/_scratch\nINFO runner:   import_detection: python3 -m agentcontext.steps.import_detection\nINFO runner:   output_cross_check: python3 -m agentcontext.steps.output_cross_check\nINFO runner:   unmatched_paths_report: python3 -m agentcontext.checks.unmatched paths --min-repos 2 --out output/unmatched-paths.csv\nINFO runner:   deleted_files_report: python3 -m agentcontext.checks.deletions --report-only --out output/deletions.csv\nINFO runner:   collection_summary: python3 -m agentcontext.checks.snapshot write\nINFO runner:   commit_attribution_validation: python3 -m agentcontext.checks.commits -i output/all_ai_commits.csv --other-input output/other_ai_commits.csv\nINFO runner:   unmatched_commits_report: python3 -m agentcontext.checks.unmatched commits --unmatched-csv output/all_ai_commits-unmatched.csv --out output/unmatched-commits.csv\nINFO runner: publication:\nINFO runner:   collected_files_archive: python3 -m agentcontext.steps.collected_files_archive\nINFO runner:   release: python3 -m agentcontext.steps.release\nINFO runner: analysis:\nINFO runner:   rq2_config_cooccurrence: [analysis] /usr/local/bin/python3 4_data-analysis/rq2/config_cooccurrence.py\nINFO runner:   rq2_config_mechanism_upset: [analysis] /usr/local/bin/python3 4_data-analysis/rq2/config_mechanism_upset.py\nINFO runner:   rq2_config_tool_heatmap: [analysis] /usr/local/bin/python3 4_data-analysis/rq2/config_tool_heatmap.py\nINFO runner:   rq2_content_quality: [analysis] /usr/local/bin/python3 4_data-analysis/rq2/content_quality.py\nINFO runner:   rq2_language_ranking_all: [analysis] /usr/local/bin/python3 4_data-analysis/rq2/language_ranking_all.py\nINFO runner:   rq2_language_tool_association: [analysis] /usr/local/bin/python3 4_data-analysis/rq2/language_tool_association.py\nINFO runner:   rq2_repo_metadata_comparison: [analysis] /usr/local/bin/python3 4_data-analysis/rq2/repo_metadata_comparison.py\nINFO runner:   rq2_tool_cooccurrence: [analysis] /usr/local/bin/python3 4_data-analysis/rq2/tool_cooccurrence.py\nINFO runner:   rq2_tool_count_distribution: [analysis] /usr/local/bin/python3 4_data-analysis/rq2/tool_count_distribution.py\nINFO runner:   rq2_upset_plot: [analysis] /usr/local/bin/python3 4_data-analysis/rq2/upset_plot.py\nINFO runner:   rq2_venn_diagram: [analysis] /usr/local/bin/python3 4_data-analysis/rq2/venn_diagram.py\nINFO runner:   rq3_adoption_timeline: [analysis] /usr/local/bin/python3 4_data-analysis/rq3/adoption_timeline.py\nINFO runner:   rq3_cooccurrence_analysis: [analysis] /usr/local/bin/python3 4_data-analysis/rq3/cooccurrence_analysis.py\nINFO runner:   rq3_count_distribution: [analysis] /usr/local/bin/python3 4_data-analysis/rq3/count_distribution.py\nINFO runner:   dataset_artifact_distribution: [analysis] /usr/local/bin/python3 4_data-analysis/dataset/artifact_distribution.py\nINFO runner:   dataset_tool_adoption: [analysis] /usr/local/bin/python3 4_data-analysis/dataset/tool_adoption.py\nINFO runner:   dataset_monthly_ai_commit_volume: [analysis] /usr/local/bin/python3 4_data-analysis/dataset/monthly_ai_commit_volume.py\nINFO runner:   dataset_commit_message_first_words: [analysis] /usr/local/bin/python3 4_data-analysis/dataset/commit_message_first_words.py\nINFO runner:   dataset_filter_steps_table: [analysis] /usr/local/bin/python3 4_data-analysis/dataset/filter_steps_table.py\nINFO runner:   dataset_planning_documents: [analysis] /usr/local/bin/python3 4_data-analysis/dataset/planning_documents.py\nINFO runner:   dataset_imports: [analysis] /usr/local/bin/python3 4_data-analysis/dataset/imports.py\nINFO runner:   reproduction_check: [analysis] /usr/local/bin/python3 4_data-analysis/check_reproduction.py --skip-missing --reproduce-only\n"
+}

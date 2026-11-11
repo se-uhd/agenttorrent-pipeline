@@ -1,0 +1,7 @@
+role,model,service_tier,billed_as,tokens,usd_per_million,usd,price_url,price_read,note
+classifying_model,deepseek/deepseek-v4.1-flash,morph/fp8,uncached_input,3176,0.05,0.0001588,https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints,2026-11-01,
+classifying_model,deepseek/deepseek-v4.1-flash,morph/fp8,cached_input,142336,0.008,0.001138688,https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints,2026-11-01,
+classifying_model,deepseek/deepseek-v4.1-flash,morph/fp8,output,36641,0.192,0.007035072,https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints,2026-11-01,
+summary_model,deepseek/deepseek-v4.1-flash,morph/fp8,uncached_input,2177,0.05,0.00010885,https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints,2026-11-01,
+summary_model,deepseek/deepseek-v4.1-flash,morph/fp8,cached_input,1024,0.008,0.000008192,https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints,2026-11-01,
+summary_model,deepseek/deepseek-v4.1-flash,morph/fp8,output,1217,0.192,0.000233664,https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints,2026-11-01,

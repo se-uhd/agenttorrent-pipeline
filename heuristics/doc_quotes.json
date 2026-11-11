@@ -1,0 +1,4169 @@
+{
+  "https://antigravity.google/docs/agent-settings": {
+    "sha256": "8c9b6e989f050df0b9f5c8027d3b2360b41ef89c4bdc997e24661a8609b1a600",
+    "quotations": [
+      "77d28153b8e030f0"
+    ]
+  },
+  "https://api.github.com/users/openhands-agent": {
+    "sha256": "bea95944b0f46667c88ed20b186fb1f86af3ba317fc420f7a98199c2edec2843",
+    "quotations": [
+      "c46c6dd74a61235b"
+    ]
+  },
+  "https://buildermethods.com/agent-os": {
+    "sha256": "ce48ba89dc5760d6ab14a6c3dc9e7ffc13684ea2f06382abc548d3ef471ba65c",
+    "quotations": [
+      "abd296eec243e5a0"
+    ]
+  },
+  "https://buildermethods.com/agent-os/file-structure": {
+    "sha256": "9bb4f9bd8382e2aa5d0ebaff6d97a7cdba369494c10b1b8ace85d5aae23ca9d5",
+    "quotations": [
+      "07c7f54068f246c0",
+      "09d305074d317149",
+      "45bcdf7b059d62fa",
+      "a2c3395d3bcf5b7b",
+      "afae89ece3cd0973",
+      "ceda909cdc71b0fd"
+    ]
+  },
+  "https://buildermethods.com/agent-os/shape-spec": {
+    "sha256": "09c991dab36d3aac8786197615cbbe84eadb6cc0a639e454e71b6377565567d4",
+    "quotations": [
+      "08dc2a4266d1b187",
+      "1600547e5fcde267",
+      "84f875292e4018eb",
+      "e7f9eaea27e30d8b",
+      "fc954c0a577d8aba"
+    ]
+  },
+  "https://buildermethods.com/agent-os/v2/create-tasks": {
+    "sha256": "9707f5ea6f6bbdb79c763594ebd0454c506106022a1d501ae9d2bc69db3efc3c",
+    "quotations": [
+      "f3aa0d6b6d4382b9",
+      "f5471b42f6819462"
+    ]
+  },
+  "https://buildermethods.com/agent-os/v2/orchestrate-tasks": {
+    "sha256": "e01c71c43434ac4ff2e9a4d827e405f9171b53f8f438ad22dc6b5b4fd00e713a",
+    "quotations": [
+      "971475bf191a68d9",
+      "cbfcc17bdec43655"
+    ]
+  },
+  "https://buildermethods.com/agent-os/v2/shape-spec": {
+    "sha256": "d6394fd50794d89c927d989ac0e3ed311b934ab289c1237a0adb5cec6824ff6b",
+    "quotations": [
+      "322c515df259346b"
+    ]
+  },
+  "https://buildermethods.com/agent-os/v2/verification": {
+    "sha256": "496fd895b7364582d1d6f9d43881c92a6a4f1a0669e9a658fc802669e53f1cd1",
+    "quotations": [
+      "3c7d7b7b83db61d5"
+    ]
+  },
+  "https://buildermethods.com/agent-os/v2/write-spec": {
+    "sha256": "846376ac7a43ec90c94d70019a1945226e5ac13b0b07f041a42d9c75f5aefedf",
+    "quotations": [
+      "5ca081a1cd74b2d3",
+      "bec30fed731a5295",
+      "f5471b42f6819462"
+    ]
+  },
+  "https://code.claude.com/docs/en/best-practices": {
+    "sha256": "e6bf1dfdb83d24a20f74a9a79df8e8d30c3c21920702038a05151cc5bbab4b14",
+    "quotations": [
+      "5ebe43d1e5b44f62"
+    ]
+  },
+  "https://code.claude.com/docs/en/claude-directory": {
+    "sha256": "351bb31c8f2fda05c0629beeb2acf99e742764fc69a3d3ae6629db50f999ac83",
+    "quotations": [
+      "3faadefa6db0ecf2"
+    ]
+  },
+  "https://code.claude.com/docs/en/code-review-customize": {
+    "sha256": "aaf3aaa8d372b3142accff67b81b970eb5310c5b6822c0522752ebeb81238957",
+    "quotations": [
+      "518c103aaf284a79",
+      "69b0ce51c44c5b1e",
+      "f82cf01e103a7a24"
+    ]
+  },
+  "https://code.claude.com/docs/en/settings-reference": {
+    "sha256": "f472aefd6e7a2c18495e5587fcb203f8edfb8fb490f8f0333f87441f774de399",
+    "quotations": [
+      "2eaccf788d11008f",
+      "62ed72c4c0f6c5f6",
+      "70e3bcb2e2b131c2",
+      "83f381e1317d9538",
+      "91495bd5ab0339f5"
+    ]
+  },
+  "https://code.claude.com/docs/en/ultraplan": {
+    "sha256": "8385087be1b55e45aad6e0f988d9230adcc65ae83e422bbc91e4bcfed19f9e94",
+    "quotations": [
+      "61967b0e0c2e70d4"
+    ]
+  },
+  "https://code.visualstudio.com/docs/agents/run/planning": {
+    "sha256": "4ebc29b26777667587b1f572c8d5f06468498e315883827003f6e566d3939595",
+    "quotations": [
+      "4e270be8b1b6c5a1",
+      "6e160090cf43db6e"
+    ]
+  },
+  "https://cursor.com/blog/agent-best-practices": {
+    "sha256": "cc347f2545f9023294844983838d2cdcb155deed1c007d032631d44177aeb8bb",
+    "quotations": [
+      "0405aeee7f704242",
+      "7dfb035bf8a2414d",
+      "81fdc206ef0443ac"
+    ]
+  },
+  "https://cursor.com/docs/agent/plan-mode": {
+    "sha256": "fd4dcfe8d39df1db88344e2621d767156cb1ba314f23ae1e7a88d137f76ad65d",
+    "quotations": [
+      "258d90d98240a196"
+    ]
+  },
+  "https://developers.openai.com/cookbook/articles/codex_exec_plans": {
+    "sha256": "4fd763a0773503af67050cc2304969c70f8f7b5a8a704e70ec61d721c1eba818",
+    "quotations": [
+      "cb764cceb95d4a1b",
+      "ed61fed568680376"
+    ]
+  },
+  "https://docs.archcore.ai/concepts/document-types/": {
+    "sha256": "6459bb3e0b5828eec862a301c62fc0065980a9f855fa5c6cb5773e83483c52bf",
+    "quotations": [
+      "006db32ca28d2676",
+      "043bff5be51d8ecb",
+      "1949ad2e41a00056",
+      "1d54a3144eddb2cf",
+      "20dedc3360493a5f",
+      "23b01258ff582880",
+      "26183846a1beca63",
+      "4750036c1bbbe821",
+      "484b65df8429772b",
+      "53cb9ac48bbd222d",
+      "59157c66e2b9476f",
+      "5ead7357b62d1f8f",
+      "71327de9abe64441",
+      "86e987f9a81632b7",
+      "8da088cf988e63b7",
+      "971c16853113a00d",
+      "a1a347f3778edb69",
+      "b444d92ec11a7f58",
+      "b6b3e585b686ad06",
+      "c23a255e64da5c51",
+      "c37b5a0df8068003",
+      "cc686dd10822ef0a",
+      "ce03bdd226a08915",
+      "f8ea44626730499f"
+    ]
+  },
+  "https://docs.bmad-method.org/": {
+    "sha256": "4f3dfb7669cea0af8f1bcda17a79641f0f96a08157768498623228cc0a9cb6f1",
+    "quotations": [
+      "5ed3fb9047c13f97"
+    ]
+  },
+  "https://docs.bmad-method.org/plan/set-up-the-ticket-tree/": {
+    "sha256": "c21bd731d37d2f4e4b98f6aa11e0ff08d2cfe4b48f71500d1bb72ae6f5899641",
+    "quotations": [
+      "468140e80085c7f1",
+      "68115fa20d841520",
+      "9ac578cc456f4474"
+    ]
+  },
+  "https://docs.bmad-method.org/start/install-bmad/": {
+    "sha256": "3dfd8d6311428732c728c150beff50f780fe8043cab88fca9b7de593ac869156",
+    "quotations": [
+      "c27cc5eca93d1733"
+    ]
+  },
+  "https://docs.cline.bot/best-practices/memory-bank": {
+    "sha256": "7d61a6cda02d5ad08d44dca4925032122e08a58613c6fe308fed8aa497bc6f3d",
+    "quotations": [
+      "a0690a0d1359d7f1",
+      "df772f750e099544"
+    ]
+  },
+  "https://docs.cline.bot/core-workflows/using-commands": {
+    "sha256": "03d9cfbd6101e6431eecb87d2ca427ba116acdc75b5f1e5a707b8a8159666497",
+    "quotations": [
+      "31abce9864ee60e1"
+    ]
+  },
+  "https://docs.cloud.google.com/gemini/docs/codeassist/agent-mode": {
+    "sha256": "1c4f13606bd98d96bd807da73286a8435a8db212b59d831df512cf4728f78812",
+    "quotations": [
+      "59d8cb6317b5d6ad"
+    ]
+  },
+  "https://docs.datadoghq.com/bits_ai/bits_code/setup/": {
+    "sha256": "e72ccf3d53207dbcab2df6a4f2a61195aa81a2bc7da3f922148a1915a561005f",
+    "quotations": [
+      "b401891917dc6e2c"
+    ]
+  },
+  "https://docs.github.com/en/copilot/how-tos/copilot-cli/cli-best-practices": {
+    "sha256": "d732944079bd017736ef43d35cafe2bfeb96f85894f1c55c70818a8a39fb306c",
+    "quotations": [
+      "cd93ff48a2854093",
+      "f29ffd8cf776f395"
+    ]
+  },
+  "https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/research-plan-iterate": {
+    "sha256": "b89d31d06ed446c19e17c8b6e67c0aeb8eb0b252e75af938a80f15b5e6a04473",
+    "quotations": [
+      "685f882d1c932844",
+      "92b784d6181e1893"
+    ]
+  },
+  "https://docs.github.com/en/graphql/overview/rate-limits-and-query-limits-for-the-graphql-api": {
+    "sha256": "9897e2b8cf2bead7463634c84afdf861ebb27a2da40858f251c124ad1a647a96",
+    "quotations": [
+      "06cd832b2c853ad1",
+      "de869315a95cf379",
+      "ed1c7feb481af692"
+    ]
+  },
+  "https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github": {
+    "sha256": "ed0c7686c2e8ed3633f45c65c307dd572d6e6b81ab559835606289ca51685263",
+    "quotations": [
+      "33898f449141046e"
+    ]
+  },
+  "https://docs.github.com/en/rest/repos/contents": {
+    "sha256": "32e66f7e0946041ef639d366057142d394cd12cd7056a41a2e71bede955dfc37",
+    "quotations": [
+      "83ec804b6614b573",
+      "a32e65ca3ae4dc35"
+    ]
+  },
+  "https://docs.github.com/en/rest/search/search": {
+    "sha256": "d9506983874bda7ef1abef3578a009501431ba3795b968406889857236b66343",
+    "quotations": [
+      "2db3d1b67bfa16f0"
+    ]
+  },
+  "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api": {
+    "sha256": "0d027f1127a401fa684d10450888c0a654ae3a8680093dc1f21170a26a673a4a",
+    "quotations": [
+      "9831fa93eeafecb6"
+    ]
+  },
+  "https://docs.mindset.ai/memex/how-it-works/mcp-architecture": {
+    "sha256": "b6eff6fdf941c384f66e5d57f4c3eb1d4e808dfe27a4d659921d1ae6394b0f31",
+    "quotations": [
+      "1876599e971fc82f",
+      "8ef77131f1118493",
+      "e3d3ecd41a645f09"
+    ]
+  },
+  "https://docs.opencode.ai/docs/agents/": {
+    "sha256": "8721f2788e8434cfa13bde0b870cf3b61a4b76e23460036e1394f8c69e395d25",
+    "quotations": [
+      "2cad3f510204628c"
+    ]
+  },
+  "https://docs.openhands.dev/openhands/usage/settings/application-settings": {
+    "sha256": "c4033ad5e2d9967586ee4a1d7bf8baa360b449525b01013cc60cc169fd2b6ff8",
+    "quotations": [
+      "46effdc232853237",
+      "cc2acc4bd5c581e0"
+    ]
+  },
+  "https://docs.plannotator.ai/llms.txt": {
+    "sha256": "1bae21a7341fa2e6379e06afb03df0acb088f21be61aa58063614bc18f460a7c",
+    "quotations": [
+      "3f2dbb29dfcbce0e",
+      "bcc837e6ee268664"
+    ]
+  },
+  "https://docs.plannotator.ai/open-source/reference/privacy-and-data-flow": {
+    "sha256": "5a9f2035c43ca5f83d191885e70c91ca3a5268db4f4fe2b18e326595ecf484d5",
+    "quotations": [
+      "c773db0f12640c28"
+    ]
+  },
+  "https://docs.python.org/3.14/builtins/stdtypes.html": {
+    "sha256": "a199193259069dbd20dff317f954ccd1776377bfff899b73e7890b43190e37e7",
+    "quotations": [
+      "b3a8e1d3055dc3b9"
+    ]
+  },
+  "https://docs.python.org/3.14/library/stdtypes.html": {
+    "sha256": "5993deed1303feb925a1e707c1de40729853f1840cab0b2a942a5b4779a90ca9",
+    "quotations": [
+      "b3a8e1d3055dc3b9"
+    ]
+  },
+  "https://docs.roocode.com/basic-usage/using-modes": {
+    "sha256": "24a768719f1308b7ca49e37f0ddac14c8db45cf293c819615248c63faaa6f721",
+    "quotations": [
+      "be8a81ff2fe56db6"
+    ]
+  },
+  "https://docs.specstory.com/integrations/claude-code": {
+    "sha256": "90c3c2e56684acaa8509dff5a8538fa30d90c7f63fa997b7f15dd38889785ea4",
+    "quotations": [
+      "3a878159f3be47f7",
+      "955feea03b9d5325"
+    ]
+  },
+  "https://docs.traycer.ai/": {
+    "sha256": "41aced49ed90671fb3184664b194808918c673a95f8f4997d1999b57b7ddbf93",
+    "quotations": [
+      "d0145263c12ea17c"
+    ]
+  },
+  "https://docs.traycer.ai/panels/artifacts": {
+    "sha256": "7fc47b973b797945e987ee927988855118d09e54b4b234bcf4621f0c084e4da2",
+    "quotations": [
+      "02adf6415269afe1",
+      "3bbf25236245d393",
+      "a0b91594c246b65d",
+      "aa9fc1d414c725df"
+    ]
+  },
+  "https://docs.windsurf.com/windsurf/cascade/modes": {
+    "sha256": "65a12dfa19e428a84e90c69de48a0212c1541f80b4c14e630b67ab611da99fb2",
+    "quotations": [
+      "a41557e87c084bc7",
+      "e0f1c3d0eb87492a"
+    ]
+  },
+  "https://docs.zencoder.ai/zenflow/git-worktrees": {
+    "sha256": "4e564c94f618c4739c0edbb190bc0ec50ccc6d99b05da3dacb7d6db09cd275fe",
+    "quotations": [
+      "e69495db0207bedf"
+    ]
+  },
+  "https://docs.zencoder.ai/zenflow/workflows/custom": {
+    "sha256": "ebb6525cd0ff9f7b3dc4840c89a07e13319cee86f648349d7e4698ed713d9a2b",
+    "quotations": [
+      "f6925e48f12a500b"
+    ]
+  },
+  "https://firebase.google.com/docs/studio/get-started-ai": {
+    "sha256": "cc315c9f19885910fef8e8c1a0d14d7f04ff672fe898487314cdb62251220336",
+    "quotations": [
+      "c41ae98ad092b90a"
+    ]
+  },
+  "https://forum.cursor.com/t/option-to-save-plans-in-project-level-cursor-directory/152291": {
+    "sha256": "7f48c99cf768a218b559170cefb7592a7d09a208e14221c4a9532f4d608069d7",
+    "quotations": [
+      "bf7463b3b5a67a65",
+      "e70d500010079ec7"
+    ]
+  },
+  "https://geminicli.com/docs/cli/plan-mode/": {
+    "sha256": "36908038221172cc88d67475188bb45a4cee2f2360b02583a399eb1ecb70e87b",
+    "quotations": [
+      "565dceddb4801785",
+      "8fd81683d795ccc1",
+      "d2dbc16894099d02"
+    ]
+  },
+  "https://ghuntley.com/ralph/": {
+    "sha256": "dc204b2c3d966f74edf15aa28eb550210054f514bded4a151e909f33120f2d9f",
+    "quotations": [
+      "6a00359eff1219f3",
+      "72c0e5909ed8c062"
+    ]
+  },
+  "https://github.com/AcademySoftwareFoundation/OpenImageIO/blob/f91f006af944714ac3bad48d3e498b21dba2b4c4/docs/dev/specs/001-image-fuzzing/plan.md": {
+    "sha256": "d84e6b77cac5d8fb8482bbd661c669af4d092abde013712e5f60350774b71fcd",
+    "quotations": [
+      "33f8a833a271f7fe",
+      "636f21ec023b0593",
+      "71b761b8766c9e4f",
+      "b5bc79f163bbdcfc"
+    ]
+  },
+  "https://github.com/Deepractice/PromptX/blob/main/README.md": {
+    "sha256": "164ee09c115ca2f2eb1678d50e98770b25c53634ecea4fedab69aa50e310aa95",
+    "quotations": [
+      "37484c5c6508becb"
+    ]
+  },
+  "https://github.com/Deepractice/PromptX/blob/main/docker/README.md": {
+    "sha256": "367b0a8a1b0b37edb369381f7d57353143c0d3ba015afba67c304c109599318b",
+    "quotations": [
+      "aeb50827c6daf2a8",
+      "e87a94faeb639cf1"
+    ]
+  },
+  "https://github.com/EveryInc/compound-engineering-plugin/blob/compound-engineering-v2.44.0/plugins/compound-engineering/skills/ce-brainstorm/SKILL.md": {
+    "sha256": "ef730e9817b0600866cc0083a4f114fc0245a0217b18ab9a63cf9ed477ee3e56",
+    "quotations": [
+      "f897a451350017a7"
+    ]
+  },
+  "https://github.com/EveryInc/compound-engineering-plugin/blob/compound-engineering-v2.44.0/plugins/compound-engineering/skills/ce-plan/SKILL.md": {
+    "sha256": "15e5689b3d191931cad33c0174171cb69b33b693a71f49e61c40ed2eca7b2965",
+    "quotations": [
+      "0333251227e5b409",
+      "8171f91c328a5c16",
+      "ee59833cb1ac3ec8"
+    ]
+  },
+  "https://github.com/EveryInc/compound-engineering-plugin/blob/main/README.md": {
+    "sha256": "c9272e13a607accfbfadc67bc2b1fa66f0e730acbaf12a7811b1863ace85ad81",
+    "quotations": [
+      "54b456989856474e",
+      "cf09f711fdfa45ac"
+    ]
+  },
+  "https://github.com/EveryInc/compound-engineering-plugin/blob/main/skills/ce-brainstorm/SKILL.md": {
+    "sha256": "05c80c14b7a6a94bdca80e8dcf18f443bccba0c9f1d63132bdd0cc7a845a03eb",
+    "quotations": [
+      "5566ecef27fa3f22"
+    ]
+  },
+  "https://github.com/EveryInc/compound-engineering-plugin/blob/main/skills/ce-brainstorm/references/brainstorm-sections.md": {
+    "sha256": "264c20c6a4579ed1e8a2837cdda22075ce3d79753665bca4a73fc44fbb3bd79a",
+    "quotations": [
+      "ac72839ca8f47e4a"
+    ]
+  },
+  "https://github.com/EveryInc/compound-engineering-plugin/blob/main/skills/ce-brainstorm/references/phase-0.md": {
+    "sha256": "3bbd49b3a39121e0b16099c8ff315a92e9b2c9ea8321b44abab9799da259e204",
+    "quotations": [
+      "524421bf3adc0df0"
+    ]
+  },
+  "https://github.com/EveryInc/compound-engineering-plugin/blob/main/skills/ce-plan/references/output-mode.md": {
+    "sha256": "aec0f5d2f615d30a0183fb6ae5abe867386549a59aaf834404f0c3113c422eef",
+    "quotations": [
+      "a2df359451cc8e14"
+    ]
+  },
+  "https://github.com/EveryInc/compound-engineering-plugin/blob/main/skills/ce-plan/references/structure.md": {
+    "sha256": "1a0f5eb69a2f41a31d3e8d876004e35902263039ae0431b663a5a7bd6e92d0b0",
+    "quotations": [
+      "0070a613751a081e",
+      "2b67c9f6456fad3e",
+      "8074afe67dcd465a",
+      "f34889e01ffe72f0"
+    ]
+  },
+  "https://github.com/EveryInc/compound-engineering-plugin/blob/main/skills/ce-plan/references/universal-planning.md": {
+    "sha256": "feb0752e1c4b12955b8c76f9ec5f81f2a4c3a7537cc056b493c8fd4402f04945",
+    "quotations": [
+      "bb1a13da47e116fc"
+    ]
+  },
+  "https://github.com/Fission-AI/OpenSpec/blob/main/docs/migration-guide.md": {
+    "sha256": "65911b11bfa03b6f4cd06a6d01ce206c7c0388c314086c51bb2a64aa123eee27",
+    "quotations": [
+      "424b8783687307a7",
+      "59a46955d722d7e5",
+      "ad270257f1e12136",
+      "aea98a812d37e8b2",
+      "cfffef076bf819e8"
+    ]
+  },
+  "https://github.com/Fission-AI/OpenSpec/blob/v0.1.0/src/core/templates/readme-template.ts": {
+    "sha256": "1593a8e75e47c695f5458345d02c3362ac42b2faf260263ef746fde4221e5123",
+    "quotations": [
+      "aefeb092ec404880",
+      "b7cac2070badc4c9",
+      "e0eeb69fff355a96"
+    ]
+  },
+  "https://github.com/Fission-AI/OpenSpec/blob/v0.23.0/src/core/templates/agents-template.ts": {
+    "sha256": "a5d5295d279b19be9accb695c2482a69b52f5fa72804cc1d82b218f7ab99629e",
+    "quotations": [
+      "06e7b28d3aa791ae",
+      "e11c27aad39905f6"
+    ]
+  },
+  "https://github.com/GWUDCAP/cc-sessions/blob/main/README.md": {
+    "sha256": "8888ea18aa73da4e8e365e2cec2efb52ad82580b30a5e31f4e095d791e8886c3",
+    "quotations": [
+      "290ee4f10b6accec"
+    ]
+  },
+  "https://github.com/GWUDCAP/cc-sessions/blob/main/cc_sessions/install.py": {
+    "sha256": "1c9057e4de68ba3c2026f0eb7806a8da621c294b2c5d547a7fa41e194c80393d",
+    "quotations": [
+      "7b2c34f81336fab8",
+      "c19848ecfa9338f6"
+    ]
+  },
+  "https://github.com/GWUDCAP/cc-sessions/blob/main/cc_sessions/protocols/task-completion/task-completion.md": {
+    "sha256": "e5aa33dc9f6edb27ee3fe5e56d3bdb8cc35af6c2b6a3b34312ecc088e66b75db",
+    "quotations": [
+      "a5e7dddebc999bbb"
+    ]
+  },
+  "https://github.com/GWUDCAP/cc-sessions/blob/main/cc_sessions/protocols/task-creation/task-creation.md": {
+    "sha256": "4ff20ab7881a4fc27aa737e2f3aa48633cc6c1e75593bd6d5e3a07b1cfcf469b",
+    "quotations": [
+      "011eadeac721b130",
+      "38629a5d1889f1a2",
+      "465be828a3f919d9",
+      "b5c379287972bdbb",
+      "b665ca3f9c5394f4",
+      "c8a98696bc2e8ff0",
+      "fd995de70fbc8b35"
+    ]
+  },
+  "https://github.com/GWUDCAP/cc-sessions/blob/main/cc_sessions/protocols/task-startup/directory-task-startup.md": {
+    "sha256": "a31de8264cc1084f29391be662e84c681f8afd368731c978083f90b23140ef07",
+    "quotations": [
+      "71114208d4830f26"
+    ]
+  },
+  "https://github.com/Gentleman-Programming/gentle-ai/blob/main/README.md": {
+    "sha256": "fd00c40c562243559d10a10a34d8666163e5553c8c014dce081b93b1355d084f",
+    "quotations": [
+      "7513da401faa176c"
+    ]
+  },
+  "https://github.com/Gentleman-Programming/gentle-ai/blob/main/internal/assets/skills/_shared/persistence-contract.md": {
+    "sha256": "a970069fe4a4a4a86cca9b0197d0531488fca543bc27d8703918369f429f608f",
+    "quotations": [
+      "1bb4359de910c985",
+      "570b05c7b740b1f0"
+    ]
+  },
+  "https://github.com/GregorBiswanger/featherspec/blob/main/.claude/commands/sdd-lifecycle.md": {
+    "sha256": "638adb1558745aac3807720385edf57e34264e6acfa3b83d07aae2a35873a870",
+    "quotations": [
+      "a3aaebd25c33ae3c",
+      "d639efb4ed7354e0"
+    ]
+  },
+  "https://github.com/GregorBiswanger/featherspec/blob/main/.claude/commands/sdd-specify.md": {
+    "sha256": "918bf98b2ed282340bf65462e26686dfe63e2ec83eec4ce437f406a992775148",
+    "quotations": [
+      "8a547f3bf3206b5e"
+    ]
+  },
+  "https://github.com/GregorBiswanger/featherspec/blob/main/README.md": {
+    "sha256": "4111e561ca03a2da00dac0e2bfd002706615559dfcdce2eff41aefac4db90ba9",
+    "quotations": [
+      "20c87dcbb7374616",
+      "2b76594615cf4777",
+      "39412d685b167e4c",
+      "68f4dea018d4e68b",
+      "6ec0e24b80dfb5aa",
+      "9e1d940dceba1d59",
+      "db55dee1b3dbac78",
+      "ebaaabcb46d5ab65"
+    ]
+  },
+  "https://github.com/Helmi/claude-simone/blob/master/legacy/.claude/commands/simone/create_general_task.md": {
+    "sha256": "a314d88f4782b1734bd99085a8594c99052a3bdbf36501767dc9ccae523ea81b",
+    "quotations": [
+      "a63baf256a882de9"
+    ]
+  },
+  "https://github.com/Helmi/claude-simone/blob/master/legacy/.claude/commands/simone/create_sprint_tasks.md": {
+    "sha256": "c03f3940d669d592dbaf4504f298bb64c9785905463f6986a9544420441fcab9",
+    "quotations": [
+      "2e87f4683c5c3753",
+      "e6b56a0ff7901ccd"
+    ]
+  },
+  "https://github.com/Helmi/claude-simone/blob/master/legacy/.claude/commands/simone/project_review.md": {
+    "sha256": "57cd1f24150e74b84f72ac843644c7bcb0285f370a08e1a020cf6b75baafc57b",
+    "quotations": [
+      "f7581039b35af823"
+    ]
+  },
+  "https://github.com/Helmi/claude-simone/blob/master/legacy/README.md": {
+    "sha256": "1d533b6fa016916ab0a549c2795c949ca5ed7fecc54e3e05de070666a0de4afa",
+    "quotations": [
+      "065edf3c9aaed4ab",
+      "18e72b7315a823a6",
+      "307e3e0a4136f3ea",
+      "3aacd6b1261a427c",
+      "42d5f0fe1fadbf1d",
+      "4826bfd39e65e170",
+      "5ec76b09cefa2669",
+      "6efa27300b324ec7",
+      "80891583051b4cbd",
+      "839148cb083d1bc0",
+      "8e8ec4b5593cab48",
+      "e8509da3bf43310e",
+      "ebfd2e3f3c2b2598",
+      "f37df9fdd083e794",
+      "f93a3dc7148620af"
+    ]
+  },
+  "https://github.com/JuliusBrussee/cavekit/blob/main/FORMAT.md": {
+    "sha256": "0d15f46abce05e7125b3411b83a8c3e2b0774818706a2041b1a5561564fe36b5",
+    "quotations": [
+      "0e8246cfbf8a6ab5"
+    ]
+  },
+  "https://github.com/JuliusBrussee/cavekit/blob/main/README.md": {
+    "sha256": "07b123d018408d42e170d298cbf9f7e6588c1c63461ad6f6884e0ada6adc4c9d",
+    "quotations": [
+      "04580a19aa1c20a1",
+      "826f1fd8a0698ef1"
+    ]
+  },
+  "https://github.com/JuliusBrussee/cavekit/blob/v3.1.0/README.md": {
+    "sha256": "0fab0b8ec96ffd835966ba6fe6f97245c8b5d4b9d66fd53d79807c7275825448",
+    "quotations": [
+      "2b4e8ab8bf3fbd4e",
+      "de6031dd5ddbae07"
+    ]
+  },
+  "https://github.com/Klerith/fernando-skills/blob/main/README.md": {
+    "sha256": "dd7e90a17d993cf0680d71fe7ff777b791e38e7a0502557f4ab0545357d4cf72",
+    "quotations": [
+      "c3c06e0524661a58",
+      "ded591e0fc0ce447"
+    ]
+  },
+  "https://github.com/Klerith/fernando-skills/blob/main/skills/engineering/spec/SKILL.md": {
+    "sha256": "0058935b837beca1ee4c4b3b55ee5804d41be476d2290317221a79ded5b8dced",
+    "quotations": [
+      "cf4c81c24a1092f4",
+      "e8b2f3fdcdc41d0e",
+      "ee22a580dc1fb9f6"
+    ]
+  },
+  "https://github.com/MrLesk/Backlog.md/blob/6615b0cd7e08b4bbcb3bc5018abe7b485c817999/src/constants/index.ts": {
+    "sha256": "6492e0152ee5a2f797f91b849b122e576ef13c6888106911b0e5ed5d05a4285c",
+    "quotations": [
+      "1d4c9ece5e9af243",
+      "9a7a8e9c34846ba6"
+    ]
+  },
+  "https://github.com/MrLesk/Backlog.md/blob/main/ADVANCED-CONFIG.md": {
+    "sha256": "9d9e1f74730c9b6dc65a6aaf38a930c00688852405f6769e3fd6462135eeac50",
+    "quotations": [
+      "5fa5503d0ba9d185"
+    ]
+  },
+  "https://github.com/MrLesk/Backlog.md/blob/main/CLI-INSTRUCTIONS.md": {
+    "sha256": "143c7d936e2c95ec947bb800bad7cc536f16663a1a6c32b96b6d0ee286030f96",
+    "quotations": [
+      "4fddc09b9eeea4d5",
+      "b14a5be62783bf22",
+      "d9023f29936b30bd",
+      "f5e8f3e5d4228bca"
+    ]
+  },
+  "https://github.com/MrLesk/Backlog.md/blob/main/README.md": {
+    "sha256": "3c0d2c57f67914faebf76ac046904031e3c5f1b0a1f819648db64c426108d74e",
+    "quotations": [
+      "bc4fafa9e86631e0",
+      "c997bc661944cb9c",
+      "db0204860b47122a",
+      "e4320136c35923fe"
+    ]
+  },
+  "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/README.md": {
+    "sha256": "58e32b918d847f1121cdd06112eddc261f1a54402083686cd7b6b6ad7306021a",
+    "quotations": [
+      "c27fa250e5abf6cd"
+    ]
+  },
+  "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/docs/plugins/sdd/add-task.md": {
+    "sha256": "e2ba236cbd57a66442b2b61a9ce8f40dd9996fd02e55792669ef1b8496523e99",
+    "quotations": [
+      "2e9937703b0b8f84",
+      "5d3c196ac5e3d7c8",
+      "95fdf0d7f4d44a59",
+      "a9aed04270208bbe",
+      "b59d7f78b1a96e53",
+      "d5a5cca3dc0729b0",
+      "f293509ca4dc5b3c",
+      "fbcfb89af8a2adf7"
+    ]
+  },
+  "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/docs/plugins/sdd/plan-task.md": {
+    "sha256": "9d0a113212dee2fe5c2dda462585dba78788583409cfaf9421c5f00287bb5800",
+    "quotations": [
+      "17a8578cd702ae71",
+      "3901b5363b5e86c3",
+      "4cecd47d28450b77",
+      "5fde13bb94a3a144"
+    ]
+  },
+  "https://github.com/OpenHands/software-agent-sdk/blob/0996c33916c2a977ea9fe38deee660ff0e1389f2/openhands-sdk/openhands/sdk/context/prompts/sections/static.py": {
+    "sha256": "d50646aeeaed397fe02ec2321f6485a5c0e6ebc61d89d0d9262cca28ca9657d8",
+    "quotations": [
+      "45293b73dcdec6c6",
+      "7c4d8703c00f426d",
+      "d310b4a2174fa7ae"
+    ]
+  },
+  "https://github.com/OthmanAdi/planning-with-files/blob/master/README.md": {
+    "sha256": "b812a7d0b2407828334ebf67ae3f9ab21f73e5ec14fd173377d5cbe49a33fd65",
+    "quotations": [
+      "11fbaabfce0ba89e",
+      "289e25820aebc5ce",
+      "614bd2af262cfd08",
+      "c1686c836a392537",
+      "df91ec8b6d0ebb1d",
+      "fc29ebb812385fce"
+    ]
+  },
+  "https://github.com/OthmanAdi/planning-with-files/blob/master/skills/planning-with-files/SKILL.md": {
+    "sha256": "9918133aa05b71dc52982d47cceabb453ead90c75d2a393ecb77000b85e41043",
+    "quotations": [
+      "07c215a684df8cdc",
+      "828ba767d0aa09a3",
+      "8bd3102286206d52",
+      "afab36fc802080a1"
+    ]
+  },
+  "https://github.com/Pimzino/claude-code-spec-workflow/blob/main/README.md": {
+    "sha256": "7cfd51c8e88ec84a1b09b67343a1d080ca886392585d88e9c7b066ce620652e3",
+    "quotations": [
+      "0178be38c45141a1",
+      "0f0f0eea7b4f39c0",
+      "259d161bbab1645b"
+    ]
+  },
+  "https://github.com/Pimzino/claude-code-spec-workflow/blob/main/src/markdown/commands/bug-create.md": {
+    "sha256": "5b94a810cc87a6a45d746ff69e5de39eeb74323006fbdd6cba455843eef63265",
+    "quotations": [
+      "afd49ff0251ab343",
+      "dc8ad5d0f2feb0d0"
+    ]
+  },
+  "https://github.com/Pimzino/claude-code-spec-workflow/blob/main/src/markdown/commands/spec-create.md": {
+    "sha256": "ca34949f19a80f73d1fc70d7b2481d0b953106da16200da8ba94c6c0ac412f13",
+    "quotations": [
+      "31e129946fd35716",
+      "717f322237b1d055",
+      "c7206a2997dacd06",
+      "e54ce3e18979d2e1"
+    ]
+  },
+  "https://github.com/Pimzino/claude-code-spec-workflow/blob/main/src/markdown/commands/spec-steering-setup.md": {
+    "sha256": "471ed6aebd4596a87faeca5fed05642309a1b4650b5c62272e31884d801fc85a",
+    "quotations": [
+      "498b27e0d5beb82a"
+    ]
+  },
+  "https://github.com/Pimzino/claude-code-spec-workflow/blob/main/src/setup.ts": {
+    "sha256": "dc8e2c29a13e9f3d53ea92221e597ce740951b07c0b2c0344ccc16a491ab448e",
+    "quotations": [
+      "401e534e71eb8de9",
+      "a4281aafee3b4374",
+      "b7f892f71b9a0749"
+    ]
+  },
+  "https://github.com/Pimzino/spec-workflow-mcp/blob/d38e82eaa8a6a2f5480285fa1feb8cf8378c86e0/src/core/workspace-initializer.ts": {
+    "sha256": "96ddc36a02da4bae0731b6b4d94df5f919d38c3ff658aa4abf0343cab9d649d8",
+    "quotations": [
+      "c155ceb4f7a4dc9e"
+    ]
+  },
+  "https://github.com/Pimzino/spec-workflow-mcp/blob/main/README.md": {
+    "sha256": "c54406cb83a78dfc8760d929a79126f4cfdd421109b058dd5e5baae4c55b266f",
+    "quotations": [
+      "5491a46036026680",
+      "6148b37be570f593"
+    ]
+  },
+  "https://github.com/Pimzino/spec-workflow-mcp/blob/main/docs/USER-GUIDE.md": {
+    "sha256": "5969b22585d86a7086360f8d497d9174bce8b0cc067dc1fb8d1518438f4a0b1f",
+    "quotations": [
+      "be5dc55917dd2f9d"
+    ]
+  },
+  "https://github.com/Pimzino/spec-workflow-mcp/blob/main/docs/technical-documentation/file-structure.md": {
+    "sha256": "1cc263a1463d79fec884d3dc493449a00e0b3e5e9bb72b5768e957d69fe00232",
+    "quotations": [
+      "0efaea78fe088247",
+      "676cf371a61f48d4"
+    ]
+  },
+  "https://github.com/Pimzino/spec-workflow-mcp/blob/main/src/core/path-utils.ts": {
+    "sha256": "950cc3dec27d0b25113cda05fd61edc95149b549f593d7d9dca31bbd106bb268",
+    "quotations": [
+      "9aa4947d47834ec1"
+    ]
+  },
+  "https://github.com/Pimzino/spec-workflow-mcp/blob/main/src/dashboard/implementation-log-manager.ts": {
+    "sha256": "17124f2affb0a88ca08808a590b54fbaddc04f7466526c97f9a31fa4a2fd35a6",
+    "quotations": [
+      "4c5b093f5f07beb9",
+      "9368f4a4c1fb4d6e"
+    ]
+  },
+  "https://github.com/Pimzino/spec-workflow-mcp/blob/main/src/tools/log-implementation.ts": {
+    "sha256": "dcdbb3b37eb3412b40e5b0f0ed576892a080bf87619c89ca4c39f5ccf8a9315b",
+    "quotations": [
+      "63dfdcd8bed8f24e",
+      "6df9f354ddb5ea84"
+    ]
+  },
+  "https://github.com/SuperClaude-Org/SuperClaude_Framework/blob/master/README.md": {
+    "sha256": "c17571d03b70f33dd394879459524bf3ee79144bfc25bd1a50cea90cb41fce39",
+    "quotations": [
+      "458ec5a3bfe3eff7"
+    ]
+  },
+  "https://github.com/SuperClaude-Org/SuperClaude_Framework/blob/master/src/superclaude/commands/pm.md": {
+    "sha256": "b013630a55138242c89d948fbeb96740755fc64f22a27238c87329f99426a9eb",
+    "quotations": [
+      "55740093e78d252e",
+      "93411bf5427fdc92",
+      "d0d634c2e4b6d2a4"
+    ]
+  },
+  "https://github.com/SuperClaude-Org/SuperClaude_Framework/blob/master/src/superclaude/commands/research.md": {
+    "sha256": "635ef5eac067630f778ff62f81e7d69261bdecc76c5b886fd635282483fd65c3",
+    "quotations": [
+      "640608dd2355fe93"
+    ]
+  },
+  "https://github.com/SuperClaude-Org/SuperClaude_Framework/blob/master/src/superclaude/commands/workflow.md": {
+    "sha256": "22a0a27d6d73f18d6bb51696bade2574db162ce8e1eee6d4865e7fc407f6bf43",
+    "quotations": [
+      "a3623d9928a1c7a5"
+    ]
+  },
+  "https://github.com/SuperClaude-Org/SuperClaude_Framework/blob/master/src/superclaude/core/RULES.md": {
+    "sha256": "89f369bd3bac097a7ecd8cbf4cd70e8598fe3b4a8951d589e33f08654a513ff9",
+    "quotations": [
+      "ca119de0ce4ca38f"
+    ]
+  },
+  "https://github.com/SuperClaude-Org/SuperGemini_Framework/blob/master/README.md": {
+    "sha256": "9d18039ab023f1c9225de2b5c19373c0d262015ed4a661483a4a02809d5c65c1",
+    "quotations": [
+      "86eed75603d2b6ea"
+    ]
+  },
+  "https://github.com/SuperClaude-Org/SuperGemini_Framework/blob/master/SuperGemini/Commands/research.toml": {
+    "sha256": "29886319a72d3002076d64dbb18f866d2f2aab2b1da0075b8629c9bd1c9fb7d1",
+    "quotations": [
+      "3618438b6f1dbda6"
+    ]
+  },
+  "https://github.com/SuperClaude-Org/SuperGemini_Framework/blob/master/SuperGemini/Core/RULES.md": {
+    "sha256": "4dd987d33b17d61f355b11f50ef58b86d141a0d08a96487e0dc2c60e857d2e63",
+    "quotations": [
+      "6c367d43b2271c06"
+    ]
+  },
+  "https://github.com/Wirasm/PRPs-agentic-eng/blob/721840d32a06fbea60ad0e5f47714885302e1970/README.md": {
+    "sha256": "c3a3298b5c61f37bb80625049a8d7f77ddb34c943c8db87921b027b5248efb29",
+    "quotations": [
+      "01b656cba7914e12",
+      "5b5cab862e1beead",
+      "824f0bb1d79660d4"
+    ]
+  },
+  "https://github.com/Wirasm/PRPs-agentic-eng/blob/9581e15/README.md": {
+    "sha256": "409ac2e10240920d3a18d7caf8163e47e5be58c8a160b72e9d191572582400d3",
+    "quotations": [
+      "270cbb785d54b602"
+    ]
+  },
+  "https://github.com/Wirasm/PRPs-agentic-eng/blob/development/README.md": {
+    "sha256": "dc27f26d6a010694b86050e33af2a69be79287c4b7157bf7d033e8f6627c528c",
+    "quotations": [
+      "45d78db51a19061d",
+      "5d5152f52792990c",
+      "78db7cc5e8d004ee"
+    ]
+  },
+  "https://github.com/addyosmani/agent-skills/blob/main/README.md": {
+    "sha256": "d78930b41a0778285a279b1af1b5425d839190a8b237825a298652f0604354bb",
+    "quotations": [
+      "e2e33f4d3e183743"
+    ]
+  },
+  "https://github.com/addyosmani/agent-skills/blob/main/skills/idea-refine/SKILL.md": {
+    "sha256": "8f2daec8c3a33a351161f614bec0690f8cdcda981f822ab27df811b101f69d1e",
+    "quotations": [
+      "da9d74965e5a5e18"
+    ]
+  },
+  "https://github.com/addyosmani/agent-skills/blob/main/skills/planning-and-task-breakdown/SKILL.md": {
+    "sha256": "8f69ca6154dfe6787f0657ee97deee67419e1cec6ff952b6bdf48cd64e9b00d2",
+    "quotations": [
+      "825fa96577348c6d",
+      "f50bfaf806c44a8b"
+    ]
+  },
+  "https://github.com/addyosmani/agent-skills/blob/main/skills/spec-driven-development/SKILL.md": {
+    "sha256": "f08130ae95947530a2361b7b31d73604cd351ddc14f40e94c3524536b2cf87c4",
+    "quotations": [
+      "0d69ea5fa8d21f4d",
+      "4b19c40fcefe6d23"
+    ]
+  },
+  "https://github.com/alkem-io/server/blob/54bfd17744d6631e474494577aaf5b3795f61f78/specs/001-heic-jpeg-conversion/plan.md": {
+    "sha256": "46fd2476505c318d8769c51a68e41084f578f08708c4dda053519ad991bedaf2",
+    "quotations": [
+      "33f8a833a271f7fe",
+      "3ddba6a51683940c",
+      "636f21ec023b0593",
+      "71b761b8766c9e4f",
+      "b5bc79f163bbdcfc"
+    ]
+  },
+  "https://github.com/amaynez/kiro-style-sdd/blob/main/.skills/design/SKILL.md": {
+    "sha256": "70f73f4426f7f443125c9a474a476c901c74d6a48d60e0642fb2421308c25eae",
+    "quotations": [
+      "6493e04589538011"
+    ]
+  },
+  "https://github.com/amaynez/kiro-style-sdd/blob/main/.skills/plan/SKILL.md": {
+    "sha256": "a6656010ded72c17913bed903ecd21ec8ff0317b06cac1388170e67763704770",
+    "quotations": [
+      "e46e9d3b7dbb21b7"
+    ]
+  },
+  "https://github.com/amaynez/kiro-style-sdd/blob/main/.skills/spec/SKILL.md": {
+    "sha256": "7e3414f45c6be87e1b24c50b1203b74e0d6333d04998eecd820ba808b9210a84",
+    "quotations": [
+      "42d2441048c9a577"
+    ]
+  },
+  "https://github.com/anomalyco/opencode/blob/da6683fedcbb57a36c4ba54ba5ad00dd8bc2da65/packages/web/src/content/docs/modes.mdx": {
+    "sha256": "e511fd0a7d0dd5e9fcd06e2ccd0bf744f4f99f8b6a174edc8d9c9f929a5a3dcc",
+    "quotations": [
+      "23760bd1bd860264"
+    ]
+  },
+  "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md": {
+    "sha256": "8f29ed4d40787472408c2c04e8a7f3e18f4d00edcd22cb9c81443b274711930b",
+    "quotations": [
+      "03859e71516d92f1",
+      "7d7c7fbdb526f281"
+    ]
+  },
+  "https://github.com/anton-abyzov/specweave/blob/develop/CHANGELOG.md": {
+    "sha256": "534b5d363ed1571e43153cbfe5aedccf4bb8293b33c62b8708c5c6e0f0a230a2",
+    "quotations": [
+      "678de76b1afdca0f",
+      "b67f82a18ab2a430",
+      "c61e1f95fabcc783",
+      "d0cdcdcb320c4dcc",
+      "d6ff6043738c9d72",
+      "f73c5cae8036196f",
+      "f908db3a67124f00"
+    ]
+  },
+  "https://github.com/anton-abyzov/specweave/blob/develop/README.md": {
+    "sha256": "44121b6deb28cff9f51d3088b9ec2d61346ea0b22ef7c6762ae33e725c2123db",
+    "quotations": [
+      "6fd55f07ba7dc4b2",
+      "c3e669513a1dac54",
+      "dc8642b0b29c54e2"
+    ]
+  },
+  "https://github.com/anton-abyzov/specweave/blob/develop/docs-site/docs/guides/cross-tool-handoff.md": {
+    "sha256": "d75a0cf790c467e9356ae4ea34372f613d57455b8142fddc540f557c322b37b7",
+    "quotations": [
+      "8e14ede3b84aa037",
+      "ab40d8d849b068bd",
+      "b947c016fd3af665",
+      "c8b0efb4b2c38a1e"
+    ]
+  },
+  "https://github.com/archcore-ai/archcore/blob/5a67523420a3c81d7282b5991be6ffef3254167d/plugins/archcore/skills/_shared/delta-routing.md": {
+    "sha256": "71e3401dd32c87d7e4099e17ff64d4b14939a955eba1b61a38343c6c2df3ed7f",
+    "quotations": [
+      "8f7606874eae9678"
+    ]
+  },
+  "https://github.com/archcore-ai/archcore/blob/main/README.md": {
+    "sha256": "45c49a86b69e32f6fa25deb9cdc2221b7852827534e5faac40a9c09e10751a7b",
+    "quotations": [
+      "351b4c6f5941a6fb",
+      "67ce44eb2dc9e3b1",
+      "7b150efb2dd16e8c",
+      "c801d98c41613e40"
+    ]
+  },
+  "https://github.com/ariel-frischer/autospec/blob/3381f26993a8b72b3ffd7895873956a455b69000/internal/constitution/paths.go": {
+    "sha256": "b3ddbfb0bcf581a9c5bcc403377e4ef2c89662a34af883956cd6b0548dfef624",
+    "quotations": [
+      "e3ab25e248b8ac73"
+    ]
+  },
+  "https://github.com/ariel-frischer/autospec/blob/main/README.md": {
+    "sha256": "973e922af34a75c42491da56bfdaf84b7c59a4833fd34205792c7ecc7ff1e485",
+    "quotations": [
+      "2a9a6394b3f41e9f"
+    ]
+  },
+  "https://github.com/ariel-frischer/autospec/blob/main/docs/public/reference.md": {
+    "sha256": "68e6a583c523e44e223f34967862fdc16051d2a2a00a0ff8030edd7cff3adf01",
+    "quotations": [
+      "39de4c5138b90fc9",
+      "5357c76351f50e8d",
+      "5803a20e2460c728",
+      "7444224765d18b98",
+      "7d76cc2ce7768d81",
+      "903c51e0423317cd",
+      "93712159a77d8045",
+      "9597a9df1f28c5e9",
+      "99207a4a904e43bb",
+      "a62f74375e5c3add",
+      "c11ddfce0c3763c4",
+      "f25e0d89b7c25bd6",
+      "fbc25fe7dbfee906"
+    ]
+  },
+  "https://github.com/automazeio/ccpm/blob/abfd4ff740dd4505aebd873be2d935553ed29f50/ccpm/commands/context/create.md": {
+    "sha256": "d57f2b4af2b31d572eb4f6e27d288439d4a3dc234e4535c3bf455f019f8631d3",
+    "quotations": [
+      "92b8eccd374a7313"
+    ]
+  },
+  "https://github.com/automazeio/ccpm/blob/abfd4ff740dd4505aebd873be2d935553ed29f50/ccpm/commands/pm/epic-close.md": {
+    "sha256": "699425f2f214835ed030048ac6713098245a3b6ddabc05ddf9053bdcf3932069",
+    "quotations": [
+      "5d56afdb33bacf48"
+    ]
+  },
+  "https://github.com/automazeio/ccpm/blob/abfd4ff740dd4505aebd873be2d935553ed29f50/ccpm/context/README.md": {
+    "sha256": "de19a0b232d704766b8c1d259c7764cfe44859dd3a9c4781dc66d825d4250e4b",
+    "quotations": [
+      "ce8ae00c6f5bf320"
+    ]
+  },
+  "https://github.com/automazeio/ccpm/blob/main/README.md": {
+    "sha256": "5d8369bb67e71f12410bb6dab41462ee0ebe097a16409c1c4633e454c57cabd1",
+    "quotations": [
+      "65d307892e0f9eec",
+      "9229e9c730776070",
+      "9cc7c1c1691f8944",
+      "b5f0530e9dfc0fc3",
+      "bdd8234b76249f7d",
+      "cc96385ef040c1b4",
+      "edd3adc020f286a6"
+    ]
+  },
+  "https://github.com/automazeio/ccpm/blob/main/skill/ccpm/references/conventions.md": {
+    "sha256": "0535bee8a847707abb9333528905387c0307c05b07e7cfeef714028cd05babcc",
+    "quotations": [
+      "0c50fe45b01471a3",
+      "52199df29c598a31",
+      "7bf42ef22212124a",
+      "b0a6667627bcf9b9",
+      "b2604bde2bc2d0ce"
+    ]
+  },
+  "https://github.com/automazeio/ccpm/blob/main/skill/ccpm/references/execute.md": {
+    "sha256": "e95611501c4feb1b35ab0582de6e39ffc88dae7e8c81a9cd38c8c7ac93b0a4e1",
+    "quotations": [
+      "ed7c75e4c730e635"
+    ]
+  },
+  "https://github.com/automazeio/ccpm/blob/main/skill/ccpm/references/sync.md": {
+    "sha256": "748a9f80acacaa77241c259ad09a914d2d6c5426f6303cfc179f8a97692859ab",
+    "quotations": [
+      "bc10d564ebb3d0e7",
+      "fa6a049c1bff8c00"
+    ]
+  },
+  "https://github.com/automazeio/ccpm/blob/v1/README.md": {
+    "sha256": "869587ab15b4932deaf0746b8d517971ae403b63503e1fad239ddc84f214b600",
+    "quotations": [
+      "1ec08e8788f658fe",
+      "42926f47117906d1",
+      "7ba805209168bd66",
+      "963f4621c3d41ded",
+      "bf5b95120327c5aa",
+      "c10831f639dd0055",
+      "e0c76f2bbb0588f8",
+      "eaf452b16c887d63"
+    ]
+  },
+  "https://github.com/awslabs/aidlc-workflows/blob/main/README.md": {
+    "sha256": "8fd8e4cb79a34210ab6bfcdd59bc85a071da0a8cafa0642c6b70c993c3a45723",
+    "quotations": [
+      "3b93dd522e1e2417"
+    ]
+  },
+  "https://github.com/awslabs/aidlc-workflows/blob/main/docs/guide/02-your-first-workflow.md": {
+    "sha256": "52e8416e6939d9e293bac7e4cd5b67042bebfe76e1a84a40f69cf96c066a0e44",
+    "quotations": [
+      "1b94b87c5281ca44",
+      "571c9dc9f4ee6ce4",
+      "5bf0247891abee6f",
+      "b769b0a50de26010",
+      "c2f62dbe990191ba",
+      "c7ab22cc8e067808"
+    ]
+  },
+  "https://github.com/awslabs/aidlc-workflows/blob/main/docs/guide/03-spaces-and-intents.md": {
+    "sha256": "0ca24acfd7cc6151fb121e6c9d5b8f26626f9a0cb04a0cb78d6028fc3656f080",
+    "quotations": [
+      "0647aef44f3be470",
+      "23fd4d57539a2551",
+      "37387cd14ee9e66e",
+      "4fd0e669ac4a7eca",
+      "6e6a6d52dd9ac4d3",
+      "9235359870f44be0",
+      "cad2e9fa8c068da0"
+    ]
+  },
+  "https://github.com/awslabs/aidlc-workflows/blob/main/docs/guide/14-artifacts-reference.md": {
+    "sha256": "efdf444026bac6f006f29bf62e2ac3070341e8428f2c8831d99f78eb417d5979",
+    "quotations": [
+      "3afa4c0b8516ad19",
+      "7e9428f51ef80ca2",
+      "9b3eb6ea73babae4"
+    ]
+  },
+  "https://github.com/awslabs/aidlc-workflows/blob/main/docs/reference/07-sensor-system.md": {
+    "sha256": "757396da96578593ae45e491378321e98e5959254f0530f756f86973ed8eaaa9",
+    "quotations": [
+      "02fce496d870e8dd",
+      "3b46176c690582e4",
+      "6c3d30aa837509cb",
+      "ca286024767d356b",
+      "e00a3acc6c102c6a"
+    ]
+  },
+  "https://github.com/awslabs/aidlc-workflows/blob/v1.0.0/README.md": {
+    "sha256": "c2eacf7c3b171bef4192d16793f60962ce8a18ae0754629d7dded299c7ed70b3",
+    "quotations": [
+      "13a1b3e5d1eb4bd3",
+      "c7b7c5c056d9e885",
+      "cf13771fc8fc2b42"
+    ]
+  },
+  "https://github.com/awslabs/aidlc-workflows/blob/v1.0.0/docs/GENERATED_DOCS_REFERENCE.md": {
+    "sha256": "68b80f73d88316db8cf642ce0055392dac7cfabe1b8813a952f7a78496131225",
+    "quotations": [
+      "071960de075c7762",
+      "5e1cd76a9a67d28f",
+      "c107a26200facdd5",
+      "c8c3c7302128d0d6",
+      "d0e1361cb71abaca",
+      "db34943fa51604cc"
+    ]
+  },
+  "https://github.com/ayoubben18/ab-method/blob/main/.ab-method/structure/index.yaml": {
+    "sha256": "5402fd2a08ca72c8fa57324641c94f86fd79945160377c18397a284a9122827a",
+    "quotations": [
+      "1e3a8acb919d5f7e",
+      "31246caa3e6ddbfe",
+      "326f4e999a821ca3",
+      "35f2deb13f783074",
+      "39f6bc6736066927",
+      "4b935e0d0e379232",
+      "4c2ca5773d575087",
+      "514eacd505829b75",
+      "54c378a128ed006d",
+      "5d576653a735e878",
+      "5e30bf3c97876cf1",
+      "61595902610a1fd4",
+      "6e7ac3f1a23537ad",
+      "8775f7fe1c7f778c",
+      "8a852acd05043c75",
+      "91043152e9fe0ac7",
+      "923ad840c37ffd6a",
+      "9a9d626203a13219",
+      "a198bac64e3c75af",
+      "aa0d610da888c7b3",
+      "b437979649f92f10",
+      "d49881ed0da005b5",
+      "d88e14a266f5f97f",
+      "e0c1cc0860fdfac5",
+      "ecc0f1efcf849d01",
+      "eeb576dcf0d1778f",
+      "eed1ae45b8de309e",
+      "f8fcb9bad11b4991"
+    ]
+  },
+  "https://github.com/ayoubben18/ab-method/blob/main/README.md": {
+    "sha256": "5a0b4be26b6b035ec689702d0cc112b893b75e054cdea1e05c701398b421634b",
+    "quotations": [
+      "1d753ece2d3fe669",
+      "97f48db466be1688",
+      "df0382858c395575",
+      "e3e5e97f5a14e200"
+    ]
+  },
+  "https://github.com/ayoubben18/ab-method/blob/v3.12.0/.ab-method/structure/index.yaml": {
+    "sha256": "37292940568e45471be5f958ebc5ead0508838ed2bb9c381ed98e18d38bc084c",
+    "quotations": [
+      "a6cf3a86ce69ecdf",
+      "f6f1f2f3abf5cd78"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/6.0.0-alpha.17/src/modules/bmm/module.yaml": {
+    "sha256": "f3ada2414c7bc7934a65d563db7e420296616aa7356cdbf3ac32f19d8cefdcff",
+    "quotations": [
+      "34a793554815c1de"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/V4/bmad-core/tasks/shard-doc.md": {
+    "sha256": "10d3aa3912b81174d87287efea9268e9858a082f487f6c23914b24e1ac43dbbb",
+    "quotations": [
+      "35ac0d7fdac7f09f",
+      "3cae3289c2854c5c",
+      "4386eab0c40bbc8a",
+      "edcf9eb555ceaca7"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/V4/bmad-core/templates/brainstorming-output-tmpl.yaml": {
+    "sha256": "c465327e518b7e3f57c560493b8d355d0509bc010f23bcb11177a67cc071e9c2",
+    "quotations": [
+      "b6e3a2e49cd560d5"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/V4/bmad-core/templates/competitor-analysis-tmpl.yaml": {
+    "sha256": "3168f06b764b13e3d782a74dad34ba14cccaaf7442d1de54e10fd1f9b779128b",
+    "quotations": [
+      "4994a26ec1436c62"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/V4/bmad-core/templates/front-end-architecture-tmpl.yaml": {
+    "sha256": "df512ad35826832b55ef73e7bdd021f2d2aa7a5cf58cc9b51f0aaeb2543cf53f",
+    "quotations": [
+      "6970dfad0161bbd3"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/V4/bmad-core/templates/front-end-spec-tmpl.yaml": {
+    "sha256": "d0b7b1954e4e66d3591eab9ebd2172868b9a7149dc873aae658a31198cfb5bc5",
+    "quotations": [
+      "1b3f485e3868bc69"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/V4/bmad-core/templates/market-research-tmpl.yaml": {
+    "sha256": "e600d50d4249c487833af3b327365bd38f210e2df671544e263121148f61066a",
+    "quotations": [
+      "0c68daa66dd11cc3"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/V4/bmad-core/templates/project-brief-tmpl.yaml": {
+    "sha256": "7943af5e7fb5f7197e6ba15baba3258577d19c14e71f98ecb6fb610d73444bbf",
+    "quotations": [
+      "99d099c4c9bee5fe"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/V4/bmad-core/workflows/greenfield-fullstack.yaml": {
+    "sha256": "d979c2e5f1a7bf8123cc61be4ad68d604a40f80b3c16e3b8c1aa2df77637e1df",
+    "quotations": [
+      "848f80388ff42b09",
+      "b9e41882dd457509"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/V4/docs/user-guide.md": {
+    "sha256": "55210134af318c17ec9cbf406d49a60ea3f28695964ec477cb8d64bc6ec60ca6",
+    "quotations": [
+      "4e4d88cfc7b6d58c",
+      "625cbfb90d4d1989",
+      "892dd98cab891183",
+      "94a026762a45f1c3",
+      "b8cbfaef9959d14d",
+      "eb37e8afee979218"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/V4/tools/installer/lib/installer.js": {
+    "sha256": "31d2252346638e4f9e6055ac502c1384e86d0f7c18e11c283f8576c7759496e3",
+    "quotations": [
+      "ff26ecdb7844acb3"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/V6.12/src/bmm-skills/module.yaml": {
+    "sha256": "b72d950e208d4a01df4713798a5690fb90d03b156cce8351e5b84e03785bcd73",
+    "quotations": [
+      "29aa35c37736349a",
+      "2cf1793c1abeeb09",
+      "5d9bc62787801ccd",
+      "c4627a6ef416ee73"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/V6.12/src/bmm-skills/plan/bmad-project-context/SKILL.md": {
+    "sha256": "0cff9203c903afae70e308f5592281dcb0c302aa53f2ddb3b62802e6ef31f887",
+    "quotations": [
+      "546078769b9a374b"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/V6.12/src/bmm-skills/plan/bmad-spec/SKILL.md": {
+    "sha256": "2ffee91b4f7407b3b7888b72d1edee1a8c0425001c25e633d38796d2dda8155f",
+    "quotations": [
+      "5d6cd20b80fa16ff",
+      "c63ae7518bfdb30c"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/V6.12/src/core-skills/bmad-brainstorming/customize.toml": {
+    "sha256": "c3d1f1a4c2ccf666d1f8bcfecc0b47c87f761bb94d1fb2ea88493156d8e982ff",
+    "quotations": [
+      "0d8d7e781078bfb1",
+      "1cc5c6742d4d8ff8",
+      "f291e4f043fad5fa"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/V6.12/src/core-skills/bmad-party-mode/customize.toml": {
+    "sha256": "87e66b2103238d1bb3b2edab9eb456912929a4eea2d49eecfde0962df96af3b1",
+    "quotations": [
+      "8e70e887c3e445f7",
+      "ba07b532b6c053f0",
+      "c681ecbaf3aa2212"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/V6.12/src/core-skills/module.yaml": {
+    "sha256": "8b77d47d3d6e83622ceb718c2a3db18013bdb6f26e1ccaf161d5ecd8390c950f",
+    "quotations": [
+      "4f9e9272b96bca8e",
+      "64f27ee2e7d8aed9"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/v6.0.0-alpha.15/docs/v4-to-v6-upgrade.md": {
+    "sha256": "66a69dddb01f19816d34fffac5cd4da47515bc32d051f01fa1a810ccfd0c97d6",
+    "quotations": [
+      "6f6cc0395c3a3b04"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/v6.0.0-alpha.15/src/core/module.yaml": {
+    "sha256": "02ba3177b6e0104e7c6223267e76235352a0927b39297c4de5e32fe6dbd5eff1",
+    "quotations": [
+      "b6e7ad20aabf235c"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/v6.0.0-alpha.15/src/modules/bmm/module.yaml": {
+    "sha256": "658b34d674fca852442aeb07d1ee3074a96a6917010e2332c0cd022df80d964e",
+    "quotations": [
+      "b6aba38901045d6f"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/v6.0.0-alpha.15/src/modules/bmm/workflows/2-plan-workflows/prd/steps/step-01-init.md": {
+    "sha256": "4be1dcf09df9fa31fcd57cf05720ba6116ead8c3c85675d06e40b36e77027e76",
+    "quotations": [
+      "9ad88f7fa0ae0b2f"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/v6.0.0-alpha.7/docs/installers-bundlers/installers-modules-platforms-reference.md": {
+    "sha256": "c335d0256393e215fd34a1bb7a965f89266dd2703f4e32de49eb99b7158f08eb",
+    "quotations": [
+      "7171c23c79cce653",
+      "ed274e7b6374aa6b"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/v6.0.0-alpha.7/docs/v4-to-v6-upgrade.md": {
+    "sha256": "5f66589836de41b006f0f12538f985f1a05f4cdbf98c2897c7a893869c839efe",
+    "quotations": [
+      "9d5fa00bd1153fa9",
+      "d9f607fc1b56d5de"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/v6.0.0-alpha.7/src/modules/bmm/workflows/1-analysis/product-brief/workflow.yaml": {
+    "sha256": "6812409552ea4fa972533b05b79189f31606a72fee0787654c0f3400b29cbce7",
+    "quotations": [
+      "54dc4a6e5124148b"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/v6.0.0-alpha.7/src/modules/bmm/workflows/2-plan-workflows/prd/create-epics-and-stories/workflow.yaml": {
+    "sha256": "e4ff5e6d26027a7ed669a7a48c0d4630093263d8a2b76ce4cdd9556f366b22e6",
+    "quotations": [
+      "29cf3dc0b0b8f697"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/v6.0.0-alpha.7/src/modules/bmm/workflows/2-plan-workflows/prd/workflow.yaml": {
+    "sha256": "d1ec7f24b8c0e62432ab8663cff60973ff509066254e92727b9a6014bf59c450",
+    "quotations": [
+      "5084c200386c0ecb"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/v6.0.0-alpha.7/src/modules/bmm/workflows/2-plan-workflows/tech-spec/workflow.yaml": {
+    "sha256": "5517b5fc9c031ea8c3d240587818c292b44aefc80c80ef2739119f94de543f5a",
+    "quotations": [
+      "49f7318c109e1f69"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/v6.0.0-alpha.7/src/modules/bmm/workflows/3-solutioning/architecture/workflow.yaml": {
+    "sha256": "aaca5366ec5148b158bf777968a180ae9b4f1ca7f22f195c9535b626891db00a",
+    "quotations": [
+      "7d1ec913fd7dcfc7"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/v6.0.0-alpha.7/src/modules/bmm/workflows/4-implementation/create-story/workflow.yaml": {
+    "sha256": "9f64106859aa72fb7f950e1a0695985e22cce9ff987ec3927c7f62efeeb00122",
+    "quotations": [
+      "e04b9e1374cf0bdc"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/v6.0.0-alpha.7/src/modules/bmm/workflows/4-implementation/epic-tech-context/workflow.yaml": {
+    "sha256": "5ac6e57964723daaf1ff3acb4e69326e0e1fd026e1ebe7bd4890ca064542b4a4",
+    "quotations": [
+      "11b25ec73a40410d"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/v6.0.0-alpha.7/src/modules/bmm/workflows/4-implementation/sprint-planning/workflow.yaml": {
+    "sha256": "ef6e519d35d96e1ea2c7d34688caaa8cf180a107aa43eb376bf640468041779e",
+    "quotations": [
+      "5b50c3b917395eb3"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/v6.0.0-alpha.7/src/modules/bmm/workflows/workflow-status/workflow.yaml": {
+    "sha256": "98f78299ea072f11b9efb81af60d48a24de99dbbaba0ffc1fe2562159fda6a3d",
+    "quotations": [
+      "4d3d11e51c42aa71"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/v6.0.0/src/bmm/workflows/generate-project-context/workflow.md": {
+    "sha256": "a31abfdc78f902c98ea79b330dd5583061acbbd9a8a2f6d6168ef44d160c8d3f",
+    "quotations": [
+      "97e3db6c3b275198"
+    ]
+  },
+  "https://github.com/bmad-code-org/BMAD-METHOD/blob/v6.0.0/src/core/workflows/brainstorming/workflow.md": {
+    "sha256": "c7ccd509a03e6e2adf884890e4ce2d9d00c3c2abd4d1b4a315aa5b7705c09ea3",
+    "quotations": [
+      "c0949fdc33435ae8"
+    ]
+  },
+  "https://github.com/bradygaster/squad/blob/dev/README.md": {
+    "sha256": "3908cafebf8b7c839e0f4405fb5eb1e8174436118a2e076661973f7043b1a9bc",
+    "quotations": [
+      "02d00db2e4fa57e1",
+      "1c8981cade5d3d67",
+      "225c7ba789f44215",
+      "3277f5d5f6d24715"
+    ]
+  },
+  "https://github.com/brightercommand/brighter/blob/bb9facb34e0fdc893568ed2e18d9b4830970ece8/specs/0002-sqs-cleanup/tasks.md": {
+    "sha256": "19bcbf631d97d4e6496bfa6e53ef5ff7d3da2df5d8052eca6f189c5d4b8516eb",
+    "quotations": [
+      "d72e9dc63fb6c1ed"
+    ]
+  },
+  "https://github.com/buildermethods/agent-os/blob/5c48261dda2078d7d8d3a6314456da5419056e24/instructions/create-spec.md": {
+    "sha256": "8396234b9b0fe14de978a5b35a02145a1fe20525a9a68d5762608e86cccb847a",
+    "quotations": [
+      "7f5b9cc484c622cd"
+    ]
+  },
+  "https://github.com/buildermethods/agent-os/blob/e8a9e659877f95fd4d3b9005693a08b35aeb5dd6/instructions/core/create-spec.md": {
+    "sha256": "6e0d12d13259e381b8d00cc7eba737a746f9b40767ca7e02a43aa111a8966734",
+    "quotations": [
+      "260eaa7ddec1b991",
+      "6493231e57dc8197",
+      "aabf52bd19af095d",
+      "b3a529c45b05e7f9",
+      "f046c7e262f415be",
+      "fd5086dc8b723286"
+    ]
+  },
+  "https://github.com/buildermethods/agent-os/blob/e8a9e659877f95fd4d3b9005693a08b35aeb5dd6/instructions/core/create-tasks.md": {
+    "sha256": "4584cb01de14ae40f0cf45fbde5e261780934921ee3a35c43ec82f19354bafbb",
+    "quotations": [
+      "cec391831dee57b7"
+    ]
+  },
+  "https://github.com/buildermethods/agent-os/blob/e8a9e659877f95fd4d3b9005693a08b35aeb5dd6/instructions/core/plan-product.md": {
+    "sha256": "07612ed57491a2b73675a24f6ff52b1685f808a3957592c096e711fd9e189c2b",
+    "quotations": [
+      "16b16386373c8d1e",
+      "3758ac1e9d8020d9",
+      "4b57b03166ca7577",
+      "5ab35b5171446932"
+    ]
+  },
+  "https://github.com/buildermethods/agent-os/blob/e8a9e659877f95fd4d3b9005693a08b35aeb5dd6/instructions/core/post-execution-tasks.md": {
+    "sha256": "4469ed030c2bb04ad032c8f22d6fe3ce112cf36ae7d181b5ad8ca58150d19178",
+    "quotations": [
+      "b5360547b31cad1f"
+    ]
+  },
+  "https://github.com/buildermethods/agent-os/blob/main/CHANGELOG.md": {
+    "sha256": "73e354989030df9bd1d8eb2962d0386ccc3bee0c5e1426507752ed874944edec",
+    "quotations": [
+      "173ca606d49801d2",
+      "1edc03822c2a5c2f",
+      "8ca048badcb6a715",
+      "cea1722f0a40f1f0"
+    ]
+  },
+  "https://github.com/buildermethods/agent-os/blob/v1.4.0/instructions/core/plan-product.md": {
+    "sha256": "a8d9085c10014a68ddd0f421c5f8f857a9b96363d65f513f86eaf8a9c905eee7",
+    "quotations": [
+      "25fa5926379ea6b9"
+    ]
+  },
+  "https://github.com/buildermethods/agent-os/blob/v2.0.5/profiles/default/workflows/implementation/document-implementation.md": {
+    "sha256": "bc56a0a6b04a2928b5b9de8cf5962fda0344ccdb80c0b9039256f980c4186e72",
+    "quotations": [
+      "79a472dd3b0e65e3"
+    ]
+  },
+  "https://github.com/buildermethods/agent-os/blob/v2.1.1/profiles/default/commands/implement-tasks/multi-agent/implement-tasks.md": {
+    "sha256": "82e25169233a1e492c6e8800a327479ac035fd335d2e68f1c208159cb640e391",
+    "quotations": [
+      "8cd39ef74c081709"
+    ]
+  },
+  "https://github.com/buildermethods/agent-os/blob/v2.1.1/profiles/default/workflows/implementation/verification/create-verification-report.md": {
+    "sha256": "64a547a74a1495976c3b55d5b21fa1775442c2951bd91307b67040e998ca4d62",
+    "quotations": [
+      "e6e14115b25694a6"
+    ]
+  },
+  "https://github.com/buildermethods/agent-os/blob/v2.1.1/profiles/default/workflows/specification/initialize-spec.md": {
+    "sha256": "e297083b45a064573007a2c48872e22db2e4fef0d76df3fa3a260686557b2f57",
+    "quotations": [
+      "fde990d7f7910f1e",
+      "fe9d0fd2be9e75bf"
+    ]
+  },
+  "https://github.com/buildermethods/agent-os/blob/v2.1.1/profiles/default/workflows/specification/verify-spec.md": {
+    "sha256": "39133714a0e99b6b647e0742e1c1b906677f8fcd980e9a7620ba374d5873cc92",
+    "quotations": [
+      "4b390afa82b3c869"
+    ]
+  },
+  "https://github.com/buildermethods/agent-os/blob/v2.1.1/scripts/project-update.sh": {
+    "sha256": "d179805a58abed2007bf42ff2062278059adc6800be7c339288e3e03b93c65bf",
+    "quotations": [
+      "3742803ebe286271",
+      "45dde234008724d0"
+    ]
+  },
+  "https://github.com/cluesmith/codev/blob/main/README.md": {
+    "sha256": "68620a76c23ec4cab76c928aaebd200d1b5aa54ae8bcdc5397cd553d4205d166",
+    "quotations": [
+      "16bec3ecc0fb3a72",
+      "e835a73becd99b2d"
+    ]
+  },
+  "https://github.com/cluesmith/codev/blob/main/codev-skeleton/protocols/experiment/protocol.md": {
+    "sha256": "42bd886b0c71689ec3a7968fa54885128024b1adc50fd8b7d2682547bc13b73a",
+    "quotations": [
+      "80e25bd6e37defd0"
+    ]
+  },
+  "https://github.com/cluesmith/codev/blob/main/codev-skeleton/protocols/maintain/protocol.md": {
+    "sha256": "2006beb589231e1a892ce8ba4f3cb9c4e0f014f3e8a84aa73c34a5f6aedf06b0",
+    "quotations": [
+      "eebce70e641bba6f"
+    ]
+  },
+  "https://github.com/cluesmith/codev/blob/main/codev-skeleton/protocols/research/protocol.md": {
+    "sha256": "551974545f6ecedb4e5ca3c4b973ae6694638ee27b8d97b6e07f008264d3656c",
+    "quotations": [
+      "6dbede8d02b7166e"
+    ]
+  },
+  "https://github.com/cluesmith/codev/blob/main/codev-skeleton/protocols/spir/protocol.md": {
+    "sha256": "7591dfdf2c5e4f102d6a12b9ccf23b25db3cb891fa14c966ecac9272d4360576",
+    "quotations": [
+      "22072987c6f2e6c5",
+      "30c785536a8fa2ca",
+      "433cdd91b88424cd",
+      "5a74cb4a5be51e40",
+      "87a622b5447e4214"
+    ]
+  },
+  "https://github.com/codervisor/leanspec/blob/main/README.md": {
+    "sha256": "de930305d3e5819d46c6f36563dba75b40472f6cb1c7d55b718bbc210a54a2ec",
+    "quotations": [
+      "229b780f9c9013bd"
+    ]
+  },
+  "https://github.com/coleam00/context-engineering-intro/blob/main/README.md": {
+    "sha256": "f242af056d4dfcdc3d54a08d8b5b85a8ea380f33e11d393bfba846acf648cfc4",
+    "quotations": [
+      "327dfa15d9272d39",
+      "a855d28f798c2c96"
+    ]
+  },
+  "https://github.com/digipulse-engineering/GAAI-framework/blob/main/.gaai/core/contexts/rules/artefacts.rules.md": {
+    "sha256": "b06988b56cdd8afb82d408b6bca3c53a5243e1acb0767045b2736da70f000267",
+    "quotations": [
+      "0ff064bca8d26382",
+      "27de657141d20336",
+      "4d8b52475e33038f",
+      "4f39a68abe63eb01",
+      "7d209d1f1bd1b908",
+      "a3cea7520216e06c",
+      "c82b848d8f685454"
+    ]
+  },
+  "https://github.com/digipulse-engineering/GAAI-framework/blob/main/.gaai/core/skills/cross/approach-evaluation/SKILL.md": {
+    "sha256": "53e7720dfe089588cc5326bfdbff877dc2ded8171dc09777fba56ddc5ad4f227",
+    "quotations": [
+      "1dc0d03ca6c23765"
+    ]
+  },
+  "https://github.com/digipulse-engineering/GAAI-framework/blob/main/.gaai/core/skills/delivery/delivery-high-level-plan/SKILL.md": {
+    "sha256": "e99eed5e4b9639fe521ea790ea3af7616b804ab61085122c7a8cffd63da0c359",
+    "quotations": [
+      "b94d9e94051bbac5"
+    ]
+  },
+  "https://github.com/digipulse-engineering/GAAI-framework/blob/main/.gaai/core/skills/discovery/create-prd/SKILL.md": {
+    "sha256": "9ac52532350a89c3a6a44458d1a1d33e926df0dd1a0555df80ee8edb275046af",
+    "quotations": [
+      "f124b328579c3d4d"
+    ]
+  },
+  "https://github.com/digipulse-engineering/GAAI-framework/blob/main/.gaai/project/contexts/artefacts/README.artefacts.md": {
+    "sha256": "f9b341ac04f4a8f951215474387c183869619d4249d97bcfa24feb3fac39198f",
+    "quotations": [
+      "9b744a8c89127845"
+    ]
+  },
+  "https://github.com/digipulse-engineering/GAAI-framework/blob/main/.gaai/project/contexts/backlog/README.backlog.md": {
+    "sha256": "51d728c6bb43f3abf0f891bf583b673f608308cb21acc0d2d5bcdfb7a617d58c",
+    "quotations": [
+      "1be4ac2fc98b8be8",
+      "25f055c6a4b219fc",
+      "5ff975871982c06b",
+      "6074add876058ad1",
+      "f6beed980bf6478d"
+    ]
+  },
+  "https://github.com/digipulse-engineering/GAAI-framework/blob/main/.gaai/project/contexts/memory/README.memory.md": {
+    "sha256": "87471ad48f62fc6249780a4a19e3d5d9376428fadbf76b2b456c0b67af9bec7b",
+    "quotations": [
+      "448045e09595b620",
+      "7b26f3d9857188e0",
+      "7fdb23e0eca82c1a",
+      "b59226683ebe2fa8",
+      "f57e51e99821c330",
+      "fc5b93b16876c864"
+    ]
+  },
+  "https://github.com/digipulse-engineering/GAAI-framework/blob/main/README.md": {
+    "sha256": "d2d840e90c63397b22ddebbdfa129778fe8ad8301786033475db561d9ff8a40c",
+    "quotations": [
+      "1d69a96673861a90",
+      "70a4c7fbd3e894f8",
+      "8d0dcd73318ea221",
+      "b66e9c92bfb83c9a",
+      "cbef668260c9a4fd"
+    ]
+  },
+  "https://github.com/dsifry/metaswarm/blob/33d39f7/commands/prime.md": {
+    "sha256": "541ebe869f2a09100507667f469e73e0dbc35668659b175db65288ce1d89eea0",
+    "quotations": [
+      "42d559c1b5a40975"
+    ]
+  },
+  "https://github.com/dsifry/metaswarm/blob/main/README.md": {
+    "sha256": "3e80ead123623595386d20acc48a5e19a0ee923b088675ba132b020524501a43",
+    "quotations": [
+      "05e011ffa55a44ee",
+      "8cdcb95a2c04b8e2",
+      "df1376b1e2ed27f3"
+    ]
+  },
+  "https://github.com/dsifry/metaswarm/blob/main/USAGE.md": {
+    "sha256": "6aeb8ffec6f0913f1331d213788cbcf9a5c0e82dced8351b2fff0b4104dbc585",
+    "quotations": [
+      "0f80bef080adc36a"
+    ]
+  },
+  "https://github.com/dsifry/metaswarm/blob/main/commands/setup.md": {
+    "sha256": "2128795a20648bedb57f3ac0c5c138ea52bfccaf015d84866bfcc6967687d333",
+    "quotations": [
+      "3fad30f9268380ec"
+    ]
+  },
+  "https://github.com/eyaltoledano/claude-task-master/blob/1c7365cab1f1d8ee5b0ecc2292a9ba9cf5efea2e/packages/tm-core/src/modules/tasks/services/task-file-generator.service.ts": {
+    "sha256": "b6552aff523051e7e729764a64ac0246c216476c2307eb0e6d1f64ee0dde2b0d",
+    "quotations": [
+      "ed9e95d7ce115c48",
+      "f0515399b0262abb"
+    ]
+  },
+  "https://github.com/eyaltoledano/claude-task-master/blob/1c7365cab1f1d8ee5b0ecc2292a9ba9cf5efea2e/scripts/modules/task-manager/research.js": {
+    "sha256": "77aaf6744e1bf7c48080c4dfeae6249ea2dd265fe59567064a34dbc4b35f2bf5",
+    "quotations": [
+      "16b0a5606aee86b7",
+      "528f75df4d18803a"
+    ]
+  },
+  "https://github.com/eyaltoledano/claude-task-master/blob/1c7365cab1f1d8ee5b0ecc2292a9ba9cf5efea2e/src/profiles/claude.js": {
+    "sha256": "d21b1784dd8da042f7801170729fa38d5c7f583d43e3e4bf94736b8388956963",
+    "quotations": [
+      "d8eaba570ff7bd41"
+    ]
+  },
+  "https://github.com/eyaltoledano/claude-task-master/blob/1c7365cab1f1d8ee5b0ecc2292a9ba9cf5efea2e/src/utils/path-utils.js": {
+    "sha256": "7197f802b4be20e0227a1e92c1b9e78137be889f3bf501dfdb3462104310476c",
+    "quotations": [
+      "c074ece99f8b0b09",
+      "ec56b361d224e0ff"
+    ]
+  },
+  "https://github.com/eyaltoledano/claude-task-master/blob/458496e3b6c0a2f3f6de76a88171caa38671116e/scripts/modules/task-manager/generate-task-files.js": {
+    "sha256": "fff3d65d4c002401ecddb2ec6effbf47ce57114ae72220ed0fd116659115b5ca",
+    "quotations": [
+      "bbbff0fe705dd62e"
+    ]
+  },
+  "https://github.com/eyaltoledano/claude-task-master/blob/d1e45ff50eb78e14c076388c786567f098c11dbe/scripts/modules/task-manager/generate-task-files.js": {
+    "sha256": "44a3fb1a1ebf4fb0b3e0932d8a5f02c58254c10ead9a1a60fcc8d9787acab86d",
+    "quotations": [
+      "9a872557fd16df44"
+    ]
+  },
+  "https://github.com/eyaltoledano/claude-task-master/blob/main/README.md": {
+    "sha256": "d4f3e1904fb6df872d36dfb4dba8664ce4de3397a739bb1ef033a25bee8291a6",
+    "quotations": [
+      "087e38ad68391190"
+    ]
+  },
+  "https://github.com/eyaltoledano/claude-task-master/blob/main/docs/command-reference.md": {
+    "sha256": "30b05bdab86fb3daa486c0197610af9fb65b1aeec8bc1857abb67feb674d1919",
+    "quotations": [
+      "25733ca41c05e222",
+      "cdf75a2a9102f83c"
+    ]
+  },
+  "https://github.com/eyaltoledano/claude-task-master/blob/main/docs/migration-guide.md": {
+    "sha256": "bea9e9d3c924a254474fc226247deec0466c26067b1d3a3c46477e0407d4eb65",
+    "quotations": [
+      "1fed22f8c1ea5a94",
+      "23b09da6ca8453c4",
+      "2ea143db2a1f29c3",
+      "2fa8e2e21af15d98",
+      "44fe865ebbd1a7c0",
+      "5186f47c3cf354f3",
+      "600c0f80807fc4f6",
+      "980839185f63fc86",
+      "b7beb4ee809f9ebd",
+      "d54d820aa103cf13",
+      "f3b492b00469e33a"
+    ]
+  },
+  "https://github.com/fabriqaai/specs.md/blob/main/README.md": {
+    "sha256": "5becfcf69c4b467f41f44dd45e48156369ebc89a06b50245454cdabd6fd9d815",
+    "quotations": [
+      "357d219de7d5793a",
+      "56cde37c8f2415ae",
+      "5b0f3fae6f81e5d1",
+      "75a5d11dba75ef37",
+      "ba76b971422527ba",
+      "bc8d7f0fe84f8102",
+      "e15281cd7bbc16dc"
+    ]
+  },
+  "https://github.com/fabriqaai/specs.md/blob/main/src/flows/aidlc/memory-bank.yaml": {
+    "sha256": "8e2bbec35551a14430ae1e9cb6f3fabeb92bf30e9bbcb30924a73fb372f455f8",
+    "quotations": [
+      "2b5d5c2a95d9265f",
+      "6921166a0c5eb2d5",
+      "b0b08386b84dd429",
+      "bc6a4f2b0341c3a7",
+      "e73d20281c5a7726"
+    ]
+  },
+  "https://github.com/fabriqaai/specs.md/blob/main/src/flows/aidlc/skills/inception/story-create.md": {
+    "sha256": "7e9e5b1dffafb0636691f5b3683f631172baaca4a47593ec7f30c1e18c380c33",
+    "quotations": [
+      "4b4601d319cdb0a6",
+      "6e263e93c18f2cd9",
+      "7bb7c1cbb1378250",
+      "e6b46fada8b773ce"
+    ]
+  },
+  "https://github.com/fabriqaai/specs.md/blob/main/src/flows/aidlc/skills/master/project-init.md": {
+    "sha256": "7e1b8e7f131e069cf26df74eb796a95cd9caea034e4f7502922ceeaf13e683c9",
+    "quotations": [
+      "266e395fcefd498e"
+    ]
+  },
+  "https://github.com/fabriqaai/specs.md/blob/main/src/flows/aidlc/skills/operations/deploy.md": {
+    "sha256": "2c915b5de8689d73965a611742424c94189570e5c48f9f84abb59cf138b4b306",
+    "quotations": [
+      "cb26e5475fe6f92f",
+      "f3991237a2d7227c"
+    ]
+  },
+  "https://github.com/fabriqaai/specs.md/blob/main/src/flows/aidlc/templates/construction/bolt-template.md": {
+    "sha256": "b8af630f032342ee2d0f4c0866aafca661b4731a44fe22e939ca73075c4334d3",
+    "quotations": [
+      "ca93d41503c466fc",
+      "e3b37ea20849f244"
+    ]
+  },
+  "https://github.com/fabriqaai/specs.md/blob/main/src/flows/aidlc/templates/construction/bolt-types/ddd-construction-bolt.md": {
+    "sha256": "ff5f053bb8d24fd18ccf197780aa2c7fb0e5a4523c4ee03018734c3e97e85727",
+    "quotations": [
+      "0e3a519d06159139",
+      "3212dcaeee420438",
+      "bb0c13fe0e063c74",
+      "d9e49a2c6dd3704f",
+      "f08f3531e6470a74",
+      "f20eafea75fb2460"
+    ]
+  },
+  "https://github.com/fabriqaai/specs.md/blob/main/src/flows/aidlc/templates/construction/bolt-types/simple-construction-bolt.md": {
+    "sha256": "7e9f820a2379fc025361f173e8b599ca802a29b34c2e0b998d78cd2a38a66ffc",
+    "quotations": [
+      "34c2e5a8217a9ece",
+      "66e8be68bc9bb8fc",
+      "6f56ad06bb0a541b"
+    ]
+  },
+  "https://github.com/fabriqaai/specs.md/blob/main/src/flows/aidlc/templates/construction/bolt-types/spike-bolt.md": {
+    "sha256": "f0f4e1ff4962e5d911c7ba215000f353e8d0e9770f511472a26d622c513e5da5",
+    "quotations": [
+      "34ec8e20f9350051",
+      "da3adf699c3fea19",
+      "fc943eac5e7eadbb"
+    ]
+  },
+  "https://github.com/fabriqaai/specs.md/blob/main/src/flows/aidlc/templates/standards/decision-index-template.md": {
+    "sha256": "472f4a6e0959bbd63f8044246e792af67ea3f6a1055b43cddd29680b89196bad",
+    "quotations": [
+      "7b7399dce0d5a458",
+      "e76a6fb6e814f0d5"
+    ]
+  },
+  "https://github.com/fabriqaai/specs.md/blob/main/src/flows/fire/agents/builder/skills/run-execute/SKILL.md": {
+    "sha256": "201b4c8b3a873f5493b4c497e3d9400bc704c809dd270eff9c2354167c9aecb9",
+    "quotations": [
+      "4c60b98133e1a5c5",
+      "5c6af1dc59ee139f",
+      "b02d3360335bce82",
+      "f26b99b51b3688ea",
+      "fbebb53d040dd857"
+    ]
+  },
+  "https://github.com/fabriqaai/specs.md/blob/main/src/flows/fire/agents/orchestrator/skills/project-init/SKILL.md": {
+    "sha256": "7a3fe5004a45e220e6dbb203a1ee7ea82e0b92346a432c50cfe5be30f3070108",
+    "quotations": [
+      "1ac3321fd42929c3",
+      "78b6a5419deb95d0",
+      "b2b803c0ae280b55",
+      "b70efa8c7d7774f2",
+      "d7c54626a96d4c61",
+      "e50f6a6775bb44c2",
+      "eb13eed81082a746"
+    ]
+  },
+  "https://github.com/fabriqaai/specs.md/blob/main/src/flows/fire/agents/planner/skills/design-doc-generate/SKILL.md": {
+    "sha256": "83a23ecd65343175ecf1ac7f5e7a34b0b00f87d634e5a309c106c11a973f2bc6",
+    "quotations": [
+      "0ad843e1b0b182cb"
+    ]
+  },
+  "https://github.com/formulahendry/mcp-server-spec-driven-development/blob/main/README.md": {
+    "sha256": "4ebd8775962f12a31960e670d10fd26c6c3c40f10e0fc8d63f611fa136741a61",
+    "quotations": [
+      "39a21e30a5a00df4",
+      "59742bf786f9d64e",
+      "fc557acda5c8b001"
+    ]
+  },
+  "https://github.com/frankbria/ralph-claude-code/blob/4fd2fe941ad79ffe85b7676266714e092dbf1cde/migrate_to_ralph_folder.sh": {
+    "sha256": "6cb7cb21ddcb2b6cffa320177e3b4ea12adb4fda196590958c575e33ab2a4d7b",
+    "quotations": [
+      "5ddc41dae115bb73"
+    ]
+  },
+  "https://github.com/frankbria/ralph-claude-code/blob/main/README.md": {
+    "sha256": "332b8027462d488e204a48651053a317f20f9454c5e320a089ba2fe67ed504e4",
+    "quotations": [
+      "06f7d1052072758e",
+      "222a025cf34fa375",
+      "3910371ac3a48a3c",
+      "682949744ae86ca1",
+      "6dced5a0b62e0508",
+      "6e6a2bd7977d3776",
+      "dbd0f2deeec8b55c"
+    ]
+  },
+  "https://github.com/garrytan/gstack/blob/main/README.md": {
+    "sha256": "5df4e19bdd4c4c15e8d74aac7c2663c222861851f85b5c6b2c3a8e65ff2761ec",
+    "quotations": [
+      "c64ed1ba4f19e3fc",
+      "dd55c4eeb984747c"
+    ]
+  },
+  "https://github.com/garrytan/gstack/blob/main/design-consultation/SKILL.md": {
+    "sha256": "cbb0ccb0fc7623d2a26c01b33ab086b0f530b15228a62815f8125c249180700a",
+    "quotations": [
+      "46c96c83e2afc41c"
+    ]
+  },
+  "https://github.com/garrytan/gstack/blob/main/docs/state-root.md": {
+    "sha256": "e3aa8e189b6fde8f915c468038e820cd2e1c9b286bb7436c6e0d39c518104b83",
+    "quotations": [
+      "b4229d1e655090fa",
+      "e43bfad7edaac5b9",
+      "fd6ec3077c713dd1"
+    ]
+  },
+  "https://github.com/garrytan/gstack/blob/main/docs/why-gstack.md": {
+    "sha256": "5b0814538daeebc4529e04b1f8875027387bf345c666848da9ce10b1f609c84a",
+    "quotations": [
+      "1f2a197f554c3781",
+      "4e9f45190d83412c"
+    ]
+  },
+  "https://github.com/garrytan/gstack/blob/main/office-hours/SKILL.md": {
+    "sha256": "a6b4eabd35e3dfd35abe4b5f5151e9f459ad5a8197c0bf4cdd7b02a363cef8ae",
+    "quotations": [
+      "5f5d47e1da74a8e6",
+      "62bae94da856876d"
+    ]
+  },
+  "https://github.com/garrytan/gstack/blob/main/office-hours/sections/design-and-handoff.md": {
+    "sha256": "e8321558db19bdc4a40a63b21a1ae6530f38aa206b4fd7e33aebad3c2f168faa",
+    "quotations": [
+      "0b41be150d57eec9",
+      "88f9ca5151c4df9e"
+    ]
+  },
+  "https://github.com/garrytan/gstack/blob/main/spec/SKILL.md": {
+    "sha256": "d8684e6465e6151eef4d95df73586323f46b3ccb35a9595fb7f5e14528ffb095",
+    "quotations": [
+      "0c8b85e7ee76b2ed"
+    ]
+  },
+  "https://github.com/gastownhall/beads/blob/main/README.md": {
+    "sha256": "748dfd95b9b4a21f5e87f7296eb683d8ac907a7a0a05b812c6eb9cb7548b243a",
+    "quotations": [
+      "640fb852182bcb25",
+      "770378e835127e46",
+      "b2b58ceaf089a022"
+    ]
+  },
+  "https://github.com/gemini-cli-extensions/conductor/blob/conductor-v0.3.1/README.md": {
+    "sha256": "3a3dcf150446889f6dbbe81b9d48f8765efd8aaf0a3e81f2a49cbb09cdf9031e",
+    "quotations": [
+      "e87c248502c6e1cb"
+    ]
+  },
+  "https://github.com/gemini-cli-extensions/conductor/blob/conductor-v0.3.1/commands/conductor/setup.toml": {
+    "sha256": "f91f3ce3a98f51ca326df681d7ef3b45ec49b3ada56f3163f5cd9fbe4586a944",
+    "quotations": [
+      "08d6fc37c0e93934",
+      "92aacee93fd93d1c",
+      "dd57c70f6be2ee04",
+      "f1a2eb6082222f73"
+    ]
+  },
+  "https://github.com/gemini-cli-extensions/conductor/blob/main/README.md": {
+    "sha256": "5d492bca540594c7af552bd2b5cd18a49b6769faed32a6f5746a2fa53605c9cb",
+    "quotations": [
+      "5baff604d5dad1f6",
+      "c563ad797c636095",
+      "dc03c363304c187a"
+    ]
+  },
+  "https://github.com/gemini-cli-extensions/conductor/blob/main/skills/conductor-new-track/SKILL.md": {
+    "sha256": "6b30df6a9a6f10e4f0152e6335b9e1dcc44edcd6079e9883d930d3aa4d6ff57a",
+    "quotations": [
+      "127570e3bf5c63b5",
+      "3cbe35c59917284c",
+      "3d7389b933bee575",
+      "5a9eeb86554a55fb",
+      "8b1b526e502a86e4"
+    ]
+  },
+  "https://github.com/gemini-cli-extensions/conductor/blob/main/skills/conductor-review/SKILL.md": {
+    "sha256": "514c12b72d27491f65368b52fe04298038e084618f10f6eee3e4d93ba3f5022a",
+    "quotations": [
+      "1348d7b17a51bba9"
+    ]
+  },
+  "https://github.com/gemini-cli-extensions/conductor/blob/main/skills/conductor-setup/SKILL.md": {
+    "sha256": "628d04400c5adafccff31d755b487b6a57dec487157ca86b7b389f426d545413",
+    "quotations": [
+      "2f918f5183185bac",
+      "6d179c0d4c452b17",
+      "7ea9a750ab6d4f6e",
+      "95a468806ee5cd8c",
+      "9827beff25990ab8",
+      "a7efe37a49d6fb31",
+      "c4424fd16005ef75"
+    ]
+  },
+  "https://github.com/gemini-cli-extensions/flutter/blob/main/README.md": {
+    "sha256": "a89cdcfd04b4ed938c3e6a2130a3fdbf16baf30bb94a333478c44c7bd284e389",
+    "quotations": [
+      "d603f6bd8b3c4073",
+      "eca071278d93f638"
+    ]
+  },
+  "https://github.com/gemini-cli-extensions/flutter/blob/main/commands/create-app.toml": {
+    "sha256": "877ca2cc6f4f3859d19c25e7938c7758a3ccaff8181b54265a5f4140d3e63c9e",
+    "quotations": [
+      "23f34cec0dc80ab2",
+      "507240562288a782",
+      "e92514b7b130592f"
+    ]
+  },
+  "https://github.com/gemini-cli-extensions/flutter/blob/main/commands/modify.toml": {
+    "sha256": "09d53a2b41b69387728b8714b5aef243e769216acf7a4f3ae94ff1ba1b0fcddd",
+    "quotations": [
+      "7858380794e62811",
+      "7a33803241492b49"
+    ]
+  },
+  "https://github.com/github/awesome-copilot/blob/main/README.md": {
+    "sha256": "b4bdccd3b1c28305d4b0c4ac1ee607f50b37e2d9be76d749aab4ec3536931bb5",
+    "quotations": [
+      "6f5d9208b8929f4c"
+    ]
+  },
+  "https://github.com/github/awesome-copilot/blob/main/agents/task-planner.agent.md": {
+    "sha256": "fd2f2183d4bf837c346b2289d7fb4d07c1e1ccaa7ace3f58f0666e991040e0e4",
+    "quotations": [
+      "272fc03b2d16184d",
+      "399471a1ff616894"
+    ]
+  },
+  "https://github.com/github/awesome-copilot/blob/main/agents/task-researcher.agent.md": {
+    "sha256": "4113ff44c5235c1bb34da593080ace40ed29a78340139c40f55d51f1555da099",
+    "quotations": [
+      "7b61ee2ff230f55b",
+      "92e28dd4abb7f305",
+      "d7e774654572e01e",
+      "fefbbf7a9b53194e"
+    ]
+  },
+  "https://github.com/github/awesome-copilot/blob/main/instructions/spec-driven-workflow-v1.instructions.md": {
+    "sha256": "77b3c16f4248eb75de8ed1f0215eac4854f3a80346eb99d965b6356802312bff",
+    "quotations": [
+      "5031ba8dabcb75f1",
+      "9aead6d8096940bd",
+      "fe47ebae12879dfe"
+    ]
+  },
+  "https://github.com/github/awesome-copilot/blob/main/skills/breakdown-epic-arch/SKILL.md": {
+    "sha256": "849a8d2ee67ba78862d2f5a08cb16b99b4551a0d7f69bcc6130d9c206ce3da2d",
+    "quotations": [
+      "75ed324a264cf40e"
+    ]
+  },
+  "https://github.com/github/awesome-copilot/blob/main/skills/breakdown-epic-pm/SKILL.md": {
+    "sha256": "6d8f358524cd6eb2c5bda617b548966f3eb5e0f6d2f0cb687fe8c904ebd65951",
+    "quotations": [
+      "9d35e1c505b60afb"
+    ]
+  },
+  "https://github.com/github/awesome-copilot/blob/main/skills/breakdown-feature-implementation/SKILL.md": {
+    "sha256": "b6ee8244801b74fbcf0361cc14f781f8c1831c8f49d4a3f5fdb7906463e4d6f2",
+    "quotations": [
+      "665da7b2d44aca6e"
+    ]
+  },
+  "https://github.com/github/awesome-copilot/blob/main/skills/breakdown-feature-prd/SKILL.md": {
+    "sha256": "4724d0e6204d0f8513dd2ba3aeb16485557f29ac104fcb5f2621ec302d2c6d4b",
+    "quotations": [
+      "66643f1b0eb2f7dd"
+    ]
+  },
+  "https://github.com/github/awesome-copilot/blob/main/skills/breakdown-plan/SKILL.md": {
+    "sha256": "7534fc14cc1c9b1b1252f8fd41f5bc8e446ec9fe26a520484d7b0954ba0fe403",
+    "quotations": [
+      "094fe0b44fe5c44a",
+      "ac6131026f1a7a2f",
+      "b0f302837e802c08",
+      "cbd9974bf5820021",
+      "d50a848ed16c20bb"
+    ]
+  },
+  "https://github.com/github/awesome-copilot/blob/main/skills/breakdown-test/SKILL.md": {
+    "sha256": "452490e4a72f2d84e00e71f6f9738e91264106782d6831f9d81d6719df990254",
+    "quotations": [
+      "5e3f4c4457e52834",
+      "bd69880d7c42508d",
+      "ec785ffb597727b9"
+    ]
+  },
+  "https://github.com/github/awesome-copilot/blob/main/skills/create-implementation-plan/SKILL.md": {
+    "sha256": "a43b1e7e2f8b58c5aded8492253377c2e95f0501d9b2d49b24bceb794dfd13ed",
+    "quotations": [
+      "01a6d8a174ebeafd",
+      "35578d84055f965a",
+      "4e486f5325489361",
+      "7ebadfd5d4af6678"
+    ]
+  },
+  "https://github.com/github/awesome-copilot/blob/main/skills/create-specification/SKILL.md": {
+    "sha256": "54e3d9662d65cfa9443f243c0f5aec9fc95df232cdbdb8f8139d61b6dda58941",
+    "quotations": [
+      "1449197d116224a2",
+      "d6b90db086f61035"
+    ]
+  },
+  "https://github.com/github/spark-template/blob/main/README.md": {
+    "sha256": "fff3a282e2c8e7bd39872f6c3cf3caddd47cf687ce6ec807d3f73f0ff3ec009c",
+    "quotations": [
+      "d4793c080243a62d"
+    ]
+  },
+  "https://github.com/github/spec-kit/blob/main/CHANGELOG.md": {
+    "sha256": "8fcff2a092a1dbb99186592995f3c138093e72ae6297ec1fce2ade7ddf0642b3",
+    "quotations": [
+      "7a147a45bdb3440a"
+    ]
+  },
+  "https://github.com/github/spec-kit/blob/main/docs/concepts/spec-of-specs.md": {
+    "sha256": "aeccf349bec9a08f8e799e7c7894a97ccfd2b7a18c2e1b871a82660685c9d620",
+    "quotations": [
+      "66499f79e69f3d97",
+      "78aa3f55a994b6a9",
+      "eb7ca67b0860eae3"
+    ]
+  },
+  "https://github.com/github/spec-kit/blob/main/docs/how-to/spec-of-specs.md": {
+    "sha256": "98d2a09dc0f3effaa91986bbefe046117389e1939ac312706ea0ff69b54a5bef",
+    "quotations": [
+      "66499f79e69f3d97",
+      "78aa3f55a994b6a9",
+      "eb7ca67b0860eae3"
+    ]
+  },
+  "https://github.com/github/spec-kit/blob/main/docs/overview/core.md": {
+    "sha256": "452c13e8fd72c990a8c00c818fa7f5db9954b8c646c0c79c74932737054372ec",
+    "quotations": [
+      "386c0e3cabb959b1"
+    ]
+  },
+  "https://github.com/github/spec-kit/blob/main/docs/reference/core.md": {
+    "sha256": "0f3fd3cb1857928680142f1004edd3d18d0815842384d83a9db17fc8da343275",
+    "quotations": [
+      "386c0e3cabb959b1"
+    ]
+  },
+  "https://github.com/github/spec-kit/blob/main/docs/upgrade.md": {
+    "sha256": "6b923cfb59f8021fa932440a063b03126d0711f55daf3b4b3d494c07c97831c2",
+    "quotations": [
+      "74948f412dd1de05"
+    ]
+  },
+  "https://github.com/github/spec-kit/blob/main/scripts/bash/create-new-feature.sh": {
+    "sha256": "c47c2feb5e2296f0054972372140c83ddf36cae63f43a7e4fa2c29361e54ff67",
+    "quotations": [
+      "e0b253726b65ec5b"
+    ]
+  },
+  "https://github.com/github/spec-kit/blob/main/spec-driven.md": {
+    "sha256": "18480fd2ba7b787bff08d1ead0b6872684f49933e2b8df2ebcd679301a9d2325",
+    "quotations": [
+      "a40749bb09c7c030"
+    ]
+  },
+  "https://github.com/github/spec-kit/blob/main/templates/commands/checklist.md": {
+    "sha256": "42c2ecc8849615df1abfd4378e686fd6531efd22327656fc9604bf09dbd6bc42",
+    "quotations": [
+      "7f2ebab020a0a283"
+    ]
+  },
+  "https://github.com/github/spec-kit/blob/main/templates/commands/constitution.md": {
+    "sha256": "e0b80c4b8f151854a7d09717e99cb2809ce68fbabee2c54c18e866e288543c87",
+    "quotations": [
+      "9125b613cc1a23c8",
+      "e3439ba5efa11381"
+    ]
+  },
+  "https://github.com/github/spec-kit/blob/main/templates/commands/plan.md": {
+    "sha256": "b5587198beee90104b43d0a619e950a7a6a0ad42364936fa7dd13d1b7068c046",
+    "quotations": [
+      "07ad4234905d24ab",
+      "3e1d5803eaa128aa",
+      "cd1a629c7f04f65b"
+    ]
+  },
+  "https://github.com/github/spec-kit/blob/main/templates/commands/specify.md": {
+    "sha256": "a1236597cb7a570a0ab74c2e4ed798d56449017b2f821c902d18432288411bd7",
+    "quotations": [
+      "80970f7a474fc81b",
+      "b328430500de8e52",
+      "ef86ef48c456389e"
+    ]
+  },
+  "https://github.com/github/spec-kit/blob/main/templates/commands/tasks.md": {
+    "sha256": "3706441fa89300b34e5dc52927987012b174e59a184e1509e3a360d500d8b6df",
+    "quotations": [
+      "e4640403f40479ab"
+    ]
+  },
+  "https://github.com/github/spec-kit/blob/main/templates/constitution-template.md": {
+    "sha256": "3e7cb3b27be30e3370bf0db8d1e64a915cc7070f66e3eb98c3b69ba2490c9488",
+    "quotations": [
+      "40b00379bbc2a4d3"
+    ]
+  },
+  "https://github.com/github/spec-kit/blob/main/templates/plan-template.md": {
+    "sha256": "d3055367452c0573cf696c4f89d623a79e63dd7d4e1bd3b164f7b315691eb7fb",
+    "quotations": [
+      "00f6eb7b807eda82",
+      "01e94b8e1492f0bd",
+      "27f367db750eb65c",
+      "33f8a833a271f7fe",
+      "3ddba6a51683940c",
+      "636f21ec023b0593",
+      "71b761b8766c9e4f",
+      "79dec39a340ad5ac",
+      "b5bc79f163bbdcfc"
+    ]
+  },
+  "https://github.com/github/spec-kit/blob/main/templates/spec-template.md": {
+    "sha256": "2a4200ba49c93174205dac9041f87dd18a4d9f5180b4649a96a24fcda2f64de7",
+    "quotations": [
+      "27f31d6c845477ff",
+      "ffe0920507f97e59"
+    ]
+  },
+  "https://github.com/github/spec-kit/blob/main/templates/tasks-template.md": {
+    "sha256": "35dead611982bf3c1bafc6159b226ac76766c870576507d226ac83aa464f7b84",
+    "quotations": [
+      "91bf2f32cd9d5caa",
+      "b5840ef324655fb9"
+    ]
+  },
+  "https://github.com/github/spec-kit/blob/v0.0.1/.github/workflows/release.yml": {
+    "sha256": "95d998a226675b68cb8e43b2f27969594ac83cd17527cf43b3e7a5b9f2850d7f",
+    "quotations": [
+      "4d2d94510590686e"
+    ]
+  },
+  "https://github.com/github/spec-kit/blob/v0.0.21/memory/constitution.md": {
+    "sha256": "3e7cb3b27be30e3370bf0db8d1e64a915cc7070f66e3eb98c3b69ba2490c9488",
+    "quotations": [
+      "40b00379bbc2a4d3"
+    ]
+  },
+  "https://github.com/github/spec-kit/blob/v0.0.21/memory/constitution_update_checklist.md": {
+    "sha256": "6c758f41aba2d22de583f972918b1cd8830060c7c71855ba74c2d9ab39798007",
+    "quotations": [
+      "72f6291d8fb23995"
+    ]
+  },
+  "https://github.com/github/spec-kit/blob/v0.0.21/templates/commands/plan.md": {
+    "sha256": "9ad1e36a61d9c5c2c46827ad58bf955555a31414c58f293825b1761ae1141710",
+    "quotations": [
+      "9fd379a2acc9fb5d"
+    ]
+  },
+  "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md": {
+    "sha256": "f00c5b996b72b4ee86cc12fb50db09c4eeadb19de90e38fe84a92ed33632fdcb",
+    "quotations": [
+      "47ccaa8ef1c7b730"
+    ]
+  },
+  "https://github.com/gotalab/cc-sdd/blob/main/README.md": {
+    "sha256": "1715b13894669c13ca226c17d08cb672fd660fc80c31973cea7ed9021a42f93e",
+    "quotations": [
+      "0ea03b18bc9ca176",
+      "632c1c7a26941b48",
+      "649f3bc2f517833a",
+      "8291828d58da0280"
+    ]
+  },
+  "https://github.com/gotalab/cc-sdd/blob/main/docs/guides/command-reference.md": {
+    "sha256": "a0480f90c6ee4e1bb0aa04f7569d384680b010cba17398deaf5ab8b0c63160c3",
+    "quotations": [
+      "299518c7b9b77bf0",
+      "c9506a3845e703fa"
+    ]
+  },
+  "https://github.com/gotalab/cc-sdd/blob/main/docs/guides/spec-driven.md": {
+    "sha256": "91e9933f3e61bd040676e9051091c306cd601721a53a5a463509d9c8a05a2ac8",
+    "quotations": [
+      "2122634fda57e4b0",
+      "7bb4543553d74904",
+      "91050770d804e7cb",
+      "a0bb9980757c935b",
+      "a7f7ec79dd78519a",
+      "ed58b3dbd79cd146",
+      "ffe3b8b329f323b6"
+    ]
+  },
+  "https://github.com/gotalab/cc-sdd/blob/main/tools/cc-sdd/templates/agents/claude-code-skills/skills/kiro-discovery/SKILL.md": {
+    "sha256": "5f100ba375f49ee94dd370a97b67ab644e7a7d67f6334374b88a3b57a9f7b40b",
+    "quotations": [
+      "ee04aaeb9b664107",
+      "ef293e580dad71f3"
+    ]
+  },
+  "https://github.com/gotalab/cc-sdd/blob/main/tools/cc-sdd/templates/agents/claude-code-skills/skills/kiro-spec-init/SKILL.md": {
+    "sha256": "2091c96e87db8ae44b85d028ca179056afad1466ab24945210db82e854a3179d",
+    "quotations": [
+      "e2d335e11f03206d"
+    ]
+  },
+  "https://github.com/hmans/beans/blob/99260bf1a6bec3e395b629406b737f6418653a17/internal/commands/archive.go": {
+    "sha256": "1e2862e647e53f0ab41a26d659f60041c168e64199bdb32c301b0707b12a6791",
+    "quotations": [
+      "7f4b07e3f32534de"
+    ]
+  },
+  "https://github.com/hmans/beans/blob/99260bf1a6bec3e395b629406b737f6418653a17/pkg/config/config.go": {
+    "sha256": "a877d9a4ee32fbf76c7d7eeb80c874d28c9baf8d69253685fcb20be505048bde",
+    "quotations": [
+      "216f42c5350786d9",
+      "296ee50705b5fa30"
+    ]
+  },
+  "https://github.com/hmans/beans/blob/main/README.md": {
+    "sha256": "9abc2cb8ff20b5da32c05783d65abe1fdf0d8de58d9d312bd47582ca545848ba",
+    "quotations": [
+      "391bcb41f577c8b2",
+      "4b9d8744f218f012",
+      "5277104f6f9a526e"
+    ]
+  },
+  "https://github.com/humanlayer/humanlayer/blob/99abe673498cf8bdcd5f989aebe9406a27185b3b/.claude/commands/create_handoff.md": {
+    "sha256": "75c4665c4a783d315d6921d2bed263f7ce79d05cb79ef405dcabc1620df3050a",
+    "quotations": [
+      "97a62b6081a48762",
+      "bbca31638c515e7f"
+    ]
+  },
+  "https://github.com/humanlayer/humanlayer/blob/99abe673498cf8bdcd5f989aebe9406a27185b3b/.claude/commands/create_plan.md": {
+    "sha256": "607db69b10fceaae86fff55bb810aaaf4fcff5401030ae7c8fee02d6d167c609",
+    "quotations": [
+      "5607518ca4453759"
+    ]
+  },
+  "https://github.com/humanlayer/humanlayer/blob/99abe673498cf8bdcd5f989aebe9406a27185b3b/.claude/commands/describe_pr.md": {
+    "sha256": "b732a635f18a726f11400b945b249914630131a3b59d0914a60418ce9d797e8a",
+    "quotations": [
+      "a298fd49d235bd0b"
+    ]
+  },
+  "https://github.com/humanlayer/humanlayer/blob/99abe673498cf8bdcd5f989aebe9406a27185b3b/.claude/commands/ralph_plan.md": {
+    "sha256": "a40de6735fa08ab85a859035651b48bbbc5bcfb31f8bc10503045b0800c646ae",
+    "quotations": [
+      "2a3be68dda3bef97"
+    ]
+  },
+  "https://github.com/humanlayer/humanlayer/blob/99abe673498cf8bdcd5f989aebe9406a27185b3b/.claude/commands/research_codebase.md": {
+    "sha256": "c6cb5ea42f49c2a1d6a47d44b5747913122e59edb96953442cc3389d39b6b48c",
+    "quotations": [
+      "dfac7673df2ea088"
+    ]
+  },
+  "https://github.com/humanlayer/humanlayer/blob/99abe673498cf8bdcd5f989aebe9406a27185b3b/hlyr/README.md": {
+    "sha256": "87ddb9893f53c0b12d0a5d6631cf3b7598f7548df28b68218357024e5ce4d11a",
+    "quotations": [
+      "2b78243080664c1c",
+      "f34c1e0702709888"
+    ]
+  },
+  "https://github.com/humanlayer/humanlayer/blob/99abe673498cf8bdcd5f989aebe9406a27185b3b/hlyr/THOUGHTS.md": {
+    "sha256": "48285e136f1098ec5c454041d1247f79f98b30dc6c8dbab8e65720cd1821562f",
+    "quotations": [
+      "bcef4483b9fb7604"
+    ]
+  },
+  "https://github.com/humanlayer/humanlayer/blob/d8197bab07017a2e2bef91bc25b2ebec6a4575b4/apps/riptide-daemon/src/lib/artifact-paths.ts": {
+    "sha256": "ad856965324805139dbf9785dba9197bbb68bfd4a7405eaebac63b733dc156a8",
+    "quotations": [
+      "6875790a0431575a",
+      "a8dc8e0a82da7e22"
+    ]
+  },
+  "https://github.com/humanlayer/humanlayer/blob/main/README.md": {
+    "sha256": "05ab2625d1821c423715740ded9abdcf7efc202c5bac7c8ca77257a2d8501b45",
+    "quotations": [
+      "b8b2c8f148625c38"
+    ]
+  },
+  "https://github.com/humanlayer/humanlayer/blob/main/apps/docs/guide/github-integration.md": {
+    "sha256": "60bc8c6830d634e7ca80c12abb49d70a0d807b60adacea0c08c6d7312666d686",
+    "quotations": [
+      "7035c9c87171eb9a"
+    ]
+  },
+  "https://github.com/humanlayer/humanlayer/blob/main/apps/docs/reference/skills-workflows.md": {
+    "sha256": "cd228d9136445bd55bd23614a82307565dbf5c3b134d04c4b9674937e5e67cba",
+    "quotations": [
+      "017515c913845f64",
+      "12de157ea9d2c54d",
+      "1508508648a049de",
+      "220140608d4885e9",
+      "249140ce00568111",
+      "290382514b6334e0",
+      "450db0538148d2d3",
+      "4747a71bfc20ba1f",
+      "4a5509424517845a",
+      "560fa00f95a6bf46",
+      "620355fbb08b6b5f",
+      "6faa3171a4efe080",
+      "73c032a96347c0ca",
+      "76fb68c19eec2b38",
+      "7d3191172ffb300d",
+      "ac054ec92b8c233e",
+      "ae5bfdbe8e30bb63",
+      "c946a099bc3dcc92",
+      "cc1cfe35332b0c7a",
+      "d33af8ca1624fcc7",
+      "df05c488e0ec8704",
+      "fe53d9653563fda9"
+    ]
+  },
+  "https://github.com/humanlayer/humanlayer/blob/main/apps/linear-cli/README.md": {
+    "sha256": "58901260c2ef7f887e58b5fb332c02a81689d999ef7993751969311b118f8d4a",
+    "quotations": [
+      "dec42953b5072eab"
+    ]
+  },
+  "https://github.com/humanlayer/humanlayer/blob/main/apps/riptide-daemon/src/agents/claudecode/agents/implementer-agent.ts": {
+    "sha256": "600924feddb14e2b7c60ed373841d42da971c220f6384ecdaa51d79224754ddf",
+    "quotations": [
+      "02a9923f2192bcdf"
+    ]
+  },
+  "https://github.com/humanlayer/humanlayer/blob/main/apps/riptide-rpi-claude-plugin/skills/configure-workspaces/SKILL.md": {
+    "sha256": "c696559fba906e4f6a7c750df3bf47b4b14ddc4b6d2a236e942d73f6ef6b1e19",
+    "quotations": [
+      "1bf1ccd471a4ba86",
+      "77421e3b7a960e60",
+      "96bff07c97b25aed"
+    ]
+  },
+  "https://github.com/humanlayer/humanlayer/blob/main/apps/riptide-rpi-claude-plugin/skills/create-design-discussion/SKILL.md": {
+    "sha256": "28b5838960856529cef7f38d7035da38f462427dc26d9e2d15fcf03176ec1b44",
+    "quotations": [
+      "667c58dc3a5d98c2"
+    ]
+  },
+  "https://github.com/humanlayer/humanlayer/blob/main/apps/riptide-rpi-claude-plugin/skills/create-plan/SKILL.md": {
+    "sha256": "12826213c790c85f81e8e80d0f2e1b75fdf1f163ff7cd7582e29f5d0ba81f1cc",
+    "quotations": [
+      "339519311e4e3d18"
+    ]
+  },
+  "https://github.com/humanlayer/humanlayer/blob/main/apps/riptide-rpi-claude-plugin/skills/create-prd/SKILL.md": {
+    "sha256": "e040c22d09c1d7ce197ccf666b721c75b4dce5d73710aa253641f8c23345a69d",
+    "quotations": [
+      "8c12ec7886acbd28",
+      "d506da41f91cdda5"
+    ]
+  },
+  "https://github.com/humanlayer/humanlayer/blob/main/apps/riptide-rpi-claude-plugin/skills/create-research-questions/SKILL.md": {
+    "sha256": "af9f9aecf95482080835e48ce7c06401f2a7e91fa701e24fc78d0143f6b09f0a",
+    "quotations": [
+      "f970b9094536acfe"
+    ]
+  },
+  "https://github.com/humanlayer/humanlayer/blob/main/apps/riptide-rpi-claude-plugin/skills/create-research/SKILL.md": {
+    "sha256": "f4c08f951d4bfd4cd5200d72fab6029cb0521992f197e53ea02dfa6c3bbe3c87",
+    "quotations": [
+      "fb10cd5eeba0a4a7"
+    ]
+  },
+  "https://github.com/humanlayer/humanlayer/blob/main/apps/riptide-rpi-claude-plugin/skills/create-structure-outline/SKILL.md": {
+    "sha256": "70435fbc30dce2be74e394d48159d846dc47add396f4b9141e97406dca7966a5",
+    "quotations": [
+      "ddc3d080d86c199a"
+    ]
+  },
+  "https://github.com/humanlayer/humanlayer/blob/main/apps/riptide-rpi-claude-plugin/skills/create-tdd/SKILL.md": {
+    "sha256": "1b5596d1a0ec8679161a1098df16356a54317105fe4b97fbbd153bef4bce1303",
+    "quotations": [
+      "545ca9d655d9c89b"
+    ]
+  },
+  "https://github.com/humanlayer/humanlayer/blob/main/apps/riptide-rpi-claude-plugin/skills/describe-pr/SKILL.md": {
+    "sha256": "d162198acc6833e0c0ac1273941e63f3819049299543d7e11786302453e1f4fe",
+    "quotations": [
+      "fc86dfba60bd3640"
+    ]
+  },
+  "https://github.com/ivo-toby/mini-spec/blob/5e0335ac2d4a5bd222a0ea6361ebf436da16155b/templates/commands/checklist.md": {
+    "sha256": "65fb953a980ecf585338ca21c0f162a9c3f37494e1c2b5c7a850f2b33df56450",
+    "quotations": [
+      "673ea90c5bf0ed9b"
+    ]
+  },
+  "https://github.com/ivo-toby/mini-spec/blob/5e0335ac2d4a5bd222a0ea6361ebf436da16155b/templates/commands/design.md": {
+    "sha256": "94c9a39a1cc3f62fa3a0d98c091e0a67a1671812190693978f4f1bcf5d893014",
+    "quotations": [
+      "9d5302dfcaf5c3fc"
+    ]
+  },
+  "https://github.com/ivo-toby/mini-spec/blob/5e0335ac2d4a5bd222a0ea6361ebf436da16155b/templates/commands/tasks.md": {
+    "sha256": "7555b1035e47b29aff21f8dcc76b69c06d26056858ba6db551b51ac5c779450d",
+    "quotations": [
+      "585afe3c70524dc6"
+    ]
+  },
+  "https://github.com/ivo-toby/mini-spec/blob/77e72375133d5701827ad5cda652979520f2014a/scripts/bash/create-new-feature.sh": {
+    "sha256": "1030060c9a3aa2ff56462de4df8808bf92ac48bfe0c7ebb487a00653d357ddf6",
+    "quotations": [
+      "3b7eb906bbcca239",
+      "bb8bced1627a1c8e",
+      "ef4557ca510471ee"
+    ]
+  },
+  "https://github.com/ivo-toby/mini-spec/blob/77e72375133d5701827ad5cda652979520f2014a/templates/tasks-template.md": {
+    "sha256": "35dead611982bf3c1bafc6159b226ac76766c870576507d226ac83aa464f7b84",
+    "quotations": [
+      "b5840ef324655fb9"
+    ]
+  },
+  "https://github.com/ivo-toby/mini-spec/blob/main/CHANGELOG.md": {
+    "sha256": "b9466fa65761ba5a41d9f2adb3f42e91e062aa29ec23d748ecd9f6fa297434c4",
+    "quotations": [
+      "cfa244cdf8fd7fd3"
+    ]
+  },
+  "https://github.com/ivo-toby/mini-spec/blob/main/README.md": {
+    "sha256": "9d092e087921094e8d63aca316bcb1bd887c1f968f7e1b747cb99842ae1c504d",
+    "quotations": [
+      "4366b90567efb0c4",
+      "6397069ecb419f8e",
+      "83684e068fc1621a"
+    ]
+  },
+  "https://github.com/ivo-toby/mini-spec/blob/main/templates/commands/checklist.md": {
+    "sha256": "1f7b95afed7a8be68aef12e9d6fdf4f5431e7d561e870db422665ad26f67895e",
+    "quotations": [
+      "1f243869023e7c0f"
+    ]
+  },
+  "https://github.com/ivo-toby/mini-spec/blob/main/templates/commands/constitution.md": {
+    "sha256": "a00786907254dc9abeee2aec1dbbe6af2d3ba19e58f2cc9f3dacfdb83716626f",
+    "quotations": [
+      "67eabe9c1bb9ca7a"
+    ]
+  },
+  "https://github.com/ivo-toby/mini-spec/blob/main/templates/commands/design.md": {
+    "sha256": "9c81e9e82b82b40c27955c85f28dbc98b5a9544325e02d87d2b1035edc95655d",
+    "quotations": [
+      "811201e80b139069",
+      "998299f00fa99674"
+    ]
+  },
+  "https://github.com/ivo-toby/mini-spec/blob/main/templates/commands/tasks.md": {
+    "sha256": "0745ef94ade94377a1b6a6c3ab8b877deefbb67c370bb49917adbf6e3742bd4c",
+    "quotations": [
+      "c4edd254456fc2a6"
+    ]
+  },
+  "https://github.com/jasonkneen/kiro/blob/main/README.md": {
+    "sha256": "83c3abb6f480e50b325f4d468c2b6d092761c84ea835ddc56de785c779cba60b",
+    "quotations": [
+      "8c96186e03a44c42"
+    ]
+  },
+  "https://github.com/jirkapok/GasPlanner/blob/987ab237e579458fb68c8395db6486ff67c53199/.claude/CLAUDE.md": {
+    "sha256": "10a2b0cc3c0ab16c0aa366ea01d0fdf9e35d36d3a218b484ffd84c7bb0f2e27b",
+    "quotations": [
+      "8e4d86f3793414d5"
+    ]
+  },
+  "https://github.com/kaanozhan/Frame/blob/main/README.md": {
+    "sha256": "2d0fbf1ef4a8fd40c114229205299b7d9aa2394d2d50e478200898265cf3f417",
+    "quotations": [
+      "422264087669df4c",
+      "4dda698f3e090a53"
+    ]
+  },
+  "https://github.com/kaochenlong/spectra-app/blob/main/CHANGELOG.md": {
+    "sha256": "fda6ad1b7f6733496cd87cdd788f28f60547b53bc403b1ed114820f0dd847888",
+    "quotations": [
+      "524a73e3988ca0d2",
+      "7aec5aa1c80c6bee"
+    ]
+  },
+  "https://github.com/kaochenlong/spectra-app/blob/main/README.md": {
+    "sha256": "cbeb4f1fd62d1009ce4da7fa59487957d9f499e4da6cf0b55ef338a219074684",
+    "quotations": [
+      "762523a53e90f8b7"
+    ]
+  },
+  "https://github.com/liatrio-labs/spec-driven-workflow/blob/main/README.md": {
+    "sha256": "74bc87559eebf4e0e1445a98962d4ddfc7967cfc6cbac969a1faf3c725262e92",
+    "quotations": [
+      "2cacd1b71450091a",
+      "2dfe18f78edebd33",
+      "3f7873da754bd4f4",
+      "692bb3f9a9af885d",
+      "760e308e3a15f239",
+      "7fff39d3d6f822aa",
+      "b0f99d185d8ac79a",
+      "e7722e0c1dcfeaa5"
+    ]
+  },
+  "https://github.com/marcusgoll/Spec-Flow/blob/main/README.md": {
+    "sha256": "e93fce160598cb8d5dcf88fdbb365dc94b95818783b6e682a0f4c21a5914e91a",
+    "quotations": [
+      "0b064f099809598b",
+      "51f1487490b588ed"
+    ]
+  },
+  "https://github.com/marcusgoll/Spec-Flow/blob/main/docs/commands.md": {
+    "sha256": "e0e80894e353bb3b0f5209c96aa33acbb17a91b0ac496690734651bfc23e960e",
+    "quotations": [
+      "028a20ea5b877be7"
+    ]
+  },
+  "https://github.com/marcusgoll/Spec-Flow/blob/main/docs/developer-guide.md": {
+    "sha256": "fe2b5fd1b82349592ea839a669d8d8c8e786bdaad55348016b1745298123353f",
+    "quotations": [
+      "190ef975585eb619",
+      "1eeeee9762e41aff",
+      "1f52dcbfd1593896",
+      "2591e22ff6361ebd",
+      "29f2da87fe514ff8",
+      "310278e341ce3ca0",
+      "4265178e255a9789",
+      "4c8a82e00e98e345",
+      "51d294f1b16e4f95",
+      "75c02929d036e8c7",
+      "7a2303759178dc72",
+      "9fbfda6b5e4eb396",
+      "b0e6df48e9b5f3c5",
+      "bda39454cb89e817",
+      "bde59579155ac3ad",
+      "cd86876330976cc3",
+      "d44c5c9d3e36c96d",
+      "d925fa34dea5fdfb",
+      "ddcbf1ae19d4ee89",
+      "f495e0ead26465e0",
+      "fe0e8cec0e7336a0"
+    ]
+  },
+  "https://github.com/mattpocock/skills/blob/179a14e721034706ffce7abae75b877c922b4ae8/skills/engineering/setup-matt-pocock-skills/issue-tracker-local.md": {
+    "sha256": "3c42e232b012e5ce5149531e852ebc90b3ae4a903c663f28e356d4b23698ad7a",
+    "quotations": [
+      "8c27bf863efe2c6b"
+    ]
+  },
+  "https://github.com/mattpocock/skills/blob/main/README.md": {
+    "sha256": "8c6804f0b742da3f3d7ef68d2ecd79d3fffdef153f4d3cb6a6ac36efd847d070",
+    "quotations": [
+      "3b62688ce90dcf98"
+    ]
+  },
+  "https://github.com/mattpocock/skills/blob/main/skills/engineering/setup-matt-pocock-skills/SKILL.md": {
+    "sha256": "ee2bf0cb1db8723418944c7ed1ee3b9f7ea3db0c424e57c0675ce150c0d26259",
+    "quotations": [
+      "a46a46ac45971f0b"
+    ]
+  },
+  "https://github.com/mattpocock/skills/blob/main/skills/engineering/setup-matt-pocock-skills/issue-tracker-local.md": {
+    "sha256": "28880f8f3ea4bee0f9cb831f770eaed35453a066f5f9d128a17b0c56617db07d",
+    "quotations": [
+      "20f6678282878ff7",
+      "3e71cfea20d57d0d",
+      "623f8def325a72d2",
+      "a7ea3ed0bcee054a",
+      "bbacea3183024d00"
+    ]
+  },
+  "https://github.com/maxritter/pilot-shell/blob/d4176de01cfe082b629eecad68895b1ba119239a/pilot/skills/prd/steps/07-write-prd.md": {
+    "sha256": "160bc2145ab52d5e9c6d052b39d670310bfbefe934c2b0e8620b0a423fb98cd8",
+    "quotations": [
+      "c78fb943e9cbe3b9"
+    ]
+  },
+  "https://github.com/maxritter/qualitylayer/blob/2498180fcf443f0460b802fe8c8c8678a186f7e3/docs/docusaurus/docs/features/cli.md": {
+    "sha256": "ed1bc64d06d236f35c54a4c5538ad676428df00b210c282f3b32279fb4a1c38f",
+    "quotations": [
+      "fe940e7d6104bf35"
+    ]
+  },
+  "https://github.com/maxritter/qualitylayer/blob/2498180fcf443f0460b802fe8c8c8678a186f7e3/docs/docusaurus/docs/features/plan-format.md": {
+    "sha256": "33ef852ba6cbd9fa7b4d0ce67b83ea2d80153111d1fb9bb10817adcdfc994f0b",
+    "quotations": [
+      "84f098ce5c8137eb",
+      "bf21d1e87ec9df91"
+    ]
+  },
+  "https://github.com/maxritter/qualitylayer/blob/2498180fcf443f0460b802fe8c8c8678a186f7e3/docs/docusaurus/docs/workflows/build.md": {
+    "sha256": "d92078d028c895e9d5fb1e1c2ca4e0ed54937265db2805a912c0117a208d51b4",
+    "quotations": [
+      "baac6c1bebb5077a",
+      "f115d50346e6ee63"
+    ]
+  },
+  "https://github.com/maxritter/qualitylayer/blob/2498180fcf443f0460b802fe8c8c8678a186f7e3/docs/docusaurus/docs/workflows/prd.md": {
+    "sha256": "d9fe55662bce3e6b251fd9ffa621d375af3ab4e66a9fc11d478d4c02b347b901",
+    "quotations": [
+      "00258c07535f7074"
+    ]
+  },
+  "https://github.com/maxritter/qualitylayer/blob/2498180fcf443f0460b802fe8c8c8678a186f7e3/pilot/skills/prd/steps/07-write-prd.md": {
+    "sha256": "160bc2145ab52d5e9c6d052b39d670310bfbefe934c2b0e8620b0a423fb98cd8",
+    "quotations": [
+      "c78fb943e9cbe3b9"
+    ]
+  },
+  "https://github.com/maxritter/qualitylayer/blob/main/docs/docusaurus/docs/artifacts.md": {
+    "sha256": "da4fff2358c31e3618db1a89db9a18a7e7ef7c5e350f2af83d383255692cebe5",
+    "quotations": [
+      "bd8ead40d5243668"
+    ]
+  },
+  "https://github.com/maxritter/qualitylayer/blob/main/docs/docusaurus/docs/chat.md": {
+    "sha256": "a57373fa74966b8b4fa42db6415949b76bc2406b3c3064d261a3ef980a0ec09e",
+    "quotations": [
+      "193b5435f668189b",
+      "43f97897874f4941"
+    ]
+  },
+  "https://github.com/maxritter/qualitylayer/blob/main/docs/docusaurus/docs/intro.md": {
+    "sha256": "734d099b25f27430ca9d9ff8a2ff7429ebf597e46ecb8109cdd60e0016db4250",
+    "quotations": [
+      "3a1e848b2bae24e0"
+    ]
+  },
+  "https://github.com/maxritter/qualitylayer/blob/main/docs/docusaurus/docs/memory.md": {
+    "sha256": "046893c07d23981d96d668be6e0ae84eaa7bd8ffd5142c46bf0c0a6cd80fb79e",
+    "quotations": [
+      "3f14c359906bd67f",
+      "60afc508f24998ba"
+    ]
+  },
+  "https://github.com/maxritter/qualitylayer/blob/main/docs/docusaurus/docs/moving-from-pilot-shell.md": {
+    "sha256": "6af3123f1d3f2b786d4889da04a4aba3b137c60ed02d563101fc53f59a1a828a",
+    "quotations": [
+      "166e20dd7b55fee2",
+      "282cc3607cbe50a7",
+      "709e8ea0ebca1f08",
+      "763522e96f7ecb72"
+    ]
+  },
+  "https://github.com/maxritter/qualitylayer/blob/main/docs/docusaurus/docs/reference/commands.md": {
+    "sha256": "ee26a0fa3a8f4a1af3640b5c0d9f52742bce921d67c7294f7ff781dc7e259dfe",
+    "quotations": [
+      "390a2990f2268429"
+    ]
+  },
+  "https://github.com/maxritter/qualitylayer/blob/main/docs/docusaurus/docs/reference/files.md": {
+    "sha256": "17564d940bc9afe8d266d18bad843a49af0fdf3c0c69a0b02c51b4fee159638b",
+    "quotations": [
+      "0a1db747508672e7",
+      "522af542e8621c07",
+      "52d0f376cb5d4c71",
+      "76d00560de180e40",
+      "77e8f8890981ead4",
+      "96674f0ed21b714a",
+      "9c97bee38777f66f",
+      "a3ca831fbff6effd",
+      "a530043df084d077",
+      "a932c2a990a77859",
+      "ae75a2330f0bd5c2",
+      "c6913423d87ef348",
+      "ee0f7ac4489802c2",
+      "efeb666ae4350266",
+      "fc21f0243c0b40a1",
+      "fdd3b26e56d2759c"
+    ]
+  },
+  "https://github.com/maxritter/qualitylayer/blob/main/docs/docusaurus/docs/steps/plan.md": {
+    "sha256": "f3c270a5bafdc09d37bb058727ccd9ef38f07195cd5a34c43f84bf7aa259da8e",
+    "quotations": [
+      "35f04f5db3a1ec7e"
+    ]
+  },
+  "https://github.com/microsoft/amplifier/blob/7fb5525a62f7b4c540629ae84118585d0e535bdd/.claude/commands/ddd/1-plan.md": {
+    "sha256": "5fc4c97a5a22f0f24650f04dbff85da9057278eb844c614f255a53527cdc0f38",
+    "quotations": [
+      "a47f3ab3d9ed05a5"
+    ]
+  },
+  "https://github.com/microsoft/amplifier/blob/7fb5525a62f7b4c540629ae84118585d0e535bdd/.claude/commands/ddd/5-finish.md": {
+    "sha256": "d905ad805cfd47ca583cf47047b1b004306e6688ae61207615624790d664b875",
+    "quotations": [
+      "607d72513dc99dba",
+      "6a642fb455572c45"
+    ]
+  },
+  "https://github.com/microsoft/amplifier/blob/main/README.md": {
+    "sha256": "f9a4fa43162d530774de9ace2f48dfc5c12345f0df5dbae2fc05a0ab24b0f52e",
+    "quotations": [
+      "30cb57d372d7c896"
+    ]
+  },
+  "https://github.com/microsoft/hve-core/blob/130ab64338bb77e912e603693672c31f14bc60c6/.github/instructions/hve-core/copilot-tracking.instructions.md": {
+    "sha256": "7022e6511c64a8e5aec0b70c8d80a4cf5c6c1a2b316f35afd352783be05aece5",
+    "quotations": [
+      "1612e039952ea954"
+    ]
+  },
+  "https://github.com/microsoft/hve-core/blob/hve-core-v1.1.0/.github/agents/task-planner.agent.md": {
+    "sha256": "6e25a23ececdecfd52175f2ed20c5ebe39a8cd703bb0f6ae767b30085e328532",
+    "quotations": [
+      "442bc10d5cbbfe07",
+      "8c77fe89cb9219c2",
+      "a0df0e9471956bb1",
+      "bd37297727b94e4a"
+    ]
+  },
+  "https://github.com/microsoft/hve-core/blob/hve-core-v1.1.0/.github/agents/task-researcher.agent.md": {
+    "sha256": "4f20c54e63be9cbdc9e1c89756f35ff4725bd06cc1d7fe70d0f9a0ee2ed3700e",
+    "quotations": [
+      "94ece1929c1e377a",
+      "a3863901c678e00e",
+      "bbfb4358e45c6411"
+    ]
+  },
+  "https://github.com/microsoft/hve-core/blob/hve-core-v1.1.0/.github/instructions/task-implementation.instructions.md": {
+    "sha256": "547eae81fdd4de8537a4f28338c65f425a1ccb22899860fa8f74fa41f481347d",
+    "quotations": [
+      "a9b4dd38a2dccdc5"
+    ]
+  },
+  "https://github.com/microsoft/hve-core/blob/hve-core-v3.3.41/.github/agents/hve-core/task-planner.agent.md": {
+    "sha256": "e660390cd5f2df9c721837a549a5a00f45984aa69a270975da2ce58234241406",
+    "quotations": [
+      "05ca766d3bc0d280",
+      "3b8fafc74afc4b6d",
+      "3fd0945d2d8d5ced",
+      "c0a0ba2f4a26cab3",
+      "e133e2d896ad58eb"
+    ]
+  },
+  "https://github.com/microsoft/hve-core/blob/hve-core-v3.3.41/.github/agents/hve-core/task-reviewer.agent.md": {
+    "sha256": "799554144f8368a82f8d3cd8d05a3dca258fde863a90ffdf3cc11aa0a416992b",
+    "quotations": [
+      "212aaa2d12091eba",
+      "7d92385a05411e03"
+    ]
+  },
+  "https://github.com/microsoft/hve-core/blob/main/.github/instructions/hve-core/copilot-tracking.instructions.md": {
+    "sha256": "5f84c6bf5d263ca5617356ecfb688a06ebbc8d4eae7b05d20f1ce48087487672",
+    "quotations": [
+      "01f5106c9e6ec2f2",
+      "2c4df0a39df03acb",
+      "2f7c53031be9dd0d",
+      "4d4ca6968e6523a5",
+      "6dea425fac16e4d2",
+      "6e7f9982defb9189",
+      "8d472942a71942e0",
+      "9d712def3f32e7c9",
+      "b555bbb8687d6deb"
+    ]
+  },
+  "https://github.com/microsoft/hve-core/blob/main/README.md": {
+    "sha256": "a6c0b2ed60dd7eb98238128d738641c63c5d57893a2dfabd9063dfff23491f23",
+    "quotations": [
+      "ad8aeec0ff663424"
+    ]
+  },
+  "https://github.com/microsoft/modernize-java/blob/d073767748dc6f19142c603a483ee006d17b38a7/plugins/modernize-java/agents/modernize-java.agent.md": {
+    "sha256": "42b149452cdb8f4229bb4b9f3e352c02ca2f7aaab1edadd22c0d31c317917431",
+    "quotations": [
+      "bcdb48fa86c70bfa",
+      "c83c87854849c195",
+      "cf817cfc1f220678",
+      "f3b125f7e0d3f1c5"
+    ]
+  },
+  "https://github.com/microsoft/modernize-java/blob/main/plugins/modernize-java/com.github.copilot/agents/modernize-java.agent.md": {
+    "sha256": "f0afe2df929586289fd7e9991c75fe93b617666d3279c27fa184ff6f4288c9b4",
+    "quotations": [
+      "0d64e72964d119f1",
+      "99ad3fca13f02413",
+      "9db0404af9ab5276",
+      "c5a9330de3b0e8ec"
+    ]
+  },
+  "https://github.com/microsoft/upgrade-agent-plugins/blob/2faeb986eae87a9261584642b5b169b008aa8fc8/plugins/upgrade-agent/agents/upgrade.agent.md": {
+    "sha256": "c6f50cb6396cc483024a52281af16e68271a790e077093a4a85bbc86501118bd",
+    "quotations": [
+      "191182ab5081b570",
+      "74505ae886f01e53",
+      "cb0954e84ab869f3"
+    ]
+  },
+  "https://github.com/microsoft/upgrade-agent-plugins/blob/42a9354d02c2025a16cfb3a3424be613e0cb454e/plugins/upgrade-agent/extenders/upgrade-dotnet/modernize/skills/scenarios/dotnet-framework-version-upgrade/SKILL.md": {
+    "sha256": "845c71ac5c41a7701217a96527c463062e21b90a0e52d2a97f22acfcaa77b4a0",
+    "quotations": [
+      "438994c1d1599b18"
+    ]
+  },
+  "https://github.com/microsoft/upgrade-agent-plugins/blob/90c7fe3beb38660a266685a417b6ff75300abe9b/plugins/upgrade-agent/agents/dotnet-version-assessor.agent.md": {
+    "sha256": "e0dcff5d91ed903dc40ad410b5c53d12afccf68267dd0d8df1124429358d9855",
+    "quotations": [
+      "604fdc5bbbb5eb62"
+    ]
+  },
+  "https://github.com/microsoft/upgrade-agent-plugins/blob/90c7fe3beb38660a266685a417b6ff75300abe9b/plugins/upgrade-agent/agents/upgrade.agent.md": {
+    "sha256": "766b0be2be0a1c8d4e05d79737bd20d36e072326d0bdab3d2450417dc09bc691",
+    "quotations": [
+      "74505ae886f01e53"
+    ]
+  },
+  "https://github.com/microsoft/upgrade-agent-plugins/blob/90c7fe3beb38660a266685a417b6ff75300abe9b/plugins/upgrade-agent/com.github.copilot/extensions/upgrade-agent-dashboard/README.md": {
+    "sha256": "154e9ddbe0f3ac9ec932e9e02851f87f1230cc21a679700070b41621998aaaf1",
+    "quotations": [
+      "c379dcae6b728ed2"
+    ]
+  },
+  "https://github.com/microsoft/upgrade-agent-plugins/blob/90c7fe3beb38660a266685a417b6ff75300abe9b/plugins/upgrade-agent/com.github.copilot/extensions/upgrade-agent-dashboard/extension.mjs": {
+    "sha256": "57179a7c40ba4b6cbd4798373e6303f5349be56e15ffbc582f30ca5fa9b3d82c",
+    "quotations": [
+      "5e8a683187f788d0"
+    ]
+  },
+  "https://github.com/microsoft/upgrade-agent-plugins/blob/main/plugins/upgrade-agent/agents/assessor.agent.md": {
+    "sha256": "a27b30651ce722ba07988ad7ef5b03a7337844b888d783b6c44d2a5bd0e17184",
+    "quotations": [
+      "a6fbce71790db63f",
+      "c63e050b7a47d56e",
+      "fa0cfddc662fe56f"
+    ]
+  },
+  "https://github.com/microsoft/upgrade-agent-plugins/blob/main/plugins/upgrade-agent/agents/dotnet-version-assessor.agent.md": {
+    "sha256": "3ff9b926ae111e2a047f48b997fd4722390610e0cf7255ac24a80b27833f8829",
+    "quotations": [
+      "9ac2475615f0c6dc",
+      "9d384c66256f01bc"
+    ]
+  },
+  "https://github.com/microsoft/upgrade-agent-plugins/blob/main/plugins/upgrade-agent/agents/report-generator.agent.md": {
+    "sha256": "110ee207f4f22a55762bf377371f308db004276c96bcaa094d10bf7ca644f427",
+    "quotations": [
+      "7d3e31729fbe4cc4",
+      "83c84787a6b47488"
+    ]
+  },
+  "https://github.com/microsoft/upgrade-agent-plugins/blob/main/plugins/upgrade-agent/agents/scenario-discovery.agent.md": {
+    "sha256": "0e4d40584df7587a37982af243ff2911ea992f651722d7413a1446a949190349",
+    "quotations": [
+      "063cea593fbe6150",
+      "6c1f2cbd79c29266",
+      "cc35821145111f43"
+    ]
+  },
+  "https://github.com/microsoft/upgrade-agent-plugins/blob/main/plugins/upgrade-agent/agents/upgrade.agent.md": {
+    "sha256": "2a73fcdbf8aac81db47c13c0206d7bc7aed6693f48177ce1cb5f508a46164a6e",
+    "quotations": [
+      "777aef734cd325c2"
+    ]
+  },
+  "https://github.com/microsoft/vscode/blob/113947563a3837013dbff0095e2bf29880b5d354/extensions/copilot/src/extension/agents/vscode-node/planAgentProvider.ts": {
+    "sha256": "f345a064c734f299efce40a99b4c3ad0c75984fc5fb710a86766fd4ecb12d03d",
+    "quotations": [
+      "84ecd75df9e8f3b0"
+    ]
+  },
+  "https://github.com/mikeyobrien/ralph-orchestrator/blob/b5789dfbb25bd4aa65ce565c756d95acc8c42f76/.claude/skills/pdd/SKILL.md": {
+    "sha256": "2cda2fc4db89a8a72d7f1cdbbe8b159e7628d7899ab69b658fe911f0b2d557ab",
+    "quotations": [
+      "96b503353f8750d5"
+    ]
+  },
+  "https://github.com/mikeyobrien/ralph-orchestrator/blob/main/README.md": {
+    "sha256": "86acc23e100691a15e7fe3e13d813f168d6ce848b9981d758e57bbc333b227fe",
+    "quotations": [
+      "222081c495461f4c",
+      "ab536106ba17429f"
+    ]
+  },
+  "https://github.com/modu-ai/moai-adk/blob/main/README.md": {
+    "sha256": "ae32c3cae0309be81cb50d5fc009a9967045425199e275a765d8bb3fbe669ec5",
+    "quotations": [
+      "83db9074eb887352"
+    ]
+  },
+  "https://github.com/modu-ai/moai-adk/blob/main/docs-site/content/en/core-concepts/spec-based-dev.md": {
+    "sha256": "09072e977716a30219b6ae346b06fc29d1a271799e463ebb4ac0e33ed4a904f3",
+    "quotations": [
+      "81014000ba4a1c3e",
+      "c6f535b1f533e806"
+    ]
+  },
+  "https://github.com/modu-ai/moai-adk/blob/main/docs-site/content/en/core-concepts/spec-lifecycle.md": {
+    "sha256": "91ab38ecd5f262350f1524cf21c12eec1f3f2afe8330ad5acf145e1d22085127",
+    "quotations": [
+      "cde6e30cbc614b44"
+    ]
+  },
+  "https://github.com/nahisaho/MUSUBI/blob/main/README.md": {
+    "sha256": "931d3f1bce03638e42a0f9e8fa614157f4999ac13c8b18fab94bc3b63f571833",
+    "quotations": [
+      "10783dbf7db76a31",
+      "1e5fa4abb5c804e9",
+      "28bccc480d3acf2c",
+      "4f7417666e0fe760",
+      "871e76044333ef8e",
+      "ae1f74182199afae",
+      "e52da748c7f384f8",
+      "f89b008ff947a030",
+      "f9aed6e298c4933d"
+    ]
+  },
+  "https://github.com/nahisaho/MUSUBI/blob/main/src/templates/agents/claude-code/commands/sdd-change-init.md": {
+    "sha256": "53776cdd420ca59b0d564c6b6329b619914d5aa76eef316f4cea956f39abb34f",
+    "quotations": [
+      "c5bbf65bc14fa9b6",
+      "eca4fb243c35c577"
+    ]
+  },
+  "https://github.com/nguyenvanduocit/research-kit/blob/7ca1312e3b41a2e5d6eb654af5d324e9521d77b4/scripts/bash/create-new-research.sh": {
+    "sha256": "af532047a34b171cd3557b08e954957ea643b5fb1cd690044679d3b5fa868f3f",
+    "quotations": [
+      "4a76da9ff7fac799",
+      "70fb6673a235eee1"
+    ]
+  },
+  "https://github.com/nguyenvanduocit/research-kit/blob/main/README.md": {
+    "sha256": "5cc4b1b7b1ee53324037ed5b0caa2356268978e9ebd4e30d4768d8d4a18a2e70",
+    "quotations": [
+      "15ee44a975e71028",
+      "231ee17a5bcfa5e7",
+      "4dc49cd67d5e205d",
+      "570260475de8f680",
+      "7ab2c42abb8b6649",
+      "7eeb02b8df12b2ba",
+      "8c823a54f79d99a2",
+      "a7b7abafdb20fae4"
+    ]
+  },
+  "https://github.com/nguyenvanduocit/research-kit/blob/main/docs/installation.md": {
+    "sha256": "97c0d5127eeea8bf848a423f32ed8a56a1fc26559ac60c4261adf855776969b9",
+    "quotations": [
+      "53b1b4a902dd7c61"
+    ]
+  },
+  "https://github.com/notdp/kiro-for-cc/blob/main/README.md": {
+    "sha256": "bbbeb416f3a8377b920300eac2f96beee8ca1b1865bdb1433738659c92a76eb1",
+    "quotations": [
+      "16ec9546c17ba8b6",
+      "355bbdca1d753d8e",
+      "4092df5697d2807e",
+      "4299c38fae7e7a75",
+      "4b142960d37b398d",
+      "7b6cdb6f93e7b7b1",
+      "a599913006de533f",
+      "c37eb3bb0ed62270",
+      "ee4fd0d82b933e4c"
+    ]
+  },
+  "https://github.com/obra/superpowers/blob/main/README.md": {
+    "sha256": "a833fc319e02e6a706c39d8a7c01adb6d639f85b6a03b25452f466e1d2e47edd",
+    "quotations": [
+      "0f77fb6416bc872e",
+      "246ef8c1130d56f5",
+      "2c014f8f8986f1b2",
+      "731732835cd76be6",
+      "ddbfd197b92c3bb5"
+    ]
+  },
+  "https://github.com/obra/superpowers/blob/main/skills/brainstorming/SKILL.md": {
+    "sha256": "6f2f6b7eb91ee05b8318e0ed740f3e4a541c8925c4d784b61043f37a2aeac081",
+    "quotations": [
+      "16a96d3c0e3f3c0a"
+    ]
+  },
+  "https://github.com/obra/superpowers/blob/main/skills/subagent-driven-development/SKILL.md": {
+    "sha256": "2b88bdfa81b6439a47124084997c95f8796a2d0a90fc75909da2629c1b981545",
+    "quotations": [
+      "cdb3ac68bb16c93a"
+    ]
+  },
+  "https://github.com/obra/superpowers/blob/main/skills/writing-plans/SKILL.md": {
+    "sha256": "bfff775628ce0d4590869877d83e94a91df32c76fd2497cf10fdad1ee16072ab",
+    "quotations": [
+      "4252cd25e2bdb1df",
+      "58106344b1b99cf3",
+      "66f2d04aefa83056",
+      "6a59b77102250405",
+      "b3f3160369bbf9f8"
+    ]
+  },
+  "https://github.com/obra/superpowers/blob/v4.0.0/skills/writing-plans/SKILL.md": {
+    "sha256": "47f4c853a43fab88cfecece34eaabb3bc1b993090f0e6029ddf92496407d2110",
+    "quotations": [
+      "dbbfdbcdfb884012"
+    ]
+  },
+  "https://github.com/obra/superpowers/blob/v4.3.1/skills/brainstorming/SKILL.md": {
+    "sha256": "56dfda640760e8c8eb2a03235d4bb5fd2266ae59c1f3d393cfe8101f2b641588",
+    "quotations": [
+      "a7fc882afe83c219"
+    ]
+  },
+  "https://github.com/obra/superpowers/blob/v5.0.0/skills/brainstorming/visual-companion.md": {
+    "sha256": "cb5cae0ec17534c7febbfa021577a899a17cb0ddee8cd780e8c510191d675e4f",
+    "quotations": [
+      "f08693db8981eca9"
+    ]
+  },
+  "https://github.com/open-gsd/gsd-core/blob/d37ff11b47258b560f0cf8f1132b42ecd90e0c79/src/milestone.cts": {
+    "sha256": "5cb03c0d8971f91491857ecd7fac2603134372d56ab8395b46d1812c6a44fb1e",
+    "quotations": [
+      "5f90dac16be4466f",
+      "9b4e4e028b69871d",
+      "c799b2c834538588"
+    ]
+  },
+  "https://github.com/open-gsd/gsd-core/blob/d37ff11b47258b560f0cf8f1132b42ecd90e0c79/src/planning-workspace.cts": {
+    "sha256": "5a5927f4475d030ff3ea79d43c533c1dea549cce6918aea5f7fc14051303fd18",
+    "quotations": [
+      "19276639f2d2de2e",
+      "5967ac7459334c82",
+      "b90392751331d646"
+    ]
+  },
+  "https://github.com/open-gsd/gsd-core/blob/next/README.md": {
+    "sha256": "851234ceed73cb98b5c21856f291cf6107c4a4db920927ed0bbfed5e031cb5de",
+    "quotations": [
+      "314413d50a7b0803"
+    ]
+  },
+  "https://github.com/open-gsd/gsd-core/blob/next/docs/ARCHITECTURE.md": {
+    "sha256": "a22e3414608b711c2cdfece8261f4525333e7f32e7a71d8c5ef45e106d28cf5c",
+    "quotations": [
+      "057adf0813c743b8",
+      "0e6e7b58fb0868d3",
+      "1fefa475b75f4f03",
+      "33898a544aaaa65f",
+      "3dc0182eb4980225",
+      "6782aab009330c76",
+      "67be35da3359af3f",
+      "6912398d6253d721",
+      "75b36b29e31ddada",
+      "7edb882901d5714f",
+      "8ae1c8f8ab521840",
+      "9f77df5e0deb7043",
+      "a34b2e199fb4d244",
+      "aac2b70179a3b126",
+      "add21f4ad5ae67e6",
+      "c10acd27fc695591",
+      "cf13a85c6d8b8b82",
+      "d637d9f07e679f4b",
+      "d8cd862d31f34b67",
+      "dcdbc754b188484a",
+      "eaea92c99c5315e1",
+      "eeaf483c65f83d81",
+      "f4283146fccbab2b",
+      "fa0fac1c14b15e09"
+    ]
+  },
+  "https://github.com/open-gsd/gsd-core/blob/next/docs/CLI-TOOLS.md": {
+    "sha256": "e2aa45e5b9d193478c431373f97331bf3923b56632310838044f2238e5c1a44a",
+    "quotations": [
+      "3e7e9e82cc62f095"
+    ]
+  },
+  "https://github.com/open-gsd/gsd-core/blob/next/docs/COMMANDS.md": {
+    "sha256": "585f0b7dc73c1ff4d05236063d1150730d7de9403104362bd2c57e90dc23a183",
+    "quotations": [
+      "5a644dbc0321bba5",
+      "6a0598dcf7931add",
+      "7ea73f176c0e579b",
+      "8c2ee5b50d9daa75",
+      "a01c92cbb3049f45",
+      "a2c4f202bf03bda3",
+      "bf8b92d42732d141",
+      "bfa392fefa1ec957",
+      "c1bc30eccdcd203f",
+      "e1f9f98a17a2e022",
+      "e752cd0b2c19eb69",
+      "e7e0b3bbe17f3569",
+      "fd865b818a5549a6"
+    ]
+  },
+  "https://github.com/open-gsd/gsd-core/blob/next/docs/CONFIGURATION.md": {
+    "sha256": "6a9a83cc9732b3628b6caa1e3bcf4da0148ad3c3eee622555e0f3b8996d28acd",
+    "quotations": [
+      "ea2b582891a37856"
+    ]
+  },
+  "https://github.com/open-gsd/gsd-core/blob/next/docs/features/ai-integration-phase-wizard.md": {
+    "sha256": "7b39e97112a0de29497ca30a9126d79bc5e9ab017025272a66b2cfb14138ff97",
+    "quotations": [
+      "23c26d3bfbe7dada",
+      "cf2b2c3b1b949138"
+    ]
+  },
+  "https://github.com/open-gsd/gsd-core/blob/next/docs/features/archive-quick-tasks-at-milestone-close.md": {
+    "sha256": "17b8ef158a03d156906de5ecb6de7241f174a10efff8a408b1da49610c316aca",
+    "quotations": [
+      "3a8aec88307c996f",
+      "52e18ae809575bc8"
+    ]
+  },
+  "https://github.com/open-gsd/gsd-core/blob/next/docs/features/cross-ai-peer-review.md": {
+    "sha256": "b87455d7687aab825e40da17efe5945d6aac672fcbb552074b7661e127d22e6e",
+    "quotations": [
+      "267bb5d3c42c03fc",
+      "b047001c123ffccb"
+    ]
+  },
+  "https://github.com/open-gsd/gsd-core/blob/next/docs/features/persistent-context-threads.md": {
+    "sha256": "805bbbae409d54d0f5ee9fe9b9e9bf1613e81d60d31ba84ffc455534e7383836",
+    "quotations": [
+      "a794b92a29bf2e23",
+      "d5e52343506883d3"
+    ]
+  },
+  "https://github.com/open-gsd/gsd-core/blob/next/docs/features/spike-command.md": {
+    "sha256": "ee9602992d39805c082c52bf531153fbf2a9a9ed63d2a6b72d10a462442794ab",
+    "quotations": [
+      "16da1d6a46f1ae79",
+      "9af3aa613a42363b"
+    ]
+  },
+  "https://github.com/open-gsd/gsd-core/blob/next/docs/how-to/handle-quick-and-fast-tasks.md": {
+    "sha256": "80e058d084b8ed4e8739465b8b17812ff9dda4d3ba3c64110ee6de33fbf00990",
+    "quotations": [
+      "4b91c493b4772123"
+    ]
+  },
+  "https://github.com/open-gsd/gsd-core/blob/next/docs/how-to/work-in-parallel-with-workstreams.md": {
+    "sha256": "b1036946cf4c46a3dd2377b55a0abb8109fba7f2e18a4f8a05cdeb3bb810aa78",
+    "quotations": [
+      "272d3fda660970b8",
+      "2b028bac21c226dd"
+    ]
+  },
+  "https://github.com/open-gsd/gsd-core/blob/next/gsd-core/workflows/audit-milestone.md": {
+    "sha256": "d0222f82da391e70dce8015598cdc76dea421bc93d71a29c9da6b219063d6605",
+    "quotations": [
+      "78f25311dd3b38d7"
+    ]
+  },
+  "https://github.com/open-gsd/gsd-core/blob/next/gsd-core/workflows/complete-milestone.md": {
+    "sha256": "0db41ed121c2691662d99611c49124c5a248491fddc347d81a2914004e7f06ae",
+    "quotations": [
+      "535b171b9f19252f",
+      "548050b8bed60b27",
+      "f67337a676684107"
+    ]
+  },
+  "https://github.com/open-gsd/gsd-core/blob/next/gsd-core/workflows/quick.md": {
+    "sha256": "e0afe4a2b875dff9806af39fa0ad273889e1c14d1dec75da0715e22dbe849870",
+    "quotations": [
+      "1f2768c84aa50519",
+      "20a3519292d7e095",
+      "55e81d39bf93e10c",
+      "7c4a59f636b2d8bd",
+      "bf5033d66687954d",
+      "d8ee9e318d3f937f",
+      "dfa8dfd7face3bcf"
+    ]
+  },
+  "https://github.com/open-gsd/gsd-pi/blob/main/README.md": {
+    "sha256": "bf871a3e997def984c6e6b37f1691e613d1c653e4175399b629c16bda6f8555d",
+    "quotations": [
+      "31cf27f62e6689a0",
+      "c1c29fc3e7ba04cb"
+    ]
+  },
+  "https://github.com/open-gsd/gsd-pi/blob/main/docs/user-docs/working-in-teams.md": {
+    "sha256": "c6ed2799e60b21b5e5aa8c578f17ac59e62db323b2fe14d0b2161d80eefd1f46",
+    "quotations": [
+      "1f94e2d18beeb8a1"
+    ]
+  },
+  "https://github.com/openai/codex/blob/main/codex-rs/collaboration-mode-templates/templates/plan.md": {
+    "sha256": "7413fbaccacf31fea8e48792f365d87776367fa3a958b4fed8286f9776eb55a8",
+    "quotations": [
+      "452e39bfaa50f6b9",
+      "51433a0861fa789d",
+      "56d158d5069b75fc",
+      "ccd2ca69f070a381"
+    ]
+  },
+  "https://github.com/openai/skills/blob/2a1cce6e760886d6cbd6d008708b60c1325d59cb/skills/.experimental/create-plan/SKILL.md": {
+    "sha256": "a36dace5bb9da073d1b9bae0edd71fa53e176df5ce439da40cbd69f5f57ea518",
+    "quotations": [
+      "4f7dba733aafc5a0"
+    ]
+  },
+  "https://github.com/openai/skills/blob/5a9bb4cbe6d79d44aa619c70edbfa1654358f69c/skills/.system/plan/SKILL.md": {
+    "sha256": "bae0fdac509d7d5236a597474e9f238e401f9476bc1f74868da05f60929a3c94",
+    "quotations": [
+      "e48e15c0ad0b3895"
+    ]
+  },
+  "https://github.com/oraios/serena/blob/main/README.md": {
+    "sha256": "f21043e67dd344068f6bae6c29246749e2ba2a7b22842d0bcc0c1d8a6fec6793",
+    "quotations": [
+      "9595584b3c4c185c",
+      "975664ad1c8ae472",
+      "d721151cb504f12a"
+    ]
+  },
+  "https://github.com/osovv/grace-marketplace/blob/main/README.md": {
+    "sha256": "0719662479d31345b3d5d00dbf33c6598b296dda5169c65f1151950cb93836f1",
+    "quotations": [
+      "12684dba9f95142f",
+      "587d48b9832452f9",
+      "5d3ced74298f8215",
+      "5fd86c15be3bea7b",
+      "751843601a71a237",
+      "79eab472e8627552",
+      "963fe51f597d233f",
+      "aa82607ca5072cd6",
+      "b481e2f0708e1c04",
+      "bf2ae9946034647a",
+      "c08823c24d128539",
+      "f43d80bbc55f5e03"
+    ]
+  },
+  "https://github.com/osovv/grace-marketplace/blob/main/skills/grace/grace-init/SKILL.md": {
+    "sha256": "4787b37a955e220abcb20fb908998f708c40b0c463f08b426cac46c0e9f6a364",
+    "quotations": [
+      "0220773efd048eb6",
+      "ca6357d0780d84ea"
+    ]
+  },
+  "https://github.com/osovv/grace-marketplace/blob/main/skills/grace/grace-spec/SKILL.md": {
+    "sha256": "d92a56d266df765a8012a80f6b39c65a569660f70658771d6c85052b5695060c",
+    "quotations": [
+      "526255f2ca1f6281",
+      "5d1bcb1bbc0c3831",
+      "6ca45184614d6c40",
+      "935070494d0e77ec"
+    ]
+  },
+  "https://github.com/osovv/grace-marketplace/blob/v3.11.0/README.md": {
+    "sha256": "85388798138d318e5e18efb258c94e5f668b73480b5c8c8626b7390b136b895c",
+    "quotations": [
+      "9ecc0fe69deb32a4",
+      "aa5270167db0ea9b"
+    ]
+  },
+  "https://github.com/oxc-project/oxc/blob/main/CONTRIBUTING.md": {
+    "sha256": "551f396153d16e2ef66091caa45e1929223bb574ce5f9192ab3c08a775a7a7d3",
+    "quotations": [
+      "c477a485625a9f78"
+    ]
+  },
+  "https://github.com/panaversity/spec-kit-plus/blob/main/README.md": {
+    "sha256": "ee7bd687b6a215f3eec07e22c1e7e68272c2d0171d5061563d45e8793d5ca095",
+    "quotations": [
+      "56a2b6c466a2e383",
+      "799412fa6155e128",
+      "c072b5f96e5e3796"
+    ]
+  },
+  "https://github.com/panaversity/spec-kit-plus/blob/main/docs-plus/06_core_commands/05_adr/readme.md": {
+    "sha256": "abf7665b0a265d27e61e4ad84365b41ad8fb846cc676423c7fb4b3bc6386ded1",
+    "quotations": [
+      "26aa865ea21b17d6",
+      "e1f734b42a0c9ec6"
+    ]
+  },
+  "https://github.com/panaversity/spec-kit-plus/blob/v0.0.5/scripts/bash/create-adr.sh": {
+    "sha256": "5f8c6e840dc37a2f0afa0810267e87011c18433a9447876aa887aac77a8fa15c",
+    "quotations": [
+      "686b3363dee43d09"
+    ]
+  },
+  "https://github.com/punal100/get-stuff-done-for-github-copilot/blob/main/README.md": {
+    "sha256": "3ca81b09bd45fdc658d3b615a1e8e13aaca006db47f76c3c30602fb14007af86",
+    "quotations": [
+      "2de9494f027d6e3d",
+      "60538a71cf71a55e",
+      "750cee01addaed27",
+      "7725e2baf7eeffeb",
+      "85baf3de0ac06691",
+      "89088f940e051bac",
+      "92dccc751b7f105c",
+      "956e6a781555910b",
+      "9dbffe3d63022ab0",
+      "a4f8e21f9ac16ab8",
+      "befeefb70aaa647b",
+      "c1f15f1dd646db9d",
+      "c50c8ea7440ef1bf",
+      "d311d0ab1ec249dd",
+      "db00b8c97c231623",
+      "e0b54124f58d6e7e",
+      "f7d4d01837fcdf34"
+    ]
+  },
+  "https://github.com/ruvnet/ruflo/blob/main/README.md": {
+    "sha256": "4d1073f519013c75fb70204eeedb022c8c7db3108d26eee09329ef02d28cc02f",
+    "quotations": [
+      "54bbb9ca22003a20"
+    ]
+  },
+  "https://github.com/ruvnet/ruflo/blob/main/plugins/ruflo-goals/README.md": {
+    "sha256": "feaec56efacbcb223cce0bd659b3e4fe14972d75254eec27c1fdad6f022ff22f",
+    "quotations": [
+      "0204e8e6f1740aa9",
+      "a17f762300452d5b"
+    ]
+  },
+  "https://github.com/seart-group/ghs/blob/v1.17.1/src/main/java/ch/usi/si/seart/job/CrawlProjectsJob.java": {
+    "sha256": "419c976c25b2bd9b5a1ceede402cd35ac58e76d8d98f4e5ba730bdd658336697",
+    "quotations": [
+      "2b8eb19a71f70308"
+    ]
+  },
+  "https://github.com/seart-group/ghs/blob/v1.17.1/src/main/java/ch/usi/si/seart/repository/GitRepoRepository.java": {
+    "sha256": "f437e81a964a924865bc11701adbd9b44ee2acfdf9a61c594fa367ce08f94f39",
+    "quotations": [
+      "7bf212b49ef452d7"
+    ]
+  },
+  "https://github.com/seart-group/ghs/blob/v1.17.1/src/main/resources/application.properties": {
+    "sha256": "5b0481a93a2ca2cd6e8475b6f61b65d13acfcd6155dbb2db6496b4a68baa4d4b",
+    "quotations": [
+      "d2b5a04fed532bac",
+      "dd76871a978bc04e"
+    ]
+  },
+  "https://github.com/sengac/fspec/blob/38a9552227d76d3975b316837a1e5b9f71126e1d/rust/fspec-core/src/commands/create_feature.rs": {
+    "sha256": "c5e73a1cd6e995a3c44907b854567286a3e310c1ddc0fbe001f36231fa6ae447",
+    "quotations": [
+      "e71cb5848f5c9cdd"
+    ]
+  },
+  "https://github.com/sengac/fspec/blob/38a9552227d76d3975b316837a1e5b9f71126e1d/rust/fspec-core/src/commands/generate_foundation_md.rs": {
+    "sha256": "84c38910931b3f1992943efb134fda7ada1b69b7190ff6ae15c632e84ee0d6ec",
+    "quotations": [
+      "75ede9a2114f086f"
+    ]
+  },
+  "https://github.com/sengac/fspec/blob/38a9552227d76d3975b316837a1e5b9f71126e1d/rust/fspec-core/src/io/ensure.rs": {
+    "sha256": "7b80400c9071e2e71547115ba358911ad5c945f6078e33d4139cc3e64203c653",
+    "quotations": [
+      "5560c0151f92d7d6",
+      "f21f7e395aa59556"
+    ]
+  },
+  "https://github.com/sengac/fspec/blob/main/docs/EXTERNAL.md": {
+    "sha256": "940296b5f36007db872889e95823b2678993bf1d72b3f520d7fae2cf13fd2974",
+    "quotations": [
+      "1bc041fd8e11ceaa",
+      "d162f0ff5839a6f1",
+      "ff8f97cc79f15d8a"
+    ]
+  },
+  "https://github.com/sengac/fspec/blob/main/rust/fspec-core/src/commands/bootstrap_doc.txt": {
+    "sha256": "55eda821d4cc71c5729339d7944f6cd80cd5dfa4eb72c8ec5266acdc8afe1ad2",
+    "quotations": [
+      "50f0cfd89d0db556",
+      "5b2df42620019d67",
+      "5c6f00cf3f3111ff",
+      "84ae023506c8df47",
+      "d63ceb0015db588c",
+      "ebfc1f58c2db3461"
+    ]
+  },
+  "https://github.com/sermakarevich/sddw/blob/main/README.md": {
+    "sha256": "ea64be09ffabd0181908421eb32bc26737213f1908ac2d6dffa550a24fcdf0d1",
+    "quotations": [
+      "479fd3327e19d53d",
+      "47d51d6e57ce33f2",
+      "6266f94bdf95f63e",
+      "b6eed100004ef694",
+      "b73647cffedd66d2",
+      "b7dba76b1160fb36",
+      "f0cbf06e6506dea7",
+      "f2c05f2481eaffea",
+      "f6a33ac832d09e63"
+    ]
+  },
+  "https://github.com/shotgun-sh/shotgun/blob/4d344d5a46aafc815de441ff670d4131187f33e6/src/shotgun/prompts/agents/plan.j2": {
+    "sha256": "d97f670cf58dc1292f049f8f5755a9a95604cbc070955121ac629a5e2ebc93c5",
+    "quotations": [
+      "0664e14471d90ca2"
+    ]
+  },
+  "https://github.com/shotgun-sh/shotgun/blob/4d344d5a46aafc815de441ff670d4131187f33e6/src/shotgun/prompts/agents/research.j2": {
+    "sha256": "82fd831f226cc97cab838eb50d3e68b3c62efc811b577193df97e6365f87701c",
+    "quotations": [
+      "49bdaf3b5061fefb",
+      "c118e92cd0200322"
+    ]
+  },
+  "https://github.com/shotgun-sh/shotgun/blob/4d344d5a46aafc815de441ff670d4131187f33e6/src/shotgun/prompts/agents/specify.j2": {
+    "sha256": "d5247a3bcbc2679fbad12d7f87ffee0e6802c61ea2537d862c12b1bf561a6a28",
+    "quotations": [
+      "6632723351061bd5",
+      "c542fb2dae88d78b",
+      "d6a468ca23bf4482"
+    ]
+  },
+  "https://github.com/shotgun-sh/shotgun/blob/4d344d5a46aafc815de441ff670d4131187f33e6/src/shotgun/prompts/agents/tasks.j2": {
+    "sha256": "eb8a8106d176831547aa609c3462ead311c5bba5ed5559da4cae2ec3825c57df",
+    "quotations": [
+      "fee21441546e1149"
+    ]
+  },
+  "https://github.com/shotgun-sh/shotgun/blob/main/README.md": {
+    "sha256": "4176cccdc7ad9020c9b6bd840c3de64b3e70bb6b695d9ca6c34c073e0d111f90",
+    "quotations": [
+      "64cba1d476718034",
+      "a9e68926bea9d5e3"
+    ]
+  },
+  "https://github.com/snarktank/ai-dev-tasks/blob/338c7ccbd678efd4c57c6aaf63ec52e37d6c6405/create-prd.md": {
+    "sha256": "c783230012d1937b31f7fa919667010baf249239996309de2b41d5f014eaf8a8",
+    "quotations": [
+      "031920f8a38cc649"
+    ]
+  },
+  "https://github.com/snarktank/ai-dev-tasks/blob/9d5f0f4127086d63e7b6d67d99aacfb197abffd7/create-prd.md": {
+    "sha256": "77207b8c437f8393891b86ec34fa572528ecdde824be2d7f840e013335550977",
+    "quotations": [
+      "a70d4c0fd38718d5"
+    ]
+  },
+  "https://github.com/snarktank/ai-dev-tasks/blob/9d5f0f4127086d63e7b6d67d99aacfb197abffd7/generate-tasks.md": {
+    "sha256": "b19e7e4011425a625bfec471bd53c875821b4d0dc073616446ec9044ca79c62b",
+    "quotations": [
+      "fc56b626e214fff4"
+    ]
+  },
+  "https://github.com/snarktank/ai-dev-tasks/blob/main/README.md": {
+    "sha256": "73253c337b551f872f6bc97c115191e76d70e0709715a6c6ed104ca51e4bc59c",
+    "quotations": [
+      "42d0e895ff48fc21",
+      "7a132fe3a0ced946"
+    ]
+  },
+  "https://github.com/snarktank/ai-dev-tasks/blob/main/create-prd.md": {
+    "sha256": "7b0f7754558980fc30a2ca85a1b101553c03228464e1d7b7ec680978f9f86904",
+    "quotations": [
+      "54a433cb508fd9a4",
+      "850185cd032d278a"
+    ]
+  },
+  "https://github.com/snarktank/ai-dev-tasks/blob/main/generate-tasks.md": {
+    "sha256": "011c5f8e4a4debd92dc0c5f906c83f3856fa3f8e43fc71d8fd43f9a0c44f3ad7",
+    "quotations": [
+      "89b8e9817f3ddad2",
+      "8f46a4a3dac1829c"
+    ]
+  },
+  "https://github.com/snarktank/ralph/blob/main/README.md": {
+    "sha256": "0ed336d29f221ff35f0dd53ab956bd521df04369aec0c1f3bb4a188293b0f715",
+    "quotations": [
+      "2a58442e368699b2",
+      "4ac4f2dc3dc23054",
+      "bba9f8ba348e86dd"
+    ]
+  },
+  "https://github.com/snarktank/ralph/blob/main/ralph.sh": {
+    "sha256": "5e9252bd2760cfb1baf3bf5cfaa782c68fad81c7d634f196ab7a169882e79b8f",
+    "quotations": [
+      "39460099e7c9d3b2",
+      "3f34600baecb3505",
+      "7191217b324dc107",
+      "a1127e7b25946889",
+      "bdcbacc5499c2ec9",
+      "db8e1aaf1d362e2f"
+    ]
+  },
+  "https://github.com/snarktank/ralph/blob/main/skills/prd/SKILL.md": {
+    "sha256": "e63220b16e6981114af12ccbe56c8c4054c0e5471aa4754c95a31fa4a2bff0ec",
+    "quotations": [
+      "5aaf0e82a9872327"
+    ]
+  },
+  "https://github.com/spec-kitty/spec-kitty/blob/main/README.md": {
+    "sha256": "49e7d771794ff811cc1209577db485ae68e403df58c3edfb15a01900f433ab07",
+    "quotations": [
+      "fc4fc89aad219095"
+    ]
+  },
+  "https://github.com/spec-kitty/spec-kitty/blob/main/docs/api/file-structure.md": {
+    "sha256": "d256c9613fb266b98878801475e89c21b0b7ce4dbce9bc8e2b60d69d789d1ff8",
+    "quotations": [
+      "221a7f3b3834edab",
+      "259d161bbab1645b",
+      "3463f4a897ca7779",
+      "3ff83aee4e7da24e",
+      "41c7a63e18f42413",
+      "5bea49bc6a4a5eff",
+      "695b6be1ae0826f3",
+      "81dda8e900f1bf76",
+      "881442b219cc1473",
+      "8f3c5566f3f8658f",
+      "8f3ea07e522e70d1",
+      "ae2a129770c84ffa",
+      "b0d9dd0fd28a8ac1",
+      "c216bebec86a4553",
+      "c2402ce629238208",
+      "e17ba36f19cf36fa",
+      "e88127294bb49356",
+      "f76c7ce2c373c0a8"
+    ]
+  },
+  "https://github.com/spec-kitty/spec-kitty/blob/main/docs/changelog/2x/doctrine-and-charter.md": {
+    "sha256": "e4abd54a8d8caf892c67625d408a1511f8f5980e2252bbea2f1339edb51f2ccd",
+    "quotations": [
+      "32873b23b5064369"
+    ]
+  },
+  "https://github.com/spec-kitty/spec-kitty/blob/main/docs/changelog/CHANGELOG.md": {
+    "sha256": "2d534f057018c1b40a7a6c3b937e82252cb39b1ec30c4fcd5be852030c1bd76a",
+    "quotations": [
+      "77802405c0a8ca95",
+      "80d433a231b3643c",
+      "ae7aa83f5a445562",
+      "bac57abcb09e130c"
+    ]
+  },
+  "https://github.com/spec-kitty/spec-kitty/blob/main/src/specify_cli/missions/software-dev/mission.yaml": {
+    "sha256": "f2f9ad2edd284c94b58c05f6925a5cff27a050ac8e834b3787061f206f6ff064",
+    "quotations": [
+      "6c28ea5406b2f65f",
+      "f2e20fda63eb1395"
+    ]
+  },
+  "https://github.com/specdd/specdd/blob/main/.plugins/flow/README.md": {
+    "sha256": "131b409ed0a45e888ed295a19ac7d544e1322a934ca20225357663fe9492775c",
+    "quotations": [
+      "2d64f567277b60b0",
+      "5b737e7aad45e761",
+      "76ffaf02a48937a1",
+      "9dc3f7d901c6732c"
+    ]
+  },
+  "https://github.com/specdd/specdd/blob/main/README.md": {
+    "sha256": "b0e8f01a820fab8f50008e6107afb9f405e825ef9f50995f05a4480e63eec3a2",
+    "quotations": [
+      "810d9fd78ba2168b",
+      "f67882809647960f"
+    ]
+  },
+  "https://github.com/specpulse/specpulse/blob/b1b4f86e5e7d0f19712f5fcb9ea3ea2f139ed462/README.md": {
+    "sha256": "52b0c4e8bf98d3f737c1c3d3dc923fc602b6625f3de2552cfe5575082dc82bfe",
+    "quotations": [
+      "19749bb6608ada37",
+      "5d53fc8d52443ab6",
+      "87f5c2d83ba9ba1c",
+      "bb32aac796ae3d87"
+    ]
+  },
+  "https://github.com/specpulse/specpulse/blob/master/CHANGELOG.md": {
+    "sha256": "6ce92c4ac0981dea2d936f0b8ab62c17877acc1ca955683c3cd130e0a5b375ce",
+    "quotations": [
+      "456d10cfbad83bb8"
+    ]
+  },
+  "https://github.com/specpulse/specpulse/blob/master/README.md": {
+    "sha256": "6eb450bdd9d072aebcd69058d19782316e1b45f4ff12ccc84b542479778a33fc",
+    "quotations": [
+      "0d671eff7485ea62",
+      "0ec1301248f3c5ef",
+      "21bcadf45d6878bf",
+      "2496b8e8941e27d1",
+      "2c508be825d3b96f",
+      "34d313fe1235e0e0",
+      "4619d13086e4cd75",
+      "75bedd61193fe0d9",
+      "98e85d9673310b44",
+      "a02b6933b6a54099",
+      "a9942b48c5a6d27b",
+      "b55c0db2fa520f78"
+    ]
+  },
+  "https://github.com/tony/claude-code-riper-5/blob/main/.claude/agents/plan-execute.md": {
+    "sha256": "d6c0ef3fac87e2b2b9616e75aaaa07ed04b23aed2a275317cbfb9c29bd471ad6",
+    "quotations": [
+      "8be919d8b043f6d0"
+    ]
+  },
+  "https://github.com/tony/claude-code-riper-5/blob/main/.claude/agents/review.md": {
+    "sha256": "7123882f4b490c1d8e98ff3a6c896b01a0cc382d36d7350b5ae31bd5ec174af7",
+    "quotations": [
+      "db9ea0e7281b3e37",
+      "eec1ae950d123d91"
+    ]
+  },
+  "https://github.com/tony/claude-code-riper-5/blob/main/.claude/commands/memory/save.md": {
+    "sha256": "7cf3e8ae410a430234363d24591c5d705ae748fe20a26c4f5c2cff651929bebf",
+    "quotations": [
+      "139c78b8b2a10eb3",
+      "dcea12be7afb6156"
+    ]
+  },
+  "https://github.com/tony/claude-code-riper-5/blob/main/README.md": {
+    "sha256": "cbc0d3caa584ba9ca4f10489ba02c47dbb13e58f26f2a069c01f499b183ce78a",
+    "quotations": [
+      "2c3b5cf2c5e490ab",
+      "50db6bf13af6525a",
+      "8d36901fefa08c0c",
+      "c1cede6086b667c5",
+      "d6d91052d69f0235"
+    ]
+  },
+  "https://github.com/tzachbon/smart-ralph/blob/main/README.md": {
+    "sha256": "c4ca5924afefd13c384687e6f6ac3675859df2ebe121491f67fe8a2141fc7552",
+    "quotations": [
+      "3231dfc40812d364",
+      "cbbfb48e79839e9f",
+      "f08e5346121a1df1"
+    ]
+  },
+  "https://github.com/tzachbon/smart-ralph/blob/main/plugins/ralph-speckit/README.md": {
+    "sha256": "1052703aec5bb5a7ff9efa44dafe177291dabe0e19af65e573550e539b6950ac",
+    "quotations": [
+      "0b4b7aa94715902f",
+      "79264115e3b67fb7",
+      "79825b0a10c39a16",
+      "cde9ea4b22f99a92",
+      "eedb0ff4ca9d825a",
+      "f03e9705a7b3d78d",
+      "f81a887d7ad0202e"
+    ]
+  },
+  "https://github.com/tzachbon/smart-ralph/blob/main/plugins/ralph-specum/commands/new.md": {
+    "sha256": "5010baf0f8aaf35c5f5ab1ab4e4806f02acb5ae6255528f21baeda61b4f84639",
+    "quotations": [
+      "40776bd49c14f642",
+      "5f8980d92906d826",
+      "84e0909ce3c9e1d7"
+    ]
+  },
+  "https://github.com/vanzan01/cursor-memory-bank/blob/7d879d8f5079ad77d845fdc92ca03903dbbd3a85/.cursor/rules/isolation_rules/Core/memory-bank-paths.mdc": {
+    "sha256": "4707413f93de30eb4db75d5f149910607281f3a331da52944486f59d5b869cb6",
+    "quotations": [
+      "56bb424e92e13eac"
+    ]
+  },
+  "https://github.com/vanzan01/cursor-memory-bank/blob/main/.cursor/rules/isolation_rules/Core/memory-bank-paths.mdc": {
+    "sha256": "4707413f93de30eb4db75d5f149910607281f3a331da52944486f59d5b869cb6",
+    "quotations": [
+      "2c6b446eadf31cc9"
+    ]
+  },
+  "https://github.com/vanzan01/cursor-memory-bank/blob/main/README.md": {
+    "sha256": "f0377a1c9fd840c79ee87f5436848c93a3109275015c00d06f055d43dd374a9d",
+    "quotations": [
+      "0d0061d820cc78d3",
+      "1b13e96a6410abe6",
+      "1f56bac3d73694fd",
+      "303a130346616a1f",
+      "42979030ac776d39",
+      "5224710d752031bb",
+      "752b373aed7db6ae",
+      "83c68c93244246cb",
+      "94679012b92b94b0",
+      "a7c5339f473c5473",
+      "aa6cd39d19c1f670",
+      "cac1d6032c3efec4",
+      "cb1872e8b4814fd4",
+      "d99fcac5b3cc782d"
+    ]
+  },
+  "https://github.com/wshobson/agents/blob/main/plugins/conductor/README.md": {
+    "sha256": "8efdc474be1dae771e01a19c94f46b879e482e258a75916d9889cc8bcf25e088",
+    "quotations": [
+      "2a9a64dbfa4e5d1e",
+      "a7abd494a4eb2113",
+      "fdf2b829918cefe3"
+    ]
+  },
+  "https://github.com/wshobson/agents/blob/main/plugins/conductor/commands/manage.md": {
+    "sha256": "e36b656d517c9a3ba1d3d5bc07caa9d182ad85aa029f00a7f41cc83b0d0f457a",
+    "quotations": [
+      "1a8e89afd2ab6df7"
+    ]
+  },
+  "https://github.com/wshobson/agents/blob/main/plugins/conductor/commands/new-track.md": {
+    "sha256": "14f007c748b7c0bb22b5d4bf33555400e78d50e3580717fc1b571d17f41c5c01",
+    "quotations": [
+      "10a0af5c472374a2",
+      "2966eebcf3de87c5",
+      "5a83f36923463b0f",
+      "74dcda0057c72c13",
+      "875d100d338fed0a",
+      "9ac15fd58d4f6be1",
+      "e4e14fea852f006a"
+    ]
+  },
+  "https://github.com/wshobson/agents/blob/main/plugins/conductor/commands/setup.md": {
+    "sha256": "1095324466a6cfca0f50856379fc5c1f2e9e53c7e2d477116de3bce56d378a0b",
+    "quotations": [
+      "012295ce2474789b",
+      "29be9a31da1e7fb2",
+      "38476f7e4345c0a0",
+      "5c489487ca89d39c",
+      "9d71500ff051236a",
+      "bc320c87f18f6de3",
+      "bd6e5fe1f4f4048e",
+      "e1ccae21599a744e",
+      "ee03aea12812dd99",
+      "eee1c15cdd7c4404",
+      "ef6eebc26f5771bf",
+      "f8e6f7dc0a6d8b17",
+      "fc564f6e5a04b0d0"
+    ]
+  },
+  "https://github.com/zhu1090093659/spec_driven_develop/blob/main/README.md": {
+    "sha256": "e4c8ad97e4fbb436275f0b6bba05f770954e7cac967ee663636acacaef377696",
+    "quotations": [
+      "416cf683f8bff472"
+    ]
+  },
+  "https://github.com/zhu1090093659/spec_driven_develop/blob/main/plugins/spec-driven-develop/skills/spec-driven-develop/SKILL.md": {
+    "sha256": "da49fa76194f38f0916cd9ed593f50ae5f2e9c519136ff1e1e6c1a48b8719211",
+    "quotations": [
+      "63a8d1feedea1126",
+      "6d663efdb4402f54",
+      "88ac3f7164378d27",
+      "8e974505dfa54e5b",
+      "c4191bbe3c669dc1"
+    ]
+  },
+  "https://github.github.io/spec-kit/integrations/index.html": {
+    "sha256": "cbd91f91e878cf299d737f07066c3f72f458112c2b242f8c3ac1f327be41a7b4",
+    "quotations": [
+      "3ab376687faccfe5",
+      "5b4d0f16a529101a",
+      "5b579fd9cdc11f93",
+      "7ac1c4e1768ca81e",
+      "86d6e0ea662ba9b6",
+      "cf0b4d782c189a50",
+      "cfcd0835ac55cdf8"
+    ]
+  },
+  "https://github.github.io/spec-kit/overview/core.html": {
+    "sha256": "34067b5e92195ca2343e4b1dcac6d00c463cb8c6e0f1c2015e5063a175244826",
+    "quotations": [
+      "cfb07436b45ea86a"
+    ]
+  },
+  "https://github.github.io/spec-kit/reference/agentic-assessment.html": {
+    "sha256": "5bc6c10d4d089302af235f40d5f1f97f3a6ac82c7744bf8298e227d3c2fc8ab0",
+    "quotations": [
+      "b42a07fda51f5d1f"
+    ]
+  },
+  "https://github.github.io/spec-kit/reference/agentic-bugfix.html": {
+    "sha256": "525c665e2c274d1c82aaad45e10a0fda77217df31f713ff4d3a00972240b8a3a",
+    "quotations": [
+      "b0745ce80de3f2a1"
+    ]
+  },
+  "https://github.github.io/spec-kit/reference/core.html": {
+    "sha256": "b5d21615163d0bc118c14c198ef51a5a57a95f39bd2d1a3a0533f76068152b43",
+    "quotations": [
+      "cfb07436b45ea86a"
+    ]
+  },
+  "https://kilo.ai/docs/advanced-usage/memory-bank": {
+    "sha256": "d2eb1f23464bdadcbc1c33bc12e02f8a5b3bf65d87cbb3e11c551b69ee7d6332",
+    "quotations": [
+      "3de0b6ab94b54760"
+    ]
+  },
+  "https://kilo.ai/docs/code-with-ai/agents/using-agents": {
+    "sha256": "79a5c6db2866cc0c33319817491ed24e7d199660a78c4a03509dd63c94ae24c7",
+    "quotations": [
+      "159b9fda520fba12"
+    ]
+  },
+  "https://kiro.dev/docs/specs/": {
+    "sha256": "6f933157edf9630c66890e1518aeab23b4a8c1e21f9c6d240ac7954663faf3d9",
+    "quotations": [
+      "36f07b70d7a5c556"
+    ]
+  },
+  "https://kiro.dev/docs/specs/best-practices/": {
+    "sha256": "bfd7f8cd4ed050da977b6e81fdc92fbf0f76c6d6eff80f0c3816e2d17d846afe",
+    "quotations": [
+      "2d1d88c5c5485a17"
+    ]
+  },
+  "https://kiro.dev/docs/steering/": {
+    "sha256": "82f0b6d66f1a931e5923950ffe062619074cb4feb23d474c55e5de9c10675b17",
+    "quotations": [
+      "f0184c433f7bff97"
+    ]
+  },
+  "https://learn.chatgpt.com/guides/build-ai-native-engineering-team": {
+    "sha256": "3ace58c46995ccadc5dcc479052899bd5d0cb8623d14aa6de2e92231e7153f6e",
+    "quotations": [
+      "89084fc946db2469"
+    ]
+  },
+  "https://learn.microsoft.com/en-us/azure/developer/github-copilot-app-modernization/customize-modernization-plan": {
+    "sha256": "93159de1fb20d9069052404cbc2bfe7b509354c4473522f6d2dc2861159421f5",
+    "quotations": [
+      "7e526d5cbc2e6787"
+    ]
+  },
+  "https://learn.microsoft.com/en-us/azure/developer/github-copilot-app-modernization/modernization-agent/cli-commands": {
+    "sha256": "8ea4f5bca67e8026c368834696a5e8e961644f71d54e087aac26a6a6fec09e4c",
+    "quotations": [
+      "53fdc7552e79280f",
+      "69e0c2bc9ff86bd6",
+      "88896b7f8bb5da6c",
+      "c43d2aec24e6e2b9",
+      "d5a4738a6f10f273",
+      "e3a0e242e3b8fd3c"
+    ]
+  },
+  "https://learn.microsoft.com/en-us/azure/developer/github-copilot-app-modernization/modernization-agent/customization": {
+    "sha256": "45b0ec009917792bd8e9a2bd6edb5f510db5e7aaef74017f5317aa130774829d",
+    "quotations": [
+      "e5732962d5118b2b"
+    ]
+  },
+  "https://learn.microsoft.com/en-us/azure/developer/java/migration/github-copilot-app-modernization-for-java-coding-agent": {
+    "sha256": "ac0abab6fc50342a5d1c22f453446d3b7f569e1951b630b8bf5670a10f9f230a",
+    "quotations": [
+      "c81af3bca5ac8b0c"
+    ]
+  },
+  "https://learn.microsoft.com/en-us/dotnet/azure/migration/appmod/copilot-cli-support": {
+    "sha256": "5e7ce1d635ef1551083815c47b52f45eb3f92ebd0dbcb591ee1ff0a8eda265e7",
+    "quotations": [
+      "87c535ac36ac6657",
+      "98317cbd505c91fa",
+      "b9b8d8807f9f711a"
+    ]
+  },
+  "https://learn.microsoft.com/en-us/dotnet/azure/migration/appmod/quickstart": {
+    "sha256": "3b0707f38c7837548e21fbcf37d31f09c21a81b3b54a4e06cb3f530d28c69ac5",
+    "quotations": [
+      "2b5247175f13669e",
+      "4e7ed76518a492a9",
+      "5db2a8aa83d7f2b7",
+      "5fce7d7d81dff109"
+    ]
+  },
+  "https://learn.microsoft.com/en-us/dotnet/azure/migration/appmod/working-with-assessment": {
+    "sha256": "3304d0c43a967a5c5bdddbdcb4fb3db5d5d94b1979fd6e3aadc06ecb61dd3ee5",
+    "quotations": [
+      "d7ebf882204abb76"
+    ]
+  },
+  "https://learn.microsoft.com/en-us/dotnet/core/porting/github-copilot-upgrade/concepts": {
+    "sha256": "74a5c340d3fea911a14e75e945c4da0456e6d093dd2399cdabce8f702d380445",
+    "quotations": [
+      "a3a3ee321d0f74dd"
+    ]
+  },
+  "https://learn.microsoft.com/en-us/dotnet/core/porting/github-copilot-upgrade/overview": {
+    "sha256": "fbc5f0c6e6e5aaf192378a50effd65b1621bd1ce0a51266f79bbccabe9f8ba3f",
+    "quotations": [
+      "5a7a4327f3c33663"
+    ]
+  },
+  "https://learn.microsoft.com/en-us/dotnet/desktop/wpf/migration/how-to-upgrade-wpf": {
+    "sha256": "27e25e629a09d9f865d9782bfe88ef2a6de218ccc2a41941afa7e2624f0f8ac0",
+    "quotations": [
+      "8e741f2664fcd9fe"
+    ]
+  },
+  "https://opencode.ai/docs/agents/": {
+    "sha256": "634a0af9e8049e777fef141142288615a58733a1dbe488063f504ea431c49b76",
+    "quotations": [
+      "2cad3f510204628c"
+    ]
+  },
+  "https://opencode.ai/docs/permissions/": {
+    "sha256": "77b70a61c8de15b6be311bbb0b06bb63e5ac9dd4d353597c24a7b838568407e4",
+    "quotations": [
+      "61ed87dd19320ec1"
+    ]
+  },
+  "https://opencode.ai/v2/docs/permissions/": {
+    "sha256": "077deb3e9d6f89d8e51e9ca96cc79d3c104ccee93f2097b18101ca18c126ddff",
+    "quotations": [
+      "61ed87dd19320ec1"
+    ]
+  },
+  "https://openspec.dev/docs/cli": {
+    "sha256": "bb57e78986bbaa364faccce642ae3ab4e9d08132557c3fbda29d4c9323e1188c",
+    "quotations": [
+      "186c8d64f3c68758",
+      "691628498291fb43"
+    ]
+  },
+  "https://openspec.dev/docs/configuration/change-metadata": {
+    "sha256": "fa4ffa3d222087a23452c43b54543a52b1adc3433e6bbb5ecc5e4ea4037b5472",
+    "quotations": [
+      "de50ec7e2c822936"
+    ]
+  },
+  "https://openspec.dev/docs/customize-schemas": {
+    "sha256": "d2b0c84cde6924bda41c4249b66c6adf00116f10760712558b99edb6e1a49c66",
+    "quotations": [
+      "76e2a4d10aa6ff08"
+    ]
+  },
+  "https://openspec.dev/docs/schemas/spec-driven": {
+    "sha256": "5fa65d704d61e3551eb3050d86c289585d4a8387c316fe770200ead36a3a0350",
+    "quotations": [
+      "27baba751eb5b524",
+      "9f25e03730c531c3"
+    ]
+  },
+  "https://openspec.dev/docs/setup": {
+    "sha256": "bc9295a91710d26e819ae2d0bf1b3c95f6641d6dd56366112378b418e21a1d25",
+    "quotations": [
+      "640c4a59f0b1137a",
+      "6fd7c1c9ef4473d0",
+      "8fcacd8b690a5e5e",
+      "a090893a04ad3372",
+      "e3b71e14adc5e20d"
+    ]
+  },
+  "https://specs.md/aidlc/overview": {
+    "sha256": "6891b61764acdc8943ffbc86131bad68e7c4fc22ef858e2bf3f6cd1a723f288b",
+    "quotations": [
+      "05431f2ffd7c6c74",
+      "a6261bc349e412d7",
+      "a660a623f6dff46b",
+      "e76ebdc101bc3614",
+      "f06623a77cc67179"
+    ]
+  },
+  "https://specs.md/fire-flow/work-items": {
+    "sha256": "477394380c52cebd40ca6699f4dc267407a7cdef45bce6636f24b296f41dad0e",
+    "quotations": [
+      "56a2036b4edde8f2",
+      "b5a58edeb52f809a"
+    ]
+  },
+  "https://specs.md/ideation-flow/overview": {
+    "sha256": "9c41c213d898521dec61bb1a1f879da1fba7c0815f740c83ac62076f3aba6bab",
+    "quotations": [
+      "198903f84707a523",
+      "1e72be000ea05e4a",
+      "84818ae14c14323c",
+      "9d8c6b6ce0b2d501",
+      "a04b9e8b85bdf5ee",
+      "f3ff524cc75809f1"
+    ]
+  },
+  "https://tryhamster.com/docs/taskmaster/getting-started/quick-start/prd-quick": {
+    "sha256": "f1a002f5ebaa7d62be81700becb1a1b8ad06b7b840a21f82a6891882e188c2e8",
+    "quotations": [
+      "1ed791af8a4b2780",
+      "7ccbcacb6fc38950",
+      "ce5bfb5acd369385"
+    ]
+  },
+  "https://tryhamster.com/docs/taskmaster/task-workflow/tags": {
+    "sha256": "feecb51ea8454e0bbf92b50a3bfce8d2825091a8a1f32d31cd03f6602ac97faf",
+    "quotations": [
+      "861732ff89e58b48",
+      "8e2ba8559ca73bc1"
+    ]
+  },
+  "https://unpkg.com/@microsoft/github-copilot-app-modernization-mcp-server/dist/entrypoints/agents/modernize-azure-dotnet.agent.md": {
+    "sha256": "050639515911e79a588061e882ac4bdf05be890af813e27aba3befeb8cc50920",
+    "quotations": [
+      "08d2d6d443c7f08f",
+      "5143f5428edc3104"
+    ]
+  },
+  "https://unpkg.com/@microsoft/github-copilot-app-modernization-mcp-server/dist/entrypoints/agents/modernize-deployment.agent.md": {
+    "sha256": "c80d61d139ff34a543bc08c7bdae63e893dd0af78966de7e825543583881b239",
+    "quotations": [
+      "07ce1fa67cd732c7",
+      "1ea49558e65b8da1"
+    ]
+  },
+  "https://unpkg.com/@microsoft/github-copilot-app-modernization-mcp-server@1.24.0/dist/entrypoints/agents/assessment-coordinator.agent.md": {
+    "sha256": "38cdc3a5e2e2ad0d52100ffdf376600d9cd77012ac5f209b07bce8931d7f861b",
+    "quotations": [
+      "f7af0561767aad49"
+    ]
+  },
+  "https://unpkg.com/@microsoft/github-copilot-app-modernization-mcp-server@1.24.0/dist/entrypoints/agents/execution-coordinator.agent.md": {
+    "sha256": "3e7f1a348057719395cd8fe93271fd9503d1feaa2a1c8a4519e5938429f7577e",
+    "quotations": [
+      "989de80a0ceb11fa"
+    ]
+  },
+  "https://unpkg.com/@microsoft/github-copilot-app-modernization-mcp-server@1.24.0/dist/entrypoints/agents/modernize-azure-dotnet.agent.md": {
+    "sha256": "050639515911e79a588061e882ac4bdf05be890af813e27aba3befeb8cc50920",
+    "quotations": [
+      "5143f5428edc3104",
+      "784c7c03c3c520f3",
+      "8da60f24eaf687c9"
+    ]
+  },
+  "https://unpkg.com/@microsoft/github-copilot-app-modernization-mcp-server@1.24.0/dist/entrypoints/agents/modernize-java-security.agent.md": {
+    "sha256": "053d5747900278b666ad9bae0d16e01f100c95b53260cd9fd6b9fff67fda99a5",
+    "quotations": [
+      "b0371c71935de5d4"
+    ]
+  },
+  "https://unpkg.com/@microsoft/github-copilot-app-modernization-mcp-server@1.24.0/dist/entrypoints/agents/planning-coordinator.agent.md": {
+    "sha256": "f152d381ac762d07102ead028bca2a60c2ea8306fc7c2f100f85286ce38c1271",
+    "quotations": [
+      "a27bac8fa2e28efb"
+    ]
+  },
+  "https://unpkg.com/@microsoft/github-copilot-app-modernization-mcp-server@1.7.0/dist/core/implementations/run-task-new/context/MigrationContextFactory.js": {
+    "sha256": "f33d1ddbcb39dab6a832fa70acc812a9a7cff5642b61289386975e27cfea4ced",
+    "quotations": [
+      "aa2a1620f0d0392c"
+    ]
+  },
+  "https://unpkg.com/@microsoft/github-copilot-app-modernization-mcp-server@1.7.0/dist/core/implementations/run-task-new/template/BaseTemplateBuilder.js": {
+    "sha256": "64fba54f7da412db175245de330aec72c35902c34bd542e92d8960920c0f0631",
+    "quotations": [
+      "135a1ec23a7719ca"
+    ]
+  },
+  "https://web.archive.org/web/20260218151005/https://docs.zencoder.ai/zenflow/task-types": {
+    "sha256": "95325007787d686783cf55675624c87599c05ecd8fb9813341a7e94c2e95fc62",
+    "quotations": [
+      "51d9519232a3a235",
+      "9363b6072903adc2"
+    ]
+  },
+  "https://web.archive.org/web/20260308071927/https://learn.microsoft.com/en-us/dotnet/core/porting/github-copilot-app-modernization/how-to-upgrade-with-github-copilot": {
+    "sha256": "72a6a4f34cc592d7360ab4ce8c4d4c60c708f7c95726b41bf014c4d4d848b9a6",
+    "quotations": [
+      "444b5cc11e7aa416",
+      "7136eecd966914a8",
+      "e46b60346ad40464"
+    ]
+  },
+  "https://web.archive.org/web/20260529144606/https://docs.windsurf.com/windsurf/cascade/modes": {
+    "sha256": "4bdf9fc26138a3afd65073739747cdec7f8be689810a34ee0838d602c87bc3ed",
+    "quotations": [
+      "c0e686a9bc9155ee"
+    ]
+  },
+  "https://web.archive.org/web/20261022025626/https://openai.com/index/harness-engineering/": {
+    "sha256": "a5278b089a7b9a2dc199685982f90deac241b0edbecc8c39a1f167e9b742c870",
+    "quotations": [
+      "3d745a55e29b98d9",
+      "e8a5746b6fe385d9"
+    ]
+  },
+  "https://www.lean-spec.dev/docs/guide/usage/spec-structure": {
+    "sha256": "692ec9b64e75f61c44ad2989005bd34be504a35d88eb1fc2b1175009ca0b64ce",
+    "quotations": [
+      "57d9b1ca5fecad5d",
+      "72ddaa492c7feffd",
+      "cdcf0a09e1d1f89a",
+      "d98769f5f1f88a8b",
+      "ea4a1e6e3da16978"
+    ]
+  },
+  "https://www.lean-spec.dev/docs/reference/cli": {
+    "sha256": "fe0a411680a9f2bcce16e05bfaad0286e2fc27082b5d8a7b5014e2752ebc5dc4",
+    "quotations": [
+      "03b8567d25cb3b62",
+      "1802a27a28983ce9",
+      "3949280dd55b5759",
+      "edfa960a9e48b7b0"
+    ]
+  },
+  "https://www.lean-spec.dev/docs/reference/config": {
+    "sha256": "9c38bfaed563ecb95dd17778665b85f67ab209ff41f6f1a6a9187f9682672105",
+    "quotations": [
+      "10b5a5eaa3e18779",
+      "149b4b036fd3fa59",
+      "529379e29da46b85",
+      "bc7975e244c3d0c5"
+    ]
+  },
+  "https://www.memex.ai/docs": {
+    "sha256": "62568af2c8c664e98102e912c9371ad85bc616ceb621188c2c0aba9b3a524b5b",
+    "quotations": [
+      "00ed6aef6e0aa002",
+      "0e5a79840fdfa97e",
+      "398ed887d3cb8904",
+      "d8e5cb1cc58a08a6"
+    ]
+  }
+}

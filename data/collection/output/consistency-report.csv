@@ -1,0 +1,15 @@
+file,unique_repos
+settings.csv,2246
+context-files.csv,10026
+skills.csv,3218
+subagents.csv,651
+commands.csv,281
+hooks.csv,498
+rules.csv,680
+mcp.csv,584
+plugins.csv,291
+lsp.csv,16
+other.csv,1386
+TOTAL (mechanism CSVs),10944
+repos.csv,10944
+planning-documents.csv,417

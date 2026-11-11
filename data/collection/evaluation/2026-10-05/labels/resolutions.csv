@@ -1,0 +1,52 @@
+item,label,tool,attribution_correct,paths,note
+pp-0006,correct,,,,deps/ is not vendored by name: datadog/datadog-agent keeps its own deps/cacerts/AGENTS.md there; Codex reads AGENTS.md in the directory it runs in
+pp-0114,correct,,,,a template is read where it is when a session starts in that directory; the criterion counts by location
+pp-0162,correct,,,,AGENTS.md is a context file at any depth; attributed to any since the attribution by mechanism of 2026-10-13
+pp-0163,correct,,,,AGENTS.md is a context file at any depth; attributed to any since the attribution by mechanism of 2026-10-13
+pp-0184,correct,,,,AGENTS.md is a context file at any depth; attributed to any since the attribution by mechanism of 2026-10-13
+pp-0220,wrong_tool,claude,,,"no trigger, so Antigravity discards it; Claude reads it through .claude/rules; fixed 2026-10-13"
+pp-0221,wrong_tool,claude,,,"no trigger, so Antigravity discards it; Claude reads it through .claude/rules; fixed 2026-10-13"
+pp-0228,wrong_tool,claude,,,"no trigger, so Antigravity discards it; Claude reads it through .claude/rules; fixed 2026-10-13"
+pp-0308,correct,,,,Codex reads .codex/config.toml; a file of comments configures nothing but is the file Codex reads
+pp-0314,correct,,,,Codex reads .codex/config.toml; a file of comments configures nothing but is the file Codex reads
+pp-0384,correct,,,,other: a file in Copilot's agents directory that no mechanism covers
+pp-0386,correct,,,,other: VS Code reads prompt files directly in .github/prompts only
+pp-0403,not_configuration,,,,"the engine comes from shared/engine-zai.md, imported, which sets engine.command to pydantic-ai's own launcher; gh-aw then skips installing the engine's CLI, so neither Copilot nor Claude Code runs"
+pp-0458,correct,,,,Cursor reads .cursor/mcp.json; an empty mcpServers object is still the file Cursor reads
+pp-0469,wrong_mechanism,cursor,,,a Cursor staff member: the IDE reads .cursor/commands recursively (forum.cursor.com/t/154719); fixed 2026-10-13
+pp-0474,correct,,,,"other: neither the CLI nor, as far as shown, the IDE reads a .mdc file as a command"
+pp-0508,correct,,,,"Cursor CLI 2026.09.28 keeps a skill without a description, with the parse error Description is required, and sends it with the other skills"
+pp-0525,correct,,,,Antigravity's workflows page does not require front matter
+pp-0528,correct,,,,Antigravity's workflows page does not require front matter
+pp-0533,correct,,,,Antigravity's workflows page does not require front matter
+pp-0534,correct,,,,Antigravity's workflows page does not require front matter
+pp-0546,not_configuration,,,,"Cursor's format with version 1, which Antigravity CLI 1.3.5 cannot decode and drops whole; fixed 2026-10-14"
+pp-0579,not_configuration,,,,"no trigger, so Antigravity discards it; other since 2026-10-13"
+pp-0607,correct,,,,"Gemini CLI finds skill.md on macOS and Windows, where its glob ignores case"
+pp-0615,not_configuration,,,,"no front matter, so Antigravity CLI 1.3.5 does not list the agent; fixed 2026-10-14"
+pr-0214,none,,,,every candidate is in a mechanism CSV
+pr-0240,none,,,,skill support files inside a detected skill
+pr-0253,none,,,,skill support files inside a detected skill
+pr-0273,none,,,,the symlinked skills directory is followed
+cp-0061,correct,Codex,yes,,"the address noreply@openai.com, which Codex's git attribution writes"
+cp-0063,correct,Codex,yes,,"Codex <codex@localhost>: the git identity of the branch's commits, which GitHub's squash merge turned into a co-author line"
+cp-0071,correct,Codex,yes,,"the address noreply@openai.com, which Codex's git attribution writes"
+cp-0093,correct,Codex,yes,,"the address noreply@openai.com, which Codex's git attribution writes"
+cp-0099,correct,Codex,yes,,"the address noreply@openai.com, which Codex's git attribution writes"
+cp-0143,correct,Copilot,yes,,copilot-swe-agent made the commit; an empty commit counts since 2026-10-14
+cp-0236,correct,Cursor,yes,,"Cursor Assistant <assistant@cursor.com>, an identity GitHub shows in 9 more repositories of unrelated owners, which Cursor's agent takes when no git identity is set"
+cp-0287,correct,Gemini,no,,"Google's gemini-code-assist user account 200291788, whose line is Gemini's own: the attribution is standard, not the recorded convention"
+cp-0314,correct,Codex,yes,,"codex@openai.com, the identity of codex-author-05 and codex-trailer-06"
+cp-0352,correct,pi,yes,,"pi <pi@m2.local>: 74 typo-fix commits across many repositories in July to September 2026 under this identity, an automated agent named pi"
+mn-0003,not_attribution,,,,streamlit's workflow runs cursor-agent; the model name is Cursor's
+mn-0036,not_attribution,,,,"credits OpenAgents' Coder, which runs its own engine"
+mn-0037,not_attribution,,,,feedback from Claude Code that a person applied
+mn-0039,not_attribution,,,,"a link definition; the credit is on the line above, read by claude-full-body-10 since 2026-10-13"
+mn-0059,not_attribution,,,,Codex found the edge cases; the line does not say who wrote them
+mn-0116,attribution,,,,the message is signed by Copilot
+mn-0122,not_attribution,,,,"credits the repository's own agent, Overseer"
+mn-0162,not_attribution,,,,"no co-author trailer, so the suggestion was applied by hand"
+mn-0187,not_attribution,,,,names a Claude command that the commit adds
+pr-0234,none,,,.claude/agents/ui-consistency-reviewer.md;.claude/agents/ui-implementer.md;.claude/commands/fix-tests.md;.claude/settings.json;.claude/skills/code-review/SKILL.md;.claude/skills/fix-flaky-tests/SKILL.md;.claude/skills/improve-code-coverage/SKILL.md;.claude/skills/make-branch-ready-for-review/SKILL.md;CLAUDE.md,an ignore file belongs to no mechanism and is not a configuration path of path recall
+pr-0257,none,,,.agents/skills/graphify/SKILL.md;.agents/skills/run-build/SKILL.md;.agents/skills/tg-port-feature/SKILL.md;.agents/skills/tweb-bugs/SKILL.md;.agents/skills/tweb-mtproto-debug/SKILL.md;.claude/commands/planner.md;.claude/commands/refactor-popup-procedural.md;.claude/commands/task.md;.claude/launch.json;.claude/skills/graphify/SKILL.md;.claude/skills/run-build/SKILL.md;.claude/skills/tg-chat-archive/SKILL.md;.claude/skills/tg-port-feature/SKILL.md;.claude/skills/tweb-bugs/SKILL.md;.claude/skills/tweb-mtproto-debug/SKILL.md;AGENTS.md;CLAUDE.md,an ignore file belongs to no mechanism and is not a configuration path of path recall
+pr-0284,none,,,.claude/commands/commit-push-pr.md;.claude/commands/dedupe.md;.claude/commands/oncall-triage.md;.claude/skills/orca-profiles/SKILL.md;.claude/skills/orca-wxwidgets/SKILL.md;AGENTS.md;CLAUDE.md;tests/AGENTS.md;tests/CLAUDE.md,an ignore file belongs to no mechanism and is not a configuration path of path recall

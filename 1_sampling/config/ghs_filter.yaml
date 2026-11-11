@@ -1,0 +1,66 @@
+# Configuration of the GHS filter
+# What 4_filter_ghs.py removes from the retrieval that ghs_retrieval.json names. Where GitHub
+# returned a field, the filter steps read GitHub's current value (the script's docstring lists
+# the fields). The criteria address the perils of mining GitHub that Kalliamvakou et al. describe
+# (filter-ghs-spec.md).
+
+output_path: ghs_filtered.json
+
+# Filter step 1: Gone - no public repository on GitHub under the name, access blocked, a row
+# that the GitHub query left unresolved, a repository that GitHub found without its id, or a
+# repository that GitHub created under the name after the window's created_max
+filter_gone: true
+
+# Filter step 2: Duplicates - rows that GitHub resolves to one repository (same id and creation
+# time). The row that GHS has under the current name is kept. Both rows of a name under which
+# GitHub returned two repositories are left out
+filter_duplicates: true
+
+# Filter step 3: Cleanup - archived, disabled, locked and forked repositories, by GitHub's flags
+filter_cleanup: true
+exclude_archived: true
+exclude_disabled: true
+exclude_locked: true
+exclude_forks: true
+
+# Filter step 4: Missing data - no pull request or issue count in GHS
+filter_missing_data: true
+
+# Filter step 5: Licenses - OSI-approved by the SPDX list, minus the licenses that
+# config/licenses.csv excludes. That file records a review of every license that the
+# sampling frame keeps or excludes, with its reason, the page that it was read on and the date.
+# The step writes every license that it read to ghs_licenses.csv, and
+# `4_filter_ghs.py --check-licenses` names the licenses that still need a review.
+filter_licenses: true
+licenses_path: config/licenses.csv
+license_report_path: ghs_licenses.csv
+license_min_count_percentile: 0  # No percentile cutoff. Only explicit exclusions apply
+
+# Filter step 6: Languages - keep only the top N primary languages
+filter_languages: true
+top_n_languages: 10
+
+# Filter step 7: Educational - tutorials, courses, resource lists and example code
+filter_educational: true
+# Whole topics and the repository part of the name, without the owner. Each alternative has a
+# precision of at least 0.8 on the hand labels in data/sampling/educational/, and at least nine
+# in ten of the labeled repositories that the two expressions remove are educational, example
+# and sample code included (filter-ghs-spec.md). An alternative that occurs inside other words
+# is bounded, because as a substring it would remove machine-learning libraries, concourse and
+# discourse.
+educational_topic_regex: "interview-?(questions?|prep|preparation|preperation|practice)|.-course$|^course-materials?$|bootcamp|^exercism-track$"
+educational_name_regex: "tutorial|cheat[-_ .]?sheet|interview|beginners?|bootcamp|(?<![a-z])(workshops?|exercises?|katas?|intro|introduction|crash[-_]course|by[-_]example|lectures?|homework)(?![a-z]|-containers)|(?<![a-z])(courses?|study)$|[-_.](roadmaps?|101)$|^(awesome|learn|learning)[-_.]|^mslearn[-_]|(?<![a-z])(examples?|samples?|demos|cookbook)(?![a-z])"
+
+# Filter step 8: Activity - commits and watchers below a threshold, by default the median
+# An absolute threshold (*_min) takes precedence over the percentile when it is set
+filter_activity: true
+# commits_min: null        # Absolute override (uncomment to use)
+commits_min_percentile: 0.5
+# watchers_min: null
+watchers_min_percentile: 0.5
+
+# The SPDX license list that config/licenses.csv was reviewed against, beside this file. The
+# filter only reads it, so the image contains the list that a run uses. Before each NAS run,
+# `4_filter_ghs.py --refresh-spdx` replaces it with the current list and names the approvals
+# that changed, so that a person reviews them.
+spdx_list_path: config/spdx_licenses.json

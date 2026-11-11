@@ -1,0 +1,28 @@
+\begin{table*}[t]
+\centering
+\small
+\caption{Co-occurrence of configuration mechanisms among the repositories with at least one. Upper triangle: $\phi$, negative where two mechanisms occur together less often than expected under independence, with Cramér's V as its absolute value. Lower triangle: BH-adjusted $p$-values. Diagonal: number of repositories with the mechanism.}
+\label{tab:config-cooccurrence}
+\begin{tabular}{lrrrrrrrrrr}
+\toprule
+ & \textbf{Context Files} & \textbf{Skills} & \textbf{Subagents} & \textbf{Commands} & \textbf{Rules} & \textbf{Settings} & \textbf{Hooks} & \textbf{MCP} & \textbf{Plugins} & \textbf{LSP} \\
+\midrule
+\textbf{Context Files} & ($n$\,=\,10,026) & $-$0.13 & 0.00 & $-$0.01 & $-$0.09 & $-$0.15 & 0.02 & $-$0.05 & $-$0.05 & $-$0.01 \\
+\textbf{Skills} & $<$.001$^{***}$ & ($n$\,=\,3,218) & 0.24 & 0.13 & 0.16 & 0.23 & 0.20 & 0.20 & 0.22 & 0.03 \\
+\textbf{Subagents} & 0.98 & $<$.001$^{***}$ & ($n$\,=\,651) & 0.18 & 0.12 & 0.23 & 0.22 & 0.18 & 0.10 & 0.06 \\
+\textbf{Commands} & 0.36 & $<$.001$^{***}$ & $<$.001$^{***}$ & ($n$\,=\,281) & 0.11 & 0.10 & 0.07 & 0.11 & 0.07 & 0.02 \\
+\textbf{Rules} & $<$.001$^{***}$ & $<$.001$^{***}$ & $<$.001$^{***}$ & $<$.001$^{***}$ & ($n$\,=\,680) & 0.13 & 0.17 & 0.10 & 0.07 & 0.00 \\
+\textbf{Settings} & $<$.001$^{***}$ & $<$.001$^{***}$ & $<$.001$^{***}$ & $<$.001$^{***}$ & $<$.001$^{***}$ & ($n$\,=\,2,246) & \textbf{0.39} & 0.22 & 0.11 & 0.07 \\
+\textbf{Hooks} & 0.08 & $<$.001$^{***}$ & $<$.001$^{***}$ & $<$.001$^{***}$ & $<$.001$^{***}$ & $<$.001$^{***}$ & ($n$\,=\,498) & 0.17 & 0.15 & 0.04 \\
+\textbf{MCP} & $<$.001$^{***}$ & $<$.001$^{***}$ & $<$.001$^{***}$ & $<$.001$^{***}$ & $<$.001$^{***}$ & $<$.001$^{***}$ & $<$.001$^{***}$ & ($n$\,=\,584) & \textbf{0.31} & 0.08 \\
+\textbf{Plugins} & $<$.001$^{***}$ & $<$.001$^{***}$ & $<$.001$^{***}$ & $<$.001$^{***}$ & $<$.001$^{***}$ & $<$.001$^{***}$ & $<$.001$^{***}$ & $<$.001$^{***}$ & ($n$\,=\,291) & 0.04 \\
+\textbf{LSP} & 0.67$^{\dagger}$ & 0.002$^{**\dagger}$ & $<$.001$^{***\dagger}$ & 0.07$^{\dagger}$ & 1.00$^{\dagger}$ & $<$.001$^{***\dagger}$ & 0.006$^{**\dagger}$ & $<$.001$^{***\dagger}$ & 0.009$^{**\dagger}$ & ($n$\,=\,16) \\
+\bottomrule
+\end{tabular}
+\vspace{2pt}
+\begin{minipage}{\textwidth}
+\centering
+\footnotesize
+\textit{Note:} Chi-squared test, or Fisher's exact test ($^{\dagger}$) where a cell has fewer than 5 observed or expected repositories, with Benjamini--Hochberg FDR correction (45 comparisons, $N$\,=\,10,944 repositories with at least one mechanism). Bold: $|\phi| = V \geq 0.3$ (medium effect, Cohen 1988). $^{*}$\,$p<.05$, $^{**}$\,$p<.01$, $^{***}$\,$p<.001$.
+\end{minipage}
+\end{table*}

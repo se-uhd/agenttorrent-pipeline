@@ -1,0 +1,59 @@
+# The query that 1_download_ghs.py sends to SEART GitHub Search (GHS), and how often it retries.
+
+# The query, in GHS's own parameter names (dto/SearchParameterDto.java of GHS v1.17.1). The
+# script rejects a name that GHS does not define, because GHS ignores such a name and returns
+# the results of a wider query. GHS contains only repositories with at least 10 stars.
+query:
+  contributorsMin: 2
+  pullsMin: 1
+  excludeForks: true
+  hasLicense: true   # a license file that GitHub recognizes, "Other" included
+
+# The sampling window: repositories created at least `created_before_months` before the
+# window's end date, with a last commit in the `committed_within_months` before it. The two
+# bounds are GHS's createdMax and committedMin, both closed and both at midnight UTC.
+#
+# The end date is a date, YYYY-MM-DD, or crawl_date: the oldest crawl date of GHS's languages,
+# where a language's crawl date is the latest lastCommit date that GHS has in it. GHS crawls one
+# language at a time and updates a repository only when it crawls a push to it, so GHS has
+# recorded every push before the oldest crawl date. The window moves with every collection. The
+# end date 2026-03-16, for example, gives the bounds 2024-09-16 and 2025-09-16.
+window:
+  end_date: crawl_date
+  created_before_months: 18
+  committed_within_months: 6
+  # When the crawl date of a language that the previous sampling frame kept is more days old
+  # than this, GHS's crawler has stopped, and the retrieval fails. A language that the previous
+  # sampling frame did not keep and that is older is left out of the end date, because the
+  # filter removes its rows. Without a sampling frame that records its kept languages, as at the
+  # first Start, every language with an older crawl date or none is left out of the end date,
+  # and the retrieval fails when the filter would keep one of these languages over the GHS
+  # search result.
+  max_crawl_lag_days: 30
+
+# The attempts at the download of the GHS search result, which streams for a long time, and the
+# waits between them, and the attempts at each of the short requests (the version, the
+# languages, the crawl dates and the counts before and after the download) with the wait
+# between them. When every attempt at a
+# short request fails, the download waits each of probe_round_wait_minutes and makes the
+# attempts again before it falls back to the previous sampling frame, because an outage of GHS
+# or of the network can last hours, and a fallback keeps the previous sampling window until the
+# next run.
+retries:
+  attempts: 3
+  wait_minutes: [5, 30]
+  probe_attempts: 5
+  probe_wait_seconds: 60
+  probe_round_wait_minutes: [10, 30, 60, 120, 240]
+
+# The item count of the GHS search result has to lie between the counts taken before and after
+# the download, widened by this share. The download and each count read different snapshots of
+# GHS's database, and the count for this query grows from one day to the next.
+completeness_slack: 0.001
+
+# What a run does when GHS returns no response within the attempts, or a GHS search result with
+# far fewer rows than the retrieval before. previous_sampling_frame writes the pointer to the
+# retrieval that the last run used, so that the stage continues over the previous sampling frame
+# and records that the window did not move and how many downloads in a row fell back. fail ends
+# the run with exit 1.
+on_failure: previous_sampling_frame

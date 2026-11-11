@@ -1,0 +1,743 @@
+csv,id,tool,scope,attribution,commits,repos,sole_commits,repos_lost_if_removed
+all_ai_commits.csv,claude-author-01,Claude,author,account,4399,10,2540,0
+all_ai_commits.csv,claude-author-02,Claude,author,convention,4,2,3,0
+all_ai_commits.csv,claude-author-03,Claude,author,account,6877,176,2647,1
+all_ai_commits.csv,claude-author-04,Claude,author,account,40376,761,10252,9
+all_ai_commits.csv,claude-author-05,Claude,author,account,271,45,218,1
+all_ai_commits.csv,claude-trailer-01,Claude,trailer,convention,34191,642,21094,45
+all_ai_commits.csv,claude-trailer-02,Claude,trailer,convention,867749,7399,1527,8
+all_ai_commits.csv,claude-trailer-03,Claude,trailer,convention,1800,134,710,5
+all_ai_commits.csv,claude-trailer-04,Claude,trailer,standard,61,22,0,0
+all_ai_commits.csv,claude-trailer-05,Claude,trailer,standard,120800,2251,0,0
+all_ai_commits.csv,claude-full-body-01,Claude,full_body,convention,506,83,249,0
+all_ai_commits.csv,claude-full-body-02,Claude,full_body,standard,63962,1978,14,0
+all_ai_commits.csv,copilot-author-01,Copilot,author,convention,28539,1804,57,0
+all_ai_commits.csv,copilot-author-02,Copilot,author,account,31693,1136,10,1
+all_ai_commits.csv,copilot-author-03,Copilot,author,convention,1,1,0,0
+all_ai_commits.csv,copilot-author-04,Copilot,author,convention,1,1,0,0
+all_ai_commits.csv,copilot-trailer-01,Copilot,trailer,convention,1095,93,11,5
+all_ai_commits.csv,copilot-trailer-02,Copilot,trailer,convention,136568,4750,0,0
+all_ai_commits.csv,copilot-trailer-03,Copilot,trailer,convention,69,13,0,0
+all_ai_commits.csv,copilot-full-body-01,Copilot,full_body,standard,6553,737,6515,3
+all_ai_commits.csv,copilot-full-body-02,Copilot,full_body,convention,164,13,0,0
+all_ai_commits.csv,cursor-author-01,Cursor,author,convention,0,0,0,0
+all_ai_commits.csv,cursor-author-02,Cursor,author,account,655,59,77,0
+all_ai_commits.csv,cursor-author-03,Cursor,author,convention,7462,191,0,0
+all_ai_commits.csv,cursor-author-04,Cursor,author,account,7473,191,0,0
+all_ai_commits.csv,cursor-author-05,Cursor,author,convention,7486,193,10,0
+all_ai_commits.csv,cursor-trailer-01,Cursor,trailer,convention,1591,130,1038,20
+all_ai_commits.csv,cursor-trailer-02,Cursor,trailer,convention,44143,1925,243,4
+all_ai_commits.csv,cursor-trailer-03,Cursor,trailer,convention,214,31,149,1
+all_ai_commits.csv,cursor-trailer-04,Cursor,trailer,standard,7284,697,6933,172
+all_ai_commits.csv,cursor-full-body-01,Cursor,full_body,convention,14,5,0,0
+all_ai_commits.csv,codex-author-01,Codex,author,convention,33,5,0,0
+all_ai_commits.csv,codex-author-02,Codex,author,convention,19,2,0,0
+all_ai_commits.csv,codex-author-03,Codex,author,account,45,1,0,0
+all_ai_commits.csv,codex-author-04,Codex,author,account,6,1,6,0
+all_ai_commits.csv,codex-author-05,Codex,author,account,1966,34,193,0
+all_ai_commits.csv,codex-trailer-01,Codex,trailer,convention,6354,241,4831,58
+all_ai_commits.csv,codex-trailer-02,Codex,trailer,convention,7963,533,335,20
+all_ai_commits.csv,codex-trailer-03,Codex,trailer,convention,285,50,99,2
+all_ai_commits.csv,codex-full-body-01,Codex,full_body,convention,26,12,5,0
+all_ai_commits.csv,gemini-author-01,Gemini,author,convention,0,0,0,0
+all_ai_commits.csv,gemini-author-02,Gemini,author,convention,0,0,0,0
+all_ai_commits.csv,gemini-author-03,Gemini,author,convention,0,0,0,0
+all_ai_commits.csv,gemini-author-04,Gemini,author,account,11,3,0,0
+all_ai_commits.csv,gemini-author-05,Gemini,author,convention,11,3,0,0
+all_ai_commits.csv,gemini-author-06,Gemini,author,account,405,1,246,0
+all_ai_commits.csv,gemini-full-body-01,Gemini,full_body,convention,0,0,0,0
+all_ai_commits.csv,claude-trailer-06,Claude,trailer,convention,15188,727,93,4
+all_ai_commits.csv,copilot-trailer-04,Copilot,trailer,convention,137918,4772,215,1
+all_ai_commits.csv,codex-trailer-04,Codex,trailer,convention,3473,300,383,1
+all_ai_commits.csv,codex-trailer-05,Codex,trailer,standard,23,14,0,0
+all_ai_commits.csv,codex-author-06,Codex,author,account,26,12,3,0
+all_ai_commits.csv,cursor-trailer-05,Cursor,trailer,convention,296,24,55,0
+all_ai_commits.csv,gemini-trailer-01,Gemini,trailer,convention,5355,288,79,11
+all_ai_commits.csv,copilot-trailer-05,Copilot,trailer,standard,130509,4308,63,0
+all_ai_commits.csv,cursor-trailer-06,Cursor,trailer,standard,44177,1919,2,0
+all_ai_commits.csv,codex-trailer-06,Codex,trailer,standard,5123,314,656,6
+all_ai_commits.csv,cursor-full-body-02,Cursor,full_body,standard,1565,156,0,0
+all_ai_commits.csv,codex-full-body-02,Codex,full_body,convention,421,31,372,1
+all_ai_commits.csv,claude-full-body-03,Claude,full_body,convention,1393,24,29,0
+all_ai_commits.csv,codex-full-body-03,Codex,full_body,convention,950,2,948,0
+all_ai_commits.csv,claude-full-body-04,Claude,full_body,convention,41,2,22,1
+all_ai_commits.csv,copilot-full-body-03,Copilot,full_body,convention,27,1,15,0
+all_ai_commits.csv,cursor-full-body-03,Cursor,full_body,convention,1,1,0,0
+all_ai_commits.csv,gemini-full-body-02,Gemini,full_body,convention,4,1,4,0
+all_ai_commits.csv,claude-full-body-05,Claude,full_body,convention,68808,2098,1836,3
+all_ai_commits.csv,claude-full-body-06,Claude,full_body,convention,491,119,220,7
+all_ai_commits.csv,codex-full-body-04,Codex,full_body,convention,91,23,78,6
+all_ai_commits.csv,copilot-full-body-04,Copilot,full_body,convention,7,7,3,0
+all_ai_commits.csv,cursor-full-body-04,Cursor,full_body,convention,7,4,1,0
+all_ai_commits.csv,codex-full-body-05,Codex,full_body,convention,453,88,310,18
+all_ai_commits.csv,copilot-full-body-05,Copilot,full_body,convention,851,54,91,1
+all_ai_commits.csv,cursor-full-body-05,Cursor,full_body,convention,1613,171,24,1
+all_ai_commits.csv,gemini-full-body-03,Gemini,full_body,convention,24,7,19,5
+all_ai_commits.csv,copilot-full-body-06,Copilot,full_body,convention,23,7,5,0
+all_ai_commits.csv,claude-trailer-07,Claude,trailer,convention,1315,85,35,1
+all_ai_commits.csv,copilot-trailer-06,Copilot,trailer,convention,63,29,2,0
+all_ai_commits.csv,cursor-trailer-07,Cursor,trailer,convention,647,29,41,2
+all_ai_commits.csv,codex-trailer-07,Codex,trailer,convention,77,27,2,0
+all_ai_commits.csv,claude-full-body-07,Claude,full_body,convention,3214,225,900,5
+all_ai_commits.csv,copilot-full-body-07,Copilot,full_body,convention,1290,22,1238,0
+all_ai_commits.csv,cursor-full-body-06,Cursor,full_body,convention,106,38,87,3
+all_ai_commits.csv,codex-full-body-06,Codex,full_body,convention,160,45,66,4
+all_ai_commits.csv,copilot-full-body-08,Copilot,full_body,standard,2795,216,249,0
+all_ai_commits.csv,copilot-full-body-09,Copilot,full_body,standard,178,73,177,18
+all_ai_commits.csv,gemini-trailer-02,Gemini,trailer,convention,287,58,216,45
+all_ai_commits.csv,claude-author-06,Claude,author,convention,658,23,275,0
+all_ai_commits.csv,claude-author-07,Claude,author,convention,834,26,124,1
+all_ai_commits.csv,claude-author-08,Claude,author,convention,24,3,5,0
+all_ai_commits.csv,claude-author-09,Claude,author,account,2,1,0,0
+all_ai_commits.csv,claude-author-13,Claude,author,account,2561,1,2310,0
+all_ai_commits.csv,claude-author-11,Claude,author,convention,930,29,42,0
+all_ai_commits.csv,claude-author-14,Claude,author,convention,156,1,4,0
+all_ai_commits.csv,claude-author-15,Claude,author,convention,15,2,10,0
+all_ai_commits.csv,copilot-author-05,Copilot,author,account,60114,2542,85,0
+all_ai_commits.csv,copilot-author-06,Copilot,author,account,27741,1746,0,0
+all_ai_commits.csv,copilot-author-07,Copilot,author,account,1,1,0,0
+all_ai_commits.csv,claude-full-body-08,Claude,full_body,convention,720,115,94,1
+all_ai_commits.csv,codex-full-body-07,Codex,full_body,convention,689,100,160,3
+all_ai_commits.csv,codex-full-body-08,Codex,full_body,standard,17,7,0,0
+all_ai_commits.csv,copilot-full-body-10,Copilot,full_body,convention,49,17,7,0
+all_ai_commits.csv,cursor-full-body-07,Cursor,full_body,convention,31,15,1,0
+all_ai_commits.csv,gemini-full-body-04,Gemini,full_body,convention,79,4,78,1
+all_ai_commits.csv,gemini-full-body-05,Gemini,full_body,convention,6,3,2,0
+all_ai_commits.csv,codex-trailer-08,Codex,trailer,standard,63,13,1,0
+all_ai_commits.csv,copilot-trailer-07,Copilot,trailer,reviewer,39837,3192,0,0
+all_ai_commits.csv,copilot-trailer-08,Copilot,trailer,reviewer,3189,875,0,0
+all_ai_commits.csv,gemini-trailer-03,Gemini,trailer,reviewer,5265,273,0,0
+all_ai_commits.csv,gemini-trailer-04,Gemini,trailer,standard,3,3,0,0
+all_ai_commits.csv,gemini-trailer-06,Gemini,trailer,convention,20,1,19,0
+all_ai_commits.csv,gemini-trailer-07,Gemini,trailer,convention,170,1,11,0
+all_ai_commits.csv,gemini-trailer-09,Gemini,trailer,convention,2,2,2,2
+all_ai_commits.csv,claude-trailer-08,Claude,trailer,convention,1257,76,0,0
+all_ai_commits.csv,claude-trailer-09,Claude,trailer,standard,863428,7381,0,0
+all_ai_commits.csv,claude-trailer-10,Claude,trailer,standard,3557,225,0,0
+all_ai_commits.csv,copilot-trailer-09,Copilot,trailer,convention,60,28,0,0
+all_ai_commits.csv,cursor-trailer-08,Cursor,trailer,convention,603,21,0,0
+all_ai_commits.csv,cursor-trailer-09,Cursor,trailer,standard,80,21,0,0
+all_ai_commits.csv,cursor-full-body-08,Cursor,full_body,standard,1538,126,1521,2
+all_ai_commits.csv,codex-trailer-09,Codex,trailer,convention,58,23,0,0
+all_ai_commits.csv,claude-full-body-09,Claude,full_body,standard,134902,2551,490,2
+all_ai_commits.csv,copilot-trailer-10,Copilot,trailer,standard,11747,320,1321,1
+all_ai_commits.csv,claude-full-body-11,Claude,full_body,convention,190,1,88,0
+all_ai_commits.csv,codex-trailer-10,Codex,trailer,convention,71,1,71,0
+all_ai_commits.csv,codex-trailer-11,Codex,trailer,standard,3703,310,0,0
+all_ai_commits.csv,codex-author-07,Codex,author,account,279,6,0,0
+all_ai_commits.csv,codex-full-body-10,Codex,full_body,standard,20319,828,19911,562
+all_ai_commits.csv,codex-full-body-12,Codex,full_body,standard,654,32,654,3
+all_ai_commits.csv,copilot-trailer-11,Copilot,trailer,convention,70,3,13,0
+all_ai_commits.csv,copilot-trailer-12,Copilot,trailer,standard,3252,713,0,0
+all_ai_commits.csv,copilot-trailer-13,Copilot,trailer,convention,10,2,10,0
+all_ai_commits.csv,copilot-trailer-16,Copilot,trailer,convention,98,23,26,0
+all_ai_commits.csv,claude-trailer-11,Claude,trailer,convention,0,0,0,0
+all_ai_commits.csv,claude-full-body-17,Claude,full_body,convention,78,2,76,0
+all_ai_commits.csv,claude-full-body-12,Claude,full_body,convention,14,8,8,0
+all_ai_commits.csv,claude-full-body-13,Claude,full_body,convention,162,39,81,0
+all_ai_commits.csv,claude-full-body-14,Claude,full_body,convention,197,59,0,0
+all_ai_commits.csv,claude-full-body-15,Claude,full_body,convention,14,11,13,0
+all_ai_commits.csv,claude-full-body-16,Claude,full_body,convention,55,34,13,0
+all_ai_commits.csv,claude-full-body-18,Claude,full_body,standard,16069,568,15314,8
+all_ai_commits.csv,copilot-full-body-11,Copilot,full_body,convention,1,1,1,0
+all_ai_commits.csv,opencode-author-01,OpenCode,author,account,1891,8,1691,1
+all_ai_commits.csv,opencode-trailer-01,OpenCode,trailer,convention,2946,188,1879,102
+all_ai_commits.csv,opencode-trailer-02,OpenCode,trailer,standard,703,55,56,5
+all_ai_commits.csv,opencode-trailer-07,OpenCode,trailer,convention,49,11,5,1
+all_ai_commits.csv,opencode-trailer-03,OpenCode,trailer,standard,821,84,819,72
+all_ai_commits.csv,opencode-trailer-04,OpenCode,trailer,convention,155,14,28,3
+all_ai_commits.csv,opencode-trailer-05,OpenCode,trailer,convention,28,4,12,3
+all_ai_commits.csv,opencode-full-body-01,OpenCode,full_body,convention,37,8,3,1
+all_ai_commits.csv,opencode-full-body-02,OpenCode,full_body,convention,230,35,54,8
+all_ai_commits.csv,opencode-full-body-03,OpenCode,full_body,convention,7,5,5,2
+all_ai_commits.csv,opencode-full-body-04,OpenCode,full_body,convention,109,2,103,1
+all_ai_commits.csv,opencode-full-body-05,OpenCode,full_body,standard,76,9,76,1
+all_ai_commits.csv,opencode-full-body-06,OpenCode,full_body,standard,145,15,0,0
+all_ai_commits.csv,opencode-trailer-06,OpenCode,trailer,standard,270,6,0,0
+all_ai_commits.csv,codex-trailer-12,Codex,trailer,convention,190,11,0,0
+all_ai_commits.csv,claude-trailer-12,Claude,trailer,convention,990,13,43,0
+all_ai_commits.csv,cursor-trailer-10,Cursor,trailer,convention,42,6,8,2
+all_ai_commits.csv,copilot-full-body-12,Copilot,full_body,convention,1,1,0,0
+all_ai_commits.csv,copilot-full-body-19,Copilot,full_body,convention,48,14,6,0
+all_ai_commits.csv,copilot-full-body-20,Copilot,full_body,convention,0,0,0,0
+all_ai_commits.csv,copilot-full-body-21,Copilot,full_body,convention,384,19,17,0
+all_ai_commits.csv,copilot-full-body-22,Copilot,full_body,convention,856,4,30,0
+all_ai_commits.csv,copilot-full-body-23,Copilot,full_body,convention,2,1,1,0
+all_ai_commits.csv,copilot-full-body-24,Copilot,full_body,convention,2,2,0,0
+all_ai_commits.csv,copilot-full-body-25,Copilot,full_body,convention,1,1,0,0
+all_ai_commits.csv,copilot-full-body-26,Copilot,full_body,convention,41,23,24,3
+all_ai_commits.csv,copilot-full-body-27,Copilot,full_body,convention,1,1,0,0
+all_ai_commits.csv,copilot-full-body-28,Copilot,full_body,convention,7,6,6,1
+all_ai_commits.csv,copilot-full-body-29,Copilot,full_body,convention,68,15,30,0
+all_ai_commits.csv,copilot-full-body-14,Copilot,full_body,reviewer,55,30,9,0
+all_ai_commits.csv,copilot-full-body-15,Copilot,full_body,convention,0,0,0,0
+all_ai_commits.csv,copilot-full-body-16,Copilot,full_body,standard,107,5,23,0
+all_ai_commits.csv,copilot-full-body-17,Copilot,full_body,convention,1,1,1,0
+all_ai_commits.csv,copilot-full-body-13,Copilot,full_body,standard,5,3,4,0
+all_ai_commits.csv,copilot-full-body-30,Copilot,full_body,convention,5,5,5,1
+all_ai_commits.csv,copilot-full-body-31,Copilot,full_body,convention,2,1,2,0
+all_ai_commits.csv,copilot-full-body-32,Copilot,full_body,convention,76,3,76,0
+all_ai_commits.csv,copilot-full-body-33,Copilot,full_body,convention,14,4,4,0
+all_ai_commits.csv,copilot-full-body-34,Copilot,full_body,convention,3,3,1,0
+all_ai_commits.csv,copilot-full-body-35,Copilot,full_body,convention,7,5,1,0
+all_ai_commits.csv,copilot-full-body-36,Copilot,full_body,convention,15,12,8,2
+all_ai_commits.csv,copilot-full-body-37,Copilot,full_body,convention,134,19,10,3
+all_ai_commits.csv,copilot-full-body-38,Copilot,full_body,convention,22,13,6,0
+all_ai_commits.csv,copilot-full-body-39,Copilot,full_body,convention,15,10,7,0
+all_ai_commits.csv,copilot-full-body-40,Copilot,full_body,convention,9,3,9,0
+all_ai_commits.csv,copilot-full-body-41,Copilot,full_body,convention,3,3,3,0
+all_ai_commits.csv,copilot-full-body-42,Copilot,full_body,convention,0,0,0,0
+all_ai_commits.csv,cursor-trailer-11,Cursor,trailer,convention,319,1,319,0
+all_ai_commits.csv,codex-trailer-13,Codex,trailer,convention,119,4,104,0
+all_ai_commits.csv,codex-trailer-14,Codex,trailer,convention,172,2,0,0
+all_ai_commits.csv,codex-trailer-15,Codex,trailer,convention,184,1,184,0
+all_ai_commits.csv,codex-author-08,Codex,author,account,388,5,0,0
+all_ai_commits.csv,codex-author-09,Codex,author,convention,9,1,0,0
+all_ai_commits.csv,codex-author-10,Codex,author,convention,67,2,22,0
+all_ai_commits.csv,codex-author-11,Codex,author,convention,2777,75,281,8
+all_ai_commits.csv,codex-author-13,Codex,author,account,1250,1,1239,0
+all_ai_commits.csv,codex-author-12,Codex,author,account,17,1,17,0
+all_ai_commits.csv,claude-full-body-19,Claude,full_body,reviewer,28,4,0,0
+all_ai_commits.csv,claude-full-body-20,Claude,full_body,reviewer,140,17,0,0
+all_ai_commits.csv,codex-full-body-11,Codex,full_body,standard,318,46,304,20
+all_ai_commits.csv,codex-full-body-31,Codex,full_body,convention,370,90,26,0
+all_ai_commits.csv,codex-full-body-18,Codex,full_body,convention,43,4,28,0
+all_ai_commits.csv,codex-full-body-19,Codex,full_body,convention,195,39,88,1
+all_ai_commits.csv,codex-full-body-20,Codex,full_body,convention,37,25,21,6
+all_ai_commits.csv,codex-full-body-21,Codex,full_body,convention,86,13,15,1
+all_ai_commits.csv,codex-full-body-22,Codex,full_body,convention,6,6,0,0
+all_ai_commits.csv,codex-full-body-23,Codex,full_body,convention,0,0,0,0
+all_ai_commits.csv,codex-full-body-24,Codex,full_body,convention,296,61,96,6
+all_ai_commits.csv,codex-full-body-25,Codex,full_body,convention,0,0,0,0
+all_ai_commits.csv,codex-full-body-26,Codex,full_body,convention,141,1,57,0
+all_ai_commits.csv,codex-full-body-27,Codex,full_body,convention,5,2,5,0
+all_ai_commits.csv,codex-full-body-28,Codex,full_body,convention,20,14,10,4
+all_ai_commits.csv,codex-full-body-29,Codex,full_body,convention,12,1,12,0
+all_ai_commits.csv,codex-full-body-30,Codex,full_body,convention,2,2,2,0
+all_ai_commits.csv,codex-full-body-13,Codex,full_body,convention,6,1,6,1
+all_ai_commits.csv,codex-full-body-14,Codex,full_body,standard,143,8,133,1
+all_ai_commits.csv,codex-full-body-15,Codex,full_body,convention,163,3,163,0
+all_ai_commits.csv,codex-full-body-16,Codex,full_body,convention,4,1,1,0
+all_ai_commits.csv,codex-full-body-17,Codex,full_body,convention,25,1,25,0
+all_ai_commits.csv,codex-full-body-32,Codex,full_body,convention,36,4,36,2
+all_ai_commits.csv,codex-full-body-33,Codex,full_body,convention,2088,278,1650,98
+all_ai_commits.csv,codex-full-body-34,Codex,full_body,convention,4,1,4,0
+all_ai_commits.csv,codex-full-body-35,Codex,full_body,convention,41,2,40,1
+all_ai_commits.csv,codex-full-body-36,Codex,full_body,convention,32,14,12,2
+all_ai_commits.csv,codex-full-body-37,Codex,full_body,convention,41,26,19,5
+all_ai_commits.csv,codex-full-body-38,Codex,full_body,convention,43,6,33,0
+all_ai_commits.csv,codex-full-body-39,Codex,full_body,convention,39,20,19,5
+all_ai_commits.csv,codex-full-body-40,Codex,full_body,convention,122,48,37,9
+all_ai_commits.csv,codex-full-body-41,Codex,full_body,convention,139,38,46,2
+all_ai_commits.csv,codex-full-body-42,Codex,full_body,convention,20,12,4,1
+all_ai_commits.csv,codex-full-body-43,Codex,full_body,convention,3,2,1,0
+all_ai_commits.csv,codex-full-body-44,Codex,full_body,convention,9,6,8,1
+all_ai_commits.csv,codex-full-body-45,Codex,full_body,convention,3,1,3,1
+all_ai_commits.csv,cursor-full-body-09,Cursor,full_body,standard,916,59,104,2
+all_ai_commits.csv,codex-trailer-16,Codex,trailer,standard,76,12,0,0
+all_ai_commits.csv,opencode-author-02,OpenCode,author,account,12,4,5,1
+all_ai_commits.csv,opencode-author-03,OpenCode,author,convention,1527,21,1513,11
+all_ai_commits.csv,opencode-trailer-08,OpenCode,trailer,standard,42,4,22,0
+all_ai_commits.csv,opencode-trailer-12,OpenCode,trailer,convention,2,1,2,1
+all_ai_commits.csv,opencode-trailer-18,OpenCode,trailer,convention,3,2,3,2
+all_ai_commits.csv,opencode-trailer-10,OpenCode,trailer,convention,12,2,1,0
+all_ai_commits.csv,opencode-trailer-11,OpenCode,trailer,convention,85,11,84,9
+all_ai_commits.csv,opencode-trailer-19,OpenCode,trailer,convention,2,2,2,1
+all_ai_commits.csv,opencode-trailer-20,OpenCode,trailer,convention,5,1,5,0
+all_ai_commits.csv,opencode-full-body-07,OpenCode,full_body,reviewer,7,1,0,0
+all_ai_commits.csv,opencode-full-body-08,OpenCode,full_body,reviewer,10,3,0,0
+all_ai_commits.csv,cursor-full-body-10,Cursor,full_body,convention,13,7,3,1
+all_ai_commits.csv,cursor-full-body-13,Cursor,full_body,convention,33,15,2,0
+all_ai_commits.csv,cursor-full-body-14,Cursor,full_body,convention,6,2,6,1
+all_ai_commits.csv,cursor-full-body-15,Cursor,full_body,convention,34,13,15,0
+all_ai_commits.csv,cursor-full-body-16,Cursor,full_body,convention,1,1,1,0
+all_ai_commits.csv,cursor-full-body-17,Cursor,full_body,convention,1,1,0,0
+all_ai_commits.csv,cursor-full-body-18,Cursor,full_body,convention,3,3,0,0
+all_ai_commits.csv,cursor-full-body-19,Cursor,full_body,convention,0,0,0,0
+all_ai_commits.csv,cursor-full-body-20,Cursor,full_body,convention,21,13,11,3
+all_ai_commits.csv,cursor-full-body-21,Cursor,full_body,convention,2,2,2,1
+all_ai_commits.csv,cursor-full-body-22,Cursor,full_body,convention,3,3,3,1
+all_ai_commits.csv,cursor-full-body-23,Cursor,full_body,convention,32,16,17,2
+all_ai_commits.csv,cursor-full-body-11,Cursor,full_body,convention,13,1,10,0
+all_ai_commits.csv,cursor-full-body-12,Cursor,full_body,convention,7,1,2,0
+all_ai_commits.csv,cursor-full-body-24,Cursor,full_body,convention,3,3,3,1
+all_ai_commits.csv,cursor-full-body-25,Cursor,full_body,convention,0,0,0,0
+all_ai_commits.csv,cursor-full-body-26,Cursor,full_body,convention,1,1,1,0
+all_ai_commits.csv,cursor-full-body-27,Cursor,full_body,convention,2,1,1,0
+all_ai_commits.csv,cursor-full-body-28,Cursor,full_body,convention,5,4,2,0
+all_ai_commits.csv,cursor-full-body-29,Cursor,full_body,convention,9,7,5,0
+all_ai_commits.csv,cursor-full-body-30,Cursor,full_body,convention,4,4,1,0
+all_ai_commits.csv,cursor-full-body-31,Cursor,full_body,convention,20,12,8,1
+all_ai_commits.csv,cursor-full-body-32,Cursor,full_body,convention,2,2,2,0
+all_ai_commits.csv,cursor-full-body-33,Cursor,full_body,convention,192,10,3,0
+all_ai_commits.csv,cursor-full-body-34,Cursor,full_body,convention,20,9,15,0
+all_ai_commits.csv,cursor-full-body-35,Cursor,full_body,convention,3,2,3,0
+all_ai_commits.csv,cursor-full-body-36,Cursor,full_body,convention,1,1,1,0
+all_ai_commits.csv,opencode-full-body-09,OpenCode,full_body,convention,4,4,1,1
+all_ai_commits.csv,opencode-full-body-11,OpenCode,full_body,convention,36,7,3,0
+all_ai_commits.csv,opencode-full-body-12,OpenCode,full_body,convention,1,1,0,0
+all_ai_commits.csv,opencode-full-body-13,OpenCode,full_body,convention,8,3,1,1
+all_ai_commits.csv,opencode-full-body-14,OpenCode,full_body,convention,0,0,0,0
+all_ai_commits.csv,opencode-full-body-15,OpenCode,full_body,convention,4,1,4,0
+all_ai_commits.csv,opencode-full-body-16,OpenCode,full_body,convention,0,0,0,0
+all_ai_commits.csv,opencode-full-body-17,OpenCode,full_body,convention,1,1,1,1
+all_ai_commits.csv,opencode-full-body-18,OpenCode,full_body,convention,0,0,0,0
+all_ai_commits.csv,opencode-full-body-19,OpenCode,full_body,convention,2,2,1,1
+all_ai_commits.csv,opencode-full-body-20,OpenCode,full_body,convention,0,0,0,0
+all_ai_commits.csv,opencode-full-body-21,OpenCode,full_body,convention,0,0,0,0
+all_ai_commits.csv,opencode-full-body-22,OpenCode,full_body,convention,22,12,19,6
+all_ai_commits.csv,opencode-full-body-23,OpenCode,full_body,convention,31,6,4,1
+all_ai_commits.csv,opencode-full-body-24,OpenCode,full_body,convention,0,0,0,0
+all_ai_commits.csv,opencode-full-body-25,OpenCode,full_body,convention,0,0,0,0
+all_ai_commits.csv,opencode-full-body-26,OpenCode,full_body,convention,0,0,0,0
+all_ai_commits.csv,opencode-full-body-27,OpenCode,full_body,convention,1,1,1,0
+all_ai_commits.csv,opencode-full-body-28,OpenCode,full_body,convention,5,4,0,0
+all_ai_commits.csv,opencode-full-body-29,OpenCode,full_body,convention,2,1,2,0
+all_ai_commits.csv,opencode-full-body-30,OpenCode,full_body,convention,6,5,4,1
+all_ai_commits.csv,opencode-full-body-31,OpenCode,full_body,convention,1,1,1,0
+all_ai_commits.csv,opencode-full-body-32,OpenCode,full_body,convention,14,1,0,0
+all_ai_commits.csv,opencode-full-body-33,OpenCode,full_body,convention,0,0,0,0
+all_ai_commits.csv,opencode-full-body-34,OpenCode,full_body,convention,0,0,0,0
+all_ai_commits.csv,opencode-full-body-35,OpenCode,full_body,convention,0,0,0,0
+all_ai_commits.csv,opencode-full-body-36,OpenCode,full_body,convention,1,1,1,0
+all_ai_commits.csv,gemini-full-body-06,Gemini,full_body,convention,1,1,1,0
+all_ai_commits.csv,gemini-author-08,Gemini,author,account,6,1,6,0
+all_ai_commits.csv,gemini-full-body-08,Gemini,full_body,convention,9,2,8,1
+all_ai_commits.csv,gemini-full-body-09,Gemini,full_body,convention,1,1,0,0
+all_ai_commits.csv,gemini-full-body-10,Gemini,full_body,convention,0,0,0,0
+all_ai_commits.csv,gemini-full-body-11,Gemini,full_body,convention,1,1,0,0
+all_ai_commits.csv,gemini-full-body-12,Gemini,full_body,convention,0,0,0,0
+all_ai_commits.csv,gemini-full-body-13,Gemini,full_body,convention,0,0,0,0
+all_ai_commits.csv,gemini-full-body-14,Gemini,full_body,convention,0,0,0,0
+all_ai_commits.csv,gemini-full-body-15,Gemini,full_body,convention,0,0,0,0
+all_ai_commits.csv,gemini-full-body-16,Gemini,full_body,convention,4,4,1,0
+all_ai_commits.csv,gemini-full-body-17,Gemini,full_body,convention,0,0,0,0
+all_ai_commits.csv,gemini-full-body-18,Gemini,full_body,convention,0,0,0,0
+all_ai_commits.csv,gemini-full-body-19,Gemini,full_body,convention,82,7,17,2
+all_ai_commits.csv,gemini-full-body-20,Gemini,full_body,convention,2,2,1,0
+all_ai_commits.csv,gemini-full-body-21,Gemini,full_body,convention,99,1,98,0
+all_ai_commits.csv,gemini-full-body-22,Gemini,full_body,convention,0,0,0,0
+all_ai_commits.csv,gemini-full-body-23,Gemini,full_body,convention,0,0,0,0
+all_ai_commits.csv,gemini-full-body-24,Gemini,full_body,convention,0,0,0,0
+all_ai_commits.csv,gemini-full-body-25,Gemini,full_body,convention,2,2,2,0
+all_ai_commits.csv,gemini-full-body-26,Gemini,full_body,convention,0,0,0,0
+all_ai_commits.csv,gemini-full-body-27,Gemini,full_body,convention,0,0,0,0
+all_ai_commits.csv,gemini-full-body-28,Gemini,full_body,convention,2,2,2,1
+all_ai_commits.csv,gemini-full-body-29,Gemini,full_body,convention,0,0,0,0
+all_ai_commits.csv,gemini-full-body-30,Gemini,full_body,convention,1,1,1,1
+all_ai_commits.csv,gemini-full-body-31,Gemini,full_body,convention,2,2,2,1
+all_ai_commits.csv,gemini-full-body-32,Gemini,full_body,convention,1,1,1,0
+all_ai_commits.csv,gemini-full-body-33,Gemini,full_body,convention,0,0,0,0
+all_ai_commits.csv,codex-trailer-17,Codex,trailer,standard,40,9,40,2
+all_ai_commits.csv,claude-trailer-13,Claude,trailer,convention,20,10,8,0
+all_ai_commits.csv,claude-trailer-14,Claude,trailer,convention,137,3,137,0
+all_ai_commits.csv,claude-trailer-17,Claude,trailer,convention,21,3,19,0
+all_ai_commits.csv,claude-trailer-29,Claude,trailer,convention,597,12,5,0
+all_ai_commits.csv,claude-trailer-16,Claude,trailer,standard,677,4,112,0
+all_ai_commits.csv,claude-trailer-18,Claude,trailer,standard,2,1,0,0
+all_ai_commits.csv,claude-trailer-19,Claude,trailer,reviewer,3,2,3,0
+all_ai_commits.csv,claude-trailer-21,Claude,trailer,convention,42,3,5,0
+all_ai_commits.csv,claude-trailer-22,Claude,trailer,convention,13,10,11,0
+all_ai_commits.csv,claude-trailer-23,Claude,trailer,convention,2,2,2,0
+all_ai_commits.csv,claude-trailer-25,Claude,trailer,convention,212,1,11,0
+all_ai_commits.csv,claude-trailer-26,Claude,trailer,convention,51,1,50,0
+all_ai_commits.csv,claude-trailer-27,Claude,trailer,convention,6,4,6,0
+all_ai_commits.csv,claude-trailer-15,Claude,trailer,convention,496,6,481,1
+all_ai_commits.csv,claude-trailer-30,Claude,trailer,convention,111,1,0,0
+all_ai_commits.csv,codex-trailer-18,Codex,trailer,convention,16,5,13,0
+all_ai_commits.csv,codex-trailer-23,Codex,trailer,convention,25,1,25,0
+all_ai_commits.csv,codex-trailer-24,Codex,trailer,convention,96,1,85,0
+all_ai_commits.csv,codex-trailer-25,Codex,trailer,convention,0,0,0,0
+all_ai_commits.csv,codex-trailer-27,Codex,trailer,convention,3,2,1,0
+all_ai_commits.csv,codex-trailer-19,Codex,trailer,convention,270,1,270,0
+all_ai_commits.csv,codex-trailer-20,Codex,trailer,convention,1,1,1,1
+all_ai_commits.csv,codex-trailer-21,Codex,trailer,convention,3,1,3,1
+all_ai_commits.csv,codex-trailer-22,Codex,trailer,convention,7,4,4,0
+all_ai_commits.csv,cursor-trailer-12,Cursor,trailer,convention,1,1,0,0
+all_ai_commits.csv,cursor-trailer-15,Cursor,trailer,convention,9,1,9,0
+all_ai_commits.csv,cursor-trailer-16,Cursor,trailer,convention,0,0,0,0
+all_ai_commits.csv,cursor-trailer-13,Cursor,trailer,convention,2,2,2,0
+all_ai_commits.csv,cursor-trailer-14,Cursor,trailer,convention,1,1,1,0
+all_ai_commits.csv,cursor-trailer-17,Cursor,trailer,convention,3,2,3,0
+all_ai_commits.csv,claude-full-body-21,Claude,full_body,convention,2,2,2,0
+all_ai_commits.csv,claude-full-body-31,Claude,full_body,convention,257,1,52,0
+all_ai_commits.csv,claude-full-body-32,Claude,full_body,convention,693,108,117,0
+all_ai_commits.csv,claude-full-body-26,Claude,full_body,convention,84,13,12,0
+all_ai_commits.csv,claude-full-body-27,Claude,full_body,convention,453,130,48,1
+all_ai_commits.csv,claude-full-body-28,Claude,full_body,convention,168,32,121,0
+all_ai_commits.csv,claude-full-body-29,Claude,full_body,convention,180,23,24,0
+all_ai_commits.csv,claude-full-body-30,Claude,full_body,convention,79,39,0,0
+all_ai_commits.csv,claude-full-body-34,Claude,full_body,convention,77,3,7,0
+all_ai_commits.csv,claude-full-body-35,Claude,full_body,convention,1558,98,291,2
+all_ai_commits.csv,claude-full-body-38,Claude,full_body,convention,0,0,0,0
+all_ai_commits.csv,claude-full-body-39,Claude,full_body,convention,122,2,39,0
+all_ai_commits.csv,claude-full-body-40,Claude,full_body,convention,319,110,51,7
+all_ai_commits.csv,claude-full-body-41,Claude,full_body,convention,0,0,0,0
+all_ai_commits.csv,claude-full-body-23,Claude,full_body,convention,195,1,178,0
+all_ai_commits.csv,claude-full-body-24,Claude,full_body,convention,7,1,4,0
+all_ai_commits.csv,claude-full-body-25,Claude,full_body,convention,149,4,44,0
+all_ai_commits.csv,claude-full-body-42,Claude,full_body,convention,11,11,3,0
+all_ai_commits.csv,claude-full-body-43,Claude,full_body,convention,29,21,26,0
+all_ai_commits.csv,claude-full-body-44,Claude,full_body,convention,17,1,4,0
+all_ai_commits.csv,claude-full-body-45,Claude,full_body,convention,246,6,156,0
+all_ai_commits.csv,claude-full-body-46,Claude,full_body,convention,162,31,43,0
+all_ai_commits.csv,claude-full-body-47,Claude,full_body,convention,200,65,39,1
+all_ai_commits.csv,claude-full-body-48,Claude,full_body,convention,222,72,37,0
+all_ai_commits.csv,claude-full-body-49,Claude,full_body,convention,144,71,70,4
+all_ai_commits.csv,claude-full-body-50,Claude,full_body,convention,265,87,69,1
+all_ai_commits.csv,claude-full-body-51,Claude,full_body,convention,274,47,59,1
+all_ai_commits.csv,claude-full-body-52,Claude,full_body,convention,185,74,27,2
+all_ai_commits.csv,claude-full-body-53,Claude,full_body,convention,69,32,63,1
+all_ai_commits.csv,claude-full-body-54,Claude,full_body,convention,26,21,24,2
+all_ai_commits.csv,claude-full-body-55,Claude,full_body,convention,207,2,19,0
+all_ai_commits.csv,claude-full-body-56,Claude,full_body,convention,3,1,3,0
+other_ai_commits.csv,devin-author-01,Devin,author,account,7380,142,3805,15
+other_ai_commits.csv,devin-trailer-01,Devin,trailer,standard,6486,219,2725,104
+other_ai_commits.csv,jules-author-01,Jules,author,account,2422,138,2022,86
+other_ai_commits.csv,jules-trailer-01,Jules,trailer,standard,1559,168,1159,115
+other_ai_commits.csv,jules-trailer-02,Jules,trailer,convention,3,1,3,0
+other_ai_commits.csv,jules-full-body-01,Jules,full_body,convention,19,1,19,0
+other_ai_commits.csv,coderabbit-author-01,CodeRabbit,author,account,184,70,92,11
+other_ai_commits.csv,coderabbit-trailer-01,CodeRabbit,trailer,standard,4430,590,1923,195
+other_ai_commits.csv,factory-trailer-01,Factory,trailer,standard,549,41,549,41
+other_ai_commits.csv,fennoai-author-01,FennoAI,author,account,14,2,9,1
+other_ai_commits.csv,fennoai-full-body-01,FennoAI,full_body,standard,6,1,1,0
+other_ai_commits.csv,fixit-author-01,Fixit,author,account,4,1,0,0
+other_ai_commits.csv,fixit-trailer-01,Fixit,trailer,standard,4,1,0,0
+other_ai_commits.csv,flashduty-author-01,Flashduty,author,account,8,1,8,1
+other_ai_commits.csv,forgecode-trailer-01,ForgeCode,trailer,convention,100,1,100,1
+other_ai_commits.csv,forkline-author-01,Forkline,author,account,306,1,228,0
+other_ai_commits.csv,forkline-trailer-01,Forkline,trailer,standard,109,1,31,0
+other_ai_commits.csv,mentat-author-01,Mentat,author,account,259,2,0,0
+other_ai_commits.csv,mentat-trailer-01,Mentat,trailer,standard,287,2,28,0
+other_ai_commits.csv,mergestorm-trailer-01,Mergestorm,trailer,standard,1,1,1,1
+other_ai_commits.csv,sweep-author-01,Sweep,author,account,1122,22,1093,1
+other_ai_commits.csv,sweep-trailer-01,Sweep,trailer,standard,33,12,4,2
+other_ai_commits.csv,aider-trailer-01,aider,trailer,convention,745,43,16,4
+other_ai_commits.csv,qwen-code-trailer-01,Qwen Code,trailer,standard,1405,33,1405,31
+other_ai_commits.csv,continue-author-01,Continue,author,account,0,0,0,0
+other_ai_commits.csv,continue-trailer-01,Continue,trailer,standard,0,0,0,0
+other_ai_commits.csv,corridor-author-01,Corridor,author,account,4,3,1,1
+other_ai_commits.csv,corridor-trailer-01,Corridor,trailer,standard,4,2,1,0
+other_ai_commits.csv,junie-author-01,Junie,author,account,6,1,0,0
+other_ai_commits.csv,junie-trailer-01,Junie,trailer,standard,103,19,97,16
+other_ai_commits.csv,junie-trailer-02,Junie,trailer,convention,1,1,1,0
+other_ai_commits.csv,junie-full-body-01,Junie,full_body,convention,4,4,4,3
+other_ai_commits.csv,kiro-trailer-01,Kiro,trailer,convention,499,21,497,19
+other_ai_commits.csv,letta-code-trailer-01,Letta Code,trailer,standard,6,6,6,6
+other_ai_commits.csv,lia-author-01,Lia,author,account,251,2,3,0
+other_ai_commits.csv,lia-trailer-01,Lia,trailer,standard,292,2,44,0
+other_ai_commits.csv,logicstar-ai-author-01,LogicStar AI,author,account,2,1,2,1
+other_ai_commits.csv,lovable-author-01,Lovable,author,account,139,1,139,0
+other_ai_commits.csv,lovable-trailer-01,Lovable,trailer,standard,1,1,1,0
+other_ai_commits.csv,amp-trailer-01,Amp,trailer,standard,3637,149,3637,149
+other_ai_commits.csv,amp-trailer-02,Amp,trailer,convention,3,2,3,2
+other_ai_commits.csv,askmanu-author-01,askmanu,author,account,3,1,3,0
+other_ai_commits.csv,askmanu-trailer-01,askmanu,trailer,standard,4,3,4,2
+other_ai_commits.csv,atlarix-trailer-01,Atlarix,trailer,convention,9,7,9,7
+other_ai_commits.csv,warp-trailer-01,Warp,trailer,standard,1718,46,1127,45
+other_ai_commits.csv,warp-author-01,Warp,author,account,704,1,60,0
+other_ai_commits.csv,warp-trailer-02,Warp,trailer,standard,317,1,9,0
+other_ai_commits.csv,warp-full-body-01,Warp,full_body,standard,380,1,12,0
+other_ai_commits.csv,watsonx-code-assistant-trailer-01,watsonx Code Assistant,trailer,convention,1,1,1,1
+other_ai_commits.csv,what-the-diff-trailer-01,What The Diff,trailer,reviewer,6,1,6,1
+other_ai_commits.csv,crush-trailer-01,Crush,trailer,convention,508,21,444,9
+other_ai_commits.csv,openhands-trailer-01,OpenHands,trailer,standard,2466,30,2452,24
+other_ai_commits.csv,windsurf-trailer-01,Windsurf,trailer,reviewer,11,7,11,7
+other_ai_commits.csv,pi-trailer-01,pi,trailer,convention,496,49,465,44
+other_ai_commits.csv,hermes-agent-author-02,Hermes Agent,author,convention,1254,6,1253,5
+other_ai_commits.csv,hermes-agent-trailer-01,Hermes Agent,trailer,convention,62,33,53,27
+other_ai_commits.csv,hermes-agent-trailer-02,Hermes Agent,trailer,convention,13,8,4,2
+other_ai_commits.csv,hermes-agent-trailer-03,Hermes Agent,trailer,convention,9,4,9,4
+other_ai_commits.csv,hermes-agent-full-body-01,Hermes Agent,full_body,convention,1,1,1,1
+other_ai_commits.csv,holon-author-01,Holon,author,account,8,1,0,0
+other_ai_commits.csv,holon-trailer-01,Holon,trailer,standard,9,1,1,0
+other_ai_commits.csv,kimi-code-trailer-01,Kimi Code,trailer,convention,65,9,65,9
+other_ai_commits.csv,kimi-code-trailer-02,Kimi Code,trailer,convention,10,1,10,1
+other_ai_commits.csv,trae-trailer-01,TRAE,trailer,convention,343,19,343,19
+other_ai_commits.csv,roo-code-trailer-01,Roo Code,trailer,convention,329,5,329,5
+other_ai_commits.csv,kilo-code-trailer-01,Kilo Code,trailer,convention,110,9,10,1
+other_ai_commits.csv,goose-trailer-01,goose,trailer,convention,27,7,27,7
+other_ai_commits.csv,augment-trailer-01,Augment,trailer,convention,8,2,8,2
+other_ai_commits.csv,augment-author-01,Augment,author,account,15,3,2,0
+other_ai_commits.csv,augment-trailer-02,Augment,trailer,standard,10,2,1,0
+other_ai_commits.csv,augment-full-body-01,Augment,full_body,standard,8,4,3,2
+other_ai_commits.csv,augment-full-body-02,Augment,full_body,convention,2,2,2,2
+other_ai_commits.csv,azure-sre-agent-author-01,Azure SRE Agent,author,convention,9,1,0,0
+other_ai_commits.csv,azure-sre-agent-trailer-01,Azure SRE Agent,trailer,convention,16,2,7,1
+other_ai_commits.csv,bito-trailer-01,Bito,trailer,reviewer,9,2,9,2
+other_ai_commits.csv,zed-trailer-01,Zed,trailer,convention,20,5,20,5
+other_ai_commits.csv,qodo-author-01,Qodo,author,account,2,2,0,0
+other_ai_commits.csv,qodo-trailer-01,Qodo,trailer,reviewer,174,19,172,17
+other_ai_commits.csv,qodo-trailer-02,Qodo,trailer,reviewer,1,1,1,1
+other_ai_commits.csv,greptile-trailer-01,Greptile,trailer,reviewer,2392,176,2392,176
+other_ai_commits.csv,grok-build-trailer-01,Grok Build,trailer,convention,10,3,10,3
+other_ai_commits.csv,grok-cli-trailer-01,Grok CLI,trailer,convention,7,1,7,1
+other_ai_commits.csv,grok-cli-full-body-01,Grok CLI,full_body,convention,1,1,1,1
+other_ai_commits.csv,gru-author-01,Gru,author,account,113,2,5,0
+other_ai_commits.csv,gru-trailer-01,Gru,trailer,standard,198,2,90,0
+other_ai_commits.csv,sourcery-author-01,Sourcery,author,account,11,8,0,0
+other_ai_commits.csv,sourcery-trailer-01,Sourcery,trailer,reviewer,413,61,402,53
+other_ai_commits.csv,starsling-author-01,StarSling,author,account,9,1,0,0
+other_ai_commits.csv,starsling-trailer-01,StarSling,trailer,standard,9,1,0,0
+other_ai_commits.csv,stilla-author-01,Stilla,author,account,166,1,55,0
+other_ai_commits.csv,stilla-trailer-01,Stilla,trailer,standard,142,1,31,0
+other_ai_commits.csv,swe-agent-author-01,SWE-agent,author,account,0,0,0,0
+other_ai_commits.csv,swe-agent-trailer-01,SWE-agent,trailer,standard,1,1,1,1
+other_ai_commits.csv,sourcery-author-02,Sourcery,author,account,6,2,6,2
+other_ai_commits.csv,cubic-trailer-01,cubic,trailer,reviewer,786,58,786,56
+other_ai_commits.csv,cubic-author-01,cubic,author,account,9,2,9,0
+other_ai_commits.csv,seer-author-01,Seer,author,account,89,14,47,4
+other_ai_commits.csv,seer-trailer-01,Seer,trailer,standard,43,10,1,0
+other_ai_commits.csv,sonarqube-agent-author-01,SonarQube Agent,author,account,19,3,10,1
+other_ai_commits.csv,sonarqube-agent-trailer-01,SonarQube Agent,trailer,standard,11,2,2,0
+other_ai_commits.csv,open-swe-author-01,Open SWE,author,account,35,6,7,0
+other_ai_commits.csv,open-swe-trailer-01,Open SWE,trailer,standard,267,8,239,2
+other_ai_commits.csv,openbot-author-01,OpenBot,author,account,7,2,6,1
+other_ai_commits.csv,openbot-trailer-01,OpenBot,trailer,standard,1,1,0,0
+other_ai_commits.csv,promptless-author-01,Promptless,author,account,28,3,7,0
+other_ai_commits.csv,promptless-trailer-01,Promptless,trailer,standard,23,5,2,2
+other_ai_commits.csv,propel-trailer-01,Propel,trailer,reviewer,31,1,31,1
+other_ai_commits.csv,dosu-author-01,Dosu,author,account,40,6,4,1
+other_ai_commits.csv,dosu-trailer-01,Dosu,trailer,standard,41,6,5,1
+other_ai_commits.csv,eca-trailer-01,ECA,trailer,standard,1,1,0,0
+other_ai_commits.csv,eca-full-body-01,ECA,full_body,standard,1,1,0,0
+other_ai_commits.csv,codeflash-author-01,Codeflash,author,account,41,6,36,5
+other_ai_commits.csv,codeflash-trailer-01,Codeflash,trailer,standard,82,19,77,18
+other_ai_commits.csv,mistral-vibe-trailer-01,Mistral Vibe,trailer,standard,270,31,23,2
+other_ai_commits.csv,mistral-vibe-trailer-02,Mistral Vibe,trailer,convention,251,30,4,1
+other_ai_commits.csv,monkeycode-trailer-01,MonkeyCode,trailer,convention,0,0,0,0
+other_ai_commits.csv,gemini-unspecified-trailer-01,Gemini (unspecified),trailer,convention,741,87,741,83
+other_ai_commits.csv,gemini-unspecified-full-body-01,Gemini (unspecified),full_body,convention,2,2,2,2
+other_ai_commits.csv,tool-not-named-trailer-01,tool not named,trailer,convention,2825,101,2814,81
+other_ai_commits.csv,tool-not-named-trailer-02,tool not named,trailer,convention,1408,190,1386,132
+other_ai_commits.csv,tool-not-named-trailer-03,tool not named,trailer,convention,877,43,862,18
+other_ai_commits.csv,tool-not-named-trailer-04,tool not named,trailer,convention,475,42,472,18
+other_ai_commits.csv,tool-not-named-trailer-05,tool not named,trailer,convention,72,10,69,5
+other_ai_commits.csv,tool-not-named-trailer-06,tool not named,trailer,convention,171,34,167,12
+other_ai_commits.csv,tool-not-named-trailer-07,tool not named,trailer,convention,173,24,95,11
+other_ai_commits.csv,tool-not-named-trailer-08,tool not named,trailer,convention,293,18,212,6
+other_ai_commits.csv,tool-not-named-full-body-01,tool not named,full_body,convention,143,25,133,17
+other_ai_commits.csv,tool-not-named-trailer-10,tool not named,trailer,convention,10,3,10,0
+other_ai_commits.csv,tool-not-named-trailer-11,tool not named,trailer,convention,46,10,46,4
+other_ai_commits.csv,tool-not-named-trailer-12,tool not named,trailer,convention,1,1,1,0
+other_ai_commits.csv,tool-not-named-trailer-13,tool not named,trailer,convention,1,1,1,0
+other_ai_commits.csv,tool-not-named-trailer-14,tool not named,trailer,convention,10,7,8,5
+other_ai_commits.csv,tool-not-named-trailer-15,tool not named,trailer,convention,28,15,28,6
+other_ai_commits.csv,tool-not-named-trailer-16,tool not named,trailer,convention,83,12,79,4
+other_ai_commits.csv,tool-not-named-full-body-02,tool not named,full_body,convention,75,18,75,14
+other_ai_commits.csv,tool-not-named-full-body-03,tool not named,full_body,convention,184,1,184,1
+other_ai_commits.csv,codebuff-trailer-01,Codebuff,trailer,convention,865,29,5,1
+other_ai_commits.csv,pi-trailer-02,pi,trailer,convention,2,2,2,1
+other_ai_commits.csv,gemini-unspecified-trailer-02,Gemini (unspecified),trailer,convention,12,6,12,5
+other_ai_commits.csv,gemini-unspecified-full-body-02,Gemini (unspecified),full_body,convention,16,8,15,4
+other_ai_commits.csv,gemini-unspecified-full-body-03,Gemini (unspecified),full_body,convention,2,1,2,0
+other_ai_commits.csv,gemini-unspecified-author-01,Gemini (unspecified),author,convention,12,1,12,1
+other_ai_commits.csv,gemini-unspecified-author-02,Gemini (unspecified),author,convention,38,3,38,2
+other_ai_commits.csv,gemini-unspecified-trailer-03,Gemini (unspecified),trailer,convention,4,1,4,0
+other_ai_commits.csv,gemini-unspecified-full-body-04,Gemini (unspecified),full_body,convention,13,1,13,1
+other_ai_commits.csv,gemini-unspecified-full-body-05,Gemini (unspecified),full_body,convention,2,1,2,0
+other_ai_commits.csv,gemini-unspecified-full-body-06,Gemini (unspecified),full_body,convention,20,9,19,6
+other_ai_commits.csv,gemini-unspecified-full-body-07,Gemini (unspecified),full_body,convention,18,2,18,2
+other_ai_commits.csv,gemini-unspecified-full-body-08,Gemini (unspecified),full_body,convention,2,1,2,1
+other_ai_commits.csv,aider-trailer-02,aider,trailer,standard,729,39,0,0
+other_ai_commits.csv,almanax-trailer-01,Almanax,trailer,reviewer,4,1,4,1
+other_ai_commits.csv,amazon-q-developer-author-01,Amazon Q Developer,author,account,5,1,5,1
+other_ai_commits.csv,amazon-q-developer-trailer-01,Amazon Q Developer,trailer,standard,0,0,0,0
+other_ai_commits.csv,amazon-q-developer-full-body-01,Amazon Q Developer,full_body,reviewer,0,0,0,0
+other_ai_commits.csv,qwen-code-trailer-02,Qwen Code,trailer,convention,9,4,9,2
+other_ai_commits.csv,reasonix-trailer-01,Reasonix,trailer,convention,6,2,6,2
+other_ai_commits.csv,replicas-author-01,Replicas,author,account,76,2,35,0
+other_ai_commits.csv,replicas-trailer-01,Replicas,trailer,standard,41,2,0,0
+other_ai_commits.csv,kiro-trailer-02,Kiro,trailer,standard,2,2,0,0
+other_ai_commits.csv,labor0-author-01,Labor0,author,account,65,2,0,0
+other_ai_commits.csv,labor0-trailer-01,Labor0,trailer,standard,65,2,0,0
+other_ai_commits.csv,crush-trailer-02,Crush,trailer,standard,75,17,0,0
+other_ai_commits.csv,crush-trailer-03,Crush,trailer,convention,13,8,2,1
+other_ai_commits.csv,crush-trailer-04,Crush,trailer,standard,10,1,10,1
+other_ai_commits.csv,windsurf-trailer-02,Windsurf,trailer,standard,9,1,9,1
+other_ai_commits.csv,workbuddy-trailer-01,WorkBuddy,trailer,convention,20,5,20,5
+other_ai_commits.csv,zcode-trailer-01,ZCode,trailer,convention,643,15,643,15
+other_ai_commits.csv,pi-trailer-03,pi,trailer,standard,4,1,0,0
+other_ai_commits.csv,pi-trailer-04,pi,trailer,convention,175,19,140,12
+other_ai_commits.csv,pi-trailer-05,pi,trailer,convention,279,1,279,1
+other_ai_commits.csv,pi-trailer-06,pi,trailer,convention,5,2,1,1
+other_ai_commits.csv,pi-full-body-01,pi,full_body,convention,6,4,4,2
+other_ai_commits.csv,pi-full-body-02,pi,full_body,convention,78,2,76,0
+other_ai_commits.csv,polylane-author-01,Polylane,author,account,15,2,1,0
+other_ai_commits.csv,polylane-trailer-01,Polylane,trailer,standard,14,2,0,0
+other_ai_commits.csv,oh-my-pi-trailer-01,oh-my-pi,trailer,convention,110,13,110,13
+other_ai_commits.csv,oh-my-pi-full-body-01,oh-my-pi,full_body,convention,1,1,1,1
+other_ai_commits.csv,kilo-code-trailer-02,Kilo Code,trailer,standard,450,12,312,5
+other_ai_commits.csv,kilo-code-trailer-03,Kilo Code,trailer,convention,2,1,2,0
+other_ai_commits.csv,kilo-code-author-01,Kilo Code,author,account,819,1,769,0
+other_ai_commits.csv,kilo-code-author-02,Kilo Code,author,convention,10,1,3,0
+other_ai_commits.csv,codebuff-trailer-02,Codebuff,trailer,standard,860,28,0,0
+other_ai_commits.csv,codg-trailer-01,Codg,trailer,standard,96,2,0,0
+other_ai_commits.csv,codg-full-body-01,Codg,full_body,standard,96,2,0,0
+other_ai_commits.csv,codegen-author-01,Codegen,author,account,5,2,2,1
+other_ai_commits.csv,codegen-trailer-01,Codegen,trailer,standard,6,3,3,2
+other_ai_commits.csv,openhands-author-01,OpenHands,author,account,123,13,109,7
+other_ai_commits.csv,devin-full-body-01,Devin,full_body,standard,1068,50,1034,4
+other_ai_commits.csv,sweep-full-body-01,Sweep,full_body,standard,431,13,431,1
+other_ai_commits.csv,tembo-author-01,Tembo,author,account,6,2,6,0
+other_ai_commits.csv,tembo-trailer-01,Tembo,trailer,standard,6,2,1,0
+other_ai_commits.csv,tembo-full-body-01,Tembo,full_body,reviewer,5,1,0,0
+other_ai_commits.csv,tembo-full-body-02,Tembo,full_body,reviewer,0,0,0,0
+other_ai_commits.csv,devin-trailer-02,Devin,trailer,standard,137,3,49,0
+other_ai_commits.csv,ellipsis-author-01,Ellipsis,author,account,3,3,1,1
+other_ai_commits.csv,ellipsis-trailer-01,Ellipsis,trailer,reviewer,700,24,698,22
+other_ai_commits.csv,pullfrog-author-01,Pullfrog,author,account,210,18,170,6
+other_ai_commits.csv,pullfrog-trailer-01,Pullfrog,trailer,standard,125,17,85,5
+other_ai_commits.csv,command-code-trailer-01,Command Code,trailer,standard,295,15,295,15
+other_ai_commits.csv,multica-trailer-01,Multica,trailer,standard,537,19,537,19
+other_ai_commits.csv,nedi-author-01,Nedi,author,account,186,1,6,0
+other_ai_commits.csv,nedi-trailer-01,Nedi,trailer,standard,180,1,0,0
+other_ai_commits.csv,nero-author-01,Nero,author,account,2,1,0,0
+other_ai_commits.csv,nero-trailer-01,Nero,trailer,standard,2,1,0,0
+other_ai_commits.csv,nib-trailer-01,nib,trailer,convention,48,1,48,1
+other_ai_commits.csv,no-mistakes-author-01,no-mistakes,author,convention,3,1,3,0
+other_ai_commits.csv,no-mistakes-trailer-01,no-mistakes,trailer,convention,12,1,12,0
+other_ai_commits.csv,nvt-agent-author-01,nvt-agent,author,account,38,1,3,0
+other_ai_commits.csv,nvt-agent-trailer-01,nvt-agent,trailer,standard,35,1,0,0
+other_ai_commits.csv,goose-trailer-02,goose,trailer,convention,56,9,56,9
+other_ai_commits.csv,goose-author-01,goose,author,account,4,1,4,1
+other_ai_commits.csv,grafana-assistant-author-01,Grafana Assistant,author,account,0,0,0,0
+other_ai_commits.csv,grafana-assistant-trailer-01,Grafana Assistant,trailer,standard,3,1,3,1
+other_ai_commits.csv,coderabbit-full-body-01,CodeRabbit,full_body,reviewer,961,166,0,0
+other_ai_commits.csv,devin-full-body-02,Devin,full_body,reviewer,27,5,0,0
+other_ai_commits.csv,coderabbit-full-body-02,CodeRabbit,full_body,reviewer,1454,268,0,0
+other_ai_commits.csv,devin-full-body-03,Devin,full_body,reviewer,44,15,0,0
+other_ai_commits.csv,devin-trailer-03,Devin,trailer,convention,6,3,5,2
+other_ai_commits.csv,devlo-author-01,devlo,author,account,24,1,24,0
+other_ai_commits.csv,devlo-trailer-01,devlo,trailer,standard,23,1,5,0
+other_ai_commits.csv,devlo-full-body-01,devlo,full_body,reviewer,18,1,0,0
+other_ai_commits.csv,ibm-bob-trailer-01,IBM Bob,trailer,convention,284,18,283,15
+other_ai_commits.csv,ibm-bob-trailer-02,IBM Bob,trailer,convention,418,1,417,0
+other_ai_commits.csv,ibm-bob-full-body-01,IBM Bob,full_body,convention,35,6,35,4
+other_ai_commits.csv,ona-trailer-01,Ona,trailer,convention,7,7,7,7
+other_ai_commits.csv,graphite-trailer-01,Graphite,trailer,reviewer,677,39,677,39
+other_ai_commits.csv,paperclip-trailer-01,Paperclip,trailer,standard,203,29,203,29
+other_ai_commits.csv,bits-code-trailer-01,Bits Code,trailer,standard,14,2,3,0
+other_ai_commits.csv,bits-code-trailer-02,Bits Code,trailer,standard,126,15,60,8
+other_ai_commits.csv,bits-code-full-body-01,Bits Code,full_body,standard,109,5,35,0
+other_ai_commits.csv,bits-code-author-01,Bits Code,author,account,6,3,6,1
+other_ai_commits.csv,bosun-author-01,Bosun,author,account,19,1,0,0
+other_ai_commits.csv,bosun-trailer-01,Bosun,trailer,standard,19,1,0,0
+other_ai_commits.csv,nx-cloud-author-01,Nx Cloud,author,account,41,4,41,4
+other_ai_commits.csv,capy-author-01,Capy,author,account,79,4,70,1
+other_ai_commits.csv,capy-trailer-01,Capy,trailer,standard,492,8,483,5
+other_ai_commits.csv,capy-trailer-02,Capy,trailer,convention,2,1,2,0
+other_ai_commits.csv,fullsend-author-01,Fullsend,author,account,204,7,15,1
+other_ai_commits.csv,fullsend-trailer-01,Fullsend,trailer,standard,211,7,22,1
+other_ai_commits.csv,posthog-code-trailer-01,PostHog Code,trailer,standard,148,6,140,1
+other_ai_commits.csv,posthog-code-author-01,PostHog Code,author,account,32,7,4,0
+other_ai_commits.csv,posthog-code-trailer-02,PostHog Code,trailer,standard,27,6,1,0
+other_ai_commits.csv,qoder-trailer-01,Qoder,trailer,convention,114,10,113,7
+other_ai_commits.csv,qoder-full-body-01,Qoder,full_body,convention,34,10,33,7
+other_ai_commits.csv,cortex-code-trailer-01,Cortex Code,trailer,convention,117,7,36,3
+other_ai_commits.csv,cortex-code-full-body-01,Cortex Code,full_body,convention,81,4,0,0
+other_ai_commits.csv,charlie-trailer-01,Charlie,trailer,standard,320,5,320,5
+other_ai_commits.csv,code-to-docs-trailer-01,Code-to-Docs,trailer,standard,4,1,4,1
+other_ai_commits.csv,cline-author-01,Cline,author,account,8,1,3,0
+other_ai_commits.csv,cline-trailer-01,Cline,trailer,standard,4,1,1,0
+other_ai_commits.csv,cline-trailer-03,Cline,trailer,convention,42,6,37,5
+other_ai_commits.csv,code-factory-trailer-01,Code Factory,trailer,standard,84,1,84,1
+other_ai_commits.csv,detail-author-01,Detail,author,account,677,6,27,1
+other_ai_commits.csv,detail-trailer-01,Detail,trailer,standard,659,6,9,1
+other_ai_commits.csv,openclaw-trailer-01,OpenClaw,trailer,convention,123,36,113,26
+other_ai_commits.csv,openclaw-full-body-01,OpenClaw,full_body,convention,36,2,36,2
+other_ai_commits.csv,openclaw-full-body-02,OpenClaw,full_body,convention,66,3,61,0
+other_ai_commits.csv,openclaw-full-body-03,OpenClaw,full_body,convention,24,1,0,0
+other_ai_commits.csv,openclaw-author-02,OpenClaw,author,account,187,1,22,0
+other_ai_commits.csv,openclaw-author-03,OpenClaw,author,convention,165,19,161,13
+other_ai_commits.csv,openclaw-trailer-03,OpenClaw,trailer,standard,183,1,18,0
+other_ai_commits.csv,openclaw-full-body-04,OpenClaw,full_body,convention,8,1,0,0
+other_ai_commits.csv,openclaw-full-body-05,OpenClaw,full_body,convention,6,1,0,0
+other_ai_commits.csv,openclaw-trailer-02,OpenClaw,trailer,convention,6,4,1,1
+other_ai_commits.csv,openclaw-author-04,OpenClaw,author,convention,11,1,3,0
+other_ai_commits.csv,openclaw-trailer-04,OpenClaw,trailer,convention,8,1,0,0
+other_ai_commits.csv,gitar-author-01,Gitar,author,account,1,1,1,1
+other_ai_commits.csv,gitar-full-body-01,Gitar,full_body,standard,90,5,90,5
+other_ai_commits.csv,gnougo-author-01,GnOuGo,author,account,0,0,0,0
+other_ai_commits.csv,gnougo-trailer-01,GnOuGo,trailer,standard,9,2,9,2
+other_ai_commits.csv,codspeed-author-01,CodSpeed,author,account,35,22,10,8
+other_ai_commits.csv,codspeed-trailer-01,CodSpeed,trailer,standard,33,15,8,1
+other_ai_commits.csv,codesmith-trailer-01,Codesmith,trailer,standard,14,11,14,11
+other_ai_commits.csv,codewhale-trailer-01,Codewhale,trailer,convention,5,1,5,1
+other_ai_commits.csv,terragon-trailer-01,Terragon,trailer,standard,12,3,12,3
+other_ai_commits.csv,macroscope-trailer-01,Macroscope,trailer,standard,20,8,12,3
+other_ai_commits.csv,macroscope-full-body-01,Macroscope,full_body,reviewer,1,1,0,0
+other_ai_commits.csv,macroscope-full-body-02,Macroscope,full_body,reviewer,7,4,0,0
+other_ai_commits.csv,mechacoder-trailer-01,MechaCoder,trailer,convention,0,0,0,0
+other_ai_commits.csv,mendral-author-01,Mendral,author,account,37,3,18,1
+other_ai_commits.csv,mendral-trailer-01,Mendral,trailer,standard,27,4,8,2
+other_ai_commits.csv,mastra-code-trailer-01,Mastra Code,trailer,standard,7,3,0,0
+other_ai_commits.csv,mastra-code-trailer-02,Mastra Code,trailer,convention,7,3,0,0
+other_ai_commits.csv,codeant-trailer-01,CodeAnt,trailer,reviewer,48,5,48,5
+other_ai_commits.csv,codebuddy-trailer-01,CodeBuddy,trailer,convention,15,2,15,2
+other_ai_commits.csv,tuft-author-01,Tuft,author,account,34,2,5,0
+other_ai_commits.csv,tuft-trailer-01,Tuft,trailer,standard,101,5,72,3
+other_ai_commits.csv,tusk-author-01,Tusk,author,account,56,3,8,0
+other_ai_commits.csv,tusk-trailer-01,Tusk,trailer,standard,107,3,59,0
+other_ai_commits.csv,vibe-kanban-author-01,Vibe Kanban,author,account,0,0,0,0
+other_ai_commits.csv,vibe-kanban-trailer-01,Vibe Kanban,trailer,standard,11,2,11,2
+other_ai_commits.csv,volobox-author-01,Volobox,author,convention,3,1,0,0
+other_ai_commits.csv,volobox-trailer-01,Volobox,trailer,convention,3,1,0,0
+other_ai_commits.csv,vorflux-author-01,Vorflux,author,account,14,1,4,0
+other_ai_commits.csv,vorflux-trailer-01,Vorflux,trailer,standard,12,1,2,0
+other_ai_commits.csv,warden-trailer-01,Warden,trailer,reviewer,3,3,3,3
+other_ai_commits.csv,centaur-trailer-01,Centaur,trailer,standard,39,4,39,4
+other_ai_commits.csv,deepseek-harness-trailer-01,DeepSeek Harness,trailer,convention,319,10,319,10
+other_ai_commits.csv,agent-kanban-author-01,Agent Kanban,author,account,25,1,3,0
+other_ai_commits.csv,agent-kanban-trailer-01,Agent Kanban,trailer,standard,75,1,53,0
+other_ai_commits.csv,theia-ai-trailer-01,Theia AI,trailer,convention,2,1,2,1
+other_ai_commits.csv,aider-author-01,aider,author,convention,4691,68,4690,58
+other_ai_commits.csv,aider-trailer-03,aider,trailer,convention,5,5,5,4
+other_ai_commits.csv,oh-my-openagent-trailer-01,Oh My OpenAgent,trailer,standard,33,4,33,4
+other_ai_commits.csv,oh-my-openagent-trailer-02,Oh My OpenAgent,trailer,convention,21,2,21,1
+other_ai_commits.csv,oh-my-openagent-trailer-03,Oh My OpenAgent,trailer,convention,18,1,18,0
+other_ai_commits.csv,cody-trailer-01,Cody,trailer,convention,3,1,3,1
+other_ai_commits.csv,penify-author-01,Penify,author,account,5,1,0,0
+other_ai_commits.csv,penify-trailer-01,Penify,trailer,standard,5,1,0,0
+other_ai_commits.csv,agent-tars-trailer-01,Agent TARS,trailer,convention,2,1,2,1
+other_ai_commits.csv,atomcode-trailer-01,AtomCode,trailer,convention,6,4,6,4
+other_ai_commits.csv,netlify-agent-runners-author-01,Netlify Agent Runners,author,account,4,1,4,1
+other_ai_commits.csv,kimi-code-trailer-04,Kimi Code,trailer,convention,5,2,5,2
+other_ai_commits.csv,locadex-author-01,Locadex,author,account,218,1,218,1
+other_ai_commits.csv,vero-coder-trailer-01,Vero-Coder,trailer,convention,34,1,34,1
+other_ai_commits.csv,tool-not-named-trailer-09,tool not named,trailer,convention,8,1,8,0
+other_ai_commits.csv,tool-not-named-trailer-17,tool not named,trailer,convention,34,3,33,1
+other_ai_commits.csv,tool-not-named-trailer-18,tool not named,trailer,convention,9,1,9,1
+other_ai_commits.csv,tool-not-named-trailer-19,tool not named,trailer,convention,0,0,0,0
+other_ai_commits.csv,tool-not-named-full-body-04,tool not named,full_body,convention,71,1,71,1
+other_ai_commits.csv,tool-not-named-full-body-05,tool not named,full_body,convention,55,1,55,1
+other_ai_commits.csv,codefuse-trailer-01,CodeFuse,trailer,convention,3,1,3,1
+other_ai_commits.csv,rupic-author-01,Rupic,author,account,355,1,194,0
+other_ai_commits.csv,rupic-trailer-01,Rupic,trailer,standard,163,1,2,0
+other_ai_commits.csv,coder-agents-trailer-01,Coder Agents,trailer,convention,25,1,4,0
+other_ai_commits.csv,coder-agents-full-body-01,Coder Agents,full_body,convention,1198,2,0,0
+other_ai_commits.csv,coder-agents-full-body-02,Coder Agents,full_body,convention,1389,2,190,0
+other_ai_commits.csv,harlan-github-agent-author-01,Harlan GitHub Agent,author,account,16,2,11,0
+other_ai_commits.csv,harlan-github-agent-trailer-01,Harlan GitHub Agent,trailer,standard,49,3,44,1
+other_ai_commits.csv,blink-author-01,Blink,author,account,124,2,11,0
+other_ai_commits.csv,blink-trailer-01,Blink,trailer,standard,127,2,14,0
+other_ai_commits.csv,codealta-trailer-01,CodeAlta,trailer,standard,36,4,36,4
+other_ai_commits.csv,codealta-trailer-02,CodeAlta,trailer,convention,4,1,4,1
+other_ai_commits.csv,maki-trailer-01,Maki,trailer,convention,9,1,9,1
+other_ai_commits.csv,perfloop-author-01,Perfloop,author,account,32,7,30,6
+other_ai_commits.csv,perfloop-trailer-01,Perfloop,trailer,standard,3,2,1,1
+other_ai_commits.csv,entelligence-trailer-01,Entelligence,trailer,reviewer,2,1,2,1
+other_ai_commits.csv,deepdocs-author-01,DeepDocs,author,account,1,1,1,1
+other_ai_commits.csv,iii-harness-trailer-01,iii harness,trailer,standard,1,1,0,0
+other_ai_commits.csv,iii-harness-trailer-02,iii harness,trailer,convention,1,1,0,0
+other_ai_commits.csv,gecko-security-author-01,Gecko Security,author,account,5,1,4,0
+other_ai_commits.csv,gecko-security-trailer-01,Gecko Security,trailer,standard,2,1,1,0
+other_ai_commits.csv,twill-author-01,Twill,author,account,4,2,0,0
+other_ai_commits.csv,twill-trailer-01,Twill,trailer,standard,5,2,1,0
+other_ai_commits.csv,specula-trailer-01,Specula,trailer,convention,4,1,4,1
+other_ai_commits.csv,xum-full-body-01,Xum,full_body,convention,481,1,481,0
+other_ai_commits.csv,xum-trailer-01,Xum,trailer,convention,6,1,6,0
+other_ai_commits.csv,omi-github-app-full-body-01,Omi GitHub app,full_body,standard,1,1,1,1
+other_ai_commits.csv,koan-full-body-01,Koan,full_body,standard,7,2,7,2
+other_ai_commits.csv,koan-trailer-01,Koan,trailer,convention,3,1,3,1

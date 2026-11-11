@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgentTorrent: A Dataset of Context and Harness Engineering Artifacts on GitHub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: #fafaf9; color: #292524; line-height: 1.6; }
+
+    nav { position: sticky; top: 0; z-index: 100; background: #fff; border-bottom: 1px solid #e7e5e4; padding: 0.75rem 2rem; display: flex; gap: 1.5rem; align-items: center; }
+    nav .nav-brand { font-family: 'Source Serif 4', Georgia, serif; font-weight: 700; font-size: 0.95rem; color: #1c1917; white-space: nowrap; border-bottom: none; }
+    nav .nav-brand:hover { color: #1c1917; border-bottom: none; }
+    nav a { text-decoration: none; color: #78716c; font-size: 0.875rem; font-weight: 500; padding: 0.25rem 0; border-bottom: 2px solid transparent; transition: all 0.15s; }
+    nav a.active, nav a:hover { color: #1c1917; border-bottom-color: currentColor; }
+    nav .nav-ext { margin-left: auto; color: #1d4ed8; border-bottom: none; }
+    nav .nav-ext:hover { color: #1e40af; }
+
+    header { text-align: left; padding: 2.5rem 2rem 1.5rem; max-width: 1260px; margin: 0 auto; scroll-margin-top: 4rem; }
+    header h1 { font-family: 'Source Serif 4', Georgia, serif; font-size: 2.0rem; color: #1c1917; margin-bottom: 0.25rem; }
+    header .subtitle { color: #78716c; font-size: 0.875rem; margin-bottom: 0.5rem; }
+    header .paper-ref { font-size: 0.8rem; color: #57534e; line-height: 1.5; }
+    header .paper-ref a { color: #1d4ed8; text-decoration: none; }
+    header .paper-ref a:hover { text-decoration: underline; }
+    header .release-notes { font-size: 0.8rem; color: #57534e; line-height: 1.5; margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid #e7e5e4; }
+
+    section { max-width: 1260px; margin: 0 auto; padding: 0 2rem 2rem; scroll-margin-top: 4rem; }
+    section + section { padding-top: 1.5rem; }
+    section h2 { font-family: 'Source Serif 4', Georgia, serif; font-size: 1.2rem; color: #1c1917; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid #e7e5e4; }
+    .section-anchor { color: #a8a29e; opacity: 0; transition: opacity 0.2s; margin-left: 0.4rem; display: inline-flex; align-items: center; vertical-align: middle; }
+    h1:hover .section-anchor, h2:hover .section-anchor { opacity: 1; }
+    .section-anchor:hover { color: #57534e; }
+    .section-desc { font-size: 0.8rem; color: #78716c; margin-bottom: 1.25rem; }
+
+    /* ── Dashboard ── */
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
+    .stat-card { background: #fff; padding: 1rem; border: 1px solid #e7e5e4; text-align: center; }
+    .stat-value { font-size: 1.75rem; font-weight: 700; color: #1c1917; }
+    .stat-label { font-size: 0.8rem; color: #78716c; margin-top: 0.15rem; }
+    .stat-sublabel { font-size: 0.7rem; color: #a8a29e; margin-top: 0.1rem; }
+    .dashboard-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
+    .dashboard-panel { background: #fff; border: 1px solid #e7e5e4; padding: 1.25rem; }
+    .dashboard-panel h3 { font-size: 1.0rem; color: #1c1917; margin-bottom: 0.75rem; }
+    .bar-item { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem; font-size: 0.8rem; }
+    .bar-label { width: 120px; text-align: right; color: #57534e; flex-shrink: 0; }
+    .bar-track { flex: 1; height: 20px; background: #f5f5f4; position: relative; }
+    .bar-fill { height: 100%; transition: width 0.3s; }
+    .bar-value { font-size: 0.7rem; color: #78716c; width: 50px; flex-shrink: 0; }
+
+    /* ── Visualizations ── */
+    .chart-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+    .chart-panel { background: #fff; border: 1px solid #e7e5e4; padding: 1.25rem; }
+    .chart-panel h3 { font-family: 'Source Serif 4', Georgia, serif; font-size: 0.95rem; color: #1c1917; margin-bottom: 0.75rem; }
+    .chart-panel .chart-desc { font-size: 0.75rem; color: #78716c; margin-bottom: 0.75rem; }
+    .chart-container { width: 100%; overflow-x: auto; }
+    .chart-container svg { display: block; width: 100%; height: auto; }
+    .chart-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+    /* ── Filter bar ── */
+    .filter-bar { display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; margin-bottom: 1.25rem; padding: 0.75rem 0; border-bottom: 1px solid #e7e5e4; }
+    .filter-bar input[type="text"] { flex: 1; min-width: 200px; padding: 0.35rem 0; border: none; border-bottom: 1px solid #e7e5e4; border-radius: 0; font-size: 0.8rem; font-family: inherit; outline: none; background: transparent; }
+    .filter-bar input[type="text"]:focus { border-color: #78716c; }
+    .filter-bar select { padding: 0.3rem 0.5rem; font-size: 0.7rem; font-family: inherit; border: 1px solid #e7e5e4; background: #fff; color: #57534e; cursor: pointer; border-radius: 0; }
+    .platform-toggle { display: flex; gap: 0; }
+    .platform-toggle button { padding: 0.3rem 0.6rem; font-size: 0.7rem; font-family: inherit; border: 1px solid #e7e5e4; background: #fff; color: #78716c; cursor: pointer; }
+    .platform-toggle button:not(:first-child) { border-left: 0; }
+    .platform-toggle button.active { background: #292524; color: #fafaf9; border-color: #292524; }
+    .code-chips { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+    .code-chip { padding: 2px 8px; border-radius: 3px; font-size: 0.7rem; cursor: pointer; border: 1px solid #d6d3d1; background: #fff; color: #57534e; transition: all 0.15s; }
+    .code-chip.active { color: #fff; border-color: transparent; }
+
+    /* ── Repo/commit cards ── */
+    .doc-list { display: grid; grid-template-columns: 1fr; gap: 0.5rem; }
+    .doc-card { background: #fff; border: 1px solid #e7e5e4; overflow: hidden; }
+    .doc-card-header { padding: 0.75rem 1.25rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 0.75rem; }
+    .doc-card-header:hover { background: #fafaf9; }
+    .doc-card-left { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; min-width: 0; }
+    .doc-card-left h3 { font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .doc-card-left h3 a { color: #1d4ed8; text-decoration: none; }
+    .doc-card-left h3 a:hover { text-decoration: underline; }
+    .doc-card-badges { display: flex; gap: 0.25rem; flex-wrap: wrap; }
+    .doc-card-meta { font-size: 0.75rem; color: #78716c; display: flex; gap: 0.75rem; flex-wrap: wrap; white-space: nowrap; }
+    .doc-card-right { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
+    .expand-icon { font-size: 0.7rem; color: #a8a29e; flex-shrink: 0; transition: transform 0.2s; }
+    .doc-card.expanded .expand-icon { transform: rotate(180deg); }
+    .doc-card-body { display: none; padding: 0 1.25rem 1.25rem; border-top: 1px solid #e7e5e4; }
+    .doc-card.expanded .doc-card-body { display: block; }
+
+    .doc-badge { display: inline-block; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size: 0.65rem; padding: 1px 6px; border-radius: 3px; font-weight: 500; }
+    .badge-claude { background: #87ceeb; color: #1c1917; }
+    .badge-copilot { background: #ef9a9a; color: #1c1917; }
+    .badge-cursor { background: #ffcc80; color: #1c1917; }
+    .badge-gemini { background: #fff176; color: #1c1917; }
+    .badge-codex { background: #90ee90; color: #1c1917; }
+    .badge-opencode { background: #80cbc4; color: #1c1917; }
+    .badge-no-specific-tool { background: #ce93d8; color: #1c1917; }
+    .badge-config { background: #e7e5e4; color: #57534e; }
+
+    /* ── Detail view (expanded repo) ── */
+    .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.75rem; }
+    .detail-section h4 { font-size: 0.82rem; font-weight: 600; color: #1c1917; margin-bottom: 0.5rem; }
+    .detail-row { display: flex; gap: 0.5rem; font-size: 0.8rem; margin-bottom: 0.25rem; }
+    .detail-label { color: #78716c; width: 110px; flex-shrink: 0; }
+    .detail-value { color: #292524; }
+
+    /* ── Pagination ── */
+    .pagination { display: flex; gap: 0.25rem; align-items: center; margin-top: 1rem; flex-wrap: wrap; }
+    .pagination button { padding: 0.3rem 0.6rem; font-size: 0.75rem; font-family: inherit; border: 1px solid #e7e5e4; background: #fff; color: #57534e; cursor: pointer; }
+    .pagination button.active { background: #292524; color: #fafaf9; border-color: #292524; }
+    .pagination button:disabled { opacity: 0.4; cursor: default; }
+    .pagination .page-info { font-size: 0.75rem; color: #78716c; margin-left: 0.5rem; }
+    .results-info { font-size: 0.8rem; color: #78716c; margin-bottom: 0.75rem; }
+
+    /* ── Tab bar (configuration artifacts) ── */
+    .tab-bar { display: flex; gap: 0; border-bottom: 1px solid #e7e5e4; margin-bottom: 1.25rem; flex-wrap: wrap; }
+    .tab-bar button { padding: 0.5rem 1rem; font-size: 0.8rem; font-family: inherit; border: none; background: transparent; color: #78716c; cursor: pointer; border-bottom: 2px solid transparent; font-weight: 500; }
+    .tab-bar button.active { color: #1c1917; border-bottom-color: #1c1917; }
+    .tab-bar button:hover { color: #1c1917; }
+
+    /* ── Table of configuration artifacts ── */
+    .artifact-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+    .artifact-table th { text-align: left; padding: 0.5rem 0.75rem; border-bottom: 2px solid #e7e5e4; color: #57534e; font-weight: 600; background: #fafaf9; }
+    .artifact-table td { padding: 0.4rem 0.75rem; border-bottom: 1px solid #e7e5e4; }
+    .artifact-table td a { color: #1d4ed8; text-decoration: none; }
+    .artifact-table td a:hover { text-decoration: underline; }
+    .artifact-table tr:hover td { background: #fafaf9; }
+
+    /* ── Downloads ── */
+    .download-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+    .download-card { background: #fff; border: 1px solid #e7e5e4; padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    .download-card h4 { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 0.85rem; color: #1c1917; }
+    .download-card .dl-desc { font-size: 0.75rem; color: #78716c; flex: 1; }
+    .download-card .dl-meta { display: flex; justify-content: space-between; align-items: center; }
+    .download-card .dl-size { font-size: 0.7rem; color: #a8a29e; }
+    .download-card a.dl-btn { display: inline-block; padding: 0.3rem 0.75rem; font-size: 0.7rem; font-family: inherit; background: #292524; color: #fafaf9; text-decoration: none; transition: background 0.15s; }
+    .download-card a.dl-btn:hover { background: #44403c; }
+
+    /* ── Commit row ── */
+    .commit-row { background: #fff; border: 1px solid #e7e5e4; padding: 0.75rem 1.25rem; display: flex; gap: 1rem; align-items: flex-start; }
+    .commit-row + .commit-row { margin-top: 0.5rem; }
+    .commit-tool { flex-shrink: 0; }
+    .commit-info { flex: 1; min-width: 0; }
+    .commit-repo { font-size: 0.8rem; font-weight: 600; }
+    .commit-repo a { color: #1d4ed8; text-decoration: none; }
+    .commit-repo a:hover { text-decoration: underline; }
+    .commit-msg { font-size: 0.75rem; color: #57534e; font-family: 'SFMono-Regular', Consolas, monospace; white-space: pre-wrap; word-break: break-word; margin-top: 0.25rem; }
+    .commit-meta { font-size: 0.7rem; color: #a8a29e; margin-top: 0.25rem; }
+    .commit-meta a { color: #1d4ed8; text-decoration: none; }
+    .post-detail-toggle { font-size: 0.7rem; color: #1d4ed8; cursor: pointer; display: inline-block; margin-top: 0.2rem; }
+    .post-detail-toggle:hover { text-decoration: underline; }
+
+    /* ── Loading spinner ── */
+    .loading { text-align: center; padding: 2rem; color: #78716c; font-size: 0.8rem; }
+
+    /* ── Footer ── */
+    footer { max-width: 1260px; margin: 2rem auto; padding: 1.5rem 2rem; border-top: 1px solid #e7e5e4; font-size: 0.75rem; color: #a8a29e; text-align: center; }
+    footer a { color: #1d4ed8; text-decoration: none; }
+
+    code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size: 0.875em; background: #f5f5f4; padding: 1px 5px; border-radius: 3px; color: #44403c; }
+    .code-wrapper { position: relative; }
+    .code-wrapper .code-actions { position: absolute; top: 0.5rem; right: 0.5rem; display: flex; gap: 0.25rem; }
+    .code-wrapper .code-btn { background: #44403c; color: #a8a29e; border: none; padding: 0.3rem 0.6rem; font-size: 0.7rem; font-family: inherit; cursor: pointer; transition: all 0.15s; display: inline-flex; align-items: center; gap: 0.3rem; }
+    .code-wrapper .code-btn:hover { background: #57534e; color: #e7e5e4; }
+    .code-wrapper .code-btn.copied { background: #166534; color: #86efac; }
+    pre.code-block { background: #1c1917; color: #e7e5e4; padding: 1.25rem 1.5rem; overflow-x: auto; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size: 0.8rem; line-height: 1.7; margin: 0; }
+    pre.code-block code { background: none; padding: 0; color: inherit; font-size: inherit; }
+    pre.code-block .comment { color: #78716c; }
+    pre.code-block .string { color: #86efac; }
+    pre.code-block .keyword { color: #93c5fd; }
+
+    @media (max-width: 768px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .dashboard-row { grid-template-columns: 1fr; }
+      .chart-row { grid-template-columns: 1fr; }
+      .detail-grid { grid-template-columns: 1fr; }
+      nav { flex-wrap: wrap; padding: 0.5rem 1rem; gap: 0.75rem; }
+      header h1 { font-size: 1.5rem; }
+      .filter-bar { flex-direction: column; align-items: stretch; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="#top">AgentTorrent</a>
+  <a href="#dashboard">Dashboard</a>
+  <a href="#visualizations">Visualizations</a>
+  <a href="#repos">Repositories</a>
+  <a href="#commits">Commits</a>
+  <a href="#artifacts">Configuration Artifacts</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#usage-example">Usage Example</a>
+</nav>
+
+<header id="top">
+  <h1>AgentTorrent<a class="section-anchor" href="#top" onclick="navigator.clipboard.writeText(this.href)" title="Copy link to section"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.75 9.25a3.25 3.25 0 0 0 4.596.148l1.904-1.904a3.25 3.25 0 0 0-4.596-4.596L7.5 4.052"/><path d="M9.25 6.75a3.25 3.25 0 0 0-4.596-.148L2.75 8.506a3.25 3.25 0 0 0 4.596 4.596L8.5 11.948"/></svg></a></h1>
+  <p class="subtitle">A dataset of the context and harness configuration of coding agents in engineered software projects on GitHub. It contains configuration artifacts for six tools, their imported files, agentic planning documents, and commits that credit the tools. The tools are Claude Code, GitHub Copilot, OpenAI Codex, Cursor, OpenCode and Gemini, which includes Antigravity, Google's successor to Gemini CLI.</p>
+  <p class="paper-ref">Cite the dataset release on Zenodo:</p>
+  <p class="paper-ref"><strong>AgentTorrent: A Dataset of Context and Harness Engineering Artifacts on GitHub.</strong><br>
+  Sebastian Baltes, Seyedmoein Mohsenimofidi, Levi Böhme, Vahram Nersesyan, Muhammad Auwal Abubakar, Jai Lal Lulla, Matthias Galster, and Christoph Treude.<br>
+  Zenodo, 2026.<br>
+  [<a href="https://doi.org/10.5281/zenodo.24058026">DOI</a>]</p>
+  <p class="paper-ref">An earlier version of the dataset is described in:</p>
+  <p class="paper-ref"><strong>A Dataset of Agentic AI Coding Tool Configurations.</strong><br>
+  Matthias Galster, Seyedmoein Mohsenimofidi, Levi Böhme, Jai Lal Lulla, Muhammad Auwal Abubakar, Christoph Treude, and Sebastian Baltes.<br>
+  <em>Proceedings of the 3rd ACM International Conference on AI-Powered Software (AIware '26)</em>, Montreal, Canada, 2026.<br>
+  [<a href="https://doi.org/10.1145/3805760.3814922">DOI</a>] [<a href="https://assets.empirical-software.engineering/pdf/aiware26-ai-config-dataset.pdf">PDF</a>]</p>
+  <div class="release-notes">
+    <p>Of the <!--s:collection.sample_repositories-->40,901<!--/s--> engineered software projects in the sample, <!--s:collection.configured_repositories-->10,944<!--/s--> contain a configuration artifact. In these projects, <!--s:collection.commits.tools-->1,281,628<!--/s--> commits credit one of the six tools and <!--s:collection.commits.other_tools-->72,527<!--/s--> credit one of <!--s:heuristics.other_ai_commit_patterns.tools-->154<!--/s--> other tools. Compared with the earlier version, the dataset adds OpenCode as the sixth tool, as well as plugins and LSP servers as mechanisms. It also adds the files that configuration artifacts import, the commits of other tools, the form in which each commit credits a tool, and agentic planning documents, which spec-driven development frameworks and the planning features of the tools write. Every heuristic cites the vendor documentation or the commits that it rests on. Still, a configuration artifact does not show that a tool is used, and a credit in a commit does not show who wrote the change. The README of the release defines every column, and the <a href="https://github.com/se-uhd/agenttorrent-pipeline/blob/main/CHANGELOG.md">changelog</a> lists every change.</p>
+  </div>
+</header>
+
+<section id="dashboard">
+  <h2>Dashboard<a class="section-anchor" href="#dashboard" onclick="navigator.clipboard.writeText(this.href)" title="Copy link to section"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.75 9.25a3.25 3.25 0 0 0 4.596.148l1.904-1.904a3.25 3.25 0 0 0-4.596-4.596L7.5 4.052"/><path d="M9.25 6.75a3.25 3.25 0 0 0-4.596-.148L2.75 8.506a3.25 3.25 0 0 0 4.596 4.596L8.5 11.948"/></svg></a></h2>
+  <div class="stats-grid" id="stats-grid"></div>
+  <div class="dashboard-row">
+    <div class="dashboard-panel" id="tool-overview">
+      <h3>Tool Adoption</h3>
+      <div id="tool-bars"></div>
+    </div>
+    <div class="dashboard-panel" id="config-overview">
+      <h3>Mechanisms</h3>
+      <div id="config-bars"></div>
+    </div>
+  </div>
+</section>
+
+<section id="visualizations">
+  <h2>Visualizations<a class="section-anchor" href="#visualizations" onclick="navigator.clipboard.writeText(this.href)" title="Copy link to section"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.75 9.25a3.25 3.25 0 0 0 4.596.148l1.904-1.904a3.25 3.25 0 0 0-4.596-4.596L7.5 4.052"/><path d="M9.25 6.75a3.25 3.25 0 0 0-4.596-.148L2.75 8.506a3.25 3.25 0 0 0 4.596 4.596L8.5 11.948"/></svg></a></h2>
+  <p class="section-desc">Interactive charts of which tools and mechanisms the repositories configure, how the tools co-occur, and when the repositories created their first configuration artifacts.</p>
+
+  <div class="chart-row">
+    <div class="chart-panel" id="chart-config-tool-heatmap">
+      <h3>Configuration Mechanisms per Tool</h3>
+      <p class="chart-desc">Repositories with each mechanism, by the tool attributed to each configuration artifact. Files attributed to several tools count under each tool. Shared files such as <code>AGENTS.md</code> count in no tool column. The last column counts repositories with only shared configuration artifacts (No specific tool). Percentages use the repository count per tool. Column totals can exceed the overall repository count because repositories can configure several tools.</p>
+      <div class="chart-container"></div>
+    </div>
+    <div class="chart-panel" id="chart-language-tool-heatmap">
+      <h3>Tool Usage by Programming Language</h3>
+      <p class="chart-desc">The main programming languages of the repositories that configure each tool. No specific tool denotes the repositories with only shared configuration artifacts, such as <code>AGENTS.md</code>, <code>.agents/skills</code> or a root <code>.mcp.json</code>. Percentages are relative to the repository count per tool. Column totals can exceed the overall repository count because a repository can configure several tools.</p>
+      <div class="chart-container"></div>
+    </div>
+  </div>
+
+  <div class="chart-row" style="margin-top:1.5rem">
+    <div class="chart-panel" id="chart-tool-cooccurrence">
+      <h3>Tool Co-Occurrence</h3>
+      <p class="chart-desc">Repositories that configure both tools in a pair. Percentages use the repository count of the less common tool.</p>
+      <div class="chart-container"></div>
+    </div>
+    <div class="chart-panel" id="chart-reference-network">
+      <h3>Reference Network Between Context Files</h3>
+      <p class="chart-desc">Context files that only reference another file, by source and target category. Other covers files such as <code>README.md</code> and <code>CONTRIBUTING.md</code>.</p>
+      <div class="chart-container"></div>
+    </div>
+  </div>
+
+  <div class="chart-grid" style="margin-top:1.5rem">
+    <div class="chart-panel" id="chart-upset">
+      <h3>Tool Usage Combinations (Exclusive Intersections)</h3>
+      <p class="chart-desc">Each bar counts the repositories that configure exactly its combination of tools, so each repository appears in one bar.</p>
+      <div class="chart-container"></div>
+    </div>
+  </div>
+
+  <div class="chart-row" style="margin-top:1.5rem">
+    <div class="chart-panel" id="chart-count-distribution">
+      <h3>Distribution of Configuration Artifacts per Repository</h3>
+      <p class="chart-desc">Counts of context files, skills, and subagents per repository. For each mechanism, percentages use repositories with at least one configuration artifact of that mechanism.</p>
+      <div class="chart-container"></div>
+    </div>
+    <div class="chart-panel" id="chart-creation-order">
+      <h3>Creation Order Sequences</h3>
+      <p class="chart-desc">Context file categories in the order that their earliest files were created in each repository. Creation dates follow the original commit, including before a file was renamed into a category. Curly braces group categories with earliest files created on the same day.</p>
+      <div class="chart-container"></div>
+    </div>
+  </div>
+
+  <div class="chart-grid" style="margin-top:1.5rem">
+    <div class="chart-panel" id="chart-cumulative-adoption">
+      <h3>Creation of the Earliest Configuration Artifacts</h3>
+      <p class="chart-desc">The cumulative number of repositories by the month in which their earliest file of each kind was created, for five kinds of context file, for skills and subagents, and for planning documents. A file is dated by the commit that created it under whatever name it had then. Files created before 2023 are left out, because they were written for another purpose and only later renamed into a context file or named in a configuration, such as a development document that a repository renamed to <code>claude.md</code> and then to <code>AGENTS.md</code>. The Copilot Instructions line counts <code>.github/copilot-instructions.md</code> and <code>.github/instructions/*.instructions.md</code>.</p>
+      <div class="chart-container"></div>
+    </div>
+  </div>
+</section>
+
+<section id="repos">
+  <h2>Repositories<a class="section-anchor" href="#repos" onclick="navigator.clipboard.writeText(this.href)" title="Copy link to section"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.75 9.25a3.25 3.25 0 0 0 4.596.148l1.904-1.904a3.25 3.25 0 0 0-4.596-4.596L7.5 4.052"/><path d="M9.25 6.75a3.25 3.25 0 0 0-4.596-.148L2.75 8.506a3.25 3.25 0 0 0 4.596 4.596L8.5 11.948"/></svg></a></h2>
+  <p class="section-desc">Repositories in which at least one configuration artifact was detected.</p>
+  <div class="filter-bar" id="repo-filter-bar" style="flex-direction:column;align-items:stretch;gap:0.5rem">
+    <input type="text" id="repo-search" placeholder="Filter repositories..." style="min-width:0;width:100%">
+    <div style="display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap">
+      <select id="language-filter"><option value="">All languages</option></select>
+      <span style="width:1px;height:20px;background:#d6d3d1"></span>
+      <div class="platform-toggle" id="tool-toggles"></div>
+      <span style="width:1px;height:20px;background:#d6d3d1"></span>
+      <div class="platform-toggle" id="config-chips"></div>
+    </div>
+  </div>
+  <div id="repo-results-info" class="results-info" style="display:flex;justify-content:space-between;align-items:center">
+    <span id="repo-results-text"></span>
+    <select id="sort-select" style="padding:0.3rem 0.5rem;font-size:0.7rem;font-family:inherit;border:1px solid #e7e5e4;background:#fff;color:#57534e;cursor:pointer;border-radius:0">
+      <option value="stargazers">Order by: Stars</option>
+      <option value="commits">Order by: Commits</option>
+      <option value="contributors">Order by: Contributors</option>
+      <option value="codeLines">Order by: Code lines</option>
+    </select>
+  </div>
+  <div id="repo-list" class="doc-list"></div>
+  <div id="repo-pagination" class="pagination"></div>
+</section>
+
+<section id="commits">
+  <h2>AI Commits<a class="section-anchor" href="#commits" onclick="navigator.clipboard.writeText(this.href)" title="Copy link to section"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.75 9.25a3.25 3.25 0 0 0 4.596.148l1.904-1.904a3.25 3.25 0 0 0-4.596-4.596L7.5 4.052"/><path d="M9.25 6.75a3.25 3.25 0 0 0-4.596-.148L2.75 8.506a3.25 3.25 0 0 0 4.596 4.596L8.5 11.948"/></svg></a></h2>
+  <p class="section-desc">Commits that credit any tool, detected through authors, trailers, and messages.</p>
+  <div class="filter-bar" id="commit-filter-bar">
+    <input type="text" id="commit-search" placeholder="Filter commit messages...">
+    <div class="platform-toggle" id="commit-tool-toggles"></div>
+  </div>
+  <div id="commit-results-info" class="results-info"></div>
+  <div id="commit-list"></div>
+  <div id="commit-pagination" class="pagination"></div>
+</section>
+
+<section id="artifacts">
+  <h2>Configuration Artifacts<a class="section-anchor" href="#artifacts" onclick="navigator.clipboard.writeText(this.href)" title="Copy link to section"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.75 9.25a3.25 3.25 0 0 0 4.596.148l1.904-1.904a3.25 3.25 0 0 0-4.596-4.596L7.5 4.052"/><path d="M9.25 6.75a3.25 3.25 0 0 0-4.596-.148L2.75 8.506a3.25 3.25 0 0 0 4.596 4.596L8.5 11.948"/></svg></a></h2>
+  <p class="section-desc">Browse configuration artifacts by mechanism, or use the planning document and import tabs. Planning documents and imports are not configuration artifacts.</p>
+  <div class="tab-bar" id="artifact-tabs"></div>
+  <div id="artifact-results-info" class="results-info"></div>
+  <div id="artifact-content"></div>
+  <div id="artifact-pagination" class="pagination"></div>
+</section>
+
+<section id="downloads">
+  <h2>Downloads<a class="section-anchor" href="#downloads" onclick="navigator.clipboard.writeText(this.href)" title="Copy link to section"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.75 9.25a3.25 3.25 0 0 0 4.596.148l1.904-1.904a3.25 3.25 0 0 0-4.596-4.596L7.5 4.052"/><path d="M9.25 6.75a3.25 3.25 0 0 0-4.596-.148L2.75 8.506a3.25 3.25 0 0 0 4.596 4.596L8.5 11.948"/></svg></a></h2>
+  <p class="section-desc">Download the files of the dataset, which is licensed under <a href="https://creativecommons.org/licenses/by/4.0/" style="color:#1d4ed8;text-decoration:none;">CC BY 4.0</a> and archived on <a href="https://doi.org/10.5281/zenodo.24058026" style="color:#1d4ed8;text-decoration:none;">Zenodo</a>.</p>
+  <div class="download-grid" id="download-grid"></div>
+</section>
+
+<section id="usage-example">
+  <h2>Usage Example<a class="section-anchor" href="#usage-example" onclick="navigator.clipboard.writeText(this.href)" title="Copy link to section"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.75 9.25a3.25 3.25 0 0 0 4.596.148l1.904-1.904a3.25 3.25 0 0 0-4.596-4.596L7.5 4.052"/><path d="M9.25 6.75a3.25 3.25 0 0 0-4.596-.148L2.75 8.506a3.25 3.25 0 0 0 4.596 4.596L8.5 11.948"/></svg></a></h2>
+  <p class="section-desc">The <a href="https://pandas.pydata.org/" style="color:#1d4ed8;text-decoration:none;">pandas</a> example explores which tools engineered software projects configure, whether agents co-author their own instructions, and how often configuration imports reach no file. The <a href="https://doi.org/10.5281/zenodo.24058028" style="color:#1d4ed8;text-decoration:none;">pipeline on Zenodo</a> contains further analysis scripts.</p>
+  <div class="code-wrapper">
+    <div class="code-actions">
+      <button class="code-btn" onclick="copyCode(this)" title="Copy to clipboard"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="9" height="9" rx="1"/><path d="M5 11H3.5A1.5 1.5 0 0 1 2 9.5v-7A1.5 1.5 0 0 1 3.5 1h7A1.5 1.5 0 0 1 12 2.5V5"/></svg> Copy</button>
+      <a class="code-btn" href="usage_example.py" download title="Download as .py"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8m0 0-3-3m3 3 3-3M3 13h10"/></svg> .py</a>
+    </div>
+  <pre class="code-block"><code><!-- USAGE_EXAMPLE_CODE --></code></pre>
+  </div>
+</section>
+
+<footer>
+  Dataset: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · Pipeline code: <a href="https://opensource.org/license/mit">MIT</a> · Configuration artifact files and commit messages were collected from public GitHub repositories. Their content remains subject to the licenses of the repositories that they come from. · Claude Code, with Claude models from Opus 4.6 onward, was used to build this website and to write and revise code and documentation for the pipeline that produced the dataset. The research design and methodology are the work of the human authors.
+</footer>
+
+<script>
+// ── Constants ───────────────────────────────────────────────────────────────
+const TOOL_KEYS = ['claude','copilot','no_specific_tool','cursor','gemini','codex','opencode'];
+const TOOL_LABELS = {claude:'Claude',copilot:'Copilot',no_specific_tool:'No specific tool',cursor:'Cursor',gemini:'Gemini',codex:'Codex',opencode:'OpenCode'};
+// The tooltips of the labels that need an explanation: Antigravity counts as Gemini, and
+// No specific tool marks the repositories with only shared configuration artifacts.
+const TOOL_TITLES = {gemini:'Gemini CLI, Gemini Code Assist and Antigravity, which Google names the successor of Gemini CLI',
+  no_specific_tool:'Repositories with only shared configuration artifacts that no specific tool owns, such as AGENTS.md, .agents/skills or a root .mcp.json'};
+const TOOL_COLORS = {Claude:'#87ceeb',Copilot:'#ef9a9a',Cursor:'#ffcc80',Gemini:'#fff176',Codex:'#90ee90','No specific tool':'#ce93d8'};
+const CONFIG_KEYS = ['context_file','skills','subagents','commands','rules','settings','hooks','mcp','plugins','lsp'];
+const MECHANISM_LABELS = {context_file:'Context Files',skills:'Skills',subagents:'Subagents',commands:'Commands',rules:'Rules',settings:'Settings',hooks:'Hooks',mcp:'MCP',plugins:'Plugins',lsp:'LSP'};
+const BADGE_CLASSES = {claude:'badge-claude',copilot:'badge-copilot',cursor:'badge-cursor',gemini:'badge-gemini',codex:'badge-codex',opencode:'badge-opencode',no_specific_tool:'badge-no-specific-tool'};
+const REPOS_PER_PAGE = 25;
+
+// ── State ───────────────────────────────────────────────────────────────────
+let INDEX = [];
+let SUMMARY = {};
+let FILTERED = [];
+let PAGE_CACHE = {};
+// The numbers of the detail pages already fetched. PAGE_CACHE stores the repositories of a page
+// by name, so a lookup by page number would find nothing and fetch the page again.
+const LOADED_PAGES = new Set();
+let repoPage = 0;
+let commitPage = 0;
+let commitPageCache = {};
+let artifactData = {};
+let currentArtifactTab = 'context_files';
+
+// ── Helpers ─────────────────────────────────────────────────────────────────
+function fmt(n) { return n == null ? '-' : n.toLocaleString(); }
+function fmtSize(bytes) {
+  if (bytes >= 1e9) return (bytes/1e9).toFixed(1) + ' GB';
+  if (bytes >= 1e6) return (bytes/1e6).toFixed(1) + ' MB';
+  if (bytes >= 1e3) return (bytes/1e3).toFixed(1) + ' KB';
+  return bytes + ' B';
+}
+// The line above a list: the rows shown, or a statement that there are none, rather than
+// "Showing 1–0 of 0" for an empty list.
+function showingText(start, end, total, noun) {
+  if (!total) return `No ${noun}`;
+  return `Showing ${start+1}\u2013${end} of ${fmt(total)} ${noun}`;
+}
+function escapeHtml(s) {
+  const d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+// ── Initialization ──────────────────────────────────────────────────────────
+async function init() {
+  const [indexResp, summaryResp] = await Promise.all([
+    fetch('data/index.json'), fetch('data/summary.json')
+  ]);
+  INDEX = await indexResp.json();
+  SUMMARY = await summaryResp.json();
+  renderDashboard();
+  renderFilterBar();
+  applyFilters();
+  initNavigation();
+  initChartObservers();
+  initCommits();
+  initArtifacts();
+  initDownloads();
+}
+
+// ── Navigation ──────────────────────────────────────────────────────────────
+function initNavigation() {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+  // Smooth-scroll nav links
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+        history.pushState(null, '', link.getAttribute('href'));
+      }
+    });
+  });
+
+  // Active section tracking
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
+      }
+    });
+  }, { rootMargin: '-80px 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
+
+  // Handle hash on load and hashchange
+  function handleHash() {
+    const hash = window.location.hash;
+    if (!hash) {
+      window.scrollTo(0, 0);
+      return;
+    }
+    const el = document.querySelector(hash);
+    if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 200);
+  }
+  window.addEventListener('hashchange', handleHash);
+  handleHash();
+}
+
+// ── Dashboard ───────────────────────────────────────────────────────────────
+function renderDashboard() {
+  const grid = document.getElementById('stats-grid');
+  const stats = [
+    { value: SUMMARY.configured_repos, label: 'Repositories', sub: 'with configuration artifacts' },
+    { value: Object.keys(SUMMARY.tool_counts).filter(tool => tool !== TOOL_LABELS.no_specific_tool).length, label: 'Tools', sub: 'Claude, Copilot, Cursor, Gemini with Antigravity, Codex, OpenCode' },
+    { value: Object.keys(SUMMARY.mechanism_counts).length, label: 'Mechanisms', sub: 'context files, skills, settings, ...' },
+    { value: SUMMARY.total_commits, label: 'AI Commits', sub: 'that credit a tool' },
+  ];
+  grid.innerHTML = stats.map(s => `
+    <div class="stat-card">
+      <div class="stat-value">${fmt(s.value)}</div>
+      <div class="stat-label">${s.label}</div>
+      <div class="stat-sublabel">${s.sub}</div>
+    </div>`).join('');
+
+  // Tool bars
+  const maxTool = Math.max(...Object.values(SUMMARY.tool_counts));
+  document.getElementById('tool-bars').innerHTML = Object.entries(SUMMARY.tool_counts)
+    .sort((a,b) => b[1]-a[1])
+    .map(([t,c]) => `
+      <div class="bar-item">
+        <span class="bar-label">${t}</span>
+        <div class="bar-track"><div class="bar-fill" style="width:${c/maxTool*100}%;background:${TOOL_COLORS[t]||'#ccc'}"></div></div>
+        <span class="bar-value">${fmt(c)}</span>
+      </div>`).join('');
+
+  // Mechanism bars
+  const maxCfg = Math.max(...Object.values(SUMMARY.mechanism_counts));
+  document.getElementById('config-bars').innerHTML = Object.entries(SUMMARY.mechanism_counts)
+    .sort((a,b) => b[1]-a[1])
+    .map(([c,n]) => `
+      <div class="bar-item">
+        <span class="bar-label">${c}</span>
+        <div class="bar-track"><div class="bar-fill" style="width:${n/maxCfg*100}%;background:#a8a29e"></div></div>
+        <span class="bar-value">${fmt(n)}</span>
+      </div>`).join('');
+}
+
+// ── Filter bar ──────────────────────────────────────────────────────────────
+function renderFilterBar() {
+  const toggles = document.getElementById('tool-toggles');
+  TOOL_KEYS.forEach(t => {
+    const btn = document.createElement('button');
+    btn.textContent = TOOL_LABELS[t];
+    if (TOOL_TITLES[t]) btn.title = TOOL_TITLES[t];
+    btn.dataset.tool = t;
+    btn.onclick = () => { btn.classList.toggle('active'); applyFilters(); };
+    toggles.appendChild(btn);
+  });
+
+  const chips = document.getElementById('config-chips');
+  CONFIG_KEYS.forEach(c => {
+    const btn = document.createElement('button');
+    btn.textContent = MECHANISM_LABELS[c];
+    btn.dataset.config = c;
+    btn.onclick = () => { btn.classList.toggle('active'); applyFilters(); };
+    chips.appendChild(btn);
+  });
+
+  const langs = [...new Set(INDEX.map(r => r.mainLanguage).filter(Boolean))].sort();
+  const sel = document.getElementById('language-filter');
+  langs.forEach(l => { const o = document.createElement('option'); o.value = l; o.textContent = l; sel.appendChild(o); });
+
+  document.getElementById('repo-search').oninput = () => applyFilters();
+  sel.onchange = () => applyFilters();
+  document.getElementById('sort-select').onchange = () => applyFilters();
+}
+
+function applyFilters() {
+  const query = document.getElementById('repo-search').value.toLowerCase();
+  const activeTools = [...document.querySelectorAll('#tool-toggles button.active')].map(b => b.dataset.tool);
+  const activeConfigs = [...document.querySelectorAll('#config-chips button.active')].map(c => c.dataset.config);
+  const lang = document.getElementById('language-filter').value;
+  const sort = document.getElementById('sort-select').value;
+
+  FILTERED = INDEX.filter(r => {
+    if (query && !r.repo_name.toLowerCase().includes(query)) return false;
+    if (activeTools.length && !activeTools.some(t => r[t])) return false;
+    if (activeConfigs.length && !activeConfigs.some(c => r[c])) return false;
+    if (lang && r.mainLanguage !== lang) return false;
+    return true;
+  });
+
+  FILTERED.sort((a, b) => (b[sort] || 0) - (a[sort] || 0));
+  repoPage = 0;
+  renderRepoPage();
+}
+
+// ── Repo list ───────────────────────────────────────────────────────────────
+function renderRepoPage() {
+  const start = repoPage * REPOS_PER_PAGE;
+  const end = Math.min(start + REPOS_PER_PAGE, FILTERED.length);
+  const page = FILTERED.slice(start, end);
+
+  document.getElementById('repo-results-text').textContent =
+    showingText(start, end, FILTERED.length, 'repositories');
+
+  const list = document.getElementById('repo-list');
+  list.innerHTML = page.map(r => {
+    const tools = TOOL_KEYS.filter(t => r[t]).map(t =>
+      `<span class="doc-badge ${BADGE_CLASSES[t]}"${TOOL_TITLES[t] ? ` title="${TOOL_TITLES[t]}"` : ''}>${TOOL_LABELS[t]}</span>`).join('');
+    const configs = CONFIG_KEYS.filter(c => r[c]).map(c =>
+      `<span class="doc-badge badge-config">${MECHANISM_LABELS[c]}</span>`).join('');
+    return `
+    <div class="doc-card" data-repo="${escapeHtml(r.repo_name)}">
+      <div class="doc-card-header" onclick="toggleRepo(this)">
+        <div class="doc-card-left">
+          <h3><a href="${escapeHtml(r.github_link)}" target="_blank" onclick="event.stopPropagation()">${escapeHtml(r.repo_name)}</a></h3>
+          <div class="doc-card-badges">${tools} ${configs}</div>
+        </div>
+        <div class="doc-card-right">
+          <div class="doc-card-meta">
+            ${r.mainLanguage ? `<span>${r.mainLanguage}</span>` : ''}
+            <span>${fmt(r.stargazers)} stars</span>
+            <span>${fmt(r.commits)} commits</span>
+          </div>
+          <span class="expand-icon">&#9660;</span>
+        </div>
+      </div>
+      <div class="doc-card-body"><div class="loading">Loading...</div></div>
+    </div>`;
+  }).join('');
+
+  renderPagination('repo-pagination', FILTERED.length, REPOS_PER_PAGE, repoPage, p => { repoPage = p; renderRepoPage(); }, 'repos');
+}
+
+function renderPagination(containerId, total, perPage, current, onPage, scrollToId) {
+  const nPages = Math.ceil(total / perPage);
+  const container = document.getElementById(containerId);
+  if (nPages <= 1) { container.innerHTML = ''; return; }
+
+  let html = `<button ${current===0?'disabled':''} onclick="void(0)">&laquo;</button>`;
+  const range = getPageRange(current, nPages);
+  range.forEach(p => {
+    if (p === '...') html += `<span style="padding:0 0.3rem;color:#a8a29e">...</span>`;
+    else html += `<button class="${p===current?'active':''}">${p+1}</button>`;
+  });
+  html += `<button ${current===nPages-1?'disabled':''} onclick="void(0)">&raquo;</button>`;
+  html += `<span class="page-info">Page ${current+1} of ${nPages}</span>`;
+  container.innerHTML = html;
+
+  function go(p) { onPage(p); if (scrollToId) document.getElementById(scrollToId).scrollIntoView({ behavior: 'smooth' }); }
+  const buttons = container.querySelectorAll('button');
+  buttons[0].onclick = () => { if (current > 0) go(current - 1); };
+  buttons[buttons.length - 1].onclick = () => { if (current < nPages - 1) go(current + 1); };
+  let btnIdx = 1;
+  range.forEach(p => {
+    if (p !== '...') { const pg = p; buttons[btnIdx++].onclick = () => go(pg); }
+  });
+}
+
+function getPageRange(current, total) {
+  if (total <= 9) return Array.from({length: total}, (_, i) => i);
+  const pages = [];
+  pages.push(0);
+  let start = Math.max(1, current - 2);
+  let end = Math.min(total - 2, current + 2);
+  if (start > 1) pages.push('...');
+  for (let i = start; i <= end; i++) pages.push(i);
+  if (end < total - 2) pages.push('...');
+  pages.push(total - 1);
+  return pages;
+}
+
+// ── Expand repo ─────────────────────────────────────────────────────────────
+async function toggleRepo(header) {
+  const card = header.parentElement;
+  const repoName = card.dataset.repo;
+  const wasExpanded = card.classList.contains('expanded');
+  card.classList.toggle('expanded');
+  if (wasExpanded) return;
+
+  const body = card.querySelector('.doc-card-body');
+  body.innerHTML = '<div class="loading">Loading details...</div>';
+
+  const entry = INDEX.find(r => r.repo_name === repoName);
+  const pageIdx = entry ? entry._page : 0;
+
+  if (!LOADED_PAGES.has(pageIdx)) {
+    try {
+      const resp = await fetch(`data/repos/page_${pageIdx}.json`);
+      const page = await resp.json();
+      page.forEach(r => PAGE_CACHE[r.repo_name] = r);
+      LOADED_PAGES.add(pageIdx);
+    } catch(e) {}
+  }
+
+  renderRepoDetail(body, repoName);
+}
+
+function renderRepoDetail(container, repoName) {
+  const detail = PAGE_CACHE[repoName] || {};
+
+  let html = '<div class="detail-grid">';
+  html += '<div class="detail-section"><h4>Repository</h4>';
+  const fields = [
+    ['Language', detail.mainLanguage],
+    ['Stars', fmt(detail.stargazers)],
+    ['Forks', fmt(detail.forks)],
+    ['Contributors', fmt(detail.contributors)],
+    ['Commits', fmt(detail.commits)],
+    ['Code lines', fmt(detail.codeLines)],
+    ['Created', detail.createdAt ? detail.createdAt.split('T')[0] : '-'],
+    ['License', detail.license || '-'],
+  ];
+  fields.forEach(([l, v]) => { html += `<div class="detail-row"><span class="detail-label">${l}</span><span class="detail-value">${v||'-'}</span></div>`; });
+  html += '</div>';
+
+  html += '<div class="detail-section"><h4>Tools & Configurations</h4>';
+  const tools = TOOL_KEYS.filter(t => detail[t]).map(t => TOOL_LABELS[t]);
+  const configs = CONFIG_KEYS.filter(c => detail[c]).map(c => MECHANISM_LABELS[c]);
+  html += `<div class="detail-row"><span class="detail-label">Tools</span><span class="detail-value">${tools.join(', ') || '-'}</span></div>`;
+  html += `<div class="detail-row"><span class="detail-label">Mechanisms</span><span class="detail-value">${configs.join(', ') || '-'}</span></div>`;
+  html += '</div></div>';
+
+  // Each configuration artifact links to the file on GitHub on the scanned branch.
+  if (detail.files && detail.files.length > 0) {
+    html += '<div class="detail-section"><h4>Configuration artifacts</h4>';
+    detail.files.forEach(f => {
+      html += `<div class="detail-row"><span class="detail-label">${escapeHtml(MECHANISM_LABELS[f.tab === 'context_files' ? 'context_file' : f.tab] || f.tab)}</span>` +
+        `<span class="detail-value"><a href="${escapeHtml(f.link || '')}" target="_blank">${escapeHtml(f.path)}</a></span></div>`;
+    });
+    html += '</div>';
+  }
+
+  if (detail.justification) {
+    html += '<hr style="border:none;border-top:1px solid #e7e5e4;margin:1rem 0">';
+    html += '<div style="font-size:0.8rem;color:#57534e;line-height:1.55">';
+    html += '<span style="font-weight:600;color:#1c1917">Inclusion justification</span><br>';
+    html += escapeHtml(detail.justification);
+    html += '</div>';
+  }
+
+  container.innerHTML = html;
+}
+
+// ── Commits ─────────────────────────────────────────────────────────────────
+const SIX_COMMIT_TOOLS = ['Copilot', 'Cursor', 'Claude', 'Gemini', 'Codex', 'OpenCode'];
+const OTHER_COMMIT_TOOLS = 'Other tools';
+// Whether a commit credits the tool of a filter button: one of the six by its name, and
+// OTHER_COMMIT_TOOLS for any tool outside them.
+function creditsTool(commit, tool) {
+  const credits = (commit.ai_tool || '').split(',').map(credit => credit.trim());
+  if (tool === OTHER_COMMIT_TOOLS) return credits.some(credit => credit && !SIX_COMMIT_TOOLS.includes(credit));
+  return credits.some(credit => credit.toLowerCase() === tool.toLowerCase());
+}
+
+function initCommits() {
+  const toggles = document.getElementById('commit-tool-toggles');
+  // The six tools, and the commits that credit a tool outside them, which other_commits.csv holds.
+  [...SIX_COMMIT_TOOLS, OTHER_COMMIT_TOOLS].forEach(t => {
+    const btn = document.createElement('button');
+    btn.textContent = t;
+    btn.dataset.tool = t;
+    btn.onclick = () => { btn.classList.toggle('active'); commitPage = 0; loadCommitPage(); };
+    toggles.appendChild(btn);
+  });
+  document.getElementById('commit-search').oninput = () => { commitPage = 0; loadCommitPage(); };
+  loadCommitPage();
+}
+
+async function loadCommitPage() {
+  const list = document.getElementById('commit-list');
+  const query = document.getElementById('commit-search').value.toLowerCase();
+  const activeTools = [...document.querySelectorAll('#commit-tool-toggles button.active')].map(b => b.dataset.tool);
+  const hasFilters = query || activeTools.length;
+
+  if (!hasFilters) {
+    if (!commitPageCache[commitPage]) {
+      list.innerHTML = '<div class="loading">Loading commits...</div>';
+      try {
+        const resp = await fetch(`data/commits/page_${commitPage}.json`);
+        commitPageCache[commitPage] = await resp.json();
+      } catch(e) { list.innerHTML = '<div class="loading">Failed to load.</div>'; return; }
+    }
+    const commits = commitPageCache[commitPage];
+    const total = SUMMARY.total_listed_commits;
+    const start = commitPage * REPOS_PER_PAGE;
+    document.getElementById('commit-results-info').textContent =
+      `Showing ${start+1}\u2013${Math.min(start + REPOS_PER_PAGE, total)} of ${fmt(total)} commits`;
+    renderCommits(commits);
+    renderPagination('commit-pagination', total, REPOS_PER_PAGE, commitPage, p => { commitPage = p; loadCommitPage(); }, 'commits');
+    return;
+  }
+
+  // With filters: load pages and filter client-side
+  list.innerHTML = '<div class="loading">Searching commits...</div>';
+  const allCommits = [];
+  const maxPages = Math.min(200, Math.ceil(SUMMARY.total_listed_commits / REPOS_PER_PAGE));
+  for (let i = 0; i < maxPages; i++) {
+    if (!commitPageCache[i]) {
+      try {
+        const resp = await fetch(`data/commits/page_${i}.json`);
+        commitPageCache[i] = await resp.json();
+      } catch(e) { break; }
+    }
+    allCommits.push(...commitPageCache[i]);
+  }
+
+  const filtered = allCommits.filter(c => {
+    if (query && !(c.commit_subject||'').toLowerCase().includes(query)) return false;
+    if (activeTools.length && !activeTools.some(t => creditsTool(c, t))) return false;
+    return true;
+  });
+
+  const start = commitPage * REPOS_PER_PAGE;
+  const end = Math.min(start + REPOS_PER_PAGE, filtered.length);
+  const page = filtered.slice(start, end);
+  document.getElementById('commit-results-info').textContent =
+    `Showing ${Math.min(start+1, filtered.length)}\u2013${end} of ${fmt(filtered.length)} matching commits among the newest ${fmt(allCommits.length)} of ${fmt(SUMMARY.total_listed_commits)} commits`;
+  renderCommits(page);
+  renderPagination('commit-pagination', filtered.length, REPOS_PER_PAGE, commitPage, p => { commitPage = p; loadCommitPage(); }, 'commits');
+}
+
+function renderCommits(commits) {
+  const list = document.getElementById('commit-list');
+  list.innerHTML = commits.map((c, idx) => {
+    const toolLabel = c.ai_tool || 'Unknown';
+    const toolKey = Object.entries(TOOL_LABELS).find(([k,v]) => v.toLowerCase() === toolLabel.toLowerCase());
+    const badgeClass = toolKey ? BADGE_CLASSES[toolKey[0]] : 'badge-config';
+    const full = c.commit_subject || '';
+    const lines = full.split('\n');
+    const shortLines = lines.slice(0, 3).join('\n');
+    const short = shortLines.length > 300 ? shortLines.substring(0, 300) : shortLines;
+    const needsToggle = short.length < full.length;
+    const cid = `cm-${commitPage}-${idx}`;
+    let msgHtml;
+    if (needsToggle) {
+      msgHtml = `<div class="commit-msg"><span id="${cid}-short">${escapeHtml(short)}</span><span id="${cid}-full" style="display:none">${escapeHtml(full)}</span></div>` +
+        `<span class="post-detail-toggle" id="${cid}-toggle" onclick="toggleCommitMsg('${cid}')">Show more</span>`;
+    } else {
+      msgHtml = `<div class="commit-msg">${escapeHtml(full)}</div>`;
+    }
+    return `
+    <div class="commit-row">
+      <div class="commit-tool"><span class="doc-badge ${badgeClass}">${escapeHtml(toolLabel)}</span></div>
+      <div class="commit-info">
+        <div class="commit-repo"><a href="https://github.com/${escapeHtml(c.repo_name)}" target="_blank">${escapeHtml(c.repo_name)}</a></div>
+        ${msgHtml}
+        <div class="commit-meta">
+          ${c.commit_timestamp ? c.commit_timestamp.split('T')[0] : ''} &middot;
+          <a href="${escapeHtml(c.github_link||'')}" target="_blank">${(c.commit_sha||'').substring(0,7)}</a>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function toggleCommitMsg(cid) {
+  const s = document.getElementById(cid + '-short');
+  const f = document.getElementById(cid + '-full');
+  const t = document.getElementById(cid + '-toggle');
+  if (f.style.display === 'none') {
+    s.style.display = 'none'; f.style.display = ''; t.textContent = 'Show less';
+  } else {
+    s.style.display = ''; f.style.display = 'none'; t.textContent = 'Show more';
+  }
+}
+
+// ── Artifacts ───────────────────────────────────────────────────────────────
+function initArtifacts() {
+  const tabs = document.getElementById('artifact-tabs');
+  const types = [
+    ['context_files', 'Context Files'],
+    ['skills', 'Skills'],
+    ['subagents', 'Subagents'],
+    ['commands', 'Commands'],
+    ['rules', 'Rules'],
+    ['settings', 'Settings'],
+    ['hooks', 'Hooks'],
+    ['mcp', 'MCP'],
+    ['plugins', 'Plugins'],
+    ['lsp', 'LSP'],
+    ['planning_documents', 'Planning documents'],
+    ['imports', 'Imports'],
+  ];
+  types.forEach(([key, label]) => {
+    const btn = document.createElement('button');
+    btn.textContent = label;
+    btn.className = key === currentArtifactTab ? 'active' : '';
+    btn.onclick = () => {
+      tabs.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentArtifactTab = key;
+      loadArtifact(key);
+    };
+    tabs.appendChild(btn);
+  });
+  loadArtifact(currentArtifactTab);
+}
+
+let artifactPage = 0;
+
+async function loadArtifact(key) {
+  const container = document.getElementById('artifact-content');
+  if (!artifactData[key]) {
+    container.innerHTML = '<div class="loading">Loading...</div>';
+    try {
+      const resp = await fetch(`data/artifacts/${key}.json`);
+      artifactData[key] = await resp.json();
+    } catch(e) { container.innerHTML = '<div class="loading">Failed to load.</div>'; return; }
+  }
+  artifactPage = 0;
+  renderArtifactPage(key);
+}
+
+function renderArtifactPage(key) {
+  const data = artifactData[key];
+  const start = artifactPage * REPOS_PER_PAGE;
+  const end = Math.min(start + REPOS_PER_PAGE, data.length);
+  const rows = data.slice(start, end);
+
+  const noun = { planning_documents: 'planning documents', imports: 'imports' }[key]
+    || 'configuration artifacts';
+  document.getElementById('artifact-results-info').textContent =
+    showingText(start, end, data.length, noun);
+
+  const cols = getArtifactColumns(key);
+  const pathCol = getArtifactPathCol(key);
+  let html = '<div style="overflow-x:auto"><table class="artifact-table"><thead><tr>';
+  cols.forEach(c => { html += `<th>${c.label}</th>`; });
+  html += '</tr></thead><tbody>';
+
+  rows.forEach(row => {
+    html += '<tr>';
+    cols.forEach(c => {
+      let val = row[c.key];
+      if (c.key === pathCol && val && row.github_link) {
+        val = `<a href="${escapeHtml(row.github_link)}" target="_blank">${escapeHtml(String(val))}</a>`;
+      } else if (c.key === 'repo_name' && val) {
+        val = `<a href="https://github.com/${escapeHtml(val)}" target="_blank">${escapeHtml(val)}</a>`;
+      } else if (c.key === 'created_at' && val) {
+        val = String(val).split('T')[0];
+      } else {
+        val = escapeHtml(String(val == null ? '' : val));
+      }
+      html += `<td>${val}</td>`;
+    });
+    html += '</tr>';
+  });
+  html += '</tbody></table></div>';
+
+  const container = document.getElementById('artifact-content');
+  container.innerHTML = html;
+  renderPagination('artifact-pagination', data.length, REPOS_PER_PAGE, artifactPage, p => { artifactPage = p; renderArtifactPage(key); }, 'artifacts');
+}
+
+function getArtifactPathCol(key) {
+  return { context_files:'context_file', settings:'settings', skills:'skills.md',
+    subagents:'subagent', commands:'command', hooks:'hook', rules:'rule', mcp:'mcp',
+    plugins:'plugin', lsp:'lsp', planning_documents:'planning_document', imports:'importer' }[key];
+}
+
+function getArtifactColumns(key) {
+  const base = [{ key: 'repo_name', label: 'Repository' }];
+  const pathCol = getArtifactPathCol(key);
+  if (pathCol) base.push({ key: pathCol, label: 'Path' });
+  if (['skills','subagents','commands','rules'].includes(key)) base.push({ key: 'name', label: 'Name' });
+  if (key === 'context_files') {
+    base.push({ key: 'language', label: 'Language' });
+    base.push({ key: 'line_count', label: 'Lines' });
+  }
+  if (key === 'planning_documents') {
+    base.push({ key: 'framework', label: 'Framework' });
+    base.push({ key: 'document', label: 'Document' });
+  }
+  if (key === 'imports') {
+    // An import has no history of its own: the columns say what the tool reads and where.
+    base.push({ key: 'tool', label: 'Tool' });
+    base.push({ key: 'import', label: 'Import' });
+    base.push({ key: 'target', label: 'Target' });
+    base.push({ key: 'target_status', label: 'Status' });
+    return base;
+  }
+  base.push({ key: '#commits', label: 'Commits' });
+  base.push({ key: 'created_at', label: 'Created' });
+  return base;
+}
+
+// ── Downloads ───────────────────────────────────────────────────────────────
+async function initDownloads() {
+  try {
+    const resp = await fetch('data/downloads.json');
+    const downloads = await resp.json();
+    document.getElementById('download-grid').innerHTML = downloads.map(d => `
+      <div class="download-card">
+        <h4>${escapeHtml(d.filename)}</h4>
+        <div class="dl-desc">${escapeHtml(d.description)}</div>
+        <div class="dl-meta">
+          <span class="dl-size">${fmtSize(d.size)}</span>
+          <a class="dl-btn" href="${escapeHtml(d.url)}" download>Download</a>
+        </div>
+      </div>`).join('');
+  } catch(e) {}
+}
+
+// ── Code example actions ────────────────────────────────────────────────────
+function copyCode(btn) {
+  const text = document.querySelector('.code-wrapper pre code').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.classList.add('copied');
+    btn.querySelector('svg').nextSibling.textContent = ' Copied';
+    setTimeout(() => { btn.classList.remove('copied'); btn.querySelector('svg').nextSibling.textContent = ' Copy'; }, 2000);
+  });
+}
+
+// ── Chart rendering ─────────────────────────────────────────────────────────
+const chartRenderers = {
+  'config-tool-heatmap': renderHeatmap,
+  'language-tool-heatmap': renderHeatmap,
+  'tool-cooccurrence': renderCooccurrenceHeatmap,
+  'reference-network': renderReferenceHeatmap,
+  'upset': renderUpsetPlot,
+  'count-distribution': renderCountDistribution,
+  'creation-order': renderCreationOrder,
+  'cumulative-adoption': renderCumulativeAdoption,
+};
+
+const chartDataFiles = {
+  'config-tool-heatmap': 'config_tool_heatmap',
+  'language-tool-heatmap': 'language_tool_heatmap',
+  'tool-cooccurrence': 'tool_cooccurrence',
+  'reference-network': 'reference_network',
+  'upset': 'upset_tool_usage',
+  'count-distribution': 'count_distribution',
+  'creation-order': 'creation_order_sequences',
+  'cumulative-adoption': 'cumulative_repo_adoption',
+};
+
+function initChartObservers() {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const chartId = e.target.id.replace('chart-', '');
+        loadAndRenderChart(chartId, e.target);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: '200px' });
+  document.querySelectorAll('.chart-panel').forEach(p => observer.observe(p));
+}
+
+async function loadAndRenderChart(chartId, panel) {
+  const container = panel.querySelector('.chart-container');
+  container.innerHTML = '<div class="loading">Loading...</div>';
+  try {
+    const file = chartDataFiles[chartId];
+    const resp = await fetch(`data/charts/${file}.json`);
+    const data = await resp.json();
+    container.innerHTML = '';
+    chartRenderers[chartId](container, data);
+  } catch(e) {
+    container.innerHTML = '<div class="loading">Failed to load chart.</div>';
+  }
+}
+
+// ── Heatmap renderer (config_tool, language_tool) ───────────────────────────
+function renderHeatmap(container, data) {
+  // Estimate left margin from longest row label (~7px per char)
+  const maxLabelLen = d3.max(data.rows.map(r => r.length));
+  const leftMargin = Math.max(70, maxLabelLen * 8 + 12);
+  const margin = { top: 50, right: 10, bottom: 10, left: leftMargin };
+  const cellW = 90, cellH = 40;
+  const width = margin.left + data.cols.length * cellW + margin.right;
+  const height = margin.top + data.rows.length * cellH + margin.bottom;
+
+  const svg = d3.select(container).append('svg')
+    .attr('viewBox', `0 0 ${width} ${height}`)
+;
+
+  const maxPct = d3.max(data.percentages.flat());
+  const color = d3.scaleSequential(d3.interpolateYlOrRd).domain([0, maxPct]);
+
+  data.rows.forEach((row, i) => {
+    data.cols.forEach((col, j) => {
+      const x = margin.left + j * cellW;
+      const y = margin.top + i * cellH;
+      const val = data.counts[i][j];
+      const pct = data.percentages[i][j];
+
+      svg.append('rect').attr('x', x).attr('y', y)
+        .attr('width', cellW).attr('height', cellH)
+        .attr('fill', val === 0 ? '#f0f0f0' : color(pct))
+        .attr('stroke', '#fff').attr('stroke-width', 0.5);
+
+      const textColor = val === 0 ? '#78716c' : (pct > maxPct * 0.65 ? '#fff' : '#292524');
+      svg.append('text').attr('x', x + cellW/2).attr('y', y + cellH/2 - 6)
+        .attr('text-anchor', 'middle').attr('font-size', '11px').attr('fill', textColor)
+        .text(val.toLocaleString());
+      svg.append('text').attr('x', x + cellW/2).attr('y', y + cellH/2 + 8)
+        .attr('text-anchor', 'middle').attr('font-size', '9px').attr('fill', textColor)
+        .text(`(${pct.toFixed(1)}%)`);
+    });
+  });
+
+  data.rows.forEach((row, i) => {
+    svg.append('text').attr('x', margin.left - 8).attr('y', margin.top + i * cellH + cellH/2)
+      .attr('text-anchor', 'end').attr('dominant-baseline', 'middle')
+      .attr('font-size', '12px').attr('fill', '#292524').text(row);
+  });
+
+  data.cols.forEach((col, j) => {
+    const x = margin.left + j * cellW + cellW/2;
+    svg.append('text').attr('x', x).attr('y', margin.top - 24)
+      .attr('text-anchor', 'middle').attr('font-size', '12px').attr('fill', '#292524').text(col);
+    const total = data.tool_totals[col];
+    svg.append('text').attr('x', x).attr('y', margin.top - 8)
+      .attr('text-anchor', 'middle').attr('font-size', '10px').attr('fill', '#78716c')
+      .text(`(n=${total.toLocaleString()})`);
+  });
+}
+
+// ── Co-occurrence heatmap ───────────────────────────────────────────────────
+function renderCooccurrenceHeatmap(container, data) {
+  const maxLabelLen = d3.max(data.tools.map(t => t.length));
+  const leftMargin = Math.max(70, maxLabelLen * 8 + 12);
+  const margin = { top: 50, right: 10, bottom: 10, left: leftMargin };
+  const cellSize = 80;
+  const n = data.tools.length;
+  const width = margin.left + n * cellSize + margin.right;
+  const height = margin.top + n * cellSize + margin.bottom;
+
+  const svg = d3.select(container).append('svg')
+    .attr('viewBox', `0 0 ${width} ${height}`)
+;
+
+  const maxVal = d3.max(data.count_matrix.flat());
+  const color = d3.scaleSequential(d3.interpolateYlOrRd).domain([0, maxVal]);
+
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < n; j++) {
+      const x = margin.left + j * cellSize;
+      const y = margin.top + i * cellSize;
+      const cnt = data.count_matrix[i][j];
+      const pct = data.pct_matrix[i][j];
+
+      svg.append('rect').attr('x', x).attr('y', y)
+        .attr('width', cellSize).attr('height', cellSize)
+        .attr('fill', color(cnt)).attr('stroke', '#fff').attr('stroke-width', 0.5);
+
+      const textColor = cnt > maxVal * 0.6 ? '#fff' : '#292524';
+      if (i === j) {
+        svg.append('text').attr('x', x + cellSize/2).attr('y', y + cellSize/2 + 4)
+          .attr('text-anchor', 'middle').attr('font-size', '10px').attr('fill', textColor)
+          .text(`n=${cnt.toLocaleString()}`);
+      } else {
+        svg.append('text').attr('x', x + cellSize/2).attr('y', y + cellSize/2 - 6)
+          .attr('text-anchor', 'middle').attr('font-size', '10px').attr('fill', textColor)
+          .text(cnt.toLocaleString());
+        svg.append('text').attr('x', x + cellSize/2).attr('y', y + cellSize/2 + 8)
+          .attr('text-anchor', 'middle').attr('font-size', '9px').attr('fill', textColor)
+          .text(`(${pct.toFixed(1)}%)`);
+      }
+    }
+  }
+
+  data.tools.forEach((t, i) => {
+    svg.append('text').attr('x', margin.left - 8).attr('y', margin.top + i * cellSize + cellSize/2)
+      .attr('text-anchor', 'end').attr('dominant-baseline', 'middle')
+      .attr('font-size', '12px').attr('fill', '#292524').text(t);
+    svg.append('text')
+      .attr('x', margin.left + i * cellSize + cellSize/2)
+      .attr('y', margin.top - 8)
+      .attr('text-anchor', 'middle').attr('font-size', '12px').attr('fill', '#292524').text(t);
+  });
+}
+
+// ── Reference network heatmap ───────────────────────────────────────────────
+function renderReferenceHeatmap(container, data) {
+  const maxLabelLen = d3.max(data.sources.map(s => s.length));
+  const leftMargin = Math.max(70, maxLabelLen * 8 + 12);
+  const margin = { top: 50, right: 10, bottom: 35, left: leftMargin };
+  const cellW = 80, cellH = 40;
+  const width = margin.left + data.targets.length * cellW + margin.right;
+  const height = margin.top + data.sources.length * cellH + margin.bottom;
+
+  const svg = d3.select(container).append('svg')
+    .attr('viewBox', `0 0 ${width} ${height}`)
+;
+
+  const maxVal = d3.max(data.matrix.flat().filter(v => v > 0)) || 1;
+  const color = d3.scaleSequential(d3.interpolateYlOrRd).domain([0, maxVal]);
+
+  data.sources.forEach((src, i) => {
+    data.targets.forEach((tgt, j) => {
+      const x = margin.left + j * cellW;
+      const y = margin.top + i * cellH;
+      const val = data.matrix[i][j];
+
+      svg.append('rect').attr('x', x).attr('y', y)
+        .attr('width', cellW).attr('height', cellH)
+        .attr('fill', val === 0 ? '#f0f0f0' : color(val))
+        .attr('stroke', '#fff').attr('stroke-width', 0.5);
+
+      const textColor = val === 0 ? '#78716c' : (val > maxVal * 0.65 ? '#fff' : '#292524');
+      svg.append('text').attr('x', x + cellW/2).attr('y', y + cellH/2 + 4)
+        .attr('text-anchor', 'middle').attr('font-size', '11px').attr('fill', textColor)
+        .text(val);
+    });
+  });
+
+  data.sources.forEach((s, i) => {
+    svg.append('text').attr('x', margin.left - 8).attr('y', margin.top + i * cellH + cellH/2)
+      .attr('text-anchor', 'end').attr('dominant-baseline', 'middle')
+      .attr('font-size', '11px').attr('fill', '#292524').text(s);
+  });
+
+  data.targets.forEach((t, j) => {
+    svg.append('text').attr('x', margin.left + j * cellW + cellW/2).attr('y', margin.top - 8)
+      .attr('text-anchor', 'middle').attr('font-size', '11px').attr('fill', '#292524').text(t);
+  });
+
+  svg.append('text').attr('x', margin.left + data.targets.length * cellW / 2).attr('y', height - 8)
+    .attr('text-anchor', 'middle').attr('font-size', '11px').attr('fill', '#78716c').text('Target');
+  svg.append('text').attr('x', 12).attr('y', margin.top + data.sources.length * cellH / 2)
+    .attr('text-anchor', 'middle').attr('dominant-baseline', 'middle')
+    .attr('transform', `rotate(-90, 12, ${margin.top + data.sources.length * cellH / 2})`)
+    .attr('font-size', '11px').attr('fill', '#78716c').text('Source');
+}
+
+// ── UpSet plot ──────────────────────────────────────────────────────────────
+function renderUpsetPlot(container, data) {
+  // Reverse category order so that the largest is at the bottom, matching the analysis PDF
+  const cats = [...data.categories].reverse();
+  const intersections = data.intersections;
+  const nCats = cats.length;
+  const nInter = intersections.length;
+
+  const margin = { top: 30, right: 20, bottom: 10, left: 40 };
+  const barW = 28, barGap = 4;
+  const dotR = 8;
+  const matrixH = nCats * (dotR * 2 + 6);
+  const barMaxH = 200;
+  const setBarW = 120;
+  const labelW = 80;
+  const gapAfterBars = 12;
+  const gapAfterLabels = 12;
+  const leftBlockW = setBarW + gapAfterBars + labelW + gapAfterLabels;
+  const totalW = margin.left + leftBlockW + nInter * (barW + barGap) + margin.right;
+  const totalH = margin.top + barMaxH + 10 + matrixH + margin.bottom;
+
+  const svg = d3.select(container).append('svg')
+    .attr('viewBox', `0 0 ${totalW} ${totalH}`)
+;
+
+  const maxSize = d3.max(intersections.map(d => d.size));
+  const barScale = d3.scaleLinear().domain([0, maxSize]).range([0, barMaxH]);
+  const xOffset = margin.left + leftBlockW;
+
+  // Intersection bars, all gray like the analysis PDF
+  intersections.forEach((inter, i) => {
+    const x = xOffset + i * (barW + barGap);
+    const h = barScale(inter.size);
+    const y = margin.top + barMaxH - h;
+    svg.append('rect').attr('x', x).attr('y', y).attr('width', barW).attr('height', h)
+      .attr('fill', '#aaa');
+    svg.append('text').attr('x', x + barW/2).attr('y', y - 4)
+      .attr('text-anchor', 'middle').attr('font-size', '9px').attr('fill', '#57534e')
+      .text(inter.size);
+  });
+
+  const yAxis = d3.axisLeft(d3.scaleLinear().domain([0, maxSize]).range([margin.top + barMaxH, margin.top])).ticks(5);
+  svg.append('g').attr('transform', `translate(${xOffset - 4}, 0)`).call(yAxis)
+    .selectAll('text').attr('font-size', '9px');
+
+  // Dot matrix, connections drawn first (behind dots)
+  const matrixTop = margin.top + barMaxH + 10;
+  intersections.forEach((inter, ii) => {
+    const cx = xOffset + ii * (barW + barGap) + barW/2;
+    const activeIdxs = cats.map((cat, ci) => inter.members.includes(cat) ? ci : -1).filter(i => i >= 0);
+    if (activeIdxs.length > 1) {
+      const y1 = matrixTop + activeIdxs[0] * (dotR * 2 + 6) + dotR;
+      const y2 = matrixTop + activeIdxs[activeIdxs.length - 1] * (dotR * 2 + 6) + dotR;
+      svg.append('line').attr('x1', cx).attr('y1', y1).attr('x2', cx).attr('y2', y2)
+        .attr('stroke', '#57534e').attr('stroke-width', 2);
+    }
+  });
+
+  // Dots and labels
+  cats.forEach((cat, ci) => {
+    const cy = matrixTop + ci * (dotR * 2 + 6) + dotR;
+    const labelX = margin.left + setBarW + gapAfterBars + labelW / 2;
+    svg.append('text').attr('x', labelX).attr('y', cy + 4)
+      .attr('text-anchor', 'middle').attr('font-size', '10px').attr('fill', '#292524').text(cat);
+
+    intersections.forEach((inter, ii) => {
+      const cx = xOffset + ii * (barW + barGap) + barW/2;
+      const active = inter.members.includes(cat);
+      svg.append('circle').attr('cx', cx).attr('cy', cy).attr('r', dotR - 1)
+        .attr('fill', active ? (data.category_colors[cat] || '#aaa') : '#e7e5e4');
+    });
+  });
+
+  // Set-size bars (left side)
+  const maxTotal = d3.max(Object.values(data.category_totals));
+  const setBarLeft = margin.left;
+  const setScale = d3.scaleLinear().domain([0, maxTotal]).range([0, setBarW]);
+  cats.forEach((cat, ci) => {
+    const cy = matrixTop + ci * (dotR * 2 + 6);
+    const w = setScale(data.category_totals[cat]);
+    svg.append('rect')
+      .attr('x', setBarLeft + setBarW - w).attr('y', cy + 1)
+      .attr('width', w).attr('height', dotR * 2 - 2)
+      .attr('fill', data.category_colors[cat] || '#aaa');
+    svg.append('text')
+      .attr('x', setBarLeft + setBarW - w - 4).attr('y', cy + dotR + 3)
+      .attr('text-anchor', 'end').attr('font-size', '9px').attr('fill', '#57534e')
+      .text(data.category_totals[cat].toLocaleString());
+  });
+}
+
+// ── Count distribution (broken Y-axis) ──────────────────────────────────────
+function renderCountDistribution(container, data) {
+  const margin = { top: 20, right: 20, bottom: 45, left: 50 };
+  const width = 500, height = 300;
+
+  const svg = d3.select(container).append('svg')
+    .attr('viewBox', `0 0 ${width} ${height}`)
+;
+
+  const nCats = data.categories.length;
+  const barW = 16;
+  const xScale = d3.scaleBand().domain(data.bins).range([margin.left, width - margin.right]).padding(0.3);
+
+  const maxVal = d3.max(data.categories.flatMap(c => c.values));
+  const yScale = d3.scaleLinear().domain([0, Math.ceil(maxVal / 10) * 10]).range([height - margin.bottom, margin.top]);
+
+  data.categories.forEach((cat, ci) => {
+    cat.values.forEach((val, bi) => {
+      const x = xScale(data.bins[bi]) + ci * barW;
+      const y = yScale(val);
+      const h = yScale(0) - y;
+      if (h > 0) {
+        svg.append('rect').attr('x', x).attr('y', y).attr('width', barW - 1).attr('height', h)
+          .attr('fill', cat.color);
+      }
+    });
+  });
+
+  svg.append('g').attr('transform', `translate(${margin.left}, 0)`)
+    .call(d3.axisLeft(yScale).ticks(6)).selectAll('text').attr('font-size', '10px');
+  svg.append('g').attr('transform', `translate(0, ${height - margin.bottom})`)
+    .call(d3.axisBottom(xScale)).selectAll('text').attr('font-size', '10px');
+
+  const legend = svg.append('g').attr('transform', `translate(${width - 200}, ${margin.top + 5})`);
+  data.categories.forEach((cat, i) => {
+    legend.append('rect').attr('x', 0).attr('y', i * 18).attr('width', 12).attr('height', 12).attr('fill', cat.color);
+    legend.append('text').attr('x', 16).attr('y', i * 18 + 10).attr('font-size', '10px').attr('fill', '#57534e')
+      .text(`${cat.label} (n=${cat.n.toLocaleString()})`);
+  });
+
+  svg.append('text').attr('x', 14).attr('y', height / 2)
+    .attr('text-anchor', 'middle').attr('transform', `rotate(-90, 14, ${height/2})`)
+    .attr('font-size', '11px').attr('fill', '#57534e').text('% of Repositories');
+  svg.append('text').attr('x', (margin.left + width - margin.right) / 2).attr('y', height - 4)
+    .attr('text-anchor', 'middle').attr('font-size', '11px').attr('fill', '#57534e')
+    .text('Number of Configuration Artifacts per Repository');
+}
+
+// ── Creation order sequences ────────────────────────────────────────────────
+function renderCreationOrder(container, data) {
+  const margin = { top: 20, right: 50, bottom: 30, left: 200 };
+  const barH = 28;
+  const barInner = 20;
+  const barPad = (barH - barInner) / 2;
+  const height = margin.top + data.sequences.length * barH + margin.bottom;
+  const width = 500;
+
+  const svg = d3.select(container).append('svg')
+    .attr('viewBox', `0 0 ${width} ${height}`)
+;
+
+  const maxVal = d3.max(data.sequences.map(s => s.count));
+  const xScale = d3.scaleLinear().domain([0, maxVal]).range([margin.left, width - margin.right]);
+
+  data.sequences.forEach((seq, i) => {
+    const y = margin.top + i * barH;
+    const w = xScale(seq.count) - margin.left;
+    const trackW = xScale(maxVal) - margin.left;
+    svg.append('rect').attr('x', margin.left).attr('y', y + barPad).attr('width', trackW).attr('height', barInner)
+      .attr('fill', '#f5f5f4');
+    svg.append('rect').attr('x', margin.left).attr('y', y + barPad).attr('width', w).attr('height', barInner)
+      .attr('fill', seq.color || '#78716c');
+    svg.append('text').attr('x', margin.left - 8).attr('y', y + barH/2 + 4)
+      .attr('text-anchor', 'end').attr('font-size', '10px').attr('fill', '#292524')
+      .text(seq.label);
+    svg.append('text').attr('x', xScale(seq.count) + 4).attr('y', y + barH/2 + 4)
+      .attr('font-size', '10px').attr('fill', '#57534e').text(seq.count);
+  });
+
+  svg.append('g').attr('transform', `translate(0, ${margin.top + data.sequences.length * barH})`)
+    .call(d3.axisBottom(xScale).ticks(5)).selectAll('text').attr('font-size', '10px');
+  svg.append('text').attr('x', (margin.left + width - margin.right) / 2).attr('y', height - 4)
+    .attr('text-anchor', 'middle').attr('font-size', '11px').attr('fill', '#57534e')
+    .text('Number of Repositories');
+}
+
+// ── Cumulative adoption ─────────────────────────────────────────────────────
+function renderCumulativeAdoption(container, data) {
+  const margin = { top: 10, right: 10, bottom: 80, left: 75 };
+  const width = 780, height = 380;
+
+  // Map marker names to D3 symbol types matching matplotlib markers:
+  // circle=o, square=s, triangle=^, diamond=D, triangleDown=v, plus=P, cross=X
+  const symbolMap = {
+    'circle': d3.symbolCircle,
+    'square': d3.symbolSquare,
+    'triangle': d3.symbolTriangle,
+    'diamond': d3.symbolDiamond,
+    'triangleDown': d3.symbolTriangle,
+    'pentagon': d3.symbolCross,    // matplotlib "P" = filled plus
+    'star': d3.symbolStar,          // matplotlib "*"
+    'cross': d3.symbolX,           // matplotlib "X" = filled X
+  };
+  const markerSize = 30;
+
+  const svg = d3.select(container).append('svg');
+  const g = svg.append('g');
+
+  const allDates = [];
+  const allValues = [];
+  data.series.forEach(s => {
+    s.data.forEach(d => {
+      allDates.push(new Date(d.date + '-01'));
+      allValues.push(d.value);
+    });
+  });
+
+  const xScale = d3.scaleTime()
+    .domain(d3.extent(allDates))
+    .range([margin.left, width - margin.right]);
+  const yScale = d3.scaleLinear()
+    .domain([0, d3.max(allValues) * 1.05])
+    .range([height - margin.bottom, margin.top]);
+
+  // Grid lines (alpha=0.3 like matplotlib)
+  g.selectAll('.grid-line').data(yScale.ticks(5)).enter()
+    .append('line').attr('x1', margin.left).attr('x2', width - margin.right)
+    .attr('y1', d => yScale(d)).attr('y2', d => yScale(d))
+    .attr('stroke', '#ccc').attr('stroke-width', 0.5).attr('opacity', 0.7);
+
+  // Y-axis
+  g.append('g').attr('transform', `translate(${margin.left}, 0)`)
+    .call(d3.axisLeft(yScale).ticks(5))
+    .selectAll('text').attr('font-size', '10px');
+
+  // Y-axis label
+  g.append('text')
+    .attr('transform', `rotate(-90)`)
+    .attr('x', -(margin.top + height - margin.bottom) / 2).attr('y', 14)
+    .attr('text-anchor', 'middle').attr('font-size', '11px').attr('fill', '#292524')
+    .text('Cumulative Unique Repositories');
+
+  // X-axis with a tick every quarter
+  g.append('g').attr('transform', `translate(0, ${height - margin.bottom})`)
+    .call(d3.axisBottom(xScale).ticks(d3.timeMonth.every(3)).tickFormat(d3.timeFormat('%b %Y')))
+    .selectAll('text').attr('font-size', '9px')
+    .attr('transform', 'rotate(-45)').attr('text-anchor', 'end');
+
+  // X-axis label
+  g.append('text')
+    .attr('x', (margin.left + width - margin.right) / 2).attr('y', height - 4)
+    .attr('text-anchor', 'middle').attr('font-size', '11px').attr('fill', '#292524')
+    .text('Month');
+
+  // Series: lines + markers
+  data.series.forEach(s => {
+    const points = s.data.map(d => ({ x: new Date(d.date + '-01'), y: d.value }));
+    const line = d3.line().x(d => xScale(d.x)).y(d => yScale(d.y));
+    g.append('path').datum(points).attr('d', line)
+      .attr('fill', 'none').attr('stroke', s.color).attr('stroke-width', 1.5);
+
+    const symType = symbolMap[s.marker] || d3.symbolCircle;
+    const symGen = d3.symbol().type(symType).size(markerSize);
+    const isFlipped = s.marker === 'triangleDown';
+
+    points.forEach(p => {
+      const mg = g.append('g')
+        .attr('transform', `translate(${xScale(p.x)},${yScale(p.y)})${isFlipped ? ' rotate(180)' : ''}`);
+      mg.append('path').attr('d', symGen()).attr('fill', s.color);
+    });
+  });
+
+  // Legend (upper-left, inside the plot area, matching matplotlib)
+  const legend = g.append('g').attr('transform', `translate(${margin.left + 10}, ${margin.top + 4})`);
+  // Background
+  const lw = 135, lh = data.series.length * 18 + 8;
+  legend.append('rect').attr('x', -6).attr('y', -10).attr('width', lw).attr('height', lh)
+    .attr('fill', '#fff').attr('fill-opacity', 0.85).attr('stroke', '#ccc').attr('stroke-width', 0.5);
+  data.series.forEach((s, i) => {
+    const y = i * 18;
+    const symType = symbolMap[s.marker] || d3.symbolCircle;
+    const symGen = d3.symbol().type(symType).size(markerSize);
+    const isFlipped = s.marker === 'triangleDown';
+
+    // Line segment
+    legend.append('line').attr('x1', 0).attr('y1', y).attr('x2', 16).attr('y2', y)
+      .attr('stroke', s.color).attr('stroke-width', 1.5);
+    // Marker
+    const mg = legend.append('g')
+      .attr('transform', `translate(8,${y})${isFlipped ? ' rotate(180)' : ''}`);
+    mg.append('path').attr('d', symGen()).attr('fill', s.color);
+    // Label
+    legend.append('text').attr('x', 22).attr('y', y + 4).attr('font-size', '9px').attr('fill', '#292524').text(s.label);
+  });
+
+  // Auto-center: measure content bounding box, set viewBox with directional padding
+  const padTop = 25, padBottom = 15, padLeft = 35, padRight = 45;
+  const bbox = g.node().getBBox();
+  svg.attr('viewBox',
+    `${bbox.x - padLeft} ${bbox.y - padTop} ${bbox.width + padLeft + padRight} ${bbox.height + padTop + padBottom}`);
+}
+
+// ── Start ───────────────────────────────────────────────────────────────────
+init();
+</script>
+</body>
+</html>

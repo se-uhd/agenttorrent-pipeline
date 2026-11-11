@@ -1,0 +1,3 @@
+# What a development machine needs beyond the steps' requirements: the coverage
+# measurement that the section The tests and verification of docs/architecture.md describes.
+coverage==7.16.1

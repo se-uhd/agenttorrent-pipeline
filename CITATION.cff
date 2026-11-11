@@ -1,0 +1,27 @@
+# The citation of the pipeline. Each release of the dataset contains a CITATION.cff of its own,
+# which agentcontext/steps/release.py writes with the same authors. The DOI is the concept DOI of
+# the Zenodo record of the pipeline.
+cff-version: 1.2.0
+message: If you use this pipeline, please cite it as below.
+type: software
+title: "AgentTorrent: A Dataset of Context and Harness Engineering Artifacts on GitHub"
+license: MIT
+doi: 10.5281/zenodo.24058028
+repository-code: https://github.com/se-uhd/agenttorrent-pipeline
+authors:
+  - given-names: Sebastian
+    family-names: Baltes
+  - given-names: Seyedmoein
+    family-names: Mohsenimofidi
+  - given-names: Levi
+    family-names: Böhme
+  - given-names: Vahram
+    family-names: Nersesyan
+  - given-names: Muhammad Auwal
+    family-names: Abubakar
+  - given-names: Jai Lal
+    family-names: Lulla
+  - given-names: Matthias
+    family-names: Galster
+  - given-names: Christoph
+    family-names: Treude

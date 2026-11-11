@@ -1,0 +1,250 @@
+######################
+# OS generated files #
+######################
+*~
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+#Icon?
+ehthumbs.db
+Thumbs.db
+
+#########
+# Latex #
+#########
+*.acn
+*.acr
+*.alg
+*.aux
+*.bbl
+*.blg
+*.dvi
+*.fdb_latexmk
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
+*.lof
+*.log
+*.lot
+*.lol
+*.maf
+*.mtc
+*.mtc0
+*.nav
+*.nlo
+*.out
+*.pdfsync
+*.ps
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+*.xdy
+*.tdo
+*.thm
+*.bib.bak
+*.cut
+*.loc
+*.soc
+*.bcf
+*.fls
+*.run.xml
+
+##############
+# Java/Scala #
+##############
+*.class
+
+##########################
+# Webstorm/IntelliJ IDEA #
+##########################
+.idea/
+*.iml
+
+#########
+# Excel #
+#########
+~$*
+
+###########
+# RStudio #
+###########
+.Rhistory
+.RData
+
+#########
+# Maven #
+#########
+target/
+
+##########
+# JabRef #
+##########
+*.bak
+*.sav
+
+########
+# Misc #
+########
+__pycache__
+
+# The data root, data/: everything that a run reads and writes, a directory per stage. Its
+# caches, its evaluations and its tracked outputs are in git; what a run derives again, what is
+# in progress and what the handover carries are not.
+
+# The sampling stage: the sampling frame that a run writes. The cache of retrievals under
+# ghs_retrievals/ is tracked, and data/sampling/.gitignore keeps out the pointer, the reports,
+# the responses that a stopped query left and a download in progress.
+data/sampling/ghs_complete.json
+data/sampling/ghs_filtered.json
+data/sampling/ghs_filtered.csv
+data/sampling/ghs_filtered-*.json
+
+# The classification stage: the labels and the exclusions of the last run, the sample and the
+# comparison, which a run writes again. The cache of labels is tracked, but not a run in
+# progress or a file being written.
+data/classification/repos_annotated.csv
+data/classification/repos_annotated.json
+data/classification/repos_annotated_included.csv
+data/classification/repos_excluded.csv
+data/classification/label_changes.csv
+data/classification/output-*/
+data/classification/labels/*.partial.jsonl
+data/classification/labels/**/*.tmp
+data/classification/labels/*.tmp
+# The caches of labels that `2_evaluate_labels.py check --runs` writes, one per run of a
+# model over the check samples. The record of each day's runs is tracked as
+# `prompt_check_<date>.csv` in the directory of each evaluation.
+data/classification/checks/
+# The lock file beside such a record, which each check holds while it rewrites the record.
+data/classification/evaluation/*/prompt_check_*.csv.lock
+# What an evaluation of a collection keeps for its labelers and for a second draw, and what can
+# name people: the identities and messages of its commits, and the mentions CSV that it read.
+data/collection/evaluation/*/commit_recall-texts.csv
+data/collection/evaluation/*/all_ai_commits-mentions.csv.xz
+
+# The collection stage. The three trees under data/: collected, validated and excluded. Each list sits at the root of the
+# tree it lists, so the pattern is `dir/*` with the tracked list negated: a `dir/` entry
+# excludes the directory itself and git will not descend into it, so a negation under one has
+# no effect.
+#
+# Raw collection files come from the latest complete handover. Track its input list.
+data/collection/data/collected/*
+!data/collection/data/collected/clone_failed.csv
+!data/collection/data/collected/repos.csv
+
+# The validated tree, which the cleanup derives from the raw output on every run.
+data/collection/data/validated/*
+!data/collection/data/validated/repos.csv
+
+# Repositories that the cleanup drops because no mechanism is detected.
+data/collection/data/excluded/
+
+data/collection/_stage_collected/
+data/collection/_stage_excluded/
+
+# The publication, built from output/ by `python -m agentcontext release` and uploaded to
+# Zenodo. Every file in it is derived. Rebuilding release archives would otherwise add a new
+# binary copy to the commit history.
+data/collection/release/
+
+# The cleanup's deletion log, rewritten every run. deletion.csv.7z tracks the log of the
+# collection that docs/dataset.md names.
+data/collection/deletion.csv
+
+# The workflow files a run keeps beside the collection, for reading after it. Per-run
+# data like the collected tree, and in the handover rather than in git.
+data/collection/data/workflows/
+
+# Every repository's file list at the collected commit, beside the collection, for counting
+# a path heuristic over the whole sample afterwards. Per-run data, in the handover.
+data/collection/data/file_lists/
+
+# The files that the imports of the copied configuration artifacts reach, beside the
+# collection. Per-run data, in the handover.
+data/collection/data/imported/
+
+data/collection/output/all_ai_commits.csv
+data/collection/output/all_ai_commits-unmatched.csv
+data/collection/output/other_ai_commits.csv
+# The extracted form of the tracked unmatched attributions,
+# all_ai_commits-unmatched-<day>.csv.7z, which stays tracked: the pattern ends in .csv, so the
+# archive's name does not match it.
+data/collection/output/all_ai_commits-unmatched-*.csv
+
+# The record, the lock and the logs of a run, under each stage's data directory and the data
+# root.
+run_logs/
+
+# The built site, assembled from release/ by _website/build_site.py and rsynced to the
+# GitHub Pages repository by deploy.sh, rebuilt from the release inputs on
+# every run: build_site.py deletes the directory before it starts.
+_website/_site/
+# The download files of each release that build_site.py puts there for
+# the asset host, which _website/upload_assets.sh mirrors there.
+_website/_assets/
+
+# The 1.0.0 publication, superseded by release/. It was tracked, which is how the
+# repository came to carry 64 MB of a release that is also on Zenodo, under column names
+# the pipeline stopped writing. Untracked rather than deleted: the copy on disk is the
+# user's to remove.
+_dataset/
+
+# The per-stage archives of a replication package, made at the root as the section
+# "Replication packages" of docs/development.md describes.
+1_sampling.zip
+2_classification.zip
+3_data-collection.zip
+4_data-analysis.zip
+1_sampling.7z
+2_classification.7z
+3_data-collection.7z
+4_data-analysis.7z
+
+###################
+# Secrets / .env  #
+###################
+.env
+*.env
+!*.env.example
+tokens.txt
+# The GitHub access tokens and OpenAI API keys the pipeline calls the services with, at the
+# repository root and anywhere else; agentcontext/credentials.py reads it. Never committed.
+credentials.csv
+# The lock file that LibreOffice writes beside a file it has open, such as credentials.csv.
+.~lock.*#
+
+##########################
+# MCP experiment outputs #
+##########################
+
+# Ad-hoc per-repo sample data copied in for the MCP experiment (owner§repo
+# folders directly under 2_classification/), which are not part of the tracked pipeline
+# output, kept local only.
+2_classification/*§*/
+
+# The container build products: the image tarball, its record and the bundle.
+deploy/agentcontext-pipeline.tar.gz
+deploy/BUILD_INFO.txt
+deploy/agentcontext-nas-bundle.zip
+
+# The editable install of the agentcontext package
+*.egg-info/
+# The virtual environment of the checkout, which mise creates from the Python of mise.toml
+.venv/
+ai-slop-report.md
+
+# Editor swap files are not repository changes.
+*.swp
+
+# What the calibration of the classification keeps beside its tracked results: the raw
+# READMEs and pages, the results while calibration_measure.py writes them, and its logs.
+data/classification/calibration/raw/
+data/classification/calibration/*.jsonl
+data/classification/calibration/*.log

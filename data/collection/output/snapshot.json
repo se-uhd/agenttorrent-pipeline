@@ -1,0 +1,175 @@
+{
+  "collection": {
+    "artifact_mtime_window": {
+      "first": "2026-11-04T20:20:37Z",
+      "last": "2026-11-06T06:34:43Z"
+    },
+    "counts": {
+      "archived": 11117,
+      "clone_failed": 2,
+      "flagged": 10948,
+      "flagged_without_a_directory": 0,
+      "missing_head_sha": 2,
+      "rows_without_files": 2,
+      "sampled": 40901,
+      "validated": 10944
+    },
+    "derived_from": {
+      "data/collected/": {
+        "repositories": 11117
+      },
+      "data/collected/clone_failed.csv": {
+        "rows": 2
+      },
+      "data/collected/repos.csv": {
+        "rows": 40901
+      },
+      "data/validated/repos.csv": {
+        "rows": 10944
+      }
+    },
+    "scanned_at_window": {
+      "first": "2026-11-04T20:20:25Z",
+      "last": "2026-11-06T06:51:11Z"
+    }
+  },
+  "commit_reclassification": {
+    "classified_by": "74650afef6f32217eaf1e5ac3de5dda9b8686d7376f200558d29c3bc04225f41",
+    "collection_sha256": "644d923d353f5a7ade5d696d6bac89215cd7f8fc32a3ee06877b64d9ee9b6c34",
+    "complete": true,
+    "counts": {
+      "current": 0,
+      "failed": 0,
+      "history_incomplete": 0,
+      "history_not_read": 0,
+      "missing_record": 0,
+      "missing_tree": 0,
+      "no_log": 0,
+      "no_path_history": 0,
+      "no_scope": 0,
+      "not_applicable": 0,
+      "reclassified": 10944,
+      "unavailable": 2
+    },
+    "derived_from": {
+      "output/commit-reclassification.json": {
+        "repositories": 40901
+      },
+      "output/repos.csv": {
+        "repositories": 10944
+      }
+    },
+    "left_out": {
+      "current": 0,
+      "failed": 0,
+      "history_incomplete": 0,
+      "history_not_read": 0,
+      "missing_record": 0,
+      "missing_tree": 0,
+      "no_log": 0,
+      "no_path_history": 0,
+      "no_scope": 0,
+      "not_applicable": 0,
+      "reclassified": 0,
+      "unavailable": 0
+    },
+    "population_complete": false,
+    "repositories": {
+      "failed": [],
+      "history_incomplete": [],
+      "history_not_read": [],
+      "missing_record": [],
+      "missing_tree": [],
+      "no_log": [],
+      "no_path_history": [],
+      "no_scope": [],
+      "unavailable": [
+        "cuthbertLab/music21",
+        "dethrace-labs/dethrace"
+      ]
+    }
+  },
+  "configured": {
+    "derived_from": {
+      "output/repos.csv": {
+        "repositories": 10944
+      }
+    },
+    "repositories": 10944
+  },
+  "imports": {
+    "derived_from": {
+      "output/imports.csv": {
+        "rows": 10662
+      }
+    },
+    "repositories": 2170,
+    "rows": 10662,
+    "statuses": {
+      "found": 6048,
+      "missing": 4536,
+      "not_read": 4,
+      "outside": 58,
+      "over_limit": 12,
+      "pruned": 4
+    },
+    "tools": {
+      "claude": 5000,
+      "copilot": 5517,
+      "cursor": 11,
+      "gemini": 134
+    }
+  },
+  "metadata": {
+    "artifact_rows": 75285,
+    "derived_from": {
+      "output/<mechanism>.csv": {
+        "mechanisms": 11,
+        "rows": 75285
+      }
+    },
+    "rows_without_commit_metadata": {
+      "repositories": 0,
+      "total": 0
+    }
+  },
+  "planning_documents": {
+    "derived_from": {
+      "output/planning-documents.csv": {
+        "rows": 27593
+      }
+    },
+    "frameworks": {
+      "ai-dev-tasks": 8,
+      "awesome-copilot": 3,
+      "backlog-md": 2265,
+      "beans": 117,
+      "bmad-method": 143,
+      "cc-sdd": 233,
+      "claude": 80,
+      "claude-code-workflows-conductor": 18,
+      "compound-engineering": 107,
+      "conductor": 6,
+      "copilot": 25,
+      "cursor": 236,
+      "get-shit-done": 1626,
+      "humanlayer": 25,
+      "matt-pocock-skills": 78,
+      "opencode": 84,
+      "openspec": 15307,
+      "pilot-shell": 2,
+      "planning-with-files": 101,
+      "prp": 24,
+      "spec-driven-workflow": 20,
+      "spec-kit": 2868,
+      "superpowers": 4216,
+      "task-master": 1
+    },
+    "repositories": 417,
+    "rows": 27593,
+    "rows_without_commit_metadata": {
+      "repositories": 0,
+      "total": 0
+    }
+  }
+}

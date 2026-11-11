@@ -1,0 +1,46 @@
+{
+  "evaluation_id": "2026-10-31T210357Z",
+  "retrieval_id": "2026-10-23T074035Z",
+  "run_id": "2026-10-23T093036Z",
+  "reference_model": "gpt-6-luna",
+  "parameters": "827a98facb7b303d22a3147047a13f4f9e05bb2b300154a4759394664c91df0c",
+  "labeled": 44842,
+  "excluded": [
+    {
+      "path": "data/classification/calibration/calibration_sample.csv",
+      "sha256": "839ce010544348055b41632b0a46729830eb47576beb945cd963643e4ab10b7f",
+      "repositories": 2282
+    },
+    {
+      "path": "data/classification/evaluation/2026-10-07T021344Z/evaluation_sample.csv",
+      "sha256": "2839dad5fd39fe89049b609c03b08a1e1b3e50f375ec3cc588ce7f212068f8eb",
+      "repositories": 1041
+    },
+    {
+      "path": "data/classification/evaluation/2026-10-11T060023Z/evaluation_sample.csv",
+      "sha256": "80b98d5f3202e6c7d9b46eddb0a135a346c8ad45ac6171fccce5d89cba609ca4",
+      "repositories": 1041
+    },
+    {
+      "path": "data/classification/evaluation/2026-10-28T214115Z/evaluation_sample.csv",
+      "sha256": "99fc7aef9e656bf5d8f4b4eb8ad7c8b43cef2fd91e8075ae5c1c19b8cd29c3a6",
+      "repositories": 1040
+    },
+    {
+      "path": "data/classification/evaluation/2026-10-30T222453Z/evaluation_sample.csv",
+      "sha256": "7f5991b6f471c41c0a8d1a87f3b0261f3559cbfeb4a1009d07770a3ecc351fa4",
+      "repositories": 381
+    },
+    {
+      "path": "data/classification/evaluation/2026-10-31T094615Z/evaluation_sample.csv",
+      "sha256": "f2cdf9ef1b146b5622d141c7460290deb3e70b6ab27f717635ed6cbc6b89991b",
+      "repositories": 381
+    }
+  ],
+  "left_out": 5970,
+  "population": 38872,
+  "size": 96,
+  "margin": 0.1,
+  "confidence": 0.95,
+  "seed": 3009851490
+}

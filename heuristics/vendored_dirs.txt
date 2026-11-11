@@ -1,0 +1,54 @@
+# The names of vendored and build-output directories, from which no step reads files.
+# agentcontext/heuristics.py loads the list for repository cloning, which leaves these directories
+# out of its file listing and its rsync copies, and for the collected file cleanup and detection.
+# docs/heuristics.md gives the reasons, including for the names that are deliberately not listed
+# (build, dist, out, bin, obj, env, packages, coverage, .cache).
+# One name per line, matched case-sensitively at any depth, except a folder that contains a
+# SKILL.md, which is a skill (is_vendored in agentcontext/paths.py). Names must not contain
+# whitespace or glob characters.
+# JavaScript / TypeScript
+node_modules
+bower_components
+.yarn
+.pnp
+.pnpm-store
+.next
+.nuxt
+.output
+.vercel
+.parcel-cache
+.turbo
+.svelte-kit
+# Python
+venv
+.venv
+__pycache__
+site-packages
+.tox
+.pytest_cache
+.mypy_cache
+.ruff_cache
+.eggs
+# Go / PHP / Ruby
+vendor
+# Rust / Maven / Java tool directories
+target
+.gradle
+.mvn
+# C# / .NET tool directories (bin and obj are left out as ambiguous)
+.vs
+.nuget
+# C / C++: CMake and vendor conventions
+CMakeFiles
+cmake-build-debug
+cmake-build-release
+vcpkg_installed
+_deps
+third_party
+thirdparty
+3rdparty
+external
+# Documentation and site build outputs
+_site
+_build
+docs-build

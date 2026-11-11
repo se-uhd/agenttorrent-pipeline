@@ -1,0 +1,13 @@
+{
+  "evaluation": "2026-10-31T094615Z",
+  "repositories": 381,
+  "all_six_agree": 360,
+  "cost_usd": {
+    "deepseek": 0.53,
+    "mistral": 10.29,
+    "kimi": 9.89,
+    "glm": 2.11,
+    "luna": 1.26,
+    "sol": 19.3
+  }
+}

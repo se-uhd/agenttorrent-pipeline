@@ -1,0 +1,66 @@
+name: container image
+
+# Builds the pipeline's image for the NAS and the bundle from which its project folder is
+# created, and uploads both as workflow artifacts. It runs on a GitHub-hosted runner because the
+# NAS platform, linux/amd64, is native there, while a laptop builds it under emulation.
+#
+# By hand from the Actions tab, on any branch, and on a release tag. Not on a push,
+# because an image is built when a deployment needs one, and pipeline-tests.yml already
+# checks the entrypoint, the Dockerfile, the compose file and the build context on every
+# push. Both workflow artifacts are kept for a week: a deployment downloads them on the day that
+# they are built, and the tag or the dispatch can build them again.
+on:
+  workflow_dispatch:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+
+jobs:
+  image:
+    # A named image rather than ubuntu-latest, which GitHub moves to a new release on its own
+    # schedule: a new runner image is a change made here, with CI run on it.
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@v7
+
+      # The build script runs under the release of Python that mise.toml pins, the release of
+      # the base image, and names in BUILD_INFO.txt the release that the interpreter of the built
+      # image reports. mise also creates the empty .venv of the checkout here, and the image does
+      # not contain it, because the build context holds tracked files only. `version` is the
+      # release of mise that deploy/install_tools.sh installs into the image.
+      - uses: jdx/mise-action@v4
+        with:
+          version: 2026.10.18
+
+      # The runner's default builder is the docker driver over the classic image store,
+      # which cannot write an image to a tarball. The container driver can. The mining
+      # project's workflow uses it too.
+      - uses: docker/setup-buildx-action@v4
+        with:
+          driver: docker-container
+
+      - name: Build the image, check its time zones and check that it lists its stages
+        run: |
+          bash deploy/build_image.sh
+          docker run --rm agentcontext-pipeline:latest --with-commit-reclassification --list
+
+      - name: Assemble the bundle
+        run: bash deploy/make_nas_bundle.sh
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: agentcontext-image
+          path: |
+            deploy/agentcontext-pipeline.tar.gz
+            deploy/BUILD_INFO.txt
+          if-no-files-found: error
+          retention-days: 7
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: agentcontext-nas-bundle
+          path: deploy/agentcontext-nas-bundle.zip
+          if-no-files-found: error
+          retention-days: 7

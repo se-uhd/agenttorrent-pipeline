@@ -1,0 +1,44 @@
+tool,category,paths,doc_url,doc_verified,notes
+Claude Code,survey,CLAUDE.md|CLAUDE.local.md|.claude/|.claude-plugin/,https://code.claude.com/docs/en/claude-directory,2026-10-20,the paths of the rows of heuristics/config_path_patterns.csv
+GitHub Copilot,survey,.github/copilot-instructions.md|.github/instructions/|.github/prompts/|.github/agents/|.github/chatmodes/|.github/skills/|.github/mcp.json|.github/workflows/copilot-setup-steps.yml,https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/add-custom-instructions/add-repository-instructions,2026-10-20,the paths of the rows of heuristics/config_path_patterns.csv
+Cursor,survey,.cursor/|.cursorrules|.cursorignore|.cursorindexingignore|.cursor-plugin/,https://cursor.com/docs/rules,2026-10-20,the paths of the rows of heuristics/config_path_patterns.csv
+Gemini,survey,GEMINI.md|.gemini/|.geminiignore|.aiexclude|.agents/rules/|.agents/agents/|.agents/workflows/|.agents/hooks.json|.agents/mcp_config.json|.agent/rules/|.agent/agents/|.agent/workflows/|.agent/skills/|.agent/hooks.json|.agent/mcp_config.json,https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/settings.md,2026-10-20,"the paths of the rows of heuristics/config_path_patterns.csv, Gemini CLI's and Antigravity's"
+OpenAI Codex,survey,.codex/|.codex-plugin/,https://learn.chatgpt.com/docs/config-file/config-basic,2026-10-20,the paths of the rows of heuristics/config_path_patterns.csv
+OpenCode,agent,.opencode/|opencode.json|opencode.jsonc|tui.json|tui.jsonc,https://opencode.ai/docs/config/,2026-10-20,Add opencode.json in your project root; the .opencode directory; tui.json alongside it
+Windsurf (Devin Desktop),agent,.windsurf/|.windsurfrules|.devin/,https://docs.devin.ai/desktop/cascade/memories,2026-10-20,.devin/rules or .windsurf/rules in the workspace; the legacy single-file .windsurfrules at the workspace root; Devin's .devin/wiki.json (https://docs.devin.ai/work-with-devin/deepwiki) under the same vendor's .devin/
+Junie,agent,.junie/,https://junie.jetbrains.com/docs/guidelines-and-memory.html,2026-10-20,".junie/AGENTS.md, .junie/playbook.md, .junie/rules/*.md and the legacy .junie/guidelines.md in the project root"
+Cline,agent,.clinerules|.clinerules/|.cline/|.clineignore,https://docs.cline.bot/features/cline-rules,2026-10-20,Workspace rules go in .clinerules/ or .cline/rules/ at your project root; .clineignore in the project root (https://docs.cline.bot/customization/clineignore)
+Pi,agent,.pi/,https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/docs/configuration.md,2026-10-20,Project configuration lives in .pi under the working directory
+Kiro,agent,.kiro/,https://kiro.dev/docs/steering/,2026-10-20,Workspace steering files reside in your project root folder under .kiro/steering/
+JetBrains AI Assistant,agent,.aiassistant/|.aiignore,https://www.jetbrains.com/help/ai-assistant/configure-project-rules.html,2026-10-20,the .aiassistant/rules folder in the project root; .aiignore (https://www.jetbrains.com/help/ai-assistant/disable-ai-assistant.html)
+Aider,agent,.aider.conf.yml|.aiderignore,https://aider.chat/docs/config/aider_conf.html,2026-10-20,.aider.conf.yml at the root of the git repo; .aiderignore in git root
+IBM Bob,agent,.bob/,https://bob.ibm.com/docs/ide/configuration/rules,2026-10-20,Use directories under .bob/ in your workspace root
+Roo Code,agent,.roo/|.roorules,https://roocodeinc.github.io/Roo-Code/features/custom-instructions,2026-10-20,.roo/rules/ in your workspace root; a single .roorules file in the workspace root
+Qwen Code,agent,.qwen/|QWEN.md|.qwenignore,https://github.com/QwenLM/qwen-code/blob/main/docs/users/configuration/settings.md,2026-10-20,.qwen/settings.json within your project's root directory; QWEN.md; .qwenignore in your project root
+Warp,agent,WARP.md,https://docs.warp.dev/agents/capabilities/rules.md,2026-10-20,"WARP.md, kept for backward compatibility beside AGENTS.md"
+Kilo Code,agent,.kilo/|.kilocode/|kilo.jsonc,https://kilo.ai/docs/customize/custom-rules,2026-10-20,"the project's kilo.jsonc, the .kilo/ directory and the legacy .kilocode/rules/"
+Continue,agent,.continue/,https://docs.continue.dev/customize/deep-dives/rules,2026-10-20,a .continue/rules folder at the top level of your workspace
+Augment,agent,.augment/|.augment-guidelines,https://docs.augmentcode.com/setup-augment/guidelines,2026-10-20,the .augment/rules directory; an .augment-guidelines file at the root of a repository
+OpenHands,agent,.openhands/,https://docs.openhands.dev/openhands/usage/customization/repository,2026-10-20,a .openhands directory at the root level
+Amazon Q Developer,agent,.amazonq/,https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/context-project-rules.html,2026-10-20,the project's {{project-root}}/.amazonq/rules folder
+CodeBuddy,agent,.codebuddy/|CODEBUDDY.md,https://www.tencentcloud.com/document/product/1256/77282,2026-10-20,project rules in .codebuddy/rules; CODEBUDDY.md in the repository root (https://www.workbuddy.ai/docs/cli/codebuddy-dir)
+Goose,agent,.goosehints,https://goose-docs.ai/docs/guides/context-engineering/using-goosehints,2026-10-20,"a .goosehints file at the root of the project and/or in any directory in the hierarchy, counted at the root"
+Zed,agent,.rules,https://zed.dev/docs/ai/instructions,2026-10-20,"a .rules file, the first of the project instruction files that Zed reads, which remain supported after rules became skills and instructions"
+Amp,agent,.amp/settings.json|.amp/settings.jsonc,https://ampcode.com/docs/cli/settings,2026-10-20,"the nearest .amp/settings.json or .jsonc, searched up to the repository root. Amp also reads AGENT.md where a directory has no AGENTS.md, a name that Zed reads too, so it is not counted"
+Crush,agent,.crush.json|crush.json,https://github.com/charmbracelet/crush/blob/main/README.md,2026-10-20,.crush.json or crush.json in the project
+Factory Droid,agent,.factory/commands/|.factory/droids/|.factory/skills/,https://docs.factory.ai/cli/configuration/custom-slash-commands,2026-10-20,"<repo>/.factory/commands; the custom droids in .factory/droids/. Factory's name alone is also TypeDB's CI folder, .factory/automation.yml"
+iFlow CLI,agent,IFLOW.md|.iflow/,https://platform.iflow.cn/en/cli/glossary,2026-10-20,IFLOW.md in the project root; the project's .iflow/ settings
+Qoder,agent,.qoder/,https://docs.qoder.com/user-guide/rules,2026-10-20,project rules in .qoder/rules
+Lingma,agent,.lingma/,https://www.alibabacloud.com/help/en/lingma/qoder-cn/user-guide/rules,2026-10-20,project rules in the .lingma/rules directory
+Mistral Vibe,agent,.vibe/,https://docs.mistral.ai/vibe/code/cli/configuration,2026-10-20,./.vibe/config.toml in the working directory
+Tabnine,agent,.tabnine/,https://docs.tabnine.com/main/getting-started/tabnine-agent/guidelines,2026-10-20,guidelines in a .tabnine/guidelines/ directory within each project
+Replit Agent,agent,replit.md,https://docs.replit.com/replitai/replit-dot-md,2026-10-20,a file named replit.md in the project's root directory
+Firebase Studio,agent,.idx/airules.md,https://firebase.google.com/docs/studio/set-up-gemini,2026-10-20,".idx/airules.md, which Gemini in Firebase reads before GEMINI.md"
+Ona,agent,.ona/,https://ona.com/docs/ona/create-first-project,2026-10-20,"automations.yaml at the repository root or .ona/automations.yaml, and .ona/mcp-config.json"
+CodeRabbit,review,.coderabbit.yaml|.coderabbit.yml,https://docs.coderabbit.ai/getting-started/yaml-configuration,2026-10-20,.coderabbit.yaml configuration file must be located in the root of the repository
+Greptile,review,greptile.json|.greptile/,https://www.greptile.com/docs/code-review/greptile-config,2026-10-20,the .greptile/ folder and the legacy greptile.json at the root
+Sourcery,review,.sourcery.yaml,https://docs.sourcery.ai/Coding-Assistant/Reference/Configuration/sourcery-yaml/,2026-10-20,the project's .sourcery.yaml
+Qodo,review,.pr_agent.toml,https://docs.qodo.ai/qodo-documentation/qodo-merge/configuration/configuration-file,2026-10-20,.pr_agent.toml at the root of the default branch
+Bito,review,.bito.yaml,https://docs.bito.ai/ai-code-reviews-in-git/agent-settings/repo-level-settings,2026-10-20,a .bito.yaml file in the root of your repository
+Trae,agent,.trae/,,,"the paths of Trae's files in the file lists, such as https://github.com/bfenetworks/bfe/blob/c95df40a3af93d3a3b8e719e47357740bb5e8865/.trae/skills/bfe-rd-workflow/SKILL.md; Trae's rules page serves no text without a browser"
+Command Code,agent,.commandcode/,,,"the paths of Command Code's files in the file lists, such as https://github.com/anonfaded/FadCam/blob/f275f69ca22cd9746e415a2727610934b6bb97d9/.commandcode/commands/add-context.md and https://github.com/afragen/git-updater/blob/e60a483a50a53df55b01062f07040017804e031a/.commandcode/taste/taste.md"

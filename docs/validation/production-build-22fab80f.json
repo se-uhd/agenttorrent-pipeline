@@ -1,0 +1,39 @@
+{
+  "workflow_url": "https://github.com/se-uhd/ai-config-pipeline/actions/runs/37249871852",
+  "workflow_run": 37249871852,
+  "source_commit": "22fab80fbb9715fee446a01adfaecb0506312fd2",
+  "platform": "linux/amd64",
+  "built_at": "2026-10-05T01:03:55Z",
+  "python": "3.14",
+  "image_tarball_sha256": "05f0b76eab8ce57ad8b0f8fd668c4251b60d944fb364303438a804cc1ef91355",
+  "nas_bundle_sha256": "0cbf9f0649ceee7faf8f41aaff3a7e4e895354cd18b35b58cc282488b5e77c18",
+  "input_archive_sha256": {
+    "1_sampling/ghs_filtered.json.7z": "425b23b821e181685ecfa76f1c1569fed0a7a3b299a9711c55404242e09a468c",
+    "2_classification/repos_annotated.7z": "a6e56bbba9f930f418bf64865604cc66a40902754359c7ff7875e7c845820821"
+  },
+  "checks": {
+    "build_info_matches_source_commit": true,
+    "image_checksum_matches_build_info": true,
+    "architecture_matches_nas": true,
+    "bundle_files_equal_source_commit": true,
+    "bundle_has_no_credentials_or_resume_state": true,
+    "bundle_has_no_collected_trees": true,
+    "image_load_preserves_tag": true,
+    "intended_stages_listed": true,
+    "stages_after_collection_over_october_handover": true,
+    "subsample_run_failed_stages_none": true
+  },
+  "stages_after_collection_over_october_handover": "The code and heuristics of 114f60df ran commit_reclassification, validation, detection, git_metadata_collection, consistency, unmatched_configuration_paths, deletions, snapshot, archive_creation, publication and unmatched_commit_attributions over the October 2026 handover in the image built from 4bba193c, each with exit 0, and regressions check found no change against the tracked baseline. The source commit changes evidence links, help texts, comments, the release README's descriptions and the Git metadata stage's recognition of repositories GitHub closed; the subsample run at the source commit runs every stage. commit_attribution_validation needs 13.6 GB, more than the 8.3 GB local Docker VM; it passed natively over the same CSV, and the NAS, with 64 GB, passed it in the October run.",
+  "full_verification_report_sha256": "d666e9643e68d26f2bfc6b6c5843e529c1c9fba2748324ac9fc318b29f12d8af",
+  "runtime": {
+    "python": "3.14.8",
+    "git": "git version 2.47.3"
+  },
+  "image_id": "sha256:25cced5b7c3da66f6aee33b014da8635e1e09aae544560dc44bb602dee5eaa86",
+  "stage_list": "INFO entrypoint: agentconfigs-pipeline image: commit 22fab80fbb9715fee446a01adfaecb0506312fd2, built 2026-10-05T01:03:55Z, python 3.14\nINFO runner: sampling_frame_filtering: python3 -m agentconfigs.stages.sampling_frame_filtering\nINFO runner: collection: /usr/local/bin/python3 -m agentconfigs.stages.collection --clone-dir /opt/pipeline/3_data-collection/_scratch\nINFO runner: commit_reclassification: /usr/local/bin/python3 -m agentconfigs.stages.commit_reclassification\nINFO runner: validation: python3 -m agentconfigs.stages.validation\nINFO runner: detection: /usr/local/bin/python3 -m agentconfigs.stages.detection\nINFO runner: git_metadata_collection: /usr/local/bin/python3 -m agentconfigs.stages.git_metadata_collection --clone-dir /opt/pipeline/3_data-collection/_scratch\nINFO runner: consistency: python3 -m agentconfigs.stages.consistency\nINFO runner: unmatched_configuration_paths: python3 -m agentconfigs.checks.unmatched paths --min-repos 2 --out output/unmatched-paths.csv\nINFO runner: deletions: python3 -m agentconfigs.checks.deletions --report-only --out output/deletions.csv\nINFO runner: snapshot: python3 -m agentconfigs.checks.snapshot write\nINFO runner: archive_creation: python3 -m agentconfigs.stages.archive_creation\nINFO runner: publication: python3 -m agentconfigs.stages.publication\nINFO runner: commit_attribution_validation: python3 -m agentconfigs.checks.commits -i output/all_ai_commits.csv\nINFO runner: unmatched_commit_attributions: python3 -m agentconfigs.checks.unmatched commits --unmatched-csv output/all_ai_commits-unmatched.csv --out output/unmatched-commits.csv\n",
+  "source_ci": {
+    "run": 37249854112,
+    "url": "https://github.com/se-uhd/ai-config-pipeline/actions/runs/37249854112",
+    "conclusion": "success"
+  }
+}

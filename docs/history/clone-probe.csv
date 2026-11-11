@@ -1,0 +1,10 @@
+repo_name,github_size_gib,blobless_clone_gib,ratio,seconds,completed
+jdesboeufs/connect-mongo,0.00,0.00,0.63,2,TRUE
+tryghost/framework,0.01,0.01,0.63,5,TRUE
+sqlrooms/sqlrooms,0.04,0.02,0.51,4,TRUE
+phobos-developers/phobos,0.14,0.21,1.48,27,TRUE
+randoop/randoop,0.41,0.02,0.06,4,TRUE
+SkBlaz/py3plex,0.77,0.31,0.40,18,TRUE
+fern-api/fern,2.74,1.11,0.41,80,TRUE
+mapsui/mapsui,4.28,0.40,0.09,20,TRUE
+nwjs/chromium.src,17.28,3.30,0.19,1200,FALSE

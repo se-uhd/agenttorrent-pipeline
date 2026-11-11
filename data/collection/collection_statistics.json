@@ -1,0 +1,40 @@
+{
+  "derived_from": {
+    "output/snapshot.json": "8d63668988b76c345f8da14c168ab586411db0d0a6b4bbc50940e40bea27713b",
+    "handover": {
+      "archive": "agentcontext-handover-20261106T125741Z-complete.7z",
+      "bytes": 8481941362,
+      "sha256": "1c0b5c81cb26cd85bbe0b83f1619d3a6cdd439e918c388eb530e875ad7908697"
+    }
+  },
+  "values": {
+    "handover.catalogs{}": {
+      "value": 271,
+      "code": "be1e8fd2c2f77f31381dbd35963ecf6150c5957d41841882f04542361bda5699"
+    },
+    "handover.files{\"contains\":\"(?:\\\\A|\\\\x00)[0-7]+\\\\tCONTEXT\\\\.md\\\\x00\",\"pattern\":\"collection/data/file_lists/*.ls-tree.xz\"}": {
+      "value": 123,
+      "code": "be1e8fd2c2f77f31381dbd35963ecf6150c5957d41841882f04542361bda5699"
+    },
+    "handover.files{\"contains\":\"[\\\\t/]_bmad/custom/config\\\\.toml\\\\x00\",\"pattern\":\"collection/data/file_lists/*.ls-tree.xz\"}": {
+      "value": 2,
+      "code": "be1e8fd2c2f77f31381dbd35963ecf6150c5957d41841882f04542361bda5699"
+    },
+    "handover.log_commits{\"heuristic\":\"jules-author-01\",\"message\":\"(?im)^[ \\\\t]*+(?:[*-][ \\\\t]++)?(?:(?:[\\\\w(),!./ -]{1,40}:|\\\\[[^\\\\]\\\\n]{1,40}\\\\])[ \\\\t]*+)*(?:merge pull request (?:[\\\\w.-]+/[\\\\w.-]+)?#?\\\\d+|closes #\\\\d+) from [^\\\\s/]+/[^\\\\s/]*-\\\\d{19,20}(?!\\\\S)\"}": {
+      "value": 461,
+      "code": "be1e8fd2c2f77f31381dbd35963ecf6150c5957d41841882f04542361bda5699"
+    },
+    "handover.log_commits{\"heuristic\":\"jules-author-01\",\"message\":\"(?im)^[ \\\\t]*+(?:[*-][ \\\\t]++)?(?:(?:[\\\\w(),!./ -]{1,40}:|\\\\[[^\\\\]\\\\n]{1,40}\\\\])[ \\\\t]*+)*(?:merge pull request (?:[\\\\w.-]+/[\\\\w.-]+)?#?\\\\d+|closes #\\\\d+) from [^\\\\s/]+/\\\\S*-\\\\d{19,20}(?!\\\\S)\"}": {
+      "value": 548,
+      "code": "be1e8fd2c2f77f31381dbd35963ecf6150c5957d41841882f04542361bda5699"
+    },
+    "handover.log_commits{\"heuristic\":\"jules-author-01\",\"message\":\"(?im)^[ \\\\t]*+(?:[*-][ \\\\t]++)?(?:(?:[\\\\w(),!./ -]{1,40}:|\\\\[[^\\\\]\\\\n]{1,40}\\\\])[ \\\\t]*+)*(?:merge pull request (?:[\\\\w.-]+/[\\\\w.-]+)?#?\\\\d+|closes #\\\\d+) from [^\\\\s/]+/jules/\\\\S*-\\\\d{19,20}(?!\\\\S)\"}": {
+      "value": 3,
+      "code": "be1e8fd2c2f77f31381dbd35963ecf6150c5957d41841882f04542361bda5699"
+    },
+    "handover.size{\"path\":\"collection/output/all_ai_commits-unmatched.csv\"}": {
+      "value": 53750109,
+      "code": "be1e8fd2c2f77f31381dbd35963ecf6150c5957d41841882f04542361bda5699"
+    }
+  }
+}

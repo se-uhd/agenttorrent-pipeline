@@ -1,0 +1,3 @@
+role,model,requested_tier,service_tier,requests,input_tokens,cached_tokens,cache_write_tokens,output_tokens,reasoning_tokens
+classifying_model,z-ai/glm-5.3,morph/fp8,morph/fp8,8,140301,76800,0,20405,13458
+summary_model,deepseek/deepseek-v4.1-flash,morph/fp8,morph/fp8,2,3202,2048,0,1282,0

@@ -1,0 +1,7 @@
+_scratch/
+run_logs/
+finished_repositories.jsonl
+finished_repositories.collection.json
+collect_commits/
+clone_logs/
+collection_heuristics/

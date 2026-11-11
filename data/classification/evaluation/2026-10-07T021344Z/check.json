@@ -1,0 +1,43 @@
+{
+  "evaluation_id": "2026-10-07T021344Z",
+  "previous_parameters": "37efaed267499e3d725a59a618f0e837797302a424c1ab79974a9e0efc8cc772",
+  "models": {
+    "gpt-6-luna": {
+      "parameters": "1558e4fc6fe60bee515a55b7620e347c95017440cda72e9b2fc3761fa917bb01",
+      "disagreement": {
+        "repositories": 41,
+        "expected": 41,
+        "as_expected": 41,
+        "changes": {}
+      },
+      "agreement": {
+        "repositories": 200,
+        "expected": 199,
+        "as_expected": 197,
+        "changes": {
+          "false to true": 2,
+          "unclear to true": 1
+        }
+      }
+    },
+    "gpt-6.1-sol": {
+      "parameters": "cf6ebc903150fe645df6ff67bf00496d8985d36b12233b98f4afd7ba3c1a78ed",
+      "disagreement": {
+        "repositories": 41,
+        "expected": 41,
+        "as_expected": 41,
+        "changes": {}
+      },
+      "agreement": {
+        "repositories": 200,
+        "expected": 199,
+        "as_expected": 189,
+        "changes": {
+          "true to false": 8,
+          "unclear to true": 1,
+          "false to true": 2
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+[tools]
+# The exact release of Python, so that every machine, CI and the base image of both Dockerfiles
+# run the same interpreter. tests/test_tech_stack.py checks that the Dockerfiles name it.
+python = "3.14.10"
+"aqua:astral-sh/uv" = "0.13.6"
+"conda:git" = "2.55.0"
+"conda:rsync" = "3.5.1"
+"aqua:ip7z/7zip" = "25.01"
+
+[env]
+_.python.venv = { path = ".venv", create = true }

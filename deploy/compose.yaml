@@ -1,0 +1,92 @@
+# The Container Manager project for the pipeline. Nothing here needs editing for a run: unpack
+# the bundle into an empty project folder, import the image, write credentials.csv from
+# credentials.csv.example, create the project from this file, and Container Manager builds and
+# starts it. When the run ends, the archive to download is in handover/. This file belongs to the
+# image of the same build. With a new image, copy the compose.yaml of its bundle into the project
+# folder before you build the project again.
+#
+# data/ is the data root, mounted at the path that the repository gives it, so that a path in a
+# log or in the runbook names the same file on the host. The image contains the code and the
+# heuristics and no data, and the bundle contains an empty data/: the first start downloads the
+# GHS retrieval, labels the sampling frame, collects the sample and writes the release and the
+# analysis there, and a later start continues from what the previous one left. handover/
+# receives one archive of everything that a checkout needs when the runner ends, and the
+# operator downloads that archive with the container's log.
+#
+# The project folder has to be on a volume of the machine itself. The run lock and the
+# snapshot lock are flocks, and a share mounted from another machine may not implement
+# them. The entrypoint refuses to start when the directory does not.
+services:
+  agentcontext:
+    image: agentcontext-pipeline:latest
+    pull_policy: never
+    # The name under which the tasks of DSM's Task Scheduler start the container
+    # (the section "A run every month" of docs/deploy.md). Without it, Compose names the container after the
+    # project, `<project>-agentcontext-1`, and under a project of another name than
+    # `agentcontext` every scheduled Start would fail with "No such container". Docker refuses a
+    # second container of this name, so the machine holds one project from this file at a time.
+    container_name: agentcontext-agentcontext-1
+    # An init process as process 1. The pipeline does not leave processes without a parent on
+    # purpose: git's detached auto-maintenance after a fetch, which leaves zombies behind, is
+    # turned off on every git command that it runs. The init process reaps any process that is
+    # left without a parent nevertheless.
+    init: true
+    # No restart policy. The container exits at the end of every Start, and a policy that
+    # restarts an exited container would begin another Start after each one. A task at boot-up
+    # resumes a run that a reboot killed (the section "A run every month" of docs/deploy.md).
+    # Passed to `run_pipeline.py`: the five stages and the two checks over the commit CSVs of
+    # the cloning step, for a run of any kind. A run over a folder that contains an earlier
+    # collection takes over the repositories that did not change, also after a change to the
+    # path heuristics or the collector (the section "A clean run" of docs/deploy.md). A Start after a completed
+    # run, in a later calendar month of the NAS's time than the run's GHS retrieval, begins the
+    # next run (the section "A run every month" of docs/deploy.md). An ordinary run needs no edit here. A setting
+    # such as `--step-arg repository_cloning:"-w 3"`, for fewer clone workers on a small machine,
+    # applies to every Start. An argument for one Start, `--from`, `--mark-complete`, or a
+    # `--fresh`, an `--accept-smaller` or an `--end-date` in a `--step-arg` value, is passed to
+    # the runner until a run has used it, and a later Start leaves it out with a warning until
+    # you remove it from here (the section "Deployment options" of docs/deploy.md).
+    command: ["--with-commit-reclassification"]
+    # Docker's default stop grace period is ten seconds. A Stop sends SIGTERM, which the
+    # entrypoint passes to the runner and the runner to the running step. The cloning step then
+    # ends its workers, kills the git processes that they started and records the finished
+    # repositories in finished_repositories.jsonl. The collected_files_archive step may be
+    # running 7zz over the collected files. The entrypoint then packs the handover. The grace
+    # period lets each of these end normally. After it, Docker sends SIGKILL, which
+    # finished_repositories.jsonl survives and the archives in progress do not.
+    stop_grace_period: 30m
+    environment:
+      # The revision of this file. The entrypoint of the image runs no step under a compose.yaml
+      # of another revision, because Container Manager keeps the compose.yaml from which the
+      # project was created when you import a new image, and the image can read what an earlier
+      # compose.yaml lacks, such as the zone file below, and the scheduled tasks start the
+      # container by a name that an earlier compose.yaml does not set (`container_name` above).
+      # Copy this file from the bundle of the same build as the image before each Build
+      # (the section "Restarting and updating" of docs/deploy.md). Set no TZ here, because the container's own
+      # local time stays UTC.
+      AGENTCONTEXT_COMPOSE_REVISION: "3"
+    volumes:
+      # The operator's GitHub access tokens and OpenRouter API key, read-only (see
+      # credentials.csv.example). The long form, so that Docker refuses to start
+      # when the file is missing rather than creating a directory of that name in the project
+      # folder.
+      - type: bind
+        source: ./credentials.csv
+        target: /app/credentials.csv
+        read_only: true
+        bind:
+          create_host_path: false
+      - ./data:/app/data
+      - ./handover:/app/handover
+      # The NAS's time zone file, read-only, at a path of its own. DSM's Task Scheduler starts
+      # the container at a time of the NAS's zone, and the entrypoint compares calendar months in
+      # the zone of this file (the section "A run every month" of docs/deploy.md). The container's own local time
+      # stays UTC. A mount at /etc/localtime would replace the image's zone file of UTC, which
+      # that path links to, and every time that the run writes in UTC would be the NAS's local
+      # time. The long form, so that Docker refuses to start rather than create a directory
+      # where the host has no file.
+      - type: bind
+        source: /etc/localtime
+        target: /etc/host-localtime
+        read_only: true
+        bind:
+          create_host_path: false

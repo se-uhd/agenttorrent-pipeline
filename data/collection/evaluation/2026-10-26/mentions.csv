@@ -1,0 +1,201 @@
+item,tool,pattern,commits,repos,example_sha,line,read_now,commits_in_csv,second_pass
+mn-0001,codex,it seems that for now we need to solve the equation once before being able to update the lhs. codex proposed a change in superlu_ops.c line 0 : if (prob->option,1,1,d599d187c99f08caf3d97e11d119f87fae959e9d,it seems that for now we need to solve the equation once before being able to update the LHS. Codex proposed a change in superlu_ops.c line 338 :   if (prob->options.Fact != DOFACT)     prob->options.,,159440,
+mn-0002,gemini,(powered by the gemini-0.0-flash model).*,10,1,009a28a610e264c4e56b9944cc6cafb31a9d01bf,(powered by the gemini-3.7-flash model).*,,159440,
+mn-0003,cursor,shadow + pointer cursor). add a .hosts-page block matching the other pages.,1,1,709b332d1753003bc941e0d6fb2cf71203c9e06a,shadow + pointer cursor). Add a .hosts-page block matching the other pages.,,159440,yes
+mn-0004,codex,## pr-codex overview,2209,3,1628fa2a793b7b858a5457d0dc19873bbed758f4,## PR-Codex overview,,159440,
+mn-0005,cursor,> <sup>reviewed by [cursor bugbot](<url> for commit,4610,42,02b03fc07b2e9d3e66cba0d913c429656e0e6233,> <sup>Reviewed by [Cursor Bugbot](https://cursor.com/bugbot) for commit,,159440,yes
+mn-0006,cursor,"allowed"", so a surface that already holds the cursor role may be given the",1,1,629e32b31ed01d2290d02df7e38a664e4271b051,"allowed"", so a surface that already holds the cursor role may be given the",,159440,
+mn-0007,copilot,feat: update copilot instruction file,1,1,6f00282fb3a9cd38bad040dbc7aaa3f7538802e9,feat: update copilot instruction file,,159440,
+mn-0008,copilot,copilot comments v0,1,1,10e1cbb359ef87d8563d34d0c5bac51b041ee5b2,Copilot comments v1,,159440,
+mn-0009,codex,<!-- start pr-codex -->,2210,3,145b34f11b9f8b2be424212b4c7b64e1210f1d3a,<!-- start pr-codex -->,,159440,
+mn-0010,claude,"- added a new documentation page for agent skills, detailing installation methods and usage for claude code and other assistants.",1,1,f8608773a7599ad1a408d24bcff8b3bfc0be2c0f,"- Added a new documentation page for Agent Skills, detailing installation methods and usage for Claude Code and other assistants.",,159440,yes
+mn-0011,cursor,"cursor-based pagination, load-more/infinite-scroll, and event detail",1,1,c39ff7b584de2e4fdd77b82d089808c10d4ba7e1,"cursor-based pagination, load-more/infinite-scroll, and event detail",,159440,yes
+mn-0012,claude,"claude: add rules from release/0.0 (branch-naming, lint-fixes) (#0)",1,1,36a1c8e7ee5ceae443a058355d62852bdcae2594,"claude: add rules from release/3.4 (branch-naming, lint-fixes) (#21126)",,159440,
+mn-0013,claude,merge pull request #0 from broadinstitute/dp/cve-triage-claude-vertex,1,1,9e464d4c1e70009fb055420976b3cbcb4c5cebd6,Merge pull request #1061 from broadinstitute/dp/cve-triage-claude-vertex,,159440,
+mn-0014,copilot,recenter documentation on the copilot v0 agent experience (#0),1,1,5559abb18f3e5eb3c0409193e8b9973691fc5e01,Recenter documentation on the Copilot V4 Agent experience (#2855),,159440,yes
+mn-0015,cursor,feat: fix wrong blinking cursor in ui (#0),1,1,25e599649c3e995896940c1a66faeaa9871c808e,feat: fix wrong blinking cursor in UI (#836),,159440,
+mn-0016,codex,"cline, codex, copilot cli, cursor, gemini cli, opencode, openclaw",1,1,6c1da5b3086609dee513de06bc78b10fde945516,"Cline, Codex, Copilot CLI, Cursor, Gemini CLI, OpenCode, OpenClaw",,159440,
+mn-0017,cursor,* chore(landing): edit out cursor,3,1,228d5a28a36829448b4e6ed1ba50cc732221b15d,* chore(landing): edit out cursor,,159440,
+mn-0018,copilot,<li>add .github/copilot-instructions.md for copilot coding agent by <a,9,9,00cd18d2c9f4950e7ba40b4aed74cbbc36e5daa4,<li>Add .github/copilot-instructions.md for Copilot coding agent by <a,,159440,
+mn-0019,gemini,attempt at testrebinseq.c from gemini pro 0.0,1,1,02543aea35f6c0b8d8295c8a02a34b1ff9e4bd50,Attempt at testrebinseq.c from Gemini Pro 3.1,,159440,
+mn-0020,cursor,- `read(maxbytes?)` reads at most `maxbytes` from the cursor (rust,1,1,4e3ec7cc27587d4e64021ec5bd1b2607b724f5eb,- `read(maxBytes?)` reads at most `maxBytes` from the cursor (Rust,,159440,
+mn-0021,cursor,"- chained: folly::io::cursor for cross-segment parsing, cursor.clone() for",1,1,2a4ddcb67f193698816792f648945dedefc4d1ef,"- Chained: folly::io::Cursor for cross-segment parsing, cursor.clone() for",,159440,yes
+mn-0022,cursor,tested for different cursor height,1,1,987c6fd29868e18d9c881837a795d5d12588ca4e,Tested for different cursor height,,159440,
+mn-0023,claude,claude skill,1,1,768076a71ad5497083b0e26f7046c26c21b19699,claude skill,,159440,
+mn-0024,cursor,(open cursor desktop failure) and,1,1,d68b2c8b250b8376619ddb77ecbd93a8377aaf06,(Open Cursor Desktop failure) and,,159440,
+mn-0025,cursor,"pages, checkpoints its cursor after each batch, and for `both` reads",1,1,903c8f21103a3e5bb50046f007bef92f15fbb0d8,"pages, checkpoints its cursor after each batch, and for `both` reads",,159440,
+mn-0026,copilot,* test: use constexpr for tree_y_tolerance as per copilot review suggestion,2,1,475c8b808d203d85fc4d5f92af923912711baaf1,* test: use constexpr for TREE_Y_TOLERANCE as per Copilot review suggestion,,159440,yes
+mn-0027,copilot,"guidance for tools like github copilot and claude, detailed instructions",1,1,f30d52072fe8431423a6bddecb949cd0b8a862f9,"guidance for tools like GitHub Copilot and Claude, detailed instructions",,159440,
+mn-0028,gemini,"the cancel loops (gemini): current callers never pass null within count,",1,1,d85c4dbc5a877ae154a8373e0db6f76fa1773edf,"the cancel loops (Gemini): current callers never pass null within count,",,159440,yes
+mn-0029,codex,- add the imported codex comment-policy hook with a checkout-independent,1,1,f8404e56cac67dead9f5cef62a8188be9898b187,- add the imported Codex comment-policy hook with a checkout-independent,,159440,
+mn-0030,gemini,- gemini 0.0 flash: 0m token context,1,1,d0df12ab8116fba15bd831db86717555920944d6,- Gemini 2.5 Flash: 1M token context,,159440,
+mn-0031,claude,🤖 add claude code workflow,15,1,1842e81fe1124a61b30948cad9a9b0704e5c35a3,🤖 add claude code workflow,,159440,yes
+mn-0032,copilot,update to properly respect async characteristic of `globalstate.update` (copilot code review),1,1,a531f954fc08a8c8743da60c28eb504e8928afaa,Update to properly respect async characteristic of `globalState.update` (Copilot Code Review),,159440,
+mn-0033,cursor,no cursor line in terminal,1,1,5b5a2b24191133b79fa24f84408fe58b21a26608,no cursor line in terminal,,159440,
+mn-0034,cursor,* add cursor pointer to indicate click-ability,1,1,fb29fa12e9d020be7ecfc0e5331f9c2d90b5b1ef,* Add cursor pointer to indicate click-ability,,159440,
+mn-0035,gemini,fix: add comments that demonstrate using gemini-openai-proxy and gemini,2,1,2681b2b9b281b3c8cb21594281e235d2a1d39cea,fix: add comments that demonstrate using gemini-openai-proxy and Gemini,,159440,
+mn-0036,gemini,".env.example shipped better_auth_secret=better_auth_secret, which env.ts accepted, so a copied example signed every session with a value from the public repo (b",1,1,f26bc5948d5f2a2503741f4a341c5e739e73bd2c,".env.example shipped BETTER_AUTH_SECRET=BETTER_AUTH_SECRET, which env.ts accepted, so a copied example signed every session with a value from the public repo (better-auth only warns). The example is n",,159440,
+mn-0037,claude,<url> update claude-easy-fixes workflow to use phpstan-bot and (a person) pr action,1,1,54f053afa21299d995ec5b41ab6235463158785b,https://github.com/phpstan/phpstan-src/commit/31b577de29b8ee43cd206f2d1d1bcb473c356e24 Update claude-easy-fixes workflow to use phpstan-bot and (a person) PR action,,159440,
+mn-0038,copilot,the remaining two copilot notes (private api access to databaseservice and,1,1,0d9f9112ef999dc15852c2500f370f04c08bfeaf,The remaining two copilot notes (private API access to DatabaseService and,,159440,
+mn-0039,codex,<!-- end pr-codex -->,2212,3,00f412cdaf361cdd2595b08b0e4d8fe17ddaa8ea,<!-- end pr-codex -->,,159440,
+mn-0040,copilot,[virtdisk] address copilot comments,1,1,5e411b964881d70a0e1718bfb1acfab74b5b3fac,[virtdisk] Address copilot comments,,159440,
+mn-0041,cursor,feat: support completely disabling mouse with `mouse_events=[]`; add new `cursor_blink` to control cursor style of input components (#0),1,1,1166f86523950a2279033a70679712a3dc5b2049,feat: support completely disabling mouse with `mouse_events=[]`; add new `cursor_blink` to control cursor style of input components (#1139),,159440,
+mn-0042,cursor,use pointer cursor (#0),1,1,71e0f47ab15dd7be9f9126063a1eea748a284f00,use pointer cursor (#261),,159440,
+mn-0043,cursor,this ensures that the pointer cursor is only in use for the menu buttons and not the whole column headers.,1,1,9074c2df2b7a527360040e4b166207b78dc99d8e,This ensures that the pointer cursor is only in use for the menu buttons and not the whole column headers.,,159440,
+mn-0044,claude,camel-aws-bedrock: add documentation for anthropic claude 0.0,2,1,9f8ab951367b6b818e5339b38a92588f07dcaa21,Camel-AWS-Bedrock: Add documentation for Anthropic Claude 2.1,,159440,
+mn-0045,cursor,#0 handle cursor resets,1,1,478a0cf28563b08c7fefbbb70e91bb7585d07eb0,#4812 handle cursor resets,,159440,yes
+mn-0046,copilot,* address copilot review comments,52,26,07dfe968c4ec810476ef05baa8d7a3b52ae7c235,* Address Copilot review comments,,159440,
+mn-0047,claude,switches openai to gpt-0.0 sol and anthropic to claude sonnet 0.0 (and the current,1,1,7f03568b97c43042f10ca9c616841401c3b32389,Switches OpenAI to GPT-6.1 Sol and Anthropic to Claude Sonnet 5.5 (and the current,,159440,
+mn-0048,cursor,"fix expandable hints hc, add pointer cursor (#0)",1,1,4c55e5698fea83eafa8a18d7e83bb1d6433cf1f1,"fix expandable hints hc, add pointer cursor (#9093)",,159440,
+mn-0049,claude,claude code stores its keychain entry with the os username (e.g. $user),1,1,81c85337caa94d85398281572313c99e366ce6b2,Claude Code stores its keychain entry with the OS username (e.g. $USER),,159440,
+mn-0050,copilot,"plfm-0 address copilot review: keep pipeline entries at sent clause positions, validate request $ref format, re-read source row count under the lock",1,1,5b23e138bbf166c0cf2d6c5f027253f16d514fe4,"PLFM-9972 Address Copilot review: keep pipeline entries at sent clause positions, validate request $ref format, re-read source row count under the lock",,159440,yes
+mn-0051,codex,> ✨ ask pr-codex anything about this pr by commenting with `/codex {your question}`,2212,3,217443f33a46e99e1712dcf368a582d4dc3ac2ef,> ✨ Ask PR-Codex anything about this PR by commenting with `/codex {your question}`,,159440,
+mn-0052,cursor,while the `cursor`/`continuation` is defined. this is good when trying,1,1,1a8cd553bbe68ecfbd83f5f12fd3f63c78dc8ab5,while the `cursor`/`continuation` is defined. This is good when trying,,159440,yes
+mn-0053,copilot,docs: add security & quality conventions to copilot-instructions.md (#0),9,9,163219ecdce92c39cb1158046dd185272a7e658b,docs: add Security & Quality Conventions to copilot-instructions.md (#269),,159440,
+mn-0054,copilot,fix(tools): address copilot review feedback on dev-tool,1,1,ae5c3ef077f65d2b98b1529c8edd63d7ed8ed27c,fix(tools): address Copilot review feedback on dev-tool,,159440,
+mn-0055,codex,**model/tool used**: codex gpt-0.0 with symphony runner outputs from clb0,1,1,54338c1c272c82757fef71793d8532f2b9b38b2e,**Model/Tool used**: Codex GPT-5.5 with Symphony runner outputs from CLB02,,159440,
+mn-0056,copilot,* update with copilot suggestions,2,1,5999c43cb284c4c23b82a792384ac019f15e14b7,* update with copilot suggestions,,159440,yes
+mn-0057,copilot,* fix: use break+reset on full-exemption to address copilot comments,1,1,d17df64e7196804e22f76dc175464f2697292e73,* fix: use break+reset on full-exemption to address Copilot comments,,159440,
+mn-0058,copilot,pr: send current cursor position to kite to enable autosearch in kite copilot,1,1,f1e18174dc68500d4bd7bd878eb4c22c41a4fd51,PR: Send current cursor position to Kite to enable autosearch in Kite Copilot,,159440,
+mn-0059,cursor,can add cursor style in 'style' parameter,1,1,b76e810a4b50e2c2a25171a1564155a6b7acccaa,Can add cursor style in 'style' parameter,,159440,
+mn-0060,codex,_assisted-by: codex:gpt-0_,5,1,7306d5aff8e8bd30096461414f87704e9ead7afa,_Assisted-by: Codex:GPT-5_,,159440,
+mn-0061,claude,* fix: limit claude model detection to vertex and bedrock providers only,1,1,a28d50e20c0547b9f879d2649cefa8d92a849d4c,* fix: limit Claude model detection to vertex and bedrock providers only,,159440,
+mn-0062,claude,"claude: added info about path to logs, configs",1,1,efeae9f479967473a451811d06c91af85a15a164,"claude: added info about path to logs, configs",,159440,
+mn-0063,cursor,* replace image url and adjust cursor,1,1,6920c3e0e32a352f0d42c908501452bd810dac07,* replace image url and adjust cursor,,159440,
+mn-0064,copilot,(copilot) upgrade license-checker-rseidelsohn to v0 [eng-0],1,1,3aecf5f25e2369ee810d6a946adec32b427a78ae,(COPILOT) Upgrade license-checker-rseidelsohn to v4 [ENG-17684],,159440,
+mn-0065,cursor,"the server's pagination cursor through the end of the log, and render",11,10,1f5b4d26d1d4a9175cfe3d5c95b491f9eed9f185,"the server's pagination cursor through the end of the log, and render",,159440,
+mn-0066,gemini,add model `gemini-0.0-pro` add model `gemini-0.0-flash` add model `gemini-0.0-flash-lite-preview-0-0` add model `gemini-live-0.0-flash-preview` add model `image,1,1,0e9b54c6fb025a25469d1bcd3d90adefae783a89,add model `gemini-2.5-pro` add model `gemini-2.5-flash` add model `gemini-2.5-flash-lite-preview-06-17` add model `gemini-live-2.5-flash-preview` add model `imagen-4.0-generate-preview-06-06` add mode,,159440,yes
+mn-0067,claude,"- [ ] check if this pr was entirely ai-generated (by copilot, claude",159,1,12aacd10394f4fde51ae7a55532b2d19ffbb39a2,"- [ ] Check if this PR was entirely AI-generated (by Copilot, Claude",,159440,yes
+mn-0068,claude,harmless stderr notice (claude code's disabled-connectors and,1,1,472211d90e6b81653d174d55ce2a5e09b3b586ad,harmless stderr notice (Claude Code's disabled-connectors and,,159440,
+mn-0069,codex,"- add codex-review.test.mjs, a lifecycle suite with fake gh and codex",1,1,db47ae868ea8fe52de82d8a6eb8e9d98f585cb82,"- Add codex-review.test.mjs, a lifecycle suite with fake gh and codex",,159440,
+mn-0070,cursor,"none. the change only affects how the timestamp bound is built for the keyset cursor, and values are still passed as bound parameters.",1,1,dcce02cd1d7322f66e7ae60117fa4740d27d813e,"None. The change only affects how the timestamp bound is built for the keyset cursor, and values are still passed as bound parameters.",,159440,
+mn-0071,cursor,"i tested this by having cursor create its worktree, then i `cd`'ed into that directory, sourced the virtual env, and ran `streamlit run e0e_playwright/st_chat_i",1,1,41da8b45abf8854023245b46dfe3a141a51e8885,"I tested this by having cursor create its worktree, then i `cd`'ed into that directory, sourced the virtual env, and ran `streamlit run e2e_playwright/st_chat_input.py` successfully.",,159440,
+mn-0072,gemini,merge branch 'main' into gemini-codeact-only,1,1,39c9cc5e1a871bc94cd5d29303a8e6917262271b,Merge branch 'main' into gemini-codeact-only,,159440,
+mn-0073,opencode,feat(agents): recognize opencode connections (#0),1,1,9855a0ba01f5f5cdc43ee3a78fa55e820110aaa2,feat(agents): recognize OpenCode connections (#4333),,159440,
+mn-0074,gemini,* update with gemini's suggestion,1,1,770575098d6a6d397488a2c63a1bd1afe4ba9b9b,* Update with gemini's suggestion,,159440,
+mn-0075,copilot,* addressed copilot feedback,6,4,2b6fa42179d5b1eda29aa8ec2c629c3173e8d975,* addressed copilot feedback,,159440,
+mn-0076,claude,rollback claude fable from default models,2,1,6a0022d7b80868ffbc98bac6734057b8fa4621ef,Rollback claude fable from default models,,159440,
+mn-0077,copilot,address pr #0 copilot review:,1,1,18b5fda39a7848fbf590fe623291ac49da594c0b,Address PR #3651 Copilot review:,,159440,
+mn-0078,codex,code changes implemented by openai codex.,2,1,c3b906a3e2ebd3609cc648296aa3b6dfbb7efe32,Code changes implemented by OpenAI Codex.,,159440,
+mn-0079,codex,codex-agent: gpt-0.0-sol,101,1,017b0cdf292b21d72cccbff89cb1d088b2282609,Codex-Agent: GPT-6.1-Sol,,159440,yes
+mn-0080,claude,performed by claude opus.,1,1,f148da3b2c17708584b5aa68a7d992f5d0ca1b06,Performed by Claude opus.,,159440,
+mn-0081,cursor,* add text cursor,1,1,7bbfe99fbef6d2f9302462662518295fe151a9fd,* Add text cursor,,159440,
+mn-0082,claude,feat: upgrade slv ai default model to claude-opus-0-0,1,1,9a6f1fa8c4cce65f7633901d7b1012cb6f108f68,feat: upgrade SLV AI default model to claude-opus-4-6,,159440,yes
+mn-0083,copilot,these are some experimental copilot instructions to try and handle,1,1,8b1eea2384d02a4a1adf03df265c88280310145a,These are some experimental Copilot instructions to try and handle,,159440,
+mn-0084,claude,this separation prevents a crafted pr from tricking claude into exfiltrating write tokens.,1,1,77a0e347bb68a673b6cdeee7c7318c418a38deb3,This separation prevents a crafted PR from tricking Claude into exfiltrating write tokens.,,159440,yes
+mn-0085,codex,agent: codex,91,2,0aa72aedc310b8b42d8fbc323406fcd034f63b32,Agent: Codex,,159440,
+mn-0086,copilot,exp: creating new avatar e0e tests with copilot (#0),1,1,866ef1679d572fef11b7b277846e3f7817eb3969,exp: creating new Avatar e2e tests with Copilot (#1571),,159440,yes
+mn-0087,copilot,* update copilot instructions to support both local and pipeline based sdk gen,2,2,582289e5d80e184ae51747abc35371f549f78266,* Update copilot instructions to support both local and pipeline based SDK gen,,159440,yes
+mn-0088,cursor,"cursor, now it is a register cursor that also carries the store",1,1,04a4dca2ac3d4f963e3c740045ce7a2959bf0319,"cursor, now it is a register cursor that also carries the store",,159440,
+mn-0089,copilot,"watchdog tray: copilot round - defensive config types, icon file handle released, guarded open callback",1,1,ff7f162c0e8ad46cc38d0a82a782efc8ace3fd1a,"watchdog tray: Copilot round - defensive config types, icon file handle released, guarded open callback",,159440,
+mn-0090,claude,(this commit msg was generated in some part by [`claude-code`][claude-code-gh]),113,1,0cddc67bdb60d252479baf7273d150539562546e,(this commit msg was generated in some part by [`claude-code`][claude-code-gh]),,159440,
+mn-0091,claude,chore: config and .md for claude code (#0),1,1,9d597422177a4885b46c083eb8c9f24cdd5b4cb1,chore: Config and .md for Claude Code (#300),,159440,
+mn-0092,copilot,double-quoted for `cmd.exe`. each copilot hook passes its event name,1,1,376db79512c3296e60fbd8e5baa7205d1627526d,double-quoted for `cmd.exe`. Each Copilot hook passes its event name,,159440,
+mn-0093,gemini,* address gemini 0 code review feedback,1,1,a7847a7bba32bcba8757f5158d47a0023a0f4a07,* Address Gemini 4 code review feedback,,159440,
+mn-0094,opencode,chore: remove opencode,1,1,14d30817f5c4f6effbde87bd9dce1b281918fded,chore: remove opencode,,159440,yes
+mn-0095,codex,feat: add codex plugin support (#0),1,1,d3a5d5c2aee87d8e519c1c458f01d41068069ce0,feat: add Codex plugin support (#1379),,159440,
+mn-0096,codex,"codex, cursor, explicit ai_agent, ...), resolve open: false for storybook dev",1,1,d173580e3de38899d6f836f50ff06c67e37f911b,"Codex, Cursor, explicit AI_AGENT, ...), resolve open: false for storybook dev",,159440,
+mn-0097,cursor,- smooth scrolling refused over page 0 on display with the cursor on,1,1,d968420492ef001355d6b810498b6dffee9f9517,- smooth scrolling refused over page 1 on display with the cursor on,,159440,
+mn-0098,opencode,switch them to opencode — the closest non-oauth analog,1,1,7d2118d4509f4d0a7406b1e262d17f4b531d1d07,Switch them to OpenCode — the closest non-OAuth analog,,159440,
+mn-0099,cursor,"the endpoint caps a response at 0 records, so the returned cursor is",1,1,05285d43c21e7cee6f472241eb8021c04cf30dae,"The endpoint caps a response at 1000 records, so the returned cursor is",,159440,
+mn-0100,cursor,impl-model: cursor-grok-0.0-high-fast,26,1,3dbc0d139183598834dea703c66f8ec32e355a04,Impl-Model: cursor-grok-4.5-high-fast,,159440,
+mn-0101,cursor,index: fix cursor after new mail,1,1,2523464c1d6b293dc5f512944ed84f96823c6c9d,index: fix cursor after new mail,,159440,
+mn-0102,copilot,copilot feedback,19,13,130d3ccba57f345399ec7a268e11cf37ee7ac6d3,copilot feedback,,159440,yes
+mn-0103,codex,* consolidate codex authorization requests,1,1,fe1db817e8b5662722e5ae862cb5eac69abb75e9,* Consolidate Codex authorization requests,,159440,
+mn-0104,claude,when a `@generation` route uses one of the newer claude models (e.g.,1,1,13524b1d5b3c078f9d82eedb0f02fa1425b4e5f7,When a `@generation` route uses one of the newer Claude models (e.g.,,159440,
+mn-0105,cursor,the byte cursor's two loops that settle the reads a close() answers,1,1,6994a3ad3b9a8fb2266cd71231a174287e798ef9,The byte cursor's two loops that settle the reads a close() answers,,159440,
+mn-0106,codex,"accepted codex docs gap in 0 (~0-in-0 flake, runs <hex> and the",1,1,c5cbab6547a471a1a8e7de3faf07e39c3ae53542,"accepted codex docs gap in 802 (~1-in-4 flake, runs 28673251562 and the",,159440,
+mn-0107,cursor,"status but names the observation, drops the live dot, pulsing strip, tint, cursor,",3,1,57b92233afae307659e58bcde5edc6ea7125c262,"status but names the observation, drops the live dot, pulsing strip, tint, cursor,",,159440,yes
+mn-0108,copilot,addresses copilot ai and human review suggestions.,1,1,28731e5334a67e6831276c95ebc9996347e048ef,Addresses Copilot AI and human review suggestions.,,159440,
+mn-0109,cursor,"serializeaggregations / serializesuggest helpers, and the inline cursor-",1,1,fda1cf7ec6c2149909cf7466c795c030a41ef729,"serializeAggregations / serializeSuggest helpers, and the inline cursor-",,159440,
+mn-0110,claude,- adds an explicit prompt guardrail telling claude to only interact with,2,2,63cdb5e118cf585a6d5dcd34ed8092df1ee43e81,- Adds an explicit prompt guardrail telling Claude to only interact with,,159440,yes
+mn-0111,cursor,sort field not being set up for contact lists which resulted in zwc not using a cursor when asking for the next contacts beginning with a certain letter.,7,1,036a9365c826cc756d6743cb0c654956264da745,Sort field not being set up for contact lists which resulted in ZWC not using a cursor when asking for the next contacts beginning with a certain letter.,,159440,
+mn-0112,copilot,chore: copilot instructions updated,1,1,b8a67446f6e4f5bde61856b0da45735ec8b60f9a,chore: Copilot instructions updated,,159440,
+mn-0113,cursor,cursor updates in real-time as you move.,1,1,3dd3deb81743211517f47c701fee7381446cdd84,Cursor updates in real-time as you move.,,159440,
+mn-0114,gemini,gemini-0.0-flash model).,431,1,168b6eb2d097f1dd5b177a34284a7b5ef7ba80ec,gemini-3.5-flash model).,,159440,yes
+mn-0115,cursor,a cursor row still reads on this computer.,1,1,b8b7e46f03b34ea0a96344809c3679d42032ae98,a Cursor row still reads On this computer.,,159440,yes
+mn-0116,copilot,"fix: enable copilot to help fix cipe errors with agent mode, enhanced cipe tool description (#0)",1,1,5c9a60d70e6e733d90df4dc2880aef0f37174b12,"fix: enable copilot to help fix cipe errors with agent mode, enhanced cipe tool description (#2474)",,159440,
+mn-0117,codex,* fix(cf-harness): close codex owner preflight gaps,1,1,550f5e249e02b0750251f6bc9daf1700fa2aae0b,* fix(cf-harness): close Codex owner preflight gaps,,159440,
+mn-0118,codex,- `agent_host_raw=codex-sdk-ts`,1,1,7cbf09c5148435279ee9d35cce4e1a7b81c044e3,- `agent_host_raw=codex-sdk-ts`,,159440,yes
+mn-0119,copilot,addresses copilot review comment on pr #0 requesting a unit test,1,1,84fe0caec53ba67050f5bcfed211117594240c56,Addresses Copilot review comment on PR #1765 requesting a unit test,,159440,
+mn-0120,cursor,"* zyx > xyz issue , also fix stale cursor loc on pan",2,1,88e79b25d6feb98667c8b0ceb4658fe0574fb248,"* zyx > xyz  issue , also fix stale cursor loc on pan",,159440,
+mn-0121,gemini,feat: gemini 0 in openrouter,2,1,0c5d576625291b01e0983e3bf101c20d94579418,feat: gemini 3 in openrouter,,159440,
+mn-0122,claude,pet handler - claude suggested fixes,2,1,f268982a662a0ecdc7315144b74f590c804b5d92,Pet Handler - Claude suggested Fixes,,159440,
+mn-0123,cursor,"start using ""gui.navbar.seek"" color instead of ""gui.navbar.err"" to show seek cursor (#0)",1,1,d46ff14a21c31d46fe6db33d249827c0c3dbef05,"Start using ""gui.navbar.seek"" color instead of ""gui.navbar.err"" to show seek cursor (#1244)",,159440,yes
+mn-0124,copilot,- main copilot-instructions.md with project overview and patterns,1,1,8ec4992339a0a90fab9d0beb9cae9b7504db12cb,- main copilot-instructions.md with project overview and patterns,,159440,yes
+mn-0125,cursor,feat: added cursor pstack as default skill gallery extension source,1,1,5c29ef3e881eb3db4fdfaddfe4064b02a29e6bbd,feat: added Cursor Pstack as default Skill Gallery extension source,,159440,
+mn-0126,cursor,* chore: cursor updates,1,1,02d3863d108600c23885d54b86527e1a813bac3d,* chore: cursor updates,,159440,
+mn-0127,codex,merge pull request #0 from jeonghoonkang/0zbtia-codex,1,1,6c329488e34004bbf99b3bb34bba9c5dbe0575f3,Merge pull request #75 from jeonghoonkang/4zbtia-codex,,159440,
+mn-0128,gemini,"- [x] i have either responded to, or resolved all gemini comments on the",12,1,42840eee04cbd3da882aa00134d03d78d824d649,"- [x] I have either responded to, or resolved all Gemini comments on the",,159440,
+mn-0129,cursor,> <sup>written by [cursor,2825,46,001b759716bcfb44911670be92ad588f30d62a52,> <sup>Written by [Cursor,,159440,
+mn-0130,opencode,- opencode bash tool-loop stalled on this gguf (no native openai,1,1,43d2fbdfb18dd59ac43a9b6118bad477bbb5d1a8,- OpenCode bash tool-loop stalled on this GGUF (no native OpenAI,,159440,
+mn-0131,claude,ci: give @claude the workspace config through --add-dir,1,1,c6f17e22ee3c128a96f52ef2d08f1fa22b9db945,ci: give @claude the workspace config through --add-dir,,159440,
+mn-0132,cursor,* **combobox multi select:** dp-0 cursor position ([#0](<url> ([<hex>](<url>,2,1,2fb9faf6de5934183814e8db42ebc78901a0323b,* **Combobox Multi Select:** DP-180791 cursor position ([#1141](https://github.com/dialpad/dialtone/issues/1141)) ([bbf4cd1](https://github.com/dialpad/dialtone/commit/bbf4cd11c91a7e06f40f3bb9fea23171,,159440,yes
+mn-0133,codex,"add root skill-install flag for claude, codex, and openclaw (#0)",1,1,5c27c0050a02daef4c4f3a969e3e22c731264aca,"Add root skill-install flag for Claude, Codex, and OpenClaw (#3137)",,159440,
+mn-0134,cursor,adbc commit boundary and cursor cleanup. the existing duckdb,1,1,e8436c827f90279cb98bad8062d8b9d36219653f,ADBC commit boundary and cursor cleanup. The existing DuckDB,,159440,
+mn-0135,gemini,fix(openai-compatible-builder): ignore embed & gemini-0.0-pro model (#0),1,1,bda3a5f317327ee466f541b22d00b62bb5bd0bbe,fix(openai-compatible-builder): ignore embed & gemini-2.5-pro model (#658),,159440,
+mn-0136,claude,co-authored-by: (a person),55,1,535f39b653d8cee11aa03f98195360a1696cd07b,Co-authored-by: (a person),,159440,
+mn-0137,cursor,feat(frontend): support cursor. (#0),1,1,c2827c721c3bca35510f5935298c244fbcbb3cf4,feat(frontend): support cursor. (#15180),,159440,
+mn-0138,codex,coding agent: codex,153,4,165714ecb7bd6af9eef086014c9d83861bf2cb66,Coding agent: Codex,,159440,
+mn-0139,opencode,fix: install script incorrectly tries to install opencode hooks (#0),1,1,5471119c4a30b49e87ffcc3ca86aabc078fe2a04,fix: install script incorrectly tries to install opencode hooks (#3410),,159440,
+mn-0140,codex,"freshly scaffolded projects. agents such as claude code, cursor, codex,",3,2,6c51a0bf3ad2647ed66485a2658ae91398946300,"freshly scaffolded projects. Agents such as Claude Code, Cursor, Codex,",,159440,
+mn-0141,claude,allow larger texts in claude plugin,1,1,cde593cf81ee784c682fa27864f58cf08e095650,Allow larger texts in Claude plugin,,159440,
+mn-0142,copilot,feat(specs): add transformation copilot to ingestion (#0),1,1,ac0cadb8ac0310d9cfe86da9b587e5b27061d07e,feat(specs): add transformation copilot to ingestion (#3479),,159440,
+mn-0143,claude,chore: add 'head' command to claude settings,2,1,54284b5f08bd9139d90ae272d92e32b44a983cd5,Chore: Add 'head' command to Claude settings,,159440,
+mn-0144,cursor,* perf(query): inline cursor sort configuration,1,1,edc23e221d2f4dcb1b160637dbfb6ddd84940f79,* perf(query): inline cursor sort configuration,,159440,
+mn-0145,cursor,* fix(pagination): apply cursor-pointer in pagination link when link is undefined,1,1,be50818bd1ba218fb3783a69841b5635bdd8123b,* fix(pagination): apply cursor-pointer in pagination link when link is undefined,,159440,
+mn-0146,copilot,copilot review: fixed 0.0s sleep in _fakewebview.start() made the three,1,1,aedeb0e89710102749e311901e1e73dd93a7dcf8,Copilot review: fixed 0.5s sleep in _FakeWebview.start() made the three,,159440,
+mn-0147,copilot,"- copilot: markdownfiles() walked target/, .git/ and .claude/ before filtering",1,1,93807e56017eaf13d9b7fd98b370e2e5b809d76c,"- Copilot: markdownFiles() walked target/, .git/ and .claude/ before filtering",,159440,
+mn-0148,claude,fix(ci): recognise claude replies and unblock stale-final after rebase,1,1,8315e72a0c8208653ec2475d7538d359df558864,fix(ci): recognise Claude replies and unblock stale-FINAL after rebase,,159440,yes
+mn-0149,copilot,* test(mothership): cover a paused copilot workflow a resume completes,1,1,75f2960d89de87a34be8a150b439944d5da33c06,* test(mothership): cover a paused Copilot workflow a resume completes,,159440,yes
+mn-0150,codex,fix: enable codex across all workflows,1,1,c77f1647f82c31ffadb3d8a52a611a659ca2cb37,fix: enable Codex across all workflows,,159440,
+mn-0151,copilot,"enables copilot to be requested as a pull request reviewer, supporting both interactive and non-interactive flows. introduces new reviewer search functionality,",1,1,738b82ddab008e824a962351a7cf18ac2a44058a,"Enables Copilot to be requested as a pull request reviewer, supporting both interactive and non-interactive flows. Introduces new reviewer search functionality, updates reviewer partitioning to distin",,159440,
+mn-0152,claude,merge pull request #0 from cooklang/add-claude-github-actions-<hex>,4,2,3c443ecdac0b7be9ab87ddeac9dc2b7b0908544d,Merge pull request #617 from cooklang/add-claude-github-actions-1791037903603,,159440,yes
+mn-0153,codex,- update model id parser to handle gpt-0-codex and its variants,1,1,8a0d1c0c85e84351d0468d5221d567b0d7356956,- Update model ID parser to handle gpt-5-codex and its variants,,159440,
+mn-0154,codex,docs: add codex seq skill,1,1,ac857de995e1ce50e2146bb63f9dd47c6657fc1e,docs: add codex seq skill,,159440,
+mn-0155,cursor,move pagination cursor progressively,1,1,59d9b18bfcdf47fc672c2429dbbd08a0abbdebf2,Move pagination cursor progressively,,159440,
+mn-0156,copilot,"- [ ] check if this pr was entirely ai-generated (by copilot, claude",159,1,455056f4525f4272417f327c9bb4c9aefbdc4135,"- [ ] Check if this PR was entirely AI-generated (by Copilot, Claude",,159440,
+mn-0157,claude,* update claude,3,3,368077c2cce6da25d39a8556ab7f3500e5bf2f71,* Update claude,,159440,
+mn-0158,cursor,ux: add cursor for scribble and lasso,1,1,b6d860dad06ebe2c62427b50d5d7afba31d3dad7,UX: add cursor for scribble and Lasso,,159440,
+mn-0159,cursor,always quote the cursor's sort field: that way things won't break if the sort field has a space in it.,3,1,0323b1b6e76a84f57142234fbca6074abbc19b85,Always quote the cursor's sort field: that way things won't break if the sort field has a space in it.,,159440,
+mn-0160,copilot,four bugs surfaced by a copilot pr review:,1,1,0f9ccf3bd83c1b634805a7c59d0caa57e7ccc5c4,Four bugs surfaced by a Copilot PR review:,,159440,
+mn-0161,cursor,fix(webapp): add tooltip for enable cursor checkbox (#0),1,1,bb2b45da94277f7b50ce17d87e4d0aee041e9910,fix(webapp): add tooltip for enable cursor checkbox (#1335),,159440,
+mn-0162,cursor,transposed or equal cursor case and the burst walk stay separate,1,1,5a1a0594c41859f6e18861425bc3a2328cba719d,transposed or equal cursor case and the burst walk stay separate,,159440,
+mn-0163,cursor,nes: cursor jump: support using vanilla models from capi (#0),1,1,2e22fb812c11acdea0e81f5e737e2d8716485bff,nes: cursor jump: support using vanilla models from CAPI (#4521),,159440,yes
+mn-0164,cursor,[qms-0] fixing wait cursor while sending files to device,1,1,e1fa9596aa4ec2c5c20edc2cfba8d6d2c3ed4536,[QMS-558] Fixing wait cursor while sending files to device,,159440,
+mn-0165,cursor,"ensure ""text boxes"" preserve cursor location (#0)",1,1,0504ca2d4b4ce0c91d48bcb5c564093ec0d3d380,"Ensure ""text boxes"" preserve cursor location (#15099)",,159440,
+mn-0166,claude,co-authored-by: (a person),51,1,5dbe86427db6054661127ea9a202807675bb7f30,Co-authored-by: (a person),,159440,
+mn-0167,gemini,"the gemini branch also tests is_scalar() before concatenating a part,",1,1,005be644ba55c9a11250cb600e95dc513fbaf2ff,"The Gemini branch also tests is_scalar() before concatenating a part,",,159440,
+mn-0168,cursor,"""two steps behind the cursor, none ahead"", which is the 0/0 state. the",1,1,e6b929dd6209b03b1015cb2e30a8ce63cbcc7df2,"""two steps behind the cursor, none ahead"", which is the 2/0 state. The",,159440,
+mn-0169,cursor,resolves the issues raised by cursor bugbot and cubic on the example-miniapp,1,1,ea09fe89e4f242eeac05e0dd55d1c2968de9e9b6,Resolves the issues raised by Cursor Bugbot and cubic on the example-miniapp,,159440,
+mn-0170,claude,"that orchestrates ai coding agents (claude code, codex, cursor, and",2,2,abd8312b336c85629236b6975b844f58c3239a6c,"that orchestrates AI coding agents (Claude Code, Codex, Cursor, and",,159440,
+mn-0171,cursor,cursor are untouched. a new reslice under a closed slicing is still,1,1,b1d2d94d5e5c36b191a81608466989dab7f3f303,cursor are untouched. A new reslice under a closed slicing is still,,159440,yes
+mn-0172,codex,"`session_id=` in-band (<hex>), and devmate always has. codex cannot: the",1,1,830339b980cb23c65e459d1ab9408f1f685ee923,"`session_id=` in-band (D113555285), and Devmate always has. Codex cannot: the",,159440,
+mn-0173,codex,addresses the codex tryget and force-retry findings on #0. the cluster/ring,1,1,d907b985fc8212a30380b84f3e2d472ebe3a9c2e,Addresses the codex TryGet and force-retry findings on #4002. The cluster/ring,,159440,
+mn-0174,cursor,improve cursor design,1,1,053d8fb17fc60388a8653f6d4c1359cfb4dcfa57,improve cursor design,,159440,
+mn-0175,claude,"- route + converse: off makepad_ai — the agent seam moves to converse, route's cloud dispatcher rides the hub's claude p",1,1,3e29f2ba104577d9ffa87a5c802e781bc20dc358,"- route + converse: off makepad_ai — the Agent seam moves to converse, route's cloud dispatcher rides the hub's Claude p",,159440,
+mn-0176,claude,- make claude cli sessions respect stencila session guidance and safety intent where claude code exposes compatible controls,1,1,cce7332f8f76f34132cc68b2bab737a63d015535,- make Claude CLI sessions respect Stencila session guidance and safety intent where Claude Code exposes compatible controls,,159440,
+mn-0177,cursor,refactor: minor tx cursor pagination,1,1,5058ff24c8e00b2abfe547000f67577ceb24cc84,refactor: minor tx cursor pagination,,159440,
+mn-0178,claude,delete & ignore local claude settings file,2,1,04acd06d7609c32d1182049a638abf6e80345259,Delete & ignore local claude settings file,,159440,
+mn-0179,claude,task: claude code updates,1,1,9e7dda0b2fe6bdc581b24bf5a977c3eff0549a7e,task: Claude code updates,,159440,
+mn-0180,claude,#### was an ai assistant used? yes (claude code),1,1,f38670cb305743424a64adb4a5426bb02a61ebb0,#### Was an AI assistant used? Yes (Claude Code),,159440,
+mn-0181,copilot,add copilot instructions for localization,1,1,dd00860577f3e038198564c9ce4a7505c223d5d9,Add Copilot instructions for localization,,159440,
+mn-0182,gemini,nitro lane prefers gemini-0.0-flash when the door serves it,1,1,52c33ec3233dccb9893a0e7713188fff85f30421,Nitro lane prefers gemini-3.7-flash when the door serves it,,159440,
+mn-0183,copilot,## copilot reviewer directive (keep this section),26,1,22a1897322151d788dfec6a236b723c7acb2765a,## Copilot Reviewer Directive (keep this section),,159440,
+mn-0184,cursor,"code, cursor, etc.)",314,1,1a07cbcb4f72523188e2b400d6d375c901623c25,"Code, Cursor, etc.)",,159440,
+mn-0185,cursor,add(dexie) abort iterating cursor if we have enough documents,1,1,f78d97e59612dfafa4b7c3e5506db92cb14b6e43,ADD(dexie) abort iterating cursor if we have enough documents,,159440,
+mn-0186,cursor,per non-zero partition. scatter atomically advances cursor[partition],1,1,928bab0a98fe1a95715a2d2d9db179b8252a0573,per non-zero partition.  Scatter atomically advances cursor[partition],,159440,
+mn-0187,codex,codex is appended last on purpose: first-seen-wins makes position observable,1,1,97b1a75ac60b6c572f97be94e8117e3e4d920bab,Codex is APPENDED LAST on purpose: first-seen-wins makes position observable,,159440,
+mn-0188,claude,claude having a go,1,1,ca3abcc2eb2206c3f0ae681a1ba757706c56b313,claude having a go,,159440,
+mn-0189,cursor,replace the json_decode + nested-array cursor walk in diagnostics,1,1,2dd6dbe1ac4392e0c6f6c8f3c320bc68900a6c54,Replace the json_decode + nested-array cursor walk in Diagnostics,,159440,yes
+mn-0190,codex,[codex] fix board presence review feedback,1,1,573dd351e4e702183a4072ce915de0bb17d02a4d,[codex] Fix board presence review feedback,,159440,
+mn-0191,cursor,terminals without mode 0 advance the cursor once per codepoint and,4,3,5469de989d2b39b05cbb9f0911e5183dc29a1513,Terminals without mode 2027 advance the cursor once per codepoint and,,159440,
+mn-0192,codex,docs: adding codex doc (#0),1,1,0cb0c9abf0d2fb466c6248607a0fd0e373ae3408,docs: adding codex doc (#879),,159440,yes
+mn-0193,copilot,"- [x] check if this pr was entirely ai-generated (by copilot, claude",165,1,0d3200f1664105a87455cd9918037e4c4d56231c,"- [x] Check if this PR was entirely AI-generated (by Copilot, Claude",,159440,yes
+mn-0194,cursor,- recording. show the mouse cursor during recording.,1,1,037645b4d202f04691040efe282ba490a064ade4,- Recording. Show the mouse cursor during recording.,,159440,
+mn-0195,claude,"share claude code project config: gitignore, `claude.md`, settings, `.mcp.json` (#0)",1,1,410c1fbf3a791da05ae15c44369cb5ddfd4f245a,"Share Claude Code project config: gitignore, `CLAUDE.md`, settings, `.mcp.json` (#8842)",,159440,yes
+mn-0196,cursor,fix invalid cursor property value,1,1,f7d9078351cab353e2638168c1b690d8d2ec3de1,fix invalid cursor property value,,159440,
+mn-0197,codex,ai-tool: codex,166,2,28f7c7d7b485dbd2df662a47774c2878491f2d18,AI-Tool: Codex,,159440,
+mn-0198,copilot,`copilot-review-tests.md`. this pr does not change or suppress those,1,1,3e66d4a5c350f803b274867d26c74ab8af22ab88,`copilot-review-tests.md`. This PR does not change or suppress those,,159440,
+mn-0199,cursor,"tab is meant to walk the cursor row's two controls, but the tab ring is built",1,1,1063393edc41f97c4e86015a0280ef7ae0f8d60e,"Tab is meant to walk the cursor row's two controls, but the tab ring is built",,159440,yes
+mn-0200,cursor,fix(framework): fail repositoryiterator::fetchids() when the autoincrement cursor is missing (#0),1,1,244aa28565308e753316b3f4d8501397a5904c7f,fix(framework): fail RepositoryIterator::fetchIds() when the autoIncrement cursor is missing (#21810),,159440,

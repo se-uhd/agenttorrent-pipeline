@@ -1,0 +1,85 @@
+{
+  "evaluation_id": "2026-11-06T172452Z",
+  "retrieval_id": "2026-11-02T223052Z",
+  "run_id": "2026-11-06T170312Z",
+  "reference_model": "deepseek/deepseek-v4.1-flash",
+  "parameters": "015dadfbc4a8ce64524b684feb2ed908f33389611256c97ef052c98a75a5eac5",
+  "labeled": 45151,
+  "excluded": [
+    {
+      "path": "calibration_sample.csv",
+      "sha256": "839ce010544348055b41632b0a46729830eb47576beb945cd963643e4ab10b7f",
+      "repositories": 2282
+    },
+    {
+      "path": "evaluation_sample.csv",
+      "sha256": "2839dad5fd39fe89049b609c03b08a1e1b3e50f375ec3cc588ce7f212068f8eb",
+      "repositories": 1041
+    },
+    {
+      "path": "evaluation_sample.csv",
+      "sha256": "80b98d5f3202e6c7d9b46eddb0a135a346c8ad45ac6171fccce5d89cba609ca4",
+      "repositories": 1041
+    },
+    {
+      "path": "evaluation_sample.csv",
+      "sha256": "99fc7aef9e656bf5d8f4b4eb8ad7c8b43cef2fd91e8075ae5c1c19b8cd29c3a6",
+      "repositories": 1040
+    },
+    {
+      "path": "evaluation_sample.csv",
+      "sha256": "7f5991b6f471c41c0a8d1a87f3b0261f3559cbfeb4a1009d07770a3ecc351fa4",
+      "repositories": 381
+    },
+    {
+      "path": "evaluation_sample.csv",
+      "sha256": "f2cdf9ef1b146b5622d141c7460290deb3e70b6ab27f717635ed6cbc6b89991b",
+      "repositories": 381
+    },
+    {
+      "path": "evaluation_sample.csv",
+      "sha256": "6beb5af64d24933ff0e8aa6df3f80c715c2f3b01872558c8cefec5b0b981eca3",
+      "repositories": 96
+    }
+  ],
+  "named_in_prompt": {
+    "path": "2_classification/prompts/classification-prompt.md",
+    "sha256": "e1bb894fcd6eb1c2b6b8b29dae4d2ca21f706012896ce4cf68fb44c62c692b37",
+    "repositories": 29,
+    "quoted": [
+      "IUPAC/IUPAC-FAIRSpec",
+      "KDE/elisa",
+      "LibreOffice/core",
+      "NightOwl888/ICU4N",
+      "PierfrancescoSoffritti/doodles",
+      "SiaFoundation/renterd",
+      "alainbryden/bitburner-scripts",
+      "algolia/algoliasearch-client-php",
+      "amazon-ion/ion-java",
+      "assert-rs/libtest2",
+      "autowp/autowp",
+      "bcgit/bc-csharp",
+      "bcgit/bc-java",
+      "coreutils/coreutils",
+      "krgamestudios/Toy",
+      "mongodb/mongo-cxx-driver",
+      "mrexodia/ida-pro-mcp",
+      "nfdi-de/chem-dcat-ap",
+      "omniscale/imposm3",
+      "rpm-software-management/dnf",
+      "syumai/workers-go",
+      "warden-protocol/wardenprotocol",
+      "xerial/sqlite-jdbc"
+    ]
+  },
+  "labeled_by_second_model": {
+    "repositories": 0,
+    "names": []
+  },
+  "left_out": 5999,
+  "population": 39152,
+  "size": 1039,
+  "margin": 0.03,
+  "confidence": 0.95,
+  "seed": 372854903
+}

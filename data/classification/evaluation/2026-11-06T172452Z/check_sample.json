@@ -1,0 +1,12 @@
+{
+  "evaluation_id": "2026-11-06T172452Z",
+  "parameters": "015dadfbc4a8ce64524b684feb2ed908f33389611256c97ef052c98a75a5eac5",
+  "reference_model": "deepseek/deepseek-v4.1-flash",
+  "second_model": "z-ai/glm-5.3",
+  "disagreements": 21,
+  "agreed": 1018,
+  "agreements": 200,
+  "seed": 20261107,
+  "forks": "",
+  "reviewed_agreements": ""
+}

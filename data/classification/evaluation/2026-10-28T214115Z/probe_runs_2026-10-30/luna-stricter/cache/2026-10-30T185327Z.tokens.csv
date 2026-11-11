@@ -1,0 +1,3 @@
+role,model,requested_tier,service_tier,requests,input_tokens,cached_tokens,cache_write_tokens,output_tokens,reasoning_tokens
+classifying_model,gpt-6-luna,default,default,68,1712912,1015120,697588,67494,25627
+summary_model,gpt-6-luna,auto,default,33,70060,18794,38944,4691,0

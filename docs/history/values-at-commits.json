@@ -1,0 +1,1471 @@
+{
+ "description": "The values of the stated statistics that were computed from the files of a commit of the private repository se-uhd/agenttorrent-pipeline-internal. `commit` names that commit, which this repository does not contain, and `source` names what computed the value from the files of the commit (docs/tools/statistics.md).",
+ "values": {
+  "build_80b321b9.data_root_revision": {
+   "value": 2,
+   "commit": "80b321b9",
+   "source": {
+    "constant": "deploy/entrypoint.py",
+    "name": "DATA_ROOT_REVISION"
+   }
+  },
+  "build_5d29edef.data_root_revision": {
+   "value": 3,
+   "commit": "5d29edef",
+   "source": {
+    "constant": "deploy/entrypoint.py",
+    "name": "DATA_ROOT_REVISION"
+   }
+  },
+  "build_8f4c6aa8.data_root_revision": {
+   "value": 2,
+   "commit": "8f4c6aa8",
+   "source": {
+    "constant": "deploy/entrypoint.py",
+    "name": "DATA_ROOT_REVISION"
+   }
+  },
+  "build_b649efd9.data_root_revision": {
+   "value": 2,
+   "commit": "b649efd9",
+   "source": {
+    "constant": "deploy/entrypoint.py",
+    "name": "DATA_ROOT_REVISION"
+   }
+  },
+  "build_bca78459.data_root_revision": {
+   "value": 2,
+   "commit": "bca78459",
+   "source": {
+    "constant": "deploy/entrypoint.py",
+    "name": "DATA_ROOT_REVISION"
+   }
+  },
+  "calibration.rule2_run_round_limit": {
+   "value": 2,
+   "commit": "6f21a412",
+   "source": {
+    "constant": "2_classification/1_classify_repos.py",
+    "name": "MAX_TOOL_ROUNDS"
+   }
+  },
+  "classification_2026_10_12.check_repositories": {
+   "value": 481,
+   "commit": "f8a10e9f",
+   "source": {
+    "function": "labels.checked",
+    "args": {
+     "run": "2026-10-12T125040Z",
+     "samples": [
+      "data/classification/evaluation/2026-10-07T021344Z/check_sample.csv",
+      "data/classification/evaluation/2026-10-11T060023Z/check_sample.csv"
+     ]
+    }
+   }
+  },
+  "classification_2026_10_12.check_definite_expected": {
+   "value": 480,
+   "commit": "f8a10e9f",
+   "source": {
+    "function": "labels.checked",
+    "args": {
+     "run": "2026-10-12T125040Z",
+     "samples": [
+      "data/classification/evaluation/2026-10-07T021344Z/check_sample.csv",
+      "data/classification/evaluation/2026-10-11T060023Z/check_sample.csv"
+     ],
+     "definite": true
+    }
+   }
+  },
+  "classification_2026_10_12.unchanged_first_otherwise": {
+   "value": 4,
+   "commit": "f8a10e9f",
+   "source": {
+    "function": "labels.checked",
+    "args": {
+     "run": "2026-10-12T125040Z",
+     "samples": [
+      "data/classification/evaluation/2026-10-07T021344Z/check_sample.csv",
+      "data/classification/evaluation/2026-10-11T060023Z/check_sample.csv"
+     ],
+     "otherwise": true
+    }
+   }
+  },
+  "classification_2026_10_12.unchanged_second_otherwise": {
+   "value": 7,
+   "commit": "f8a10e9f",
+   "source": {
+    "function": "labels.checked",
+    "args": {
+     "run": "2026-10-12T200831Z",
+     "samples": [
+      "data/classification/evaluation/2026-10-07T021344Z/check_sample.csv",
+      "data/classification/evaluation/2026-10-11T060023Z/check_sample.csv"
+     ],
+     "otherwise": true
+    }
+   }
+  },
+  "classification_2026_10_12.unchanged_runs_differing": {
+   "value": 5,
+   "commit": "f8a10e9f",
+   "source": {
+    "function": "labels.agreement",
+    "args": {
+     "alike": false,
+     "runs": [
+      "2026-10-12T125040Z",
+      "2026-10-12T200831Z"
+     ]
+    }
+   }
+  },
+  "classification_2026_10_12.revision_1_otherwise": {
+   "value": 8,
+   "commit": "f8a10e9f",
+   "source": {
+    "function": "labels.checked",
+    "args": {
+     "run": "2026-10-12T181030Z",
+     "samples": [
+      "data/classification/evaluation/2026-10-07T021344Z/check_sample.csv",
+      "data/classification/evaluation/2026-10-11T060023Z/check_sample.csv"
+     ],
+     "otherwise": true
+    }
+   }
+  },
+  "classification_2026_10_12.revision_2_otherwise": {
+   "value": 11,
+   "commit": "f8a10e9f",
+   "source": {
+    "function": "labels.checked",
+    "args": {
+     "run": "2026-10-12T190153Z",
+     "samples": [
+      "data/classification/evaluation/2026-10-07T021344Z/check_sample.csv",
+      "data/classification/evaluation/2026-10-11T060023Z/check_sample.csv"
+     ],
+     "otherwise": true
+    }
+   }
+  },
+  "classification_2026_10_12.revision_1_new_otherwise": {
+   "value": 4,
+   "commit": "f8a10e9f",
+   "source": {
+    "function": "labels.checked",
+    "args": {
+     "run": "2026-10-12T181030Z",
+     "samples": [
+      "data/classification/evaluation/2026-10-07T021344Z/check_sample.csv",
+      "data/classification/evaluation/2026-10-11T060023Z/check_sample.csv"
+     ],
+     "otherwise": true,
+     "expected_in": [
+      "2026-10-12T125040Z",
+      "2026-10-12T200831Z"
+     ]
+    }
+   }
+  },
+  "classification_2026_10_12.revision_2_new_otherwise": {
+   "value": 7,
+   "commit": "f8a10e9f",
+   "source": {
+    "function": "labels.checked",
+    "args": {
+     "run": "2026-10-12T190153Z",
+     "samples": [
+      "data/classification/evaluation/2026-10-07T021344Z/check_sample.csv",
+      "data/classification/evaluation/2026-10-11T060023Z/check_sample.csv"
+     ],
+     "otherwise": true,
+     "expected_in": [
+      "2026-10-12T125040Z",
+      "2026-10-12T200831Z"
+     ]
+    }
+   }
+  },
+  "collection_2026_10_02.clone_failures": {
+   "value": 92,
+   "commit": "b1d2b73c",
+   "source": {
+    "rows": "3_data-collection/data/collected/clone_failed.csv"
+   }
+  },
+  "collection_2026_10_02.duration_hours": {
+   "value": 20.87,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "collected.scan_hours",
+    "args": {
+     "collected": "3_data-collection/data/collected/repos.csv"
+    }
+   }
+  },
+  "collection_2026_10_02.repositories_with_head": {
+   "value": 36617,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "tables.rows",
+    "args": {
+     "path": "3_data-collection/data/collected/repos.csv",
+     "nonempty": [
+      "head_sha"
+     ]
+    }
+   }
+  },
+  "collection_2026_10_02.sample_repositories": {
+   "value": 36710,
+   "commit": "b1d2b73c",
+   "source": {
+    "rows": "3_data-collection/data/collected/repos.csv"
+   }
+  },
+  "refresh_2026_10_05.branch_changed_since_march": {
+   "value": 986,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "collected.heads",
+    "args": {
+     "collected": "3_data-collection/data/collected/repos.csv",
+     "retrieval": "2026-03-16T180701Z",
+     "branch": "other",
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "refresh_2026_10_05.last_commit_within_182_days": {
+   "value": 88.6,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "collected.committed_within",
+    "args": {
+     "collected": "3_data-collection/data/collected/repos.csv",
+     "days": 182
+    }
+   }
+  },
+  "refresh_2026_10_05.last_commit_within_30_days.d1": {
+   "value": 65.3,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "collected.committed_within",
+    "args": {
+     "collected": "3_data-collection/data/collected/repos.csv",
+     "days": 30
+    }
+   }
+  },
+  "refresh_2026_10_05.last_commit_within_7_days": {
+   "value": 44.0,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "collected.committed_within",
+    "args": {
+     "collected": "3_data-collection/data/collected/repos.csv",
+     "days": 7
+    }
+   }
+  },
+  "refresh_2026_10_05.last_commit_within_91_days": {
+   "value": 79.9,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "collected.committed_within",
+    "args": {
+     "collected": "3_data-collection/data/collected/repos.csv",
+     "days": 91
+    }
+   }
+  },
+  "refresh_2026_10_05.march_head_predating": {
+   "value": 3573,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "collected.heads",
+    "args": {
+     "collected": "3_data-collection/data/collected/repos.csv",
+     "retrieval": "2026-03-16T180701Z",
+     "committed_by": "2026-03-10T18:07:01Z",
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "refresh_2026_10_05.march_head_predating_branch_changed": {
+   "value": 12,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "collected.heads",
+    "args": {
+     "collected": "3_data-collection/data/collected/repos.csv",
+     "retrieval": "2026-03-16T180701Z",
+     "committed_by": "2026-03-10T18:07:01Z",
+     "head": "other",
+     "branch": "other",
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "refresh_2026_10_05.march_head_predating_matched": {
+   "value": 3534,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "collected.heads",
+    "args": {
+     "collected": "3_data-collection/data/collected/repos.csv",
+     "retrieval": "2026-03-16T180701Z",
+     "committed_by": "2026-03-10T18:07:01Z",
+     "head": "same",
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "refresh_2026_10_05.moved_since_march": {
+   "value": 33001,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "collected.heads",
+    "args": {
+     "collected": "3_data-collection/data/collected/repos.csv",
+     "retrieval": "2026-03-16T180701Z",
+     "head": "other",
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "refresh_2026_10_05.no_commit_since_2026_04_02": {
+   "value": 4163,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "collected.committed_before",
+    "args": {
+     "collected": "3_data-collection/data/collected/repos.csv",
+     "day": "2026-04-02"
+    }
+   }
+  },
+  "refresh_2026_10_05.unmoved_share_monthly": {
+   "value": 34.7,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "collected.committed_within",
+    "args": {
+     "collected": "3_data-collection/data/collected/repos.csv",
+     "days": 30,
+     "within": false
+    }
+   }
+  },
+  "release_2026_03.sample_repositories": {
+   "value": 36710,
+   "commit": "58b047ce0520e34a06f52283366d5ef0d9a65855",
+   "source": {
+    "rows": "2_classification/repos_annotated.7z",
+    "where": {
+     "engineered_project": "true"
+    }
+   }
+  },
+  "release_2026_03.sampling_frame_repositories": {
+   "value": 40585,
+   "commit": "58b047ce0520e34a06f52283366d5ef0d9a65855",
+   "source": {
+    "json": "1_sampling/ghs_filtered.json.7z",
+    "pointer": "/_metadata/final_count"
+   }
+  },
+  "release_2026_03.labeled": {
+   "value": 39426,
+   "commit": "58b047ce0520e34a06f52283366d5ef0d9a65855",
+   "source": {
+    "rows": "2_classification/repos_annotated.7z"
+   }
+  },
+  "release_2026_03.labeled_false": {
+   "value": 2564,
+   "commit": "58b047ce0520e34a06f52283366d5ef0d9a65855",
+   "source": {
+    "rows": "2_classification/repos_annotated.7z",
+    "where": {
+     "engineered_project": "false"
+    }
+   }
+  },
+  "release_2026_03.labeled_unsure": {
+   "value": 152,
+   "commit": "58b047ce0520e34a06f52283366d5ef0d9a65855",
+   "source": {
+    "rows": "2_classification/repos_annotated.7z",
+    "where": {
+     "engineered_project": "unsure"
+    }
+   }
+  },
+  "release_2026_03.excluded": {
+   "value": 1159,
+   "commit": "58b047ce0520e34a06f52283366d5ef0d9a65855",
+   "source": {
+    "rows": "2_classification/repos_excluded.csv.7z"
+   }
+  },
+  "release_2026_03.excluded_unavailable": {
+   "value": 15,
+   "commit": "58b047ce0520e34a06f52283366d5ef0d9a65855",
+   "source": {
+    "function": "tables.rows",
+    "args": {
+     "path": "2_classification/repos_excluded.csv.7z",
+     "match": {
+      "reason": "^clone_failed"
+     }
+    }
+   }
+  },
+  "release_2026_03.excluded_without_readme": {
+   "value": 74,
+   "commit": "58b047ce0520e34a06f52283366d5ef0d9a65855",
+   "source": {
+    "function": "tables.rows",
+    "args": {
+     "path": "2_classification/repos_excluded.csv.7z",
+     "match": {
+      "reason": "^(?:no_readme_found|empty_readme)"
+     }
+    }
+   }
+  },
+  "release_2026_03.excluded_not_english": {
+   "value": 1070,
+   "commit": "58b047ce0520e34a06f52283366d5ef0d9a65855",
+   "source": {
+    "function": "tables.rows",
+    "args": {
+     "path": "2_classification/repos_excluded.csv.7z",
+     "match": {
+      "reason": "^root_readme_non_english"
+     }
+    }
+   }
+  },
+  "release_2026_03.links": {
+   "value": 883997,
+   "commit": "58b047ce0520e34a06f52283366d5ef0d9a65855",
+   "source": {
+    "function": "tables.aggregate",
+    "args": {
+     "path": "2_classification/links_summary.csv.7z",
+     "column": "num_links",
+     "how": "sum"
+    }
+   }
+  },
+  "release_2026_03.links_excluded": {
+   "value": 318742,
+   "commit": "58b047ce0520e34a06f52283366d5ef0d9a65855",
+   "source": {
+    "rows": "2_classification/excluded_links.csv.7z"
+   }
+  },
+  "release_2026_03.links_summarized_max": {
+   "value": 24,
+   "commit": "58b047ce0520e34a06f52283366d5ef0d9a65855",
+   "source": {
+    "constant": "2_classification/4_summarize_link_content.py",
+    "name": "MAX_LINKS"
+   }
+  },
+  "release_2026_03.top_n_languages": {
+   "value": 10,
+   "commit": "58b047ce0520e34a06f52283366d5ef0d9a65855",
+   "source": {
+    "json": "1_sampling/ghs_filtered.json.7z",
+    "pointer": "/_metadata/filter_config/top_n_languages"
+   }
+  },
+  "release_2026_03.configured_repositories": {
+   "value": 4738,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "rows": "3_data-collection/output/repos.csv"
+   }
+  },
+  "release_2026_03.repos_columns": {
+   "value": 24,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "function": "tables.columns",
+    "args": {
+     "path": "3_data-collection/output/repos.csv"
+    }
+   }
+  },
+  "release_2026_03.commits": {
+   "value": 148519,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "rows": "3_data-collection/output/all_ai_commits.csv.7z"
+   }
+  },
+  "release_2026_03.commits.repositories": {
+   "value": 3392,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "rows": "3_data-collection/output/all_ai_commits.csv.7z",
+    "distinct": "repo_name"
+   }
+  },
+  "release_2026_03.rows.context_files": {
+   "value": 9470,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "rows": "3_data-collection/output/context-files.csv"
+   }
+  },
+  "release_2026_03.rows.skills": {
+   "value": 2430,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "rows": "3_data-collection/output/skills.csv"
+   }
+  },
+  "release_2026_03.rows.commands": {
+   "value": 1098,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "rows": "3_data-collection/output/commands.csv"
+   }
+  },
+  "release_2026_03.rows.rules": {
+   "value": 997,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "rows": "3_data-collection/output/rules.csv"
+   }
+  },
+  "release_2026_03.rows.subagents": {
+   "value": 884,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "rows": "3_data-collection/output/subagents.csv"
+   }
+  },
+  "release_2026_03.rows.settings": {
+   "value": 472,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "rows": "3_data-collection/output/settings.csv"
+   }
+  },
+  "release_2026_03.rows.mcp": {
+   "value": 138,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "rows": "3_data-collection/output/mcp.csv"
+   }
+  },
+  "release_2026_03.rows.hooks": {
+   "value": 102,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "rows": "3_data-collection/output/hooks.csv"
+   }
+  },
+  "release_2026_03.rows.other": {
+   "value": 1969,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "rows": "3_data-collection/output/other.csv"
+   }
+  },
+  "release_2026_03.flags.context_file": {
+   "value": 4463,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "rows": "3_data-collection/output/repos.csv",
+    "where": {
+     "context_file": "TRUE"
+    }
+   }
+  },
+  "release_2026_03.flags.skills": {
+   "value": 547,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "rows": "3_data-collection/output/repos.csv",
+    "where": {
+     "skills": "TRUE"
+    }
+   }
+  },
+  "release_2026_03.flags.commands": {
+   "value": 284,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "rows": "3_data-collection/output/repos.csv",
+    "where": {
+     "commands": "TRUE"
+    }
+   }
+  },
+  "release_2026_03.flags.rules": {
+   "value": 298,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "rows": "3_data-collection/output/repos.csv",
+    "where": {
+     "rules": "TRUE"
+    }
+   }
+  },
+  "release_2026_03.flags.subagents": {
+   "value": 273,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "rows": "3_data-collection/output/repos.csv",
+    "where": {
+     "subagents": "TRUE"
+    }
+   }
+  },
+  "release_2026_03.flags.settings": {
+   "value": 447,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "rows": "3_data-collection/output/repos.csv",
+    "where": {
+     "settings": "TRUE"
+    }
+   }
+  },
+  "release_2026_03.flags.mcp": {
+   "value": 124,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "rows": "3_data-collection/output/repos.csv",
+    "where": {
+     "mcp": "TRUE"
+    }
+   }
+  },
+  "release_2026_03.flags.hooks": {
+   "value": 101,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "rows": "3_data-collection/output/repos.csv",
+    "where": {
+     "hooks": "TRUE"
+    }
+   }
+  },
+  "release_2026_03.flags.claude": {
+   "value": 2525,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "rows": "3_data-collection/output/repos.csv",
+    "where": {
+     "claude": "TRUE"
+    }
+   }
+  },
+  "release_2026_03.flags.copilot": {
+   "value": 1397,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "rows": "3_data-collection/output/repos.csv",
+    "where": {
+     "copilot": "TRUE"
+    }
+   }
+  },
+  "release_2026_03.flags.cursor": {
+   "value": 466,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "rows": "3_data-collection/output/repos.csv",
+    "where": {
+     "cursor": "TRUE"
+    }
+   }
+  },
+  "release_2026_03.flags.gemini": {
+   "value": 183,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "rows": "3_data-collection/output/repos.csv",
+    "where": {
+     "gemini": "TRUE"
+    }
+   }
+  },
+  "release_2026_03.flags.codex": {
+   "value": 53,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "rows": "3_data-collection/output/repos.csv",
+    "where": {
+     "codex": "TRUE"
+    }
+   }
+  },
+  "release_2026_03.flags.agents_md_only": {
+   "value": 909,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "rows": "3_data-collection/output/repos.csv",
+    "where": {
+     "agents_md_only": "TRUE"
+    }
+   }
+  },
+  "release_2026_03.short_files": {
+   "value": 451,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "rows": "4_data-analysis/rq2/checked-short-files/classification.csv"
+   }
+  },
+  "release_2026_03.short_files_substantive": {
+   "value": 396,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "rows": "4_data-analysis/rq2/checked-short-files/classification.csv",
+    "where": {
+     "label": "substantive"
+    }
+   }
+  },
+  "release_2026_03.short_files_max_lines": {
+   "value": 10,
+   "commit": "53df4767d1edf3cbf5a523e69c809bebe0e44179",
+   "source": {
+    "function": "tables.aggregate",
+    "args": {
+     "path": "4_data-analysis/rq2/checked-short-files/classification.csv",
+     "column": "line_count",
+     "how": "max"
+    }
+   }
+  },
+  "retrieval_2026_10_05.added": {
+   "value": 68277,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "retrievals.changes",
+    "args": {
+     "new": "2026-10-05T101430Z",
+     "old": "2026-03-16T180701Z",
+     "count": "added",
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "retrieval_2026_10_05.added_created_after_window": {
+   "value": 13263,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "retrievals.changes",
+    "args": {
+     "new": "2026-10-05T101430Z",
+     "old": "2026-03-16T180701Z",
+     "count": "reasons/created_after_previous_window",
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "retrieval_2026_10_05.archived_changed": {
+   "value": 1743,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "retrievals.changes",
+    "args": {
+     "new": "2026-10-05T101430Z",
+     "old": "2026-03-16T180701Z",
+     "count": "fields/isArchived",
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "retrieval_2026_10_05.archived_on_github_only": {
+   "value": 831,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "retrievals.ghs_differs",
+    "args": {
+     "retrieval": "2026-10-05T101430Z",
+     "field": "isArchived",
+     "github": true,
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "retrieval_2026_10_05.branch_differs": {
+   "value": 504,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "retrievals.ghs_differs",
+    "args": {
+     "retrieval": "2026-10-05T101430Z",
+     "field": "defaultBranch",
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "retrieval_2026_10_05.collection_absent": {
+   "value": 4528,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "collected.changes",
+    "args": {
+     "collected": "3_data-collection/data/collected/repos.csv",
+     "retrieval": "2026-10-05T101430Z",
+     "change": "absent_from_retrieval",
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "retrieval_2026_10_05.collection_gone": {
+   "value": 1,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "collected.changes",
+    "args": {
+     "collected": "3_data-collection/data/collected/repos.csv",
+     "retrieval": "2026-10-05T101430Z",
+     "change": "gone_on_github",
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "retrieval_2026_10_05.collection_moved": {
+   "value": 7670,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "collected.changes",
+    "args": {
+     "collected": "3_data-collection/data/collected/repos.csv",
+     "retrieval": "2026-10-05T101430Z",
+     "change": "moved",
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "retrieval_2026_10_05.collection_renamed": {
+   "value": 367,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "collected.changes",
+    "args": {
+     "collected": "3_data-collection/data/collected/repos.csv",
+     "retrieval": "2026-10-05T101430Z",
+     "change": "renamed",
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "retrieval_2026_10_05.count_after": {
+   "value": 205420,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "tables.cell",
+    "args": {
+     "path": "1_sampling/ghs_retrievals/index.csv",
+     "column": "count_after",
+     "where": {
+      "retrieval_id": "2026-10-05T101430Z"
+     }
+    }
+   }
+  },
+  "retrieval_2026_10_05.count_before": {
+   "value": 205418,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "tables.cell",
+    "args": {
+     "path": "1_sampling/ghs_retrievals/index.csv",
+     "column": "count_before",
+     "where": {
+      "retrieval_id": "2026-10-05T101430Z"
+     }
+    }
+   }
+  },
+  "retrieval_2026_10_05.days_after_scan_max": {
+   "value": 3,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "collected.days_after_scan",
+    "args": {
+     "collected": "3_data-collection/data/collected/repos.csv",
+     "retrieval": "2026-10-05T101430Z",
+     "how": "max",
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "retrieval_2026_10_05.days_after_scan_min": {
+   "value": 2,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "collected.days_after_scan",
+    "args": {
+     "collected": "3_data-collection/data/collected/repos.csv",
+     "retrieval": "2026-10-05T101430Z",
+     "how": "min",
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "retrieval_2026_10_05.download_step_minutes": {
+   "value": 18.833333333333332,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "retrievals.minutes",
+    "args": {
+     "retrieval": "2026-10-05T101430Z",
+     "step": "download",
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "retrieval_2026_10_05.duplicate_groups": {
+   "value": 2061,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "retrievals.duplicate_groups",
+    "args": {
+     "retrieval": "2026-10-05T101430Z",
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "retrieval_2026_10_05.duplicate_groups_with_current_name": {
+   "value": 2046,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "retrievals.duplicate_groups",
+    "args": {
+     "retrieval": "2026-10-05T101430Z",
+     "current_name": true,
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "retrieval_2026_10_05.export_mib": {
+   "value": 69274908,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "tables.cell",
+    "args": {
+     "path": "1_sampling/ghs_retrievals/index.csv",
+     "column": "bytes_received",
+     "where": {
+      "retrieval_id": "2026-10-05T101430Z"
+     }
+    }
+   }
+  },
+  "retrieval_2026_10_05.frame_without_march_label": {
+   "value": 12931,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "retrievals.sampling_frame_overlap",
+    "args": {
+     "retrieval": "2026-10-05T101430Z",
+     "earlier": "2_classification/repos_annotated.7z",
+     "count": "absent",
+     "sampling_frame": "data/classification/labels/2026-10-10T035814Z.labels.csv.xz",
+     "sampling_frame_at": "fc2c6c5a",
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "retrieval_2026_10_05.github_found": {
+   "value": 205216,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "tables.cell",
+    "args": {
+     "path": "1_sampling/ghs_retrievals/index.csv",
+     "column": "github_found",
+     "where": {
+      "retrieval_id": "2026-10-05T101430Z"
+     }
+    }
+   }
+  },
+  "retrieval_2026_10_05.github_not_found": {
+   "value": 202,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "tables.cell",
+    "args": {
+     "path": "1_sampling/ghs_retrievals/index.csv",
+     "column": "github_not_found",
+     "where": {
+      "retrieval_id": "2026-10-05T101430Z"
+     }
+    }
+   }
+  },
+  "retrieval_2026_10_05.head_differs": {
+   "value": 50207,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "retrievals.ghs_differs",
+    "args": {
+     "retrieval": "2026-10-05T101430Z",
+     "field": "headSha",
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "retrieval_2026_10_05.index_query_minutes": {
+   "value": 171.6,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "retrievals.minutes",
+    "args": {
+     "retrieval": "2026-10-05T101430Z",
+     "step": "github",
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "retrieval_2026_10_05.language_differs": {
+   "value": 1316,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "retrievals.ghs_differs",
+    "args": {
+     "retrieval": "2026-10-05T101430Z",
+     "field": "language",
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "retrieval_2026_10_05.license_changed": {
+   "value": 1378,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "retrievals.changes",
+    "args": {
+     "new": "2026-10-05T101430Z",
+     "old": "2026-03-16T180701Z",
+     "count": "fields/license",
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "retrieval_2026_10_05.license_differs": {
+   "value": 9929,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "retrievals.ghs_differs",
+    "args": {
+     "retrieval": "2026-10-05T101430Z",
+     "field": "license",
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "retrieval_2026_10_05.license_quotes_only": {
+   "value": 9549,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "retrievals.ghs_differs",
+    "args": {
+     "retrieval": "2026-10-05T101430Z",
+     "field": "license",
+     "quotes_only": true,
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "retrieval_2026_10_05.march_frame_remaining": {
+   "value": 33806,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "retrievals.sampling_frame_overlap",
+    "args": {
+     "retrieval": "2026-10-05T101430Z",
+     "earlier": "1_sampling/ghs_filtered.json.7z",
+     "count": "remaining",
+     "sampling_frame": "data/classification/labels/2026-10-10T035814Z.labels.csv.xz",
+     "sampling_frame_at": "fc2c6c5a",
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "retrieval_2026_10_05.march_sample_remaining": {
+   "value": 31071,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "retrievals.sampling_frame_overlap",
+    "args": {
+     "retrieval": "2026-10-05T101430Z",
+     "earlier": "2_classification/repos_annotated.7z",
+     "count": "remaining",
+     "where": {
+      "engineered_project": "true"
+     },
+     "sampling_frame": "data/classification/labels/2026-10-10T035814Z.labels.csv.xz",
+     "sampling_frame_at": "fc2c6c5a",
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "retrieval_2026_10_05.name_differences": {
+   "value": 26692,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "retrievals.changes",
+    "args": {
+     "new": "2026-10-05T101430Z",
+     "old": "2026-03-16T180701Z",
+     "count": "fields/name",
+     "verbatim": true,
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "retrieval_2026_10_05.removed": {
+   "value": 52299,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "retrievals.changes",
+    "args": {
+     "new": "2026-10-05T101430Z",
+     "old": "2026-03-16T180701Z",
+     "count": "removed",
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "retrieval_2026_10_05.renamed": {
+   "value": 1517,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "retrievals.changes",
+    "args": {
+     "new": "2026-10-05T101430Z",
+     "old": "2026-03-16T180701Z",
+     "count": "fields/name",
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "retrieval_2026_10_05.repositories": {
+   "value": 205418,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "tables.cell",
+    "args": {
+     "path": "1_sampling/ghs_retrievals/index.csv",
+     "column": "item_count",
+     "where": {
+      "retrieval_id": "2026-10-05T101430Z"
+     }
+    }
+   }
+  },
+  "collection_2026_10_05.detection_evaluation.path_recall_left_out": {
+   "value": 120,
+   "commit": "65c565f3",
+   "source": {
+    "function": "tables.rows",
+    "args": {
+     "path": "data/collection/output/ai_commits-repos.csv",
+     "nonempty": [
+      "commits_matched"
+     ],
+     "absent_from": [
+      "data/collection/output/context-files.csv",
+      "data/collection/output/skills.csv",
+      "data/collection/output/subagents.csv",
+      "data/collection/output/commands.csv",
+      "data/collection/output/rules.csv",
+      "data/collection/output/settings.csv",
+      "data/collection/output/hooks.csv",
+      "data/collection/output/mcp.csv",
+      "data/collection/output/plugins.csv",
+      "data/collection/output/lsp.csv",
+      "data/collection/output/other.csv"
+     ],
+     "distinct": "repo_name"
+    }
+   }
+  },
+  "retrieval_2026_10_05.license_changed_verbatim": {
+   "value": 7850,
+   "commit": "b1d2b73c",
+   "source": {
+    "function": "retrievals.changes",
+    "args": {
+     "new": "2026-10-05T101430Z",
+     "old": "2026-03-16T180701Z",
+     "count": "fields/license",
+     "verbatim": true,
+     "cache": "1_sampling/ghs_retrievals"
+    }
+   }
+  },
+  "collection_2026_10_26.detection_evaluation.path_recall_left_out": {
+   "value": 159,
+   "commit": "de035aa5b4a3400397cc29863f52f16f2f1075db",
+   "source": {
+    "function": "tables.rows",
+    "args": {
+     "path": "data/collection/output/ai_commits-repos.csv",
+     "where": {
+      "outcome": "history_read"
+     },
+     "absent_from": [
+      "data/collection/output/context-files.csv",
+      "data/collection/output/skills.csv",
+      "data/collection/output/subagents.csv",
+      "data/collection/output/commands.csv",
+      "data/collection/output/rules.csv",
+      "data/collection/output/settings.csv",
+      "data/collection/output/hooks.csv",
+      "data/collection/output/mcp.csv",
+      "data/collection/output/plugins.csv",
+      "data/collection/output/lsp.csv",
+      "data/collection/output/other.csv"
+     ]
+    }
+   }
+  },
+  "prices_2026_10_30.deepseek_morph_fp8.input": {
+   "value": 0.031,
+   "commit": "6ffd361a",
+   "source": {
+    "function": "tables.cell",
+    "args": {
+     "path": "2_classification/config/model_prices.csv",
+     "column": "uncached_input_usd_per_million",
+     "where": {
+      "model": "deepseek/deepseek-v4.1-flash",
+      "service_tier": "morph/fp8"
+     }
+    }
+   }
+  },
+  "prices_2026_10_30.deepseek_morph_fp8.cached": {
+   "value": 0.004,
+   "commit": "6ffd361a",
+   "source": {
+    "function": "tables.cell",
+    "args": {
+     "path": "2_classification/config/model_prices.csv",
+     "column": "cached_input_usd_per_million",
+     "where": {
+      "model": "deepseek/deepseek-v4.1-flash",
+      "service_tier": "morph/fp8"
+     }
+    }
+   }
+  },
+  "prices_2026_10_30.deepseek_morph_fp8.output": {
+   "value": 0.27,
+   "commit": "6ffd361a",
+   "source": {
+    "function": "tables.cell",
+    "args": {
+     "path": "2_classification/config/model_prices.csv",
+     "column": "output_usd_per_million",
+     "where": {
+      "model": "deepseek/deepseek-v4.1-flash",
+      "service_tier": "morph/fp8"
+     }
+    }
+   }
+  },
+  "prices_2026_10_30.glm_flash_morph_fp8.input": {
+   "value": 0.042,
+   "commit": "6ffd361a",
+   "source": {
+    "function": "tables.cell",
+    "args": {
+     "path": "2_classification/config/model_prices.csv",
+     "column": "uncached_input_usd_per_million",
+     "where": {
+      "model": "z-ai/glm-5.3-flash",
+      "service_tier": "morph/fp8"
+     }
+    }
+   }
+  },
+  "prices_2026_10_30.glm_flash_morph_fp8.cached": {
+   "value": 0.018,
+   "commit": "6ffd361a",
+   "source": {
+    "function": "tables.cell",
+    "args": {
+     "path": "2_classification/config/model_prices.csv",
+     "column": "cached_input_usd_per_million",
+     "where": {
+      "model": "z-ai/glm-5.3-flash",
+      "service_tier": "morph/fp8"
+     }
+    }
+   }
+  },
+  "prices_2026_10_30.glm_flash_morph_fp8.output": {
+   "value": 0.3,
+   "commit": "6ffd361a",
+   "source": {
+    "function": "tables.cell",
+    "args": {
+     "path": "2_classification/config/model_prices.csv",
+     "column": "output_usd_per_million",
+     "where": {
+      "model": "z-ai/glm-5.3-flash",
+      "service_tier": "morph/fp8"
+     }
+    }
+   }
+  },
+  "prices_2026_10_30.qwen_together.input": {
+   "value": 2,
+   "commit": "6ffd361a",
+   "source": {
+    "function": "tables.cell",
+    "args": {
+     "path": "2_classification/config/model_prices.csv",
+     "column": "uncached_input_usd_per_million",
+     "where": {
+      "model": "qwen/qwen3.8-2.4t-a95b",
+      "service_tier": "together"
+     }
+    }
+   }
+  },
+  "prices_2026_10_30.qwen_together.cached": {
+   "value": 0.25,
+   "commit": "6ffd361a",
+   "source": {
+    "function": "tables.cell",
+    "args": {
+     "path": "2_classification/config/model_prices.csv",
+     "column": "cached_input_usd_per_million",
+     "where": {
+      "model": "qwen/qwen3.8-2.4t-a95b",
+      "service_tier": "together"
+     }
+    }
+   }
+  },
+  "prices_2026_10_30.qwen_together.output": {
+   "value": 6,
+   "commit": "6ffd361a",
+   "source": {
+    "function": "tables.cell",
+    "args": {
+     "path": "2_classification/config/model_prices.csv",
+     "column": "output_usd_per_million",
+     "where": {
+      "model": "qwen/qwen3.8-2.4t-a95b",
+      "service_tier": "together"
+     }
+    }
+   }
+  },
+  "prices_2026_10_30.kimi_morph_fp8.input": {
+   "value": 1.278,
+   "commit": "6ffd361a",
+   "source": {
+    "function": "tables.cell",
+    "args": {
+     "path": "2_classification/config/model_prices.csv",
+     "column": "uncached_input_usd_per_million",
+     "where": {
+      "model": "moonshotai/kimi-k3",
+      "service_tier": "morph/fp8"
+     }
+    }
+   }
+  },
+  "prices_2026_10_30.kimi_morph_fp8.cached": {
+   "value": 0.36,
+   "commit": "6ffd361a",
+   "source": {
+    "function": "tables.cell",
+    "args": {
+     "path": "2_classification/config/model_prices.csv",
+     "column": "cached_input_usd_per_million",
+     "where": {
+      "model": "moonshotai/kimi-k3",
+      "service_tier": "morph/fp8"
+     }
+    }
+   }
+  },
+  "prices_2026_10_30.kimi_morph_fp8.output": {
+   "value": 14.626,
+   "commit": "6ffd361a",
+   "source": {
+    "function": "tables.cell",
+    "args": {
+     "path": "2_classification/config/model_prices.csv",
+     "column": "output_usd_per_million",
+     "where": {
+      "model": "moonshotai/kimi-k3",
+      "service_tier": "morph/fp8"
+     }
+    }
+   }
+  },
+  "prices_2026_10_31.glm_morph_fp8.input": {
+   "value": 0.086,
+   "commit": "167394f5",
+   "source": {
+    "function": "tables.cell",
+    "args": {
+     "path": "2_classification/config/model_prices.csv",
+     "column": "uncached_input_usd_per_million",
+     "where": {
+      "model": "z-ai/glm-5.3",
+      "service_tier": "morph/fp8"
+     }
+    }
+   }
+  },
+  "prices_2026_10_31.glm_morph_fp8.cached": {
+   "value": 0.069,
+   "commit": "167394f5",
+   "source": {
+    "function": "tables.cell",
+    "args": {
+     "path": "2_classification/config/model_prices.csv",
+     "column": "cached_input_usd_per_million",
+     "where": {
+      "model": "z-ai/glm-5.3",
+      "service_tier": "morph/fp8"
+     }
+    }
+   }
+  },
+  "prices_2026_10_31.glm_morph_fp8.output": {
+   "value": 1.4,
+   "commit": "167394f5",
+   "source": {
+    "function": "tables.cell",
+    "args": {
+     "path": "2_classification/config/model_prices.csv",
+     "column": "output_usd_per_million",
+     "where": {
+      "model": "z-ai/glm-5.3",
+      "service_tier": "morph/fp8"
+     }
+    }
+   }
+  }
+ }
+}

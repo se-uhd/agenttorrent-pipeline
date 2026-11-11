@@ -1,0 +1,265 @@
+name: pipeline tests
+
+# Runs every suite that the pipeline has: 1_sampling/, the collection stage's tests/,
+# 2_classification/, 4_data-analysis/, the root, deploy/ and _website/. Every test
+# builds its own git repositories locally (git init) or redirects clone URLs to file://,
+# so nothing clones from GitHub and the run needs no network.
+#
+# No path filter: the tests read the heuristics, and the analysis and website code
+# reads the CSVs that these stages write, so a change anywhere can break them.
+on: [push, pull_request]
+
+# A newer push to the same ref cancels an in-progress run of this workflow.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    # A named image rather than ubuntu-latest, which GitHub moves to a new release on its own
+    # schedule: a new runner image is a change made here, with CI run on it.
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # test_every_id_in_the_history_of_the_two_files_is_a_row_or_removed reads the history of
+          # the two commit heuristics files, and the default clone of depth 1 has none of it. The
+          # clone is partial: it has every commit and tree, and git fetches the contents of a file
+          # of an earlier commit when a command reads it. A full clone holds every version of the
+          # tracked archives, which is more than the runner's disk holds.
+          fetch-depth: 0
+          filter: blob:none
+
+      # mise installs the toolchain from mise.toml, the same file and the same
+      # versions that the development machine resolves: the release of Python that
+      # mise.toml pins, the `7zz` of 7-Zip that the tests of
+      # test_steps_collected_files_archive and test_steps_release run and that they
+      # skip without, and the uv that installs the dependency locks. The action exports
+      # the environment of mise.toml to the steps below: mise creates the virtual
+      # environment .venv from the pinned Python, and every step runs its `python3` and
+      # installs with `uv pip` there, as a development machine does. `version` is the
+      # release of mise that deploy/install_tools.sh installs into the images, rather than
+      # the newest one. One job, because there is one supported version.
+      - uses: jdx/mise-action@v4
+        with:
+          version: 2026.10.18
+
+      # The test of the tool count distribution reads the labels of the rendered PDF
+      # with pdftotext.
+      - name: Install PDF tools
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+
+      # The suites that run git set user.name and user.email per repository,
+      # and a global identity keeps a stray commit from failing without one.
+      - name: Configure git identity
+        run: |
+          git config --global user.email "ci@example.com"
+          git config --global user.name "CI"
+
+      # This suite must pass with only the standard library and agentcontext. It runs before the
+      # install, in the .venv that mise created and that holds no distribution yet. `python3 -S`
+      # imports no site packages, and agentcontext comes from the checkout on PYTHONPATH.
+      # `python -m agentcontext verify` runs the suite with -S and the checkout on PYTHONPATH
+      # too, with the interpreter of an empty virtual environment, so that the child processes
+      # of the suite import what they import here.
+      - name: Run the sampling runner suite
+        working-directory: 1_sampling
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: |
+          python3 -S -m unittest \
+            test_run_sampling
+
+      # The environment of a development machine: dev/setup.sh runs the same three installs into
+      # its .venv, and every suite below runs with every distribution of locks/development.txt.
+      # Every install reads a dependency lock under locks/ with --require-hashes, so uv refuses a
+      # distribution that the dependency lock does not list. setuptools comes first, from
+      # locks/build.txt, and venn, which PyPI has as a source distribution only, and the editable
+      # package are built with it (--no-build-isolation) rather than with a setuptools that an
+      # isolated build would download. As in dev/setup.sh, the installs read no configuration of
+      # uv and none of the variables that make uv build a distribution instead of installing its
+      # wheel, install the package from a wheel rather than editable, or constrain, override or
+      # exclude distributions of the dependency lock, and --python names the interpreter of
+      # .venv, so that neither UV_PYTHON nor UV_SYSTEM_PYTHON can direct them into another
+      # environment.
+      - name: Install the development lock and the package
+        run: |
+          unset UV_CONFIG_FILE UV_NO_BINARY UV_NO_BINARY_PACKAGE UV_NO_BUILD UV_NO_BUILD_PACKAGE \
+            UV_PYTHON UV_SYSTEM_PYTHON UV_NO_EDITABLE UV_CONSTRAINT UV_OVERRIDE UV_EXCLUDE
+          uv pip install --no-config --python .venv/bin/python --require-hashes \
+            -r locks/build.txt
+          uv pip install --no-config --python .venv/bin/python --exact --reinstall \
+            --require-hashes --no-build-isolation -r locks/development.txt
+          uv pip install --no-config --python .venv/bin/python --no-deps --no-build-isolation \
+            -e .
+
+      - name: Run the sampling script suites
+        working-directory: 1_sampling
+        run: |
+          python3 -m unittest \
+            test_ghs_cache \
+            test_download_ghs \
+            test_query_github \
+            test_compare_retrievals \
+            test_filter_ghs
+
+      # Checks the licenses of the last sampling frame against config/licenses.csv, as
+      # `python -m agentcontext verify` does: a license that the sampling frame keeps and
+      # nobody reviewed, or a review that the tracked SPDX list contradicts, fails the step.
+      - name: Check the licenses of the last sampling frame
+        working-directory: 1_sampling
+        run: python3 4_filter_ghs.py --check-licenses
+
+      # Explicit module lists, not `unittest discover`: discover would recurse
+      # into any extracted collected or validated tree and pick up its tests.
+      # The collection stage's suites, under tests/ at the root, are imported as the
+      # package tests.test_<name>. Every module under test is imported from the
+      # installed package.
+      - name: Run collection suites
+        working-directory: .
+        run: |
+          python3 -m unittest \
+            tests.test_ambient_env \
+            tests.test_archives \
+            tests.test_caches \
+            tests.test_check_modes \
+            tests.test_checks_commits \
+            tests.test_checks_deletions \
+            tests.test_checks_regressions \
+            tests.test_checks_snapshot \
+            tests.test_checks_unmatched \
+            tests.test_cli \
+            tests.test_code_versions \
+            tests.test_commits \
+            tests.test_credentials \
+            tests.test_data_layout \
+            tests.test_doc_commit_refs \
+            tests.test_fingerprints \
+            tests.test_git_auth \
+            tests.test_github_api \
+            tests.test_git_bounds \
+            tests.test_git_clone \
+            tests.test_git_history \
+            tests.test_glossary \
+            tests.test_guards \
+            tests.test_heuristics \
+            tests.test_imports \
+            tests.test_jsonc \
+            tests.test_logs \
+            tests.test_paths \
+            tests.test_planning \
+            tests.test_public_export \
+            tests.test_repos \
+            tests.test_resume \
+            tests.test_reuse \
+            tests.test_runner \
+            tests.test_steps_commit_reclassification \
+            tests.test_steps_collected_files_archive \
+            tests.test_steps_repository_cloning \
+            tests.test_steps_output_cross_check \
+            tests.test_steps_detection \
+            tests.test_steps_engineered_project_selection \
+            tests.test_steps_file_history \
+            tests.test_steps_import_detection \
+            tests.test_steps_release \
+            tests.test_spec_case_counts \
+            tests.test_steps_collected_file_cleanup \
+            tests.test_stated_facts \
+            tests.test_tech_stack \
+            tests.test_tools_docs \
+            tests.test_tools_verify \
+            tests.test_tools_measure \
+            tests.test_tools_statistics \
+            tests.test_tools_evaluation \
+            tests.test_tools_mirror_run \
+            tests.test_tools_subsample \
+            tests.test_tools_tool_selection \
+            tests.test_undefined_names
+
+      - name: Run classification suite
+        working-directory: 2_classification
+        run: |
+          python3 -m unittest \
+            test_run_classification \
+            test_classify_repos \
+            test_changed_labels \
+            test_evaluate_labels \
+            test_label_cache \
+            test_readmes \
+            test_classification_tools \
+            test_mcp_bridge \
+            test_forks \
+            test_costs \
+            test_endpoints
+
+      - name: Run analysis suite
+        working-directory: 4_data-analysis
+        run: |
+          python3 -m unittest \
+            test_shared \
+            test_run_analysis \
+            test_rq2_repo_metadata \
+            test_rq2_config_cooccurrence \
+            test_rq2_config_mechanism_upset \
+            test_rq2_config_tool_heatmap \
+            test_rq2_content_quality \
+            test_rq2_language_ranking_all \
+            test_rq2_language_tool_association \
+            test_rq2_repo_metadata_comparison \
+            test_rq2_tool_cooccurrence \
+            test_rq2_tool_count_distribution \
+            test_rq2_upset_plot \
+            test_rq2_venn_diagram \
+            test_rq3_adoption_timeline \
+            test_rq3_cooccurrence_analysis \
+            test_rq3_count_distribution \
+            test_dataset_artifact_distribution \
+            test_dataset_tool_adoption \
+            test_dataset_monthly_ai_commit_volume \
+            test_dataset_commit_message_first_words \
+            test_dataset_filter_steps_table \
+            test_dataset_planning_documents \
+            test_dataset_imports \
+            test_check_reproduction
+
+      # The whole pipeline as one step list, resolved from a clean checkout.
+      - name: Run pipeline runner suite
+        working-directory: .
+        run: |
+          python3 -m unittest \
+            test_run_pipeline
+
+      # The container: the entrypoint's decisions, the Dockerfile and the compose file as
+      # text, and the build context that the build script assembles. No image is built
+      # here. container-image.yml builds it.
+      - name: Run container suite
+        working-directory: deploy
+        run: |
+          python3 -m unittest \
+            test_container
+
+      # The site builder: that it imports at all, and that its context-file classifier is
+      # the analysis stage's rather than a copy that could diverge from it.
+      - name: Run website suite
+        working-directory: _website
+        run: |
+          python3 -m unittest \
+            test_build_site
+
+      # The heuristics against the tracked other.csv, as `python -m agentcontext verify`
+      # checks them: a path glob in two repositories or more that no heuristic explains and
+      # not_configuration.csv does not name fails the step. The repositories that the
+      # cleanup dropped are read only where deletion.csv and the collected tree are
+      # extracted, which a checkout is not, so only the local run of the check covers them.
+      - name: Check the path globs that no heuristic explains
+        working-directory: .
+        run: python3 -m agentcontext unmatched paths --fail-above 2
+
+      # Every analysis script twice, under a fixed epoch: an output that did not reproduce
+      # fails the step. The scripts over extracted archives or the validated tree skip
+      # here and run only in the local check, and so does the check whether an output
+      # changed, because the bytes of the tracked PDFs and of one CSV depend on the machine
+      # that wrote them.
+      - name: Reproduce the analysis outputs
+        working-directory: 4_data-analysis
+        run: python3 check_reproduction.py --skip-missing --reproduce-only

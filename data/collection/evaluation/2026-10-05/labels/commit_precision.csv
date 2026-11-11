@@ -1,0 +1,481 @@
+item,pass,label,tool,mechanism,attribution_correct,paths,uncertain,evidence,note
+cp-0001,1,correct,,,yes,,,"""Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0002,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0003,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0004,1,correct,,,yes,,,"""Co-authored-by: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0005,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0006,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0006,2,correct,,,yes,,,"Trailer 'Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>', Claude Code's default form (claude-trailer-02, settings reference)",product line
+cp-0007,1,correct,,,yes,,,"""Assisted-by: Claude Opus 5.5 (claude-opus-5-5)"" (claude-trailer-01, convention)",Hand-written Assisted-by convention (claude-trailer-01).
+cp-0008,1,correct,,,yes,,,"""Co-authored-by: Claude Opus 4.6 <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0009,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0010,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0011,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0012,1,correct,,,yes,,,"""Co-authored-by: Claude Opus 5 (1M context) <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0013,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"" (claude-trailer-02, product); GitHub API: author and committer Claude <noreply@anthropic.com>, login claude.",Cloud session: Claude-Session trailer and the claude account as author; account and product.
+cp-0014,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0015,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0016,1,correct,,,yes,,,"""Co-authored-by: Claude Opus 5.5 (1M context) <noreply@anthropic.com>"" (claude-trailer-02, product)",Squash merge with Claude Code's PR footer and co-author trailer.
+cp-0017,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0018,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0019,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0020,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0021,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0022,1,correct,,,yes,,,"""Co-authored-by: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0022,2,correct,,,yes,,,Squash trailer 'Co-authored-by: Claude Opus 4.7 (1M context) <noreply@anthropic.com>' (claude-trailer-02),product line
+cp-0023,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0023,2,correct,,,yes,,,"'Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>' and 'Claude-Session: https://claude.ai/code/session_...' (claude-trailer-02, -05)",both lines are lines Claude Code writes
+cp-0024,1,correct,,,yes,,,"output/identity-labels.csv: Claude <noreply@anthropic.com>, login claude, author+committer, vendor_account.",Only claude-author-04 credits Claude; the identity is Claude Code's account.
+cp-0025,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0026,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0026,2,correct,,,yes,,,'Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>' (claude-trailer-02),product line
+cp-0027,1,correct,,,yes,,,"""Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0028,1,correct,,,yes,,,"""Co-authored-by: Claude Opus 4.7 <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0029,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0029,2,correct,,,yes,,,'Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>' (claude-trailer-02),product line
+cp-0030,1,correct,,,yes,,,"""Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0031,1,correct,,,yes,,,"""Assisted-by: Claude:claude-sonnet-5"" (claude-trailer-01, convention)","Kernel-style Assisted-by AGENT:MODEL, agent Claude; convention."
+cp-0032,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0033,1,correct,,,yes,,,"""Co-authored-by: Claude Fable 5.1 <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0034,1,correct,,,yes,,,"""Assisted-by: Claude:opus-5"" (claude-trailer-01, convention)","Zephyr Assisted-by AGENT:MODEL, agent Claude; convention."
+cp-0035,1,correct,,,yes,,,"""Co-authored-by: Claude Opus 5 <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0036,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0037,1,correct,,,yes,,,"""Co-authored-by: Claude Fable 5 <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0038,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0039,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0040,1,correct,,,yes,,,"""Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0041,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0042,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0043,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0044,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>"" (claude-trailer-02, product)",Squash merge also crediting copilot-swe-agent; Claude Code trailers on two squashed commits.
+cp-0045,1,correct,,,yes,,,"""Co-authored-by: Claude Sonnet 5 <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0046,1,correct,,,yes,,,"""Co-authored-by: Claude Opus 5 <noreply@anthropic.com>"" (claude-trailer-02, product)",Commit authored by Copilot's agent; Claude Code's default trailer is a co-author of the squash.
+cp-0047,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0048,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"" (claude-trailer-02, product); GitHub API: author Claude <noreply@anthropic.com>, login claude.",Cloud session commit; account and product.
+cp-0049,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0050,1,correct,,,yes,,,"""Co-authored-by: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0051,1,correct,,,yes,,,"""Assisted-by: ClaudeCode:claude-opus-4.8"" (claude-trailer-01, convention)",Assisted-by ClaudeCode:model; convention.
+cp-0052,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0053,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0054,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0055,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0056,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0057,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0057,2,correct,,,yes,,,'Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>' (claude-trailer-02),product line
+cp-0058,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0059,1,correct,,,yes,,,"""Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0060,1,correct,,,yes,,,"""Co-authored-by: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"" (claude-trailer-02, product)",Claude Code's default co-author trailer; product.
+cp-0061,1,correct,,,no,,yes,"""Co-Authored-By: Codex GPT-5 <noreply@openai.com>"" (codex-trailer-02, product)","Name differs from Codex's default. Codex's default trailer is 'Co-authored-by: Codex <noreply@openai.com>' (codex-rs/ext/git-attribution world_state.rs); docs/commits.md treats noreply@openai.com under another name as the vendor's address, so this variant reads as convention, not product. Unsettled: GitHub resolves noreply@openai.com to the codex account, which would make it the product's address. The repo's CLAUDE.md asks to keep the model-named co-author convention."
+cp-0061,2,correct,,,yes,,,'Co-Authored-By: Codex GPT-5 <noreply@openai.com>' (codex-trailer-02),names Codex with the address Codex writes in its own trailer; product
+cp-0062,1,correct,,,yes,,,"""Co-authored-by: Codex <codex@openai.com>"" (codex-trailer-02, product); GitHub API: PR #3585 commit authored Codex <codex@openai.com>, login codex (OpenAI).",codex@openai.com is the codex account's address; product.
+cp-0063,1,correct,,,no,,yes,"""Co-authored-by: Codex <codex@localhost>"" (codex-trailer-02, product); GitHub API: 9 commits of PR #1200 authored Codex <codex@localhost>, no GitHub account.","Squash trailer of a git identity named Codex at localhost, not the product's account or default line; unsettled whether a Codex environment sets this identity by default."
+cp-0064,1,correct,,,yes,,,"""Assisted-by: Codex"" (codex-trailer-01, convention)",Codex named as the agent in an Assisted-by/Generated-by line; convention.
+cp-0065,1,correct,,,yes,,,"""Assisted-by: OpenAI Codex <codex@openai.com>"" (codex-trailer-06, product; also codex-trailer-01 and -04, convention)","Assisted-by line carrying codex@openai.com, the codex account's address; product."
+cp-0066,1,correct,,,yes,,,"""Generated-by: Codex  (GPT-6 Astra)"" (codex-trailer-03, convention)",Codex named as the agent in an Assisted-by/Generated-by line; convention.
+cp-0067,1,correct,,,yes,,,"""Co-authored-by: Codex <noreply@openai.com>"" (codex-trailer-02, product)",Codex's default co-author trailer (git-attribution); product.
+cp-0068,1,correct,,,yes,,,"""Co-authored-by: Codex <codex@openai.com>"" (codex-trailer-02, product)",Codex's default co-author trailer (git-attribution); product.
+cp-0069,1,correct,,,yes,,,"""Assisted-by: Codex"" (codex-trailer-01, convention)",Codex named as the agent in an Assisted-by/Generated-by line; convention.
+cp-0070,1,correct,,,yes,,,"""Co-authored-by: codex <codex@openai.com>"" (codex-trailer-02, product)",Codex's default co-author trailer (git-attribution); product.
+cp-0071,1,correct,,,no,,yes,"""Co-Authored-By: Codex (gpt-5.x) <noreply@openai.com>"" (codex-trailer-02, product)","The repo's ship-check skill asks for 'Co-Authored-By: <model attribution>'. Codex's default trailer is 'Co-authored-by: Codex <noreply@openai.com>' (codex-rs/ext/git-attribution world_state.rs); docs/commits.md treats noreply@openai.com under another name as the vendor's address, so this variant reads as convention, not product. Unsettled: GitHub resolves noreply@openai.com to the codex account, which would make it the product's address."
+cp-0071,2,correct,,,yes,,,'Co-Authored-By: Codex (gpt-5.x) <noreply@openai.com>' (codex-trailer-02),names Codex with Codex's trailer address; product
+cp-0072,1,correct,,,yes,,,"""Assisted-by: OpenAI Codex"" (codex-trailer-01, convention)",Codex named as the agent in an Assisted-by/Generated-by line; convention.
+cp-0072,2,correct,,,yes,,,"'Assisted-by: OpenAI Codex' (codex-trailer-01, -04)",hand-written convention
+cp-0073,1,correct,,,yes,,,"""Assisted-by: Codex:GPT-5"" (codex-trailer-01, convention)",Codex named as the agent in an Assisted-by/Generated-by line; convention.
+cp-0074,1,correct,,,yes,,,"""Assisted-by: OpenAI Codex"" (codex-trailer-01, convention)",Codex named as the agent in an Assisted-by/Generated-by line; convention.
+cp-0074,2,correct,,,yes,,,"'Assisted-by: OpenAI Codex' above the author's Signed-off-by (codex-trailer-01, -04)","convention, NuttX contributor"
+cp-0075,1,correct,,,yes,,,"""Assisted-by: Codex (OpenAI)"" (codex-trailer-01, convention)",Codex named as the agent in an Assisted-by/Generated-by line; convention.
+cp-0076,1,correct,,,yes,,,"""Co-authored-by: Codex <noreply@openai.com>"" (codex-trailer-02, product)",Codex's default co-author trailer (git-attribution); product.
+cp-0077,1,correct,,,yes,,,"""Co-Authored-By: Codex <codex@openai.com>"" (codex-trailer-02, product)",Codex's default co-author trailer (git-attribution); product.
+cp-0078,1,correct,,,yes,,,"""Co-Authored-By: Codex <267193182+codex@users.noreply.github.com>"" (codex-trailer-02, product); GitHub API: user 267193182 is login codex, company OpenAI, bio ""OpenAI's coding agent"".",The product's account in a squash co-author trailer; product.
+cp-0079,1,correct,,,yes,,,"""Assisted-by: Codex:GPT-5"" (codex-trailer-01, convention)",Codex named as the agent in an Assisted-by/Generated-by line; convention.
+cp-0079,2,correct,,,yes,,,'Assisted-by: Codex:GPT-5' (codex-trailer-01),convention
+cp-0080,1,correct,,,yes,,,"""Co-authored-by: OpenAI Codex <codex@openai.com>"" (codex-trailer-02, product)",Codex's default co-author trailer (git-attribution); product.
+cp-0081,1,correct,,,yes,,,"""Assisted-by: Codex/GPT-5"" (codex-trailer-01, convention)","fluxcd AGENTS.md asks 'Assisted-by: <agent-name>/<model-id>', so Codex is the agent; convention."
+cp-0081,2,correct,,,yes,,,'Assisted-by: Codex/GPT-5' (codex-trailer-01),convention
+cp-0082,1,correct,,,yes,,,"""Assisted-by: Codex:gpt-5"" (codex-trailer-01, convention)",Codex named as the agent in an Assisted-by/Generated-by line; convention.
+cp-0083,1,correct,,,yes,,,"""Co-authored-by: Codex <noreply@openai.com>"" (codex-trailer-02, product)",Also credits Claude; Codex's default trailer present.
+cp-0084,1,correct,,,yes,,,"""Assisted-by: Codex:gpt-5.5"" (codex-trailer-01, convention)",Codex named as the agent in an Assisted-by/Generated-by line; convention.
+cp-0085,1,correct,,,yes,,,"""🤖 Generated with [Codex](https://Codex.com/Codex)"" (codex-full-body-05, convention)",Claude Code's PR footer with Codex substituted (link https://Codex.com/Codex); names Codex as the generator; convention.
+cp-0086,1,correct,,,yes,,,"""Co-authored-by: GPT-6 <codex@openai.com>"" (codex-trailer-06, product)","codex@openai.com, the codex account's address, under a model's name; product."
+cp-0087,1,correct,,,yes,,,"""Co-authored-by: Codex <noreply@openai.com>"" (codex-trailer-02, product)",Also credits Claude; Codex's default trailer present.
+cp-0087,2,correct,,,yes,,,"'Co-authored-by: Codex <noreply@openai.com>', the trailer Codex writes (codex-trailer-02)",Claude also credited; item asks Codex
+cp-0088,1,correct,,,yes,,,"""Co-authored-by: Codex <noreply@openai.com>"" (codex-trailer-02, product)","Merge of upstream that Codex carried out, with Codex's default trailer."
+cp-0089,1,correct,,,yes,,,"""Co-authored-by: Codex <codex@openai.com>"" (codex-trailer-02, product)",Codex's default co-author trailer (git-attribution); product.
+cp-0090,1,correct,,,yes,,,"""Generated-by: Codex"" (codex-trailer-03, convention)",Codex named as the agent in an Assisted-by/Generated-by line; convention.
+cp-0090,2,correct,,,yes,,,'Generated-by: Codex' on the squashed commit and the squash itself (codex-trailer-03),convention
+cp-0091,1,correct,,,yes,,,"""Co-Authored-By: Codex <noreply@openai.com>"" (codex-trailer-02, product)",Codex's default co-author trailer (git-attribution); product.
+cp-0092,1,correct,,,yes,,,"""Assisted-by: Codex:GPT-5"" (codex-trailer-01, convention)",Codex named as the agent in an Assisted-by/Generated-by line; convention.
+cp-0092,2,correct,,,yes,,,'Assisted-by: Codex:GPT-5' (codex-trailer-01),convention
+cp-0093,1,correct,,,no,,yes,"""Co-Authored-By: OpenAI Codex <noreply@openai.com>"" (codex-trailer-02, product)","'OpenAI Codex' is not the default name; codex-trailer-04 reads the same line as convention. Codex's default trailer is 'Co-authored-by: Codex <noreply@openai.com>' (codex-rs/ext/git-attribution world_state.rs); docs/commits.md treats noreply@openai.com under another name as the vendor's address, so this variant reads as convention, not product. Unsettled: GitHub resolves noreply@openai.com to the codex account, which would make it the product's address."
+cp-0094,1,correct,,,yes,,,"""Co-authored-by: OpenAI Codex <codex@openai.com>"" (codex-trailer-02, product)",Codex's default co-author trailer (git-attribution); product.
+cp-0095,1,correct,,,yes,,,"""Generated with assistance from OpenAI Codex."" (codex-full-body-05, convention)",Disclosure line naming OpenAI Codex; convention.
+cp-0096,1,correct,,,yes,,,"""Co-authored-by: Codex <codex@openai.com>"" (codex-trailer-02, product)",Codex's default co-author trailer (git-attribution); product.
+cp-0097,1,correct,,,yes,,,"""Co-Authored-By: Codex <noreply@openai.com>"" (codex-trailer-02, product)",Codex's default co-author trailer (git-attribution); product.
+cp-0097,2,correct,,,yes,,,'Co-Authored-By: Codex <noreply@openai.com>' on each squashed commit (codex-trailer-02),product line
+cp-0098,1,correct,,,yes,,,"""Generated-by: OpenAI Codex GPT-5 <noreply@openai.com>"" (codex-trailer-03, convention)",ASF-style Generated-by line; convention.
+cp-0099,1,correct,,,no,,yes,"""Co-authored-by: Codex (GPT-5) <noreply@openai.com>"" (codex-trailer-02, product)","Name differs from Codex's default. Codex's default trailer is 'Co-authored-by: Codex <noreply@openai.com>' (codex-rs/ext/git-attribution world_state.rs); docs/commits.md treats noreply@openai.com under another name as the vendor's address, so this variant reads as convention, not product. Unsettled: GitHub resolves noreply@openai.com to the codex account, which would make it the product's address."
+cp-0099,2,correct,,,yes,,,'Co-authored-by: Codex (GPT-5) <noreply@openai.com>' (codex-trailer-02),product
+cp-0100,1,correct,,,yes,,,"""Co-authored-by: ChatGPT Codex <codex@openai.com>"" (codex-trailer-06, product)",Squashed commits 'fix: add missing import' co-authored by ChatGPT Codex at codex@openai.com; product.
+cp-0101,1,correct,Codex,,yes,,,"""Assisted-by: Codex"" (codex-trailer-01)",hand-written Assisted-by convention
+cp-0102,1,correct,Codex,,yes,,,"""Co-authored-by: Codex <codex@openai.com>"" in squashed commit (codex-trailer-02/06); also ""Generated-with: OpenAI Codex CLI (partial)""",codex@openai.com is the author identity of Codex commits elsewhere (e.g. automattic/simplenote-electron b0e29b8); Codex's own default is Codex <noreply@openai.com>
+cp-0103,1,correct,Codex,,yes,,,"""Assisted-by: Codex:GPT-5"" (codex-trailer-01)",convention
+cp-0104,1,correct,Codex,,yes,,,"""Co-authored-by: Codex <codex@openai.com>"" on sub-commit ""Preserve OpenFOAM class comment structure in skill (#262)"" and in squash trailers (codex-trailer-02/06)",large squash; Claude trailers credit Claude separately
+cp-0104,2,correct,,,yes,,,"Squash of many commits; two carry 'Co-authored-by: Codex <codex@openai.com>' (codex-trailer-02, -06)",Codex's address; Claude also credited
+cp-0105,1,correct,Codex,,yes,,,"""Assisted-by: Codex"" after two squashed sub-commits (codex-trailer-01)",convention
+cp-0106,1,correct,Codex,,yes,,,"""Co-authored-by: Codex <noreply@openai.com>"" (codex-trailer-02), the trailer openai/codex git-attribution writes",product default line; Claude co-author too
+cp-0107,1,correct,Codex,,yes,,,"""Co-authored-by: Codex <codex@openai.com>"" (codex-trailer-02/06)",codex@openai.com is the author identity of Codex commits elsewhere (e.g. automattic/simplenote-electron b0e29b8); Codex's own default is Codex <noreply@openai.com>
+cp-0108,1,correct,Codex,,yes,,,"""Co-authored-by: Codex <codex@openai.com>"" (codex-trailer-02/06)",codex@openai.com is the author identity of Codex commits elsewhere (e.g. automattic/simplenote-electron b0e29b8); Codex's own default is Codex <noreply@openai.com>
+cp-0109,1,correct,Codex,,yes,,,"""Co-authored-by: Codex <codex@openai.com>"" (codex-trailer-02/06)",codex@openai.com is the author identity of Codex commits elsewhere (e.g. automattic/simplenote-electron b0e29b8); Codex's own default is Codex <noreply@openai.com>
+cp-0110,1,correct,Codex,,yes,,,"""Co-Authored-By: Codex <codex@openai.com>"" (codex-trailer-02/06), with ""AI-model: Codex""",codex@openai.com is the author identity of Codex commits elsewhere (e.g. automattic/simplenote-electron b0e29b8); Codex's own default is Codex <noreply@openai.com>
+cp-0110,2,correct,,,yes,,,"'Co-Authored-By: Codex <codex@openai.com>' with 'AI-model: Codex' (codex-trailer-02, -06)",AI-model line read by no heuristic
+cp-0111,1,correct,Codex,,yes,,,"""With the help of AI Agent: Codex"" (codex-full-body-03), rsyslog commit-skill footer",convention an agent writes on the repository's instruction
+cp-0111,2,correct,,,yes,,,'With the help of AI Agent: Codex' (codex-full-body-03),rsyslog convention
+cp-0112,1,correct,Codex,,yes,,,"""Co-Authored-By: Codex with GPT-5 <codex@openai.com>"" on sub-commits (codex-trailer-02/06)",codex@openai.com is the author identity of Codex commits elsewhere (e.g. automattic/simplenote-electron b0e29b8); Codex's own default is Codex <noreply@openai.com>; Copilot agent co-author too
+cp-0113,1,correct,Codex,,yes,,,"""Assisted-by: Codex:gpt-5-sol"" (codex-trailer-01)",convention
+cp-0113,2,correct,,,yes,,,'Assisted-by: Codex:gpt-5-sol' (codex-trailer-01),convention
+cp-0114,1,correct,Codex,,yes,,,"""Co-authored-by: Codex <267193182+codex@users.noreply.github.com>"" (codex-trailer-02); GitHub user 267193182 is ""codex"", company OpenAI, bio ""OpenAI's coding agent""",product's own GitHub account (gh api /user/267193182)
+cp-0114,2,correct,,,yes,,,"'Co-authored-by: Codex <267193182+codex@users.noreply.github.com>'; GitHub user 267193182 is login codex, bio ""OpenAI's coding agent"", company OpenAI",the product's own account address; product
+cp-0115,1,correct,Codex,,yes,,,"""Assisted-by: Codex <noreply@openai.com>"" (codex-trailer-01)","convention; noreply@openai.com is a vendor address, not the product's own (docs/commits.md)"
+cp-0116,1,correct,Codex,,yes,,,"""Co-authored-by: Codex <codex@openai.com>"" on each sub-commit (codex-trailer-02/06)",codex@openai.com is the author identity of Codex commits elsewhere (e.g. automattic/simplenote-electron b0e29b8); Codex's own default is Codex <noreply@openai.com>
+cp-0117,1,correct,Codex,,yes,,,"""Assisted-by: Codex:gpt-6"" (codex-trailer-01)",convention
+cp-0117,2,correct,,,yes,,,'Assisted-by: Codex:gpt-6' (codex-trailer-01),convention
+cp-0118,1,correct,Codex,,yes,,,"""Co-Authored-By: GPT-5.6 Sol <codex@openai.com>"" (codex-trailer-06)","only the address names Codex; it is the Codex author identity seen elsewhere (e.g. gitoxide ""Codex GPT-6 <codex@openai.com>""); the author uses it on all his timoni commits"
+cp-0119,1,correct,Codex,,yes,,,"""Assisted-by: Codex GPT-5"" (codex-trailer-01)",convention
+cp-0120,1,correct,Codex,,yes,,,"""Co-authored-by: Codex <codex@openai.com>"" in squash trailers (codex-trailer-02/06)",codex@openai.com is the author identity of Codex commits elsewhere (e.g. automattic/simplenote-electron b0e29b8); Codex's own default is Codex <noreply@openai.com>; Claude co-author too
+cp-0121,1,correct,Copilot,,yes,,,"author only: copilot-author-02 names copilot-swe-agent, Copilot cloud agent login (GitHub docs); -05 its app address",coding-agent pattern: human (bact) as co-author
+cp-0122,1,correct,Copilot,,yes,,,"""Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"" (copilot-trailer-02/04/05); 223556219 = github-copilot-cli app",Copilot CLI default trailer
+cp-0123,1,correct,Copilot,,yes,,,"""Merge pull request #1605 from SpineEventEngine/copilot/fix-12821626-..."" (copilot-full-body-01)",copilot/ branch prefix of the cloud agent (GitHub docs); merge brings in the agent's PR
+cp-0124,1,correct,Copilot,,yes,,,"""Co-authored-by: copilot-swe-agent[bot] <198982749+Copilot@...>"" (copilot-trailer-02/04/05) + author Copilot (copilot-author-01/05)",cloud agent account in author and message
+cp-0125,1,correct,Copilot,,yes,,,"""Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>"" (copilot-trailer-07); 175728472 = copilot-pull-request-reviewer",committed review suggestion carried by squash
+cp-0126,1,correct,Copilot,,yes,,,"""Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>"" in squash trailers (copilot-trailer-07)",Copilot code review suggestion committed
+cp-0127,1,correct,Copilot,,yes,,,"""Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"" (copilot-trailer-05); github-copilot-cli app",Copilot CLI default trailer
+cp-0128,1,correct,Copilot,,yes,,,"""Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"" on sub-commit and squash (copilot-trailer-05)",Copilot CLI app address
+cp-0128,2,correct,,,yes,,,"'Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>', the github-copilot-cli app (copilot-trailer-05)",product
+cp-0129,1,correct,Copilot,,yes,,,"author only: copilot-author-01+05: name begins with Copilot at a GitHub Copilot app noreply address or copilot@github.com, all Copilot products",coding-agent pattern: human ((a person)) as co-author
+cp-0129,2,correct,,,yes,,,"Author 'Copilot <198982749+Copilot@users.noreply.github.com>' (output/identity-labels.csv: vendor_account), the copilot-swe-agent app",author heuristics only; the account is the product's
+cp-0130,1,correct,Copilot,,yes,,,"""Co-authored-by: Copilot <223556219+Copilot@...>"" with ""Copilot-Session:"" on sub-commits (copilot-trailer-05)",Copilot CLI
+cp-0131,1,correct,Copilot,,yes,,,"""Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>"" after squash separator (copilot-trailer-07)",reviewer suggestion committed
+cp-0132,1,correct,Copilot,,yes,,,"""Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"" (copilot-trailer-05)",Copilot CLI
+cp-0133,1,correct,Copilot,,yes,,,"""Co-authored-by: copilot-swe-agent[bot] <198982749+Copilot@...>"" + ""* Initial plan"" (copilot-trailer-02/04/05), author Copilot (copilot-author-01/05)",cloud agent PR squash
+cp-0134,1,correct,Copilot,,yes,,,"""Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"" (copilot-trailer-05)",Copilot CLI
+cp-0134,2,correct,,,yes,,,'Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>' (copilot-trailer-05),Copilot CLI's account; product
+cp-0135,1,correct,Copilot,,yes,,,"""Co-authored-by: Copilot App <223556219+Copilot@users.noreply.github.com>"" (copilot-trailer-05)",address of the github-copilot-cli app under the name Copilot App
+cp-0136,1,correct,Copilot,,yes,,,"""Potential fix for pull request finding"" + ""Co-authored-by: Copilot Autofix powered by AI <175728472+Copilot@...>"" (copilot-trailer-07)",committed Copilot Autofix suggestion
+cp-0136,2,correct,,,yes,,,'Potential fix for pull request finding' with 'Co-authored-by: Copilot Autofix powered by AI <175728472+Copilot@...>' (copilot-trailer-07),a committed suggestion of the review app; reviewer
+cp-0137,1,correct,Copilot,,yes,,,"""Merge pull request #773 from AllenInstitute/copilot/fix-right-click-menu-issue"" (copilot-full-body-01)",cloud agent branch prefix copilot/
+cp-0138,1,correct,Copilot,,yes,,,"""Update app/services/sockethub-irc.js"" + ""Co-authored-by: Copilot <175728472+Copilot@...>"" (copilot-trailer-07)",GitHub's default message for a committed review suggestion
+cp-0139,1,correct,Copilot,,yes,,,"""Co-authored-by: copilot-swe-agent[bot] <198982749+...>"" and ""<!-- START COPILOT CODING AGENT TIPS -->"" (copilot-trailer-05, copilot-full-body-08), author Copilot",cloud agent PR
+cp-0140,1,correct,Copilot,,yes,,,"""Update tools/installers/install_torch.sh"" + ""Co-authored-by: Copilot <175728472+Copilot@...>"" (copilot-trailer-07)",committed review suggestion
+cp-0141,1,correct,Copilot,,yes,,,"""Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"" (copilot-trailer-05)",Copilot CLI
+cp-0142,1,correct,Copilot,,yes,,,"""Co-authored-by: Copilot <copilot@github.com>"" (copilot-trailer-02/04)","the trailer VS Code's git.addAICoAuthor writes (heise.de/-11279554, vscode PR 310226)"
+cp-0143,1,correct,Copilot,,yes,,,"author only: copilot-author-02 names copilot-swe-agent, Copilot cloud agent login (GitHub docs); -05 its app address; message ""Initial plan""","the agent's planning commit, usually empty"
+cp-0143,2,correct,,,yes,,yes,"Author and committer copilot-swe-agent[bot] <198982749+Copilot@...> (GitHub API); message 'Initial plan', 0 files changed","the agent's own commit, but it is empty: it records no change, so whether it counts as a contribution is unsettled"
+cp-0144,1,correct,Copilot,,yes,,,"""Co-authored-by: copilot-swe-agent[bot] <198982749+...>"" + ""* Initial plan"" (copilot-trailer-05), author Copilot (copilot-author-01/05)",cloud agent PR squash
+cp-0144,2,correct,,,yes,,,"Squash trailer 'Co-authored-by: copilot-swe-agent[bot] <198982749+Copilot@...>' and a Copilot author (copilot-author-01, -05, copilot-trailer-05)",account and product
+cp-0145,1,correct,Copilot,,yes,,,"""Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"" (copilot-trailer-05)",Copilot CLI
+cp-0146,1,correct,Copilot,,yes,,,"""Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>"" in squash trailers (copilot-trailer-07)",committed review suggestion
+cp-0147,1,correct,Copilot,,yes,,,"author only: copilot-author-02 names copilot-swe-agent, Copilot cloud agent login (GitHub docs); -05 its app address; ""Agent-Logs-Url: .../sessions/...""","Agent-Logs-Url, the cloud agent's own trailer, is read by no heuristic"
+cp-0147,2,correct,,,yes,,,"Author copilot-swe-agent[bot] <198982749+Copilot@...> (GitHub API), 2 files; 'Agent-Logs-Url:' line of the cloud agent",author heuristics only; the Agent-Logs-Url line is read by no heuristic
+cp-0148,1,correct,Copilot,,yes,,,"author only: copilot-author-02 names copilot-swe-agent, Copilot cloud agent login (GitHub docs); -05 its app address",human (Taiko2k) as co-author
+cp-0149,1,correct,Copilot,,yes,,,"author only: copilot-author-02 names copilot-swe-agent, Copilot cloud agent login (GitHub docs); -05 its app address; ""Agent-Logs-Url: .../sessions/...""",Agent-Logs-Url read by no heuristic
+cp-0150,1,correct,Copilot,,yes,,,"""Merge pull request #292 from SuffolkLITLab/copilot/fix-291"" (copilot-full-body-01)",cloud agent branch copilot/fix-<issue>
+cp-0151,1,correct,Copilot,,yes,,,"""Co-authored-by: GitHub Copilot <copilot@github.com>"" (copilot-trailer-02/04)","copilot@github.com is GitHub's Copilot address (VS Code writes ""Copilot <copilot@github.com>""); the name here differs"
+cp-0152,1,correct,Copilot,,yes,,,"""Co-authored-by: copilot-swe-agent[bot] <198982749+...>"" + Agent-Logs-Url sub-commits (copilot-trailer-05), author Copilot (copilot-author-01/05)",cloud agent PR squash
+cp-0153,1,correct,Copilot,,yes,,,"""Co-authored-by: Copilot App <223556219+Copilot@users.noreply.github.com>"" (copilot-trailer-05)",github-copilot-cli app address
+cp-0153,2,correct,,,yes,,,'Co-authored-by: Copilot App <223556219+Copilot@users.noreply.github.com>' (copilot-trailer-05),github-copilot-cli app address; product
+cp-0154,1,correct,Copilot,,yes,,,"""Co-authored-by: Copilot Autofix powered by AI <175728472+Copilot@...>"" in squash (copilot-trailer-07)",committed Autofix suggestion
+cp-0155,1,correct,Copilot,,yes,,,"""Co-authored-by: copilot-swe-agent[bot] <198982749+...>"" + ""* Initial plan"" (copilot-trailer-05), author Copilot (copilot-author-01/05)",cloud agent PR squash
+cp-0156,1,correct,Copilot,,yes,,,"author only: copilot-author-02 names copilot-swe-agent, Copilot cloud agent login (GitHub docs); -05 its app address; ""Agent-Logs-Url: .../sessions/...""",Agent-Logs-Url read by no heuristic
+cp-0157,1,correct,Copilot,,yes,,,"""Update test/unit/.../SetVariableTests.cs"" + ""Co-authored-by: Copilot <175728472+Copilot@...>"" (copilot-trailer-07)",committed review suggestion
+cp-0158,1,correct,Copilot,,yes,,,"""Co-authored-by: Copilot Autofix powered by AI <175728472+Copilot@...>"" (copilot-trailer-07)",committed Autofix suggestion
+cp-0159,1,correct,Copilot,,yes,,,"""* Potential fix for pull request finding"" + ""Co-authored-by: Copilot Autofix powered by AI <175728472+...>"" (copilot-trailer-07)",committed Autofix suggestion
+cp-0160,1,correct,Copilot,,yes,,,"""Co-authored-by: copilot-swe-agent[bot] <198982749+Copilot@...>"" in squash trailers (copilot-trailer-05)",cloud agent made review-feedback commits; Claude trailers credit Claude
+cp-0160,2,correct,,,yes,,,Squash trailer 'Co-authored-by: copilot-swe-agent[bot] <198982749+Copilot@...>' (copilot-trailer-05),Claude also credited; item asks Copilot
+cp-0161,1,correct,Copilot,,yes,,,"author only: copilot-author-01+05: name begins with Copilot at a GitHub Copilot app noreply address or copilot@github.com, all Copilot products","squash of a PR the agent authored, message is the PR title"
+cp-0162,1,correct,Copilot,,yes,,,"""Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"" (copilot-trailer-05)",Copilot CLI
+cp-0163,1,correct,Copilot,,yes,,,"""Co-authored-by: copilot-swe-agent[bot] <198982749+...>"" (copilot-trailer-05), author Copilot (copilot-author-01/05)",cloud agent PR
+cp-0163,2,correct,,,yes,,,"Copilot author and 'Co-authored-by: copilot-swe-agent[bot] <198982749+Copilot@...>' (copilot-author-01, -05, copilot-trailer-05)",account and product
+cp-0164,1,correct,Copilot,,yes,,,"""Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"" (copilot-trailer-05)",Copilot CLI
+cp-0164,2,correct,,,yes,,,'Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>' (copilot-trailer-05),product
+cp-0165,1,correct,Copilot,,yes,,,"""Co-authored-by: Copilot Autofix powered by AI <223894421+github-code-quality[bot]@...>"" (copilot-trailer-08)",committed Copilot Autofix for a code quality alert
+cp-0166,1,correct,Copilot,,yes,,,"""Co-authored-by: Copilot App <223556219+Copilot@...>"" + ""Copilot-Session:"" (copilot-trailer-05)",github-copilot-cli app address
+cp-0167,1,correct,Copilot,,yes,,,"author only: copilot-author-02 names copilot-swe-agent, Copilot cloud agent login (GitHub docs); -05 its app address",human (g7ed6e) as co-author
+cp-0168,1,correct,Copilot,,yes,,,"""Co-authored-by: copilot-swe-agent[bot] <198982749+...>"" (copilot-trailer-05), author Copilot (copilot-author-01/05)",cloud agent PR
+cp-0169,1,correct,Copilot,,yes,,,"""* Potential fix for pull request finding"" + ""Co-authored-by: Copilot Autofix powered by AI <175728472+...>"" (copilot-trailer-07)",committed Autofix suggestion
+cp-0170,1,correct,Copilot,,yes,,,"""Co-authored-by: copilot-swe-agent[bot] <198982749+...>"" (copilot-trailer-05), author Copilot (copilot-author-01/05)",cloud agent PR
+cp-0171,1,correct,Copilot,,yes,,,"author only: copilot-author-02 names copilot-swe-agent, Copilot cloud agent login (GitHub docs); -05 its app address",one-line agent commit
+cp-0172,1,correct,Copilot,,yes,,,"""* Update examples/camera-app/.../pushav-clip-recorder.cpp"" + ""Co-authored-by: Copilot <175728472+...>"" (copilot-trailer-07)",committed review suggestion in squash
+cp-0172,2,correct,,,yes,,,'Update examples/camera-app/.../pushav-clip-recorder.cpp' with 'Co-authored-by: Copilot <175728472+Copilot@...>' (copilot-trailer-07),committed review suggestion; reviewer
+cp-0173,1,correct,Copilot,,yes,,,"""Co-authored-by: Copilot Autofix powered by AI <175728472+Copilot@...>"" in squash trailers (copilot-trailer-07)",committed Autofix suggestion
+cp-0174,1,correct,Copilot,,yes,,,"author only: copilot-author-02 names copilot-swe-agent, Copilot cloud agent login (GitHub docs); -05 its app address",human (JoeRobich) as co-author
+cp-0174,2,correct,,,yes,,,Author+committer 'copilot-swe-agent[bot] <198982749+Copilot@...>' (output/identity-labels.csv: vendor_account),author heuristics only; the account is the product's
+cp-0175,1,correct,Copilot,,yes,,,"""Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"" (copilot-trailer-05)",Copilot CLI
+cp-0176,1,correct,Copilot,,yes,,,"""Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"" (copilot-trailer-05)",Copilot CLI
+cp-0177,1,correct,Copilot,,yes,,,"author only: copilot-author-01+05: name begins with Copilot at a GitHub Copilot app noreply address or copilot@github.com, all Copilot products",coding-agent pattern: human (AndriySvyryd) as co-author
+cp-0178,1,correct,Copilot,,yes,,,"""Co-authored-by: Copilot App <223556219+Copilot@users.noreply.github.com>"" (copilot-trailer-05)",github-copilot-cli app address
+cp-0179,1,correct,Copilot,,yes,,,"""Co-authored-by: Copilot App <223556219+...>"" and ""copilot-swe-agent[bot] <198982749+...>"" (copilot-trailer-05)",two Copilot app accounts
+cp-0180,1,correct,Copilot,,yes,,,"""Co-authored-by: copilot-swe-agent[bot] <198982749+Copilot@users.noreply.github.com>"" in squash (copilot-trailer-05)",cloud agent account in message
+cp-0181,1,correct,Cursor,,yes,,,"""Co-authored-by: Cursor <cursoragent@cursor.com>"" (cursor-trailer-02/06)",Cursor agent trailer
+cp-0181,2,correct,,,yes,,,"'Co-authored-by: Cursor <cursoragent@cursor.com>' (cursor-trailer-02, -06)",Cursor agent's address; product
+cp-0182,1,correct,Cursor,,yes,,,"""Made-with: Cursor"" (cursor-trailer-04), documented at cursor.com/help/integrations/git",product default trailer
+cp-0183,1,correct,Cursor,,yes,,,"""Co-authored-by: Cursor <cursoragent@cursor.com>"" (cursor-trailer-02/06)",Cursor agent trailer
+cp-0184,1,correct,Cursor,,yes,,,"""Assisted-by: Cursor <cursoragent@cursor.com>"" (cursor-trailer-01, -06)","Assisted-by form, but the agent's own address makes the line product"
+cp-0184,2,correct,,,yes,,,"'Assisted-by: Cursor <cursoragent@cursor.com>' (cursor-trailer-01, -06)","token is hand-written (kata policy) but the address is the product's, which the kind table calls product"
+cp-0185,1,correct,Cursor,,yes,,,"author only: cursor-author-03 (Cursor Agent) + -04 (@cursor.com): identity of Cursor's cloud agent, cursoragent@cursor.com",human ((a person)) as co-author
+cp-0185,2,correct,,,yes,,,"Author and committer 'Cursor Agent <cursoragent@cursor.com>', login cursoragent (GitHub API); human co-author trailer",author heuristics only; the account is Cursor's cloud agent
+cp-0186,1,correct,Cursor,,yes,,,"""Co-authored-by: Cursor <cursoragent@cursor.com>"" (cursor-trailer-02/06)",Cursor agent trailer
+cp-0187,1,correct,Cursor,,yes,,,"""Co-authored-by: Cursor Agent <cursoragent@cursor.com>"" (cursor-trailer-02/06)",Cursor agent trailer
+cp-0188,1,correct,Cursor,,yes,,,"author only: cursor-author-03 (Cursor Agent) + -04 (@cursor.com): identity of Cursor's cloud agent, cursoragent@cursor.com",human (satoshi.toyama) as co-author
+cp-0189,1,correct,Cursor,,yes,,,"""Co-authored-by: Cursor <cursoragent@cursor.com>"" (cursor-trailer-02/06)",Cursor agent trailer
+cp-0190,1,correct,Cursor,,yes,,,"""Made-with: Cursor"" on sub-commit ""fix(i18n): add orderbook/... keys to all locale files"" (cursor-trailer-04)",squash; Claude trailers credit Claude
+cp-0191,1,correct,Cursor,,yes,,,"""Co-authored-by: Cursor <cursoragent@cursor.com>"" (cursor-trailer-02/06)",Cursor agent trailer
+cp-0192,1,correct,Cursor,,yes,,,"""Co-authored-by: Cursor <cursoragent@cursor.com>"" (cursor-trailer-02/06)",Cursor agent trailer
+cp-0193,1,correct,Cursor,,yes,,,"author only: cursor-author-03 (Cursor Agent) + -04 (@cursor.com): identity of Cursor's cloud agent, cursoragent@cursor.com",human (rmcrackan) as co-author
+cp-0193,2,correct,,,yes,,,"Author and committer 'Cursor Agent <cursoragent@cursor.com>', login cursoragent (GitHub API)",author heuristics only; the account is Cursor's cloud agent
+cp-0194,1,correct,Cursor,,yes,,,"""Merge origin/main into fix-ct"" + ""Co-authored-by: Cursor <cursoragent@cursor.com>"" (cursor-trailer-02/06)",merge commit that the Cursor agent made
+cp-0195,1,correct,Cursor,,yes,,,"author only: cursor-author-03 (Cursor Agent) + -04 (@cursor.com): identity of Cursor's cloud agent, cursoragent@cursor.com","agent-style commit, no co-author"
+cp-0196,1,correct,Cursor,,yes,,,"""Co-authored-by: Cursor Agent <cursoragent@cursor.com>"" (cursor-trailer-02/06), body has <!-- CURSOR_AGENT_PR_BODY_BEGIN -->",Cursor agent PR
+cp-0196,2,correct,,,yes,,,"'Co-authored-by: Cursor Agent <cursoragent@cursor.com>' and a CURSOR_AGENT_PR_BODY_BEGIN marker (cursor-trailer-02, -06)",product
+cp-0197,1,correct,Cursor,,yes,,,"""Co-authored-by: Cursor <cursoragent@cursor.com>"" (cursor-trailer-02/06)",Cursor agent trailer
+cp-0198,1,correct,Cursor,,yes,,,"""Co-authored-by: Cursor <cursoragent@cursor.com>"" on sub-commit and squash (cursor-trailer-02/06)",Cursor agent trailer
+cp-0199,1,correct,Cursor,,yes,,,"""Co-authored-by: Cursor <cursoragent@cursor.com>"" (cursor-trailer-02/06)",Cursor agent trailer
+cp-0200,1,correct,Cursor,,yes,,,"""Co-authored-by: Cursor <cursoragent@cursor.com>"" on sub-commits and squash (cursor-trailer-02/06)",Copilot agent co-author too
+cp-0201,1,correct,,,yes,,,"Trailer 'Co-authored-by: Cursor <cursoragent@cursor.com>' (cursor-trailer-02, -06): the address of Cursor's agent, which it writes on its commits (docs/commits.md); product kind","Codex is credited too, by its own co-author trailer."
+cp-0202,1,correct,,,yes,,,"Trailer 'Co-authored-by: Cursor <cursoragent@cursor.com>' (cursor-trailer-02, -06): the address of Cursor's agent, which it writes on its commits (docs/commits.md); product kind",
+cp-0203,1,correct,,,yes,,,"Trailer 'Co-authored-by: Cursor <cursoragent@cursor.com>' (cursor-trailer-02, -06): the address of Cursor's agent, which it writes on its commits (docs/commits.md); product kind",
+cp-0204,1,correct,,,yes,,,"GitHub API: author 'Cursor Agent <cursoragent@cursor.com>' (login cursoragent, id 199161495), the Cursor cloud agent's identity (cursor-author-03, -04); account kind","Author identity looked up with the GitHub API, since the CSV stores none; the co-author trailer names the person who started the agent."
+cp-0205,1,correct,,,yes,,,"Trailer 'Co-authored-by: Cursor <cursoragent@cursor.com>' (cursor-trailer-02, -06): the address of Cursor's agent, which it writes on its commits (docs/commits.md); product kind",
+cp-0206,1,correct,,,yes,,,"Trailer 'Co-authored-by: Cursor <cursoragent@cursor.com>' (cursor-trailer-02, -06): the address of Cursor's agent, which it writes on its commits (docs/commits.md); product kind",The trailer recurs in the squashed commits.
+cp-0207,1,correct,,,yes,,,"GitHub API: author cursor[bot] (Bot 206951365), the Cursor app (cursor-author-02); trailer 'Co-authored-by: Cursor Agent <cursoragent@cursor.com>' (cursor-trailer-02, -06)",Kinds account and product both fit.
+cp-0208,1,correct,,,yes,,,"Trailer 'Co-authored-by: Cursor <cursoragent@cursor.com>' (cursor-trailer-02, -06): the address of Cursor's agent, which it writes on its commits (docs/commits.md); product kind",
+cp-0209,1,correct,,,yes,,,"Trailer 'Co-authored-by: Cursor <cursoragent@cursor.com>' (cursor-trailer-02, -06): the address of Cursor's agent, which it writes on its commits (docs/commits.md); product kind",
+cp-0210,1,correct,,,yes,,,"Trailer 'Co-authored-by: Cursor <cursoragent@cursor.com>' (cursor-trailer-02, -06): the address of Cursor's agent, which it writes on its commits (docs/commits.md); product kind",A merge commit whose body describes how the conflicts were resolved.
+cp-0211,1,correct,,,yes,,,"Trailer 'Co-authored-by: Cursor <cursoragent@cursor.com>' and the pull request footer 'Made with [Cursor](https://cursor.com)' (cursor-full-body-02), which Cursor adds by default; product kind","cursor-full-body-05 (convention) reads the same footer line, which takes the product kind first."
+cp-0212,1,correct,,,yes,,,"Trailer 'Co-authored-by: Cursor <cursoragent@cursor.com>' (cursor-trailer-02, -06): the address of Cursor's agent, which it writes on its commits (docs/commits.md); product kind",
+cp-0213,1,correct,,,yes,,,"Trailer 'Co-authored-by: Cursor <cursoragent@cursor.com>' (cursor-trailer-02, -06): the address of Cursor's agent, which it writes on its commits (docs/commits.md); product kind",A merge commit whose body describes how the conflicts were resolved.
+cp-0214,1,correct,,,yes,,,"Trailer 'Co-authored-by: Cursor <cursoragent@cursor.com>' (cursor-trailer-02, -06): the address of Cursor's agent, which it writes on its commits (docs/commits.md); product kind",
+cp-0215,1,correct,,,yes,,,"Trailer 'Co-authored-by: Cursor <cursoragent@cursor.com>' (cursor-trailer-02, -06): the address of Cursor's agent, which it writes on its commits (docs/commits.md); product kind",
+cp-0216,1,correct,,,yes,,,"Trailer 'Co-authored-by: Cursor <cursoragent@cursor.com>' (cursor-trailer-02, -06): the address of Cursor's agent, which it writes on its commits (docs/commits.md); product kind",The trailer recurs in the squashed commits.
+cp-0217,1,correct,,,yes,,,"Trailer 'Made-with: Cursor' (cursor-trailer-04), which Cursor's agent adds by default: https://cursor.com/help/integrations/git; product kind",
+cp-0218,1,correct,,,yes,,,"Trailer 'Co-authored-by: Cursor <cursoragent@cursor.com>' (cursor-trailer-02, -06): the address of Cursor's agent, which it writes on its commits (docs/commits.md); product kind",The trailer recurs in the squashed commits.
+cp-0219,1,correct,,,yes,,,"Trailer 'Made-with: Cursor' (cursor-trailer-04), which Cursor's agent adds by default: https://cursor.com/help/integrations/git; product kind",The trailer is in one of the squashed commits' messages.
+cp-0220,1,correct,,,yes,,,"Trailer 'Made-with: Cursor' (cursor-trailer-04), which Cursor's agent adds by default: https://cursor.com/help/integrations/git; product kind",
+cp-0220,2,correct,,,yes,,,"'Made-with: Cursor', the trailer Cursor's agent adds by default (cursor-trailer-04, https://cursor.com/help/integrations/git)",product
+cp-0221,1,correct,,,yes,,,"Trailer 'Co-authored-by: Cursor <cursoragent@cursor.com>' (cursor-trailer-02, -06): the address of Cursor's agent, which it writes on its commits (docs/commits.md); product kind",'Authored with Claude.' names the model; claude-full-body-05 credits Claude separately.
+cp-0221,2,correct,,,yes,,,"'Co-authored-by: Cursor <cursoragent@cursor.com>' (cursor-trailer-02, -06)",Claude also credited ('Authored with Claude.'); item asks Cursor
+cp-0222,1,correct,,,yes,,,"Trailer 'Co-authored-by: Cursor <cursoragent@cursor.com>' (cursor-trailer-02, -06): the address of Cursor's agent, which it writes on its commits (docs/commits.md); product kind",
+cp-0223,1,correct,,,yes,,,"Trailer 'Co-authored-by: Cursor <cursoragent@cursor.com>' (cursor-trailer-02, -06): the address of Cursor's agent, which it writes on its commits (docs/commits.md); product kind",The trailer recurs in the squashed commits.
+cp-0224,1,correct,,,yes,,,"Trailer 'Co-authored-by: Cursor <cursoragent@cursor.com>' (cursor-trailer-02, -06): the address of Cursor's agent, which it writes on its commits (docs/commits.md); product kind",
+cp-0224,2,correct,,,yes,,,"'Co-authored-by: Cursor <cursoragent@cursor.com>' (cursor-trailer-02, -06)",product
+cp-0225,1,correct,,,yes,,,"Trailer 'Co-authored-by: Cursor <cursoragent@cursor.com>' (cursor-trailer-02, -06): the address of Cursor's agent, which it writes on its commits (docs/commits.md); product kind",
+cp-0226,1,correct,,,yes,,,"GitHub API: author 'Cursor Agent <cursoragent@cursor.com>' (login cursoragent, id 199161495), the Cursor cloud agent's identity (cursor-author-03, -04); account kind","Author identity looked up with the GitHub API, since the CSV stores none; the co-author trailer names the person who started the agent."
+cp-0227,1,correct,,,yes,,,"Trailer 'Co-authored-by: Cursor <cursoragent@cursor.com>' (cursor-trailer-02, -06): the address of Cursor's agent, which it writes on its commits (docs/commits.md); product kind",
+cp-0227,2,correct,,,yes,,,"'Co-authored-by: Cursor <cursoragent@cursor.com>' (cursor-trailer-02, -06)",product
+cp-0228,1,correct,,,yes,,,"Trailer 'Made-with: Cursor' (cursor-trailer-04), which Cursor's agent adds by default: https://cursor.com/help/integrations/git; product kind",
+cp-0229,1,correct,,,yes,,,"GitHub API: author 'Cursor Agent <cursoragent@cursor.com>' (login cursoragent, id 199161495), the Cursor cloud agent's identity (cursor-author-03, -04); account kind","Author identity looked up with the GitHub API, since the CSV stores none; the co-author trailer names the person who started the agent."
+cp-0230,1,correct,,,yes,,,"Trailer 'Made-with: Cursor' (cursor-trailer-04), which Cursor's agent adds by default: https://cursor.com/help/integrations/git; product kind",
+cp-0230,2,correct,,,yes,,,"'Made-with: Cursor' (cursor-trailer-04, https://cursor.com/help/integrations/git)",product
+cp-0231,1,correct,,,yes,,,"Trailer 'Co-authored-by: Cursor <cursoragent@cursor.com>' (cursor-trailer-02, -06): the address of Cursor's agent, which it writes on its commits (docs/commits.md); product kind","Claude is credited too, by a Claude Sonnet 5 co-author trailer."
+cp-0232,1,correct,,,yes,,,"Trailers 'Co-authored-by: Cursor Agent <cursoragent@cursor.com>' and 'Co-authored-by: cursor[bot] <206951365+...>' (cursor-trailer-02, -06); product kind","A line naming the cursor app reads as product, since the app both reviews and changes (docs/heuristics.md)."
+cp-0233,1,correct,,,yes,,,"Trailer 'Made-with: Cursor' (cursor-trailer-04), which Cursor's agent adds by default: https://cursor.com/help/integrations/git; product kind",
+cp-0234,1,correct,,,yes,,,"Trailer 'Co-authored-by: Cursor <cursoragent@cursor.com>' (cursor-trailer-02, -06): the address of Cursor's agent, which it writes on its commits (docs/commits.md); product kind",
+cp-0235,1,correct,,,yes,,,"Trailer 'Co-authored-by: Cursor <cursoragent@cursor.com>' (cursor-trailer-02, -06): the address of Cursor's agent, which it writes on its commits (docs/commits.md); product kind",
+cp-0236,1,correct,,,yes,,yes,"GitHub API: author and committer 'Cursor Assistant <assistant@cursor.com>', no GitHub account; only cursor-author-04 (@cursor.com) matched","Unsettled: Cursor's domain, but no Cursor page or GitHub account names this identity; GitHub search finds 170 commits under it, some with hand-typed-looking messages, so a person may have configured it."
+cp-0236,2,correct,,,yes,,yes,"Author and committer 'Cursor Assistant <assistant@cursor.com>', no GitHub login (GitHub API); GitHub commit search finds the identity on 170 commits of unrelated repos",no page or account says this identity is Cursor's agent; cursor-author-04 matched only the domain
+cp-0237,1,correct,,,yes,,,"Trailer 'Co-authored-by: Cursor Agent <cursoragent@cursor.com>' (cursor-trailer-02, -06): the Cursor agent's own address; product kind",
+cp-0238,1,correct,,,yes,,,"GitHub API: author 'Cursor Agent <cursoragent@cursor.com>' (login cursoragent, id 199161495), the Cursor cloud agent's identity (cursor-author-03, -04); account kind","Author identity looked up with the GitHub API, since the CSV stores none; the co-author trailer names the person who started the agent."
+cp-0239,1,correct,,,yes,,,"Trailer 'Co-authored-by: Cursor Agent <cursoragent@cursor.com>' (cursor-trailer-02, -06): the Cursor agent's own address; product kind",
+cp-0239,2,correct,,,yes,,,"Squash trailer 'Co-authored-by: Cursor Agent <cursoragent@cursor.com>' (cursor-trailer-02, -06)",product
+cp-0240,1,correct,,,yes,,,"Trailer 'Made-with: Cursor' (cursor-trailer-04), which Cursor's agent adds by default: https://cursor.com/help/integrations/git; product kind",The trailer is in one of the squashed commits' messages.
+cp-0241,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0242,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0243,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0244,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0245,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0246,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,"Copilot is credited too, by its code review co-author trailer."
+cp-0247,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0248,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0249,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0250,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0251,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0252,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0252,2,correct,,,yes,,,'Update xfuser/.../parallel_state.py' with 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' (gemini-trailer-03),committed review suggestion; reviewer
+cp-0253,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0254,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0255,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0256,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0257,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0258,1,correct,,,yes,,,Line 'Generated-by: `Gemini 3 Pro (High)` on `Antigravity`' (gemini-trailer-02); Antigravity is Gemini's agentic tool; convention kind,"Answers the Apache PR template's question on generative AI tooling, a hand-written convention."
+cp-0259,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0260,1,correct,,,yes,,,Trailer 'Co-authored-by: Antigravity AI <bot@antigravity.dev>' (gemini-trailer-02); convention kind,"antigravity.dev is not Google's domain (antigravity.google), and GitHub search shows the address under several names, so no product writes it by default."
+cp-0260,2,correct,,,yes,,,'Co-authored-by: Antigravity AI <bot@antigravity.dev>' (gemini-trailer-02); Antigravity counts as Gemini,"antigravity.dev address appears in 5 repos only (GitHub commit search), so no product default; convention"
+cp-0261,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0262,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0263,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0264,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0265,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0265,2,correct,,,yes,,,Squash trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' (gemini-trailer-03),a suggestion of the review app committed in the PR; reviewer
+cp-0266,1,correct,,,yes,,,Trailer 'Assisted-by: Antigravity' (gemini-trailer-02); convention kind,
+cp-0267,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0268,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,"Claude is credited too, by its co-author trailer and Claude Code footer."
+cp-0269,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0270,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0271,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0272,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0273,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0274,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0275,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0276,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0277,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0277,2,correct,,,yes,,,'Update README_cn.md' with 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' (gemini-trailer-03),committed review suggestion; reviewer
+cp-0278,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0279,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0280,1,correct,,,yes,,,"Trailer 'Generated-by: Google Gemini Cli, Gemini 2.5 Flash' (gemini-trailer-01); convention kind",
+cp-0280,2,correct,,,yes,,,"'Generated-by: Google Gemini Cli, Gemini 2.5 Flash' (gemini-trailer-01)",names Gemini CLI; convention
+cp-0281,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0281,2,correct,,,yes,,,Squash trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' (gemini-trailer-03),reviewer
+cp-0282,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0283,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0284,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0285,1,correct,,,yes,,,Trailer 'Assisted-by: Antigravity:Gemini-3.8-Flash' (gemini-trailer-02); convention kind,The kernel-style AGENT:MODEL form.
+cp-0286,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0287,1,correct,,,no,,yes,Squashed PR commit 0902bbe84f carries 'Co-Authored-By: Gemini <200291788+gemini-code-assist@users.noreply.github.com>' (gemini-trailer-01); user 200291788 is Google's gemini-code-assist account,"Label settled; attribution not: attributions says convention, but the address is the product's own account (GitHub: company @google, blog the Code Assist review docs), which reads as product under Kinds of signal. It is not the app's bot account, and no product is documented to write it."
+cp-0288,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0289,1,correct,,,yes,,,Trailer 'Assisted-by: Antigravity:gemini-1.5-pro' (gemini-trailer-02); convention kind,The kernel-style AGENT:MODEL form.
+cp-0290,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0291,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0292,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0292,2,correct,,,yes,,,Squash trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' (gemini-trailer-03),reviewer
+cp-0293,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0293,2,correct,,,yes,,,'Update tensorflow/tools/.../tensorflow_metal_plugin_test.py' with gemini-code-assist[bot] co-author (gemini-trailer-03),committed review suggestion; reviewer
+cp-0294,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0294,2,correct,,,yes,,,Squash trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' (gemini-trailer-03),reviewer
+cp-0295,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0296,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0297,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,"Claude is credited too, by its co-author trailer and Claude Code footer."
+cp-0298,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0299,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0299,2,correct,,,yes,,,Squash trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' (gemini-trailer-03),reviewer
+cp-0300,1,correct,,,yes,,,Trailer 'Co-authored-by: gemini-code-assist[bot] <176961590+...>' that GitHub writes when a person commits a Gemini Code Assist suggestion (gemini-trailer-03); reviewer kind,
+cp-0301,1,correct,,,yes,,,"Author heuristic claude-author-03 (claude\[bot\]) names the Claude GitHub app (github.com/apps/claude, Claude Code GitHub Actions); message has no other credit",identity not stored; the pattern names the product account
+cp-0302,1,correct,,,yes,,,"Author heuristic claude-author-05 names anthropic-code-agent[bot], Anthropic's Claude agent app on GitHub; message carries Agent-Logs-Url session link and the assigner as co-author",identity not stored; the pattern names the product account
+cp-0303,1,correct,,,yes,,,"Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com> (claude-trailer-02, Claude Code default trailer) plus a claude*@anthropic.com identity",
+cp-0304,1,correct,,,yes,,,"Co-authored-by: Claude (Opus 4.7) <noreply@anthropic.com>; ""This PR was written with the help of Claude Opus 4.7""","disclosure line is hand-written, convention"
+cp-0304,2,correct,,,yes,,,"'This PR was written with the help of Claude Opus 4.7' and 'Co-authored-by: Claude (Opus 4.7) <noreply@anthropic.com>' (claude-full-body-01, claude-trailer-02)",product (address) and convention (prose line)
+cp-0305,1,correct,,,yes,,,"""AI-Assisted: Claude"" disclosure line in the body",
+cp-0306,1,correct,,,yes,,,"""With the help of AI Agent: Claude Opus 4.6""",
+cp-0306,2,correct,,,yes,,,'With the help of AI Agent: Claude Opus 4.6' (claude-full-body-04),rsyslog convention
+cp-0307,1,correct,,,yes,,,"Co-authored-by: Claude Opus 5 <noreply@anthropic.com>; ""_Written with AI assistance (Claude Code)._""",
+cp-0308,1,correct,,,no,,,"Co-authored-by: Claude <noreply@anthropic.com>; footer ""_Generated by [Claude Code](https://claude.ai/code/session_...)_""","The footer is Claude Code's default session link in PR descriptions (settings-reference attribution.sessionUrl, default true; docs/commits.md calls it the web footer): product, but claude-full-body-07 adds convention"
+cp-0309,1,correct,,,yes,,,"""AI assistance: this change was drafted with Claude Code.""",
+cp-0310,1,correct,,,yes,,,"""Generated-by: Claude Fable 5.1""",
+cp-0311,1,correct,,,yes,,,"Co-authored-by: anthropic-code-agent[bot] <242468646+Claude@users.noreply.github.com>, Anthropic's Claude agent app account (claude-trailer-04)",
+cp-0311,2,correct,,,yes,,,'Co-authored-by: anthropic-code-agent[bot] <242468646+Claude@users.noreply.github.com>' (claude-trailer-04),Anthropic's Claude agent app on GitHub (third-party agents); its account; product
+cp-0312,1,correct,,,yes,,,"Claude-Session: https://claude.ai/code/session_... (product); ""Assisted-by: Claude Code:claude-opus-5-5"" (convention); noreply@anthropic.com identity (account)",
+cp-0313,1,correct,,,yes,,,Co-authored-by: Claude <noreply@anthropic.com> and Claude-Session link (product); Signed-off-by: Claude <noreply@anthropic.com> (claude-trailer-07),"Signed-off-by written for the repository's sign-off requirement, convention as the row says"
+cp-0313,2,correct,,,no,,,"'Co-authored-by: Claude <noreply@anthropic.com>', 'Claude-Session: ...' and 'Signed-off-by: Claude <noreply@anthropic.com>' (claude-trailer-02, -05, -07)","Signed-off-by carries the product's own address (the hosted session's identity, as git commit -s writes it), so it is product too; Claude:convention is extra"
+cp-0314,1,correct,,,yes,,yes,Only author heuristic codex-author-05 (codex[\w.-]*@openai.) matched; message has no credit,"identity not stored; the pattern names an address at openai with a codex local part, which no vendor page documents as a product account (row note: documented nowhere)"
+cp-0315,1,correct,,,yes,,,"Author heuristic codex-author-06 names openai-code-agent[bot], OpenAI's Codex app on GitHub (login Codex); assigner as co-author",identity not stored; the pattern names the product account
+cp-0316,1,not_contribution,,,yes,,,"Release commit (release-plz changelog); matched line is a quoted changelog entry of PR #2063: ""> This PR was generated by Codex, and validated by me:""","the line credits Codex with an earlier PR, not this commit's version bumps; line kind itself is convention"
+cp-0316,2,not_contribution,,,yes,,,Release commit 'chore: release 0.30.0-beta.1'; the line '> This PR was generated by Codex' (L734) quotes PR #2063's body in the changelog (codex-full-body-01),"credits Codex with another change, not this release commit's"
+cp-0317,1,correct,,,yes,,,"""AI-assisted: OpenAI Codex was used to identify and apply this change.""",
+cp-0317,2,correct,,,yes,,,"'AI-assisted: OpenAI Codex was used to identify and apply this change.' (codex-full-body-02, -07)",convention
+cp-0318,1,correct,,,yes,,,"""This contribution was developed with AI assistance (Claude Code + Codex CLI).""",Codex CLI credited beside Claude Code
+cp-0319,1,correct,,,yes,,,"""Assisted by: Codex""",
+cp-0320,1,correct,,,yes,,,"""AI assistance: implementation and testing with Codex.""",
+cp-0321,1,correct,,,yes,,,"Co-authored-by: openai-code-agent[bot] <242516109+Codex@users.noreply.github.com>, Codex app account (codex-trailer-05)",
+cp-0322,1,correct,,,yes,,,"""Signed-off-by: Codex <codex@openai.com>"" (codex-trailer-07)","sign-off for the repository's DCO requirement, convention as the row says"
+cp-0323,1,correct,,,yes,,,"""> This PR was generated with the assistance of GitHub Copilot."" (plus a Copilot-Session trailer that no heuristic reads)",
+cp-0324,1,correct,,,yes,,,"""AI-assisted: GitHub Copilot (OpenAI GPT-5.4)""",
+cp-0325,1,correct,,,yes,,,"Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com> (github-copilot-cli app, product); ""(Written by Copilot)"" (convention)",
+cp-0325,2,correct,,,yes,,,"'(Written by Copilot)' and 'Co-authored-by: Copilot <223556219+Copilot@...>' (copilot-full-body-05, copilot-trailer-05)","product (CLI address) and convention ('Written by Copilot' also appears in vscode docs, so a team habit)"
+cp-0326,1,correct,,,yes,,,"Co-authored-by: Copilot <223556219+Copilot@...> (Copilot CLI app); ""> This PR was generated with AI assistance (GitHub Copilot).""",
+cp-0327,1,correct,,,yes,,,"Co-authored-by: Copilot <223556219+Copilot@...> (Copilot CLI app); ""--generated by Copilot""",
+cp-0328,1,correct,,,yes,,,"""For more details, open the [Copilot Workspace session](https://copilot-workspace.githubnext.com/...)"" written by Copilot Workspace into the PR it opened",copilot-full-body-09; Copilot Workspace was GitHub Next's Copilot agent
+cp-0329,1,correct,,,yes,,,"Squashed sub-commit ""Potential fix for pull request finding"" with ""AI-Assisted: yes (GitHub Copilot)""",
+cp-0330,1,correct,,,yes,,,"""Assisted-by: GitHub Copilot:Claude Sonnet 4.6""",
+cp-0331,1,correct,,,yes,,,"""Generated-By: GitHub Copilot"" in the first squashed commit",the same commit also credits Claude
+cp-0332,1,correct,,,yes,,,"Co-authored-by: copilot-swe-agent[bot] <198982749+Copilot@...> (cloud agent, product); ""Signed-off-by: Copilot <copilot@github.com>"" on the examples commit",sign-off line treated as convention per copilot-trailer-06
+cp-0333,1,correct,,,yes,,,"""This PR was created with the help of Cursor.""",
+cp-0333,2,correct,,,yes,,,'This PR was created with the help of Cursor.' (cursor-full-body-01),convention
+cp-0334,1,correct,,,yes,,,"Co-authored-by: Cursor <cursoragent@cursor.com> (product); ""Assisted By: Cursor Grok 4.6"" (convention)",
+cp-0334,2,correct,,,yes,,,"'Assisted By: Cursor Grok 4.6' and 'Co-authored-by: Cursor <cursoragent@cursor.com>' (cursor-full-body-06, cursor-trailer-02, -06)",product and convention
+cp-0335,1,correct,,,yes,,,"Co-authored-by: Cursor <cursoragent@cursor.com> (product); ""AI-Assisted: Codex (Cursor)"" names Cursor as the tool (convention)",
+cp-0336,1,correct,,,yes,,,"""Assisted-by: Cursor (claude-4-opus-high)"" and ""Generated-by: Cursor (claude-4.5-opus-high)""",
+cp-0337,1,correct,,,yes,,,"""Co-authored-by: Claude-4.5-Sonnet (via Cursor)""",
+cp-0338,1,correct,,,yes,,,"Co-authored-by: Cursor <cursoragent@cursor.com> (product); ""Signed-off-by: Cursor <cursoragent@cursor.com>"" (cursor-trailer-07)",
+cp-0339,1,correct,,,yes,,,"""Authored by Gemini CLI based on the following prompt:""",
+cp-0339,2,correct,,,yes,,,'Authored by Gemini CLI based on the following prompt:' (gemini-full-body-03),convention
+cp-0340,1,correct,,,yes,,,"""Generated by Gemini CLI"" after a Traceability line naming the repository's .agents task file",
+cp-0341,1,correct,,,yes,,,"Author heuristic jules-author-01 names google-labs-jules[bot], the Jules app (github.com/apps/google-labs-jules); assigner as co-author",identity not stored; the pattern names the product account
+cp-0342,1,correct,,,yes,,,"Co-authored-by: greptile-apps[bot] <165735046+...>, Greptile review app as co-author of a committed suggestion",
+cp-0343,1,correct,,,yes,,,"""Assisted-by: OpenCode / big-pickle (opencode)""",
+cp-0344,1,correct,,,yes,,,"""* Apply suggestion from @greptile-apps[bot]"" with Co-authored-by: greptile-apps[bot]",
+cp-0345,1,correct,,,no,,,"Subject ""Update smda/utility/DexFileLoader.py"" with Co-authored-by: devin-ai-integration[bot]; author is not Devin (no author heuristic matched)","GitHub's committed-suggestion form (default title, reviewer as co-author): a Devin Review suggestion, so kind reviewer, not product"
+cp-0346,1,correct,,,yes,,,"Author heuristic jules-author-01 names google-labs-jules[bot], the Jules app; squash commit of the PR it opened",identity not stored; the pattern names the product account
+cp-0347,1,correct,,,yes,,,"Co-authored-by: google-labs-jules[bot]; ""this change was in large part done by Google Jules (Gemini)""",
+cp-0348,1,correct,,,yes,,,"""Assisted-by: multiple AI agents and layers of automated tooling"" credits AI and names no tool",
+cp-0348,2,correct,,,yes,,,'Assisted-by: multiple AI agents and layers of automated tooling' (tool-not-named-trailer-01),credits AI and names no tool
+cp-0349,1,correct,,,yes,,,Co-authored-by: Amp <amp@ampcode.com> with Amp-Thread-ID link,
+cp-0349,2,correct,,,yes,,,'Co-authored-by: Amp <amp@ampcode.com>' (amp-trailer-01),Amp's address; product
+cp-0350,1,correct,,,yes,,,"Subject ""Update app/.../grid-poster-codec.ts"" with Co-authored-by: coderabbitai[bot]: a committed CodeRabbit suggestion",
+cp-0351,1,correct,,,yes,,,Co-authored-by: Amp <amp@ampcode.com>,
+cp-0352,1,not_contribution,,,yes,,yes,"""Co-authored-by: pi <pi@m2.local>"": a local machine identity (user pi at host m2.local), not pi's addresses (@pi.dev, pi@earendil.works)","same identity on 11 doc typo-fix commits across repos; may be someone running an agent, but nothing names the pi agent"
+cp-0353,1,correct,,,yes,,,"Squashed commit titled with a cubic review finding, then Co-authored-by: cubic-dev-ai[bot]: a committed cubic suggestion",
+cp-0354,1,correct,,,yes,,,"Author heuristic devin-author-01 names devin-ai-integration[bot], Cognition's Devin app",identity not stored; the pattern names the product account
+cp-0355,1,correct,,,yes,,,Squash ends with Co-authored-by: Devin AI <158243242+devin-ai-integration[bot]@...>; body mentions Devin Review,
+cp-0356,1,correct,,,yes,,,"Author heuristic jules-author-01 names google-labs-jules[bot], the Jules app; assigner as co-author",identity not stored; the pattern names the product account
+cp-0356,2,correct,,,yes,,,"Author and committer google-labs-jules[bot] <161369871+...> (GitHub API), 1 file (jules-author-01)",author heuristic only; the account is Jules's app
+cp-0357,1,correct,,,yes,,,"""Assisted-by: Gemini <noreply@em.gemini.com>"" names Gemini and no product",
+cp-0357,2,correct,,,yes,,,'Assisted-by: Gemini <noreply@em.gemini.com>' (gemini-unspecified-trailer-01),"credits Gemini without a product; em.gemini.com is not a Google address, so hand-written"
+cp-0358,1,correct,,,yes,,,Squash co-authors include greptile-apps[bot] (committed Greptile suggestion),
+cp-0359,1,correct,,,yes,,,"Author heuristic sweep-author-01 names sweep-ai[bot], Sweep's app (bot user 128439645)",identity not stored; the pattern names the product account
+cp-0360,1,correct,,,yes,,,"Squash of Jules PRs, each ending ""Co-authored-by: google-labs-jules[bot] <161369871+...>""",
+cp-0361,1,correct,,,yes,,,"Author heuristic jules-author-01 names google-labs-jules[bot], the Jules app; assigner as co-author",identity not stored; the pattern names the product account
+cp-0362,1,correct,,,yes,,,"""* Update app/eventyay/base/models/profile.py"" with Co-authored-by: sourcery-ai[bot]: a committed Sourcery suggestion",
+cp-0363,1,correct,,,yes,,,"""Co-authored-by: DeepSeek V4 Flash <noreply@deepseek.com>"" credits a model and names no tool",
+cp-0363,2,correct,,,yes,,,'Co-authored-by: DeepSeek V4 Flash <noreply@deepseek.com>' (tool-not-named-trailer-04),"credits a model, names no tool"
+cp-0364,1,correct,,,yes,,,"""Assisted-by: opencode:glm-5.3""",
+cp-0365,1,correct,,,yes,,,"Co-authored-by: open-swe[bot]; ""Made by [Open SWE](https://openswe.vercel.app/agents/...)""",
+cp-0365,2,correct,,,yes,,,'Made by [Open SWE](https://openswe.vercel.app/agents/...)' and 'Co-authored-by: open-swe[bot] <open-swe@users.noreply.github.com>' (open-swe-trailer-01),product
+cp-0366,1,correct,,,yes,,,"""Assisted-by: AI"" credits AI and names no tool",
+cp-0367,1,correct,,,yes,,,"Author heuristic devin-author-01 names devin-ai-integration[bot], the Devin app; requester as co-author",identity not stored; the pattern names the product account
+cp-0368,1,correct,,,yes,,,"Subject ""Update install/ubuntu/start.ubuntu.sh"" with Co-authored-by: coderabbitai[bot]: a committed CodeRabbit suggestion",
+cp-0369,1,correct,,,yes,,,Revert PR squash with Co-authored-by: Devin AI <158243242+devin-ai-integration[bot]@...>; the commit author is not Devin,Devin authored a commit of the squashed PR
+cp-0370,1,correct,,,yes,,,"""* Update packages/.../StyledWrapper.js"" with Co-authored-by: coderabbitai[bot]: committed CodeRabbit suggestions",
+cp-0371,1,correct,,,yes,,,"""Assisted-by: LLM"" credits AI and names no tool",
+cp-0372,1,correct,,,yes,,,devin-ai-integration[bot] identity (author heuristic) and Co-authored-by: Devin AI <158243242+devin-ai-integration[bot]@...>,
+cp-0373,1,correct,,,yes,,,"Author heuristic devin-author-01 names devin-ai-integration[bot], the Devin app; requester as co-author",identity not stored; the pattern names the product account
+cp-0374,1,correct,,,yes,,,"""Co-authored-by: aider (openai/gpt-5) <aider@aider.chat>"", aider's own trailer (aider-trailer-02, product)",
+cp-0375,1,correct,,,yes,,,"""Assisted-by: OpenCode (Claude Sonnet 4)""",
+cp-0376,1,correct,,,yes,,,Merge of branch devin/1773101352-skill-frontmatter with Co-authored-by: Devin AI <158243242+devin-ai-integration[bot]@...>,merge commit of Devin's branch
+cp-0376,2,correct,,,yes,,,Merge of branch devin/1773101352-skill-frontmatter with 'Co-authored-by: Devin AI <158243242+devin-ai-integration[bot]@...>' (devin-trailer-01),merge commit of Devin's branch; product
+cp-0377,1,correct,,,yes,,,Squash with Co-authored-by: cubic-dev-ai[bot] (committed cubic suggestion),
+cp-0378,1,correct,,,yes,,,"""* Update CHANGELOG.md"" with Co-authored-by: coderabbitai[bot]: a committed CodeRabbit suggestion",
+cp-0379,1,correct,,,yes,,,"""Assisted-by: <anthropic/claude-opus-4.6>"": a provider/model id, no tool named",
+cp-0380,1,correct,,,yes,,,"""Co-Authored-By: Warp <agent@warp.dev>""",
+cp-0381,1,correct,,,yes,,,Squash with Co-authored-by: devin-ai-integration[bot] <158243242+...>; author is not Devin,the message does not say whether the co-author came from a Devin commit or a committed Devin Review suggestion; product assumed
+cp-0382,1,correct,,,yes,,,"""Co-authored-by: Qwen-Coder <qwen-coder@alibabacloud.com>"", Qwen Code's address",
+cp-0382,2,correct,,,yes,,,'Co-authored-by: Qwen-Coder <qwen-coder@alibabacloud.com>' (qwen-code-trailer-01),Qwen Code's address; product
+cp-0383,1,correct,,,yes,,,"Author heuristic devin-author-01 names devin-ai-integration[bot], the Devin app; squash of the PR it opened",identity not stored; the pattern names the product account
+cp-0384,1,correct,,,yes,,,"""* Update packages/withstudiocms_buildkit/README.md"" with Co-authored-by: coderabbitai[bot]: a committed suggestion",
+cp-0385,1,correct,,,yes,,,"""* Update extensions/fastly/src/views/secret-form.tsx"" with Co-authored-by: greptile-apps[bot]: a committed Greptile suggestion",
+cp-0386,1,correct,,,yes,,,Dependabot bump squash ending with Co-authored-by: open-swe[bot] <open-swe@users.noreply.github.com>,Open SWE authored a commit of the squashed PR
+cp-0386,2,correct,,,yes,,,Squash of a Dependabot PR whose fix commit 'fix: satisfy updated sqlite formatting and type checks' carries 'Co-authored-by: open-swe[bot]' (PR #9146 commits),product
+cp-0387,1,correct,,,yes,,,"Subject ""Update backend/app/api/handlers/v1/v1_ctrl_user.go"" with Co-authored-by: coderabbitai[bot]: a committed suggestion",
+cp-0387,2,correct,,,yes,,,'Update backend/app/api/handlers/v1/v1_ctrl_user.go' with 'Co-authored-by: coderabbitai[bot] <136622811+...>' (coderabbit-trailer-01),committed review suggestion; reviewer
+cp-0388,1,correct,,,yes,,,"Carry-patch squash; several carried test migrations end with ""Assisted-by: Gemini""",Gemini named without a product
+cp-0389,1,correct,,,yes,,,"""Assisted-by: Gemini"" names Gemini and no product",
+cp-0390,1,correct,,,yes,,,"Author heuristic devin-author-01 names devin-ai-integration[bot], the Devin app; requester as co-author",identity not stored; the pattern names the product account
+cp-0390,2,correct,,,yes,,,"Author and committer 'Devin AI <158243242+devin-ai-integration[bot]@...>' (GitHub API), 3 files (devin-author-01)",author heuristic only; the account is Devin's app
+cp-0391,1,correct,,,yes,,,Squash with Co-authored-by: sourcery-ai[bot] <58596630+...> (committed Sourcery suggestion),
+cp-0392,1,correct,,,yes,,,"""Co-authored-by: Sisyphus <clio-agent@sisyphuslabs.ai>"" and ""Ultraworked with [Sisyphus]"", Oh My OpenCode's git-master lines",
+cp-0393,1,correct,,,yes,,,"""Assisted-by: Kiro:claude-sonnet-5"" and ""Assisted-by: Kiro:claude-opus-5""",
+cp-0393,2,correct,,,yes,,,'Assisted-by: Kiro:claude-sonnet-5' and 'Assisted-by: Kiro:claude-opus-5' (kiro-trailer-01),convention
+cp-0394,1,correct,,,yes,,,"""Assisted-by: gpt-5.6-sol xhigh"" credits a model and names no tool",
+cp-0395,1,correct,,,yes,,,Squash with Co-authored-by: greptile-apps[bot] (committed Greptile suggestion),
+cp-0396,1,correct,,,yes,,,"Squashed commits each with Amp-Thread-ID and ""Co-authored-by: Amp <amp@ampcode.com>""",
+cp-0397,1,correct,,,yes,,,Squash with Co-authored-by: coderabbitai[bot] <136622811+...>,reviewer assumed (committed suggestion); the message does not show which CodeRabbit commit it was
+cp-0398,1,correct,,,yes,,,"Release commit with ""Co-authored-by: devin-ai-integration[bot] <158243242+...>"" (mirrored, Origin-SHA)",
+cp-0399,1,correct,,,yes,,,Squash with Co-authored-by: greptile-apps[bot] (committed Greptile suggestion),
+cp-0400,1,correct,,,yes,,,"Squash co-author ""opencode <opencode@noreply>"", the git identity of an OpenCode agent commit (clutz-bot ran it)","not a documented OpenCode address, so convention as opencode-trailer-01 says"

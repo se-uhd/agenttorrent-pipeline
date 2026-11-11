@@ -1,0 +1,191 @@
+name: doc watch
+
+# Ten heuristics files, the price file of the classification and the statistics file cite vendor
+# pages.
+# Every detection heuristic in
+# heuristics/config_path_patterns.csv cites the page that defines its mechanism, the
+# documented rows of heuristics/ai_commit_patterns.csv cite the page that states how a tool
+# attributes the commits that it makes, the doc rows of heuristics/not_configuration.csv cite
+# the page that states that the tool does not read a file that the check passes over, the doc
+# rows of heuristics/not_ai_commits.csv cite the page that describes what the automation behind
+# an attribution does, which makes it something other than a coding agent, and a row of
+# heuristics/other_ai_commit_patterns.csv cites the contribution guide that requests the
+# disclosure that the row reads. Every row of heuristics/import_patterns.csv cites the page or
+# the forum post that states how a tool reads imports, and every row of
+# heuristics/not_imports.csv the page that states what a tool does not read as one. Every
+# heuristic of heuristics/planning_document_patterns.csv cites the page that states where a
+# framework or a tool writes its planning documents, and the doc rows of
+# heuristics/not_planning_documents.csv the page of a layout that is left out. Every doc row of
+# heuristics/local_state_paths.csv cites the page that names the home directory of a tool or a
+# place where the tool keeps its local state. The cost record of a classification run takes its
+# prices from 2_classification/config/model_prices.csv, and every row of that file cites OpenAI's
+# pricing page or OpenRouter's list of the endpoints of the model in the row. When a page that a
+# heuristic cites changes, the heuristic may no longer match what the tool does: a vendor that
+# merges one mechanism into another, as Claude Code merged commands into skills, moves paths
+# between mechanisms, and a page that stops requiring an extension turns a skipped path glob into
+# a configuration artifact of its own. When a page that the price file cites changes, the rows
+# that cite it may keep prices that OpenAI or OpenRouter no longer charges, and the cost record
+# of a classification run would then misstate what the run cost. A statistic of
+# docs/statistics.json with a `vendor` source reads a number, such as a limit of GitHub's API,
+# from a verbatim quote of the page that states it, and the watch checks the quote.
+#
+# One tool, `python -m agentcontext docs`, reads all twelve files, because the hash record is
+# keyed by URL and nothing in it is specific to any of the files. The first run reads the default
+# file, config_path_patterns.csv. Each other run names a heuristics file with --heuristics and the
+# columns that identify its rows in the log with --label-columns, or the statistics file with
+# --statistics. The runs over the files of the planning documents and over the statistics add
+# --quotes, which checks each quotation of a note, or the quote of a statistic, against the pages
+# that it cites.
+#
+# This job fetches every cited page again weekly and opens an issue when one changes. It never
+# edits the heuristics: a changed page is a reason to read it again, decide whether the
+# heuristic still holds, and update the row and its doc_verified date by hand.
+on:
+  schedule:
+    # Mondays at 07:00 UTC.
+    - cron: "0 7 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  watch:
+    # A named image rather than ubuntu-latest, which GitHub moves to a new release on its own
+    # schedule: a new runner image is a change made here, with CI run on it.
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@v7
+
+      # The release of mise that deploy/install_tools.sh installs into the images.
+      - uses: jdx/mise-action@v4
+        with:
+          version: 2026.10.18
+
+      # Exit 2 means that a cited page changed, and 1 means that the watch could not check a
+      # page: a page that it could not fetch, a page with no recorded hash, or an unreadable
+      # heuristics file. Both need an issue, and neither should fail the job, so the status is
+      # captured rather than allowed to stop the run.
+      - name: Check the cited documentation
+        id: check
+        run: |
+          set +e
+          {
+            echo '=== config_path_patterns.csv ==='
+            python3 -m agentcontext docs 2>&1
+            echo "exit $?"
+            echo
+            echo '=== ai_commit_patterns.csv ==='
+            python3 -m agentcontext docs \
+                --heuristics heuristics/ai_commit_patterns.csv \
+                --label-columns tool,scope 2>&1
+            echo "exit $?"
+            echo
+            echo '=== not_configuration.csv ==='
+            python3 -m agentcontext docs \
+                --heuristics heuristics/not_configuration.csv \
+                --label-columns tool,path 2>&1
+            echo "exit $?"
+            echo
+            echo '=== not_ai_commits.csv ==='
+            python3 -m agentcontext docs \
+                --heuristics heuristics/not_ai_commits.csv \
+                --label-columns pattern 2>&1
+            echo "exit $?"
+            echo
+            echo '=== local_state_paths.csv ==='
+            python3 -m agentcontext docs \
+                --heuristics heuristics/local_state_paths.csv \
+                --label-columns tool,path 2>&1
+            echo "exit $?"
+            echo
+            echo '=== other_ai_commit_patterns.csv ==='
+            python3 -m agentcontext docs \
+                --heuristics heuristics/other_ai_commit_patterns.csv \
+                --label-columns tool,scope 2>&1
+            echo "exit $?"
+            echo
+            echo '=== import_patterns.csv ==='
+            python3 -m agentcontext docs \
+                --heuristics heuristics/import_patterns.csv \
+                --label-columns id 2>&1
+            echo "exit $?"
+            echo
+            echo '=== not_imports.csv ==='
+            python3 -m agentcontext docs \
+                --heuristics heuristics/not_imports.csv \
+                --label-columns id 2>&1
+            echo "exit $?"
+            echo
+            echo '=== planning_document_patterns.csv ==='
+            python3 -m agentcontext docs \
+                --heuristics heuristics/planning_document_patterns.csv \
+                --label-columns framework,pattern --quotes 2>&1
+            echo "exit $?"
+            echo
+            echo '=== not_planning_documents.csv ==='
+            python3 -m agentcontext docs \
+                --heuristics heuristics/not_planning_documents.csv \
+                --label-columns framework,layout --quotes 2>&1
+            echo "exit $?"
+            echo
+            echo '=== model_prices.csv ==='
+            python3 -m agentcontext docs \
+                --heuristics 2_classification/config/model_prices.csv \
+                --label-columns model,service_tier 2>&1
+            echo "exit $?"
+            echo
+            echo '=== statistics.json ==='
+            python3 -m agentcontext docs \
+                --statistics docs/statistics.json --quotes 2>&1
+            echo "exit $?"
+          } > report.txt
+          # Non-zero when any run of the watch exited non-zero. grep -q returns 0 when it
+          # matched, which is the case that needs an issue, so the status is inverted into
+          # the 0 or 1 that the next step reads.
+          if grep -q '^exit [^0]' report.txt; then echo "status=1" >> "$GITHUB_OUTPUT";
+          else echo "status=0" >> "$GITHUB_OUTPUT"; fi
+          cat report.txt
+
+      # The output of the commands reaches the script as the file that the step before it
+      # wrote. Pasted into the script's source inside a template literal, a backtick or `${` in
+      # it, which a fetch error from a vendor's server can contain, would end the literal: the
+      # step would fail without opening the issue, and the server's text would run as code with
+      # this job's GITHUB_TOKEN. Passed in an environment variable, a report longer than the
+      # 128 KiB that Linux allows for one would keep the script from starting, and GitHub refuses
+      # an issue body longer than 65,536 characters, so the body is cut below that, with a link
+      # to the run whose log has the whole report.
+      - name: Open an issue when a page changed or could not be checked
+        if: steps.check.outputs.status != '0'
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const fs = require('fs');
+            const run = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const whole = fs.readFileSync('report.txt', 'utf8');
+            const limit = 60000;
+            const report = whole.length <= limit ? whole
+              : whole.slice(0, limit) + `\n[The report continues in the log of ${run}.]`;
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Vendor pages that the heuristics cite changed or could not be checked (${new Date().toISOString().slice(0, 10)})`,
+              body: [
+                'The weekly doc watch checked the vendor pages that the heuristics cite. At least one ' +
+                  'of them has changed, could not be fetched or has no recorded hash.',
+                '',
+                'Read each page listed below again and decide whether the heuristic that cites it',
+                'still states what the page says. Where it does not, update the row in the file',
+                'named in the `===` line above the page, and the row\'s `doc_verified` date.',
+                'When you have read every page, run `python3 -m agentcontext docs --update`',
+                'once per file, with the file\'s `--heuristics` and `--label-columns`, or with',
+                '`--statistics docs/statistics.json --quotes` for the statistics,',
+                'to record the hash of every page that it can fetch, and close this issue.',
+                '',
+                '```',
+                report,
+                '```',
+              ].join('\n'),
+              labels: ['heuristics'],
+            });

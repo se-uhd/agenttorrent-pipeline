@@ -1,0 +1,4 @@
+# The build backend that pyproject.toml names. Every environment installs it from locks/build.txt
+# before what it builds: the editable package, and venn, which PyPI has as a source distribution
+# only.
+setuptools==84.2.1

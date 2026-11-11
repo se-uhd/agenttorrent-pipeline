@@ -1,0 +1,357 @@
+{
+ "retrieval_id": "2026-10-05T101430Z",
+ "thresholds": {
+  "commit_minimum": 355,
+  "author_minimum": 2,
+  "window_start": "2026-03-22"
+ },
+ "decided_at": "2026-10-08",
+ "forks": [
+  {
+   "repo_name": "hiqdev/yii2-hiart",
+   "revision": "7837bae48219def3fa530f7355dc2338485bd58b",
+   "upstream": "https://github.com/yiisoft/yii2-elasticsearch",
+   "upstream_repository": "yiisoft/yii2-elasticsearch",
+   "upstream_is_this_repository": false,
+   "upstream_active": true,
+   "upstream_commit_before_window": "01224404d0c82e1978974a9b104530da874a5bcb",
+   "tracks_upstream": false,
+   "own_commits": 376,
+   "own_authors": 2,
+   "own_commits_in_window": 2,
+   "created_at": "2015-05-24T15:56:47Z",
+   "thresholds": {
+    "commit_minimum": 355,
+    "author_minimum": 2,
+    "window_start": "2026-03-22"
+   },
+   "independent": true,
+   "reasons": []
+  },
+  {
+   "repo_name": "java-diff-utils/java-diff-utils",
+   "revision": "06438525cfb139ecf813312ff7305b847dd569b9",
+   "upstream": "java-diff-utils from Google Code Archive",
+   "upstream_repository": null,
+   "upstream_is_this_repository": false,
+   "upstream_active": null,
+   "upstream_commit_before_window": null,
+   "tracks_upstream": null,
+   "own_commits": 512,
+   "own_authors": 2,
+   "own_commits_in_window": 14,
+   "created_at": "2017-03-30T05:47:23Z",
+   "thresholds": {
+    "commit_minimum": 355,
+    "author_minimum": 2,
+    "window_start": "2026-03-22"
+   },
+   "independent": true,
+   "reasons": []
+  },
+  {
+   "repo_name": "IBM/ibm-cos-sdk-js",
+   "revision": "7341bac96be70fe194399f3a93bfe7e2ca60ba18",
+   "upstream": "https://github.com/aws/aws-sdk-js",
+   "upstream_repository": "aws/aws-sdk-js",
+   "upstream_is_this_repository": false,
+   "upstream_active": false,
+   "upstream_commit_before_window": null,
+   "tracks_upstream": null,
+   "own_commits": 82,
+   "own_authors": 2,
+   "own_commits_in_window": 2,
+   "created_at": "2017-09-09T13:11:31Z",
+   "thresholds": {
+    "commit_minimum": 355,
+    "author_minimum": 2,
+    "window_start": "2026-03-22"
+   },
+   "independent": false,
+   "reasons": [
+    "82 own commits, fewer than the sampling frame's minimum of 355"
+   ]
+  },
+  {
+   "repo_name": "clover-moe/lilium-voyager",
+   "revision": "0f7dcd89d142c8b635ce2756a80cb62411731848",
+   "upstream": "https://github.com/clover-moe/lilium-arena",
+   "upstream_repository": "clover-moe/lilium-arena",
+   "upstream_is_this_repository": false,
+   "upstream_active": true,
+   "upstream_commit_before_window": "df8d058172dd25aad3e190416e00d5ea6bdf8780",
+   "tracks_upstream": true,
+   "own_commits": null,
+   "own_authors": null,
+   "own_commits_in_window": null,
+   "created_at": "2017-09-18T05:11:24Z",
+   "thresholds": {
+    "commit_minimum": 355,
+    "author_minimum": 2,
+    "window_start": "2026-03-22"
+   },
+   "independent": false,
+   "reasons": [
+    "tracks its upstream"
+   ]
+  },
+  {
+   "repo_name": "samfundev/KtaneTwitchPlays",
+   "revision": "7959bcd0b3262687fa0b5ee49cd8e77520e2eaa5",
+   "upstream": "https://github.com/ashbash1987/ktanemod-twitchplays",
+   "upstream_repository": "ashbash1987/ktanemod-twitchplays",
+   "upstream_is_this_repository": false,
+   "upstream_active": false,
+   "upstream_commit_before_window": null,
+   "tracks_upstream": null,
+   "own_commits": 2161,
+   "own_authors": 2,
+   "own_commits_in_window": 2,
+   "created_at": "2017-09-24T11:47:58Z",
+   "thresholds": {
+    "commit_minimum": 355,
+    "author_minimum": 2,
+    "window_start": "2026-03-22"
+   },
+   "independent": true,
+   "reasons": []
+  },
+  {
+   "repo_name": "criteo/py-consul",
+   "revision": "62fd8b52062df91cb597ad55dbef0f9e7cc734bc",
+   "upstream": "https://github.com/cablehead/python-consul",
+   "upstream_repository": "python-consul/python-consul",
+   "upstream_is_this_repository": false,
+   "upstream_active": false,
+   "upstream_commit_before_window": null,
+   "tracks_upstream": null,
+   "own_commits": 193,
+   "own_authors": 2,
+   "own_commits_in_window": 5,
+   "created_at": "2018-03-13T14:45:42Z",
+   "thresholds": {
+    "commit_minimum": 355,
+    "author_minimum": 2,
+    "window_start": "2026-03-22"
+   },
+   "independent": false,
+   "reasons": [
+    "193 own commits, fewer than the sampling frame's minimum of 355"
+   ]
+  },
+  {
+   "repo_name": "kivymd/KivyMD",
+   "revision": "ce16903a0e8a0faff3f08210144797d44d1cd93b",
+   "upstream": "KivyMD on GitLab",
+   "upstream_repository": null,
+   "upstream_is_this_repository": false,
+   "upstream_active": null,
+   "upstream_commit_before_window": null,
+   "tracks_upstream": null,
+   "own_commits": 5195,
+   "own_authors": 2,
+   "own_commits_in_window": 253,
+   "created_at": "2018-08-29T18:16:24Z",
+   "thresholds": {
+    "commit_minimum": 355,
+    "author_minimum": 2,
+    "window_start": "2026-03-22"
+   },
+   "independent": true,
+   "reasons": []
+  },
+  {
+   "repo_name": "MirageNet/Mirage",
+   "revision": "86b686cdd943e6bc285c4e5d995ccb734d26a442",
+   "upstream": "Mirror",
+   "upstream_repository": null,
+   "upstream_is_this_repository": false,
+   "upstream_active": null,
+   "upstream_commit_before_window": null,
+   "tracks_upstream": null,
+   "own_commits": 6038,
+   "own_authors": 2,
+   "own_commits_in_window": 119,
+   "created_at": "2019-12-30T21:56:38Z",
+   "thresholds": {
+    "commit_minimum": 355,
+    "author_minimum": 2,
+    "window_start": "2026-03-22"
+   },
+   "independent": true,
+   "reasons": []
+  },
+  {
+   "repo_name": "cculianu/asicseer-pool",
+   "revision": "b95a4f4ac375713b1521badc09e3060a9e53068e",
+   "upstream": "https://bitbucket.org/ckolivas/ckpool-splns/",
+   "upstream_repository": null,
+   "upstream_is_this_repository": false,
+   "upstream_active": null,
+   "upstream_commit_before_window": null,
+   "tracks_upstream": null,
+   "own_commits": 199,
+   "own_authors": 2,
+   "own_commits_in_window": 3,
+   "created_at": "2020-03-06T07:40:24Z",
+   "thresholds": {
+    "commit_minimum": 355,
+    "author_minimum": 2,
+    "window_start": "2026-03-22"
+   },
+   "independent": false,
+   "reasons": [
+    "199 own commits, fewer than the sampling frame's minimum of 355"
+   ]
+  },
+  {
+   "repo_name": "calcom/cal.diy",
+   "revision": "54343aa685ae8f33159d2f485ec4a57bad5c574a",
+   "upstream": "https://cal.com",
+   "upstream_repository": null,
+   "upstream_is_this_repository": false,
+   "upstream_active": null,
+   "upstream_commit_before_window": null,
+   "tracks_upstream": null,
+   "own_commits": 16498,
+   "own_authors": 2,
+   "own_commits_in_window": 166,
+   "created_at": "2021-03-22T13:47:42Z",
+   "thresholds": {
+    "commit_minimum": 355,
+    "author_minimum": 2,
+    "window_start": "2026-03-22"
+   },
+   "independent": true,
+   "reasons": []
+  },
+  {
+   "repo_name": "magemonkeystudio/fabled",
+   "revision": "7bcf9f3bb9a77089b9a08f5158aecc8946f04e9d",
+   "upstream": "SkillAPI",
+   "upstream_repository": null,
+   "upstream_is_this_repository": false,
+   "upstream_active": null,
+   "upstream_commit_before_window": null,
+   "tracks_upstream": null,
+   "own_commits": 1630,
+   "own_authors": 2,
+   "own_commits_in_window": 42,
+   "created_at": "2021-04-30T14:49:37Z",
+   "thresholds": {
+    "commit_minimum": 355,
+    "author_minimum": 2,
+    "window_start": "2026-03-22"
+   },
+   "independent": true,
+   "reasons": []
+  },
+  {
+   "repo_name": "PHP-Open-Source-Saver/jwt-auth",
+   "revision": "1bdb72de5e60fcb02264d7aba4bd4608939e3798",
+   "upstream": "https://github.com/tymondesigns/jwt-auth",
+   "upstream_repository": "tymondesigns/jwt-auth",
+   "upstream_is_this_repository": false,
+   "upstream_active": false,
+   "upstream_commit_before_window": null,
+   "tracks_upstream": null,
+   "own_commits": 395,
+   "own_authors": 2,
+   "own_commits_in_window": 9,
+   "created_at": "2021-09-10T06:06:51Z",
+   "thresholds": {
+    "commit_minimum": 355,
+    "author_minimum": 2,
+    "window_start": "2026-03-22"
+   },
+   "independent": true,
+   "reasons": []
+  },
+  {
+   "repo_name": "ferrocene/ferrocene",
+   "revision": "858bd966980c4f0a947a3387e5105604103e49ae",
+   "upstream": "https://github.com/rust-lang/rust",
+   "upstream_repository": "rust-lang/rust",
+   "upstream_is_this_repository": false,
+   "upstream_active": true,
+   "upstream_commit_before_window": "0a49163be73fa01b01c18c28983c9ee6374c02e4",
+   "tracks_upstream": true,
+   "own_commits": null,
+   "own_authors": null,
+   "own_commits_in_window": null,
+   "created_at": "2023-10-02T14:26:44Z",
+   "thresholds": {
+    "commit_minimum": 355,
+    "author_minimum": 2,
+    "window_start": "2026-03-22"
+   },
+   "independent": false,
+   "reasons": [
+    "tracks its upstream"
+   ]
+  },
+  {
+   "repo_name": "predibase/lorax",
+   "revision": "a7394ba386ece427d5a6125b419aa38b46d966dc",
+   "upstream": "https://github.com/huggingface/text-generation-inference",
+   "upstream_repository": "huggingface/text-generation-inference",
+   "upstream_is_this_repository": false,
+   "upstream_active": false,
+   "upstream_commit_before_window": null,
+   "tracks_upstream": null,
+   "own_commits": 491,
+   "own_authors": 2,
+   "own_commits_in_window": 2,
+   "created_at": "2023-10-20T18:19:49Z",
+   "thresholds": {
+    "commit_minimum": 355,
+    "author_minimum": 2,
+    "window_start": "2026-03-22"
+   },
+   "independent": true,
+   "reasons": []
+  },
+  {
+   "repo_name": "ticketz-oss/ticketz",
+   "revision": "697fdf8909398ff70258579a1ca77b82c63dd9ce",
+   "upstream": "https://github.com/canove/whaticket-community",
+   "upstream_repository": "canove/whaticket-community",
+   "upstream_is_this_repository": false,
+   "upstream_active": true,
+   "upstream_commit_before_window": "0973d1192de72bf87efb1771723f229c5e53978c",
+   "tracks_upstream": false,
+   "own_commits": 1517,
+   "own_authors": 2,
+   "own_commits_in_window": 139,
+   "created_at": "2023-12-19T20:21:57Z",
+   "thresholds": {
+    "commit_minimum": 355,
+    "author_minimum": 2,
+    "window_start": "2026-03-22"
+   },
+   "independent": true,
+   "reasons": []
+  },
+  {
+   "repo_name": "Candlestickers/Candlestick",
+   "revision": "a209b718d1615e8c455fc1153f91ed0280ff40ba",
+   "upstream": "Wick Editor",
+   "upstream_repository": null,
+   "upstream_is_this_repository": false,
+   "upstream_active": null,
+   "upstream_commit_before_window": null,
+   "tracks_upstream": null,
+   "own_commits": 596,
+   "own_authors": 2,
+   "own_commits_in_window": 261,
+   "created_at": "2024-12-27T04:56:57Z",
+   "thresholds": {
+    "commit_minimum": 355,
+    "author_minimum": 2,
+    "window_start": "2026-03-22"
+   },
+   "independent": true,
+   "reasons": []
+  }
+ ]
+}

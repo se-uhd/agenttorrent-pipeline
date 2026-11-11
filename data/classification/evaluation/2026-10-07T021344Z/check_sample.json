@@ -1,0 +1,12 @@
+{
+  "evaluation_id": "2026-10-07T021344Z",
+  "parameters": "37efaed267499e3d725a59a618f0e837797302a424c1ab79974a9e0efc8cc772",
+  "reference_model": "gpt-6-luna",
+  "second_model": "gpt-6.1-sol",
+  "disagreements": 41,
+  "agreed": 1000,
+  "agreements": 200,
+  "seed": 675821633,
+  "forks": "2_classification/evaluation/2026-10-07T021344Z/forks.json",
+  "reviewed_agreements": "2_classification/evaluation/2026-10-07T021344Z/reviewed_agreements.csv"
+}

@@ -1,0 +1,47 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Repository metadata comparison by tool. Cells show the median, the IQR and Cliff's $\delta$ of the repositories that use the tool. Significant differences (BH-adjusted) are in bold.}
+\label{tab:repo-metadata-comparison}
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Tool} & \textbf{Age (yr)} & \textbf{Contrib.} & \textbf{Commits} & \textbf{Size (KB)} \\
+\midrule
+All & 6.9 & 33 & 1,749 & 33k \\
+($n$=10,944) & (4.3--10) & (15--79) & (833--4,176) & (8,701--121k) \\
+\midrule
+Claude & \textbf{6.7$^{***}$} & 33 & \textbf{1,785$^{**}$} & \textbf{38k$^{***}$} \\
+($n$=6,315) & \textbf{(4.1--9.8)} & (15--80) & \textbf{(858--4,440)} & \textbf{(9,805--139k)} \\
+ & \textbf{$\delta$=-0.08} & $\delta$=0.01 & \textbf{$\delta$=0.04} & \textbf{$\delta$=0.09} \\
+\addlinespace
+Copilot & 7.2 & \textbf{39$^{***}$} & \textbf{2,137$^{***}$} & \textbf{47k$^{***}$} \\
+($n$=2,399) & (4.4--10) & \textbf{(18--100)} & \textbf{(972--5,289)} & \textbf{(12k--169k)} \\
+ & $\delta$=0.02 & \textbf{$\delta$=0.11} & \textbf{$\delta$=0.12} & \textbf{$\delta$=0.13} \\
+\addlinespace
+No specific tool & \textbf{7.4$^{***}$} & 33 & \textbf{1,673$^{**}$} & \textbf{24k$^{***}$} \\
+($n$=2,820) & \textbf{(4.7--10)} & (15--76) & \textbf{(801--3,723)} & \textbf{(6,587--86k)} \\
+ & \textbf{$\delta$=0.08} & $\delta$=-0.01 & \textbf{$\delta$=-0.04} & \textbf{$\delta$=-0.13} \\
+\addlinespace
+Cursor & \textbf{5.3$^{***}$} & \textbf{43$^{***}$} & \textbf{2,430$^{***}$} & \textbf{72k$^{***}$} \\
+($n$=783) & \textbf{(3.1--8.0)} & \textbf{(20--102)} & \textbf{(1,023--5,912)} & \textbf{(24k--237k)} \\
+ & \textbf{$\delta$=-0.24} & \textbf{$\delta$=0.13} & \textbf{$\delta$=0.14} & \textbf{$\delta$=0.26} \\
+\addlinespace
+Gemini & \textbf{6.5$^{***}$} & \textbf{48$^{***}$} & \textbf{2,424$^{***}$} & \textbf{62k$^{***}$} \\
+($n$=506) & \textbf{(3.4--9.0)} & \textbf{(21--125)} & \textbf{(1,060--6,064)} & \textbf{(16k--209k)} \\
+ & \textbf{$\delta$=-0.12} & \textbf{$\delta$=0.17} & \textbf{$\delta$=0.15} & \textbf{$\delta$=0.18} \\
+\addlinespace
+Codex & \textbf{4.7$^{***}$} & \textbf{49$^{***}$} & \textbf{2,630$^{***}$} & \textbf{80k$^{***}$} \\
+($n$=332) & \textbf{(2.7--7.0)} & \textbf{(18--117)} & \textbf{(1,131--6,889)} & \textbf{(27k--253k)} \\
+ & \textbf{$\delta$=-0.33} & \textbf{$\delta$=0.14} & \textbf{$\delta$=0.21} & \textbf{$\delta$=0.31} \\
+\addlinespace
+OpenCode & \textbf{5.7$^{***}$} & 28 & \textbf{2,339$^{**}$} & \textbf{58k$^{***}$} \\
+($n$=200) & \textbf{(3.1--8.1)} & (11--74) & \textbf{(879--5,891)} & \textbf{(22k--172k)} \\
+ & \textbf{$\delta$=-0.20} & $\delta$=-0.06 & \textbf{$\delta$=0.12} & \textbf{$\delta$=0.19} \\
+\bottomrule
+\end{tabular}
+\vspace{2pt}
+\begin{minipage}{\columnwidth}
+\footnotesize
+\textit{Note:} Mann--Whitney U test (two-sided) with Benjamini--Hochberg FDR correction (28 comparisons). Effect sizes: Cliff's delta. $^{*}$ $p<.05$, $^{**}$ $p<.01$, $^{***}$ $p<.001$ (adjusted).
+\end{minipage}
+\end{table}
