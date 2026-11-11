@@ -57,14 +57,22 @@ class _StopOnSignal:
     A Stop sends SIGTERM, which by default ends the process without running its `finally`
     blocks. The staging copy of the sample would then stay on the volume for every later
     handover to pack, and 7zz would go on packing with no process waiting for it. Raised as an
-    exception, the signal ends 7zz (`subprocess.run` kills its child on any exception), and the
-    step removes the staging copy and the partial archive. Only the first signal raises. The
-    runner forwards a Ctrl+C that the step has already received from the process group, and a
-    second exception during the removal would leave the copy behind.
+    exception, the signal ends 7zz (`_run_7zz` kills it on any exception), and the step removes
+    the staging copy and the partial archive. Only the first signal raises. The runner forwards
+    a Ctrl+C that the step has already received from the process group, and a second exception
+    during the removal would leave the copy behind.
+
+    Between `hold` and `release`, the handler records the signal instead of raising it, and
+    `release` raises it. `_run_7zz` holds a stop while it starts 7zz, because a stop raised
+    during the start would leave a 7zz that no code can kill.
     """
 
-    def __enter__(self):
+    def __init__(self):
         self.stopping = False
+        self.holding = False
+        self.held = None
+
+    def __enter__(self):
         self.previous = {sig: signal.signal(sig, self._stop)
                          for sig in (signal.SIGTERM, signal.SIGINT)}
         return self
@@ -73,12 +81,52 @@ class _StopOnSignal:
         if self.stopping:
             return
         self.stopping = True
+        if self.holding:
+            self.held = signum
+            return
         raise SystemExit(128 + signum)
+
+    def hold(self) -> None:
+        """Record a stop from here on rather than raise it."""
+        self.holding = True
+
+    def release(self) -> None:
+        """Raise the stop that arrived since `hold`, and raise a later stop when it arrives."""
+        self.holding = False
+        if self.held is not None:
+            raise SystemExit(128 + self.held)
 
     def __exit__(self, *_exc):
         for sig, handler in self.previous.items():
             signal.signal(sig, handler)
         return False
+
+
+def _run_7zz(argv: list, cwd: str, stop: _StopOnSignal) -> subprocess.CompletedProcess:
+    """Run 7zz to its end, and return its exit code and its output as text.
+
+    On any exception, such as the `SystemExit` of a stop, 7zz is killed and waited for before
+    the exception leaves the function. A stop raised while `subprocess.Popen` starts 7zz would
+    leave Popen after the process exists and before Popen returns it, and nothing would then
+    kill 7zz. `subprocess.run` has the same gap and the one before its wait begins. The stop is
+    therefore held while 7zz starts and raised inside the block that kills 7zz.
+    """
+    stop.hold()
+    try:
+        process = subprocess.Popen(argv, cwd=cwd, stdout=subprocess.PIPE,
+                                   stderr=subprocess.PIPE, text=True)
+    except BaseException:
+        stop.release()
+        raise
+    # Leaving the block closes the pipes and waits for 7zz, after the kill on an exception.
+    with process:
+        try:
+            stop.release()
+            stdout, stderr = process.communicate()
+        except BaseException:
+            process.kill()
+            raise
+    return subprocess.CompletedProcess(argv, process.returncode, stdout, stderr)
 
 
 # The directories that Synology DSM writes, with the extended attributes and thumbnails of the
@@ -204,7 +252,7 @@ def main(argv=None):
         logs.info('collected_files_archive', f"Would delete {deleted:,} files in {len(repos):,} repositories.")
         return
 
-    with _StopOnSignal():
+    with _StopOnSignal() as stop:
         # Remove a staging directory that a killed run left, with its copy of the sample.
         if os.path.exists(staging_dir):
             logs.info('collected_files_archive', f"Removing the staging directory of an earlier run, {staging_dir}...")
@@ -221,7 +269,7 @@ def main(argv=None):
         logs.info('collected_files_archive', f"Copying {len(repo_dirs):,} repositories from {validated_dir}/ to {staging_dir}/{ARCHIVE_ROOT}/...")
         os.makedirs(staging_dir)
         try:
-            return _prune_and_pack(validated_dir, staging_dir, archive, repo_dirs)
+            return _prune_and_pack(validated_dir, staging_dir, archive, repo_dirs, stop)
         finally:
             # Remove the staging directory in every outcome, a Stop included. A failed 7zz or a Stop
             # would otherwise leave a second copy of the repository directories on the volume that
@@ -236,9 +284,9 @@ def main(argv=None):
                                                         f"first.")
 
 
-def _prune_and_pack(validated_dir, staging_dir, archive, repo_dirs):
+def _prune_and_pack(validated_dir, staging_dir, archive, repo_dirs, stop):
     """Copy, prune and pack the tree under ARCHIVE_ROOT in the staging directory. The caller
-    removes the staging directory."""
+    removes the staging directory, and `stop` is the caller's handler of a stop signal."""
     # Because 7zz records the name that it receives, the step makes the copy under ARCHIVE_ROOT
     # inside the staging directory, and 7zz packs that name from there. Nothing is renamed. A
     # kill at any point leaves the copy inside the staging directory for the next run to remove,
@@ -290,7 +338,7 @@ def _prune_and_pack(validated_dir, staging_dir, archive, repo_dirs):
     # After the prune, to undo the times that the prune changed.
     restore_dir_times(pack_root, validated_dir)
     try:
-        result = subprocess.run(
+        result = _run_7zz(
             # -snl stores a symlink as a link. Without the flag, 7zz follows the link: it
             # expands a linked mechanism directory into a second copy of the tree that the link
             # points at, and it fails on a dangling link. The sample has links, dangling links
@@ -298,7 +346,7 @@ def _prune_and_pack(validated_dir, staging_dir, archive, repo_dirs):
             # The archive path is absolute because 7zz runs in the staging directory.
             # ARCHIVE_ROOT is relative to that directory, and the stored paths start at repos/.
             [SEVEN_ZIP, "a", "-t7z", "-snl", "-mx=9", *ARCHIVE_EXCLUDES, building, ARCHIVE_ROOT],
-            cwd=staging_dir, capture_output=True, text=True,
+            cwd=staging_dir, stop=stop,
         )
     except BaseException:
         # A stop or a 7zz that cannot start leaves no partial archive in release/, where the

@@ -733,19 +733,37 @@ class TestTheKill(unittest.TestCase):
 
     def test_a_step_that_ignores_sigterm_is_killed_after_the_grace(self):
         """The test shortens the grace period. The child ignores SIGTERM from its first line and
-        then prints `ignoring` on stdout, which shows that the handler was in place when the
-        signal came after 1.5 s."""
+        then prints `ignoring` on stdout. The test's `Popen` returns the step only once its log
+        holds that line, and `run_step_killed` starts its clock when `Popen` returns, so SIGTERM
+        finds the handler in place however long the interpreter takes to start."""
         argv = self._script("stubborn.py",
                             "import signal, sys, time\n"
                             "signal.signal(signal.SIGTERM, signal.SIG_IGN)\n"
                             "print('ignoring', flush=True)\n"
-                            "time.sleep(20)\n")
-        started = time.monotonic()
-        result = _mod.run_step_killed("stubborn", argv, self.tmp, dict(os.environ),
-                                       self.tmp, kill_after=1.5, grace=0.5)
-        self.assertEqual((self.tmp / "stubborn.log").read_text(encoding="utf-8"), "ignoring\n")
+                            "time.sleep(60)\n")
+        log, real_popen, ready = self.tmp / "stubborn.log", subprocess.Popen, []
+
+        def popen(*args, **kwargs):
+            proc = real_popen(*args, **kwargs)
+            # The bound only turns a step that hangs before its first line into a failure.
+            deadline = time.monotonic() + 600
+            while log.read_text(encoding="utf-8") != "ignoring\n":
+                if proc.poll() is not None or time.monotonic() > deadline:
+                    proc.kill()
+                    proc.wait()
+                    self.fail("the step did not start ignoring SIGTERM")
+                time.sleep(0.01)
+            ready.append(time.monotonic())
+            return proc
+
+        with mock.patch.object(_mod.subprocess, "Popen", popen):
+            result = _mod.run_step_killed("stubborn", argv, self.tmp, dict(os.environ),
+                                           self.tmp, kill_after=1.5, grace=0.5)
+        self.assertEqual(log.read_text(encoding="utf-8"), "ignoring\n")
         self.assertEqual(result, (-signal.SIGKILL, True))
-        self.assertLess(time.monotonic() - started, 10)
+        # A run that waited the default grace period after SIGTERM rather than `grace` would
+        # take longer than that period.
+        self.assertLess(time.monotonic() - ready[0], _mod.kill_grace_seconds())
 
     def test_the_grace_outlasts_the_cloning_steps_own_stop(self):
         """The step stops its workers within `WORKER_STOP_SECONDS` and reaps its git processes

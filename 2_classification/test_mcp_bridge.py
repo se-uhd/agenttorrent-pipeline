@@ -228,6 +228,9 @@ class TestTheServer(unittest.TestCase):
                     hanging = str(error)
                 else:
                     hanging = None
+                # The bound of one second is for the hanging call alone. The bound of the next
+                # call lies far above the time that its response takes, even on a slow machine.
+                bridge.call_seconds = 60
                 quick = await asyncio.wait_for(
                     bridge.call("read_linked_page", {"url": "https://quick.example/"}), 60)
                 return hanging, quick

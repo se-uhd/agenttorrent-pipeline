@@ -23,6 +23,7 @@ import subprocess
 import sys
 import tempfile
 import time
+import types
 import unittest
 import unittest.mock
 from pathlib import Path
@@ -84,6 +85,123 @@ def _kill_recorded(*markers: Path) -> None:
             os.kill(int(marker.read_text().strip()), signal.SIGKILL)
         except (FileNotFoundError, ValueError, ProcessLookupError):
             pass
+
+
+# The bound on a wait for something that a working command does at once, such as writing its pid
+# or exiting. It only turns a hang into a failure.
+_HANG_SECONDS = 60
+
+
+def _wait_until(condition, message: str):
+    """The first true value that `condition()` returns. Fails with `message` when none has come
+    within _HANG_SECONDS."""
+    deadline = time.monotonic() + _HANG_SECONDS
+    while not (value := condition()):
+        if time.monotonic() > deadline:
+            raise AssertionError(message)
+        time.sleep(0.01)
+    return value
+
+
+def _pid_in(marker: Path) -> int | None:
+    """The pid that `echo $$ > marker` wrote, or None while the file is missing or its line is
+    incomplete. The redirection creates the file before echo writes to it."""
+    try:
+        text = marker.read_text()
+    except FileNotFoundError:
+        return None
+    return int(text) if text.endswith("\n") and text.strip().isdigit() else None
+
+
+def _recorded_command(marker: Path) -> tuple:
+    """The pid that the child of a command, run through `run_bounded` on another thread, wrote
+    to `marker`, and the process that `run_bounded` recorded for the command, once both are
+    there. The shell writes the marker and the thread records the process in no fixed order."""
+    child = _wait_until(lambda: _pid_in(marker), f"the command wrote no pid to {marker}")
+    (leader,) = _wait_until(lambda: list(_mod._RUNNING), "run_bounded recorded no command")
+    return child, leader
+
+
+@contextlib.contextmanager
+def _time_bound_from(ready):
+    """Start the time bound of `run_bounded`'s first wait on its command once `ready()` returns
+    a true value, so that a short bound expires on a command that has started its children,
+    however late the machine starts them. Yields a list that receives the monotonic time at
+    which the bound started.
+
+    The patch replaces `subprocess` in the module under test alone. A command that the module
+    runs through `subprocess.run`, such as the probe of the parent-death wrapper, keeps the real
+    `Popen`."""
+    started = []
+
+    class Popen(subprocess.Popen):
+        def communicate(self, input=None, timeout=None):
+            if not started:
+                _wait_until(ready, "the command never became ready")
+                started.append(time.monotonic())
+            return super().communicate(input, timeout)
+
+    module = types.SimpleNamespace(**{**vars(subprocess), "Popen": Popen})
+    with unittest.mock.patch.object(_mod, "subprocess", module):
+        yield started
+
+
+class TestTheWaitsOfThisSuite(unittest.TestCase):
+    """`_pid_in`, `_recorded_command` and `_time_bound_from` let a test check a command only
+    after the command has done what the check needs."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.dir = Path(self.tmp.name)
+
+    def test_a_marker_holds_a_pid_once_its_line_is_complete(self):
+        marker = self.dir / "child.pid"
+        self.assertIsNone(_pid_in(marker))
+        marker.write_text("")
+        self.assertIsNone(_pid_in(marker))
+        marker.write_text("42")
+        self.assertIsNone(_pid_in(marker))
+        marker.write_text("4242\n")
+        self.assertEqual(_pid_in(marker), 4242)
+
+    def test_the_record_of_the_command_can_follow_its_pid(self):
+        """The thread that runs `run_bounded` can record the process after the child of the
+        command has written its pid, here at the first poll after the pid."""
+        marker = self.dir / "child.pid"
+        marker.write_text("4242\n")
+        leader = object()
+        running = set()
+        sleep = time.sleep
+
+        def record_late(seconds):
+            running.add(leader)
+            sleep(0)
+
+        with unittest.mock.patch.object(_mod, "_RUNNING", running), \
+                unittest.mock.patch.object(time, "sleep", record_late):
+            self.assertEqual(_recorded_command(marker), (4242, leader))
+
+    def test_the_time_bound_starts_once_the_command_is_ready(self):
+        """The child writes its pid only after the wait for it has begun, as a child does that a
+        loaded machine starts late. A bound counted from the start of the command would kill the
+        child before it wrote the pid."""
+        marker, go = self.dir / "child.pid", self.dir / "go"
+        self.addCleanup(_kill_recorded, marker)
+        script = (f"sh -c 'while [ ! -e {go} ]; do sleep 0.01; done; echo $$ > {marker}; "
+                  f"exec sleep 30' & sleep 30")
+
+        def ready():
+            go.touch()
+            return _pid_in(marker)
+
+        with _time_bound_from(ready) as started, \
+                self.assertRaises(subprocess.TimeoutExpired):
+            _mod.run_bounded(["sh", "-c", script], cwd=str(self.dir), env=_env(), timeout=1)
+        self.assertEqual(len(started), 1)
+        child = _pid_in(marker)
+        self.assertIsNotNone(child, "the child never wrote its pid")
+        _assert_gone(self, child)
 
 
 class TestProcessLiveness(unittest.TestCase):
@@ -217,24 +335,23 @@ class TestRunBounded(unittest.TestCase):
         # has just found too large.
         marker = self.dir / "child.pid"
         script = (f"sh -c 'echo $$ > {marker}; sleep 30' & sleep 30")
-        with self.assertRaises(subprocess.TimeoutExpired):
+        with _time_bound_from(lambda: _pid_in(marker)), \
+                self.assertRaises(subprocess.TimeoutExpired):
             _mod.run_bounded(["sh", "-c", script], cwd=str(self.dir), env=_env(),
                              timeout=2)
-        self.assertTrue(marker.is_file(), "the child never started")
-        child_pid = int(marker.read_text().strip())
-        _assert_gone(self, child_pid)
+        _assert_gone(self, _pid_in(marker))
 
     def test_a_timeout_reaches_what_a_leader_that_exited_left_behind(self):
         """A leader that has exited keeps its pid until it is reaped. The group is therefore killed
         before `poll()` reaps it, and a child that the leader left behind cannot keep the call
         waiting on the pipes past one reaping period after its time bound."""
         marker = self.dir / "child.pid"
-        started = time.monotonic()
-        with self.assertRaises(subprocess.TimeoutExpired):
+        with _time_bound_from(lambda: _pid_in(marker)) as started, \
+                self.assertRaises(subprocess.TimeoutExpired):
             _mod.run_bounded(["sh", "-c", _LEADER_EXITS.format(marker=marker)],
                              cwd=str(self.dir), env=_env(), timeout=1)
-        elapsed = time.monotonic() - started
-        _assert_gone(self, int(marker.read_text().strip()))
+        elapsed = time.monotonic() - started[0]
+        _assert_gone(self, _pid_in(marker))
         self.assertLess(elapsed, 1 + _mod.REAP_SECONDS, "the call waited on the pipes")
 
     # dd's block size is spelled in bytes here, not as `1m`. The `1m` suffix is
@@ -261,15 +378,21 @@ class TestRunBounded(unittest.TestCase):
         marker = self.dir / "child.pid"
         leader = self.dir / "leader.pid"
         self.addCleanup(_kill_recorded, leader, marker)
-        script = (f"echo $$ > {leader}; sh -c 'echo $$ > {marker}; while :; do sleep 1; done' & "
+        # The leader writes into the tree only once the child has written its pid, so that the
+        # breach stops a child that is running however late the machine starts it. The child
+        # writes the pid under another name and renames the file, so that the leader never
+        # finds part of the pid.
+        script = (f"echo $$ > {leader}; "
+                  f"sh -c 'echo $$ > {marker}.tmp && mv {marker}.tmp {marker}; "
+                  f"while :; do sleep 1; done' & "
+                  f"while [ ! -s {marker} ]; do sleep 0.01; done; "
                   f"i=0; while :; do dd if=/dev/zero of={target}/f$i bs=1048576 count=2 "
                   f"2>/dev/null; i=$((i+1)); done")
         with self.assertRaises(_mod.GitSizeBoundExceeded):
             _mod.run_bounded(["sh", "-c", script], cwd=str(self.dir), env=_env(),
                              timeout=60, bounded_path=str(target),
                              max_bytes=4 * 1024 * 1024, sample_seconds=0.2)
-        child_pid = int(marker.read_text().strip())
-        _assert_gone(self, child_pid)
+        _assert_gone(self, _pid_in(marker))
 
     def test_a_command_within_the_size_bound_is_left_alone(self):
         """The command outlasts several measurements, and the size is compared. A
@@ -565,14 +688,8 @@ class TestStopRunning(unittest.TestCase):
             _mod.run_bounded(["sh", "-c", _LEADER_EXITS.format(marker=marker)],
                              cwd=str(self.dir), env=_env(), timeout=30)))
         worker.start()
-        deadline = time.time() + 10
-        while not (marker.is_file() and marker.read_text().strip()) and time.time() < deadline:
-            time.sleep(0.05)
-        child = int(marker.read_text().strip())
-        (leader,) = list(_mod._RUNNING)
-        while not _exited(leader.pid) and time.time() < deadline:
-            time.sleep(0.05)
-        self.assertTrue(_exited(leader.pid), "the leader did not exit")
+        child, leader = _recorded_command(marker)
+        _wait_until(lambda: _exited(leader.pid), "the leader did not exit")
         self.assertEqual(_mod.stop_running(), 1)
         worker.join(timeout=10)
         _assert_gone(self, child)
@@ -588,15 +705,12 @@ class TestStopRunning(unittest.TestCase):
                                                            cwd=str(self.dir), env=_env(),
                                                            timeout=60)))
         worker.start()
-        deadline = time.time() + 10
-        while not marker.is_file() and time.time() < deadline:
-            time.sleep(0.05)
-        self.assertTrue(marker.is_file(), "the command never started")
+        child, _leader = _recorded_command(marker)
         self.assertEqual(_mod.stop_running(), 1)
         worker.join(timeout=10)
         self.assertFalse(worker.is_alive(), "run_bounded did not return after the stop")
         self.assertNotEqual(results[0].returncode, 0)
-        _assert_gone(self, int(marker.read_text().strip()))
+        _assert_gone(self, child)
 
     def test_nothing_in_flight_stops_nothing(self):
         self.assertEqual(_mod.stop_running(), 0)

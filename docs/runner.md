@@ -420,6 +420,7 @@ Exit codes:
 | A recorded step that is not in this run's list (e.g., `commit_reclassification` without `--with-commit-reclassification`) | Ignored, and left in the file |
 | `--list` while another run holds the lock | Prints the steps and returns `0`. It never takes the lock |
 | Not a git repository, and no `BUILD_INFO` file at the repository root | The state file records `git_sha` and `git_dirty` as `null` |
+| `git status` at the repository root fails or exceeds its time bound (`GIT_INFO_SECONDS`) | The state file records the commit in `git_sha`, and `git_dirty` as `null` |
 | `DATA_COLLECTION_PYTHON` unset | `VENV_PYTHON` is the interpreter running the runner. The pre-checks warn if that interpreter cannot import `lingua`, naming `DATA_COLLECTION_PYTHON` as the override |
 | `lingua` cannot be imported and `detection` is pending | One `WARNING pre_checks:` line. The run proceeds, and every `language` in the <!--s:parameters.agentcontext.heuristics.LANGUAGE_MECHANISMS:words-->five<!--/s--> output CSVs that have the column is `n/a` |
 

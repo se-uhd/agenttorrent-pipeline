@@ -35,7 +35,7 @@ import unittest
 import unittest.mock
 from pathlib import Path
 from agentcontext import STAGE_DIR
-from tests._fixtures import _add_noise, ext_redirect, upload_pack
+from tests._fixtures import _add_noise, ext_redirect, time_bound_at_stall, upload_pack
 _meta = importlib.import_module("agentcontext.git.history")
 _clone = importlib.import_module("agentcontext.git.clone")
 _ambient_env = importlib.import_module("tests._ambient_env")
@@ -878,7 +878,7 @@ class TestCloneWithRetries(unittest.TestCase):
         """The next attempt runs under the same time bound, and in the file history step every
         attempt of a repository that the bound stops holds a worker for the whole bound, on
         every run. The first attempt's upload-pack stops once the pack has started, and the
-        time bound kills a clone in flight. The second attempt, which would not
+        time bound kills the clone in flight at that stall. The second attempt, which would not
         stall, is never made."""
         root = Path(tempfile.mkdtemp())
         self.addCleanup(shutil.rmtree, root, True)
@@ -894,16 +894,10 @@ class TestCloneWithRetries(unittest.TestCase):
                                        "https://github.com/owner/repo.git").items():
             os.environ[key] = value
             self.addCleanup(os.environ.pop, key, None)
-        real = _meta.bounds.run_bounded
-
-        def under_a_short_time_bound(cmd, **kwargs):
-            return real(cmd, **{**kwargs, "timeout": 2})
-
         extractor = _meta.GitFileMetadata()
         temp_dir = root / "clone"
         temp_dir.mkdir()
-        with unittest.mock.patch.object(_meta.bounds, "run_bounded",
-                                        side_effect=under_a_short_time_bound), \
+        with time_bound_at_stall(script), \
                 contextlib.redirect_stderr(io.StringIO()), \
                 contextlib.redirect_stdout(io.StringIO()):
             cloned = _meta._clone_with_retries(extractor, "owner/repo", "main", str(temp_dir),
@@ -1224,11 +1218,12 @@ class TestEnsureFullHistory(unittest.TestCase):
         """A fetch killed at the timeout leaves `.git/shallow.lock`, because git cannot clean up
         on SIGKILL. A second attempt that failed on the lock at once would record the timeout
         as a network failure, which every later run fetches again. The first fetch is stalled
-        for real rather than mocked."""
+        for real rather than mocked, and the time bound kills it at the stall. The retry runs
+        under a time bound that only catches a hang."""
         clone, script = self._stalled_clone("first")
         meta = _meta.GitFileMetadata()
-        with contextlib.redirect_stderr(io.StringIO()) as err:
-            self.assertTrue(meta.ensure_full_history(str(clone), timeout=3))
+        with time_bound_at_stall(script), contextlib.redirect_stderr(io.StringIO()) as err:
+            self.assertTrue(meta.ensure_full_history(str(clone), timeout=600))
         self.assertTrue(script.with_suffix(".stalled").exists(), "the first fetch did not stall")
         self.assertIn("attempt 1/2 raised TimeoutExpired", err.getvalue())
         self.assertNotIn("attempt 2/2", err.getvalue())

@@ -1,8 +1,8 @@
 """The fixtures that the collection suites share:
 
 - a repository built with `git init`, and the commits in it
-- a stand-in for `git upload-pack` that stalls or slows the pack, and the git configuration that
-  sends a clone through the stand-in
+- a stand-in for `git upload-pack` that stalls or slows the pack, the git configuration that
+  sends a clone through the stand-in, and a time bound that ends a command at the stall
 - a shorter sampling interval of the size bound
 - the reading of one column of a row of the collected list
 - Synology DSM writing into a directory while a step removes it, into a directory that a step has
@@ -13,6 +13,8 @@
 - a loopback git server in place of github.com that records the credential of each request
 - the outcome counts of a commit reclassification report
 - the bash and the environment that run a shell script of the repository
+- the latest calendar date in any time zone, which a date written on the day that it names
+  never passes
 
 Requirements: Python 3.14, git on PATH (stdlib only)
 """
@@ -27,6 +29,8 @@ import shutil
 import subprocess
 import sys
 import threading
+import time
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from unittest import mock
 
@@ -54,6 +58,18 @@ def script_env(base: dict | None = None) -> dict:
     env["PATH"] = os.pathsep.join(filter(None, [str(Path(sys.executable).parent),
                                                 env.get("PATH", "")]))
     return env
+
+
+# UTC+14, the time zone that begins each day first.
+FIRST_ZONE = timezone(timedelta(hours=14))
+
+
+def latest_date(now: datetime | None = None) -> date:
+    """The calendar date in the first time zone to begin each day, at `now` or at the current
+    time. A date that a person writes on the day that it names, in any time zone, is never later,
+    so that a test that compares such a date with it passes on a machine in any time zone and at
+    any hour."""
+    return (now or datetime.now(timezone.utc)).astimezone(FIRST_ZONE).date()
 
 
 def report_counts(**repositories) -> dict:
@@ -175,6 +191,46 @@ def upload_pack(root: Path, stall: str = "never", pause: float = 0.0) -> Path:
                                           marker=str(script.with_suffix(".stalled"))),
                       encoding="utf-8")
     return script
+
+
+@contextlib.contextmanager
+def time_bound_at_stall(script: Path, hang_seconds: float = 600.0):
+    """Inside the block, the time bound ends a git command at the stall of the stand-in `script`
+    rather than at a time.
+
+    `bounds.run_bounded` waits for its command with `communicate(timeout=...)`, and when that
+    call raises `subprocess.TimeoutExpired`, it kills the process group while the transfer is in
+    flight. Inside the block, the first such call of a command that started before
+    `<script>.stalled` existed raises the exception once the marker exists and the command still
+    runs. A command that exits first returns as usual, and a command that starts after the stall
+    waits under the timeout that it was given. The stall, and not the speed of the machine,
+    then decides which attempt the time bound ends, and the attempts that follow can run under
+    a time bound that only catches a hang. `hang_seconds` bounds the wait for the stall, so
+    that a stand-in that never stalls fails the test rather than holding it.
+    """
+    marker = script.with_suffix(".stalled")
+
+    class EndsAtTheStall(subprocess.Popen):
+        def __init__(self, *args, **kwargs):
+            # Read before the command starts, which can stall before Popen returns.
+            self.ends_at_the_stall = not marker.exists()
+            super().__init__(*args, **kwargs)
+
+        def communicate(self, input=None, timeout=None):
+            if timeout is None or not self.ends_at_the_stall:
+                return super().communicate(input, timeout)
+            # `run_bounded` reaps the killed group with further calls, which wait as usual.
+            self.ends_at_the_stall = False
+            deadline = time.monotonic() + hang_seconds
+            while True:
+                try:
+                    return super().communicate(input, timeout=0.05)
+                except subprocess.TimeoutExpired:
+                    if marker.exists() or time.monotonic() >= deadline:
+                        raise subprocess.TimeoutExpired(self.args, timeout) from None
+
+    with mock.patch.object(subprocess, "Popen", EndsAtTheStall):
+        yield
 
 
 def ext_redirect(script: Path, remote: Path, url: str) -> dict:

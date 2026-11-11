@@ -2763,9 +2763,11 @@ class TestAStopSentToARealRunnerAlone(unittest.TestCase):
         tmp = Path(tempfile.mkdtemp())
         self.addCleanup(shutil.rmtree, tmp, ignore_errors=True)
         pid_file = tmp / "stage.pid"
+        # The step sleeps far longer than the wait below, so that a runner that waits for its
+        # step to end fails the test. The cleanup kills it.
         step_code = ("import os, time\n"
                       f"open({str(pid_file)!r}, 'w').write(str(os.getpid()))\n"
-                      "time.sleep(60)\n")
+                      "time.sleep(3600)\n")
         runner_code = (
             "import sys\n"
             "import agentcontext.runner as r\n"
@@ -2782,7 +2784,11 @@ class TestAStopSentToARealRunnerAlone(unittest.TestCase):
                                   start_new_session=True)
         self.addCleanup(runner.wait)
         self.addCleanup(lambda: runner.poll() is None and runner.kill())
-        deadline = time.monotonic() + 20
+        # Before the step starts, the runner imports the package, runs its pre-checks and
+        # writes the state, and these start further interpreters and git commands. The deadline
+        # only catches a runner that hangs before the step, and a runner that exits fails the
+        # test at once.
+        deadline = time.monotonic() + 600
         while not pid_file.exists() or not pid_file.read_text():
             self.assertIsNone(runner.poll(), "the runner exited before the step started")
             self.assertLess(time.monotonic(), deadline, "the step never started")
@@ -2791,10 +2797,12 @@ class TestAStopSentToARealRunnerAlone(unittest.TestCase):
         self.addCleanup(lambda: _alive(step_pid) and os.kill(step_pid, signal.SIGKILL))
 
         os.kill(runner.pid, signal.SIGTERM)
+        # After the step ends, the runner runs git again to write the state. The bound only
+        # catches a hang, such as a runner that waits for its step to end.
         try:
-            code = runner.wait(timeout=10)
+            code = runner.wait(timeout=600)
         except subprocess.TimeoutExpired:
-            self.fail("the runner was still waiting on its step 10 s after the signal")
+            self.fail("the runner was still waiting on its step after the signal")
         self.assertEqual(code, 128 + signal.SIGTERM)
         self.assertFalse(_alive(step_pid), "the step outlived the runner")
         state = json.loads((tmp / "logs" / "state.json").read_text())
@@ -5201,6 +5209,31 @@ class TestGitInfo(unittest.TestCase):
             self.assertIsNone(info["git_sha"])
             self.assertIsNone(info["git_dirty"])
 
+    def test_a_status_that_exceeds_its_bound_keeps_the_commit(self):
+        """`git status` reads every file that the index does not record as unchanged, and in a
+        large checkout it can exceed its bound while the commit is known. The record then keeps
+        the commit and leaves only `git_dirty` open."""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+
+            def git(*args):
+                return subprocess.run(["git", *args], cwd=root, check=True,
+                                      capture_output=True, text=True)
+
+            git("init", "-q")
+            git("-c", "user.name=t", "-c", "user.email=t@example.com",
+                "commit", "-q", "--allow-empty", "-m", "one")
+            head = git("rev-parse", "HEAD").stdout.strip()
+            run = subprocess.run
+
+            def status_exceeds_its_bound(cmd, *args, **kwargs):
+                if cmd[:2] == ["git", "status"]:
+                    raise subprocess.TimeoutExpired(cmd, kwargs.get("timeout"))
+                return run(cmd, *args, **kwargs)
+
+            with mock.patch.object(_mod.subprocess, "run", status_exceeds_its_bound):
+                self.assertEqual(_git_info(root), {"git_sha": head, "git_dirty": None})
+            self.assertEqual(_git_info(root), {"git_sha": head, "git_dirty": False})
 
     def test_an_image_without_git_names_the_commit_it_was_built_from(self):
         """The image has no `.git`. Its BUILD_INFO records the commit, and without that file a

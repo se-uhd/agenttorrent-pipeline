@@ -66,9 +66,12 @@ def _module_key(path: Path) -> str:
 
 
 def _run(args: list, cwd: Path = None) -> subprocess.CompletedProcess:
+    """Run one checker. The bound only catches a checker that hangs. The statistics check
+    counts the commit CSVs, and on a slow or emulated machine it runs far longer than the other
+    checkers."""
     return subprocess.run([sys.executable] + [str(a) for a in args],
                           cwd=str(cwd or STAGE_DIR), capture_output=True, text=True,
-                          timeout=300)
+                          timeout=3600)
 
 
 # Each entry gives the arguments that point the checker at an empty directory (`absent`)

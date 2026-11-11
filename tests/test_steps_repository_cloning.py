@@ -1641,27 +1641,29 @@ class TestReadingTheCommitHistory(unittest.TestCase):
     def test_a_history_that_did_not_arrive_is_fetched_again_under_a_larger_clock(self):
         # The run's last log message recommends a larger timeout. A run under a larger timeout
         # fetches the histories again, and a resumed run under the same timeout skips them.
+        # Both timeouts lie far above what the local clone takes, because the clone runs under
+        # them and a clone that reached one would end the repository as a failed clone.
         _add_commit(self.remote, "CLAUDE.md", "# Claude\n" + "x" * 90)
         self._redirect()
         finished = self.tmp / "list of finished repositories.jsonl"
-        short = dataclasses.replace(self.cfg, clone_timeout=2.0,
-                                    max_clone_bytes=self.BOUNDS["max_clone_bytes"])
+        smaller = dataclasses.replace(self.cfg, clone_timeout=300.0,
+                                      max_clone_bytes=self.BOUNDS["max_clone_bytes"])
         fetched = []
         with mock.patch.object(_mod.history.GitFileMetadata, "ensure_full_history",
                                _history_not_fetched("time_bound", fetched)), \
                 contextlib.redirect_stderr(io.StringIO()):
-            run_collection(short, ["owner/repo"], workers=1, finished_path=finished)
-        self._assert_fetched_under(fetched, short)
+            run_collection(smaller, ["owner/repo"], workers=1, finished_path=finished)
+        self._assert_fetched_under(fetched, smaller)
         record = self._shard()[1]
         self.assertEqual((record["outcome"], record["time_bound"], record["size_bound"]),
-                         ("history_unavailable", 2.0, short.max_clone_bytes))
-        self.assertFalse(_resume.history_needs_reread(self.commits, "owner/repo", 2.0, short.max_clone_bytes))
-        self.assertTrue(_resume.history_needs_reread(self.commits, "owner/repo", 600.0, short.max_clone_bytes))
-        self.assertTrue(_resume.history_needs_reread(self.commits, "owner/repo", 2.0, short.max_clone_bytes * 2))
+                         ("history_unavailable", 300.0, smaller.max_clone_bytes))
+        self.assertFalse(_resume.history_needs_reread(self.commits, "owner/repo", 300.0, smaller.max_clone_bytes))
+        self.assertTrue(_resume.history_needs_reread(self.commits, "owner/repo", 600.0, smaller.max_clone_bytes))
+        self.assertTrue(_resume.history_needs_reread(self.commits, "owner/repo", 300.0, smaller.max_clone_bytes * 2))
         self.assertTrue(_resume.history_needs_reread(self.commits, "owner/repo", 0, 0), "no bound is a larger one")
         err = io.StringIO()
         with contextlib.redirect_stderr(err):
-            run_collection(short, ["owner/repo"], workers=1, finished_path=finished)
+            run_collection(smaller, ["owner/repo"], workers=1, finished_path=finished)
         self.assertIn("Collecting 0 repositories again to retry them", err.getvalue())
         err = io.StringIO()
         with contextlib.redirect_stderr(err):
@@ -1869,17 +1871,19 @@ class TestReadingTheCommitHistory(unittest.TestCase):
                 raise subprocess.TimeoutExpired(cmd, kwargs.get("timeout", 0))
             return real(cmd, **kwargs)
 
-        short = dataclasses.replace(self.cfg, clone_timeout=2.0)
+        # The clone and the history fetch run under both timeouts, which therefore lie far above
+        # what they take.
+        smaller = dataclasses.replace(self.cfg, clone_timeout=300.0)
         with mock.patch.object(_mod.bounds, "run_bounded", side_effect=slow_read), \
                 contextlib.redirect_stderr(io.StringIO()):
-            run_collection(short, ["owner/repo"], workers=1, finished_path=finished)
+            run_collection(smaller, ["owner/repo"], workers=1, finished_path=finished)
         record = self._shard()[1]
         self.assertEqual((record["outcome"], record["cause"], record["time_bound"]),
-                         ("history_read_failed", "time_bound", 2.0))
-        self.assertFalse(_resume.history_needs_reread(self.commits, "owner/repo", 2.0, 0))
+                         ("history_read_failed", "time_bound", 300.0))
+        self.assertFalse(_resume.history_needs_reread(self.commits, "owner/repo", 300.0, 0))
         self.assertTrue(_resume.history_needs_reread(self.commits, "owner/repo", 600.0, 0))
         with mock.patch.object(_mod.bounds, "run_bounded", side_effect=slow_read):
-            self._run_main("--clone-timeout", "2")
+            self._run_main("--clone-timeout", "300")
         self.assertIn("Reading the commit history timed out for 1 repositories, such as", self.err)
         err = io.StringIO()
         with contextlib.redirect_stderr(err):
@@ -2575,7 +2579,10 @@ class TestAStopEndsTheWorkers(unittest.TestCase):
         hooks.mkdir()
         self.marker = self.tmp / "hook.pid"
         hook = hooks / "post-checkout"
-        hook.write_text(f"#!/bin/sh\necho $$ > {self.marker}\nsleep 60\n")
+        # The hook writes its pid under a name of its own and renames the file into place, so
+        # that the marker appears with the pid in it.
+        hook.write_text(f"#!/bin/sh\necho $$ > {self.marker}.$$\nmv {self.marker}.$$ "
+                        f"{self.marker}\nsleep 60\n")
         hook.chmod(0o755)
         self.list = self.tmp / "list.csv"
         self.list.write_text("repo_name\nowner/repo\nowner/other\n")
@@ -2608,12 +2615,16 @@ class TestAStopEndsTheWorkers(unittest.TestCase):
         collector exits with the signal's code and the hook is gone."""
         proc = self._start(workers)
         self.addCleanup(proc.kill)
-        deadline = time.time() + 60
-        while (not (self.marker.is_file() and self.marker.read_text().strip())
-               and time.time() < deadline):
+        # The deadline only catches a collector that hangs before a clone reaches its hook. The
+        # collector and each worker that the pool spawns start an interpreter that imports the
+        # package before the first clone, and a loaded runner can take a long time for that. A
+        # collector that exits before then fails the test at once.
+        deadline = time.monotonic() + 600
+        while not self.marker.is_file():
+            self.assertIsNone(proc.poll(), "the collector exited before a clone reached its hook")
+            self.assertLess(time.monotonic(), deadline, "no worker reached the clone's hook")
             time.sleep(0.1)
-        self.assertTrue(self.marker.is_file(), "no worker reached the clone's hook")
-        hook_pid = int(self.marker.read_text().strip())
+        hook_pid = int(self.marker.read_text())
         proc.send_signal(signal.SIGTERM)
         self.assertEqual(proc.wait(timeout=30), 143)
         deadline = time.monotonic() + 5

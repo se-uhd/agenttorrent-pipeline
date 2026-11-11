@@ -1251,11 +1251,19 @@ def step_package_versions() -> dict:
 # the image has no `.git`: `commit <sha>`, `built <date>` and `python <version>`, one per line.
 # `deploy/Dockerfile` writes it and `deploy/entrypoint.py` logs it.
 BUILD_INFO = "BUILD_INFO"
+# The time bound of each git command that `_git_info` runs. GROUNDING: a policy. `git status`
+# reads the content of every file that the index cannot show to be unchanged, such as a file
+# written in the same second as the index, and the checkout tracks the archives of the dataset.
+# The bound only ends a git that hangs.
+GIT_INFO_SECONDS = 300
 
 
 def _git_info(root: Path = REPO_ROOT) -> dict:
     """Best-effort pipeline provenance: the commit that this code is at, and
     whether the working tree has uncommitted changes. Never raises.
+
+    The commit and the state of the tree are read by separate commands. When `git status` fails
+    or exceeds its bound, the function keeps the commit and returns `git_dirty` as None.
 
     Git runs at REPO_ROOT, where the code is, and not at STAGE_DIR, because the container
     points STAGE_DIR at the host's bind mount and the subsample run points it at another
@@ -1268,16 +1276,17 @@ def _git_info(root: Path = REPO_ROOT) -> dict:
     """
     try:
         sha = subprocess.run(["git", "rev-parse", "HEAD"], cwd=root,
-                             capture_output=True, text=True, timeout=5)
-        status = subprocess.run(["git", "status", "--porcelain"], cwd=root,
-                                capture_output=True, text=True, timeout=5)
-        if sha.returncode == 0:
-            return {
-                "git_sha": sha.stdout.strip(),
-                "git_dirty": bool(status.stdout.strip()) if status.returncode == 0 else None,
-            }
+                             capture_output=True, text=True, timeout=GIT_INFO_SECONDS)
     except Exception:
-        pass
+        sha = None
+    if sha is not None and sha.returncode == 0:
+        try:
+            status = subprocess.run(["git", "status", "--porcelain"], cwd=root,
+                                    capture_output=True, text=True, timeout=GIT_INFO_SECONDS)
+            dirty = bool(status.stdout.strip()) if status.returncode == 0 else None
+        except Exception:
+            dirty = None
+        return {"git_sha": sha.stdout.strip(), "git_dirty": dirty}
     try:
         for line in (root / BUILD_INFO).read_text(encoding="utf-8").splitlines():
             key, _, value = line.partition(" ")

@@ -15,10 +15,12 @@ Run with:  python3 -m unittest tests.test_git_auth -v
 import importlib
 import multiprocessing
 import os
+import queue
 import signal
 import stat
 import subprocess
 import sys
+import time
 import unittest
 from pathlib import Path
 
@@ -126,7 +128,19 @@ class TestCleanup(unittest.TestCase):
         worker = context.Process(target=_stopped_collection_worker, args=(paths,))
         worker.start()
         try:
-            path = paths.get(timeout=60)
+            # The deadline only catches a worker that hangs. The worker starts an interpreter
+            # that imports the package before it creates the helper, and a loaded runner can
+            # take a long time for that. A worker that exits before then fails the test at once.
+            deadline = time.monotonic() + 600
+            while True:
+                try:
+                    path = paths.get(timeout=1)
+                    break
+                except queue.Empty:
+                    self.assertTrue(worker.is_alive(),
+                                    "the worker exited before it created the helper")
+                    self.assertLess(time.monotonic(), deadline,
+                                    "the worker never created the helper")
             self.assertTrue(os.path.isfile(path))
             os.kill(worker.pid, signal.SIGTERM)
             worker.join(60)

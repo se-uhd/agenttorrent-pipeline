@@ -943,15 +943,9 @@ class TestTheHandover(unittest.TestCase):
         left."""
         leader = subprocess.Popen([sys.executable, "-c", "pass"], start_new_session=True)
         try:
-            deadline = time.monotonic() + 5
-            while time.monotonic() < deadline:
-                state = subprocess.run(["ps", "-o", "stat=", "-p", str(leader.pid)],
-                                       capture_output=True, text=True).stdout.strip()
-                if state.startswith("Z"):
-                    break
-                time.sleep(0.05)
-            else:
-                self.fail("the leader did not exit")
+            # `waitid` with WNOWAIT returns once the leader has exited and leaves it unreaped,
+            # which is the state that the test needs.
+            os.waitid(os.P_PID, leader.pid, os.WEXITED | os.WNOWAIT)
             ended = entrypoint.end_process_group(leader.pid, 0.5)
         finally:
             leader.wait()
@@ -963,19 +957,32 @@ class TestTheHandover(unittest.TestCase):
     def test_a_step_that_ignores_the_stop_is_killed_past_the_drain(self):
         """Because the member ignores SIGTERM, `end_process_group` has to kill it after the drain
         period. The tests before and after this one handle SIGTERM and exercise only the drain
-        path."""
+        path. The step writes its pid only once it ignores SIGTERM, and the runner kills itself
+        only once the pid is there, so that the SIGTERM of `end_process_group` finds the step
+        ignoring it, however long the step's interpreter takes to start."""
         marker = self.tmp / "stubborn.pid"
+        written = self.tmp / "stubborn.pid.tmp"
+        step = ("import os, signal, time\n"
+                "from pathlib import Path\n"
+                "signal.signal(signal.SIGTERM, signal.SIG_IGN)\n"
+                f"Path({str(written)!r}).write_text(str(os.getpid()))\n"
+                f"os.replace({str(written)!r}, {str(marker)!r})\n"
+                "time.sleep(60)\n")
+        # The bound only turns a step that hangs before it ignores SIGTERM into a failure.
         script = ("import os, signal, subprocess, sys, time\n"
-                  "child = subprocess.Popen([sys.executable, '-c',\n"
-                  "    'import signal, time; signal.signal(signal.SIGTERM, signal.SIG_IGN);'\n"
-                  "    'time.sleep(60)'])\n"
-                  f"open({str(marker)!r}, 'w').write(str(child.pid))\n"
-                  "time.sleep(0.3)\n"
+                  f"child = subprocess.Popen([sys.executable, '-c', {step!r}])\n"
+                  "deadline = time.monotonic() + 600\n"
+                  f"while not os.path.exists({str(marker)!r}):\n"
+                  "    if child.poll() is not None or time.monotonic() > deadline:\n"
+                  "        sys.exit('the step did not start ignoring SIGTERM')\n"
+                  "    time.sleep(0.01)\n"
                   "os.kill(os.getpid(), signal.SIGKILL)\n")
-        with mock.patch.object(entrypoint, "log"):
+        with mock.patch.object(entrypoint, "log") as logged:
             code = entrypoint.run_runner([sys.executable, "-c", script], self.tmp,
                                          drain_seconds=1)
         self.assertEqual(code, -9)
+        self.assertIn("Killed the step, still running 1 s after SIGTERM.",
+                      [call.args[0] for call in logged.call_args_list])
         stubborn = int(marker.read_text())
         deadline = time.monotonic() + 5
         while time.monotonic() < deadline:
@@ -1027,12 +1034,17 @@ class TestTheHandover(unittest.TestCase):
 
     def test_a_stop_reaches_the_child(self):
         # A child that exits with its own code on SIGTERM. The signal is sent to this
-        # process, and run_runner forwards it.
+        # process, and run_runner forwards it. The handler of the whole start is installed as
+        # `main` installs it, so that a signal that comes before run_runner installed its own
+        # handler is recorded and passed on rather than terminating the process that runs the
+        # tests.
         script = ("import os, signal, sys, time\n"
                   "signal.signal(signal.SIGTERM, lambda *_: sys.exit(43))\n"
                   "print('ready', flush=True)\n"
                   "os.kill(int(sys.argv[1]), signal.SIGTERM)\n"
                   "time.sleep(30)\n")
+        previous = signal.signal(signal.SIGTERM, entrypoint.note_stop_signal)
+        self.addCleanup(signal.signal, signal.SIGTERM, previous)
         code = entrypoint.run_runner([sys.executable, "-c", script, str(os.getpid())], self.tmp)
         self.assertEqual(code, 43)
 

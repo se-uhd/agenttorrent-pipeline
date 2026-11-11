@@ -171,7 +171,8 @@ class TestTheServerEndsWithTheClassification(unittest.TestCase):
 
     # STEP starts the server as the SDK does, with the step's output and in a session of its
     # own, and waits. The server's `main` runs a stand-in server that spends a minute in a tool
-    # call, as a wait for GitHub's rate limit does.
+    # call, as a wait for GitHub's rate limit does. The stand-in writes `serving` to the step's
+    # output when `main` runs it, which is after `main` has started the watch of the step.
     STEP = ("import subprocess, sys, time\n"
             "subprocess.Popen([sys.executable, '-c', sys.argv[1]], start_new_session=True)\n"
             "print('started', flush=True)\n"
@@ -180,6 +181,7 @@ class TestTheServerEndsWithTheClassification(unittest.TestCase):
               "import classification_tools as tools\n"
               "class Server:\n"
               "    def run(self, transport):\n"
+              "        print('serving', flush=True)\n"
               "        time.sleep(60)\n"
               "tools.build_server = lambda **kwargs: Server()\n"
               "tools.Summarizer = lambda **kwargs: None\n"
@@ -191,8 +193,15 @@ class TestTheServerEndsWithTheClassification(unittest.TestCase):
         step = subprocess.Popen([sys.executable, "-c", self.STEP, self.SERVER],
                                 stdout=subprocess.PIPE, stderr=subprocess.STDOUT, env=env)
         self.addCleanup(step.kill)
-        self.assertEqual(step.stdout.readline(), b"started\n")
-        time.sleep(1)
+        # The step is stopped once the server watches it, however long the server took to start.
+        # The two processes write their lines in either order. The step's output ends after its
+        # sleep, so a server that never serves fails the test rather than stalling it.
+        lines = []
+        while b"serving\n" not in lines:
+            line = step.stdout.readline()
+            self.assertTrue(line, f"the server did not start: {b''.join(lines)!r}")
+            lines.append(line)
+        self.assertIn(b"started\n", lines)
         step.terminate()
         step.wait(timeout=10)
         ended = threading.Event()
@@ -564,7 +573,9 @@ class TestReadWeb(unittest.TestCase):
         """A real server on the loopback address that sends a byte every fifth of a second keeps
         every read under its timeout. Between the checks of the deadline, the client waits for a
         whole chunk of the body, or for the whole status line and headers. Only a shutdown of the
-        connection at the deadline therefore ends the reading in time."""
+        connection at the deadline therefore ends the reading in time. Without the shutdown, the
+        trickle of the head or of the body would last longer than the bound of ten seconds, which
+        lies far above the deadline of one second."""
         stop = threading.Event()
         self.addCleanup(stop.set)
         head = (b"HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: 100\r\n"
@@ -598,14 +609,17 @@ class TestReadWeb(unittest.TestCase):
                 with mock.patch.object(tools, "PAGE_DEADLINE", 1), \
                         mock.patch.object(tools, "public_address", lambda host: ""):
                     text, read_at, note = tools.read_web(url)
-                self.assertLess(time.monotonic() - started, 2)
+                self.assertLess(time.monotonic() - started, 10)
                 self.assertEqual((text, read_at, note),
                                  (None, url, "reading the page took more than 1 seconds"))
 
     def test_a_connection_made_after_the_deadline_is_cut_off(self):
         """The timer shuts down the connections that it finds at the deadline. A connection
         that the connect timeout allowed to finish after the deadline would wait for the status
-        line and every header on a server that sends a byte within every read timeout."""
+        line and every header on a server that sends a byte within every read timeout. Here the
+        connection is made once the timer has shut down the connections that it found. Without
+        the shutdown of the new connection, the trickle of the head would last longer than the
+        bound of ten seconds."""
         stop = threading.Event()
         self.addCleanup(stop.set)
         head = (b"HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: 100\r\n"
@@ -629,17 +643,26 @@ class TestReadWeb(unittest.TestCase):
         self.addCleanup(server.shutdown)
         url = f"http://127.0.0.1:{server.server_address[1]}/"
         new_conn = urllib3.connection.HTTPConnection._new_conn
+        shut, expired = tools.shut, threading.Event()
+
+        def shut_and_note(sockets):
+            shut(sockets)
+            expired.set()
 
         def slow_connect(connection):
-            time.sleep(1.5)
+            # The timer sets the deadline as expired before it shuts the connections down, so
+            # the connection made after the shutdown finds the deadline expired.
+            expired.wait(60)
             return new_conn(connection)
 
         started = time.monotonic()
         with mock.patch.object(tools, "PAGE_DEADLINE", 1), \
                 mock.patch.object(tools, "public_address", lambda host: ""), \
+                mock.patch.object(tools, "shut", shut_and_note), \
                 mock.patch.object(urllib3.connection.HTTPConnection, "_new_conn", slow_connect):
             text, read_at, note = tools.read_web(url)
-        self.assertLess(time.monotonic() - started, 3)
+        self.assertTrue(expired.is_set())
+        self.assertLess(time.monotonic() - started, 10)
         self.assertEqual((text, read_at, note),
                          (None, url, "reading the page took more than 1 seconds"))
 

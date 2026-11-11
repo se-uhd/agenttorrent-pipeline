@@ -254,6 +254,19 @@ def _always_true(request, number):
     return _answer(_repository_of(request))
 
 
+async def _arrive_together(model, request) -> None:
+    """Wait until the first request of each repository in `model.names` has arrived. The last
+    request to arrive wakes the waiting ones at once (`model.together`), so the first requests
+    reach the service in the same turn of the event loop, however long a worker took to reach
+    the model and whenever a timer would fire. Each case names as many repositories as it has
+    workers, so every named repository reaches the model and the wait ends."""
+    model.arrived.add(_repository_of(request))
+    if model.arrived >= model.names:
+        model.together.set()
+    else:
+        await model.together.wait()
+
+
 class _Together(_Model):
     """The fake model. The first request of each repository in `names` waits until each of these
     repositories has sent its first request, as requests in flight together reach a service that
@@ -262,15 +275,54 @@ class _Together(_Model):
 
     def __init__(self, script, names):
         super().__init__(script)
-        self.names, self.arrived = set(names), set()
+        self.names, self.arrived, self.together = set(names), set(), asyncio.Event()
 
     async def create(self, **request):
-        self.arrived.add(_repository_of(request))
-        for _ in range(5000):
-            if self.arrived >= self.names:
-                break
-            await asyncio.sleep(0.001)
+        await _arrive_together(self, request)
         return await super().create(**request)
+
+
+class TestTheFirstRequestsArriveTogether(unittest.TestCase):
+    """The fake models hold the first request of each named repository until every named
+    repository has sent its first request (`_arrive_together`). A case that needs failures of two
+    repositories in flight together then holds on any runner."""
+
+    @staticmethod
+    def request(name: str) -> dict:
+        return {"input": f"<repository>{name}</repository>"}
+
+    def test_the_first_request_waits_however_many_timers_fire(self):
+        """The loop's clock advances at each reading, so that every timer fires at once, as on a
+        runner that takes long to start a worker. The first request still waits for the other."""
+        model = SimpleNamespace(names={"o/a", "o/b"}, arrived=set(), together=asyncio.Event())
+
+        async def scenario() -> bool:
+            first = asyncio.create_task(_arrive_together(model, self.request("o/a")))
+            for _ in range(10_000):
+                await asyncio.sleep(0.001)
+            waited = not first.done()
+            await _arrive_together(model, self.request("o/b"))
+            await first
+            return waited
+
+        readings = iter(range(10**9))
+        with mock.patch.object(asyncio.base_events.BaseEventLoop, "time",
+                               lambda loop: next(readings) / 1000):
+            self.assertTrue(asyncio.run(scenario()))
+
+    def test_the_last_arrival_lets_the_waiting_request_go_within_one_turn(self):
+        """Once the last named repository arrives, the waiting request goes on in the next turn of
+        the event loop, before the request that arrived last fails and is sent again."""
+        model = SimpleNamespace(names={"o/a", "o/b"}, arrived=set(), together=asyncio.Event())
+
+        async def scenario() -> bool:
+            first = asyncio.create_task(_arrive_together(model, self.request("o/a")))
+            await asyncio.sleep(0)
+            await _arrive_together(model, self.request("o/b"))
+            await asyncio.sleep(0)
+            return first.done()
+
+        self.assertTrue(asyncio.run(scenario()))
 
 
 @contextlib.contextmanager
@@ -1376,23 +1428,23 @@ class TestClassifier(_RunCase):
         tool choice. Sending the conversation again from its first request would pay again for
         the first request to the model and for the summary of the page."""
         names = ("o/a", "o/b", "o/c")
-        held, waiting = asyncio.Event(), set()
+        held, waiting, both = asyncio.Event(), set(), asyncio.Event()
 
         class Model(_Model):
             async def create(self, **request):
                 name = _repository_of(request)
                 if name == "o/c" and not held.is_set():
                     # o/c fails only once both second requests are waiting, and the pause then
-                    # holds both.
-                    for _ in range(5000):
-                        if len(waiting) == 2:
-                            break
-                        await asyncio.sleep(0.001)
+                    # holds both. The three workers carry the three repositories, so both
+                    # second requests arrive, however long a worker takes.
+                    await both.wait()
                     self.requests.append(request)
                     held.set()
                     raise _server_error()
                 if request.get("previous_response_id") and name not in waiting:
                     waiting.add(name)
+                    if len(waiting) == 2:
+                        both.set()
                     self.requests.append(request)
                     await held.wait()
                     raise _server_error()
@@ -2792,15 +2844,12 @@ class _Providers(_Model):
         super().__init__(script)
         self.clock, self.down, self.failing, self.seconds = clock, down, failing, seconds
         self.error, self.names, self.arrived, self.served = error, set(names), set(), []
+        self.together = asyncio.Event()
 
     async def create(self, **request):
         # The first requests of the repositories in `names` arrive together, as requests in
         # flight reach a provider that fails.
-        self.arrived.add(_repository_of(request))
-        for _ in range(5000):
-            if self.arrived >= self.names:
-                break
-            await asyncio.sleep(0.001)
+        await _arrive_together(self, request)
         provider = request["extra_body"]["provider"]["order"][0]
         self.served.append(provider)
         self.clock.now += self.seconds
@@ -4391,7 +4440,10 @@ class _Batches(_Model):
     """The fake model. While `holding()` is true, each request waits until `size` requests have
     reached it in its batch, so that the responses of a batch return after each of its requests
     was sent, as the requests of every worker are in flight together against a service that
-    takes time for each. The wait ends sooner once `holding()` is false."""
+    takes time for each. The wait ends sooner once `holding()` is false. The wait checks both in
+    every turn of the event loop and has no bound in time, so a worker that is slow to reach the
+    model on a busy runner cannot release a batch early. A batch that cannot fill ends once
+    `holding()` turns false, which a case ensures."""
 
     def __init__(self, script, size, holding):
         super().__init__(script)
@@ -4401,10 +4453,8 @@ class _Batches(_Model):
         if self.holding():
             self.arrived += 1
             filled = -(-self.arrived // self.size) * self.size
-            for _ in range(5000):
-                if self.arrived >= filled or not self.holding():
-                    break
-                await asyncio.sleep(0.001)
+            while self.arrived < filled and self.holding():
+                await asyncio.sleep(0)
         return await super().create(**request)
 
 

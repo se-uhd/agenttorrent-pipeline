@@ -26,7 +26,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
-from datetime import date
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 from agentcontext import REPO_ROOT, STAGE_DIR, caches, commits as _detect, paths as COLLECT, heuristics
@@ -53,6 +53,7 @@ from agentcontext.steps import (
     detection as DETECT,
     collected_file_cleanup as VALIDATE,
 )
+from tests._fixtures import latest_date
 
 DATA_DIR = STAGE_DIR
 
@@ -370,14 +371,35 @@ class TestProvenance(unittest.TestCase):
                             f"{row['path']} has no documentation URL")
 
     def test_every_row_records_a_verification_date(self):
+        # The date is written in the time zone of whoever read the page, and the test runs in
+        # any time zone, so a date is in the future only once it is later than the date in
+        # every time zone.
+        latest = latest_date()
         for row in ROWS:
             try:
                 verified = date.fromisoformat(row["doc_verified"])
             except ValueError:
                 self.fail(f"{row['path']}: doc_verified is not an ISO date: "
                           f"{row['doc_verified']!r}")
-            self.assertLessEqual(verified, date.today(),
+            self.assertLessEqual(verified, latest,
                                  f"{row['path']}: doc_verified is in the future")
+
+
+class TestTheLatestDate(unittest.TestCase):
+    """The date that a `doc_verified` may not pass (`tests._fixtures.latest_date`)."""
+
+    def test_no_time_zone_has_a_later_date(self):
+        """At each hour of a day, the latest date is the date of the time zone that is furthest
+        ahead, so that a page read in Heidelberg just after midnight, when UTC still has the day
+        before, has a date that is not in the future on a runner in UTC."""
+        zones = [timezone(timedelta(hours=offset)) for offset in range(-12, 15)]
+        for hour in range(24):
+            now = datetime(2026, 11, 11, hour, 30, tzinfo=timezone.utc)
+            with self.subTest(hour=hour):
+                self.assertEqual(latest_date(now),
+                                 max(now.astimezone(zone).date() for zone in zones))
+        in_heidelberg = datetime(2026, 11, 12, 0, 30, tzinfo=timezone(timedelta(hours=1)))
+        self.assertEqual(latest_date(in_heidelberg.astimezone(timezone.utc)), date(2026, 11, 12))
 
 
 class TestProvenanceRecordsThisHeuristics(unittest.TestCase):

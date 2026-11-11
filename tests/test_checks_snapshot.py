@@ -37,6 +37,8 @@ def _reap(proc):
     if proc.poll() is None:
         proc.kill()
     proc.wait()
+    if proc.stdin is not None:
+        proc.stdin.close()
 
 
 PROV = {"in.csv": {"rows": 1}}
@@ -403,18 +405,24 @@ class TestTheKernelOwnsTheLock(unittest.TestCase):
 
         The process writes a marker file once it holds the lock, so that killing it kills a
         holder rather than a process that is still starting. A sleep could only estimate its
-        progress.
+        progress. The process holds the lock until it is killed or its standard input reaches
+        its end, as it does when the test process exits. A holder that let go after a fixed time
+        would release the lock to writers that are still starting.
+
+        The deadline only catches a holder that hangs. The holder starts an interpreter that
+        imports the package, and a loaded runner can take a long time for that. A holder that
+        exits fails the test at once.
         """
         held = self.tmp / "held"
-        code = (f"import sys, time\n"
+        code = (f"import sys\n"
                 f"from agentcontext.checks import snapshot\n"
                 f"from pathlib import Path\n"
                 f"with snapshot._locked(Path({str(self.path)!r})):\n"
                 f"    Path({str(held)!r}).write_text('x')\n"
-                f"    time.sleep(120)\n")
-        proc = subprocess.Popen([sys.executable, "-c", code])
+                f"    sys.stdin.read()\n")
+        proc = subprocess.Popen([sys.executable, "-c", code], stdin=subprocess.PIPE)
         self.addCleanup(_reap, proc)
-        deadline = time.monotonic() + 30
+        deadline = time.monotonic() + 600
         while not held.exists():
             self.assertLess(time.monotonic(), deadline, "the holder never took the lock")
             self.assertIsNone(proc.poll(), "the holder exited instead of holding")
@@ -450,16 +458,19 @@ class TestTheKernelOwnsTheLock(unittest.TestCase):
         """The snapshot validation runs a thread pool. An flock belongs to the open file
         description, and the two threads therefore exclude each other. A lock of fcntl.lockf
         belongs to the process and would let both threads in."""
-        entered, blocked = threading.Event(), []
+        entered, release, blocked = threading.Event(), threading.Event(), []
 
+        # The holding thread holds the lock until the attempt below has ended, however long the
+        # attempt takes. The bound of the wait only catches a test that never releases it.
         def hold():
             with _mod._locked(self.path):
                 entered.set()
-                time.sleep(0.5)
+                release.wait(600)
 
         holder = threading.Thread(target=hold)
         holder.start()
         self.addCleanup(holder.join)
+        self.addCleanup(release.set)
         self.assertTrue(entered.wait(30), "the holding thread never took the lock")
         original = _mod.LOCK_TIMEOUT_SECONDS
         _mod.LOCK_TIMEOUT_SECONDS = 0.1
@@ -483,7 +494,9 @@ class TestTheKernelOwnsTheLock(unittest.TestCase):
         holder = self._holder()
         opened, entered = self.tmp / "opened", self.tmp / "entered"
         # The waiter writes the inode that it opened from inside _open_lock_file. The test
-        # therefore knows when the waiter is queued and does not estimate it from a sleep.
+        # therefore knows when the waiter is queued and does not estimate it from a sleep. The
+        # waiter writes the inode under another name and renames the file into place, so that
+        # the file appears with the inode in it.
         code = (f"import sys, time\n"
                 f"from agentcontext.checks import snapshot\n"
                 f"from pathlib import Path\n"
@@ -492,7 +505,8 @@ class TestTheKernelOwnsTheLock(unittest.TestCase):
                 f"_original = snapshot._open_lock_file\n"
                 f"def _traced(lock):\n"
                 f"    fd = _original(lock)\n"
-                f"    Path({str(opened)!r}).write_text(str(os.fstat(fd).st_ino))\n"
+                f"    Path({str(opened)!r} + '.partial').write_text(str(os.fstat(fd).st_ino))\n"
+                f"    os.replace({str(opened)!r} + '.partial', {str(opened)!r})\n"
                 f"    return fd\n"
                 f"snapshot._open_lock_file = _traced\n"
                 f"with snapshot._locked(Path({str(self.path)!r})):\n"
@@ -500,9 +514,11 @@ class TestTheKernelOwnsTheLock(unittest.TestCase):
                 f"    time.sleep(60)\n")
         waiter = subprocess.Popen([sys.executable, "-c", code])
         self.addCleanup(_reap, waiter)
-        deadline = time.monotonic() + 30
+        # As in `_holder`, the deadline only catches a waiter that hangs while it starts.
+        deadline = time.monotonic() + 600
         while not opened.exists():
             self.assertLess(time.monotonic(), deadline, "the waiter never opened the lock file")
+            self.assertIsNone(waiter.poll(), "the waiter exited before it opened the lock file")
             time.sleep(0.005)
         first = int(opened.read_text())
         self.assertEqual(first, self.lock.stat().st_ino)
@@ -515,6 +531,7 @@ class TestTheKernelOwnsTheLock(unittest.TestCase):
         holder.wait()
         while not entered.exists():
             self.assertLess(time.monotonic(), deadline, "the waiter never entered")
+            self.assertIsNone(waiter.poll(), "the waiter exited before it entered")
             time.sleep(0.005)
 
         # The waiter holds a lock. Only the re-check determines whether that lock is on the file
@@ -563,9 +580,12 @@ class TestTheKernelOwnsTheLock(unittest.TestCase):
         holder = self._holder()
         ready = self.tmp / "ready"
         ready.mkdir()
+        # Each writer waits for the lock under a timeout that only catches a hang, because the
+        # first writer to queue waits until the last one has started and the holder is killed.
         code = (f"import sys\n"
                 f"from pathlib import Path\n"
                 f"from agentcontext.checks import snapshot\n"
+                f"snapshot.LOCK_TIMEOUT_SECONDS = 600.0\n"
                 f"Path({str(ready)!r}, sys.argv[1]).write_text('x')\n"
                 f"snapshot.update(sys.argv[1], {{'v': sys.argv[1]}}, {str(self.path)!r},\n"
                 f"                 derived_from={{'in.csv': {{'rows': 1}}}})\n")
@@ -573,8 +593,9 @@ class TestTheKernelOwnsTheLock(unittest.TestCase):
         for proc in procs:
             self.addCleanup(_reap, proc)
         # The deadline only catches a writer that hangs before the lock, and it leaves a loaded
-        # runner time to start eight interpreters that import the package. A writer that exits
-        # before it reaches the lock fails the test at once.
+        # runner time to start eight interpreters that import the package. The holder holds the
+        # lock until the test kills it, and a writer that exits before it reaches the lock fails
+        # the test at once.
         deadline = time.monotonic() + 600
         while len(list(ready.iterdir())) < 8:
             exited = [proc.args[-1] for proc in procs if proc.poll() is not None]
@@ -616,12 +637,29 @@ class TestTheValidationResume(unittest.TestCase):
                 w.writerow({**{k: "" for k in _mod.FIELDNAMES}, "repo_name": name,
                             "outcome": "OK"})
 
+    def _written(self) -> list:
+        """The repositories that the result file names."""
+        with self.output.open(newline="", encoding="utf-8") as f:
+            return [r["repo_name"] for r in csv.DictReader(f)]
+
     def _run(self, answers_before_the_stop: int):
-        """Run `main_validate` with a stub that raises after N results."""
+        """Run `main_validate` with a stub that raises after N results.
+
+        The stub raises only once the run has written every result that the stub returned
+        before. `as_completed` yields the futures that are already finished in no fixed order,
+        and a stop that finished together with an earlier result could otherwise come first and
+        end the run before that result is written. The bound of the wait only catches a run that
+        never writes the result.
+        """
         answered = []
 
         def stub(client, row, shas):
             if len(answered) >= answers_before_the_stop:
+                deadline = time.monotonic() + 600
+                while not set(answered) <= set(self._written()):
+                    if time.monotonic() >= deadline:
+                        raise AssertionError(f"the run never wrote the results {answered}")
+                    time.sleep(0.005)
                 raise KeyboardInterrupt
             answered.append(row["repo_name"])
             return {**{k: "" for k in _mod.FIELDNAMES}, "repo_name": row["repo_name"],
@@ -640,8 +678,7 @@ class TestTheValidationResume(unittest.TestCase):
             except (KeyboardInterrupt, BaseException) as stop:
                 if not isinstance(stop, KeyboardInterrupt):
                     raise
-        with self.output.open(newline="", encoding="utf-8") as f:
-            return [r["repo_name"] for r in csv.DictReader(f)]
+        return self._written()
 
     def test_an_interrupted_run_keeps_the_results_that_it_obtained(self):
         names = self._run(answers_before_the_stop=1)

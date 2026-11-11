@@ -16,12 +16,14 @@ Run with:  python3 -m unittest tests.test_commits -v
 import csv
 import json
 import os
+import queue
 import re
 import shutil
 import string
 import subprocess
 import sys
 import tempfile
+import threading
 import unittest
 from pathlib import Path
 
@@ -1953,6 +1955,65 @@ class TestTheRequiredLiterals(unittest.TestCase):
                 self.assertTrue(_heuristics.required_literals(row["pattern"]))
 
 
+def _lines_until_silent(process: subprocess.Popen, first_seconds: float,
+                        next_seconds: float) -> tuple:
+    """The lines that `process` writes to its stdout, without their line ends, and whether it
+    closed its stdout. A process that writes no line within `first_seconds` of the call, or
+    within `next_seconds` of its previous line, is killed, and its lines are returned with False.
+    The bound is on each wait for a line and not on the whole run, so that a process that keeps
+    writing lines is read to its end however slow the machine."""
+    lines: queue.Queue = queue.Queue()
+
+    def read() -> None:
+        for line in process.stdout:
+            lines.put(line.rstrip("\n"))
+        lines.put(None)
+
+    reader = threading.Thread(target=read, daemon=True)
+    reader.start()
+    written, bound = [], first_seconds
+    while True:
+        try:
+            line = lines.get(timeout=bound)
+        except queue.Empty:
+            process.kill()
+            # The kill ends the output, and the reader ends with it before the caller closes
+            # the pipe.
+            reader.join()
+            return written, False
+        if line is None:
+            return written, True
+        written.append(line)
+        bound = next_seconds
+
+
+class TestTheReadingOfAProgramThatCanFallSilent(unittest.TestCase):
+    """`_lines_until_silent`, which bounds each wait for a line of a program."""
+
+    def lines(self, program: str, first_seconds: float, next_seconds: float) -> tuple:
+        """The result of `_lines_until_silent` on `program`, and the exit code of the program."""
+        with subprocess.Popen([sys.executable, "-c", program], stdout=subprocess.PIPE,
+                              text=True) as process:
+            result = _lines_until_silent(process, first_seconds, next_seconds)
+        return result, process.returncode
+
+    def test_a_program_that_falls_silent_is_killed_and_its_lines_are_kept(self):
+        """The program never writes again, so the short bound expires on any machine, and the
+        long bound only waits for the start of the interpreter."""
+        for program, first_seconds, next_seconds, written in (
+                ("import time\ntime.sleep(3600)\n", 0.5, 60, []),
+                ("import time\nprint('first', flush=True)\ntime.sleep(3600)\n", 60, 0.5,
+                 ["first"])):
+            with self.subTest(written=written):
+                (lines, ended), code = self.lines(program, first_seconds, next_seconds)
+                self.assertEqual((lines, ended), (written, False))
+                self.assertLess(code, 0, "the program was not killed")
+
+    def test_a_program_that_ends_is_read_to_its_end(self):
+        (lines, ended), code = self.lines("print('first')\nprint('last')\n", 60, 60)
+        self.assertEqual((lines, ended, code), (["first", "last"], True, 0))
+
+
 class TestEveryPatternMatchesInLinearTime(unittest.TestCase):
     """No pattern of either heuristics file may take time exponential in a message's length,
     or a Dependabot list on one line, such as the subject of apache/tomee 0ffc2bcc93bb, would
@@ -1973,7 +2034,10 @@ class TestEveryPatternMatchesInLinearTime(unittest.TestCase):
     def test_every_pattern_reads_long_messages_in_seconds(self):
         # In a process of its own, because a stalled match blocks the interpreter, and only a
         # process can be stopped. The program prints each heuristic before matching it, so that
-        # the last line names the heuristic that stalled.
+        # the last line names the heuristic that stalled. The bounds are on the wait for each
+        # line, which a pattern that takes exponential time exceeds, and not on the whole run,
+        # which takes longer with more patterns and on a slower machine. The first line follows
+        # the start of the interpreter and the compilation of every pattern.
         program = ("import json, sys\n"
                    "from agentcontext import commits\n"
                    "texts = json.load(sys.stdin)\n"
@@ -1984,16 +2048,21 @@ class TestEveryPatternMatchesInLinearTime(unittest.TestCase):
                    "        compiled.search(text)\n"
                    "        compiled.search(text + '\\n' + text)\n"
                    "print('all', flush=True)\n")
-        try:
-            proc = subprocess.run([sys.executable, "-c", program], input=json.dumps(self.TEXTS),
-                                  capture_output=True, text=True, cwd=str(REPO_ROOT), timeout=60)
-        except subprocess.TimeoutExpired as stopped:
-            output = stopped.stdout or ""
-            output = output.decode() if isinstance(output, bytes) else output
-            self.fail(f"{output.split()[-1] if output.split() else 'the first heuristic'} "
-                      f"did not finish within 60 seconds")
-        self.assertEqual(proc.returncode, 0, proc.stderr)
-        self.assertEqual(proc.stdout.split()[-1], "all")
+        with tempfile.TemporaryFile("w+", encoding="utf-8") as texts, \
+                tempfile.TemporaryFile("w+", encoding="utf-8") as errors:
+            json.dump(self.TEXTS, texts)
+            texts.seek(0)
+            with subprocess.Popen([sys.executable, "-c", program], stdin=texts,
+                                  stdout=subprocess.PIPE, stderr=errors, text=True,
+                                  cwd=str(REPO_ROOT)) as proc:
+                printed, ended = _lines_until_silent(proc, first_seconds=300, next_seconds=60)
+            if not ended and not printed:
+                self.fail("the program named no heuristic within 300 seconds")
+            if not ended:
+                self.fail(f"{printed[-1]} did not finish within 60 seconds")
+            errors.seek(0)
+            self.assertEqual(proc.returncode, 0, errors.read())
+        self.assertEqual(printed[-1], "all")
 
 
 class TestTheAttributionsTheSeptemberCollectionLeftUnexplained(unittest.TestCase):

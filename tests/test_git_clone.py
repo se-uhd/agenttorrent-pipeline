@@ -12,13 +12,13 @@ import os
 import shutil
 import subprocess
 import tempfile
-import time
 import unittest
 from pathlib import Path
 from unittest import mock
 
 from tests._fixtures import (_add_commit, _add_noise, _init_git_repo, ext_redirect,
-                             git_version_fails, github_on_loopback, sampled_every, upload_pack)
+                             git_version_fails, github_on_loopback, sampled_every,
+                             time_bound_at_stall, upload_pack)
 from agentcontext.git import clone as _clone
 from agentcontext.git.clone import (
     build_clone_url,
@@ -714,13 +714,16 @@ class TestCloneWithRetry(unittest.TestCase):
         """A clone killed at its time bound has part of the pack on disk, and git refuses to clone
         into a directory that is not empty. The time bound in the test above kills git before it
         writes anything, and that test cannot detect a retry that clones over what the
-        first attempt left. Here the first attempt's upload-pack stops once the pack has started."""
+        first attempt left. Here the first attempt's upload-pack stops once the pack has started,
+        and the time bound ends the attempt at that stall. The retry runs under a time bound that
+        only catches a hang."""
         _add_noise(self.remote, "big.bin", 2_000_000)
         _add_commit(self.remote, "CLAUDE.md", "# Claude")
         script = upload_pack(self.tmp, stall="first")
         self._through(script)
-        status = clone_with_retry("owner/repo", self.dest, self.log, max_tries=2,
-                                  base_delay=0, clone_timeout=2)
+        with time_bound_at_stall(script):
+            status = clone_with_retry("owner/repo", self.dest, self.log, max_tries=2,
+                                      base_delay=0, clone_timeout=600)
         self.assertTrue(script.with_suffix(".stalled").exists(), "the first attempt did not stall")
         self.assertEqual(status, "ok", self.log.read_text())
         self.assertIn("TIMEOUT", self.log.read_text())
@@ -778,15 +781,17 @@ class TestCloneWithRetry(unittest.TestCase):
 
     def test_no_sleep_after_the_last_attempt(self):
         """The backoff is between attempts, and none follows the last one, because no attempt
-        comes after it."""
+        comes after it. The test records the waits rather than timing the call, because the
+        duration of the attempts depends on the machine."""
         self._redirect("http://127.0.0.1:9/nonexistent/repo/path")
-        started = time.monotonic()
-        status = clone_with_retry("owner/repo", self.dest, self.log,
-                                  max_tries=1, base_delay=2.0)
+        with mock.patch.object(_clone.time, "sleep") as slept:
+            status = clone_with_retry("owner/repo", self.dest, self.log,
+                                      max_tries=2, base_delay=2.0)
         self.assertEqual(status, "clone_failed")
-        self.assertLess(time.monotonic() - started, 1.5)
+        self.assertEqual(slept.call_args_list, [mock.call(2.0)],
+                         "one wait between the two attempts and none after the last")
         self.assertTrue(self.log.read_text().rstrip().endswith("FAILED"))
-        self.assertNotIn("sleep", self.log.read_text())
+        self.assertEqual(self.log.read_text().count("sleep"), 1)
 
     def test_the_log_contains_this_collection_alone(self):
         """One collection's attempts. Appended across runs, the log would grow with every
@@ -817,6 +822,44 @@ class TestCloneWithRetry(unittest.TestCase):
         self.assertEqual(status, "ok")
         self.assertNotIn("error:", self.log.read_text())
         self.assertEqual((self.dest / "x.bin").read_text(), pointer)
+
+
+class TestTheTimeBoundAtTheStall(unittest.TestCase):
+    """The fixture that ends the attempt of a clone or a fetch at the stall of the stand-in for
+    upload-pack. `bounds.run_bounded` runs real commands under it, and the stand-in's marker is
+    a file that the command or the test writes."""
+
+    def setUp(self):
+        self.tmp = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, self.tmp, True)
+        self.script = self.tmp / "stand_in.py"
+        self.marker = self.script.with_suffix(".stalled")
+
+    def _run(self, shell: str) -> subprocess.CompletedProcess:
+        """Run `shell` under the fixture and a timeout that no command here reaches."""
+        with time_bound_at_stall(self.script):
+            return _clone.bounds.run_bounded(["sh", "-c", shell], cwd=str(self.tmp),
+                                             env=os.environ.copy(), timeout=3600)
+
+    def test_a_command_that_is_running_at_the_stall_is_ended_as_its_time_bound_would(self):
+        """Left alone, the command would exit 0 long before its timeout."""
+        pid_file = self.tmp / "pid"
+        with self.assertRaises(subprocess.TimeoutExpired):
+            self._run(f"echo $$ > {pid_file}; touch {self.marker}; sleep 600; echo late")
+        with self.assertRaises(ProcessLookupError, msg="the command outlived its time bound"):
+            os.kill(int(pid_file.read_text()), 0)
+
+    def test_a_command_that_exits_before_the_stall_returns_its_result(self):
+        result = self._run("echo done")
+        self.assertEqual((result.returncode, result.stdout), (0, "done\n"))
+        self.assertFalse(self.marker.exists())
+
+    def test_a_command_that_starts_after_the_stall_runs_to_its_end(self):
+        """The command still runs when the fixture first looks for the marker, and only the
+        timeout that the command was given could end it."""
+        self.marker.touch()
+        result = self._run("sleep 0.3; echo done")
+        self.assertEqual((result.returncode, result.stdout), (0, "done\n"))
 
 
 class TestSubmoduleRows(unittest.TestCase):

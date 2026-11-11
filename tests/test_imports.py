@@ -756,18 +756,37 @@ class TestLargeTexts(unittest.TestCase):
         self.assertEqual([each.too_long for each in found].count(True), 1)
         self.assertLessEqual(len(found), 10)
 
-    def test_a_long_changelog_is_parsed_in_seconds(self):
-        """Two megabytes of lines, each with an `@`, a code span and a path of its own. The parser
-        must not search Gemini CLI's code regions for each `@` or count the line of each import from
-        the start of the text."""
-        text = "".join(f"- @user fixed `x` in v1.2 by @other/a{n}.md, see @docs/c.md\n"
-                       for n in range(40000))
+    @staticmethod
+    def growth(parse, small: str, large: str) -> tuple:
+        """How many times as long `parse` takes on `large` as on `small`, and what it finds in
+        `large`. The ratio is that of the shortest of three timings of each text on the processor
+        time of this thread, which leaves out the time in which other processes run. The timings
+        of the two texts alternate, so that a change in the speed of the machine affects both
+        texts alike."""
+        timings, found = {"small": [], "large": []}, None
+        for _ in range(3):
+            for name, text in (("small", small), ("large", large)):
+                started = time.thread_time()
+                found = parse(text)
+                timings[name].append(time.thread_time() - started)
+        return min(timings["large"]) / min(timings["small"]), found
+
+    def test_a_long_changelog_is_parsed_in_time_linear_in_its_length(self):
+        """Lines that each have an `@`, a code span and a path of their own. The parser must not
+        search Gemini CLI's code regions for each `@` or count the line of each import from the
+        start of the text, which would make four times the lines take about sixteen times as
+        long. The test bounds the ratio of the two times rather than a time, so that it holds on a
+        machine of any speed."""
+        def changelog(lines: int) -> str:
+            return "".join(f"- @user fixed `x` in v1.2 by @other/a{n}.md, see @docs/c.md\n"
+                           for n in range(lines))
+
+        small, large = changelog(10000), changelog(40000)
         for parse in (imports.gemini_at, imports.claude_at, imports.copilot_at,
                       imports.markdown_link):
             with self.subTest(parser=parse.__name__):
-                started = time.monotonic()
-                found = parse(text)
-                self.assertLess(time.monotonic() - started, 4)
+                ratio, found = self.growth(parse, small, large)
+                self.assertLess(ratio, 8)
                 if found:
                     self.assertEqual(found[-1].line, 40000)
 

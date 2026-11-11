@@ -29,6 +29,7 @@ import sys
 import tempfile
 import time
 import unittest
+from unittest import mock
 from pathlib import Path
 from agentcontext import REPO_ROOT, SEVEN_ZIP
 from agentcontext.prune import is_prunable
@@ -257,7 +258,7 @@ class TestAFailedPack(_StepCase):
         self.archive.parent.mkdir(parents=True, exist_ok=True)
         self.archive.write_bytes(b"the previous run's archive")
         before = self.archive.read_bytes()
-        with _swap(_mod.subprocess, "run", self._failing_7z):
+        with _swap(_mod, "_run_7zz", self._failing_7z):
             code = self._run()
         self.assertEqual(code, 1)
         self.assertEqual(self.archive.read_bytes(), before,
@@ -433,7 +434,7 @@ class TestThePackRoot(_StepCase):
             Path(argv[-2]).write_bytes(b"7z-stub")
             return subprocess.CompletedProcess(argv, 0, "", "")
 
-        with _swap(_mod.subprocess, "run", stub):
+        with _swap(_mod, "_run_7zz", stub):
             return self._run()
 
     def test_the_validated_tree_is_not_renamed_aside(self):
@@ -483,7 +484,7 @@ class TestThePackRoot(_StepCase):
             Path(argv[-2]).write_bytes(b"7z-stub")
             return subprocess.CompletedProcess(argv, 0, "", "")
 
-        with _swap(_mod.subprocess, "run", stub):
+        with _swap(_mod, "_run_7zz", stub):
             self.assertEqual(self._run(), 0)
         self.assertEqual(sorted(packed), [".", "o§a", "o§a/.claude"])
         for rel, (mtime_ns, mode) in packed.items():
@@ -516,9 +517,10 @@ class TestThePackRoot(_StepCase):
             Path(argv[-2]).write_bytes(b"7z-stub")
             return subprocess.CompletedProcess(argv, 0, "", "")
 
-        with _swap(_mod.subprocess, "run", stub), \
+        with _swap(_mod, "_run_7zz", stub), \
                 contextlib.redirect_stderr(io.StringIO()):
-            _mod._prune_and_pack(str(self.validated), str(staging), str(archive), repo_dirs)
+            _mod._prune_and_pack(str(self.validated), str(staging), str(archive), repo_dirs,
+                                 _mod._StopOnSignal())
         self.assertEqual(sorted(p.name for p in staging.iterdir()), [_mod.ARCHIVE_ROOT])
         self.assertTrue((staging / _mod.ARCHIVE_ROOT / "o§a" / "CLAUDE.md").is_file())
         self.assertEqual(sorted(p.name for p in staging.parent.iterdir()),
@@ -554,7 +556,8 @@ class TestAStopDuringThePack(_StepCase):
     the runner starts it, and the stand-in for 7zz waits until the signal arrives.
     """
 
-    def _start(self, waits: bool) -> subprocess.Popen:
+    def _stand_in_dir(self) -> Path:
+        """Write the stand-in for 7zz and return the directory to put first on PATH."""
         bin_dir = self.tmp / "bin"
         bin_dir.mkdir(exist_ok=True)
         stand_in = bin_dir / SEVEN_ZIP
@@ -562,6 +565,10 @@ class TestAStopDuringThePack(_StepCase):
         stand_in.chmod(0o755)
         self.pid_file = self.tmp / "7z.pid"
         self.pid_file.unlink(missing_ok=True)
+        return bin_dir
+
+    def _start(self, waits: bool) -> subprocess.Popen:
+        bin_dir = self._stand_in_dir()
         package_root = str(Path(_mod.__file__).resolve().parents[2])
         env = {**os.environ, "PATH": f"{bin_dir}{os.pathsep}{os.environ.get('PATH', '')}",
                "PYTHONPATH": os.pathsep.join(filter(None, [package_root,
@@ -600,6 +607,39 @@ class TestAStopDuringThePack(_StepCase):
         self.assertEqual(resumed.wait(timeout=60), 0)
         self.assertEqual(self.archive.read_bytes(), b"half an archive")
         self.assertFalse(self.staging.exists())
+
+    def test_a_stop_while_7zz_starts_kills_7zz(self):
+        """A stop that arrives after the process of 7zz exists and before `subprocess.Popen`
+        returns it ends 7zz too. The step runs in this process, and a Popen that sends this
+        process the SIGTERM at that point stands in for a signal with that timing."""
+        self._file("o§a", "CLAUDE.md")
+        before = sorted(p.name for p in self.tmp.iterdir())
+        bin_dir = self._stand_in_dir()
+        started = []
+
+        class StoppedWhileStarting(subprocess.Popen):
+            def __init__(self, *args, **kwargs):
+                super().__init__(*args, **kwargs)
+                started.append(self)
+                # The default action of SIGTERM would end the test run instead of the step.
+                if signal.getsignal(signal.SIGTERM) in (signal.SIG_DFL, signal.SIG_IGN, None):
+                    raise AssertionError("7zz started without the step's handler of a stop")
+                os.kill(os.getpid(), signal.SIGTERM)
+
+        env = {"PATH": f"{bin_dir}{os.pathsep}{os.environ.get('PATH', '')}",
+               "STAND_IN_PID": str(self.pid_file), "STAND_IN_WAITS": "1"}
+        with mock.patch.dict(os.environ, env), \
+                _swap(subprocess, "Popen", StoppedWhileStarting):
+            code = self._run()
+        self.assertEqual(len(started), 1)
+        packer = started[0]
+        self.addCleanup(lambda: packer.poll() is None and (packer.kill(), packer.wait()))
+        self.assertEqual(code, 128 + signal.SIGTERM)
+        self.assertIsNotNone(packer.poll(), "7zz went on packing after the step had stopped")
+        self.assertFalse(self.staging.exists(), "the staging copy was left behind")
+        self.assertEqual(sorted(p.name for p in self.tmp.iterdir()
+                                if p.name not in ("bin", "7z.pid")), before)
+        self.assertFalse(Path(str(self.archive) + ".building").exists())
 
     def test_a_kill_leaves_the_copy_only_where_the_next_run_removes_it(self):
         """A SIGKILL runs no handler, and the copy stays. It stays inside the staging
@@ -663,7 +703,7 @@ class TestTheValidatedListIsNotPublished(_StepCase):
                 p.name for p in (Path(cwd) / _mod.ARCHIVE_ROOT).iterdir())
             return _fake_7z(argv, cwd=cwd, **kwargs)
 
-        with _swap(_mod.subprocess, "run", probe):
+        with _swap(_mod, "_run_7zz", probe):
             self.assertEqual(self._run(), 0)
         self.assertEqual(captured["entries"], ["o§a"])
 
@@ -675,7 +715,7 @@ class TestTheValidatedListIsNotPublished(_StepCase):
         argv = ["agentcontext/steps/collected_files_archive.py", "--validated-dir", str(self.validated),
                 "--staging-dir", str(self.staging), "--archive", str(self.archive)]
         with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(out), \
-                _swap(sys, "argv", argv), _swap(_mod.subprocess, "run", _fake_7z):
+                _swap(sys, "argv", argv), _swap(_mod, "_run_7zz", _fake_7z):
             main()
         self.assertNotIn("Not publishing", out.getvalue())
         self.assertNotIn("repos.csv", out.getvalue())
@@ -695,7 +735,7 @@ class TestTheValidatedListIsNotPublished(_StepCase):
         argv = ["agentcontext/steps/collected_files_archive.py", "--validated-dir", str(self.validated),
                 "--staging-dir", str(self.staging), "--archive", str(self.archive)]
         with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(out), \
-                _swap(sys, "argv", argv), _swap(_mod.subprocess, "run", _fake_7z):
+                _swap(sys, "argv", argv), _swap(_mod, "_run_7zz", _fake_7z):
             main()
         self.assertIn("input.csv", out.getvalue())
         self.assertIn("not repository directories", out.getvalue())
@@ -751,7 +791,7 @@ class TestStrays(_StepCase):
         argv = ["--validated-dir", str(self.validated), "--staging-dir", str(self.staging),
                 "--archive", str(self.archive), *extra]
         with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(out), \
-                _swap(_mod.subprocess, "run", _fake_7z):
+                _swap(_mod, "_run_7zz", _fake_7z):
             self.assertIsNone(main(argv))
         return out.getvalue()
 
@@ -950,7 +990,7 @@ class TestFileManagerEntriesAreNotPublished(_StepCase):
         `@eaDir` of the validated tree."""
         self._file("o§a", "CLAUDE.md")
         self._file("o§a", ".claude/skills/pdf/SKILL.md")
-        self.assertEqual(self._with_dsm((_mod.subprocess, "run"),
+        self.assertEqual(self._with_dsm((_mod, "_run_7zz"),
                                         ["o§a", "o§a/.claude/skills/pdf"]), 0)
         listed = _list_archive(self.archive)
         self.assertEqual([path for path in listed if "@eaDir" in path], [])

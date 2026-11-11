@@ -8,9 +8,11 @@ Run with:  python3 -m unittest tests.test_guards -v
 
 import contextlib
 import io
+import os
 import subprocess
 import time
 import unittest
+import unittest.mock
 from pathlib import Path
 
 from agentcontext import guards as _guards
@@ -134,25 +136,43 @@ class TestTheProcessCounts(unittest.TestCase):
         self.assertGreater(processes, 0)
         self.assertLess(zombies, processes, "this process is not a zombie")
 
-    @unittest.skipUnless(Path("/proc").is_dir(), "the counts are read from /proc")
-    def test_a_zombie_is_counted_until_it_is_reaped(self):
-        """A child that has exited and is not yet reaped is a zombie, and the count includes
-        it."""
+    def _zombie(self) -> subprocess.Popen:
+        """A child that has exited and that this process has not reaped."""
         child = subprocess.Popen(["true"])
         self.addCleanup(child.wait)
         status = Path(f"/proc/{child.pid}/status")
-        deadline = time.monotonic() + 5
-        # The state is read from /proc rather than through `child.poll()`, which would reap the
-        # child.
+        # The bound only catches a child that never exits. The state is read from /proc rather
+        # than through `child.poll()`, which would reap the child.
+        deadline = time.monotonic() + 60
         while "\tZ" not in next((line for line in status.read_text().splitlines()
                                  if line.startswith("State:")), ""):
             self.assertLess(time.monotonic(), deadline, "the child did not exit")
             time.sleep(0.01)
-        _, with_it = _guards.process_counts()
-        child.wait()
-        _, without_it = _guards.process_counts()
-        self.assertGreaterEqual(with_it, 1)
-        self.assertGreater(with_it, without_it)
+        return child
+
+    @unittest.skipUnless(Path("/proc").is_dir(), "the counts are read from /proc")
+    def test_a_zombie_is_counted_until_it_is_reaped(self):
+        """A child that has exited and is not yet reaped is a zombie, and the count includes
+        it.
+
+        The listing of /proc is limited to this process and its child. Any other process on the
+        machine can leave a zombie between the two counts, as the second child does here, and a
+        count over the whole machine would then not drop when the child is reaped."""
+        child = self._zombie()
+        listdir = os.listdir
+        counted = {str(os.getpid()), str(child.pid)}
+
+        def these_processes(path):
+            names = listdir(path)
+            return [name for name in names if name in counted] if path == "/proc" else names
+
+        with unittest.mock.patch.object(_guards.os, "listdir", these_processes):
+            with_it = _guards.process_counts()
+            self._zombie()
+            child.wait()
+            without_it = _guards.process_counts()
+        self.assertEqual(with_it, (2, 1))
+        self.assertEqual(without_it, (1, 0))
 
     def test_the_progress_line_contains_the_counts_where_proc_exists(self):
         with contextlib.redirect_stderr(io.StringIO()):

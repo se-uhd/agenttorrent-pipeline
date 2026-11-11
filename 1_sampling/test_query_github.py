@@ -31,6 +31,7 @@ import math
 import shutil
 import sys
 import tempfile
+import threading
 import unittest
 from pathlib import Path
 from unittest import mock
@@ -324,22 +325,48 @@ class TestARun(_QueryCase):
     def test_a_failure_while_the_responses_are_recorded_sends_no_further_batch(self):
         """A full disk or Ctrl+C while the run records a batch ends the pass. The queued batches
         are not sent, because nobody would record their responses. The next Start sends them
-        again."""
+        again.
+
+        The fake GitHub responds to the first two batches at once and holds each later batch
+        until the pass has ended, and the second record fails once each of the two workers holds
+        a batch. The held batches are the requests in flight when the pass ends, so the run sends
+        four batches whatever the order in which the threads run. Without the hold, the workers
+        could send every queued batch while the run records the first."""
         names = [f"o{i}/r{i}" for i in range(100)]
         self.retrieval(names)
         github = FakeGitHub(names)
-        record, calls = _mod.Query.record, []
+        send, sent, lock = github.post, [], threading.Lock()
+        holding, failed, gave_up = threading.Event(), threading.Event(), threading.Event()
+        record, calls, queries, held = _mod.Query.record, [], [], []
+
+        def post(url, json=None, headers=None, timeout=None):
+            with lock:
+                sent.append(url)
+                number = len(sent)
+            if number > 2:
+                if number == 4:
+                    holding.set()
+                # The bound only turns a pass that never ends into a failure.
+                if not gave_up.is_set() and not (failed.wait(600) and queries[0].ended.wait(600)):
+                    gave_up.set()
+            return send(url, json=json, headers=headers, timeout=timeout)
 
         def failing(query, rows):
             calls.append(rows)
-            if len(calls) == 2:
-                raise OSError(28, "No space left on device")
-            return record(query, rows)
+            if len(calls) < 2:
+                return record(query, rows)
+            queries.append(query)
+            held.append(holding.wait(600))
+            failed.set()
+            raise OSError(28, "No space left on device")
 
+        github.post = post
         with mock.patch.object(_mod.Query, "record", failing), \
                 self.assertRaises(OSError):
             self.run_with(github, batch_size=1, workers=2)
-        self.assertLessEqual(len(github.batches), 6)
+        self.assertEqual(held, [True], "the workers did not both hold a batch")
+        self.assertFalse(gave_up.is_set(), "the failed record did not end the pass")
+        self.assertEqual(len(github.batches), 4)
 
     def test_a_batch_that_waits_for_a_paused_account_sends_nothing_once_the_pass_ended(self):
         """A full disk while another worker's response is recorded ends the pass while this

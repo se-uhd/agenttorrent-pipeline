@@ -24,6 +24,7 @@ from pathlib import Path
 
 from agentcontext import REPO_ROOT, heuristics, paths, planning, planning_schema, reuse
 from agentcontext.tools import docs
+from tests._fixtures import latest_date
 
 ROWS = planning.load_planning_document_patterns()
 NEGATIVES = planning_schema.load_not_planning_documents()
@@ -152,11 +153,14 @@ class TestEveryRowIsGrounded(unittest.TestCase):
         self.assertGreater(len(NEGATIVES), 10)
 
     def test_every_row_cites_a_dated_page_and_quotes_it(self):
+        # The date is written in the time zone of whoever read the page, and the test runs in
+        # any time zone (`tests._fixtures.latest_date`).
+        latest = latest_date()
         for row in ROWS:
             with self.subTest(pattern=row["pattern"], mode=row["match_mode"]):
                 self.assertTrue(row["doc_url"].startswith("https://"))
                 verified = date.fromisoformat(row["doc_verified"])
-                self.assertLessEqual(verified, date.today())
+                self.assertLessEqual(verified, latest)
                 self.assertTrue(docs.quotations(row["notes"]), "the note quotes no source")
 
     def test_a_cited_github_page_is_a_blob_url(self):
