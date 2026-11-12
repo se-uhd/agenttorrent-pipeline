@@ -2,7 +2,7 @@
 
 ## Context
 
-`run_pipeline.py` runs the five stages of the pipeline as one list of steps and keeps one pipeline execution state that records which steps completed. The stages are sampling, classification, collection, publication and analysis. Each stage's runner is a list of `Step` objects that `agentcontext/runner.py` runs. Every stage therefore has that module's lock, its state file with a fingerprint per completed step, its pre-checks, its dependency-based invalidation and its stop handling, and these parts depend on nothing outside the module. Before 2.0.0, a person ran the classification scripts and the analysis scripts by hand, in the order that their READMEs gave. This script composes the four lists and adds the edges between them. The collection's list also contains the steps of the publication.
+`run_pipeline.py` runs the five stages of the pipeline as one list of steps and keeps one pipeline execution state that records which steps completed. The stages are sampling, classification, collection, publication and analysis. Each stage's runner is a list of `Step` objects that `agentcontext/runner.py` runs. Every stage therefore has that module's lock, its state file with a fingerprint per completed step, its pre-checks, its dependency-based invalidation and its stop handling, and these parts depend on nothing outside the module. Before AgentTorrent 1.0.0, a person ran the classification scripts and the analysis scripts by hand, in the order that their READMEs gave. This script composes the four lists and adds the edges between them. The collection's list also contains the steps of the publication.
 
 ## Key decisions
 

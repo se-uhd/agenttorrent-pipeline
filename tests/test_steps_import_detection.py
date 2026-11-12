@@ -29,7 +29,7 @@ from tests._fixtures import _init_git_repo
 REPOS_COLUMNS = [*heuristics.META_COLUMNS, "claude", "github_link", "dataset_version"]
 REPO = {"repo_name": "owner/repo", "scanned_at": "2026-10-01T00:00:00Z", "branch": "main",
         "head_sha": "a" * 40, "head_commit_date": "2026-09-30T00:00:00Z", "claude": "TRUE",
-        "github_link": "https://github.com/owner/repo", "dataset_version": "2.0.0"}
+        "github_link": "https://github.com/owner/repo", "dataset_version": "1.0.0"}
 
 
 @contextlib.contextmanager
@@ -155,7 +155,7 @@ class TestTheRows(unittest.TestCase):
                          ("docs/style.md", "imported", "CLAUDE.md", "2", "3"))
         self.assertEqual(deep["github_link"],
                          "https://github.com/owner/repo/blob/main/docs/style.md#L2")
-        self.assertEqual({row["dataset_version"] for row in rows}, {"2.0.0"})
+        self.assertEqual({row["dataset_version"] for row in rows}, {"1.0.0"})
         self.assertEqual({row["head_sha"] for row in rows}, {"a" * 40})
 
     def test_each_tool_has_its_own_chain(self):

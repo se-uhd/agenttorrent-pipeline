@@ -12,7 +12,7 @@ name: container image
 on:
   workflow_dispatch:
   push:
-    tags: ["v*"]
+    tags: ["agenttorrent_*"]
 
 permissions:
   contents: read

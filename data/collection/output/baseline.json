@@ -20,7 +20,7 @@
     "file": "commands.csv",
     "repositories": 281,
     "rows": 1436,
-    "sha256": "e9764cf8c442749e0b7c685139924111929da1223ab54ab37b1c2977b33962c1",
+    "sha256": "0ae0376b2171e198ba8212a37c401e15f77561543135ae5eab00babdad54ede4",
     "true_counts": {}
   },
   "consistency_report": {
@@ -61,7 +61,7 @@
     "file": "context-files.csv",
     "repositories": 10026,
     "rows": 25353,
-    "sha256": "ccf49a12e8f94f1d3731c09dc410f18e248cfe8bb2eb0f06d5b35a04c9d5b980",
+    "sha256": "ae4dcdb354f91441e77aebe8c06c8ddd08341c9d665fc0f268885089a0d185f1",
     "true_counts": {
       "first_commit_ai_created": 6030,
       "is_reference": 4692
@@ -99,7 +99,7 @@
     "file": "hooks.csv",
     "repositories": 498,
     "rows": 619,
-    "sha256": "58a34050fda9ba69385263f57af83d4473230915abd9ac2219dfa446bc053a82",
+    "sha256": "0a079bb5239b3474b2b87b7af3ec5ac79b114c40fdee48f5f6e98137893e6f10",
     "true_counts": {}
   },
   "imports": {
@@ -128,7 +128,7 @@
     "file": "imports.csv",
     "repositories": 2170,
     "rows": 10662,
-    "sha256": "05ef9a153915f0d44a5f49d191e7c5f0edcd542f80b74108f043627af3e4b56e",
+    "sha256": "081937bfd8ba90c969e24eb516b781f2a15c1783c8f25d8e6acd47dbfdd0e26c",
     "true_counts": {}
   },
   "lsp": {
@@ -150,7 +150,7 @@
     "file": "lsp.csv",
     "repositories": 16,
     "rows": 17,
-    "sha256": "403460a73c186ca764d2daefc82dc4d8567fcb5a2da01ed3df9886716a51c62b",
+    "sha256": "e18b898fb337d0458d4ee3472eda40828c946793c33b82bc4f417daafda3f4c0",
     "true_counts": {}
   },
   "mcp": {
@@ -172,7 +172,7 @@
     "file": "mcp.csv",
     "repositories": 584,
     "rows": 885,
-    "sha256": "742a6e4d3101d849373e9d413dae59022c565209f6431a98be81a0fc4b967e0f",
+    "sha256": "ef1da6af806ea05e475f57e678763b33c42e4c660fc10bb92d958c6f58ba6a06",
     "true_counts": {}
   },
   "other": {
@@ -195,7 +195,7 @@
     "file": "other.csv",
     "repositories": 1386,
     "rows": 12911,
-    "sha256": "149559d2846fc84b11218d38d911fecdc4693b5dd0099a162ca77551e65f3d2a",
+    "sha256": "ab47dd2499223a18fde2ae592985f10b770a8c7a14e89018dd2f1f732528a009",
     "true_counts": {}
   },
   "planning_documents": {
@@ -220,7 +220,7 @@
     "file": "planning-documents.csv",
     "repositories": 417,
     "rows": 27593,
-    "sha256": "6cf91633d78c6f3d4f5b4f66a8802becefd09d6bdcd14c672c9a1bb7c0a32112",
+    "sha256": "1e621875ce7f4c93ff37a6b0c2fcf2fb5a9e493c23731a59c5fb41cf9912d9b9",
     "true_counts": {}
   },
   "plugins": {
@@ -242,7 +242,7 @@
     "file": "plugins.csv",
     "repositories": 291,
     "rows": 751,
-    "sha256": "0e98054ff9bcf54c06e90a8696ae96dddc7e63f0eabd7aa783017391b2e21e19",
+    "sha256": "0d7c7c3ab0efd016c8cb6985f64c5d1865e1b2880fbef7ed47fa28972a9952f6",
     "true_counts": {}
   },
   "repos": {
@@ -281,7 +281,7 @@
     "file": "repos.csv",
     "repositories": 10944,
     "rows": 10944,
-    "sha256": "933ad8154682639517140447de437e934747a4534b554b9d7f095b97f42aaf5e",
+    "sha256": "a0b125f9368224e49bbdd08847a2f8983b25e7eb600da62330aec90f9a9fc20a",
     "true_counts": {
       "agents.md": 6910,
       "claude": 6315,
@@ -329,7 +329,7 @@
     "file": "rules.csv",
     "repositories": 680,
     "rows": 3483,
-    "sha256": "58ca8bef6515fe0b4e612e121e635e468cd1fc6f821e5596af2bced2d6847c86",
+    "sha256": "9703e6b3eb14175e73fe61981e9ddf4a5556c9dfbb3753f632f8a471605ec509",
     "true_counts": {}
   },
   "settings": {
@@ -351,7 +351,7 @@
     "file": "settings.csv",
     "repositories": 2246,
     "rows": 3532,
-    "sha256": "d6c6551bd99d17d49ec82e43e97b6c088ee598a0e7cbec5155dbbd15281d28aa",
+    "sha256": "0f3c5eed94fb4504c4bf01411f4da15863eda0162cf684d2b56c8bd9387265a6",
     "true_counts": {}
   },
   "skills": {
@@ -378,7 +378,7 @@
     "file": "skills.csv",
     "repositories": 3218,
     "rows": 23585,
-    "sha256": "c98edc94d9d588d28746b30437913c3dcad28185f502204a0ed3e8182d25b25d",
+    "sha256": "f72ae0b987b85411b2c46c53b5ccfd596ed54dbcec516ba9f89f7801fb0a34f1",
     "true_counts": {
       "assets": 485,
       "references": 3341,
@@ -407,7 +407,7 @@
     "file": "subagents.csv",
     "repositories": 651,
     "rows": 2713,
-    "sha256": "85f8f83536e92bd9cb76a95e962a6ee127da1c70938bece5a6ff796f171c4b72",
+    "sha256": "b7ac326cffd024dbd8f4100d4174e43f5eac16d55217049d516588a66f6f7125",
     "true_counts": {}
   }
 }

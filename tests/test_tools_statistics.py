@@ -620,7 +620,7 @@ class TestDocuments(_Checkout):
         of the version in preparation. A released section stays as it was published."""
         self.document("CHANGELOG.md", "# Changelog\n\n## [Unreleased]\n\n"
                                       f"- {marked('repos', '9')} repositories of 36,710.\n\n"
-                                      "## [1.0.0] - 2026-05-08\n\n"
+                                      "## [AgentTorrent 1.0.0] - 2026-11-12\n\n"
                                       f"- {marked('repos', '9')} repositories of 36,710.\n")
         code, err = self.run_tool("--check")
         self.assertEqual(code, 2)
@@ -630,7 +630,7 @@ class TestDocuments(_Checkout):
         self.assertEqual(self.text("CHANGELOG.md"),
                          "# Changelog\n\n## [Unreleased]\n\n"
                          f"- {marked('repos', '4')} repositories of 36,710.\n\n"
-                         "## [1.0.0] - 2026-05-08\n\n"
+                         "## [AgentTorrent 1.0.0] - 2026-11-12\n\n"
                          f"- {marked('repos', '9')} repositories of 36,710.\n")
 
     def test_code_urls_tags_and_the_history_are_not_stated_statistics(self):

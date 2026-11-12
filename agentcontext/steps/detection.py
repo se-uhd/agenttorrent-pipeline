@@ -47,7 +47,7 @@ except ImportError:  # pragma: no cover - exercised by the pre-checks, not here
 # The dataset release that these heuristics produce. The version changes with a detection
 # heuristic, not with a tag, because a CSV read on its own then records which heuristics built
 # it. CHANGELOG.md lists what each version changed.
-DATASET_VERSION = "2.0.0"
+DATASET_VERSION = "1.0.0"
 
 VALIDATED_DIR = Path("data/validated")
 VALIDATED_CSV = Path("data/validated/repos.csv")

@@ -63,9 +63,9 @@ matching trailer heuristic, in the order of the heuristics file. When no trailer
 matches, it is the pattern of the tool's first matching full-body heuristic. The check joins the
 subject and the body with the same blank-line boundary as the cloning step, and the match
 therefore also covers disclosures at the start of the body. The CSV stores each message verbatim.
-A row of the 1.0.0 release has no `matched_heuristics` column and stores a newline as `\n`, and
-the check decodes it before classification. The check raises the CSV field size limit to accept
-large messages.
+A row of the commit CSV of AgentConfigs 1.0.0 has no `matched_heuristics` column and stores a
+newline as `\n`, and the check decodes it before classification. The check raises the CSV field
+size limit to accept large messages.
 
 The check reads the CSV a row at a time. It classifies a row, writes it to the output and compares
 it with the heuristics before it reads the next row. Of the results, it keeps only the summary

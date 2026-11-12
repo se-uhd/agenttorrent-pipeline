@@ -2,13 +2,15 @@
 
 This glossary defines the terms that this repository uses in its prose, its code and its commit
 messages, and in the dataset that it builds, *AgentTorrent: A Dataset of Context and Harness
-Engineering Artifacts on GitHub*. The dataset was called AgentConfigs until 2026-10-19,
-*AgentContext: A Dataset of Agentic AI Coding Tool Configurations* until 2026-11-04,
-*AgentContext: A Dataset of Version-Controlled Coding Agent Context* until 2026-11-06 and
-*AgentContext: A Dataset of Context and Harness Engineering Artifacts on GitHub* until
-2026-11-07. Write the name in camel case. Until the release after 2.0.0, the names of the
-package, its command line, the container image, the NAS bundle, the handovers and the volumes
-keep `agentcontext`, the lowercase form of the earlier name.
+Engineering Artifacts on GitHub*. AgentTorrent succeeds AgentConfigs, the dataset that the
+AIware 2026 dataset paper *A Dataset of Agentic AI Coding Tool Configurations* describes, and
+each of the two datasets has versions of its own. Before its first release, AgentTorrent was
+called *AgentContext: A Dataset of Agentic AI Coding Tool Configurations* from 2026-10-19 to
+2026-11-04, *AgentContext: A Dataset of Version-Controlled Coding Agent Context* until 2026-11-06
+and *AgentContext: A Dataset of Context and Harness Engineering Artifacts on GitHub* until
+2026-11-07. Write the name in camel case. Until the release after AgentTorrent 1.0.0, the names
+of the package, its command line, the container image, the NAS bundle, the handovers and the
+volumes keep `agentcontext`, the lowercase form of the name AgentContext.
 
 ## Populations
 

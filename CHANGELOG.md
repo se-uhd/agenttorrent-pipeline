@@ -1,9 +1,12 @@
 # Changelog
 
-This file documents every notable change to this pipeline and to the dataset that it produces.
+This file documents every notable change to this pipeline and to the two datasets that it has
+built. AgentTorrent, *AgentTorrent: A Dataset of Context and Harness Engineering Artifacts on
+GitHub*, succeeds AgentConfigs, *A Dataset of Agentic AI Coding Tool Configurations*, which an
+earlier version of the pipeline built and which the AIware 2026 dataset paper describes.
 
-The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the pipeline uses
-[Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the versions
+follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Versioning policy
 
@@ -17,33 +20,27 @@ snapshot both produce different CSVs.
 | **Minor** | Something is added without changing what is already there: a new column, a new mechanism that was previously unclassified, a new script. |
 | **Patch** | Fixes with no effect on any published value: documentation, tests, refactoring, tooling. |
 
-Every released version is git-tagged (`v1.0.0` and so on) and recorded in the `dataset_version`
-column of `repos.csv` and of every mechanism CSV. The commit CSVs have no such column, and the
-release's `provenance.json` records the version.
+Each dataset has versions of its own, and a version heading names its dataset, because both
+datasets have a version 1.0.0. Every release of AgentTorrent is git-tagged
+`agenttorrent_<version>`, such as `agenttorrent_1.0.0`, and recorded in the `dataset_version`
+column of `repos.csv`, of every mechanism CSV, of `planning-documents.csv` and of `imports.csv`.
+The commit CSVs have no such column, and the release's `provenance.json` records the version.
+AgentConfigs 1.0.0 is tagged `agentconfigs_1.0.0` in the private repository
+`se-uhd/agenttorrent-pipeline-internal`, and its CSVs have no `dataset_version` column.
 
 ## [Unreleased]
 
-### Changed
+## [AgentTorrent 1.0.0] - 2026-11-12
 
-- The website's timeline of the earliest configuration artifacts and the analysis figure
-  `cumulative_repo_adoption.pdf` show the kinds of the timeline of release 1.0.0 and the planning
-  documents, and leave out the files created before 2023.
-- The website's commit browser lists the commits of other tools, with an Other tools option in
-  its tool filter, and its release notes are shorter.
-- The website's usage example studies a research question with each CSV that it reads, including
-  `imports.csv`, `planning-documents.csv` and the `attributions` of `commits.csv`.
-- The README of the release describes `deletions.csv`, `provenance.json`, `target_location` and
-  the date columns as the files hold them, covers the planning documents and the imported files
-  in its disclaimer, and groups the repositories that the classifying model labeled at its higher
-  temperature by the reason.
+The first release of AgentTorrent, published on Zenodo with its pipeline. The entries of this
+section list the changes since AgentConfigs 1.0.0. The detection heuristics of this release
+reclassify the configuration artifacts that AgentConfigs 1.0.0 published: Claude Code command
+files are skills, files that were `other` are rules, hooks or plugins, and a repository is
+configured when a mechanism is detected in it. The generated tables and figures describe the new
+collection under the heuristics recorded with it.
 
-## [2.0.0] - 2026-11-09
-
-A major release and the first release of the dataset under the name AgentTorrent, published on
-Zenodo with its pipeline. Its detection heuristics reclassify the configuration artifacts that
-1.0.0 published: Claude Code command files are skills, files that were `other` are rules, hooks or
-plugins, and a repository is configured when a mechanism is detected in it. The generated tables
-and figures describe the new collection under the heuristics recorded with it.
+Before its publication, this release was tagged `v2.0.0`, and until it was renumbered, the
+website offered its files with the `dataset_version` 2.0.0.
 
 ### Added
 
@@ -80,7 +77,7 @@ and figures describe the new collection under the heuristics recorded with it.
     `account`, `reviewer`, `standard` or `convention`
   - the <!--s:parameters.agentcontext.heuristics.AI_COLUMNS:words-->four<!--/s--> AI columns of
     `context_files.csv`, which were a separate file
-- Configuration that the tools introduced after 1.0.0:
+- Configuration that the tools introduced after AgentConfigs 1.0.0:
   - Context files: `CLAUDE.local.md`, `.cursor/BUGBOT.md`, `.gemini/styleguide.md` and a root
     `REVIEW.md`, which names no tool.
   - Settings: `.claude/launch.json`, `.cursor/environment.json`, Bugbot's configuration,
@@ -161,20 +158,31 @@ and figures describe the new collection under the heuristics recorded with it.
 
 ### Changed
 
-- 2.0.0 contains a new collection of a run of all five stages over its own GHS retrieval:
+- AgentTorrent 1.0.0 contains a new collection of a run of all five stages over its own GHS
+  retrieval:
   <!--s:collection.configured_repositories-->10,944<!--/s--> configured repositories of
   <!--s:collection.sample_repositories-->40,901<!--/s--> in the sample,
   <!--s:collection.commits.tools-->1,281,628<!--/s--> commits that credit the six tools and
   <!--s:collection.commits.other_tools-->72,527<!--/s--> that credit others.
 - The dataset is named *AgentTorrent: A Dataset of Context and Harness Engineering Artifacts on
-  GitHub*, formerly AgentContext and AgentConfigs, and published schemas keep their names.
+  GitHub*, succeeds the AgentConfigs dataset and numbers its versions from 1.0.0. It was called
+  AgentContext before its release, and published schemas keep their names.
 - The website moved to https://se-uhd.de/agenttorrent/, which the old addresses forward to, and has
   tabs for plugins, LSP servers, planning documents and imports.
+- The website's timeline of the earliest configuration artifacts and the analysis figure
+  `cumulative_repo_adoption.pdf` show the kinds of the timeline of AgentConfigs 1.0.0 and the
+  planning documents, and leave out the files created before 2023.
+- The website's commit browser lists the commits of other tools, with an Other tools option in
+  its tool filter.
+- The website's usage example studies a research question with each CSV that it reads, including
+  `imports.csv`, `planning-documents.csv` and the `attributions` of `commits.csv`.
 - Every CSV of the dataset ends its lines with LF instead of CRLF.
 - `python -m agentcontext release` builds the release into `release/`, and `_dataset/` is gone.
 - The release README computes every count from the files beside it, defines every column and every
   criterion that a justification names, and names the GHS retrieval, the scan dates, the model
-  that labeled the sample and each evidence limit, such as clone failures.
+  that labeled the sample and each evidence limit, such as clone failures. Its disclaimer covers
+  the planning documents and the imported files, and it groups the repositories that the
+  classifying model labeled at its higher temperature by the reason.
 - The release stops before it writes anything when its inputs disagree.
 - The sampling window moves with every collection, ends on the oldest crawl date of GHS's
   languages and takes repositories created at least
@@ -428,8 +436,8 @@ and figures describe the new collection under the heuristics recorded with it.
 
 ### Fixed
 
-- Configuration artifacts that 1.0.0 lost, such as `.claude/rules`, `AGENTS.override.md` and
-  `CLAUDE.local.md` inside `.github`, and rows that it counted twice.
+- Configuration artifacts that AgentConfigs 1.0.0 lost, such as `.claude/rules`,
+  `AGENTS.override.md` and `CLAUDE.local.md` inside `.github`, and rows that it counted twice.
 - `.github` subdirectories, the `copilot-instructions` flag and hook and MCP files are matched
   regardless of case and recorded as spelled on disk.
 - Symbolic links:
@@ -526,10 +534,10 @@ and figures describe the new collection under the heuristics recorded with it.
   - The rq3 timeline and creation order figures date a category by the commit that created its
     earliest file.
 
-## [1.0.0] - 2026-05-08
+## [AgentConfigs 1.0.0] - 2026-05-08
 
-The release that the AIware 2026 dataset paper describes, tagged `camera-ready` and published to
-Zenodo. At this release, `_dataset/` held the archive contents and the record's own README.
+The release of AgentConfigs that the AIware 2026 dataset paper describes, tagged
+`agentconfigs_1.0.0` and published to Zenodo. At this release, `_dataset/` held the archive contents and the record's own README.
 
 ### Added
 
@@ -557,5 +565,5 @@ settings (`.claude/settings.json`, `.claude/settings.local.json`, `.gemini/setti
 `.cursor/rules`); and MCP (`.mcp.json`, `.cursor/mcp.json`, `.gemini/settings.json`,
 `.codex/config.toml`).
 
-[2.0.0]: https://doi.org/10.5281/zenodo.24058027
-[1.0.0]: https://doi.org/10.5281/zenodo.19375880
+[AgentTorrent 1.0.0]: https://doi.org/10.5281/zenodo.24058027
+[AgentConfigs 1.0.0]: https://doi.org/10.5281/zenodo.20090356

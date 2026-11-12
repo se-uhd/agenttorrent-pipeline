@@ -85,7 +85,7 @@ def write_repos_csv(path: Path, rows: list) -> None:
             full.update({"scanned_at": "2026-09-12T00:00:00Z", "branch": "main",
                          "head_sha": "0" * 40, "head_commit_date": "2026-09-01T00:00:00Z",
                          "github_link": "https://github.com/" + row["repo_name"],
-                         "dataset_version": "2.0.0"})
+                         "dataset_version": "1.0.0"})
             full.update(row)
             writer.writerow(full)
 

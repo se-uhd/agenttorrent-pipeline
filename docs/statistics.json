@@ -581,7 +581,7 @@
   },
   "collection.identity_pilot.commits": {
     "value": 30,
-    "meaning": "identity-only commits of the release 1.0.0 commit CSV in the seeded sample of identity-pilot.csv",
+    "meaning": "identity-only commits of the AgentConfigs 1.0.0 commit CSV in the seeded sample of identity-pilot.csv",
     "from": {
       "rows": "data/collection/output/identity-pilot.csv"
     }
@@ -5403,7 +5403,7 @@
   },
   "release_2026_03.configured_repositories": {
     "value": 4738,
-    "meaning": "configured repositories of release 1.0.0: rows of 3_data-collection/output/repos.csv at the tag v1.0.0",
+    "meaning": "configured repositories of AgentConfigs 1.0.0: rows of 3_data-collection/output/repos.csv at the tag agentconfigs_1.0.0",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.configured_repositories/value"
@@ -5411,7 +5411,7 @@
   },
   "release_2026_03.repos_columns": {
     "value": 24,
-    "meaning": "columns of 3_data-collection/output/repos.csv at the tag v1.0.0",
+    "meaning": "columns of 3_data-collection/output/repos.csv at the tag agentconfigs_1.0.0",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.repos_columns/value"
@@ -5419,7 +5419,7 @@
   },
   "release_2026_03.commits": {
     "value": 148519,
-    "meaning": "commits of the commit CSV of release 1.0.0: rows of 3_data-collection/output/all_ai_commits.csv.7z at the tag v1.0.0",
+    "meaning": "commits of the commit CSV of AgentConfigs 1.0.0: rows of 3_data-collection/output/all_ai_commits.csv.7z at the tag agentconfigs_1.0.0",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.commits/value"
@@ -5427,7 +5427,7 @@
   },
   "release_2026_03.commits.repositories": {
     "value": 3392,
-    "meaning": "repositories with a commit in the commit CSV of release 1.0.0: distinct repo_name of 3_data-collection/output/all_ai_commits.csv.7z at the tag v1.0.0, each of which has a row in 3_data-collection/output/repos.csv",
+    "meaning": "repositories with a commit in the commit CSV of AgentConfigs 1.0.0: distinct repo_name of 3_data-collection/output/all_ai_commits.csv.7z at the tag agentconfigs_1.0.0, each of which has a row in 3_data-collection/output/repos.csv",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.commits.repositories/value"
@@ -5435,7 +5435,7 @@
   },
   "release_2026_03.commits.configured_share": {
     "value": 71.5913887716336,
-    "meaning": "share of the configured repositories of release 1.0.0 with a commit in its commit CSV",
+    "meaning": "share of the configured repositories of AgentConfigs 1.0.0 with a commit in its commit CSV",
     "decimals": 1,
     "percent": true,
     "from": {
@@ -5447,7 +5447,7 @@
   },
   "release_2026_03.rows.context_files": {
     "value": 9470,
-    "meaning": "rows of 3_data-collection/output/context-files.csv at the tag v1.0.0",
+    "meaning": "rows of 3_data-collection/output/context-files.csv at the tag agentconfigs_1.0.0",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.rows.context_files/value"
@@ -5455,7 +5455,7 @@
   },
   "release_2026_03.rows.skills": {
     "value": 2430,
-    "meaning": "rows of 3_data-collection/output/skills.csv at the tag v1.0.0",
+    "meaning": "rows of 3_data-collection/output/skills.csv at the tag agentconfigs_1.0.0",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.rows.skills/value"
@@ -5463,7 +5463,7 @@
   },
   "release_2026_03.rows.commands": {
     "value": 1098,
-    "meaning": "rows of 3_data-collection/output/commands.csv at the tag v1.0.0",
+    "meaning": "rows of 3_data-collection/output/commands.csv at the tag agentconfigs_1.0.0",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.rows.commands/value"
@@ -5471,7 +5471,7 @@
   },
   "release_2026_03.rows.rules": {
     "value": 997,
-    "meaning": "rows of 3_data-collection/output/rules.csv at the tag v1.0.0",
+    "meaning": "rows of 3_data-collection/output/rules.csv at the tag agentconfigs_1.0.0",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.rows.rules/value"
@@ -5479,7 +5479,7 @@
   },
   "release_2026_03.rows.subagents": {
     "value": 884,
-    "meaning": "rows of 3_data-collection/output/subagents.csv at the tag v1.0.0",
+    "meaning": "rows of 3_data-collection/output/subagents.csv at the tag agentconfigs_1.0.0",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.rows.subagents/value"
@@ -5487,7 +5487,7 @@
   },
   "release_2026_03.rows.settings": {
     "value": 472,
-    "meaning": "rows of 3_data-collection/output/settings.csv at the tag v1.0.0",
+    "meaning": "rows of 3_data-collection/output/settings.csv at the tag agentconfigs_1.0.0",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.rows.settings/value"
@@ -5495,7 +5495,7 @@
   },
   "release_2026_03.rows.mcp": {
     "value": 138,
-    "meaning": "rows of 3_data-collection/output/mcp.csv at the tag v1.0.0",
+    "meaning": "rows of 3_data-collection/output/mcp.csv at the tag agentconfigs_1.0.0",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.rows.mcp/value"
@@ -5503,7 +5503,7 @@
   },
   "release_2026_03.rows.hooks": {
     "value": 102,
-    "meaning": "rows of 3_data-collection/output/hooks.csv at the tag v1.0.0",
+    "meaning": "rows of 3_data-collection/output/hooks.csv at the tag agentconfigs_1.0.0",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.rows.hooks/value"
@@ -5511,7 +5511,7 @@
   },
   "release_2026_03.rows.mechanisms": {
     "value": 15591,
-    "meaning": "rows of the mechanism CSVs of release 1.0.0",
+    "meaning": "rows of the mechanism CSVs of AgentConfigs 1.0.0",
     "from": {
       "sum": [
         "release_2026_03.rows.context_files",
@@ -5527,7 +5527,7 @@
   },
   "release_2026_03.rows.other": {
     "value": 1969,
-    "meaning": "rows of 3_data-collection/output/other.csv at the tag v1.0.0, the unclassified files",
+    "meaning": "rows of 3_data-collection/output/other.csv at the tag agentconfigs_1.0.0, the unclassified files",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.rows.other/value"
@@ -5535,7 +5535,7 @@
   },
   "release_2026_03.flags.context_file": {
     "value": 4463,
-    "meaning": "configured repositories of release 1.0.0 with context files: rows of 3_data-collection/output/repos.csv at the tag v1.0.0 with context_file TRUE",
+    "meaning": "configured repositories of AgentConfigs 1.0.0 with context files: rows of 3_data-collection/output/repos.csv at the tag agentconfigs_1.0.0 with context_file TRUE",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.flags.context_file/value"
@@ -5543,7 +5543,7 @@
   },
   "release_2026_03.flags.skills": {
     "value": 547,
-    "meaning": "configured repositories of release 1.0.0 with skills: rows of 3_data-collection/output/repos.csv at the tag v1.0.0 with skills TRUE",
+    "meaning": "configured repositories of AgentConfigs 1.0.0 with skills: rows of 3_data-collection/output/repos.csv at the tag agentconfigs_1.0.0 with skills TRUE",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.flags.skills/value"
@@ -5551,7 +5551,7 @@
   },
   "release_2026_03.flags.commands": {
     "value": 284,
-    "meaning": "configured repositories of release 1.0.0 with commands: rows of 3_data-collection/output/repos.csv at the tag v1.0.0 with commands TRUE",
+    "meaning": "configured repositories of AgentConfigs 1.0.0 with commands: rows of 3_data-collection/output/repos.csv at the tag agentconfigs_1.0.0 with commands TRUE",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.flags.commands/value"
@@ -5559,7 +5559,7 @@
   },
   "release_2026_03.flags.rules": {
     "value": 298,
-    "meaning": "configured repositories of release 1.0.0 with rules: rows of 3_data-collection/output/repos.csv at the tag v1.0.0 with rules TRUE",
+    "meaning": "configured repositories of AgentConfigs 1.0.0 with rules: rows of 3_data-collection/output/repos.csv at the tag agentconfigs_1.0.0 with rules TRUE",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.flags.rules/value"
@@ -5567,7 +5567,7 @@
   },
   "release_2026_03.flags.subagents": {
     "value": 273,
-    "meaning": "configured repositories of release 1.0.0 with subagents: rows of 3_data-collection/output/repos.csv at the tag v1.0.0 with subagents TRUE",
+    "meaning": "configured repositories of AgentConfigs 1.0.0 with subagents: rows of 3_data-collection/output/repos.csv at the tag agentconfigs_1.0.0 with subagents TRUE",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.flags.subagents/value"
@@ -5575,7 +5575,7 @@
   },
   "release_2026_03.flags.settings": {
     "value": 447,
-    "meaning": "configured repositories of release 1.0.0 with settings: rows of 3_data-collection/output/repos.csv at the tag v1.0.0 with settings TRUE",
+    "meaning": "configured repositories of AgentConfigs 1.0.0 with settings: rows of 3_data-collection/output/repos.csv at the tag agentconfigs_1.0.0 with settings TRUE",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.flags.settings/value"
@@ -5583,7 +5583,7 @@
   },
   "release_2026_03.flags.mcp": {
     "value": 124,
-    "meaning": "configured repositories of release 1.0.0 with MCP: rows of 3_data-collection/output/repos.csv at the tag v1.0.0 with mcp TRUE",
+    "meaning": "configured repositories of AgentConfigs 1.0.0 with MCP: rows of 3_data-collection/output/repos.csv at the tag agentconfigs_1.0.0 with mcp TRUE",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.flags.mcp/value"
@@ -5591,7 +5591,7 @@
   },
   "release_2026_03.flags.hooks": {
     "value": 101,
-    "meaning": "configured repositories of release 1.0.0 with hooks: rows of 3_data-collection/output/repos.csv at the tag v1.0.0 with hooks TRUE",
+    "meaning": "configured repositories of AgentConfigs 1.0.0 with hooks: rows of 3_data-collection/output/repos.csv at the tag agentconfigs_1.0.0 with hooks TRUE",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.flags.hooks/value"
@@ -5599,7 +5599,7 @@
   },
   "release_2026_03.flags.claude": {
     "value": 2525,
-    "meaning": "configured repositories of release 1.0.0 with the tool flag claude: rows of 3_data-collection/output/repos.csv at the tag v1.0.0 with claude TRUE",
+    "meaning": "configured repositories of AgentConfigs 1.0.0 with the tool flag claude: rows of 3_data-collection/output/repos.csv at the tag agentconfigs_1.0.0 with claude TRUE",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.flags.claude/value"
@@ -5607,7 +5607,7 @@
   },
   "release_2026_03.flags.copilot": {
     "value": 1397,
-    "meaning": "configured repositories of release 1.0.0 with the tool flag copilot: rows of 3_data-collection/output/repos.csv at the tag v1.0.0 with copilot TRUE",
+    "meaning": "configured repositories of AgentConfigs 1.0.0 with the tool flag copilot: rows of 3_data-collection/output/repos.csv at the tag agentconfigs_1.0.0 with copilot TRUE",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.flags.copilot/value"
@@ -5615,7 +5615,7 @@
   },
   "release_2026_03.flags.cursor": {
     "value": 466,
-    "meaning": "configured repositories of release 1.0.0 with the tool flag cursor: rows of 3_data-collection/output/repos.csv at the tag v1.0.0 with cursor TRUE",
+    "meaning": "configured repositories of AgentConfigs 1.0.0 with the tool flag cursor: rows of 3_data-collection/output/repos.csv at the tag agentconfigs_1.0.0 with cursor TRUE",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.flags.cursor/value"
@@ -5623,7 +5623,7 @@
   },
   "release_2026_03.flags.gemini": {
     "value": 183,
-    "meaning": "configured repositories of release 1.0.0 with the tool flag gemini: rows of 3_data-collection/output/repos.csv at the tag v1.0.0 with gemini TRUE",
+    "meaning": "configured repositories of AgentConfigs 1.0.0 with the tool flag gemini: rows of 3_data-collection/output/repos.csv at the tag agentconfigs_1.0.0 with gemini TRUE",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.flags.gemini/value"
@@ -5631,7 +5631,7 @@
   },
   "release_2026_03.flags.codex": {
     "value": 53,
-    "meaning": "configured repositories of release 1.0.0 with the tool flag codex: rows of 3_data-collection/output/repos.csv at the tag v1.0.0 with codex TRUE",
+    "meaning": "configured repositories of AgentConfigs 1.0.0 with the tool flag codex: rows of 3_data-collection/output/repos.csv at the tag agentconfigs_1.0.0 with codex TRUE",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.flags.codex/value"
@@ -5639,7 +5639,7 @@
   },
   "release_2026_03.flags.agents_md_only": {
     "value": 909,
-    "meaning": "configured repositories of release 1.0.0 with the tool flag agents_md_only: rows of 3_data-collection/output/repos.csv at the tag v1.0.0 with agents_md_only TRUE",
+    "meaning": "configured repositories of AgentConfigs 1.0.0 with the tool flag agents_md_only: rows of 3_data-collection/output/repos.csv at the tag agentconfigs_1.0.0 with agents_md_only TRUE",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.flags.agents_md_only/value"
@@ -5647,7 +5647,7 @@
   },
   "release_2026_03.short_files": {
     "value": 451,
-    "meaning": "files of ten lines or fewer that the AIware paper inspected by hand: rows of 4_data-analysis/rq2/checked-short-files/classification.csv at the tag v1.0.0",
+    "meaning": "files of ten lines or fewer that the AIware paper inspected by hand: rows of 4_data-analysis/rq2/checked-short-files/classification.csv at the tag agentconfigs_1.0.0",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.short_files/value"
@@ -5655,7 +5655,7 @@
   },
   "release_2026_03.short_files_substantive": {
     "value": 396,
-    "meaning": "of those, the files that the inspection labeled substantive: rows of 4_data-analysis/rq2/checked-short-files/classification.csv at the tag v1.0.0 with label substantive",
+    "meaning": "of those, the files that the inspection labeled substantive: rows of 4_data-analysis/rq2/checked-short-files/classification.csv at the tag agentconfigs_1.0.0 with label substantive",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.short_files_substantive/value"
@@ -5663,7 +5663,7 @@
   },
   "release_2026_03.short_files_max_lines": {
     "value": 10,
-    "meaning": "most lines of a file that the AIware paper inspected by hand: the largest line_count of 4_data-analysis/rq2/checked-short-files/classification.csv at the tag v1.0.0",
+    "meaning": "most lines of a file that the AIware paper inspected by hand: the largest line_count of 4_data-analysis/rq2/checked-short-files/classification.csv at the tag agentconfigs_1.0.0",
     "from": {
       "json": "docs/history/values-at-commits.json",
       "pointer": "/values/release_2026_03.short_files_max_lines/value"

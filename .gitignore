@@ -190,7 +190,7 @@ _website/_site/
 # the asset host, which _website/upload_assets.sh mirrors there.
 _website/_assets/
 
-# The 1.0.0 publication, superseded by release/. It was tracked, which is how the
+# The publication of AgentConfigs 1.0.0, superseded by release/. It was tracked, which is how the
 # repository came to carry 64 MB of a release that is also on Zenodo, under column names
 # the pipeline stopped writing. Untracked rather than deleted: the copy on disk is the
 # user's to remove.

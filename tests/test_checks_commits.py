@@ -461,7 +461,7 @@ class TestTheVerdict(unittest.TestCase):
         self.assertIn("names the unknown heuristic ids", err)
 
     def test_a_commit_csv_without_the_column_is_held_to_the_message_alone(self):
-        """A CSV of the 1.0.0 release has no matched_heuristics column. An author-only row of
+        """A CSV of AgentConfigs 1.0.0 has no matched_heuristics column. An author-only row of
         such a CSV cannot be checked. A message that matches a tool that the row does not name
         shows that the row was classified under other heuristics."""
         rows = [self._row(self.CLAUDE, "Claude"), self._row("fix: y", "Copilot")]
@@ -699,8 +699,8 @@ class TestTheMessageSurvivesTheCSV(unittest.TestCase):
         self.assertEqual(subject, "chore: escape C:\\name and \\n in the docs")
         self.assertEqual(body, "Co-Authored-By: Claude <noreply@anthropic.com>")
 
-    def test_a_row_of_the_1_0_0_release_has_its_escape_decoded(self):
-        """A CSV of the 1.0.0 release stores a newline as a backslash and n and has no
+    def test_a_row_of_agentconfigs_1_0_0_has_its_escape_decoded(self):
+        """A CSV of AgentConfigs 1.0.0 stores a newline as a backslash and n and has no
         matched_heuristics column. A row of the current CSV keeps a literal backslash and n as
         text."""
         message = "fix\\n\\nMade-with: Cursor"
@@ -908,7 +908,7 @@ class TestTheCheckReadsTheCsvARowAtATime(unittest.TestCase):
                        (other, _mod.default_output_path(str(other)), _mod.OTHER_TOOLS,
                         _ai._OTHER_COMPILED_PATTERNS)])
 
-    def test_the_outputs_of_a_csv_of_the_1_0_0_release(self):
+    def test_the_outputs_of_a_csv_of_agentconfigs_1_0_0(self):
         """A CSV without `matched_heuristics` that stores each newline of a message as a
         backslash and n."""
         rows = [[f"o/r{k}", _sha(k), message.replace("\\", "\\\\").replace("\n", "\\n"),

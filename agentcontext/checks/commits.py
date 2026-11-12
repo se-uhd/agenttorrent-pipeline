@@ -15,7 +15,7 @@ over the columns that the CSV stores, 2 when a row does not, 1 when the CSV cann
 CSV that the cloning step wrote has `matched_heuristics` and `attributions`. The heuristics
 that a row names have to name the tools in `ai_tool`. Its message heuristics have to match the
 stored message now, and its attributions have to be what that match gives. A CSV without
-`matched_heuristics`, from the 1.0.0 release, can only be checked against the message: A
+`matched_heuristics`, from AgentConfigs 1.0.0, can only be checked against the message: A
 message that matches a tool that the row does not name was classified under other heuristics.
 The check writes the classification in both cases.
 
@@ -126,20 +126,20 @@ def split_message(full_message: str, escaped: bool = False) -> Tuple[str, str]:
     """Split a commit message into (subject, body) on the first blank line.
 
     The commit CSV stores the message verbatim, its line breaks in a quoted field. A CSV of
-    the 1.0.0 release contains a newline as the two characters backslash and n. `escaped`
+    AgentConfigs 1.0.0 contains a newline as the two characters backslash and n. `escaped`
     marks such a message, and its escape is decoded first.
     """
     return commits.message_parts(_unescape(full_message) if escaped else full_message)
 
 
 def legacy(row: dict) -> bool:
-    """Whether the row is from a CSV of the 1.0.0 release, which has no `matched_heuristics`
+    """Whether the row is from a CSV of AgentConfigs 1.0.0, which has no `matched_heuristics`
     column and contains a newline in a message as backslash and n."""
     return "matched_heuristics" not in row
 
 
 def _unescape(message: str) -> str:
-    """The escape of a CSV of the 1.0.0 release, reversed: `\\n` is a newline and `\\\\` is
+    """The escape of a CSV of AgentConfigs 1.0.0, reversed: `\\n` is a newline and `\\\\` is
     one backslash.
 
     The function reads left to right rather than in two passes of `str.replace`, so that an

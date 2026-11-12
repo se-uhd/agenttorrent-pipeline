@@ -127,7 +127,7 @@ ARTIFACT_PATH_COLUMNS = {"context_files": "context_file", "settings": "settings"
                          "lsp": "lsp"}
 
 # The address of ASSETS_DIR on the asset host, with a directory per release. The downloads of
-# release 1.0.0 stay at data/ai-config-dataset, where its links point.
+# AgentConfigs 1.0.0 stay at data/ai-config-dataset, where its links point.
 DOWNLOAD_HOST_URL = "https://assets.empirical-software.engineering/data/agenttorrent"
 # The release files that the site offers for download, with a description of each.
 DOWNLOAD_FILES = {

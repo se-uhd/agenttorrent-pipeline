@@ -256,9 +256,12 @@ because a user cannot tell a changed script from a changed snapshot:
 | Minor | Something is added without changing what is already there: a new column, a previously unclassified mechanism, a new script. |
 | Patch | No published value changes: documentation, tests, refactoring, tooling. |
 
-Work accumulates under `## [Unreleased]` until a release is published. Every release is
-git-tagged and recorded in the `dataset_version` column of `repos.csv` and of every mechanism
-CSV. `v1.0.0` is the AIware 2026 dataset paper release.
+Work accumulates under `## [Unreleased]` until a release is published. Every release of
+AgentTorrent is git-tagged `agenttorrent_<version>`, has the heading
+`## [AgentTorrent <version>] - <date>` in `CHANGELOG.md` and is recorded in the `dataset_version`
+column of `repos.csv` and of every mechanism CSV. AgentConfigs, the dataset that the AIware 2026
+dataset paper describes and that AgentTorrent succeeds, has versions of its own: AgentConfigs 1.0.0
+is tagged `agentconfigs_1.0.0`.
 
 ## Documents
 

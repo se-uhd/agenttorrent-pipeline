@@ -136,7 +136,7 @@ class _Root(unittest.TestCase):
                 "target_category": "imported" if status == "found" else "",
                 "target_location": location, "depth": "1" if importer == root else "2",
                 "github_link": f"https://github.com/{repo}/blob/main/{importer}#L1",
-                "dataset_version": "2.0.0"})
+                "dataset_version": "1.0.0"})
         write_csv(self.output / "imports.csv", written, import_detection.COLUMNS)
 
     def planning_rows(self, rows: list) -> None:

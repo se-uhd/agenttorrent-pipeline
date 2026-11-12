@@ -6880,9 +6880,9 @@ class TestTheFileHistoryJoin(_StepCase):
         self.assertNotIn("no file history", self.stderr)
 
     def test_a_reclassified_path_keeps_its_history(self):
-        """The dataset has published `.claude/commands` under skills since 2.0.0. The row that
-        the file history step measured names the old mechanism, and the history is the
-        same."""
+        """AgentTorrent publishes `.claude/commands` under skills, where AgentConfigs 1.0.0
+        published it under commands. The row that the file history step measured names the old
+        mechanism, and the history is the same."""
         self._repo("o/a", {".claude/commands/deploy.md": "# deploy\n"})
         self._git_fact("o/a", ".claude/commands/deploy.md", "commands", commits="11")
         self.assertEqual(self._run(), 0)

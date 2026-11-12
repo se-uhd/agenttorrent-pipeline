@@ -946,7 +946,7 @@ numeric identities that the commit trailers contain: 175728472 is `copilot-pull-
 `github-copilot-cli`, 198982749 `copilot-swe-agent`, 62310815 `github-advanced-security`, 223894421
 `github-code-quality`, 176961590 `gemini-code-assist`, 209825114 `claude` and 206951365 `cursor`.
 
-A reading of every commit of the commit CSV of release 1.0.0 that only an author or committer
+A reading of every commit of the commit CSV of AgentConfigs 1.0.0 that only an author or committer
 identity credited labeled it by the identity that GitHub's API returned for it: `vendor_account`,
 `tool_identity`, `human`, `other_automation`, `undecidable` or `unreachable`. A `tool_identity` is
 an identity that runs the tool without being the vendor's account, such as a project's own GitHub
@@ -1144,8 +1144,8 @@ Cursor's git page documents the `Made with Cursor` trailer and pull request foot
 agent adds, which <!--s:heuristics.ai_commit_patterns.made_with_cursor_rows:words-->two<!--/s--> rows match.
 
 Earlier, the `notes` of each message heuristic recorded how many commits of the commit CSV of
-release 1.0.0 it explained. These notes describe that CSV and the heuristics of that time, and the
-commit history keeps them:
+AgentConfigs 1.0.0 it explained. These notes describe that CSV and the heuristics of that time, and
+the commit history keeps them:
 
 - Some of those message heuristics explained no commit in that CSV, among them `head:copilot/`,
   a search qualifier that no commit message contains, and `from copilot/` explained few. No row matches

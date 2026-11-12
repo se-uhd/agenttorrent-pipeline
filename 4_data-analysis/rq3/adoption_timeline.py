@@ -7,7 +7,7 @@ file renamed into a family keeps the date of the commit that created it under it
 and a file that a configuration names keeps the date on which it was created, not the date on
 which the configuration began to name it. The figure therefore does not show when a repository
 adopted a family, and its title and the label of its x axis say what it shows. The families are
-those of the timeline of release 1.0.0, the context file categories of
+those of the timeline of AgentConfigs 1.0.0, the context file categories of
 _shared.ADOPTION_CONTEXT_FILE_CATEGORIES, Skills and Subagents, and the Planning Documents, which
 come from separate CSVs. A family with no row is left out. The families, ADOPTION_START and
 DATA_DIR come from _shared.py.

@@ -175,10 +175,10 @@ class TestLoadContextFileCategories(_Tmp):
         self.assertEqual(found["CLAUDE.md"]["o/a"], pd.Timestamp("2025-01-01"))
         self.assertEqual(list(found["AGENTS.md"].index), ["o/b"])
 
-    def test_the_families_are_those_of_release_1_0_0_in_figure_order(self):
-        """The timeline keeps the five context file categories of the timeline of release 1.0.0.
-        A Gemini style guide, a BUGBOT.md, a REVIEW.md and `.codex/CODEX.md`, which a
-        configuration named, are context files of no plotted family."""
+    def test_the_families_are_those_of_agentconfigs_1_0_0_in_figure_order(self):
+        """The timeline keeps the five context file categories of the timeline of
+        AgentConfigs 1.0.0. A Gemini style guide, a BUGBOT.md, a REVIEW.md and `.codex/CODEX.md`,
+        which a configuration named, are context files of no plotted family."""
         rows = [(f"o/{i}", path, "2025-01-01T00:00:00Z")
                 for i, path in enumerate(["CLAUDE.md", "AGENTS.md", "GEMINI.md",
                                           ".github/copilot-instructions.md", ".cursorrules",

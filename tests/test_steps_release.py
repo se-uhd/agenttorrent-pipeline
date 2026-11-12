@@ -69,7 +69,7 @@ def detected_row(repo_name: str, **overrides) -> dict:
         "head_sha": "a" * 40,
         "head_commit_date": "2026-03-28T10:00:00Z",
         "github_link": f"https://github.com/{repo_name}/tree/main",
-        "dataset_version": "2.0.0",
+        "dataset_version": "1.0.0",
     })
     row.update(overrides)
     return row
@@ -139,7 +139,7 @@ def import_row(written: str, target: str, location: str, category: str, line: in
             "target": target, "target_location": location, "target_status": "found",
             "target_category": category, "depth": 1, "target_line_count": 2,
             "github_link": f"https://github.com/owner/scanned/blob/main/CLAUDE.md#L{line}",
-            "dataset_version": "2.0.0"}
+            "dataset_version": "1.0.0"}
 
 
 def write_csv(path: Path, header, rows) -> None:
@@ -187,7 +187,7 @@ class _Fixture(unittest.TestCase):
         # provenance.json as the detection step writes it, with the checksums of the heuristics
         # that the step ran with.
         (self.output / "provenance.json").write_text(json.dumps({
-            "dataset_version": "2.0.0", "heuristics": "config_path_patterns.csv",
+            "dataset_version": "1.0.0", "heuristics": "config_path_patterns.csv",
             "heuristics_sha256": hashlib.sha256(self.heuristics.read_bytes()).hexdigest(),
             "pattern_count": 1,
             "planning_heuristics": planning.PLANNING_DOCUMENT_PATTERNS_PATH.name,
@@ -816,7 +816,7 @@ class TestGeneratedFiles(_Fixture):
     def test_the_citation_names_the_authors_of_the_release_in_their_order(self):
         """The release and its MSR 2027 data showcase paper list their authors in this order,
         which differs from the order of the AIware 2026 dataset paper."""
-        text = _mod.render_citation("2.0.0")
+        text = _mod.render_citation("1.0.0")
         self.assertIn("cff-version: 1.2.0", text)
         self.assertEqual(re.findall(r"family-names: (.+)", text),
                          ["Baltes", "Mohsenimofidi", "Böhme", "Nersesyan", "Abubakar", "Lulla", "Galster",
@@ -844,7 +844,7 @@ class TestGeneratedFiles(_Fixture):
 
     def test_the_citation_contains_no_doi(self):
         # Zenodo assigns the DOI at deposit, and nobody would have assigned a DOI written here.
-        self.assertNotIn("doi", _mod.render_citation("2.0.0").lower())
+        self.assertNotIn("doi", _mod.render_citation("1.0.0").lower())
 
     def test_the_manifest_is_sorted_and_in_sha256sum_format(self):
         for name in ("b.csv", "a.csv"):
@@ -1016,7 +1016,7 @@ class TestPublish(_Fixture):
         self.assertEqual((self.release / _mod.ARCHIVE_NAME).read_bytes(), corpus,
                          "the collected_files_archive step's file is not this step's to write")
         self.assertEqual((self.release / "CITATION.cff").read_text(encoding="utf-8"),
-                         _mod.render_citation("2.0.0"))
+                         _mod.render_citation("1.0.0"))
 
     def test_a_reader_gets_what_shows_how_the_data_was_built(self):
         """The names are spelled out rather than read from `RELEASE_FILES`, because the test
@@ -3046,12 +3046,14 @@ class TestPublish(_Fixture):
         self.assertIn("| `codex` | Repository has OpenAI Codex configuration, such as for the "
                       "Codex CLI, the Codex app", readme)
 
-    def test_the_readme_describes_this_release_and_cites_1_0_0_as_an_earlier_one(self):
-        """The AIware 2026 dataset paper describes release 1.0.0, which an earlier version of
-        the pipeline built from another sampling, classification and collection. The README
-        states where the repositories of this release come from and when they were scanned, cites
-        the paper for release 1.0.0 and points to the documents of the pipeline for the method,
-        rather than presenting this release as the data of that study with added columns."""
+    def test_the_readme_describes_this_release_and_cites_agentconfigs_1_0_0(self):
+        """The AIware 2026 dataset paper describes AgentConfigs 1.0.0, the release of the dataset
+        that AgentTorrent succeeds, which an earlier version of the pipeline built from another
+        sampling, classification and collection. The README states where the repositories of
+        this release come from and when they were scanned, cites the paper for AgentConfigs 1.0.0
+        and points to the documents of the pipeline for the method, rather than presenting this
+        release as the data of that study with added columns or as a later version of
+        AgentConfigs."""
         self._write_snapshot(collection={
             "counts": {"sampled": 2, "clone_failed": 0},
             "scanned_at_window": {"first": "2026-10-26T01:38:17Z", "last": "2026-10-27T12:39:24Z"}})
@@ -3062,15 +3064,18 @@ class TestPublish(_Fixture):
                       "Search dataset (GHS), with a sampling window that ends on 2026-09-22, and "
                       "they were scanned from 2026-10-26T01:38:17Z to 2026-10-27T12:39:24Z.",
                       opening)
-        self.assertIn("Release 1.0.0 of this dataset, which the AIware 2026 dataset paper "
-                      "describes, was built by an earlier version of the pipeline", opening)
+        self.assertIn("This dataset succeeds AgentConfigs, the dataset that the AIware 2026 "
+                      "dataset paper describes. An earlier version of the pipeline built "
+                      "AgentConfigs 1.0.0", opening)
+        self.assertNotIn("release 1.0.0 of this dataset", readme.lower())
         self.assertIn(f"The documents of the pipeline at {_mod.PIPELINE_REPOSITORY} describe how "
                       f"this release was built", opening)
         self.assertNotIn("extends the data", readme)
         self.assertNotIn("describes how this dataset is built", readme)
         self.assertNotIn("dataset paper describes in detail", readme)
         papers = readme[readme.index("## Associated Papers"):readme.index("## Dataset Overview")]
-        self.assertIn("(AIware '26)*. It describes release 1.0.0 of this dataset.", papers)
+        self.assertIn("(AIware '26)*. It describes AgentConfigs 1.0.0, the release of the dataset "
+                      "that this one succeeds.", papers)
 
     def test_the_readme_cites_the_associated_papers_as_crossref_records_them(self):
         """Crossref records both AIware 2026 papers in the "Proceedings of the 3rd ACM
@@ -3123,7 +3128,7 @@ class TestPublish(_Fixture):
         self.assertIn("Cite this release as: Sebastian Baltes, Seyedmoein Mohsenimofidi, Levi "
                       "Böhme, Vahram Nersesyan, Muhammad Auwal Abubakar, Jai Lal Lulla, Matthias "
                       "Galster, Christoph Treude. **AgentTorrent: A Dataset of Context and "
-                      "Harness Engineering Artifacts on GitHub.** Version 2.0.0. Zenodo.",
+                      "Harness Engineering Artifacts on GitHub.** Version 1.0.0. Zenodo.",
                       citation)
 
     def test_the_citation_names_the_version_that_the_rows_record(self):

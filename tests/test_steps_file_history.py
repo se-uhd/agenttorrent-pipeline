@@ -175,7 +175,7 @@ class _StepCase(unittest.TestCase):
         row.update({"repo_name": repo, "scanned_at": SCANNED_AT, "branch": "main",
                     "head_sha": head, "head_commit_date": HEAD_COMMIT_DATE,
                     artifact: artifact_path or f"{mechanism}/one.md",
-                    "github_link": "https://example.invalid", "dataset_version": "2.0.0"})
+                    "github_link": "https://example.invalid", "dataset_version": "1.0.0"})
         return row
 
     def write_tables(self, extra_rows=(), line_terminator="\n") -> None:
@@ -211,7 +211,7 @@ class _StepCase(unittest.TestCase):
                                  "branch": "main", "head_sha": HEAD,
                                  "head_commit_date": HEAD_COMMIT_DATE,
                                  "github_link": "https://example.invalid",
-                                 "dataset_version": "2.0.0", **flags})
+                                 "dataset_version": "1.0.0", **flags})
 
     def seed_cache(self, facts=MEASURED, mechanisms=None) -> None:
         cache = _facts.FileHistoryCache()

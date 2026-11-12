@@ -324,7 +324,7 @@ COLORS = {
 }
 
 # The families of the adoption timeline: the five context file categories and the two mechanisms
-# of the timeline of release 1.0.0, and the planning documents, which release 2.0.0 added.
+# of the timeline of AgentConfigs 1.0.0, and the planning documents, which AgentTorrent 1.0.0 added.
 ADOPTION_CONTEXT_FILE_CATEGORIES = ("CLAUDE.md", "AGENTS.md", "GEMINI.md", "Copilot Instructions",
                                     ".cursorrules")
 # The first day of the adoption timeline. A file created before it was created for another

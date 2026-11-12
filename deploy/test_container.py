@@ -5696,7 +5696,7 @@ class TestTheImageWorkflow(unittest.TestCase):
         # An image is built when a deployment needs one, not on every push, and the
         # workflow artifacts that a deployment did not download are deleted after a week.
         self.assertIn("workflow_dispatch:", self.text)
-        self.assertIn('tags: ["v*"]', self.text)
+        self.assertIn('tags: ["agenttorrent_*"]', self.text)
         self.assertNotIn("branches:", self.text)
         self.assertNotIn("paths:", self.text)
         self.assertEqual(self.text.count("retention-days: 7"), self.text.count("upload-artifact"))

@@ -1,5 +1,5 @@
 {
-  "dataset_version": "2.0.0",
+  "dataset_version": "1.0.0",
   "heuristics": "config_path_patterns.csv",
   "heuristics_sha256": "a362db9f0c4f473fe983fc39f0f13aca4358d565254cc557858a01be1ae569e7",
   "pattern_count": 358,

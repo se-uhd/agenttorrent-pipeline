@@ -88,11 +88,12 @@ _NOT_COMMITS = {
     # that are not commits.
     "16899501",  # the Zenodo record of AIDev, the MSR 2026 challenge data, in TODO.md
     "19256968",  # the Zenodo record of agent-impact's data, in TODO.md
-    "19375429",  # the Zenodo record of the pipeline of release 1.0.0, in TODO.md and the plans
-    "19375880",  # the Zenodo record of the dataset of release 1.0.0, in TODO.md and the plans
-    "24058026",  # the concept record of the dataset on Zenodo, in README.md
-    "24058027",  # the record of release 2.0.0 of the dataset on Zenodo, in CHANGELOG.md
-    "24058028",  # the concept record of the pipeline on Zenodo, in README.md
+    "19375429",  # the concept record of the pipeline of AgentConfigs on Zenodo, in TODO.md and the plans
+    "19375880",  # the concept record of AgentConfigs on Zenodo, in TODO.md and the plans
+    "20090356",  # the record of AgentConfigs 1.0.0 on Zenodo, in CHANGELOG.md
+    "24058026",  # the concept record of AgentTorrent on Zenodo, in README.md
+    "24058027",  # the record of AgentTorrent 1.0.0 on Zenodo, in CHANGELOG.md
+    "24058028",  # the concept record of the pipeline of AgentTorrent on Zenodo, in README.md
     "20261001",  # the date in the Docker volume's name for the check of the complete handover
     "20250929",  # the date in the model name claude-sonnet-4-5@20250929, in docs/commits.md
     # The start of the address of the shared conversation that revised the batch prompt, in

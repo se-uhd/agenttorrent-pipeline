@@ -648,7 +648,7 @@ class TestTheEnvironmentCheck(unittest.TestCase):
                           "lock.txt lists httpx2 2.13.1, and 2.16.0 is installed."])
 
     def test_the_editable_package_and_pip_are_no_differences(self):
-        installed = {**self.LOCKED, "agentcontext": "2.0.0", "pip": "26.3"}
+        installed = {**self.LOCKED, "agentcontext": "1.0.0", "pip": "26.3"}
         self.assertEqual(verify.environment_differences(self.LOCKED, installed, "lock.txt"), [])
 
     def test_the_first_distribution_of_a_name_on_the_path_is_the_installed_one(self):
@@ -757,7 +757,7 @@ class TestTheEnvironmentCheck(unittest.TestCase):
             folder = directory / f"{name}.egg-info"
             folder.mkdir(parents=True)
             (folder / "PKG-INFO").write_text(f"Metadata-Version: 2.4\nName: {name}\n"
-                                             f"Version: 2.0.0\n", encoding="utf-8")
+                                             f"Version: 1.0.0\n", encoding="utf-8")
 
     def test_an_egg_info_folder_in_the_working_directory_is_no_installed_distribution(self):
         """`python -m agentcontext verify` puts the working directory first on `sys.path`. An
@@ -766,16 +766,16 @@ class TestTheEnvironmentCheck(unittest.TestCase):
         counts as a distribution that the dependency lock does not list."""
         with tempfile.TemporaryDirectory() as tmp:
             site, checkout = Path(tmp) / "site-packages", Path(tmp) / "checkout"
-            write_distribution(site, "agentcontext", "2.0.0",
-                               {"__editable__.agentcontext-2.0.0.pth": "import finder\n"})
-            (site / "agentcontext-2.0.0.dist-info" / "direct_url.json").write_text(
+            write_distribution(site, "agentcontext", "1.0.0",
+                               {"__editable__.agentcontext-1.0.0.pth": "import finder\n"})
+            (site / "agentcontext-1.0.0.dist-info" / "direct_url.json").write_text(
                 json.dumps(EDITABLE), encoding="utf-8")
             self._egg_info_folders(checkout)
             with (contextlib.chdir(checkout),
                   mock.patch.object(sys, "path", [str(checkout), *sys.path]),
                   mock.patch.object(verify, "site_directories", return_value=[site])):
                 installed, direct = verify.installed_versions(), verify.direct_installs()
-        self.assertEqual(installed, {"agentcontext": "2.0.0"})
+        self.assertEqual(installed, {"agentcontext": "1.0.0"})
         self.assertEqual(direct, {"agentcontext": EDITABLE})
         self.assertEqual(verify.direct_install_differences(direct, "lock.txt"), [])
 
@@ -897,7 +897,7 @@ class TestTheEnvironmentCheck(unittest.TestCase):
 
     def test_the_verification_refuses_to_start_in_another_environment(self):
         locked = verify.locked_versions(verify.LOCK.read_text(encoding="utf-8"))
-        installed = {**locked, "httpx": "0.28.1", "agentcontext": "2.0.0"}
+        installed = {**locked, "httpx": "0.28.1", "agentcontext": "1.0.0"}
         installed["pandas"] = "0.0.1"
         del installed["numpy"]
         code, ran, log = self._main_over(installed)
@@ -914,7 +914,7 @@ class TestTheEnvironmentCheck(unittest.TestCase):
 
     def test_the_verification_starts_in_the_environment_of_the_development_lock(self):
         locked = verify.locked_versions(verify.LOCK.read_text(encoding="utf-8"))
-        code, ran, log = self._main_over({**locked, "agentcontext": "2.0.0", "pip": "26.3"})
+        code, ran, log = self._main_over({**locked, "agentcontext": "1.0.0", "pip": "26.3"})
         self.assertGreater(len(ran), len(verify.SUITES), log)
         self.assertEqual(code, 0, log)
 

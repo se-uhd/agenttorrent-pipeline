@@ -400,9 +400,10 @@ OUTPUT_INVENTORY = {
     "provenance.json": "published provenance",
     "snapshot-validation.csv": "snapshot validation's per-repository result",
     "repo-sizes.csv": "`measure sizes`' record of the sizes of the repositories in the sample",
-    "identity-labels.csv": "the commits of the commit CSV of release 1.0.0 that only an author or "
-                           "committer identity credited and that name no person, with the identity "
-                           "that GitHub's API returned for each and the label of that identity",
+    "identity-labels.csv": "the commits of the commit CSV of AgentConfigs 1.0.0 that only an author "
+                           "or committer identity credited and that name no person, with the "
+                           "identity that GitHub's API returned for each and the label of that "
+                           "identity",
     "identity-readings.csv": "each distinct identity of that reading with its label, its counts "
                              "and the reading behind it, the identity empty for a person",
     "identity-pilot.csv": "a seeded sample of 30 of those commits, read from GitHub, with the "
@@ -511,8 +512,8 @@ ANNOTATED_COLUMNS = ("repo_name", "github_id", "default_branch", "engineered_pro
 
 # The authors of this release, in the order of its Zenodo deposit and of the MSR 2027 data
 # showcase paper that describes it. `CITATION.cff` and the Citation section of the README name
-# them. The AIware 2026 dataset paper, which described release 1.0.0, lists these authors without
-# Vahram Nersesyan and in another order, and the README cites it with
+# them. The AIware 2026 dataset paper, which described AgentConfigs 1.0.0, lists these authors
+# without Vahram Nersesyan and in another order, and the README cites it with
 # `AIWARE_DATASET_PAPER_AUTHORS`. Neither `CITATION.cff` nor the README has a DOI of the release,
 # because Zenodo assigns the DOI when the deposit is made, and a DOI written here would be one
 # that nobody assigned.
@@ -531,8 +532,8 @@ AIWARE_DATASET_PAPER_AUTHORS = ("Matthias Galster, Seyedmoein Mohsenimofidi, Lev
                                 "Muhammad Auwal Abubakar, Christoph Treude, Sebastian Baltes")
 CITATION_LICENSE = "CC-BY-4.0"
 # The repository of the pipeline. The README points to its documents for how a release is built,
-# because the AIware 2026 dataset paper describes release 1.0.0, which an earlier version of the
-# pipeline built.
+# because the AIware 2026 dataset paper describes AgentConfigs 1.0.0, which an earlier version of
+# the pipeline built.
 PIPELINE_REPOSITORY = "https://github.com/se-uhd/agenttorrent-pipeline"
 
 
@@ -2217,7 +2218,7 @@ def render_readme(release_dir: Path, counts: dict, levels: tuple, classification
 
 This dataset contains configuration artifacts for six tools (i.e., Claude Code, GitHub Copilot, OpenAI Codex, Cursor, Gemini, and OpenCode) in {study:,} GitHub {by_number(study, 'repository', 'repositories')}. It includes git metadata for each configuration artifact (e.g., creation dates and commit counts), commits that credit a tool, imported files, and planning documents from these repositories. {origin_sentence(sampling, snapshot)}
 
-The documents of the pipeline at {PIPELINE_REPOSITORY} describe how this release was built, and `docs/heuristics.md` there defines which files count as configuration artifacts, imports and planning documents and when a commit credits a tool. Release 1.0.0 of this dataset, which the AIware 2026 dataset paper describes, was built by an earlier version of the pipeline, which differs from the current one in its sampling, classification, collection and commit attribution.
+The documents of the pipeline at {PIPELINE_REPOSITORY} describe how this release was built, and `docs/heuristics.md` there defines which files count as configuration artifacts, imports and planning documents and when a commit credits a tool. This dataset succeeds AgentConfigs, the dataset that the AIware 2026 dataset paper describes. An earlier version of the pipeline built AgentConfigs 1.0.0 and differs from the current one in its sampling, classification, collection and commit attribution.
 {evidence}
 ## Citation
 
@@ -2225,7 +2226,7 @@ Cite this release as: {cited_authors()}. **{CITATION_TITLE}.** Version {version}
 
 ## Associated Papers
 
-- {AIWARE_DATASET_PAPER_AUTHORS}. **A Dataset of Agentic AI Coding Tool Configurations.** In *Proceedings of the 3rd ACM International Conference on AI-Powered Software (AIware '26)*. It describes release 1.0.0 of this dataset. DOI: https://doi.org/10.1145/3805760.3814922. Available at: https://assets.empirical-software.engineering/pdf/aiware26-ai-config-dataset.pdf
+- {AIWARE_DATASET_PAPER_AUTHORS}. **A Dataset of Agentic AI Coding Tool Configurations.** In *Proceedings of the 3rd ACM International Conference on AI-Powered Software (AIware '26)*. It describes AgentConfigs 1.0.0, the release of the dataset that this one succeeds. DOI: https://doi.org/10.1145/3805760.3814922. Available at: https://assets.empirical-software.engineering/pdf/aiware26-ai-config-dataset.pdf
 - Matthias Galster, Seyedmoein Mohsenimofidi, Jai Lal Lulla, Muhammad Auwal Abubakar, Christoph Treude, Sebastian Baltes. **Configuring Agentic AI Coding Tools: An Exploratory Study.** In *Proceedings of the 3rd ACM International Conference on AI-Powered Software (AIware '26)*. DOI: https://doi.org/10.1145/3805760.3814887
 - Seyedmoein Mohsenimofidi, Matthias Galster, Christoph Treude, Sebastian Baltes. **Context Engineering for AI Agents in Open-Source Software.** In *Proceedings of the 23rd International Conference on Mining Software Repositories (MSR '26)*. DOI: https://doi.org/10.1145/3793302.3793350. Available at: https://arxiv.org/abs/2510.21413
 
@@ -2340,7 +2341,7 @@ Commits that credit one of the six tools, in the repositories with detected conf
 | `branch` | Branch on which the commit was found |
 | `commit_sha` | Commit SHA |
 | `github_link` | Link to the commit on GitHub |
-| `commit_message` | Full commit message, verbatim, its line breaks as newlines inside the quoted field, as RFC 4180 specifies. Read it with a CSV reader. The CSV of the 1.0.0 release wrote a newline as `\\n` instead |
+| `commit_message` | Full commit message, verbatim, its line breaks as newlines inside the quoted field, as RFC 4180 specifies. Read it with a CSV reader. The commit CSV of AgentConfigs 1.0.0 wrote a newline as `\\n` instead |
 | `ai_tool` | The tools that the commit credits with making it or with producing its change, such as a review suggestion that a person committed, by their names in the `tool` column of `ai_commit_patterns.csv` (`Claude`, `Codex`, `Copilot`, `Cursor`, `Gemini` and `OpenCode`), joined with a comma |
 | `matched_heuristics` | The heuristics that attributed the commit, by their `id` in `ai_commit_patterns.csv`, joined with a semicolon |
 | `attributions` | How the commit credits each tool, as `<tool>:<attribution>` joined with a semicolon. `account` means that the author or the committer of the commit is the tool's own account, the identity (name and address together) that the tool's code or environment writes, or an agent account or a GitHub App that its own page or the configuration of its project identifies as running the tool. An address that GitHub links to a vendor's account is `account` only when the tool's code or environment writes it. `reviewer` is the co-author trailer that GitHub writes when a person commits a suggestion of a review app, such as Copilot code review, and the footer that GitHub writes into a pull request that a person creates from a suggestion of Copilot Autofix. `standard` is the line that the tool writes itself, with its name and its own address or account, or a marker that it writes into a commit or a pull request. `convention` is any other line that names the tool, which a person writes, or an agent writes because a repository's instructions require it, and any other name or address that names the tool and that users chose for an author or a committer. A line that heuristics of two attributions match takes the first attribution in this order. The `attribution` column of `ai_commit_patterns.csv` gives the attribution of each heuristic |

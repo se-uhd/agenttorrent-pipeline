@@ -25,8 +25,9 @@ change. After each dataset release, regenerate the site and the analysis tables 
 The checks read the current inputs and the generated outputs, and none of them compares a
 value with the count of an earlier publication. Keep citations out of the release notes. The
 header above them cites the release on Zenodo with the authors of its `CITATION.cff` and the
-paper that describes release 1.0.0. The header, the Downloads section and the Usage Example
-section link the concept DOIs of the Zenodo records of the dataset and of the pipeline.
+paper that describes AgentConfigs 1.0.0, the earlier dataset that AgentTorrent succeeds. The
+header, the Downloads section and the Usage Example section link the concept DOIs of the Zenodo
+records of the dataset and of the pipeline.
 
 ## Building
 
@@ -103,8 +104,8 @@ usage example with the interpreter that runs `build_site.py`.
 
 The timeline of the creation of the earliest configuration artifacts plots the families of
 the figure of `4_data-analysis/rq3/adoption_timeline.py` from the same constants of `_shared.py`:
-the five kinds of context file and the skills and subagents of the timeline of release 1.0.0,
-and the planning documents. It leaves out the files created before `ADOPTION_START`, which
+the five kinds of context file and the skills and subagents of the timeline of AgentConfigs
+1.0.0, and the planning documents. It leaves out the files created before `ADOPTION_START`, which
 were created for another purpose and only later renamed into a configuration or named by one.
 
 Each cell of the mechanism-by-tool heatmap counts the repositories with a

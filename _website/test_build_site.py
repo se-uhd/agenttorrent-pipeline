@@ -456,7 +456,7 @@ class TestCreationTimeline(unittest.TestCase):
     """The timeline of the site plots the families of `4_data-analysis/rq3/adoption_timeline.py`
     from the same constants of `_shared`."""
 
-    def test_the_families_of_release_1_0_0_and_the_planning_documents_from_2023_on(self):
+    def test_the_families_of_agentconfigs_1_0_0_and_the_planning_documents_from_2023_on(self):
         """kdeldycke/meta-package-manager renamed a development document of 2021 to claude.md
         and then to AGENTS.md, and its creation is no adoption. A BUGBOT.md is a context file of
         no plotted family. The skills and the planning documents are families of their own."""
@@ -563,13 +563,13 @@ class TestWebsiteBuildInputs(unittest.TestCase):
             (root / 'other_commits.csv').write_text(contents)
             with mock.patch.object(builder, 'DATA_DIR', root), \
                  mock.patch.object(builder, 'SITE_DIR', root / 'site'):
-                builder.build_downloads_json('2.0.0')
+                builder.build_downloads_json('1.0.0')
             downloads = json.loads((root / 'site/data/downloads.json').read_text())
             found = [row for row in downloads if row['filename'] == 'other_commits.csv']
             self.assertEqual(len(found), 1)
             self.assertEqual(found[0]['size'], len(contents.encode()))
             self.assertEqual(found[0]['url'], 'https://assets.empirical-software.engineering/'
-                                              'data/agenttorrent/2.0.0/other_commits.csv')
+                                              'data/agenttorrent/1.0.0/other_commits.csv')
 
     def test_a_release_file_that_is_missing_stops_the_build(self):
         # Listed with size 0 and a link to the download address, a file that the release lacks
@@ -586,7 +586,7 @@ class TestWebsiteBuildInputs(unittest.TestCase):
                  mock.patch.object(builder, 'SITE_DIR', root / 'site'), \
                  self.assertLogs("build_site", "ERROR") as logged, \
                  self.assertRaises(SystemExit):
-                builder.build_downloads_json('2.0.0')
+                builder.build_downloads_json('1.0.0')
             self.assertIn("hooks.csv", "\n".join(logged.output))
             self.assertFalse((root / 'site/data/downloads.json').exists())
 
@@ -602,12 +602,12 @@ class TestWebsiteBuildInputs(unittest.TestCase):
                 (root / filename).write_text(f"bytes of {filename}")
             with mock.patch.object(builder, 'DATA_DIR', root), \
                  mock.patch.object(builder, 'ASSETS_DIR', root / 'assets'):
-                builder.stage_downloads('2.0.0')
-            self.assertEqual(sorted(p.name for p in (root / 'assets/2.0.0').iterdir()),
+                builder.stage_downloads('1.0.0')
+            self.assertEqual(sorted(p.name for p in (root / 'assets/1.0.0').iterdir()),
                              sorted(builder.DOWNLOAD_FILES))
             for filename in builder.DOWNLOAD_FILES:
                 with self.subTest(filename=filename):
-                    self.assertEqual((root / 'assets/2.0.0' / filename).read_text(),
+                    self.assertEqual((root / 'assets/1.0.0' / filename).read_text(),
                                      f"bytes of {filename}")
 
     def test_the_version_comes_from_the_provenance_of_the_release(self):
@@ -616,9 +616,9 @@ class TestWebsiteBuildInputs(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             builder = _load()
-            (root / 'provenance.json').write_text('{"dataset_version": "2.0.0"}')
+            (root / 'provenance.json').write_text('{"dataset_version": "1.0.0"}')
             with mock.patch.object(builder, 'DATA_DIR', root):
-                self.assertEqual(builder.release_version(), '2.0.0')
+                self.assertEqual(builder.release_version(), '1.0.0')
             (root / 'provenance.json').write_text('{}')
             with mock.patch.object(builder, 'DATA_DIR', root), \
                  self.assertLogs("build_site", "ERROR"), self.assertRaises(SystemExit):

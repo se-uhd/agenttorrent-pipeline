@@ -139,15 +139,15 @@ text where the date does not parse ([caches](caches.md#file-history)).
 
 The `--follow` query lists the newest commit first, and `path_commits` reverses the result. The
 query leaves out `--reverse`, because `git log --follow --reverse` over a renamed file lists the
-rename commit and nothing else. Until 2.0.0, the query included it. `created_at` and
+rename commit and nothing else. Until AgentTorrent 1.0.0, the query included it. `created_at` and
 `first_commit_sha` then named the rename, and the AI columns missed the commits under the old name.
 The published values of March 2026 were measured that way and still name the rename. A collection
-from 2.0.0 on reads the commit that created the file under whatever name it had. `--follow` also
-follows a copy, to its source, a file of similar content that the commit kept. git has no flag that
-follows renames alone. The query therefore includes `--name-status`, and `renames_only` stops at the
-first commit with the status of a copy. An `AGENTS.md` written as a copy of the `CLAUDE.md` beside
-it was created by that commit, not by the commit that created the `CLAUDE.md`. `last_commit_sha` is
-the last commit under the current name.
+from AgentTorrent 1.0.0 on reads the commit that created the file under whatever name it had.
+`--follow` also follows a copy, to its source, a file of similar content that the commit kept. git
+has no flag that follows renames alone. The query therefore includes `--name-status`, and
+`renames_only` stops at the first commit with the status of a copy. An `AGENTS.md` written as a
+copy of the `CLAUDE.md` beside it was created by that commit, not by the commit that created the
+`CLAUDE.md`. `last_commit_sha` is the last commit under the current name.
 
 The follow query can leave out the earlier history of a path that one commit deleted and a later
 commit added again. The commit that adds the path again often gives it text from another file that

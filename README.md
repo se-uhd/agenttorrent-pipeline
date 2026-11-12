@@ -2,7 +2,7 @@
 
 [![pipeline tests](https://github.com/se-uhd/agenttorrent-pipeline/actions/workflows/pipeline-tests.yml/badge.svg)](https://github.com/se-uhd/agenttorrent-pipeline/actions/workflows/pipeline-tests.yml)
 
-This repository contains the pipeline that builds and analyzes AgentTorrent, a dataset of version-controlled coding agent context in GitHub repositories. It contains configuration artifacts for six tools (i.e., Claude Code, GitHub Copilot, OpenAI Codex, Cursor, Gemini, and OpenCode), their imported files, planning documents in the same repositories, and commits that credit the tools. The dataset was called AgentConfigs until 2026-10-19 and AgentContext until 2026-11-07. The Python package `agentcontext`, its command line `python -m agentcontext`, the container image and the names of the handovers keep the earlier name until the release after 2.0.0.
+This repository contains the pipeline that builds and analyzes AgentTorrent, a dataset of version-controlled coding agent context in GitHub repositories. It contains configuration artifacts for six tools (i.e., Claude Code, GitHub Copilot, OpenAI Codex, Cursor, Gemini, and OpenCode), their imported files, planning documents in the same repositories, and commits that credit the tools. AgentTorrent succeeds AgentConfigs, the dataset that the AIware 2026 dataset paper describes, and was called AgentContext from 2026-10-19 to 2026-11-07, before its first release. The Python package `agentcontext`, its command line `python -m agentcontext`, the container image and the names of the handovers keep the name AgentContext until the release after AgentTorrent 1.0.0.
 
 ## Prerequisites
 
@@ -79,7 +79,7 @@ The four sampling scripts, `ghs_cache.py`, the stage runners, and `run_pipeline.
 
 ## Releases and versioning
 
-`CHANGELOG.md` records every notable change in [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format, and its [versioning policy](CHANGELOG.md#versioning-policy) defines when a release is major, minor or patch. The version number describes the dataset as well as the code, because a downstream user cannot tell a changed script from a changed snapshot. Released versions are git-tagged (`v1.0.0` is the AIware 2026 dataset paper release) and recorded in the `dataset_version` column of `repos.csv`, of every mechanism CSV, of `planning-documents.csv` and of `imports.csv`. The commit CSVs have no such column, but the `provenance.json` of the release records the version.
+`CHANGELOG.md` records every notable change in [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format, and its [versioning policy](CHANGELOG.md#versioning-policy) defines when a release is major, minor or patch. The version number describes the dataset as well as the code, because a downstream user cannot tell a changed script from a changed snapshot. Each release of AgentTorrent is git-tagged `agenttorrent_<version>`, such as `agenttorrent_1.0.0`, and recorded in the `dataset_version` column of `repos.csv`, of every mechanism CSV, of `planning-documents.csv` and of `imports.csv`. The commit CSVs have no such column, but the `provenance.json` of the release records the version. AgentConfigs, the dataset that AgentTorrent succeeds, has versions of its own: AgentConfigs 1.0.0 is tagged `agentconfigs_1.0.0` and has no `dataset_version` column.
 
 ## Citation
 
@@ -87,8 +87,8 @@ Cite the dataset with the `CITATION.cff` that each release contains, and the pip
 [CITATION.cff](CITATION.cff). Both name the authors in this order: Sebastian Baltes, Seyedmoein
 Mohsenimofidi, Levi Böhme, Vahram Nersesyan, Muhammad Auwal Abubakar, Jai Lal Lulla, Matthias
 Galster and Christoph Treude. The AIware 2026 dataset paper, *A Dataset of Agentic AI Coding
-Tool Configurations*, describes release 1.0.0 ([DOI](https://doi.org/10.1145/3805760.3814922)).
-Zenodo archives the releases of the dataset under the concept DOI
+Tool Configurations*, describes AgentConfigs 1.0.0 ([DOI](https://doi.org/10.1145/3805760.3814922)).
+Zenodo archives the releases of AgentTorrent under the concept DOI
 [10.5281/zenodo.24058026](https://doi.org/10.5281/zenodo.24058026) and those of the pipeline
 under [10.5281/zenodo.24058028](https://doi.org/10.5281/zenodo.24058028).
 

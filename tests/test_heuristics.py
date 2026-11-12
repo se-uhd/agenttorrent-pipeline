@@ -584,7 +584,7 @@ class TestTheArtifactColumnComesFromTheHeuristics(unittest.TestCase):
         if not seen:
             self.skipTest("no published CSVs on disk")
 
-    def test_a_2_0_0_header_still_names_the_artifact(self):
+    def test_an_agenttorrent_1_0_0_header_still_names_the_artifact(self):
         # A layout with `timestamp` renamed and `head_commit_date` added, where
         # neither position 3 nor "the first column that is not leading metadata"
         # is the column that names the configuration artifact.
