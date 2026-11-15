@@ -3144,6 +3144,22 @@ class TestPublish(_Fixture):
         self.assertIn("Version 2.1.0. Zenodo.",
                       (self.release / "0_README.md").read_text(encoding="utf-8"))
 
+    def test_the_readme_lists_the_preprint_of_the_paper_that_describes_the_dataset(self):
+        """The paper that describes AgentTorrent 1.0.0 has the title and the eight authors of the
+        release, and its preprint is arXiv:2611.15436. The README lists it first among the
+        associated papers, with a link to its abstract page."""
+        self.assertEqual(self._run(), 0)
+        readme = (self.release / "0_README.md").read_text(encoding="utf-8")
+        papers = readme[readme.index("## Associated Papers"):readme.index("## Dataset Overview")]
+        first = next(line for line in papers.splitlines() if line.startswith("- "))
+        self.assertEqual(
+            first,
+            "- Sebastian Baltes, Seyedmoein Mohsenimofidi, Levi Böhme, Vahram Nersesyan, Muhammad "
+            "Auwal Abubakar, Jai Lal Lulla, Matthias Galster, Christoph Treude. **AgentTorrent: A "
+            "Dataset of Context and Harness Engineering Artifacts on GitHub.** Preprint, "
+            "arXiv:2611.15436. It describes AgentTorrent 1.0.0. Available at: "
+            "https://arxiv.org/abs/2611.15436")
+
     def test_the_readme_lists_the_dataset_paper_it_refers_to(self):
         """The README lists the paper that it calls "the associated dataset paper"."""
         self.assertEqual(self._run(), 0)

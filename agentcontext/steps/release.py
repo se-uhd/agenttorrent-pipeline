@@ -531,6 +531,9 @@ CITATION_AUTHORS = (
 AIWARE_DATASET_PAPER_AUTHORS = ("Matthias Galster, Seyedmoein Mohsenimofidi, Levi Böhme, Jai Lal Lulla, "
                                 "Muhammad Auwal Abubakar, Christoph Treude, Sebastian Baltes")
 CITATION_LICENSE = "CC-BY-4.0"
+# The arXiv identifier of the preprint of the paper that describes AgentTorrent 1.0.0, which has
+# the title and the authors of the release. The README lists it among the associated papers.
+DATASET_PAPER_ARXIV_ID = "2611.15436"
 # The repository of the pipeline. The README points to its documents for how a release is built,
 # because the AIware 2026 dataset paper describes AgentConfigs 1.0.0, which an earlier version of
 # the pipeline built.
@@ -2226,6 +2229,7 @@ Cite this release as: {cited_authors()}. **{CITATION_TITLE}.** Version {version}
 
 ## Associated Papers
 
+- {cited_authors()}. **{CITATION_TITLE}.** Preprint, arXiv:{DATASET_PAPER_ARXIV_ID}. It describes AgentTorrent 1.0.0. Available at: https://arxiv.org/abs/{DATASET_PAPER_ARXIV_ID}
 - {AIWARE_DATASET_PAPER_AUTHORS}. **A Dataset of Agentic AI Coding Tool Configurations.** In *Proceedings of the 3rd ACM International Conference on AI-Powered Software (AIware '26)*. It describes AgentConfigs 1.0.0, the release of the dataset that this one succeeds. DOI: https://doi.org/10.1145/3805760.3814922. Available at: https://assets.empirical-software.engineering/pdf/aiware26-ai-config-dataset.pdf
 - Matthias Galster, Seyedmoein Mohsenimofidi, Jai Lal Lulla, Muhammad Auwal Abubakar, Christoph Treude, Sebastian Baltes. **Configuring Agentic AI Coding Tools: An Exploratory Study.** In *Proceedings of the 3rd ACM International Conference on AI-Powered Software (AIware '26)*. DOI: https://doi.org/10.1145/3805760.3814887
 - Seyedmoein Mohsenimofidi, Matthias Galster, Christoph Treude, Sebastian Baltes. **Context Engineering for AI Agents in Open-Source Software.** In *Proceedings of the 23rd International Conference on Mining Software Repositories (MSR '26)*. DOI: https://doi.org/10.1145/3793302.3793350. Available at: https://arxiv.org/abs/2510.21413

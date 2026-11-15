@@ -30,6 +30,11 @@ AgentConfigs 1.0.0 is tagged `agentconfigs_1.0.0` in the private repository
 
 ## [Unreleased]
 
+### Added
+
+- The README of the release lists the preprint of the paper that describes AgentTorrent 1.0.0,
+  arXiv:2611.15436.
+
 ## [AgentTorrent 1.0.0] - 2026-11-12
 
 The first release of AgentTorrent, published on Zenodo with its pipeline. The entries of this

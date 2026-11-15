@@ -86,7 +86,9 @@ The four sampling scripts, `ghs_cache.py`, the stage runners, and `run_pipeline.
 Cite the dataset with the `CITATION.cff` that each release contains, and the pipeline with
 [CITATION.cff](CITATION.cff). Both name the authors in this order: Sebastian Baltes, Seyedmoein
 Mohsenimofidi, Levi Böhme, Vahram Nersesyan, Muhammad Auwal Abubakar, Jai Lal Lulla, Matthias
-Galster and Christoph Treude. The AIware 2026 dataset paper, *A Dataset of Agentic AI Coding
+Galster and Christoph Treude. The paper that describes AgentTorrent has the same title and
+authors, and its preprint is on arXiv ([arXiv:2611.15436](https://arxiv.org/abs/2611.15436)).
+The AIware 2026 dataset paper, *A Dataset of Agentic AI Coding
 Tool Configurations*, describes AgentConfigs 1.0.0 ([DOI](https://doi.org/10.1145/3805760.3814922)).
 Zenodo archives the releases of AgentTorrent under the concept DOI
 [10.5281/zenodo.24058026](https://doi.org/10.5281/zenodo.24058026) and those of the pipeline
