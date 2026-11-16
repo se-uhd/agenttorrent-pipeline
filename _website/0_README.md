@@ -24,11 +24,12 @@ Update the `release-notes` section of `index.html` when the dataset or its evide
 change. After each dataset release, regenerate the site and the analysis tables and figures.
 The checks read the current inputs and the generated outputs, and none of them compares a
 value with the count of an earlier publication. Keep citations out of the release notes. The
-header above them cites the release on Zenodo with the authors of its `CITATION.cff`, the
-preprint on arXiv of the paper that describes AgentTorrent, and the paper that describes
-AgentConfigs 1.0.0, the earlier dataset that AgentTorrent succeeds. The
-header, the Downloads section and the Usage Example section link the concept DOIs of the Zenodo
-records of the dataset and of the pipeline.
+header above them gives the preprint on arXiv of the paper that describes AgentTorrent, with the
+authors of the `CITATION.cff` of the release, as the citation of the dataset, and then cites the
+paper that describes AgentConfigs 1.0.0, the earlier dataset that AgentTorrent succeeds. Both
+citations link the concept DOI of the Zenodo record of their dataset. The Downloads section and
+the Usage Example section link the concept DOIs of the Zenodo records of the dataset and of the
+pipeline.
 
 ## Building
 

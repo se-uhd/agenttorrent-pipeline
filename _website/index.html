@@ -197,21 +197,16 @@
 <header id="top">
   <h1>AgentTorrent<a class="section-anchor" href="#top" onclick="navigator.clipboard.writeText(this.href)" title="Copy link to section"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.75 9.25a3.25 3.25 0 0 0 4.596.148l1.904-1.904a3.25 3.25 0 0 0-4.596-4.596L7.5 4.052"/><path d="M9.25 6.75a3.25 3.25 0 0 0-4.596-.148L2.75 8.506a3.25 3.25 0 0 0 4.596 4.596L8.5 11.948"/></svg></a></h1>
   <p class="subtitle">A dataset of the context and harness configuration of coding agents in engineered software projects on GitHub. It contains configuration artifacts for six tools, their imported files, agentic planning documents, and commits that credit the tools. The tools are Claude Code, GitHub Copilot, OpenAI Codex, Cursor, OpenCode and Gemini, which includes Antigravity, Google's successor to Gemini CLI.</p>
-  <p class="paper-ref">Cite the dataset release on Zenodo:</p>
-  <p class="paper-ref"><strong>AgentTorrent: A Dataset of Context and Harness Engineering Artifacts on GitHub.</strong><br>
-  Sebastian Baltes, Seyedmoein Mohsenimofidi, Levi Böhme, Vahram Nersesyan, Muhammad Auwal Abubakar, Jai Lal Lulla, Matthias Galster, and Christoph Treude.<br>
-  Zenodo, 2026.<br>
-  [<a href="https://doi.org/10.5281/zenodo.24058026">DOI</a>]</p>
-  <p class="paper-ref">The paper that describes AgentTorrent is available as a preprint:</p>
+  <p class="paper-ref">To cite our dataset, please use:</p>
   <p class="paper-ref"><strong>AgentTorrent: A Dataset of Context and Harness Engineering Artifacts on GitHub.</strong><br>
   Sebastian Baltes, Seyedmoein Mohsenimofidi, Levi Böhme, Vahram Nersesyan, Muhammad Auwal Abubakar, Jai Lal Lulla, Matthias Galster, and Christoph Treude.<br>
   arXiv:2611.15436, 2026.<br>
-  [<a href="https://arxiv.org/abs/2611.15436">arXiv</a>] [<a href="https://arxiv.org/pdf/2611.15436">PDF</a>]</p>
+  [<a href="https://arxiv.org/abs/2611.15436">arXiv</a>] [<a href="https://arxiv.org/pdf/2611.15436">PDF</a>] [<a href="https://doi.org/10.5281/zenodo.24058026">Zenodo</a>]</p>
   <p class="paper-ref">The earlier dataset that AgentTorrent succeeds is described in:</p>
   <p class="paper-ref"><strong>A Dataset of Agentic AI Coding Tool Configurations.</strong><br>
   Matthias Galster, Seyedmoein Mohsenimofidi, Levi Böhme, Jai Lal Lulla, Muhammad Auwal Abubakar, Christoph Treude, and Sebastian Baltes.<br>
   <em>Proceedings of the 3rd ACM International Conference on AI-Powered Software (AIware '26)</em>, Montreal, Canada, 2026.<br>
-  [<a href="https://doi.org/10.1145/3805760.3814922">DOI</a>] [<a href="https://assets.empirical-software.engineering/pdf/aiware26-ai-config-dataset.pdf">PDF</a>]</p>
+  [<a href="https://doi.org/10.1145/3805760.3814922">DOI</a>] [<a href="https://assets.empirical-software.engineering/pdf/aiware26-ai-config-dataset.pdf">PDF</a>] [<a href="https://doi.org/10.5281/zenodo.19375880">Zenodo</a>]</p>
   <div class="release-notes">
     <p>Of the <!--s:collection.sample_repositories-->40,901<!--/s--> engineered software projects in the sample, <!--s:collection.configured_repositories-->10,944<!--/s--> contain a configuration artifact. In these projects, <!--s:collection.commits.tools-->1,281,628<!--/s--> commits credit one of the six tools and <!--s:collection.commits.other_tools-->72,527<!--/s--> credit one of <!--s:heuristics.other_ai_commit_patterns.tools-->154<!--/s--> other tools. Compared with the earlier dataset, AgentTorrent adds OpenCode as the sixth tool, as well as plugins and LSP servers as mechanisms. It also adds the files that configuration artifacts import, the commits of other tools, the form in which each commit credits a tool, and agentic planning documents, which spec-driven development frameworks and the planning features of the tools write. Every heuristic cites the vendor documentation or the commits that it rests on. Still, a configuration artifact does not show that a tool is used, and a credit in a commit does not show who wrote the change. Until AgentTorrent 1.0.0 was renumbered from 2.0.0, this site offered its files with the <code>dataset_version</code> 2.0.0. The README of the release defines every column, and the <a href="https://github.com/se-uhd/agenttorrent-pipeline/blob/main/CHANGELOG.md">changelog</a> lists every change.</p>
   </div>
