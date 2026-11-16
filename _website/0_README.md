@@ -34,7 +34,7 @@ pipeline.
 
 ## Building
 
-Build the release first with `python3 -m agentcontext collected-files-archive && python3 -m agentcontext release`. Then run `build_site.py` from this directory. It reads `../data/collection/release/`, the files that Zenodo users download, and builds the site in `_site/`: paginated JSON for repositories, commits, and configuration artifacts, chart data, download metadata, the processed `index.html`, and `usage_example.py`.
+Build the release first with `python3 -m agentcontext collected-files-archive && python3 -m agentcontext release`. Then run `build_site.py` from this directory. It reads `../data/collection/release/`, the files that Zenodo users download, and builds the site in `_site/`: paginated JSON for repositories, commits, and configuration artifacts, the search index of the commits, chart data, download metadata, the processed `index.html`, and `usage_example.py`.
 
 GitHub Pages publishes the site and its data, with a 1 GB limit. The build exits 1 above that limit, so commit pages contain only message subjects; full messages are in `commits.csv.7z`. Repository details link configuration artifacts to the scanned branch on GitHub, and `repos_data.7z` contains the files. Release downloads go to `_assets/<version>/`, using the version in `provenance.json` and hard links where supported. The site links to that directory on the asset host.
 
@@ -100,12 +100,20 @@ message, and the next expansion requests it again.
 The commit browser lists the commits of `commits.csv` and `other_commits.csv`, a commit in both
 files once with the tools of both. The tool filter of the commits matches a commit under each
 tool that the commit credits, and its option Other tools matches a commit that credits a tool
-outside the six. The dashboard counts the commits that credit one of the six tools. The
-search reads the subject line, which is the part of the message that the commit pages hold. Filtered searches
-cover at most the newest <!--s:parameters._website.index.commit_search_limit-->5,000<!--/s--> commits, and the result label states how many commits
-were searched and the dataset's total. A filtered search requests all of these pages at once, and
-a page that is loaded or loading is not requested again. The list shows the result of the latest
-input, even when an earlier search finishes later. Unfiltered pagination covers all commits.
+outside the six. The dashboard counts the commits that credit one of the six tools.
+
+The search and the tool filter cover every commit through the search index that the build writes
+to `data/commits/index/`. The search reads the subject line, which is the part of the message that
+the commit pages hold, as words: lowercase runs of letters and digits, and each Han, Hiragana and
+Katakana character as a word of its own, because these scripts write no spaces between words. A
+commit matches when its subject line has, for each word of the search input, a word that begins
+with it. For example, `fix pars` finds "Fixes the parser" but not "Prefix the parser". Each word of
+the index lists the positions of the commits with the word in their subject line, and
+`tools.json` lists the `ai_tool` value of each commit. The files hold the words in the order in
+which JavaScript compares strings, and `words.json` lists the first word of each file. A search
+therefore requests only the files of its words, and then the commit pages of the matches that it
+shows. The search starts when the typing pauses, and the list shows the result of the latest input,
+even when an earlier search finishes later.
 
 The site shows the subject line of each commit as the commit CSV stores it.
 The dashboard counts the six tools and shows the repositories with no specific

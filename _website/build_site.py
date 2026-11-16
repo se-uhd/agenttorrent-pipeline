@@ -14,6 +14,7 @@ the pipeline's output CSVs.
 import json
 import math
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -116,6 +117,16 @@ CONTEXT_FILE_MARKERS = {
 # Pagination
 REPOS_PER_PAGE = 25
 COMMITS_PER_PAGE = 25
+
+# The search index of the commits. The characters of the scripts that write no spaces between
+# words, Han, Hiragana and Katakana, are each a word of their own, and every other word is a run of
+# letters and digits. `searchWords` of index.html splits a search input with the same characters.
+SEPARATE_CHARACTERS = re.compile(
+    "([\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\U00020000-\U0003ffff])")
+WORD = re.compile(r"[^\W_]+")
+# The size above which the index starts its next file of words. A word with a list of commits that
+# does not fit into one file has a file of its own.
+INDEX_FILE_BYTES = 256 * 1024
 
 # GitHub Pages publishes a site of at most 1 GB, and the build refuses a larger site.
 PAGES_LIMIT_BYTES = 1_000_000_000
@@ -400,6 +411,55 @@ def paginate_commits(commits: pd.DataFrame):
         ])
         write_json(SITE_DIR / "data" / "commits" / f"page_{page_idx}.json", records)
     logs.info(COMPONENT, f"  Wrote {n_pages:,} pages ({len(df):,} commits).")
+    write_commit_search_index(df)
+
+
+def search_words(text: str) -> list[str]:
+    """The words of a subject line as the commit search reads them, lowercase and in their order."""
+    return WORD.findall(SEPARATE_CHARACTERS.sub(r" \1 ", text.lower()))
+
+
+def write_commit_search_index(df: pd.DataFrame):
+    """Write the search index of the commits in the order of the commit pages to
+    data/commits/index/, where the position of a commit is its number in that order.
+
+    `words_<n>.json` lists words with the positions of the commits that have the word in their
+    subject line, as the first position and the difference of each further position from the one
+    before. The files hold the words in the order of their UTF-16 code units, the order in which the
+    page compares strings, and `words.json` lists the first word of each file, so that the page
+    finds the files of the words that begin with a word of the search input. `tools.json` lists
+    the values of `ai_tool` and, for each commit, the number of its value."""
+    logs.info(COMPONENT, "Writing the search index of the commits...")
+    directory = SITE_DIR / "data" / "commits" / "index"
+    positions: dict[str, list[int]] = {}
+    for position, subject in enumerate(df["commit_subject"]):
+        for word in dict.fromkeys(search_words(subject)):
+            positions.setdefault(word, []).append(position)
+    files: list[list[str]] = []
+    first_words: list[str] = []
+    size = 0
+    for word in sorted(positions, key=lambda word: word.encode("utf-16-be")):
+        commits = positions[word]
+        differences = [commits[0]] + [b - a for a, b in zip(commits, commits[1:])]
+        entry = json.dumps([word, differences], ensure_ascii=False, separators=(",", ":"))
+        entry_bytes = len(entry.encode("utf-8")) + 1
+        if not files or size + entry_bytes > INDEX_FILE_BYTES:
+            files.append([])
+            first_words.append(word)
+            size = 0
+        files[-1].append(entry)
+        size += entry_bytes
+    directory.mkdir(parents=True, exist_ok=True)
+    for number, entries in enumerate(files):
+        (directory / f"words_{number}.json").write_text("[" + ",".join(entries) + "]",
+                                                         encoding="utf-8")
+    write_json(directory / "words.json", first_words)
+    ai_tool = df["ai_tool"].fillna("")
+    values = ai_tool.value_counts().index.tolist()
+    value_numbers = {value: number for number, value in enumerate(values)}
+    write_json(directory / "tools.json",
+               {"ai_tool": values, "commits": ai_tool.map(value_numbers).tolist()})
+    logs.info(COMPONENT, f"  Wrote {len(positions):,} words in {len(files):,} files.")
 
 
 # --- Phase 6: Configuration artifact JSONs ----------------------------------

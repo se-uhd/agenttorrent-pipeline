@@ -13,6 +13,8 @@ Strategy:
   - The mechanism-by-tool heatmap counts the configuration artifacts attributed to each tool
     by the `tool` column of the mechanism CSVs, over a fixture with expected cells that are
     written out by hand.
+  - The commit search runs the page's code in Node.js over the commit pages and the search index
+    that the build writes from commits of the test.
 
 Run with:  python3 -m unittest test_build_site -v
 Requirements: Python 3.14, pandas
@@ -371,178 +373,331 @@ const header = {parentElement: {dataset: {repo: 'o/a'},
 
 
 def _commit_browser_code(source: str) -> str:
-    """The commit browser's code that the tests run in Node.js: the tool lists and the filter
-    helper that it uses, the counter of its loads, the requests of its pages and
-    `loadCommitPage`."""
-    parts = [re.search(r'^const SIX_COMMIT_TOOLS = [^\n]*$', source, re.M).group(),
-             re.search(r'^const OTHER_COMMIT_TOOLS = [^\n]*$', source, re.M).group(),
-             re.search(r'^let commitLoad = [^\n]*$', source, re.M).group(),
-             re.search(r'^function creditsTool\([^\n]*\)[\s\S]*?^}', source, re.M).group(),
-             re.search(r'^function requestOnce\([^\n]*\)[\s\S]*?^}', source, re.M).group(),
-             re.search(r'^function commitPageData\([^\n]*\)[\s\S]*?^}', source, re.M).group(),
-             re.search(r'async function loadCommitPage\([^\n]*\)[\s\S]*?^}', source, re.M).group()]
-    return "\n".join(parts)
+    """The commit browser's code that the tests run in Node.js: its constants and state, the
+    functions of its search, the requests of its files, `initCommits` and `loadCommitPage`."""
+    lines = [r'^const SIX_COMMIT_TOOLS = [^\n]*$', r'^const OTHER_COMMIT_TOOLS = [^\n]*$',
+             r'^const COMMIT_SEARCH_DELAY_MS = [^\n]*$', r'^let commitLoad = [^\n]*$',
+             r'^const commitIndexRequests = [^\n]*$', r'^let commitSearch = [^\n]*$',
+             r'^let commitSearchDelay;$']
+    functions = ['showingText', 'creditsTool', 'requestOnce', 'commitPageData', 'commitIndexFile',
+                 'searchWords', 'indexFilesOf', 'findCommits', 'initCommits', 'loadCommitPage']
+    return "\n".join(
+        [re.search(line, source, re.M).group() for line in lines]
+        + [re.search(r'^(?:async )?function ' + name + r'\([^\n]*\)[\s\S]*?^}', source, re.M).group()
+           for name in functions])
 
 
-# The fixture of a commit browser: Its page requests stay pending until the script resolves one
-# with `respond(pending.shift())`, which returns the commits of PAGES, and `settle()` lets the
-# code of the browser run until it waits for the next request.
-_PENDING_COMMIT_PAGES = r'''
-const nodes = {'commit-search': {value:'parser'}};
-const document = {getElementById: key => nodes[key] ||= {}, querySelectorAll: () => []};
-const REPOS_PER_PAGE = 25;
-const commitPageRequests = {}, fmt = String;
+# The page of a commit browser over the site that a test built in SITE. Its requests stay pending
+# until the script resolves one with `respond(pending.shift())`, which returns the file of the
+# site, or all of them with `respondAll()`, and `settle()` lets the code of the browser run until
+# it waits for the next request. `requested` lists the requested files in order.
+_COMMIT_BROWSER = r'''
+const fs = require('fs');
+const nodes = {'commit-search': {value: ''}};
+let activeTools = [];
+const document = {
+  getElementById: key => nodes[key] ||= {appendChild() {}},
+  querySelectorAll: () => activeTools.map(tool => ({dataset: {tool}})),
+  createElement: () => ({classList: {toggle() {}}, dataset: {}})
+};
+const REPOS_PER_PAGE = 25, commitPageRequests = {}, fmt = String;
 let commitPage = 0, rendered;
-const renderCommits = rows => rendered = rows;
-const renderPagination = () => {};
-const pending = [];
-const fetch = url => new Promise(resolve => pending.push({url, resolve}));
+const renderCommits = rows => rendered = rows, renderPagination = () => {};
+const requested = [], pending = [];
+const fetch = url => {
+  requested.push(url);
+  return new Promise(resolve => pending.push({url, resolve}));
+};
 const respond = ({url, resolve}) =>
-  resolve({json: async () => PAGES[Number(url.match(/page_(\d+)/)[1])]});
+  resolve({json: async () => JSON.parse(fs.readFileSync(SITE + url, 'utf8'))});
 const settle = () => new Promise(resolve => setImmediate(resolve));
+async function respondAll() {
+  do {
+    while (pending.length) respond(pending.shift());
+    await settle();
+  } while (pending.length);
+}
+const subjects = rows => rows.map(row => row.commit_subject);
 '''
 
 
-class TestCommitBrowserFilters(unittest.TestCase):
+def _write_commit_site(root: Path, commits: list[tuple[str, str]], file_bytes: int = None) -> Path:
+    """Write the commit pages and the search index of commits with these messages and `ai_tool`
+    values, newest first, with the build's code to the directory `site` of `root`, and return
+    the directory."""
+    from datetime import datetime, timedelta
+    from unittest import mock
+    import pandas as pd
+    builder = _load()
+    start = datetime(2026, 10, 1)
+    rows = pd.DataFrame([{
+        'repo_name': 'o/r',
+        'commit_timestamp': (start - timedelta(minutes=i)).strftime('%Y-%m-%dT%H:%M:%SZ'),
+        'branch': 'main', 'commit_sha': f'{i:040x}', 'github_link': 'https://github.com/o/r',
+        'commit_message': message, 'ai_tool': tool} for i, (message, tool) in enumerate(commits)])
+    site = root / 'site'
+    with mock.patch.object(builder, 'SITE_DIR', site), \
+         mock.patch.object(builder, 'INDEX_FILE_BYTES', file_bytes or builder.INDEX_FILE_BYTES):
+        builder.paginate_commits(rows)
+    return site
+
+
+def _run_commit_browser(test: unittest.TestCase, site: Path, total: int, script: str):
+    """Run `script` in Node.js on the page of a commit browser over `site`, a site with `total`
+    commits, and return the JSON that it prints."""
+    import json
+    import shutil
+    import subprocess
+    if not shutil.which('node'):
+        test.skipTest('Node.js is required to execute the browser code')
+    code = (_COMMIT_BROWSER + f'const SITE = {json.dumps(str(site) + "/")};\n'
+            + f'const SUMMARY = {{total_listed_commits: {total}}};\n'
+            + _commit_browser_code((HERE / 'index.html').read_text()) + '\n' + script)
+    run = subprocess.run(['node', '-e', code], capture_output=True, text=True, check=True)
+    return json.loads(run.stdout)
+
+
+class TestCommitSearch(unittest.TestCase):
+    """The search of the commit browser, over the commit pages and the search index that the
+    build writes, with the page's own code in Node."""
+
+    # Texts and the words that the search reads in them, lowercase and in their order.
+    WORDS = {
+        "Fix the parser's bug_42 in AGENTS.md":
+            ['fix', 'the', 'parser', 's', 'bug', '42', 'in', 'agents', 'md'],
+        'fix(Masonry): 修复布局': ['fix', 'masonry', '修', '复', '布', '局'],
+        'テスト追加 for Straße': ['テ', 'ス', 'ト', '追', '加', 'for', 'straße'],
+        'ÜBER-Café v2.0': ['über', 'café', 'v2', '0'],
+    }
+
+    def test_the_build_and_the_page_read_the_same_words(self):
+        """The index holds the words of a subject line that the build reads, and the page looks up
+        the words of the search input, so both split a text into the same words."""
+        import json
+        import shutil
+        import subprocess
+        builder = _load()
+        self.assertEqual({text: builder.search_words(text) for text in self.WORDS}, self.WORDS)
+        if not shutil.which('node'):
+            self.skipTest('Node.js is required to execute the browser code')
+        source = (HERE / 'index.html').read_text()
+        function = re.search(r'^function searchWords\([^\n]*\)[\s\S]*?^}', source, re.M).group()
+        script = (function + f'\nconst texts = {json.dumps(list(self.WORDS))};\n'
+                  + 'console.log(JSON.stringify(Object.fromEntries('
+                  + 'texts.map(text => [text, searchWords(text)]))));')
+        run = subprocess.run(['node', '-e', script], capture_output=True, text=True, check=True)
+        self.assertEqual(json.loads(run.stdout), self.WORDS)
+
+    def test_the_index_lists_the_commits_of_each_word_and_the_tools_of_each_commit(self):
+        """Each word of a subject line lists the positions of the commits with the word, as the
+        first position and the differences that lead to the next. Each word stands in one file,
+        and `words.json` lists the first word of each file."""
+        import json
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            site = _write_commit_site(Path(tmp), [
+                ('Fix the parser\n\nThe docs too', 'Claude'), ('Update the docs', 'Codex'),
+                ('Fix the docs', 'Claude,Amp')], file_bytes=40)
+            directory = site / 'data/commits/index'
+            first_words = json.loads((directory / 'words.json').read_text())
+            files = [json.loads((directory / f'words_{n}.json').read_text())
+                     for n in range(len(first_words))]
+            tools = json.loads((directory / 'tools.json').read_text())
+        self.assertGreater(len(files), 1)
+        self.assertEqual([entries[0][0] for entries in files], first_words)
+        positions = {}
+        for entries in files:
+            for word, differences in entries:
+                self.assertNotIn(word, positions)
+                positions[word] = [sum(differences[:i + 1]) for i in range(len(differences))]
+        self.assertEqual(positions, {'fix': [0, 2], 'the': [0, 1, 2], 'parser': [0],
+                                     'update': [1], 'docs': [1, 2]})
+        self.assertEqual([tools['ai_tool'][value] for value in tools['commits']],
+                         ['Claude', 'Codex', 'Claude,Amp'])
+
+    def test_a_commit_matches_with_a_word_that_begins_with_each_word_of_the_input(self):
+        """The search reads the subject line. A word of the input matches the words of the subject
+        line that begin with it, the commit has to match every word of the input, and the
+        characters other than letters and digits separate words."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            site = _write_commit_site(Path(tmp), [
+                ('Fix the parser', 'Claude'), ('Fixes for the lexer', 'Claude'),
+                ('Prefix the parser output', 'Claude'), ('Update the docs\n\nThe parser too', 'Claude')])
+            result = _run_commit_browser(self, site, 4, r'''
+const inputs = ['fix', 'PARSER fix', 'the pars', 'fix!', 'ix'];
+(async () => {
+  const found = {};
+  for (const input of inputs) {
+    const search = findCommits([...new Set(searchWords(input))], []);
+    await respondAll();
+    found[input] = await search;
+  }
+  console.log(JSON.stringify(found));
+})();
+''')
+        self.assertEqual(result, {'fix': [0, 1], 'PARSER fix': [0], 'the pars': [0, 2],
+                                  'fix!': [0, 1], 'ix': []})
+
+    def test_a_search_covers_every_commit_and_requests_the_pages_of_the_shown_matches(self):
+        """A search of 5,001 commits finds the oldest, and it requests the list of the first words
+        of the files of the index, the file of the word and the commit page of the match."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            site = _write_commit_site(
+                Path(tmp), [('Update the docs', 'Claude')] * 5000 + [('Fix the parser', 'Claude')])
+            result = _run_commit_browser(self, site, 5001, r'''
+nodes['commit-search'].value = 'parser';
+(async () => {
+  const load = loadCommitPage();
+  await respondAll();
+  await load;
+  console.log(JSON.stringify({rendered: subjects(rendered), requested,
+                              info: nodes['commit-results-info'].textContent}));
+})();
+''')
+        self.assertEqual(result, {
+            'rendered': ['Fix the parser'],
+            'requested': ['data/commits/index/words.json', 'data/commits/index/words_0.json',
+                          'data/commits/page_200.json'],
+            'info': 'Showing 1–1 of 1 matching commits'})
+
+    def test_a_tool_filter_covers_every_commit(self):
+        """The filter of a tool reads the tools of each commit from the index and matches each
+        commit of the 5,001 that credits the tool."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            site = _write_commit_site(Path(tmp), [('First', 'Claude,Copilot')]
+                                      + [('Middle', 'Gemini')] * 4999 + [('Last', 'Copilot')])
+            result = _run_commit_browser(self, site, 5001, r'''
+activeTools = ['Copilot'];
+(async () => {
+  const load = loadCommitPage();
+  await respondAll();
+  await load;
+  console.log(JSON.stringify({rendered: subjects(rendered), requested,
+                              info: nodes['commit-results-info'].textContent}));
+})();
+''')
+        self.assertEqual(result, {
+            'rendered': ['First', 'Last'],
+            'requested': ['data/commits/index/tools.json', 'data/commits/page_0.json',
+                          'data/commits/page_200.json'],
+            'info': 'Showing 1–2 of 2 matching commits'})
+
+    def test_the_second_page_of_a_search_shows_the_next_matches(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            site = _write_commit_site(Path(tmp), [(f'Fix {i}', 'Claude') for i in range(30)]
+                                      + [('Update the docs', 'Claude')] * 10)
+            result = _run_commit_browser(self, site, 40, r'''
+nodes['commit-search'].value = 'fix';
+(async () => {
+  let load = loadCommitPage();
+  await respondAll();
+  await load;
+  commitPage = 1;
+  load = loadCommitPage();
+  await respondAll();
+  await load;
+  console.log(JSON.stringify({rendered: subjects(rendered),
+                              info: nodes['commit-results-info'].textContent}));
+})();
+''')
+        self.assertEqual(result, {'rendered': [f'Fix {i}' for i in range(25, 30)],
+                                  'info': 'Showing 26–30 of 30 matching commits'})
+
+    def test_the_search_reads_every_file_that_holds_a_word_that_begins_with_the_input(self):
+        """With each word in a file of its own, the words that begin with `pars` stand in three
+        files. JavaScript compares strings by their UTF-16 code units, which put a letter outside
+        the Basic Multilingual Plane, such as 𝐀, before a letter such as ａ (U+FF41), and the
+        search finds the files of both."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            site = _write_commit_site(Path(tmp), [
+                ('abc', 'Claude'), ('ａbc', 'Claude'), ('𝐀bc', 'Claude'), ('parse', 'Claude'),
+                ('parser', 'Claude'), ('parsing', 'Claude')], file_bytes=1)
+            result = _run_commit_browser(self, site, 6, r'''
+(async () => {
+  const found = [];
+  for (const input of ['abc', 'ａbc', '𝐀bc', 'pars']) {
+    const search = findCommits(searchWords(input), []);
+    await respondAll();
+    found.push(await search);
+  }
+  console.log(JSON.stringify(found));
+})();
+''')
+        self.assertEqual(result, [[0], [1], [2], [3, 4, 5]])
+
+    def test_typing_in_the_search_box_starts_one_search_when_the_typing_pauses(self):
+        """Each keystroke would otherwise request the files of the words that begin with what was
+        typed so far."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            site = _write_commit_site(Path(tmp), [('Fix the parser', 'Claude'),
+                                                  ('Update the docs', 'Claude')])
+            result = _run_commit_browser(self, site, 2, r'''
+const timers = new Map();
+let timerNumber = 0, delays = [];
+const setTimeout = (run, ms) => { timers.set(++timerNumber, run); delays.push(ms); return timerNumber; };
+const clearTimeout = number => timers.delete(number);
+(async () => {
+  initCommits();
+  await respondAll();
+  for (const value of ['p', 'pa', 'parser']) {
+    nodes['commit-search'].value = value;
+    nodes['commit-search'].oninput();
+  }
+  const waiting = timers.size, loadsBefore = commitLoad;
+  for (const run of timers.values()) run();
+  await respondAll();
+  console.log(JSON.stringify({waiting, loads: commitLoad - loadsBefore,
+                              delayed: delays.every(ms => ms === COMMIT_SEARCH_DELAY_MS),
+                              rendered: subjects(rendered)}));
+})();
+''')
+        self.assertEqual(result, {'waiting': 1, 'loads': 1, 'delayed': True,
+                                  'rendered': ['Fix the parser']})
 
     def test_other_tools_matches_a_commit_that_credits_a_tool_outside_the_six(self):
         """A commit of other_commits.csv credits a tool outside the six, and a commit in both
         commit CSVs lists the tools of both. The filter "Other tools" matches both, and the
         filter of a tool matches only the commits that credit it."""
-        import json
-        import shutil
-        import subprocess
-        if not shutil.which('node'):
-            self.skipTest('Node.js is required to execute the browser code')
-        source = (HERE / 'index.html').read_text()
-        script = _commit_browser_code(source) + r'''
-const commits = [{ai_tool:'Claude'}, {ai_tool:'Claude,Amp'}, {ai_tool:'Devin'}];
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            result = _run_commit_browser(self, Path(tmp), 0, r'''
+const values = ['Claude', 'Claude,Amp', 'Devin'];
 console.log(JSON.stringify({
-  other: commits.map(c => creditsTool(c, OTHER_COMMIT_TOOLS)),
-  claude: commits.map(c => creditsTool(c, 'Claude'))}));
-'''
-        run = subprocess.run(['node', '-e', script], capture_output=True, text=True, check=True)
-        self.assertEqual(json.loads(run.stdout), {"other": [False, True, True],
-                                                  "claude": [True, True, False]})
-
-    def test_multitool_matches_and_search_limit_are_visible(self):
-        import json
-        import shutil
-        import subprocess
-        if not shutil.which('node'):
-            self.skipTest('Node.js is required to execute the browser code')
-        source = (HERE / 'index.html').read_text()
-        function = _commit_browser_code(source)
-        script = r'''
-const nodes = {'commit-search': {value:''}};
-const document = {
-  getElementById: key => nodes[key] ||= {},
-  querySelectorAll: () => [{dataset:{tool:'Claude'}}]
-};
-const SUMMARY = {total_listed_commits:5001}, REPOS_PER_PAGE = 25;
-const commitPageRequests = {}, fmt = String;
-let commitPage = 0, rendered, paginationTotal;
-const renderCommits = rows => rendered = rows;
-const renderPagination = (id, total) => paginationTotal = total;
-const fetch = async url => ({json: async () => {
-  const page = Number(url.match(/page_(\d+)/)[1]);
-  return Array.from({length:25}, (_, i) => ({commit_sha:`${page}-${i}`,
-    ai_tool: page === 0 && i === 0 ? 'Claude,Copilot' : 'Gemini',
-    commit_message:'Example commit'}));
-}});
-''' + function + r'''
-loadCommitPage().then(() => console.log(JSON.stringify({rendered, paginationTotal,
-  info:nodes['commit-results-info'].textContent})));
-'''
-        run = subprocess.run(['node', '-e', script], capture_output=True, text=True,
-                             check=True)
-        result = json.loads(run.stdout)
-        self.assertEqual([row['commit_sha'] for row in result['rendered']], ['0-0'])
-        self.assertEqual(result['paginationTotal'], 1)
-        self.assertIn('among the newest 5000 of 5001 commits', result['info'])
-
-    def test_the_search_reads_the_subject_line(self):
-        """The commit pages hold the subject line of each message, and the search finds a word of
-        it."""
-        import json
-        import shutil
-        import subprocess
-        if not shutil.which('node'):
-            self.skipTest('Node.js is required to execute the browser code')
-        source = (HERE / 'index.html').read_text()
-        function = _commit_browser_code(source)
-        script = r'''
-const nodes = {'commit-search': {value:'parser'}};
-const document = {getElementById: key => nodes[key] ||= {}, querySelectorAll: () => []};
-const SUMMARY = {total_listed_commits:2}, REPOS_PER_PAGE = 25;
-const commitPageRequests = {}, fmt = String;
-let commitPage = 0, rendered;
-const renderCommits = rows => rendered = rows;
-const renderPagination = () => {};
-const fetch = async url => ({json: async () => [
-  {commit_sha:'match', ai_tool:'Claude', commit_subject:'Fix the parser'},
-  {commit_sha:'other', ai_tool:'Claude', commit_subject:'Update the docs'}]});
-''' + function + r'''
-loadCommitPage().then(() => console.log(JSON.stringify(rendered.map(row => row.commit_sha))));
-'''
-        run = subprocess.run(['node', '-e', script], capture_output=True, text=True,
-                             check=True)
-        self.assertEqual(json.loads(run.stdout), ['match'])
-
-    def test_a_search_requests_each_page_that_it_covers_once_and_before_any_response(self):
-        """A search requests all the pages that it covers before the first response arrives, and
-        a second input while they are pending requests none of them again."""
-        import json
-        import shutil
-        import subprocess
-        if not shutil.which('node'):
-            self.skipTest('Node.js is required to execute the browser code')
-        source = (HERE / 'index.html').read_text()
-        script = _PENDING_COMMIT_PAGES + r'''
-const SUMMARY = {total_listed_commits:6000};
-''' + _commit_browser_code(source) + r'''
-loadCommitPage();
-nodes['commit-search'].value = 'parse';
-loadCommitPage();
-settle().then(() => console.log(JSON.stringify(pending.map(request => request.url))));
-'''
-        run = subprocess.run(['node', '-e', script], capture_output=True, text=True,
-                             check=True)
-        self.assertEqual(json.loads(run.stdout),
-                         [f'data/commits/page_{page}.json' for page in range(200)])
+  other: values.map(value => creditsTool(value, OTHER_COMMIT_TOOLS)),
+  claude: values.map(value => creditsTool(value, 'Claude'))}));
+''')
+        self.assertEqual(result, {"other": [False, True, True], "claude": [True, True, False]})
 
     def test_a_search_that_finishes_late_does_not_replace_the_list_of_a_later_input(self):
         """Clearing the search box while the search loads lists the newest commits, even when
-        the search finishes after them."""
-        import json
-        import shutil
-        import subprocess
-        if not shutil.which('node'):
-            self.skipTest('Node.js is required to execute the browser code')
-        source = (HERE / 'index.html').read_text()
-        script = _PENDING_COMMIT_PAGES + r'''
-const SUMMARY = {total_listed_commits:26};
-const PAGES = [
-  [{commit_sha:'match', ai_tool:'Claude', commit_subject:'Fix the parser'},
-   {commit_sha:'other', ai_tool:'Claude', commit_subject:'Update the docs'}],
-  [{commit_sha:'older', ai_tool:'Claude', commit_subject:'Rewrite the parser'}]];
-''' + _commit_browser_code(source) + r'''
-loadCommitPage();
+        the search finishes after them, and the search then requests no commit page."""
+        import tempfile
+        newest = [('Fix the parser', 'Claude')] + [('Update the docs', 'Claude')] * 24
+        with tempfile.TemporaryDirectory() as tmp:
+            site = _write_commit_site(Path(tmp), newest + [('Rewrite the parser', 'Claude')])
+            result = _run_commit_browser(self, site, 26, r'''
+nodes['commit-search'].value = 'parser';
+const search = loadCommitPage();
 nodes['commit-search'].value = '';
-loadCommitPage();
+const clear = loadCommitPage();
 (async () => {
-  for (let round = 0; round < 5; round++) {
-    while (pending.length) respond(pending.shift());
-    await settle();
-  }
-  console.log(JSON.stringify({rendered: rendered.map(row => row.commit_sha),
+  await respondAll();
+  await Promise.all([search, clear]);
+  console.log(JSON.stringify({rendered: subjects(rendered), requested,
                               info: nodes['commit-results-info'].textContent}));
 })();
-'''
-        run = subprocess.run(['node', '-e', script], capture_output=True, text=True,
-                             check=True)
-        self.assertEqual(json.loads(run.stdout), {'rendered': ['match', 'other'],
-                                                  'info': 'Showing 1–25 of 26 commits'})
+''')
+        self.assertEqual(result, {'rendered': [message for message, _ in newest],
+                                  'requested': ['data/commits/index/words.json',
+                                                'data/commits/page_0.json',
+                                                'data/commits/index/words_0.json'],
+                                  'info': 'Showing 1–25 of 26 commits'})
 
 
 class TestMechanismJsonExport(unittest.TestCase):

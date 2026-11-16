@@ -4026,35 +4026,6 @@
       "name": "MIN_FREE_DISK_GB"
     }
   },
-  "parameters._website.index.commit_search_limit": {
-    "value": 5000,
-    "meaning": "newest commits that a filtered search of the website covers: the pages of commits that _website/index.html loads at most times the commits per page that _website/build_site.py writes",
-    "from": {
-      "product": [
-        "parameters._website.index.search_pages",
-        "parameters._website.build_site.COMMITS_PER_PAGE"
-      ]
-    }
-  },
-  "parameters._website.index.search_pages": {
-    "value": 200,
-    "meaning": "pages of commits that a filtered search of the website loads at most (maxPages of _website/index.html), a factor of the commit search limit",
-    "from": {
-      "function": "code.literal",
-      "args": {
-        "path": "_website/index.html",
-        "pattern": "const maxPages = Math\\.min\\((\\d+), "
-      }
-    }
-  },
-  "parameters._website.build_site.COMMITS_PER_PAGE": {
-    "value": 25,
-    "meaning": "commits per page file that _website/build_site.py writes (COMMITS_PER_PAGE), a factor of the commit search limit",
-    "from": {
-      "constant": "_website/build_site.py",
-      "name": "COMMITS_PER_PAGE"
-    }
-  },
   "parameters.agentcontext.checks.unmatched.UNMATCHED_COLUMNS_READ": {
     "value": 4,
     "meaning": "columns the tracked archive keeps",

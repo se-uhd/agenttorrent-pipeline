@@ -37,10 +37,14 @@ AgentConfigs 1.0.0 is tagged `agentconfigs_1.0.0` in the private repository
   arXiv:2611.15436, and the README of the release lists the paper first among the associated
   papers.
 
+### Changed
+
+- The website's commit search and its tool filter cover every commit rather than only the newest.
+  The search finds the commits with a word in the subject line that begins with each word of the
+  search input, rather than the subject lines that contain the input.
+
 ### Fixed
 
-- The website's commit search requests the pages that it searches at once instead of one after
-  the other.
 - The website's commit list no longer shows the result of an earlier search input that finished
   after a later one.
 - The website's configuration browser loads its first tab when it comes into view rather than

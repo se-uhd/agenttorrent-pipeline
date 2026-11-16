@@ -317,7 +317,7 @@
   <h2>AI Commits<a class="section-anchor" href="#commits" onclick="navigator.clipboard.writeText(this.href)" title="Copy link to section"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.75 9.25a3.25 3.25 0 0 0 4.596.148l1.904-1.904a3.25 3.25 0 0 0-4.596-4.596L7.5 4.052"/><path d="M9.25 6.75a3.25 3.25 0 0 0-4.596-.148L2.75 8.506a3.25 3.25 0 0 0 4.596 4.596L8.5 11.948"/></svg></a></h2>
   <p class="section-desc">Commits that credit any tool, detected through authors, trailers, and messages.</p>
   <div class="filter-bar" id="commit-filter-bar">
-    <input type="text" id="commit-search" placeholder="Filter commit messages...">
+    <input type="text" id="commit-search" placeholder="Search the subject lines...">
     <div class="platform-toggle" id="commit-tool-toggles"></div>
   </div>
   <div id="commit-results-info" class="results-info"></div>
@@ -384,6 +384,13 @@ let commitPage = 0;
 const commitPageRequests = {};
 // The number of the latest call of loadCommitPage.
 let commitLoad = 0;
+// The requests of the files of the search index of the commits, by file name.
+const commitIndexRequests = {};
+// The filters of the latest search and the positions of the commits that it found, which a
+// change of page reuses.
+let commitSearch = {filters: null, found: []};
+// The pending search of the latest input in the search box, which starts once the typing pauses.
+let commitSearchDelay;
 // The rows of each tab of the configuration browser that has loaded, and the requests of their
 // JSON files by tab.
 let artifactData = {};
@@ -719,10 +726,13 @@ function renderRepoDetail(container, repoName) {
 // ── Commits ─────────────────────────────────────────────────────────────────
 const SIX_COMMIT_TOOLS = ['Copilot', 'Cursor', 'Claude', 'Gemini', 'Codex', 'OpenCode'];
 const OTHER_COMMIT_TOOLS = 'Other tools';
-// Whether a commit credits the tool of a filter button: one of the six by its name, and
+// The milliseconds after the last keystroke in the search box at which the search starts, so that
+// typing a word does not request the files of the index for each of its beginnings.
+const COMMIT_SEARCH_DELAY_MS = 250;
+// Whether an `ai_tool` value credits the tool of a filter button: one of the six by its name, and
 // OTHER_COMMIT_TOOLS for any tool outside them.
-function creditsTool(commit, tool) {
-  const credits = (commit.ai_tool || '').split(',').map(credit => credit.trim());
+function creditsTool(aiTool, tool) {
+  const credits = (aiTool || '').split(',').map(credit => credit.trim());
   if (tool === OTHER_COMMIT_TOOLS) return credits.some(credit => credit && !SIX_COMMIT_TOOLS.includes(credit));
   return credits.some(credit => credit.toLowerCase() === tool.toLowerCase());
 }
@@ -737,7 +747,10 @@ function initCommits() {
     btn.onclick = () => { btn.classList.toggle('active'); commitPage = 0; loadCommitPage(); };
     toggles.appendChild(btn);
   });
-  document.getElementById('commit-search').oninput = () => { commitPage = 0; loadCommitPage(); };
+  document.getElementById('commit-search').oninput = () => {
+    clearTimeout(commitSearchDelay);
+    commitSearchDelay = setTimeout(() => { commitPage = 0; loadCommitPage(); }, COMMIT_SEARCH_DELAY_MS);
+  };
   loadCommitPage();
 }
 
@@ -746,14 +759,77 @@ function commitPageData(i) {
   return requestOnce(commitPageRequests, i, `data/commits/page_${i}.json`);
 }
 
+// The JSON file of the search index of the commits with this name.
+function commitIndexFile(name) {
+  return requestOnce(commitIndexRequests, name, `data/commits/index/${name}.json`);
+}
+
+// The words of a search input, as build_site.py splits the subject lines of the index: lowercase
+// runs of letters and digits, and each Han, Hiragana and Katakana character a word of its own,
+// because these scripts write no spaces between words.
+function searchWords(text) {
+  return text.toLowerCase()
+    .replace(/([\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\u{20000}-\u{3ffff}])/gu, ' $1 ')
+    .match(/[\p{L}\p{N}]+/gu) || [];
+}
+
+// The numbers of the files of the index that can hold a word that begins with `word`. The files
+// hold the words in the order in which JavaScript compares strings, and `firstWords` lists the
+// first word of each file: the file in which `word` would stand, and each later file with a
+// first word that begins with `word`.
+function indexFilesOf(firstWords, word) {
+  if (!firstWords.length) return [];
+  let first = 0;
+  while (first + 1 < firstWords.length && firstWords[first + 1] <= word) first++;
+  const files = [first];
+  for (let i = first + 1; i < firstWords.length && firstWords[i].startsWith(word); i++) files.push(i);
+  return files;
+}
+
+// The positions in the commit list of the commits that match the search, in the order of the
+// list. A commit matches when its subject line has, for each word of the search input, a word
+// that begins with it, and when it credits one of the selected tools.
+async function findCommits(words, tools) {
+  const total = SUMMARY.total_listed_commits;
+  const credits = tools.length ? commitIndexFile('tools') : null;
+  const matches = new Uint8Array(total).fill(1);
+  if (words.length) {
+    const firstWords = await commitIndexFile('words');
+    const filesOfWords = words.map(word => indexFilesOf(firstWords, word));
+    const files = {};
+    await Promise.all([...new Set(filesOfWords.flat())].map(async number => {
+      files[number] = await commitIndexFile(`words_${number}`);
+    }));
+    words.forEach((word, i) => {
+      const has = new Uint8Array(total);
+      for (const number of filesOfWords[i]) {
+        for (const [indexWord, differences] of files[number]) {
+          if (!indexWord.startsWith(word)) continue;
+          let position = 0;
+          for (const difference of differences) { position += difference; has[position] = 1; }
+        }
+      }
+      for (let position = 0; position < total; position++) matches[position] &= has[position];
+    });
+  }
+  if (credits) {
+    const index = await credits;
+    const selected = index.ai_tool.map(aiTool => tools.some(tool => creditsTool(aiTool, tool)));
+    index.commits.forEach((value, position) => { if (!selected[value]) matches[position] = 0; });
+  }
+  const found = [];
+  for (let position = 0; position < total; position++) if (matches[position]) found.push(position);
+  return found;
+}
+
 async function loadCommitPage() {
   // Each input starts a load. A load that finishes after a later one has started renders nothing,
   // so that the list always shows the result of the latest input.
   const load = ++commitLoad;
   const list = document.getElementById('commit-list');
-  const query = document.getElementById('commit-search').value.toLowerCase();
+  const words = [...new Set(searchWords(document.getElementById('commit-search').value))];
   const activeTools = [...document.querySelectorAll('#commit-tool-toggles button.active')].map(b => b.dataset.tool);
-  const hasFilters = query || activeTools.length;
+  const hasFilters = words.length || activeTools.length;
 
   if (!hasFilters) {
     list.innerHTML = '<div class="loading">Loading commits...</div>';
@@ -774,31 +850,29 @@ async function loadCommitPage() {
     return;
   }
 
-  // With filters: request every page that the search covers at once, and filter in the browser.
-  // The search reads the pages up to the first page that fails to load.
+  // With filters: find the matching commits of the whole list in the search index, once for each
+  // change of the filters, and request the commit pages that hold the matches of the shown page.
   list.innerHTML = '<div class="loading">Searching commits...</div>';
-  const maxPages = Math.min(200, Math.ceil(SUMMARY.total_listed_commits / REPOS_PER_PAGE));
-  const pages = await Promise.allSettled(Array.from({length: maxPages}, (_, i) => commitPageData(i)));
-  if (load !== commitLoad) return;
-  const allCommits = [];
-  for (const page of pages) {
-    if (page.status === 'rejected') break;
-    allCommits.push(...page.value);
+  const filters = JSON.stringify([words, activeTools]);
+  try {
+    if (commitSearch.filters !== filters) {
+      const found = await findCommits(words, activeTools);
+      if (load !== commitLoad) return;
+      commitSearch = {filters, found};
+    }
+    const found = commitSearch.found;
+    const start = commitPage * REPOS_PER_PAGE;
+    const end = Math.min(start + REPOS_PER_PAGE, found.length);
+    const commits = await Promise.all(found.slice(start, end).map(async position =>
+      (await commitPageData(Math.floor(position / REPOS_PER_PAGE)))[position % REPOS_PER_PAGE]));
+    if (load !== commitLoad) return;
+    document.getElementById('commit-results-info').textContent =
+      showingText(start, end, found.length, 'matching commits');
+    renderCommits(commits);
+    renderPagination('commit-pagination', found.length, REPOS_PER_PAGE, commitPage, p => { commitPage = p; loadCommitPage(); }, 'commits');
+  } catch(e) {
+    if (load === commitLoad) list.innerHTML = '<div class="loading">Failed to load.</div>';
   }
-
-  const filtered = allCommits.filter(c => {
-    if (query && !(c.commit_subject||'').toLowerCase().includes(query)) return false;
-    if (activeTools.length && !activeTools.some(t => creditsTool(c, t))) return false;
-    return true;
-  });
-
-  const start = commitPage * REPOS_PER_PAGE;
-  const end = Math.min(start + REPOS_PER_PAGE, filtered.length);
-  const page = filtered.slice(start, end);
-  document.getElementById('commit-results-info').textContent =
-    `Showing ${Math.min(start+1, filtered.length)}\u2013${end} of ${fmt(filtered.length)} matching commits among the newest ${fmt(allCommits.length)} of ${fmt(SUMMARY.total_listed_commits)} commits`;
-  renderCommits(page);
-  renderPagination('commit-pagination', filtered.length, REPOS_PER_PAGE, commitPage, p => { commitPage = p; loadCommitPage(); }, 'commits');
 }
 
 function renderCommits(commits) {
