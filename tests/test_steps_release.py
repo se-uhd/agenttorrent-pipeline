@@ -816,7 +816,7 @@ class TestGeneratedFiles(_Fixture):
     def test_the_citation_names_the_authors_of_the_release_in_their_order(self):
         """The release and its MSR 2027 data showcase paper list their authors in this order,
         which differs from the order of the AIware 2026 dataset paper."""
-        text = _mod.render_citation("1.0.0")
+        text = _mod.render_citation("1.0.0").split("preferred-citation:")[0]
         self.assertIn("cff-version: 1.2.0", text)
         self.assertEqual(re.findall(r"family-names: (.+)", text),
                          ["Baltes", "Mohsenimofidi", "Böhme", "Nersesyan", "Abubakar", "Lulla", "Galster",
@@ -842,9 +842,31 @@ class TestGeneratedFiles(_Fixture):
                       "Vahram Nersesyan, Muhammad Auwal Abubakar, Jai Lal Lulla, Matthias "
                       "Galster, Christoph Treude ", license_text)
 
-    def test_the_citation_contains_no_doi(self):
-        # Zenodo assigns the DOI at deposit, and nobody would have assigned a DOI written here.
-        self.assertNotIn("doi", _mod.render_citation("1.0.0").lower())
+    def test_the_citation_of_the_release_contains_no_doi(self):
+        # Zenodo assigns the DOI of the release at deposit, and nobody would have assigned a DOI
+        # written here. Only the preferred citation, the paper, has a DOI.
+        release = _mod.render_citation("1.0.0").split("preferred-citation:")[0]
+        self.assertNotIn("doi", release.lower())
+
+    def test_the_preferred_citation_is_the_preprint_of_the_paper(self):
+        """The paper that describes AgentTorrent 1.0.0 has the title and the eight authors of
+        the release. Its preprint is arXiv:2611.15436 of 2026, and arXiv registered the DOI
+        10.48550/arXiv.2611.15436 for it."""
+        text = _mod.render_citation("1.0.0")
+        self.assertIn("message: If you use this dataset, please cite the paper that describes "
+                      "it.\n", text)
+        paper = text.split("\npreferred-citation:\n")[1]
+        self.assertEqual(re.findall(r"family-names: (.+)", paper),
+                         ["Baltes", "Mohsenimofidi", "Böhme", "Nersesyan", "Abubakar", "Lulla",
+                          "Galster", "Treude"])
+        for line in ("  type: generic\n",
+                     '  title: "AgentTorrent: A Dataset of Context and Harness Engineering '
+                     'Artifacts on GitHub"\n',
+                     "  year: 2026\n",
+                     "  doi: 10.48550/arXiv.2611.15436\n",
+                     '  url: "https://arxiv.org/abs/2611.15436"\n'):
+            with self.subTest(line=line):
+                self.assertIn(line, paper)
 
     def test_the_manifest_is_sorted_and_in_sha256sum_format(self):
         for name in ("b.csv", "a.csv"):
@@ -3118,18 +3140,26 @@ class TestPublish(_Fixture):
         self.assertIn("The repositories come from a search result of the GitHub Search dataset "
                       "(GHS) downloaded on 2026-03-16.", readme)
 
-    def test_the_readme_cites_the_release_with_its_authors_in_their_order(self):
-        """A reader of the README, which the Zenodo record shows, finds the citation of the
-        release itself beside the papers, with the eight authors in the order of the deposit
-        and the version of the release."""
+    def test_the_readme_cites_the_paper_and_then_the_release_with_its_authors_in_their_order(self):
+        """A reader of the README, which the Zenodo record shows, finds first the paper that
+        describes the dataset as its citation and then the citation of the release itself, both
+        with the eight authors in the order of the deposit."""
         self.assertEqual(self._run(), 0)
         readme = (self.release / "0_README.md").read_text(encoding="utf-8")
         citation = readme[readme.index("## Citation"):readme.index("## Associated Papers")]
-        self.assertIn("Cite this release as: Sebastian Baltes, Seyedmoein Mohsenimofidi, Levi "
-                      "Böhme, Vahram Nersesyan, Muhammad Auwal Abubakar, Jai Lal Lulla, Matthias "
-                      "Galster, Christoph Treude. **AgentTorrent: A Dataset of Context and "
-                      "Harness Engineering Artifacts on GitHub.** Version 1.0.0. Zenodo.",
-                      citation)
+        authors = ("Sebastian Baltes, Seyedmoein Mohsenimofidi, Levi Böhme, Vahram Nersesyan, "
+                   "Muhammad Auwal Abubakar, Jai Lal Lulla, Matthias Galster, Christoph Treude. "
+                   "**AgentTorrent: A Dataset of Context and Harness Engineering Artifacts on "
+                   "GitHub.**")
+        paper = (f"Cite the dataset with the paper that describes it: {authors} "
+                 "arXiv:2611.15436, 2026. DOI: https://doi.org/10.48550/arXiv.2611.15436")
+        release = (f"To refer to the files of this release, cite the release as: {authors} "
+                   "Version 1.0.0. Zenodo.")
+        self.assertIn(paper, citation)
+        self.assertIn(release, citation)
+        self.assertLess(citation.index(paper), citation.index(release))
+        self.assertIn("`CITATION.cff` gives both citations in the Citation File Format, with the "
+                      "paper as the preferred citation.", citation)
 
     def test_the_citation_names_the_version_that_the_rows_record(self):
         """`CITATION.cff` and the README cite the version that `provenance.json` records for

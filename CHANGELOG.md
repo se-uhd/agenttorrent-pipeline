@@ -32,8 +32,9 @@ AgentConfigs 1.0.0 is tagged `agentconfigs_1.0.0` in the private repository
 
 ### Added
 
-- The README of the release lists the preprint of the paper that describes AgentTorrent 1.0.0,
-  arXiv:2611.15436.
+- The `CITATION.cff` and the README of the release name the paper that describes AgentTorrent
+  1.0.0 as the preferred citation of the dataset, with its preprint arXiv:2611.15436, and the
+  README lists the paper first among the associated papers.
 
 ## [AgentTorrent 1.0.0] - 2026-11-12
 

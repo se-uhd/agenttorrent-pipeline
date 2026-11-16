@@ -516,7 +516,7 @@ ANNOTATED_COLUMNS = ("repo_name", "github_id", "default_branch", "engineered_pro
 # without Vahram Nersesyan and in another order, and the README cites it with
 # `AIWARE_DATASET_PAPER_AUTHORS`. Neither `CITATION.cff` nor the README has a DOI of the release,
 # because Zenodo assigns the DOI when the deposit is made, and a DOI written here would be one
-# that nobody assigned.
+# that nobody assigned. The paper has a DOI, which arXiv registered for its preprint.
 CITATION_TITLE = "AgentTorrent: A Dataset of Context and Harness Engineering Artifacts on GitHub"
 CITATION_AUTHORS = (
     ("Sebastian", "Baltes"),
@@ -531,9 +531,13 @@ CITATION_AUTHORS = (
 AIWARE_DATASET_PAPER_AUTHORS = ("Matthias Galster, Seyedmoein Mohsenimofidi, Levi Böhme, Jai Lal Lulla, "
                                 "Muhammad Auwal Abubakar, Christoph Treude, Sebastian Baltes")
 CITATION_LICENSE = "CC-BY-4.0"
-# The arXiv identifier of the preprint of the paper that describes AgentTorrent 1.0.0, which has
-# the title and the authors of the release. The README lists it among the associated papers.
+# The preprint of the paper that describes AgentTorrent 1.0.0, which has the title and the authors
+# of the release: its arXiv identifier, the year in which arXiv published it, and the DOI that arXiv
+# registered for it. `CITATION.cff` and the README name the paper as the preferred citation of the
+# dataset, and the README lists it among the associated papers.
 DATASET_PAPER_ARXIV_ID = "2611.15436"
+DATASET_PAPER_YEAR = 2026
+DATASET_PAPER_DOI = f"10.48550/arXiv.{DATASET_PAPER_ARXIV_ID}"
 # The repository of the pipeline. The README points to its documents for how a release is built,
 # because the AIware 2026 dataset paper describes AgentConfigs 1.0.0, which an earlier version of
 # the pipeline built.
@@ -1861,20 +1865,31 @@ def cited_authors() -> str:
 
 def render_citation(version: str) -> str:
     """`CITATION.cff`, from the author list above and `version`, the `dataset_version` that
-    `provenance.json` records."""
+    `provenance.json` records, with the paper that describes the dataset as its preferred
+    citation."""
+    authors = []
+    for given, family in CITATION_AUTHORS:
+        authors.append(f"  - given-names: {given}")
+        authors.append(f"    family-names: {family}")
     lines = [
         "cff-version: 1.2.0",
-        "message: If you use this dataset, please cite it as below.",
+        "message: If you use this dataset, please cite the paper that describes it.",
         "type: dataset",
         f"title: \"{CITATION_TITLE}\"",
         f"version: \"{version}\"",
         f"license: {CITATION_LICENSE}",
         "authors:",
+        *authors,
+        "preferred-citation:",
+        "  type: generic",
+        f"  title: \"{CITATION_TITLE}\"",
+        "  authors:",
+        *(f"  {line}" for line in authors),
+        f"  year: {DATASET_PAPER_YEAR}",
+        f"  doi: {DATASET_PAPER_DOI}",
+        f"  url: \"https://arxiv.org/abs/{DATASET_PAPER_ARXIV_ID}\"",
+        "",
     ]
-    for given, family in CITATION_AUTHORS:
-        lines.append(f"  - given-names: {given}")
-        lines.append(f"    family-names: {family}")
-    lines.append("")
     return "\n".join(lines)
 
 
@@ -2225,7 +2240,11 @@ The documents of the pipeline at {PIPELINE_REPOSITORY} describe how this release
 {evidence}
 ## Citation
 
-Cite this release as: {cited_authors()}. **{CITATION_TITLE}.** Version {version}. Zenodo. `CITATION.cff` gives the same citation in the Citation File Format.
+Cite the dataset with the paper that describes it: {cited_authors()}. **{CITATION_TITLE}.** arXiv:{DATASET_PAPER_ARXIV_ID}, {DATASET_PAPER_YEAR}. DOI: https://doi.org/{DATASET_PAPER_DOI}
+
+To refer to the files of this release, cite the release as: {cited_authors()}. **{CITATION_TITLE}.** Version {version}. Zenodo.
+
+`CITATION.cff` gives both citations in the Citation File Format, with the paper as the preferred citation.
 
 ## Associated Papers
 
