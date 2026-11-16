@@ -27,7 +27,8 @@ value with the count of an earlier publication. Keep citations out of the releas
 header above them gives the preprint on arXiv of the paper that describes AgentTorrent, with the
 authors of the `CITATION.cff` of the release, as the citation of the dataset, and then cites the
 paper that describes AgentConfigs 1.0.0, the earlier dataset that AgentTorrent succeeds. Both
-citations link the concept DOI of the Zenodo record of their dataset. The Downloads section and
+citations link a BibTeX entry, arXiv's for the preprint and DBLP's for the published AIware 2026
+paper, and the concept DOI of the Zenodo record of their dataset. The Downloads section and
 the Usage Example section link the concept DOIs of the Zenodo records of the dataset and of the
 pipeline.
 
