@@ -830,7 +830,8 @@ class TestGeneratedFiles(_Fixture):
         root = Path(__file__).resolve().parents[1]
         authors = ["Baltes", "Mohsenimofidi", "Böhme", "Nersesyan", "Abubakar", "Lulla",
                    "Galster", "Treude"]
-        citation = (root / "CITATION.cff").read_text(encoding="utf-8")
+        citation, paper = (root / "CITATION.cff").read_text(encoding="utf-8").split(
+            "\npreferred-citation:\n")
         self.assertEqual(re.findall(r"family-names: (.+)", citation), authors)
         self.assertIn("\ntype: software\n", citation)
         self.assertIn("\nlicense: MIT\n", citation)
@@ -841,6 +842,18 @@ class TestGeneratedFiles(_Fixture):
         self.assertIn("Copyright (c) 2026 Sebastian Baltes, Seyedmoein Mohsenimofidi, Levi Böhme, "
                       "Vahram Nersesyan, Muhammad Auwal Abubakar, Jai Lal Lulla, Matthias "
                       "Galster, Christoph Treude ", license_text)
+
+    def test_the_pipeline_and_the_release_name_the_paper_as_their_preferred_citation(self):
+        """The paper describes the dataset and the pipeline, so the repository's `CITATION.cff`
+        names the same preprint as the release, arXiv:2611.15436 with the DOI that arXiv
+        registered for it."""
+        root = Path(__file__).resolve().parents[1]
+        citation = (root / "CITATION.cff").read_text(encoding="utf-8")
+        self.assertIn("\nmessage: If you use this pipeline, please cite the paper that describes "
+                      "it.\n", citation)
+        paper = citation.split("\npreferred-citation:\n")[1]
+        self.assertIn("  doi: 10.48550/arXiv.2611.15436\n", paper)
+        self.assertEqual(paper, _mod.render_citation("1.0.0").split("\npreferred-citation:\n")[1])
 
     def test_the_citation_of_the_release_contains_no_doi(self):
         # Zenodo assigns the DOI of the release at deposit, and nobody would have assigned a DOI
