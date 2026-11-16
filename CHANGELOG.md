@@ -37,6 +37,13 @@ AgentConfigs 1.0.0 is tagged `agentconfigs_1.0.0` in the private repository
   arXiv:2611.15436, and the README of the release lists the paper first among the associated
   papers.
 
+### Fixed
+
+- The website's commit search requests the pages that it searches at once instead of one after
+  the other.
+- The website's commit list no longer shows the result of an earlier search input that finished
+  after a later one.
+
 ## [AgentTorrent 1.0.0] - 2026-11-12
 
 The first release of AgentTorrent, published on Zenodo with its pipeline. The entries of this

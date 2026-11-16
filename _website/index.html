@@ -380,7 +380,10 @@ let PAGE_CACHE = {};
 const LOADED_PAGES = new Set();
 let repoPage = 0;
 let commitPage = 0;
+// The requests of the commit pages by page number, which resolve to the commits of the page.
 let commitPageCache = {};
+// The number of the latest call of loadCommitPage.
+let commitLoad = 0;
 let artifactData = {};
 let currentArtifactTab = 'context_files';
 
@@ -724,21 +727,37 @@ function initCommits() {
   loadCommitPage();
 }
 
+// The commits of a page of the commit browser, requested once: a load that starts while the
+// request is pending waits for the same request, and a failed request is made again the next time
+// that a load needs the page.
+function commitPageData(i) {
+  if (!commitPageCache[i]) {
+    const request = fetch(`data/commits/page_${i}.json`).then(resp => resp.json());
+    request.catch(() => { if (commitPageCache[i] === request) delete commitPageCache[i]; });
+    commitPageCache[i] = request;
+  }
+  return commitPageCache[i];
+}
+
 async function loadCommitPage() {
+  // Each input starts a load. A load that finishes after a later one has started renders nothing,
+  // so that the list always shows the result of the latest input.
+  const load = ++commitLoad;
   const list = document.getElementById('commit-list');
   const query = document.getElementById('commit-search').value.toLowerCase();
   const activeTools = [...document.querySelectorAll('#commit-tool-toggles button.active')].map(b => b.dataset.tool);
   const hasFilters = query || activeTools.length;
 
   if (!hasFilters) {
-    if (!commitPageCache[commitPage]) {
-      list.innerHTML = '<div class="loading">Loading commits...</div>';
-      try {
-        const resp = await fetch(`data/commits/page_${commitPage}.json`);
-        commitPageCache[commitPage] = await resp.json();
-      } catch(e) { list.innerHTML = '<div class="loading">Failed to load.</div>'; return; }
+    list.innerHTML = '<div class="loading">Loading commits...</div>';
+    let commits;
+    try {
+      commits = await commitPageData(commitPage);
+    } catch(e) {
+      if (load === commitLoad) list.innerHTML = '<div class="loading">Failed to load.</div>';
+      return;
     }
-    const commits = commitPageCache[commitPage];
+    if (load !== commitLoad) return;
     const total = SUMMARY.total_listed_commits;
     const start = commitPage * REPOS_PER_PAGE;
     document.getElementById('commit-results-info').textContent =
@@ -748,18 +767,16 @@ async function loadCommitPage() {
     return;
   }
 
-  // With filters: load pages and filter client-side
+  // With filters: request every page that the search covers at once, and filter in the browser.
+  // The search reads the pages up to the first page that fails to load.
   list.innerHTML = '<div class="loading">Searching commits...</div>';
-  const allCommits = [];
   const maxPages = Math.min(200, Math.ceil(SUMMARY.total_listed_commits / REPOS_PER_PAGE));
-  for (let i = 0; i < maxPages; i++) {
-    if (!commitPageCache[i]) {
-      try {
-        const resp = await fetch(`data/commits/page_${i}.json`);
-        commitPageCache[i] = await resp.json();
-      } catch(e) { break; }
-    }
-    allCommits.push(...commitPageCache[i]);
+  const pages = await Promise.allSettled(Array.from({length: maxPages}, (_, i) => commitPageData(i)));
+  if (load !== commitLoad) return;
+  const allCommits = [];
+  for (const page of pages) {
+    if (page.status === 'rejected') break;
+    allCommits.push(...page.value);
   }
 
   const filtered = allCommits.filter(c => {

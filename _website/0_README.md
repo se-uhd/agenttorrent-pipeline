@@ -94,7 +94,9 @@ tool that the commit credits, and its option Other tools matches a commit that c
 outside the six. The dashboard counts the commits that credit one of the six tools. The
 search reads the subject line, which is the part of the message that the commit pages hold. Filtered searches
 cover at most the newest <!--s:parameters._website.index.commit_search_limit-->5,000<!--/s--> commits, and the result label states how many commits
-were searched and the dataset's total. Unfiltered pagination covers all commits.
+were searched and the dataset's total. A filtered search requests all of these pages at once, and
+a page that is loaded or loading is not requested again. The list shows the result of the latest
+input, even when an earlier search finishes later. Unfiltered pagination covers all commits.
 
 The site shows the subject line of each commit as the commit CSV stores it.
 The dashboard counts the six tools and shows the repositories with no specific

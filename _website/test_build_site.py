@@ -222,12 +222,34 @@ const card = name => { const body = {}; const c = {dataset: {repo: name},
 
 def _commit_browser_code(source: str) -> str:
     """The commit browser's code that the tests run in Node.js: the tool lists and the filter
-    helper that it uses, and `loadCommitPage`."""
+    helper that it uses, the counter of its loads, the requests of its pages and
+    `loadCommitPage`."""
     parts = [re.search(r'^const SIX_COMMIT_TOOLS = [^\n]*$', source, re.M).group(),
              re.search(r'^const OTHER_COMMIT_TOOLS = [^\n]*$', source, re.M).group(),
+             re.search(r'^let commitLoad = [^\n]*$', source, re.M).group(),
              re.search(r'^function creditsTool\([^\n]*\)[\s\S]*?^}', source, re.M).group(),
+             re.search(r'^function commitPageData\([^\n]*\)[\s\S]*?^}', source, re.M).group(),
              re.search(r'async function loadCommitPage\([^\n]*\)[\s\S]*?^}', source, re.M).group()]
     return "\n".join(parts)
+
+
+# The fixture of a commit browser: Its page requests stay pending until the script resolves one
+# with `respond(pending.shift())`, which returns the commits of PAGES, and `settle()` lets the
+# code of the browser run until it waits for the next request.
+_PENDING_COMMIT_PAGES = r'''
+const nodes = {'commit-search': {value:'parser'}};
+const document = {getElementById: key => nodes[key] ||= {}, querySelectorAll: () => []};
+const REPOS_PER_PAGE = 25;
+const commitPageCache = {}, fmt = String;
+let commitPage = 0, rendered;
+const renderCommits = rows => rendered = rows;
+const renderPagination = () => {};
+const pending = [];
+const fetch = url => new Promise(resolve => pending.push({url, resolve}));
+const respond = ({url, resolve}) =>
+  resolve({json: async () => PAGES[Number(url.match(/page_(\d+)/)[1])]});
+const settle = () => new Promise(resolve => setImmediate(resolve));
+'''
 
 
 class TestCommitBrowserFilters(unittest.TestCase):
@@ -315,6 +337,61 @@ loadCommitPage().then(() => console.log(JSON.stringify(rendered.map(row => row.c
         run = subprocess.run(['node', '-e', script], capture_output=True, text=True,
                              check=True)
         self.assertEqual(json.loads(run.stdout), ['match'])
+
+    def test_a_search_requests_each_page_that_it_covers_once_and_before_any_response(self):
+        """A search requests all the pages that it covers before the first response arrives, and
+        a second input while they are pending requests none of them again."""
+        import json
+        import shutil
+        import subprocess
+        if not shutil.which('node'):
+            self.skipTest('Node.js is required to execute the browser code')
+        source = (HERE / 'index.html').read_text()
+        script = _PENDING_COMMIT_PAGES + r'''
+const SUMMARY = {total_listed_commits:6000};
+''' + _commit_browser_code(source) + r'''
+loadCommitPage();
+nodes['commit-search'].value = 'parse';
+loadCommitPage();
+settle().then(() => console.log(JSON.stringify(pending.map(request => request.url))));
+'''
+        run = subprocess.run(['node', '-e', script], capture_output=True, text=True,
+                             check=True)
+        self.assertEqual(json.loads(run.stdout),
+                         [f'data/commits/page_{page}.json' for page in range(200)])
+
+    def test_a_search_that_finishes_late_does_not_replace_the_list_of_a_later_input(self):
+        """Clearing the search box while the search loads lists the newest commits, even when
+        the search finishes after them."""
+        import json
+        import shutil
+        import subprocess
+        if not shutil.which('node'):
+            self.skipTest('Node.js is required to execute the browser code')
+        source = (HERE / 'index.html').read_text()
+        script = _PENDING_COMMIT_PAGES + r'''
+const SUMMARY = {total_listed_commits:26};
+const PAGES = [
+  [{commit_sha:'match', ai_tool:'Claude', commit_subject:'Fix the parser'},
+   {commit_sha:'other', ai_tool:'Claude', commit_subject:'Update the docs'}],
+  [{commit_sha:'older', ai_tool:'Claude', commit_subject:'Rewrite the parser'}]];
+''' + _commit_browser_code(source) + r'''
+loadCommitPage();
+nodes['commit-search'].value = '';
+loadCommitPage();
+(async () => {
+  for (let round = 0; round < 5; round++) {
+    while (pending.length) respond(pending.shift());
+    await settle();
+  }
+  console.log(JSON.stringify({rendered: rendered.map(row => row.commit_sha),
+                              info: nodes['commit-results-info'].textContent}));
+})();
+'''
+        run = subprocess.run(['node', '-e', script], capture_output=True, text=True,
+                             check=True)
+        self.assertEqual(json.loads(run.stdout), {'rendered': ['match', 'other'],
+                                                  'info': 'Showing 1–25 of 26 commits'})
 
 
 class TestMechanismJsonExport(unittest.TestCase):
