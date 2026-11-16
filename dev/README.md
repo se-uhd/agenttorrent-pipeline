@@ -28,5 +28,7 @@ describe the macOS, Ubuntu and Linux x86-64 container environments.
   `.publicignore` lists and the blocks of the Markdown documents between a line `<!--internal-->`
   and a line `<!--/internal-->`, and it exits 1 when a link to a left-out path remains.
 
-Run targeted tests while you edit. The full verification must pass on the committed state before
-every push. Keep the report directory outside the checkout.
+Run targeted tests while you edit. Before every push, the full verification must pass on the
+latest commit that changes more than documents and the website page. A commit that changes only
+these needs the checks of the [test workflow](../docs/development.md#test-workflow) instead. Keep the report
+directory outside the checkout.

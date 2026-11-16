@@ -178,8 +178,14 @@ repositories of both kinds among the evidence limits of `docs/dataset.md`.
 - Finish the batch, its documents and its stated statistics, commit it, then run the full
   verification, `mise exec -- bash dev/verify.sh` on macOS, and review the committed batch as a
   whole. The verification exits 0 only when every suite and check passes and the tree is clean.
-  Before every push it must pass on the committed state being pushed, and again when that state
-  changes.
+  A commit that changes only Markdown documents and `_website/index.html` needs no full
+  verification. After the commit, because the glossary check reads its message, run from the root
+  `mise exec -- python -m unittest tests.test_glossary tests.test_doc_commit_refs
+  tests.test_public_export` and `mise exec -- python -m agentcontext statistics --check`, the
+  website suite when the page changed, and every suite that opens a changed document by its path,
+  such as `4_data-analysis/test_shared.py` for `CLAUDE.md`. Before every push, the full
+  verification must pass on the latest commit that changes other files, and these checks on the
+  state being pushed. Run them again when that state changes.
 - A command that reports a verdict through its exit code exits 0 when its inputs are present and
   unchanged, 2 when it found a difference, and 1 when it could not check.
 - The pipeline runs on Python 3.14, at the release that `mise.toml` pins, and every package has one

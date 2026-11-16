@@ -48,8 +48,10 @@ The pipeline has five stages, each a sequence of steps that depends on the previ
 ## Testing
 
 Run targeted tests while you implement a fix. When the fixes and their documentation are
-complete, commit the batch, then run the full verification and review the committed batch. The
-full verification must pass on the committed state before every push.
+complete, commit the batch, then run the full verification and review the committed batch.
+Before every push, the full verification must pass on the latest commit that changes more than
+documents and the website page. A commit that changes only these needs the narrower checks of the
+[test workflow](docs/development.md#test-workflow) instead.
 [The development instructions](docs/development.md) give the commands for each platform.
 `dev/setup.sh` installs the dependencies and extracts the tracked inputs. `dev/verify.sh` runs
 the full verification. On macOS, it compares the regenerated analysis outputs with the tracked

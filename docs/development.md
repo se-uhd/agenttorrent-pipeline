@@ -25,9 +25,22 @@ passed there could fail in CI.
 Run the targeted regression tests and the affected test modules while you edit. Finish all
 fixes and documents, commit the batch, then run the full verification and review the committed
 batch as a whole. You do not need the full verification after each fix or intermediate local
-commit. Before every push, the full verification must pass on the committed state that you push.
-After a correction that the final verification or review called for, repeat the affected tests,
-and run the full verification again if the committed state changes.
+commit, or for a commit that changes only Markdown documents and `_website/index.html`. For such
+a commit, run these checks from the root after the commit, because the glossary check reads the
+commit message:
+
+```shell
+mise exec -- python -m unittest tests.test_glossary tests.test_doc_commit_refs tests.test_public_export
+mise exec -- python -m agentcontext statistics --check
+```
+
+Also run the website suite, `python3 -m unittest test_build_site` from `_website/`, when the page
+changed, and every suite that opens a changed document by its path, such as
+`4_data-analysis/test_shared.py` for `CLAUDE.md`. Before every push, the full verification must
+pass on the latest commit that changes other files, and these checks on the committed state that
+you push. After a correction that the final
+verification or review called for, repeat the affected tests, and run the full verification again
+if the committed state changes.
 
 ## Test data
 

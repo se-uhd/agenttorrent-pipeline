@@ -817,7 +817,8 @@ recall of the heuristics from the labels
 
 **Verification suite.** The repository's complete set of automated tests and consistency checks,
 which `python -m agentcontext verify` runs. **Pre-push verification** is the full verification
-that a committed state passes before it is pushed. The **pre-deployment checks** validate the
+that a committed state passes before it is pushed, or before a later commit that changes only
+documents and the website page is pushed. The **pre-deployment checks** validate the
 collection and the build before a Start. The **reproduction check**,
 `4_data-analysis/check_reproduction.py`, compares regenerated analysis outputs.
 
