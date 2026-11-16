@@ -43,6 +43,15 @@ AgentConfigs 1.0.0 is tagged `agentconfigs_1.0.0` in the private repository
   the other.
 - The website's commit list no longer shows the result of an earlier search input that finished
   after a later one.
+- The website's configuration browser loads its first tab when it comes into view rather than
+  when the page opens.
+- The JSON files of the tabs of the website's configuration browser hold only the columns that
+  the browser shows.
+- A tab of the website's configuration browser that loads late no longer replaces the selected
+  tab.
+- The website's dashboard no longer waits for the index of the repositories.
+- The website's repository details request each detail page once and show a message when it fails
+  to load.
 
 ## [AgentTorrent 1.0.0] - 2026-11-12
 

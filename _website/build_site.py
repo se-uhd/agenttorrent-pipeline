@@ -161,6 +161,26 @@ EXTENSION_FILES = {
     "planning_documents": "planning-documents.csv",
     "imports": "imports.csv",
 }
+# The columns of each tab of the configuration browser that the table of index.html shows
+# (getArtifactColumns), and `github_link`, which links the path. The JSON file of a tab holds only
+# these columns, because the browser loads the whole file to show a page of its rows.
+_HISTORY_COLUMNS = ["#commits", "created_at", "github_link"]
+ARTIFACT_TABLE_COLUMNS = {
+    "context_files": ["repo_name", "context_file", "language", "line_count", *_HISTORY_COLUMNS],
+    "settings": ["repo_name", "settings", *_HISTORY_COLUMNS],
+    "skills": ["repo_name", "skills.md", "name", *_HISTORY_COLUMNS],
+    "subagents": ["repo_name", "subagent", "name", *_HISTORY_COLUMNS],
+    "commands": ["repo_name", "command", "name", *_HISTORY_COLUMNS],
+    "hooks": ["repo_name", "hook", *_HISTORY_COLUMNS],
+    "rules": ["repo_name", "rule", "name", *_HISTORY_COLUMNS],
+    "mcp": ["repo_name", "mcp", *_HISTORY_COLUMNS],
+    "plugins": ["repo_name", "plugin", *_HISTORY_COLUMNS],
+    "lsp": ["repo_name", "lsp", *_HISTORY_COLUMNS],
+    "planning_documents": ["repo_name", "planning_document", "framework", "document",
+                           *_HISTORY_COLUMNS],
+    "imports": ["repo_name", "importer", "tool", "import", "target", "target_status",
+                "github_link"],
+}
 
 
 # --- Helpers -----------------------------------------------------------------
@@ -384,9 +404,16 @@ def paginate_commits(commits: pd.DataFrame):
 
 # --- Phase 6: Configuration artifact JSONs ----------------------------------
 def build_artifact_jsons(artifacts: dict):
+    """Write the rows of each tab of the configuration browser with the columns of
+    ARTIFACT_TABLE_COLUMNS. A CSV without one of them ends the build."""
     logs.info(COMPONENT, "Building the JSON files of the configuration browser's tabs...")
     for key, df in artifacts.items():
-        records = df_to_records(df)
+        missing = [column for column in ARTIFACT_TABLE_COLUMNS[key] if column not in df.columns]
+        if missing:
+            logs.error(COMPONENT, f"The CSV of the tab {key} has no column {', '.join(missing)}, "
+                                  f"which the configuration browser shows.")
+            raise SystemExit(1)
+        records = df_to_records(df[ARTIFACT_TABLE_COLUMNS[key]])
         write_json(SITE_DIR / "data" / "artifacts" / f"{key}.json", records)
         logs.info(COMPONENT, f"  Wrote {len(records):,} entries to {key}.json.")
 

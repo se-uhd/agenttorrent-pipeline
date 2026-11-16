@@ -87,6 +87,15 @@ each for planning documents and imports, which are not configuration artifacts. 
 tab renders its path column as a link: the configuration artifact, the planning document, or
 the line of the import. The regression test of the browser runs the page's JavaScript with
 Node.js and checks the tabs against the mechanism definitions and the two extensions.
+The browser loads its first tab when it comes into view and another tab when it is selected.
+The browser loads the whole JSON file of a tab, which therefore holds only the columns that the
+table shows and the link of the path. A tab that finishes loading after another tab was
+selected does not replace the table of the selected tab.
+
+The dashboard reads `summary.json` and renders before the index of the repositories arrives.
+Expanding a repository requests the detail page that holds it once, also when a second
+repository of the page is expanded while it loads. A detail page that fails to load shows a
+message, and the next expansion requests it again.
 
 The commit browser lists the commits of `commits.csv` and `other_commits.csv`, a commit in both
 files once with the tools of both. The tool filter of the commits matches a commit under each

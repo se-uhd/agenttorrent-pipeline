@@ -375,16 +375,19 @@ let INDEX = [];
 let SUMMARY = {};
 let FILTERED = [];
 let PAGE_CACHE = {};
-// The numbers of the detail pages already fetched. PAGE_CACHE stores the repositories of a page
+// The requests of the detail pages by page number. PAGE_CACHE stores the repositories of a page
 // by name, so a lookup by page number would find nothing and fetch the page again.
-const LOADED_PAGES = new Set();
+const DETAIL_PAGE_REQUESTS = {};
 let repoPage = 0;
 let commitPage = 0;
 // The requests of the commit pages by page number, which resolve to the commits of the page.
-let commitPageCache = {};
+const commitPageRequests = {};
 // The number of the latest call of loadCommitPage.
 let commitLoad = 0;
+// The rows of each tab of the configuration browser that has loaded, and the requests of their
+// JSON files by tab.
 let artifactData = {};
+const artifactRequests = {};
 let currentArtifactTab = 'context_files';
 
 // ── Helpers ─────────────────────────────────────────────────────────────────
@@ -406,15 +409,26 @@ function escapeHtml(s) {
   d.textContent = s;
   return d.innerHTML;
 }
+// The JSON file at url, requested once for each key of requests: a caller that comes while the
+// request is pending waits for the same request, and after a failed request the next caller
+// requests the file again.
+function requestOnce(requests, key, url) {
+  if (!requests[key]) {
+    const request = fetch(url).then(resp => resp.json());
+    request.catch(() => { if (requests[key] === request) delete requests[key]; });
+    requests[key] = request;
+  }
+  return requests[key];
+}
 
 // ── Initialization ──────────────────────────────────────────────────────────
 async function init() {
-  const [indexResp, summaryResp] = await Promise.all([
-    fetch('data/index.json'), fetch('data/summary.json')
-  ]);
-  INDEX = await indexResp.json();
-  SUMMARY = await summaryResp.json();
+  // The dashboard reads only the summary and renders before the index of the repositories
+  // arrives.
+  const index = fetch('data/index.json').then(resp => resp.json());
+  SUMMARY = await fetch('data/summary.json').then(resp => resp.json());
   renderDashboard();
+  INDEX = await index;
   renderFilterBar();
   applyFilters();
   initNavigation();
@@ -644,13 +658,13 @@ async function toggleRepo(header) {
   const entry = INDEX.find(r => r.repo_name === repoName);
   const pageIdx = entry ? entry._page : 0;
 
-  if (!LOADED_PAGES.has(pageIdx)) {
-    try {
-      const resp = await fetch(`data/repos/page_${pageIdx}.json`);
-      const page = await resp.json();
-      page.forEach(r => PAGE_CACHE[r.repo_name] = r);
-      LOADED_PAGES.add(pageIdx);
-    } catch(e) {}
+  try {
+    const page = await requestOnce(DETAIL_PAGE_REQUESTS, pageIdx, `data/repos/page_${pageIdx}.json`);
+    page.forEach(r => PAGE_CACHE[r.repo_name] = r);
+  } catch(e) {
+    // The next expansion requests the page again.
+    body.innerHTML = '<div class="loading">Failed to load the details.</div>';
+    return;
   }
 
   renderRepoDetail(body, repoName);
@@ -727,16 +741,9 @@ function initCommits() {
   loadCommitPage();
 }
 
-// The commits of a page of the commit browser, requested once: a load that starts while the
-// request is pending waits for the same request, and a failed request is made again the next time
-// that a load needs the page.
+// The commits of a page of the commit browser.
 function commitPageData(i) {
-  if (!commitPageCache[i]) {
-    const request = fetch(`data/commits/page_${i}.json`).then(resp => resp.json());
-    request.catch(() => { if (commitPageCache[i] === request) delete commitPageCache[i]; });
-    commitPageCache[i] = request;
-  }
-  return commitPageCache[i];
+  return requestOnce(commitPageRequests, i, `data/commits/page_${i}.json`);
 }
 
 async function loadCommitPage() {
@@ -868,20 +875,31 @@ function initArtifacts() {
     };
     tabs.appendChild(btn);
   });
-  loadArtifact(currentArtifactTab);
+  // The first tab loads when the browser comes into view, as a chart does, so that a visitor who
+  // does not scroll to it does not download its table.
+  const observer = new IntersectionObserver(entries => {
+    if (!entries.some(e => e.isIntersecting)) return;
+    observer.disconnect();
+    if (!artifactRequests[currentArtifactTab]) loadArtifact(currentArtifactTab);
+  }, { rootMargin: '200px' });
+  observer.observe(document.getElementById('artifacts'));
 }
 
 let artifactPage = 0;
 
 async function loadArtifact(key) {
   const container = document.getElementById('artifact-content');
-  if (!artifactData[key]) {
-    container.innerHTML = '<div class="loading">Loading...</div>';
-    try {
-      const resp = await fetch(`data/artifacts/${key}.json`);
-      artifactData[key] = await resp.json();
-    } catch(e) { container.innerHTML = '<div class="loading">Failed to load.</div>'; return; }
+  if (!artifactData[key]) container.innerHTML = '<div class="loading">Loading...</div>';
+  let rows;
+  try {
+    rows = await requestOnce(artifactRequests, key, `data/artifacts/${key}.json`);
+  } catch(e) {
+    if (key === currentArtifactTab) container.innerHTML = '<div class="loading">Failed to load.</div>';
+    return;
   }
+  artifactData[key] = rows;
+  // A tab that finishes loading after another tab was selected renders nothing.
+  if (key !== currentArtifactTab) return;
   artifactPage = 0;
   renderArtifactPage(key);
 }

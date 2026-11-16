@@ -134,6 +134,7 @@ let currentArtifactTab = 'context_files', artifactPage = 0;
 const artifactData = {}, REPOS_PER_PAGE = 25;
 const loadArtifact = key => loaded.push(key);
 const fmt = String, escapeHtml = String, renderPagination = () => {};
+class IntersectionObserver { observe() {} disconnect() {} }
 ''' + functions + r'''
 initArtifacts();
 const result = [];
@@ -162,22 +163,122 @@ console.log(JSON.stringify(result));
                 self.assertIn('<a href="https://example.org/config"', row['html'])
                 self.assertIn('example-path</a>', row['html'])
 
+    def test_the_first_tab_loads_when_the_browser_comes_into_view(self):
+        """Opening the page requests no table of the configuration browser, and the browser
+        coming into view requests the first tab."""
+        fixture = _ARTIFACT_BROWSER + r'''
+let comeIntoView = () => {};
+class IntersectionObserver {
+  constructor(callback) { comeIntoView = () => callback([{isIntersecting: true}]); }
+  observe() {}
+  disconnect() {}
+}
+const fetched = [];
+const fetch = async url => { fetched.push(url); return {json: async () => []}; };
+initArtifacts();
+const before = [...fetched];
+comeIntoView();
+setImmediate(() => console.log(JSON.stringify({before, after: fetched})));
+'''
+        self.assertEqual(_run_page_functions(self, _ARTIFACT_BROWSER_FUNCTIONS, fixture),
+                         {'before': [], 'after': ['data/artifacts/context_files.json']})
+
+    def test_a_tab_that_loads_late_does_not_replace_the_selected_tab(self):
+        """Selecting the rules while the planning documents load shows the rules, even when the
+        planning documents arrive after them."""
+        fixture = _ARTIFACT_BROWSER + r'''
+class IntersectionObserver { observe() {} disconnect() {} }
+const pending = [];
+const fetch = url => new Promise(resolve => pending.push({url, resolve}));
+const settle = () => new Promise(resolve => setImmediate(resolve));
+const respond = key => pending.find(request => request.url === `data/artifacts/${key}.json`)
+  .resolve({json: async () => [{repo_name: 'o/r', [getArtifactPathCol(key)]: `${key}-path`,
+                                github_link: 'https://example.org'}]});
+initArtifacts();
+const tab = label => buttons.find(button => button.textContent === label);
+tab('Planning documents').onclick();
+tab('Rules').onclick();
+(async () => {
+  respond('rules');
+  await settle();
+  respond('planning_documents');
+  await settle();
+  console.log(JSON.stringify(nodes['artifact-content'].innerHTML));
+})();
+'''
+        html = _run_page_functions(self, _ARTIFACT_BROWSER_FUNCTIONS, fixture)
+        self.assertIn('rules-path', html)
+        self.assertNotIn('planning_documents-path', html)
+
+
+def _run_page_functions(test: unittest.TestCase, names: list[str], fixture: str):
+    """Run the functions of index.html with these names and the fixture in Node.js, and return
+    the JSON that the fixture prints."""
+    import json
+    import shutil
+    import subprocess
+    if not shutil.which('node'):
+        test.skipTest('Node.js is required to execute the browser code')
+    source = (HERE / 'index.html').read_text()
+    code = '\n'.join(re.search(r'(?:async )?function ' + name + r'\([^\n]*\)[\s\S]*?^}',
+                                source, re.M).group() for name in names)
+    run = subprocess.run(['node', '-e', code + '\n' + fixture],
+                         capture_output=True, text=True, check=True)
+    return json.loads(run.stdout)
+
+
+# The functions of the configuration browser, and a page for them with the tab buttons in
+# `buttons`, without IntersectionObserver and fetch, which each test declares.
+_ARTIFACT_BROWSER_FUNCTIONS = ['initArtifacts', 'loadArtifact', 'requestOnce',
+                               'renderArtifactPage', 'getArtifactPathCol', 'getArtifactColumns',
+                               'showingText']
+_ARTIFACT_BROWSER = r'''
+const nodes = {}, buttons = [];
+const document = {
+  getElementById: key => nodes[key] ||= {appendChild: b => buttons.push(b),
+    querySelectorAll: () => buttons},
+  createElement: () => ({classList: {add() {}, remove() {}}})
+};
+let currentArtifactTab = 'context_files', artifactPage = 0, artifactData = {};
+const artifactRequests = {}, REPOS_PER_PAGE = 25;
+const fmt = String, escapeHtml = String, renderPagination = () => {};
+'''
+
 
 class TestBrowserLists(unittest.TestCase):
-    """The repository list, tested with the page's own code in Node."""
+    """The dashboard and the repository list, tested with the page's own code in Node."""
 
     def _node(self, names, fixture):
-        import json
-        import shutil
-        import subprocess
-        if not shutil.which('node'):
-            self.skipTest('Node.js is required to execute the browser code')
-        source = (HERE / 'index.html').read_text()
-        code = '\n'.join(re.search(r'(?:async )?function ' + name + r'\([^\n]*\)[\s\S]*?^}',
-                                    source, re.M).group() for name in names)
-        run = subprocess.run(['node', '-e', code + '\n' + fixture],
-                             capture_output=True, text=True, check=True)
-        return json.loads(run.stdout)
+        return _run_page_functions(self, names, fixture)
+
+    def test_the_dashboard_renders_before_the_index_of_the_repositories_arrives(self):
+        """The dashboard reads only the summary. It renders while the index of the repositories
+        is still loading, and the repository list renders once the index arrives."""
+        fixture = r'''
+const calls = [], pending = [];
+const fetch = url => new Promise(resolve => pending.push({url, resolve}));
+const respond = name => pending.find(request => request.url === `data/${name}.json`)
+  .resolve({json: async () => ({})});
+const settle = () => new Promise(resolve => setImmediate(resolve));
+let INDEX, SUMMARY;
+const renderDashboard = () => calls.push('dashboard');
+const renderFilterBar = () => calls.push('filters');
+const applyFilters = () => calls.push('repositories');
+const initNavigation = () => {}, initChartObservers = () => {}, initCommits = () => {};
+const initArtifacts = () => {}, initDownloads = () => {};
+init();
+(async () => {
+  respond('summary');
+  await settle();
+  const beforeIndex = [...calls];
+  respond('index');
+  await settle();
+  console.log(JSON.stringify({beforeIndex, after: calls}));
+})();
+'''
+        self.assertEqual(self._node(['init'], fixture),
+                         {'beforeIndex': ['dashboard'],
+                          'after': ['dashboard', 'filters', 'repositories']})
 
     def test_an_empty_list_shows_no_repositories_rather_than_counting_from_one(self):
         """A search that matches nothing shows "No repositories", not "Showing 1-0 of 0
@@ -206,7 +307,7 @@ const fetched = [];
 const fetch = async url => { fetched.push(url); return {ok: false, json: async () =>
   [{repo_name: 'o/a'}, {repo_name: 'o/b'}]}; };
 const INDEX = [{repo_name: 'o/a', _page: 3}, {repo_name: 'o/b', _page: 3}];
-const PAGE_CACHE = {}, CONTENT_CACHE = {}, LOADED_PAGES = new Set();
+const PAGE_CACHE = {}, DETAIL_PAGE_REQUESTS = {};
 const renderRepoDetail = () => {};
 const card = name => { const body = {}; const c = {dataset: {repo: name},
   classList: {contains: () => false, toggle() {}}, querySelector: () => body};
@@ -217,7 +318,56 @@ const card = name => { const body = {}; const c = {dataset: {repo: name},
   console.log(JSON.stringify(fetched.filter(u => u.includes('repos/'))));
 })();
 '''
-        self.assertEqual(self._node(['toggleRepo'], fixture), ['data/repos/page_3.json'])
+        self.assertEqual(self._node(['toggleRepo', 'requestOnce'], fixture),
+                         ['data/repos/page_3.json'])
+
+    def test_two_expansions_on_a_loading_detail_page_request_it_once(self):
+        """Expanding a second repository of a detail page while the page loads does not request
+        the page again, and both repositories show their details."""
+        fixture = r'''
+const fetched = [], rendered = [];
+const fetch = async url => { fetched.push(url); return {json: async () =>
+  [{repo_name: 'o/a'}, {repo_name: 'o/b'}]}; };
+const INDEX = [{repo_name: 'o/a', _page: 3}, {repo_name: 'o/b', _page: 3}];
+const PAGE_CACHE = {}, DETAIL_PAGE_REQUESTS = {};
+const renderRepoDetail = (body, name) => rendered.push(name);
+const card = name => { const body = {}; const c = {dataset: {repo: name},
+  classList: {contains: () => false, toggle() {}}, querySelector: () => body};
+  return {parentElement: c}; };
+Promise.all([toggleRepo(card('o/a')), toggleRepo(card('o/b'))]).then(() =>
+  console.log(JSON.stringify({fetched, rendered})));
+'''
+        self.assertEqual(self._node(['toggleRepo', 'requestOnce'], fixture),
+                         {'fetched': ['data/repos/page_3.json'], 'rendered': ['o/a', 'o/b']})
+
+    def test_a_detail_page_that_fails_to_load_says_so_and_is_requested_again(self):
+        """A detail page that fails to load shows that the details failed to load rather than
+        a dash for each field, and the next expansion requests the page again."""
+        fixture = r'''
+const fetched = [], rendered = [];
+let offline = true;
+const fetch = async url => {
+  fetched.push(url);
+  if (offline) throw new TypeError('Failed to fetch');
+  return {json: async () => [{repo_name: 'o/a'}]};
+};
+const INDEX = [{repo_name: 'o/a', _page: 0}];
+const PAGE_CACHE = {}, DETAIL_PAGE_REQUESTS = {};
+const renderRepoDetail = (body, name) => { rendered.push(name); body.innerHTML = 'details'; };
+const body = {};
+const header = {parentElement: {dataset: {repo: 'o/a'},
+  classList: {contains: () => false, toggle() {}}, querySelector: () => body}};
+(async () => {
+  await toggleRepo(header);
+  const failed = body.innerHTML;
+  offline = false;
+  await toggleRepo(header);
+  console.log(JSON.stringify({failed, requests: fetched.length, rendered}));
+})();
+'''
+        self.assertEqual(self._node(['toggleRepo', 'requestOnce'], fixture),
+                         {'failed': '<div class="loading">Failed to load the details.</div>',
+                          'requests': 2, 'rendered': ['o/a']})
 
 
 def _commit_browser_code(source: str) -> str:
@@ -228,6 +378,7 @@ def _commit_browser_code(source: str) -> str:
              re.search(r'^const OTHER_COMMIT_TOOLS = [^\n]*$', source, re.M).group(),
              re.search(r'^let commitLoad = [^\n]*$', source, re.M).group(),
              re.search(r'^function creditsTool\([^\n]*\)[\s\S]*?^}', source, re.M).group(),
+             re.search(r'^function requestOnce\([^\n]*\)[\s\S]*?^}', source, re.M).group(),
              re.search(r'^function commitPageData\([^\n]*\)[\s\S]*?^}', source, re.M).group(),
              re.search(r'async function loadCommitPage\([^\n]*\)[\s\S]*?^}', source, re.M).group()]
     return "\n".join(parts)
@@ -240,7 +391,7 @@ _PENDING_COMMIT_PAGES = r'''
 const nodes = {'commit-search': {value:'parser'}};
 const document = {getElementById: key => nodes[key] ||= {}, querySelectorAll: () => []};
 const REPOS_PER_PAGE = 25;
-const commitPageCache = {}, fmt = String;
+const commitPageRequests = {}, fmt = String;
 let commitPage = 0, rendered;
 const renderCommits = rows => rendered = rows;
 const renderPagination = () => {};
@@ -289,7 +440,7 @@ const document = {
   querySelectorAll: () => [{dataset:{tool:'Claude'}}]
 };
 const SUMMARY = {total_listed_commits:5001}, REPOS_PER_PAGE = 25;
-const commitPageCache = {}, fmt = String;
+const commitPageRequests = {}, fmt = String;
 let commitPage = 0, rendered, paginationTotal;
 const renderCommits = rows => rendered = rows;
 const renderPagination = (id, total) => paginationTotal = total;
@@ -324,7 +475,7 @@ loadCommitPage().then(() => console.log(JSON.stringify({rendered, paginationTota
 const nodes = {'commit-search': {value:'parser'}};
 const document = {getElementById: key => nodes[key] ||= {}, querySelectorAll: () => []};
 const SUMMARY = {total_listed_commits:2}, REPOS_PER_PAGE = 25;
-const commitPageCache = {}, fmt = String;
+const commitPageRequests = {}, fmt = String;
 let commitPage = 0, rendered;
 const renderCommits = rows => rendered = rows;
 const renderPagination = () => {};
@@ -396,15 +547,19 @@ loadCommitPage();
 
 class TestMechanismJsonExport(unittest.TestCase):
 
-    def test_every_mechanism_is_loaded_and_exported_including_empty_lsp(self):
+    def test_every_tab_holds_the_columns_that_its_table_shows_including_empty_lsp(self):
+        """The JSON file of each tab holds the columns that the table of the configuration
+        browser shows and the link of the path, and no other column of its CSV, such as
+        `head_sha`. An empty CSV gives an empty tab."""
         import csv
         import json
         import tempfile
         from unittest import mock
-        mechanisms = {'context_files':'context_file', 'settings':'settings',
-            'skills':'skills.md', 'subagents':'subagent', 'commands':'command',
-            'hooks':'hook', 'rules':'rule', 'mcp':'mcp', 'plugins':'plugin', 'lsp':'lsp',
-            'planning_documents':'planning_document', 'imports':'importer'}
+        tabs = ['context_files', 'settings', 'skills', 'subagents', 'commands', 'hooks',
+                'rules', 'mcp', 'plugins', 'lsp', 'planning_documents', 'imports']
+        shown = _run_page_functions(self, ['getArtifactPathCol', 'getArtifactColumns'],
+            f'console.log(JSON.stringify(Object.fromEntries({json.dumps(tabs)}.map(key =>'
+            f' [key, getArtifactColumns(key).map(column => column.key)]))));')
         filenames = {'planning_documents': 'planning-documents.csv', 'imports': 'imports.csv'}
         for empty_lsp in (False, True):
             with self.subTest(empty_lsp=empty_lsp), tempfile.TemporaryDirectory() as tmp:
@@ -415,14 +570,15 @@ class TestMechanismJsonExport(unittest.TestCase):
                 (release / 'commits.csv').write_text('repo_name,commit_sha,ai_tool\n')
                 (release / 'other_commits.csv').write_text('repo_name,commit_sha,ai_tool\n')
                 expected = {}
-                for key, column in mechanisms.items():
-                    rows = [] if key == 'lsp' and empty_lsp else [{
-                        'repo_name':'o/r', column:f'{key}/example', '#commits':3}]
+                for key in tabs:
+                    columns = shown[key] + ['github_link']
+                    rows = [] if key == 'lsp' and empty_lsp else [
+                        {column: f'{key} {column}' for column in columns}]
                     expected[key] = rows
                     with (release / filenames.get(key, f'{key}.csv')).open('w', newline='') as out:
-                        writer = csv.DictWriter(out, fieldnames=['repo_name', column, '#commits'])
+                        writer = csv.DictWriter(out, fieldnames=columns + ['head_sha'])
                         writer.writeheader()
-                        writer.writerows(rows)
+                        writer.writerows({**row, 'head_sha': 'f' * 40} for row in rows)
                 builder = _load()
                 with mock.patch.object(builder, 'DATA_DIR', release), \
                      mock.patch.object(builder, 'SITE_DIR', output):
@@ -434,10 +590,9 @@ class TestMechanismJsonExport(unittest.TestCase):
 
 
     def test_the_values_that_pandas_reads_as_missing_are_kept(self):
-        """`n/a` is the `memory` of a subagent of a tool without per-agent memory and the
-        `language` of a file too short for language detection. By default, pandas reads `n/a`
-        as missing. A blank cell is still missing, and the missing value marks an unscanned
-        repository."""
+        """`n/a` is the `language` of a file too short for language detection. By default,
+        pandas reads `n/a` as missing. A blank cell is still missing, and the missing value
+        marks an unscanned repository."""
         import json
         import tempfile
         from unittest import mock
@@ -449,13 +604,14 @@ class TestMechanismJsonExport(unittest.TestCase):
             (release / 'commits.csv').write_text('repo_name,commit_sha,ai_tool,commit_message\n'
                                                  'o/r,a,Claude,null\n')
             (release / 'other_commits.csv').write_text('repo_name,commit_sha,ai_tool,commit_message\n')
-            for key in ('context_files', 'settings', 'skills', 'commands', 'hooks', 'rules',
-                        'mcp', 'plugins', 'lsp'):
-                (release / f'{key}.csv').write_text('repo_name,language\no/r,n/a\n')
-            (release / 'subagents.csv').write_text('repo_name,memory,language\no/r,n/a,\n')
-            for name in ('planning-documents.csv', 'imports.csv'):
-                (release / name).write_text('repo_name,language\no/r,n/a\n')
             builder = _load()
+            filenames = {'planning_documents': 'planning-documents.csv', 'imports': 'imports.csv'}
+            for key, columns in builder.ARTIFACT_TABLE_COLUMNS.items():
+                (release / filenames.get(key, f'{key}.csv')).write_text(','.join(columns) + '\n')
+            (release / 'context_files.csv').write_text(
+                'repo_name,context_file,language,line_count,#commits,created_at,github_link\n'
+                'o/r,AGENTS.md,n/a,1,1,2026-10-05,https://example.org/a\n'
+                'o/s,CLAUDE.md,,1,1,2026-10-05,https://example.org/b\n')
             with mock.patch.object(builder, 'DATA_DIR', release), \
                  mock.patch.object(builder, 'SITE_DIR', output):
                 repos, configured, commits, artifacts = builder.load_data()
@@ -463,10 +619,21 @@ class TestMechanismJsonExport(unittest.TestCase):
             self.assertEqual(list(configured['repo_name']), ['o/r'])
             self.assertEqual(configured['homepage'].tolist(), ['NA'])
             self.assertEqual(commits['commit_message'].tolist(), ['null'])
-            self.assertEqual(json.loads((output / 'data/artifacts/subagents.json').read_text()),
-                             [{'repo_name': 'o/r', 'memory': 'n/a', 'language': None}])
-            self.assertEqual(json.loads((output / 'data/artifacts/skills.json').read_text()),
-                             [{'repo_name': 'o/r', 'language': 'n/a'}])
+            rows = json.loads((output / 'data/artifacts/context_files.json').read_text())
+            self.assertEqual([row['language'] for row in rows], ['n/a', None])
+
+    def test_a_csv_without_a_column_that_its_tab_shows_ends_the_build(self):
+        """A tab would show a column that its CSV lacks as empty, and the build ends instead."""
+        import tempfile
+        from unittest import mock
+        import pandas as pd
+        builder = _load()
+        hooks = pd.DataFrame({'repo_name': ['o/r'], 'hook': ['.claude/settings.json'],
+                              '#commits': [1], 'github_link': ['https://example.org']})
+        with tempfile.TemporaryDirectory() as tmp, \
+             mock.patch.object(builder, 'SITE_DIR', Path(tmp)), \
+             self.assertRaises(SystemExit):
+            builder.build_artifact_jsons({'hooks': hooks})
 
 
 @unittest.skipUnless(__import__('shutil').which('7zz'), '7zz is not on PATH')
